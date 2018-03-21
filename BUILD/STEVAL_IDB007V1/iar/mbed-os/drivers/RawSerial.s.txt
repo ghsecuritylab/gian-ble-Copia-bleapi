@@ -1,0 +1,405 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:32:59
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\drivers\RawSerial.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\RawSerial.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\RawSerial.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\RawSerial.o
+#        .\mbed-os\drivers\RawSerial.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\RawSerial.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\RawSerial.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\drivers\RawSerial.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "drivers/RawSerial.h"
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::RawSerial::deleter ~RawSerial()
+   \                     _ZN4mbed9RawSerialD0Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x.... 0x....      BL       _ZN4mbed10SerialBaseD2Ev
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0x.... 0x....      BL       _ZdlPv
+   \   0000000E   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::RawSerial::~RawSerial()
+   \                     _ZN4mbed9RawSerialD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x.... 0x....      BL       _ZN4mbed10SerialBaseD2Ev
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xBD10             POP      {R4,PC}          ;; return
+     17          #include "platform/mbed_wait_api.h"
+     18          #include <stdio.h>
+     19          #include <cstdarg>
+     20          
+     21          
+     22          #if DEVICE_SERIAL
+     23          
+     24          #define STRING_STACK_LIMIT    120
+     25          
+     26          namespace mbed {
+     27          
+
+   \                                 In section .text, align 2, keep-with-next
+     28          RawSerial::RawSerial(PinName tx, PinName rx, int baud) : SerialBase(tx, rx, baud) {
+   \                     _ZN4mbed9RawSerialC1E7PinNameS1_i: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x.... 0x....      BL       _ZN4mbed10SerialBaseC2E7PinNameS1_i
+   \   00000006   0x....             LDR      R0,??DataTable0
+   \   00000008   0x6020             STR      R0,[R4, #+0]
+     29              // No lock needed in the constructor
+     30          }
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0xBD10             POP      {R4,PC}          ;; return
+     31          
+
+   \                                 In section .text, align 2, keep-with-next
+     32          int RawSerial::getc() {
+   \                     _ZN4mbed9RawSerial4getcEv: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     33              lock();
+   \   00000004   0x6821             LDR      R1,[R4, #+0]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+     34              int ret = _base_getc();
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0x.... 0x....      BL       _ZN4mbed10SerialBase10_base_getcEv
+   \   00000010   0x0005             MOVS     R5,R0
+     35              unlock();
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0x6821             LDR      R1,[R4, #+0]
+   \   00000016   0x6849             LDR      R1,[R1, #+4]
+   \   00000018   0x4788             BLX      R1
+     36              return ret;
+   \   0000001A   0x0028             MOVS     R0,R5
+   \   0000001C   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+     37          }
+     38          
+
+   \                                 In section .text, align 2, keep-with-next
+     39          int RawSerial::putc(int c) {
+   \                     _ZN4mbed9RawSerial4putcEi: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+     40              lock();
+   \   00000006   0x6829             LDR      R1,[R5, #+0]
+   \   00000008   0x6809             LDR      R1,[R1, #+0]
+   \   0000000A   0x4788             BLX      R1
+     41              int ret = _base_putc(c);
+   \   0000000C   0x0021             MOVS     R1,R4
+   \   0000000E   0x0028             MOVS     R0,R5
+   \   00000010   0x.... 0x....      BL       _ZN4mbed10SerialBase10_base_putcEi
+   \   00000014   0x0004             MOVS     R4,R0
+     42              unlock();
+   \   00000016   0x0028             MOVS     R0,R5
+   \   00000018   0x6829             LDR      R1,[R5, #+0]
+   \   0000001A   0x6849             LDR      R1,[R1, #+4]
+   \   0000001C   0x4788             BLX      R1
+     43              return ret;
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+     44          }
+     45          
+
+   \                                 In section .text, align 2, keep-with-next
+     46          int RawSerial::puts(const char *str) {
+   \                     _ZN4mbed9RawSerial4putsEPKc: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     47              lock();
+   \   00000006   0x6821             LDR      R1,[R4, #+0]
+   \   00000008   0x6809             LDR      R1,[R1, #+0]
+   \   0000000A   0x4788             BLX      R1
+   \   0000000C   0xE00B             B        ??puts_0
+     48              while (*str)
+     49                  putc(*str ++);
+   \                     ??puts_1: (+1)
+   \   0000000E   0x0020             MOVS     R0,R4
+   \   00000010   0x6809             LDR      R1,[R1, #+0]
+   \   00000012   0x4788             BLX      R1
+   \   00000014   0x0031             MOVS     R1,R6
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0x.... 0x....      BL       _ZN4mbed10SerialBase10_base_putcEi
+   \   0000001C   0x0020             MOVS     R0,R4
+   \   0000001E   0x6821             LDR      R1,[R4, #+0]
+   \   00000020   0x6849             LDR      R1,[R1, #+4]
+   \   00000022   0x4788             BLX      R1
+   \   00000024   0x1C6D             ADDS     R5,R5,#+1
+   \                     ??puts_0: (+1)
+   \   00000026   0x6821             LDR      R1,[R4, #+0]
+   \   00000028   0x782E             LDRB     R6,[R5, #+0]
+   \   0000002A   0x0030             MOVS     R0,R6
+   \   0000002C   0xD1EF             BNE      ??puts_1
+     50              unlock();
+   \   0000002E   0x0020             MOVS     R0,R4
+   \   00000030   0x6849             LDR      R1,[R1, #+4]
+   \   00000032   0x4788             BLX      R1
+     51              return 0;
+   \   00000034   0x2000             MOVS     R0,#+0
+   \   00000036   0xBD70             POP      {R4-R6,PC}       ;; return
+     52          }
+     53          
+     54          // Experimental support for printf in RawSerial. No Stream inheritance
+     55          // means we can't call printf() directly, so we use sprintf() instead.
+     56          // We only call malloc() for the sprintf() buffer if the buffer
+     57          // length is above a certain threshold, otherwise we use just the stack.
+
+   \                                 In section .text, align 2, keep-with-next
+     58          int RawSerial::printf(const char *format, ...) {
+   \                     _ZN4mbed9RawSerial6printfEPKcz: (+1)
+   \   00000000   0xB40E             PUSH     {R1-R3}
+   \   00000002   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000004   0xB0A0             SUB      SP,SP,#+128
+   \   00000006   0x0006             MOVS     R6,R0
+     59              lock();
+   \   00000008   0x6831             LDR      R1,[R6, #+0]
+   \   0000000A   0x6809             LDR      R1,[R1, #+0]
+   \   0000000C   0x4788             BLX      R1
+     60              std::va_list arg;
+     61              va_start(arg, format);
+   \   0000000E   0xAD26             ADD      R5,SP,#+152
+     62              // ARMCC microlib does not properly handle a size of 0.
+     63              // As a workaround supply a dummy buffer with a size of 1.
+     64              char dummy_buf[1];
+     65              int len = vsnprintf(dummy_buf, sizeof(dummy_buf), format, arg);
+   \   00000010   0x002B             MOVS     R3,R5
+   \   00000012   0x9A25             LDR      R2,[SP, #+148]
+   \   00000014   0x2101             MOVS     R1,#+1
+   \   00000016   0x4668             MOV      R0,SP
+   \   00000018   0x.... 0x....      BL       vsnprintf
+   \   0000001C   0x0004             MOVS     R4,R0
+     66              if (len < STRING_STACK_LIMIT) {
+   \   0000001E   0x2C78             CMP      R4,#+120
+   \   00000020   0xDA09             BGE      ??printf_0
+     67                  char temp[STRING_STACK_LIMIT];
+     68                  vsprintf(temp, format, arg);
+   \   00000022   0x002A             MOVS     R2,R5
+   \   00000024   0x9925             LDR      R1,[SP, #+148]
+   \   00000026   0xA801             ADD      R0,SP,#+4
+   \   00000028   0x.... 0x....      BL       vsprintf
+     69                  puts(temp);
+   \   0000002C   0xA901             ADD      R1,SP,#+4
+   \   0000002E   0x0030             MOVS     R0,R6
+   \   00000030   0x.... 0x....      BL       _ZN4mbed9RawSerial4putsEPKc
+   \   00000034   0xE00E             B        ??printf_1
+     70              } else {
+     71                  char *temp = new char[len + 1];
+   \                     ??printf_0: (+1)
+   \   00000036   0x1C40             ADDS     R0,R0,#+1
+   \   00000038   0x.... 0x....      BL       _Znaj
+   \   0000003C   0x0007             MOVS     R7,R0
+     72                  vsprintf(temp, format, arg);
+   \   0000003E   0x002A             MOVS     R2,R5
+   \   00000040   0x9925             LDR      R1,[SP, #+148]
+   \   00000042   0x.... 0x....      BL       vsprintf
+     73                  puts(temp);
+   \   00000046   0x0039             MOVS     R1,R7
+   \   00000048   0x0030             MOVS     R0,R6
+   \   0000004A   0x.... 0x....      BL       _ZN4mbed9RawSerial4putsEPKc
+     74                  delete[] temp;
+   \   0000004E   0x0038             MOVS     R0,R7
+   \   00000050   0x.... 0x....      BL       _ZdaPv
+     75              }
+     76              va_end(arg);
+     77              unlock();
+   \                     ??printf_1: (+1)
+   \   00000054   0x0030             MOVS     R0,R6
+   \   00000056   0x6831             LDR      R1,[R6, #+0]
+   \   00000058   0x6849             LDR      R1,[R1, #+4]
+   \   0000005A   0x4788             BLX      R1
+     78              return len;
+   \   0000005C   0x0020             MOVS     R0,R4
+   \   0000005E   0xB020             ADD      SP,SP,#+128
+   \   00000060   0x9904             LDR      R1,[SP, #+16]
+   \   00000062   0xBCF0             POP      {R4-R7}
+   \   00000064   0xB004             ADD      SP,SP,#+16
+   \   00000066   0x4708             BX       R1               ;; return
+     79          }
+     80          
+     81          /** Acquire exclusive access to this serial port
+     82           */
+
+   \                                 In section .text, align 2, keep-with-next
+     83          void RawSerial::lock() {
+     84              // No lock used - external synchronization required
+     85          }
+   \                     _ZN4mbed9RawSerial4lockEv: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+     86          
+     87          /** Release exclusive access to this serial port
+     88           */
+
+   \                                 In section .text, align 2, keep-with-next
+     89          void RawSerial::unlock() {
+     90              // No lock used - external synchronization required
+     91          }
+   \                     _ZN4mbed9RawSerial6unlockEv: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::RawSerial::subobject RawSerial(PinName, PinName, int)
+   \                     _ZN4mbed9RawSerialC2E7PinNameS1_i: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \   00000000   0x........         DC32     _ZTVN4mbed9RawSerialE+0x8
+     92          
+     93          } // namespace mbed
+     94          
+     95          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   mbed::RawSerial::RawSerial(PinName, PinName, int)
+         8   -> mbed::SerialBase::subobject SerialBase(PinName, PinName, int)
+       8   mbed::RawSerial::deleter ~RawSerial()
+         8   -> mbed::SerialBase::subobject ~SerialBase()
+         8   -> operator delete(void *)
+      16   mbed::RawSerial::getc()
+        16   -- Indirect call
+        16   -> mbed::SerialBase::_base_getc()
+       0   mbed::RawSerial::lock()
+     160   mbed::RawSerial::printf(char const *, ...)
+       160   -- Indirect call
+       160   -> mbed::RawSerial::puts(char const *)
+       160   -> operator delete[](void *)
+       160   -> operator new[](std::size_t)
+       160   -> std::vsnprintf
+       160   -> std::vsprintf
+      16   mbed::RawSerial::putc(int)
+        16   -- Indirect call
+        16   -> mbed::SerialBase::_base_putc(int)
+      16   mbed::RawSerial::puts(char const *)
+        16   -- Indirect call
+        16   -> mbed::SerialBase::_base_putc(int)
+       8   mbed::RawSerial::subobject RawSerial(PinName, PinName, int)
+         8   -> mbed::SerialBase::subobject SerialBase(PinName, PinName, int)
+       0   mbed::RawSerial::unlock()
+       8   mbed::RawSerial::~RawSerial()
+         8   -> mbed::SerialBase::subobject ~SerialBase()
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+      14  ?Subroutine0
+       2  mbed::RawSerial::RawSerial(PinName, PinName, int)
+      16  mbed::RawSerial::deleter ~RawSerial()
+      30  mbed::RawSerial::getc()
+       2  mbed::RawSerial::lock()
+     104  mbed::RawSerial::printf(char const *, ...)
+      34  mbed::RawSerial::putc(int)
+      56  mbed::RawSerial::puts(char const *)
+       4  mbed::RawSerial::subobject RawSerial(PinName, PinName, int)
+       2  mbed::RawSerial::unlock()
+      12  mbed::RawSerial::~RawSerial()
+     172  -- Other
+
+ 
+ 172 bytes in section .rodata
+ 280 bytes in section .text
+ 
+ 252 bytes of CODE  memory (+  28 bytes shared)
+   0 bytes of CONST memory (+ 172 bytes shared)
+
+Errors: none
+Warnings: none

@@ -1,0 +1,492 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:29
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\mbedtls\src\md5.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\md5.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\md5.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\md5.o
+#        .\mbed-os\features\mbedtls\src\md5.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\md5.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\md5.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\mbedtls\src\md5.c
+      1          /*
+      2           *  RFC 1321 compliant MD5 implementation
+      3           *
+      4           *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+      5           *  SPDX-License-Identifier: Apache-2.0
+      6           *
+      7           *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+      8           *  not use this file except in compliance with the License.
+      9           *  You may obtain a copy of the License at
+     10           *
+     11           *  http://www.apache.org/licenses/LICENSE-2.0
+     12           *
+     13           *  Unless required by applicable law or agreed to in writing, software
+     14           *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     15           *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     16           *  See the License for the specific language governing permissions and
+     17           *  limitations under the License.
+     18           *
+     19           *  This file is part of mbed TLS (https://tls.mbed.org)
+     20           */
+     21          /*
+     22           *  The MD5 algorithm was designed by Ron Rivest in 1991.
+     23           *
+     24           *  http://www.ietf.org/rfc/rfc1321.txt
+     25           */
+     26          
+     27          #if !defined(MBEDTLS_CONFIG_FILE)
+     28          #include "mbedtls/config.h"
+     29          #else
+     30          #include MBEDTLS_CONFIG_FILE
+     31          #endif
+     32          
+     33          #if defined(MBEDTLS_MD5_C)
+     34          
+     35          #include "mbedtls/md5.h"
+     36          
+     37          #include <string.h>
+     38          
+     39          #if defined(MBEDTLS_SELF_TEST)
+     40          #if defined(MBEDTLS_PLATFORM_C)
+     41          #include "mbedtls/platform.h"
+     42          #else
+     43          #include <stdio.h>
+     44          #define mbedtls_printf printf
+     45          #endif /* MBEDTLS_PLATFORM_C */
+     46          #endif /* MBEDTLS_SELF_TEST */
+     47          
+     48          #if !defined(MBEDTLS_MD5_ALT)
+     49          
+     50          /* Implementation that should never be optimized out by the compiler */
+     51          static void mbedtls_zeroize( void *v, size_t n ) {
+     52              volatile unsigned char *p = v; while( n-- ) *p++ = 0;
+     53          }
+     54          
+     55          /*
+     56           * 32-bit integer manipulation macros (little endian)
+     57           */
+     58          #ifndef GET_UINT32_LE
+     59          #define GET_UINT32_LE(n,b,i)                            \
+     60          {                                                       \
+     61              (n) = ( (uint32_t) (b)[(i)    ]       )             \
+     62                  | ( (uint32_t) (b)[(i) + 1] <<  8 )             \
+     63                  | ( (uint32_t) (b)[(i) + 2] << 16 )             \
+     64                  | ( (uint32_t) (b)[(i) + 3] << 24 );            \
+     65          }
+     66          #endif
+     67          
+     68          #ifndef PUT_UINT32_LE
+     69          #define PUT_UINT32_LE(n,b,i)                                    \
+     70          {                                                               \
+     71              (b)[(i)    ] = (unsigned char) ( ( (n)       ) & 0xFF );    \
+     72              (b)[(i) + 1] = (unsigned char) ( ( (n) >>  8 ) & 0xFF );    \
+     73              (b)[(i) + 2] = (unsigned char) ( ( (n) >> 16 ) & 0xFF );    \
+     74              (b)[(i) + 3] = (unsigned char) ( ( (n) >> 24 ) & 0xFF );    \
+     75          }
+     76          #endif
+     77          
+     78          void mbedtls_md5_init( mbedtls_md5_context *ctx )
+     79          {
+     80              memset( ctx, 0, sizeof( mbedtls_md5_context ) );
+     81          }
+     82          
+     83          void mbedtls_md5_free( mbedtls_md5_context *ctx )
+     84          {
+     85              if( ctx == NULL )
+     86                  return;
+     87          
+     88              mbedtls_zeroize( ctx, sizeof( mbedtls_md5_context ) );
+     89          }
+     90          
+     91          void mbedtls_md5_clone( mbedtls_md5_context *dst,
+     92                                  const mbedtls_md5_context *src )
+     93          {
+     94              *dst = *src;
+     95          }
+     96          
+     97          /*
+     98           * MD5 context setup
+     99           */
+    100          void mbedtls_md5_starts( mbedtls_md5_context *ctx )
+    101          {
+    102              ctx->total[0] = 0;
+    103              ctx->total[1] = 0;
+    104          
+    105              ctx->state[0] = 0x67452301;
+    106              ctx->state[1] = 0xEFCDAB89;
+    107              ctx->state[2] = 0x98BADCFE;
+    108              ctx->state[3] = 0x10325476;
+    109          }
+    110          
+    111          #if !defined(MBEDTLS_MD5_PROCESS_ALT)
+    112          void mbedtls_md5_process( mbedtls_md5_context *ctx, const unsigned char data[64] )
+    113          {
+    114              uint32_t X[16], A, B, C, D;
+    115          
+    116              GET_UINT32_LE( X[ 0], data,  0 );
+    117              GET_UINT32_LE( X[ 1], data,  4 );
+    118              GET_UINT32_LE( X[ 2], data,  8 );
+    119              GET_UINT32_LE( X[ 3], data, 12 );
+    120              GET_UINT32_LE( X[ 4], data, 16 );
+    121              GET_UINT32_LE( X[ 5], data, 20 );
+    122              GET_UINT32_LE( X[ 6], data, 24 );
+    123              GET_UINT32_LE( X[ 7], data, 28 );
+    124              GET_UINT32_LE( X[ 8], data, 32 );
+    125              GET_UINT32_LE( X[ 9], data, 36 );
+    126              GET_UINT32_LE( X[10], data, 40 );
+    127              GET_UINT32_LE( X[11], data, 44 );
+    128              GET_UINT32_LE( X[12], data, 48 );
+    129              GET_UINT32_LE( X[13], data, 52 );
+    130              GET_UINT32_LE( X[14], data, 56 );
+    131              GET_UINT32_LE( X[15], data, 60 );
+    132          
+    133          #define S(x,n) ((x << n) | ((x & 0xFFFFFFFF) >> (32 - n)))
+    134          
+    135          #define P(a,b,c,d,k,s,t)                                \
+    136          {                                                       \
+    137              a += F(b,c,d) + X[k] + t; a = S(a,s) + b;           \
+    138          }
+    139          
+    140              A = ctx->state[0];
+    141              B = ctx->state[1];
+    142              C = ctx->state[2];
+    143              D = ctx->state[3];
+    144          
+    145          #define F(x,y,z) (z ^ (x & (y ^ z)))
+    146          
+    147              P( A, B, C, D,  0,  7, 0xD76AA478 );
+    148              P( D, A, B, C,  1, 12, 0xE8C7B756 );
+    149              P( C, D, A, B,  2, 17, 0x242070DB );
+    150              P( B, C, D, A,  3, 22, 0xC1BDCEEE );
+    151              P( A, B, C, D,  4,  7, 0xF57C0FAF );
+    152              P( D, A, B, C,  5, 12, 0x4787C62A );
+    153              P( C, D, A, B,  6, 17, 0xA8304613 );
+    154              P( B, C, D, A,  7, 22, 0xFD469501 );
+    155              P( A, B, C, D,  8,  7, 0x698098D8 );
+    156              P( D, A, B, C,  9, 12, 0x8B44F7AF );
+    157              P( C, D, A, B, 10, 17, 0xFFFF5BB1 );
+    158              P( B, C, D, A, 11, 22, 0x895CD7BE );
+    159              P( A, B, C, D, 12,  7, 0x6B901122 );
+    160              P( D, A, B, C, 13, 12, 0xFD987193 );
+    161              P( C, D, A, B, 14, 17, 0xA679438E );
+    162              P( B, C, D, A, 15, 22, 0x49B40821 );
+    163          
+    164          #undef F
+    165          
+    166          #define F(x,y,z) (y ^ (z & (x ^ y)))
+    167          
+    168              P( A, B, C, D,  1,  5, 0xF61E2562 );
+    169              P( D, A, B, C,  6,  9, 0xC040B340 );
+    170              P( C, D, A, B, 11, 14, 0x265E5A51 );
+    171              P( B, C, D, A,  0, 20, 0xE9B6C7AA );
+    172              P( A, B, C, D,  5,  5, 0xD62F105D );
+    173              P( D, A, B, C, 10,  9, 0x02441453 );
+    174              P( C, D, A, B, 15, 14, 0xD8A1E681 );
+    175              P( B, C, D, A,  4, 20, 0xE7D3FBC8 );
+    176              P( A, B, C, D,  9,  5, 0x21E1CDE6 );
+    177              P( D, A, B, C, 14,  9, 0xC33707D6 );
+    178              P( C, D, A, B,  3, 14, 0xF4D50D87 );
+    179              P( B, C, D, A,  8, 20, 0x455A14ED );
+    180              P( A, B, C, D, 13,  5, 0xA9E3E905 );
+    181              P( D, A, B, C,  2,  9, 0xFCEFA3F8 );
+    182              P( C, D, A, B,  7, 14, 0x676F02D9 );
+    183              P( B, C, D, A, 12, 20, 0x8D2A4C8A );
+    184          
+    185          #undef F
+    186          
+    187          #define F(x,y,z) (x ^ y ^ z)
+    188          
+    189              P( A, B, C, D,  5,  4, 0xFFFA3942 );
+    190              P( D, A, B, C,  8, 11, 0x8771F681 );
+    191              P( C, D, A, B, 11, 16, 0x6D9D6122 );
+    192              P( B, C, D, A, 14, 23, 0xFDE5380C );
+    193              P( A, B, C, D,  1,  4, 0xA4BEEA44 );
+    194              P( D, A, B, C,  4, 11, 0x4BDECFA9 );
+    195              P( C, D, A, B,  7, 16, 0xF6BB4B60 );
+    196              P( B, C, D, A, 10, 23, 0xBEBFBC70 );
+    197              P( A, B, C, D, 13,  4, 0x289B7EC6 );
+    198              P( D, A, B, C,  0, 11, 0xEAA127FA );
+    199              P( C, D, A, B,  3, 16, 0xD4EF3085 );
+    200              P( B, C, D, A,  6, 23, 0x04881D05 );
+    201              P( A, B, C, D,  9,  4, 0xD9D4D039 );
+    202              P( D, A, B, C, 12, 11, 0xE6DB99E5 );
+    203              P( C, D, A, B, 15, 16, 0x1FA27CF8 );
+    204              P( B, C, D, A,  2, 23, 0xC4AC5665 );
+    205          
+    206          #undef F
+    207          
+    208          #define F(x,y,z) (y ^ (x | ~z))
+    209          
+    210              P( A, B, C, D,  0,  6, 0xF4292244 );
+    211              P( D, A, B, C,  7, 10, 0x432AFF97 );
+    212              P( C, D, A, B, 14, 15, 0xAB9423A7 );
+    213              P( B, C, D, A,  5, 21, 0xFC93A039 );
+    214              P( A, B, C, D, 12,  6, 0x655B59C3 );
+    215              P( D, A, B, C,  3, 10, 0x8F0CCC92 );
+    216              P( C, D, A, B, 10, 15, 0xFFEFF47D );
+    217              P( B, C, D, A,  1, 21, 0x85845DD1 );
+    218              P( A, B, C, D,  8,  6, 0x6FA87E4F );
+    219              P( D, A, B, C, 15, 10, 0xFE2CE6E0 );
+    220              P( C, D, A, B,  6, 15, 0xA3014314 );
+    221              P( B, C, D, A, 13, 21, 0x4E0811A1 );
+    222              P( A, B, C, D,  4,  6, 0xF7537E82 );
+    223              P( D, A, B, C, 11, 10, 0xBD3AF235 );
+    224              P( C, D, A, B,  2, 15, 0x2AD7D2BB );
+    225              P( B, C, D, A,  9, 21, 0xEB86D391 );
+    226          
+    227          #undef F
+    228          
+    229              ctx->state[0] += A;
+    230              ctx->state[1] += B;
+    231              ctx->state[2] += C;
+    232              ctx->state[3] += D;
+    233          }
+    234          #endif /* !MBEDTLS_MD5_PROCESS_ALT */
+    235          
+    236          /*
+    237           * MD5 process buffer
+    238           */
+    239          void mbedtls_md5_update( mbedtls_md5_context *ctx, const unsigned char *input, size_t ilen )
+    240          {
+    241              size_t fill;
+    242              uint32_t left;
+    243          
+    244              if( ilen == 0 )
+    245                  return;
+    246          
+    247              left = ctx->total[0] & 0x3F;
+    248              fill = 64 - left;
+    249          
+    250              ctx->total[0] += (uint32_t) ilen;
+    251              ctx->total[0] &= 0xFFFFFFFF;
+    252          
+    253              if( ctx->total[0] < (uint32_t) ilen )
+    254                  ctx->total[1]++;
+    255          
+    256              if( left && ilen >= fill )
+    257              {
+    258                  memcpy( (void *) (ctx->buffer + left), input, fill );
+    259                  mbedtls_md5_process( ctx, ctx->buffer );
+    260                  input += fill;
+    261                  ilen  -= fill;
+    262                  left = 0;
+    263              }
+    264          
+    265              while( ilen >= 64 )
+    266              {
+    267                  mbedtls_md5_process( ctx, input );
+    268                  input += 64;
+    269                  ilen  -= 64;
+    270              }
+    271          
+    272              if( ilen > 0 )
+    273              {
+    274                  memcpy( (void *) (ctx->buffer + left), input, ilen );
+    275              }
+    276          }
+    277          
+    278          static const unsigned char md5_padding[64] =
+    279          {
+    280           0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    281              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    282              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    283              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    284          };
+    285          
+    286          /*
+    287           * MD5 final digest
+    288           */
+    289          void mbedtls_md5_finish( mbedtls_md5_context *ctx, unsigned char output[16] )
+    290          {
+    291              uint32_t last, padn;
+    292              uint32_t high, low;
+    293              unsigned char msglen[8];
+    294          
+    295              high = ( ctx->total[0] >> 29 )
+    296                   | ( ctx->total[1] <<  3 );
+    297              low  = ( ctx->total[0] <<  3 );
+    298          
+    299              PUT_UINT32_LE( low,  msglen, 0 );
+    300              PUT_UINT32_LE( high, msglen, 4 );
+    301          
+    302              last = ctx->total[0] & 0x3F;
+    303              padn = ( last < 56 ) ? ( 56 - last ) : ( 120 - last );
+    304          
+    305              mbedtls_md5_update( ctx, md5_padding, padn );
+    306              mbedtls_md5_update( ctx, msglen, 8 );
+    307          
+    308              PUT_UINT32_LE( ctx->state[0], output,  0 );
+    309              PUT_UINT32_LE( ctx->state[1], output,  4 );
+    310              PUT_UINT32_LE( ctx->state[2], output,  8 );
+    311              PUT_UINT32_LE( ctx->state[3], output, 12 );
+    312          }
+    313          
+    314          #endif /* !MBEDTLS_MD5_ALT */
+    315          
+    316          /*
+    317           * output = MD5( input buffer )
+    318           */
+    319          void mbedtls_md5( const unsigned char *input, size_t ilen, unsigned char output[16] )
+    320          {
+    321              mbedtls_md5_context ctx;
+    322          
+    323              mbedtls_md5_init( &ctx );
+    324              mbedtls_md5_starts( &ctx );
+    325              mbedtls_md5_update( &ctx, input, ilen );
+    326              mbedtls_md5_finish( &ctx, output );
+    327              mbedtls_md5_free( &ctx );
+    328          }
+    329          
+    330          #if defined(MBEDTLS_SELF_TEST)
+    331          /*
+    332           * RFC 1321 test vectors
+    333           */
+    334          static const unsigned char md5_test_buf[7][81] =
+    335          {
+    336              { "" },
+    337              { "a" },
+    338              { "abc" },
+    339              { "message digest" },
+    340              { "abcdefghijklmnopqrstuvwxyz" },
+    341              { "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" },
+    342              { "12345678901234567890123456789012345678901234567890123456789012" \
+    343                "345678901234567890" }
+    344          };
+    345          
+    346          static const int md5_test_buflen[7] =
+    347          {
+    348              0, 1, 3, 14, 26, 62, 80
+    349          };
+    350          
+    351          static const unsigned char md5_test_sum[7][16] =
+    352          {
+    353              { 0xD4, 0x1D, 0x8C, 0xD9, 0x8F, 0x00, 0xB2, 0x04,
+    354                0xE9, 0x80, 0x09, 0x98, 0xEC, 0xF8, 0x42, 0x7E },
+    355              { 0x0C, 0xC1, 0x75, 0xB9, 0xC0, 0xF1, 0xB6, 0xA8,
+    356                0x31, 0xC3, 0x99, 0xE2, 0x69, 0x77, 0x26, 0x61 },
+    357              { 0x90, 0x01, 0x50, 0x98, 0x3C, 0xD2, 0x4F, 0xB0,
+    358                0xD6, 0x96, 0x3F, 0x7D, 0x28, 0xE1, 0x7F, 0x72 },
+    359              { 0xF9, 0x6B, 0x69, 0x7D, 0x7C, 0xB7, 0x93, 0x8D,
+    360                0x52, 0x5A, 0x2F, 0x31, 0xAA, 0xF1, 0x61, 0xD0 },
+    361              { 0xC3, 0xFC, 0xD3, 0xD7, 0x61, 0x92, 0xE4, 0x00,
+    362                0x7D, 0xFB, 0x49, 0x6C, 0xCA, 0x67, 0xE1, 0x3B },
+    363              { 0xD1, 0x74, 0xAB, 0x98, 0xD2, 0x77, 0xD9, 0xF5,
+    364                0xA5, 0x61, 0x1C, 0x2C, 0x9F, 0x41, 0x9D, 0x9F },
+    365              { 0x57, 0xED, 0xF4, 0xA2, 0x2B, 0xE3, 0xC9, 0x55,
+    366                0xAC, 0x49, 0xDA, 0x2E, 0x21, 0x07, 0xB6, 0x7A }
+    367          };
+    368          
+    369          /*
+    370           * Checkup routine
+    371           */
+    372          int mbedtls_md5_self_test( int verbose )
+    373          {
+    374              int i;
+    375              unsigned char md5sum[16];
+    376          
+    377              for( i = 0; i < 7; i++ )
+    378              {
+    379                  if( verbose != 0 )
+    380                      mbedtls_printf( "  MD5 test #%d: ", i + 1 );
+    381          
+    382                  mbedtls_md5( md5_test_buf[i], md5_test_buflen[i], md5sum );
+    383          
+    384                  if( memcmp( md5sum, md5_test_sum[i], 16 ) != 0 )
+    385                  {
+    386                      if( verbose != 0 )
+    387                          mbedtls_printf( "failed\n" );
+    388          
+    389                      return( 1 );
+    390                  }
+    391          
+    392                  if( verbose != 0 )
+    393                      mbedtls_printf( "passed\n" );
+    394              }
+    395          
+    396              if( verbose != 0 )
+    397                  mbedtls_printf( "\n" );
+    398          
+    399              return( 0 );
+    400          }
+    401          
+    402          #endif /* MBEDTLS_SELF_TEST */
+    403          
+    404          #endif /* MBEDTLS_MD5_C */
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

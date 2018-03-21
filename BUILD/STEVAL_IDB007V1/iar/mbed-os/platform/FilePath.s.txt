@@ -1,0 +1,328 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:42
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\platform\FilePath.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FilePath.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FilePath.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FilePath.o
+#        .\mbed-os\platform\FilePath.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FilePath.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FilePath.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\platform\FilePath.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "platform/FilePath.h"
+     17          
+     18          namespace mbed {
+     19          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::FilePath::subobject FilePath(char const *)
+   \                     _ZN4mbed8FilePathC2EPKc: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN4mbed8FilePathC1EPKc
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     20          FilePath::FilePath(const char* file_path) : file_name(NULL), fb(NULL) {
+   \                     _ZN4mbed8FilePathC1EPKc: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x0008             MOVS     R0,R1
+   \   00000006   0x2100             MOVS     R1,#+0
+   \   00000008   0x6021             STR      R1,[R4, #+0]
+   \   0000000A   0x6061             STR      R1,[R4, #+4]
+     21              if ((file_path[0] != '/') || (file_path[1] == 0)) return;
+   \   0000000C   0x7802             LDRB     R2,[R0, #+0]
+   \   0000000E   0x2A2F             CMP      R2,#+47
+   \   00000010   0xD114             BNE      ??FilePath_0
+   \   00000012   0x7842             LDRB     R2,[R0, #+1]
+   \   00000014   0x2A00             CMP      R2,#+0
+   \   00000016   0xD011             BEQ      ??FilePath_0
+     22          
+     23              const char* file_system = &file_path[1];
+     24              file_name = file_system;
+   \   00000018   0x1C42             ADDS     R2,R0,#+1
+   \   0000001A   0xE001             B        ??FilePath_1
+     25              int len = 0;
+     26              while (true) {
+     27                  char c = *file_name;
+     28                  if (c == '/') { // end of object name
+     29                      file_name++; // point to one char after the '/'
+     30                      break;
+     31                  }
+     32                  if (c == 0) { // end of object name, with no filename
+     33                      break;
+     34                  }
+     35                  len++;
+   \                     ??FilePath_2: (+1)
+   \   0000001C   0x1C49             ADDS     R1,R1,#+1
+     36                  file_name++;
+   \   0000001E   0x1C52             ADDS     R2,R2,#+1
+   \                     ??FilePath_1: (+1)
+   \   00000020   0x6022             STR      R2,[R4, #+0]
+   \   00000022   0x6822             LDR      R2,[R4, #+0]
+   \   00000024   0x7813             LDRB     R3,[R2, #+0]
+   \   00000026   0x2B2F             CMP      R3,#+47
+   \   00000028   0xD102             BNE      ??FilePath_3
+   \   0000002A   0x1C52             ADDS     R2,R2,#+1
+   \   0000002C   0x6022             STR      R2,[R4, #+0]
+   \   0000002E   0xE001             B        ??FilePath_4
+   \                     ??FilePath_3: (+1)
+   \   00000030   0x2B00             CMP      R3,#+0
+   \   00000032   0xD1F3             BNE      ??FilePath_2
+     37              }
+     38          
+     39              fb = FileBase::lookup(file_system, len);
+   \                     ??FilePath_4: (+1)
+   \   00000034   0x1C40             ADDS     R0,R0,#+1
+   \   00000036   0x.... 0x....      BL       _ZN4mbed8FileBase6lookupEPKcj
+   \   0000003A   0x6060             STR      R0,[R4, #+4]
+     40          }
+   \                     ??FilePath_0: (+1)
+   \   0000003C   0x0020             MOVS     R0,R4
+   \   0000003E   0xBD10             POP      {R4,PC}          ;; return
+     41          
+
+   \                                 In section .text, align 2, keep-with-next
+     42          const char* FilePath::fileName(void) {
+     43              return file_name;
+   \                     _ZN4mbed8FilePath8fileNameEv: (+1)
+   \   00000000   0x6800             LDR      R0,[R0, #+0]
+   \   00000002   0x4770             BX       LR               ;; return
+     44          }
+     45          
+
+   \                                 In section .text, align 2, keep-with-next
+     46          bool FilePath::isFileSystem(void) {
+     47              if (NULL == fb)
+   \                     _ZN4mbed8FilePath12isFileSystemEv: (+1)
+   \   00000000   0x6840             LDR      R0,[R0, #+4]
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0xD100             BNE      ??isFileSystem_0
+   \   00000006   0x4770             BX       LR
+     48                  return false;
+     49              return (fb->getPathType() == FileSystemPathType);
+   \                     ??isFileSystem_0: (+1)
+   \   00000008   0xB580             PUSH     {R7,LR}
+   \   0000000A   0x.... 0x....      BL       _ZN4mbed8FileBase11getPathTypeEv
+   \   0000000E   0x2801             CMP      R0,#+1
+   \   00000010   0xD000             BEQ      ??isFileSystem_1
+   \   00000012   0x2000             MOVS     R0,#+0
+   \                     ??isFileSystem_1: (+1)
+   \   00000014   0xBD02             POP      {R1,PC}          ;; return
+     50          }
+     51          
+
+   \                                 In section .text, align 2, keep-with-next
+     52          FileSystemLike* FilePath::fileSystem(void) {
+   \                     _ZN4mbed8FilePath10fileSystemEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     53              if (isFileSystem()) {
+   \   00000004   0x6860             LDR      R0,[R4, #+4]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD008             BEQ      ??fileSystem_0
+   \   0000000A   0x.... 0x....      BL       _ZN4mbed8FileBase11getPathTypeEv
+   \   0000000E   0x2801             CMP      R0,#+1
+   \   00000010   0xD104             BNE      ??fileSystem_0
+     54                  return static_cast<FileSystemLike*>(fb);
+   \   00000012   0x6860             LDR      R0,[R4, #+4]
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD002             BEQ      ??fileSystem_1
+   \   00000018   0x1F00             SUBS     R0,R0,#+4
+   \   0000001A   0xBD10             POP      {R4,PC}
+     55              }
+     56              return NULL;
+   \                     ??fileSystem_0: (+1)
+   \   0000001C   0x2000             MOVS     R0,#+0
+   \                     ??fileSystem_1: (+1)
+   \   0000001E   0xBD10             POP      {R4,PC}          ;; return
+     57          }
+     58          
+
+   \                                 In section .text, align 2, keep-with-next
+     59          bool FilePath::isFile(void) {
+     60              if (NULL == fb)
+   \                     _ZN4mbed8FilePath6isFileEv: (+1)
+   \   00000000   0x6840             LDR      R0,[R0, #+4]
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0xD100             BNE      ??isFile_0
+   \   00000006   0x4770             BX       LR
+     61                  return false;
+     62              return (fb->getPathType() == FilePathType);
+   \                     ??isFile_0: (+1)
+   \   00000008   0xB580             PUSH     {R7,LR}
+   \   0000000A   0x.... 0x....      BL       _ZN4mbed8FileBase11getPathTypeEv
+   \   0000000E   0x1E40             SUBS     R0,R0,#+1
+   \   00000010   0x4180             SBCS     R0,R0,R0
+   \   00000012   0x0FC0             LSRS     R0,R0,#+31
+   \   00000014   0xBD02             POP      {R1,PC}          ;; return
+     63          }
+     64          
+
+   \                                 In section .text, align 2, keep-with-next
+     65          FileLike* FilePath::file(void) {
+   \                     _ZN4mbed8FilePath4fileEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     66              if (isFile()) {
+   \   00000004   0x6860             LDR      R0,[R4, #+4]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD008             BEQ      ??file_0
+   \   0000000A   0x.... 0x....      BL       _ZN4mbed8FileBase11getPathTypeEv
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD104             BNE      ??file_0
+     67                  return (FileLike*)fb;
+   \   00000012   0x6860             LDR      R0,[R4, #+4]
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD002             BEQ      ??file_1
+   \   00000018   0x1F00             SUBS     R0,R0,#+4
+   \   0000001A   0xBD10             POP      {R4,PC}
+     68              }
+     69              return NULL;
+   \                     ??file_0: (+1)
+   \   0000001C   0x2000             MOVS     R0,#+0
+   \                     ??file_1: (+1)
+   \   0000001E   0xBD10             POP      {R4,PC}          ;; return
+     70          }
+     71          
+
+   \                                 In section .text, align 2, keep-with-next
+     72          bool FilePath::exists(void) {
+     73              return fb != NULL;
+   \                     _ZN4mbed8FilePath6existsEv: (+1)
+   \   00000000   0x6840             LDR      R0,[R0, #+4]
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0xD000             BEQ      ??exists_0
+   \   00000006   0x2001             MOVS     R0,#+1
+   \                     ??exists_0: (+1)
+   \   00000008   0x4770             BX       LR               ;; return
+     74          }
+     75          
+     76          } // namespace mbed
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   mbed::FilePath::FilePath(char const *)
+         8   -> mbed::FileBase::lookup(char const *, unsigned int)
+       0   mbed::FilePath::exists()
+       8   mbed::FilePath::file()
+         8   -> mbed::FileBase::getPathType()
+       0   mbed::FilePath::fileName()
+       8   mbed::FilePath::fileSystem()
+         8   -> mbed::FileBase::getPathType()
+       8   mbed::FilePath::isFile()
+         8   -> mbed::FileBase::getPathType()
+       8   mbed::FilePath::isFileSystem()
+         8   -> mbed::FileBase::getPathType()
+       8   mbed::FilePath::subobject FilePath(char const *)
+         8   -> mbed::FilePath::FilePath(char const *)
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      64  mbed::FilePath::FilePath(char const *)
+      10  mbed::FilePath::exists()
+      32  mbed::FilePath::file()
+       4  mbed::FilePath::fileName()
+      32  mbed::FilePath::fileSystem()
+      22  mbed::FilePath::isFile()
+      22  mbed::FilePath::isFileSystem()
+       8  mbed::FilePath::subobject FilePath(char const *)
+     292  -- Other
+
+ 
+ 292 bytes in section .rodata
+ 194 bytes in section .text
+ 
+ 194 bytes of CODE  memory
+   0 bytes of CONST memory (+ 292 bytes shared)
+
+Errors: none
+Warnings: none

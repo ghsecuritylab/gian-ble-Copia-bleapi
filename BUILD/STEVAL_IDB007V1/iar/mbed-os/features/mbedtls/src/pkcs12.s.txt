@@ -1,0 +1,453 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:31
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\mbedtls\src\pkcs12.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\pkcs12.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\pkcs12.s.txt
+#        -o .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\pkcs12.o
+#        .\mbed-os\features\mbedtls\src\pkcs12.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\pkcs12.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\pkcs12.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\mbedtls\src\pkcs12.c
+      1          /*
+      2           *  PKCS#12 Personal Information Exchange Syntax
+      3           *
+      4           *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+      5           *  SPDX-License-Identifier: Apache-2.0
+      6           *
+      7           *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+      8           *  not use this file except in compliance with the License.
+      9           *  You may obtain a copy of the License at
+     10           *
+     11           *  http://www.apache.org/licenses/LICENSE-2.0
+     12           *
+     13           *  Unless required by applicable law or agreed to in writing, software
+     14           *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     15           *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     16           *  See the License for the specific language governing permissions and
+     17           *  limitations under the License.
+     18           *
+     19           *  This file is part of mbed TLS (https://tls.mbed.org)
+     20           */
+     21          /*
+     22           *  The PKCS #12 Personal Information Exchange Syntax Standard v1.1
+     23           *
+     24           *  http://www.rsa.com/rsalabs/pkcs/files/h11301-wp-pkcs-12v1-1-personal-information-exchange-syntax.pdf
+     25           *  ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-12/pkcs-12v1-1.asn
+     26           */
+     27          
+     28          #if !defined(MBEDTLS_CONFIG_FILE)
+     29          #include "mbedtls/config.h"
+     30          #else
+     31          #include MBEDTLS_CONFIG_FILE
+     32          #endif
+     33          
+     34          #if defined(MBEDTLS_PKCS12_C)
+     35          
+     36          #include "mbedtls/pkcs12.h"
+     37          #include "mbedtls/asn1.h"
+     38          #include "mbedtls/cipher.h"
+     39          
+     40          #include <string.h>
+     41          
+     42          #if defined(MBEDTLS_ARC4_C)
+     43          #include "mbedtls/arc4.h"
+     44          #endif
+     45          
+     46          #if defined(MBEDTLS_DES_C)
+     47          #include "mbedtls/des.h"
+     48          #endif
+     49          
+     50          /* Implementation that should never be optimized out by the compiler */
+     51          static void mbedtls_zeroize( void *v, size_t n ) {
+     52              volatile unsigned char *p = v; while( n-- ) *p++ = 0;
+     53          }
+     54          
+     55          static int pkcs12_parse_pbe_params( mbedtls_asn1_buf *params,
+     56                                              mbedtls_asn1_buf *salt, int *iterations )
+     57          {
+     58              int ret;
+     59              unsigned char **p = &params->p;
+     60              const unsigned char *end = params->p + params->len;
+     61          
+     62              /*
+     63               *  pkcs-12PbeParams ::= SEQUENCE {
+     64               *    salt          OCTET STRING,
+     65               *    iterations    INTEGER
+     66               *  }
+     67               *
+     68               */
+     69              if( params->tag != ( MBEDTLS_ASN1_CONSTRUCTED | MBEDTLS_ASN1_SEQUENCE ) )
+     70                  return( MBEDTLS_ERR_PKCS12_PBE_INVALID_FORMAT +
+     71                          MBEDTLS_ERR_ASN1_UNEXPECTED_TAG );
+     72          
+     73              if( ( ret = mbedtls_asn1_get_tag( p, end, &salt->len, MBEDTLS_ASN1_OCTET_STRING ) ) != 0 )
+     74                  return( MBEDTLS_ERR_PKCS12_PBE_INVALID_FORMAT + ret );
+     75          
+     76              salt->p = *p;
+     77              *p += salt->len;
+     78          
+     79              if( ( ret = mbedtls_asn1_get_int( p, end, iterations ) ) != 0 )
+     80                  return( MBEDTLS_ERR_PKCS12_PBE_INVALID_FORMAT + ret );
+     81          
+     82              if( *p != end )
+     83                  return( MBEDTLS_ERR_PKCS12_PBE_INVALID_FORMAT +
+     84                          MBEDTLS_ERR_ASN1_LENGTH_MISMATCH );
+     85          
+     86              return( 0 );
+     87          }
+     88          
+     89          #define PKCS12_MAX_PWDLEN 128
+     90          
+     91          static int pkcs12_pbe_derive_key_iv( mbedtls_asn1_buf *pbe_params, mbedtls_md_type_t md_type,
+     92                                               const unsigned char *pwd,  size_t pwdlen,
+     93                                               unsigned char *key, size_t keylen,
+     94                                               unsigned char *iv,  size_t ivlen )
+     95          {
+     96              int ret, iterations = 0;
+     97              mbedtls_asn1_buf salt;
+     98              size_t i;
+     99              unsigned char unipwd[PKCS12_MAX_PWDLEN * 2 + 2];
+    100          
+    101              if( pwdlen > PKCS12_MAX_PWDLEN )
+    102                  return( MBEDTLS_ERR_PKCS12_BAD_INPUT_DATA );
+    103          
+    104              memset( &salt, 0, sizeof(mbedtls_asn1_buf) );
+    105              memset( &unipwd, 0, sizeof(unipwd) );
+    106          
+    107              if( ( ret = pkcs12_parse_pbe_params( pbe_params, &salt,
+    108                                                   &iterations ) ) != 0 )
+    109                  return( ret );
+    110          
+    111              for( i = 0; i < pwdlen; i++ )
+    112                  unipwd[i * 2 + 1] = pwd[i];
+    113          
+    114              if( ( ret = mbedtls_pkcs12_derivation( key, keylen, unipwd, pwdlen * 2 + 2,
+    115                                             salt.p, salt.len, md_type,
+    116                                             MBEDTLS_PKCS12_DERIVE_KEY, iterations ) ) != 0 )
+    117              {
+    118                  return( ret );
+    119              }
+    120          
+    121              if( iv == NULL || ivlen == 0 )
+    122                  return( 0 );
+    123          
+    124              if( ( ret = mbedtls_pkcs12_derivation( iv, ivlen, unipwd, pwdlen * 2 + 2,
+    125                                             salt.p, salt.len, md_type,
+    126                                             MBEDTLS_PKCS12_DERIVE_IV, iterations ) ) != 0 )
+    127              {
+    128                  return( ret );
+    129              }
+    130              return( 0 );
+    131          }
+    132          
+    133          #undef PKCS12_MAX_PWDLEN
+    134          
+    135          int mbedtls_pkcs12_pbe_sha1_rc4_128( mbedtls_asn1_buf *pbe_params, int mode,
+    136                                       const unsigned char *pwd,  size_t pwdlen,
+    137                                       const unsigned char *data, size_t len,
+    138                                       unsigned char *output )
+    139          {
+    140          #if !defined(MBEDTLS_ARC4_C)
+    141              ((void) pbe_params);
+    142              ((void) mode);
+    143              ((void) pwd);
+    144              ((void) pwdlen);
+    145              ((void) data);
+    146              ((void) len);
+    147              ((void) output);
+    148              return( MBEDTLS_ERR_PKCS12_FEATURE_UNAVAILABLE );
+    149          #else
+    150              int ret;
+    151              unsigned char key[16];
+    152              mbedtls_arc4_context ctx;
+    153              ((void) mode);
+    154          
+    155              mbedtls_arc4_init( &ctx );
+    156          
+    157              if( ( ret = pkcs12_pbe_derive_key_iv( pbe_params, MBEDTLS_MD_SHA1,
+    158                                                    pwd, pwdlen,
+    159                                                    key, 16, NULL, 0 ) ) != 0 )
+    160              {
+    161                  return( ret );
+    162              }
+    163          
+    164              mbedtls_arc4_setup( &ctx, key, 16 );
+    165              if( ( ret = mbedtls_arc4_crypt( &ctx, len, data, output ) ) != 0 )
+    166                  goto exit;
+    167          
+    168          exit:
+    169              mbedtls_zeroize( key, sizeof( key ) );
+    170              mbedtls_arc4_free( &ctx );
+    171          
+    172              return( ret );
+    173          #endif /* MBEDTLS_ARC4_C */
+    174          }
+    175          
+    176          int mbedtls_pkcs12_pbe( mbedtls_asn1_buf *pbe_params, int mode,
+    177                          mbedtls_cipher_type_t cipher_type, mbedtls_md_type_t md_type,
+    178                          const unsigned char *pwd,  size_t pwdlen,
+    179                          const unsigned char *data, size_t len,
+    180                          unsigned char *output )
+    181          {
+    182              int ret, keylen = 0;
+    183              unsigned char key[32];
+    184              unsigned char iv[16];
+    185              const mbedtls_cipher_info_t *cipher_info;
+    186              mbedtls_cipher_context_t cipher_ctx;
+    187              size_t olen = 0;
+    188          
+    189              cipher_info = mbedtls_cipher_info_from_type( cipher_type );
+    190              if( cipher_info == NULL )
+    191                  return( MBEDTLS_ERR_PKCS12_FEATURE_UNAVAILABLE );
+    192          
+    193              keylen = cipher_info->key_bitlen / 8;
+    194          
+    195              if( ( ret = pkcs12_pbe_derive_key_iv( pbe_params, md_type, pwd, pwdlen,
+    196                                                    key, keylen,
+    197                                                    iv, cipher_info->iv_size ) ) != 0 )
+    198              {
+    199                  return( ret );
+    200              }
+    201          
+    202              mbedtls_cipher_init( &cipher_ctx );
+    203          
+    204              if( ( ret = mbedtls_cipher_setup( &cipher_ctx, cipher_info ) ) != 0 )
+    205                  goto exit;
+    206          
+    207              if( ( ret = mbedtls_cipher_setkey( &cipher_ctx, key, 8 * keylen, (mbedtls_operation_t) mode ) ) != 0 )
+    208                  goto exit;
+    209          
+    210              if( ( ret = mbedtls_cipher_set_iv( &cipher_ctx, iv, cipher_info->iv_size ) ) != 0 )
+    211                  goto exit;
+    212          
+    213              if( ( ret = mbedtls_cipher_reset( &cipher_ctx ) ) != 0 )
+    214                  goto exit;
+    215          
+    216              if( ( ret = mbedtls_cipher_update( &cipher_ctx, data, len,
+    217                                          output, &olen ) ) != 0 )
+    218              {
+    219                  goto exit;
+    220              }
+    221          
+    222              if( ( ret = mbedtls_cipher_finish( &cipher_ctx, output + olen, &olen ) ) != 0 )
+    223                  ret = MBEDTLS_ERR_PKCS12_PASSWORD_MISMATCH;
+    224          
+    225          exit:
+    226              mbedtls_zeroize( key, sizeof( key ) );
+    227              mbedtls_zeroize( iv,  sizeof( iv  ) );
+    228              mbedtls_cipher_free( &cipher_ctx );
+    229          
+    230              return( ret );
+    231          }
+    232          
+    233          static void pkcs12_fill_buffer( unsigned char *data, size_t data_len,
+    234                                          const unsigned char *filler, size_t fill_len )
+    235          {
+    236              unsigned char *p = data;
+    237              size_t use_len;
+    238          
+    239              while( data_len > 0 )
+    240              {
+    241                  use_len = ( data_len > fill_len ) ? fill_len : data_len;
+    242                  memcpy( p, filler, use_len );
+    243                  p += use_len;
+    244                  data_len -= use_len;
+    245              }
+    246          }
+    247          
+    248          int mbedtls_pkcs12_derivation( unsigned char *data, size_t datalen,
+    249                                 const unsigned char *pwd, size_t pwdlen,
+    250                                 const unsigned char *salt, size_t saltlen,
+    251                                 mbedtls_md_type_t md_type, int id, int iterations )
+    252          {
+    253              int ret;
+    254              unsigned int j;
+    255          
+    256              unsigned char diversifier[128];
+    257              unsigned char salt_block[128], pwd_block[128], hash_block[128];
+    258              unsigned char hash_output[MBEDTLS_MD_MAX_SIZE];
+    259              unsigned char *p;
+    260              unsigned char c;
+    261          
+    262              size_t hlen, use_len, v, i;
+    263          
+    264              const mbedtls_md_info_t *md_info;
+    265              mbedtls_md_context_t md_ctx;
+    266          
+    267              // This version only allows max of 64 bytes of password or salt
+    268              if( datalen > 128 || pwdlen > 64 || saltlen > 64 )
+    269                  return( MBEDTLS_ERR_PKCS12_BAD_INPUT_DATA );
+    270          
+    271              md_info = mbedtls_md_info_from_type( md_type );
+    272              if( md_info == NULL )
+    273                  return( MBEDTLS_ERR_PKCS12_FEATURE_UNAVAILABLE );
+    274          
+    275              mbedtls_md_init( &md_ctx );
+    276          
+    277              if( ( ret = mbedtls_md_setup( &md_ctx, md_info, 0 ) ) != 0 )
+    278                  return( ret );
+    279              hlen = mbedtls_md_get_size( md_info );
+    280          
+    281              if( hlen <= 32 )
+    282                  v = 64;
+    283              else
+    284                  v = 128;
+    285          
+    286              memset( diversifier, (unsigned char) id, v );
+    287          
+    288              pkcs12_fill_buffer( salt_block, v, salt, saltlen );
+    289              pkcs12_fill_buffer( pwd_block,  v, pwd,  pwdlen  );
+    290          
+    291              p = data;
+    292              while( datalen > 0 )
+    293              {
+    294                  // Calculate hash( diversifier || salt_block || pwd_block )
+    295                  if( ( ret = mbedtls_md_starts( &md_ctx ) ) != 0 )
+    296                      goto exit;
+    297          
+    298                  if( ( ret = mbedtls_md_update( &md_ctx, diversifier, v ) ) != 0 )
+    299                      goto exit;
+    300          
+    301                  if( ( ret = mbedtls_md_update( &md_ctx, salt_block, v ) ) != 0 )
+    302                      goto exit;
+    303          
+    304                  if( ( ret = mbedtls_md_update( &md_ctx, pwd_block, v ) ) != 0 )
+    305                      goto exit;
+    306          
+    307                  if( ( ret = mbedtls_md_finish( &md_ctx, hash_output ) ) != 0 )
+    308                      goto exit;
+    309          
+    310                  // Perform remaining ( iterations - 1 ) recursive hash calculations
+    311                  for( i = 1; i < (size_t) iterations; i++ )
+    312                  {
+    313                      if( ( ret = mbedtls_md( md_info, hash_output, hlen, hash_output ) ) != 0 )
+    314                          goto exit;
+    315                  }
+    316          
+    317                  use_len = ( datalen > hlen ) ? hlen : datalen;
+    318                  memcpy( p, hash_output, use_len );
+    319                  datalen -= use_len;
+    320                  p += use_len;
+    321          
+    322                  if( datalen == 0 )
+    323                      break;
+    324          
+    325                  // Concatenating copies of hash_output into hash_block (B)
+    326                  pkcs12_fill_buffer( hash_block, v, hash_output, hlen );
+    327          
+    328                  // B += 1
+    329                  for( i = v; i > 0; i-- )
+    330                      if( ++hash_block[i - 1] != 0 )
+    331                          break;
+    332          
+    333                  // salt_block += B
+    334                  c = 0;
+    335                  for( i = v; i > 0; i-- )
+    336                  {
+    337                      j = salt_block[i - 1] + hash_block[i - 1] + c;
+    338                      c = (unsigned char) (j >> 8);
+    339                      salt_block[i - 1] = j & 0xFF;
+    340                  }
+    341          
+    342                  // pwd_block  += B
+    343                  c = 0;
+    344                  for( i = v; i > 0; i-- )
+    345                  {
+    346                      j = pwd_block[i - 1] + hash_block[i - 1] + c;
+    347                      c = (unsigned char) (j >> 8);
+    348                      pwd_block[i - 1] = j & 0xFF;
+    349                  }
+    350              }
+    351          
+    352              ret = 0;
+    353          
+    354          exit:
+    355              mbedtls_zeroize( salt_block, sizeof( salt_block ) );
+    356              mbedtls_zeroize( pwd_block, sizeof( pwd_block ) );
+    357              mbedtls_zeroize( hash_block, sizeof( hash_block ) );
+    358              mbedtls_zeroize( hash_output, sizeof( hash_output ) );
+    359          
+    360              mbedtls_md_free( &md_ctx );
+    361          
+    362              return( ret );
+    363          }
+    364          
+    365          #endif /* MBEDTLS_PKCS12_C */
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

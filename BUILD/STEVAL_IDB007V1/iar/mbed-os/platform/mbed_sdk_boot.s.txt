@@ -1,0 +1,206 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:46
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\platform\mbed_sdk_boot.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_sdk_boot.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_sdk_boot.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_sdk_boot.o
+#        .\mbed-os\platform\mbed_sdk_boot.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_sdk_boot.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_sdk_boot.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\platform\mbed_sdk_boot.c
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2017 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          
+     17          #include "mbed_toolchain.h"
+     18          #include <stdlib.h>
+     19          #include <stdint.h>
+     20          #include "cmsis.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     21          
+     22          /* This startup is for mbed 2 baremetal. There is no config for RTOS for mbed 2,
+     23           * therefore we protect this file with MBED_CONF_RTOS_PRESENT
+     24           * Note: The new consolidated started for mbed OS is in rtos/mbed_boot code file.
+     25           */
+     26          #if !defined(MBED_CONF_RTOS_PRESENT)
+     27          
+     28          /* mbed_main is a function that is called before main()
+     29           * mbed_sdk_init() is also a function that is called before main(), but unlike
+     30           * mbed_main(), it is not meant for user code, but for the SDK itself to perform
+     31           * initializations before main() is called.
+     32           */
+     33          MBED_WEAK void mbed_main(void) 
+     34          {
+     35          
+     36          }
+     37          
+     38          /* This function can be implemented by the target to perform higher level target initialization
+     39           */
+     40          MBED_WEAK void mbed_sdk_init(void) 
+     41          {
+     42          
+     43          }
+     44          
+     45          MBED_WEAK void software_init_hook_rtos()
+     46          {
+     47              // Nothing by default
+     48          }
+     49          
+     50          void mbed_copy_nvic(void)
+     51          {
+     52              /* If vector address in RAM is defined, copy and switch to dynamic vectors. Exceptions for M0 which doesn't have
+     53              VTOR register and for A9 for which CMSIS doesn't define NVIC_SetVector; in both cases target code is
+     54              responsible for correctly handling the vectors.
+     55              */
+     56          #if !defined(__CORTEX_M0) && !defined(__CORTEX_A9)
+     57          #ifdef NVIC_RAM_VECTOR_ADDRESS
+     58              uint32_t *old_vectors = (uint32_t *)SCB->VTOR;
+     59              uint32_t *vectors = (uint32_t*)NVIC_RAM_VECTOR_ADDRESS;
+     60              for (int i = 0; i < NVIC_NUM_VECTORS; i++) {
+     61                  vectors[i] = old_vectors[i];
+     62              }
+     63              SCB->VTOR = (uint32_t)NVIC_RAM_VECTOR_ADDRESS;
+     64          #endif /* NVIC_RAM_VECTOR_ADDRESS */
+     65          #endif /* !defined(__CORTEX_M0) && !defined(__CORTEX_A9) */
+     66          }
+     67          
+     68          /* Toolchain specific main code */
+     69          
+     70          #if defined (__CC_ARM) || (defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 5010060))
+     71          
+     72          int $Super$$main(void);
+     73          
+     74          int $Sub$$main(void) 
+     75          {
+     76              mbed_main();
+     77              return $Super$$main();
+     78          }
+     79          
+     80          void _platform_post_stackheap_init(void) 
+     81          {
+     82              mbed_copy_nvic();
+     83              mbed_sdk_init();
+     84          }
+     85          
+     86          #elif defined (__GNUC__) 
+     87          
+     88          extern int __real_main(void);
+     89          
+     90          void software_init_hook(void)
+     91          {
+     92              mbed_copy_nvic();
+     93              mbed_sdk_init();
+     94              software_init_hook_rtos();
+     95          }
+     96          
+     97          
+     98          int __wrap_main(void) 
+     99          {
+    100              mbed_main();
+    101              return __real_main();
+    102          }
+    103          
+    104          #elif defined (__ICCARM__)
+    105          
+    106          int __low_level_init(void)
+    107          {
+    108            mbed_copy_nvic();
+    109            return 1;
+    110          }
+    111          
+    112          #endif
+    113          
+    114          #endif
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: 1

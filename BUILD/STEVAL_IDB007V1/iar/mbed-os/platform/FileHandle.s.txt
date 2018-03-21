@@ -1,0 +1,303 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:42
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\platform\FileHandle.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FileHandle.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FileHandle.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FileHandle.o
+#        .\mbed-os\platform\FileHandle.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FileHandle.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FileHandle.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\platform\FileHandle.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2016 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "FileHandle.h"
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::FileHandle::~FileHandle()
+   \                     _ZN4mbed10FileHandleD1Ev: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::FileHandle::deleter ~FileHandle()
+   \                     _ZN4mbed10FileHandleD0Ev: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZdlPv
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::FileHandle::sync()
+   \                     _ZN4mbed10FileHandle4syncEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::FileHandle::isatty()
+   \                     _ZN4mbed10FileHandle6isattyEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp off_t mbed::FileHandle::tell()
+   \                     _ZN4mbed10FileHandle4tellEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x2201             MOVS     R2,#+1
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x6803             LDR      R3,[R0, #+0]
+   \   00000008   0x691B             LDR      R3,[R3, #+16]
+   \   0000000A   0x4798             BLX      R3
+   \   0000000C   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::FileHandle::rewind()
+   \                     _ZN4mbed10FileHandle6rewindEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x2200             MOVS     R2,#+0
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x6803             LDR      R3,[R0, #+0]
+   \   00000008   0x691B             LDR      R3,[R3, #+16]
+   \   0000000A   0x4798             BLX      R3
+   \   0000000C   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp off_t mbed::FileHandle::lseek(off_t, int)
+   \                     _ZN4mbed10FileHandle5lseekEli: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6803             LDR      R3,[R0, #+0]
+   \   00000004   0x691B             LDR      R3,[R3, #+16]
+   \   00000006   0x4798             BLX      R3
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::FileHandle::fsync()
+   \                     _ZN4mbed10FileHandle5fsyncEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x6989             LDR      R1,[R1, #+24]
+   \   00000006   0x4788             BLX      R1
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp off_t mbed::FileHandle::flen()
+   \                     _ZN4mbed10FileHandle4flenEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x6A89             LDR      R1,[R1, #+40]
+   \   00000006   0x4788             BLX      R1
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::FileHandle::set_blocking(bool)
+   \                     _ZN4mbed10FileHandle12set_blockingEb: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000004   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp short mbed::FileHandle::poll(short) const
+   \                     _ZNK4mbed10FileHandle4pollEs: (+1)
+   \   00000000   0x2011             MOVS     R0,#+17
+   \   00000002   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::FileHandle::sigio(mbed::Callback<void ()>)
+   \                     _ZN4mbed10FileHandle5sigioENS_8CallbackIFvvEEE: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+     17          #include "platform/mbed_retarget.h"
+     18          #include "platform/mbed_critical.h"
+     19          
+     20          namespace mbed {
+     21          
+
+   \                                 In section .text, align 2, keep-with-next
+     22          off_t FileHandle::size()
+     23          {
+   \                     _ZN4mbed10FileHandle4sizeEv: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     24              /* remember our current position */
+     25              off_t off = seek(0, SEEK_CUR);
+   \   00000004   0x2201             MOVS     R2,#+1
+   \   00000006   0x2100             MOVS     R1,#+0
+   \   00000008   0x6823             LDR      R3,[R4, #+0]
+   \   0000000A   0x691B             LDR      R3,[R3, #+16]
+   \   0000000C   0x4798             BLX      R3
+   \   0000000E   0x0005             MOVS     R5,R0
+     26              if (off < 0) {
+   \   00000010   0xD40D             BMI      ??size_0
+     27                  return off;
+     28              }
+     29              /* seek to the end to get the file length */
+     30              off_t size = seek(0, SEEK_END);
+   \   00000012   0x2202             MOVS     R2,#+2
+   \   00000014   0x2100             MOVS     R1,#+0
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0x6823             LDR      R3,[R4, #+0]
+   \   0000001A   0x691B             LDR      R3,[R3, #+16]
+   \   0000001C   0x4798             BLX      R3
+   \   0000001E   0x0006             MOVS     R6,R0
+     31              /* return to our old position */
+     32              seek(off, SEEK_SET);
+   \   00000020   0x2200             MOVS     R2,#+0
+   \   00000022   0x0029             MOVS     R1,R5
+   \   00000024   0x0020             MOVS     R0,R4
+   \   00000026   0x6823             LDR      R3,[R4, #+0]
+   \   00000028   0x691B             LDR      R3,[R3, #+16]
+   \   0000002A   0x4798             BLX      R3
+     33              return size;
+   \   0000002C   0x0030             MOVS     R0,R6
+   \                     ??size_0: (+1)
+   \   0000002E   0xBD70             POP      {R4-R6,PC}       ;; return
+     34          }
+     35          
+
+   \                                 In section .text, align 2, keep-with-next
+     36          std::FILE *fdopen(FileHandle *fh, const char *mode)
+     37          {
+   \                     _ZN4mbed6fdopenEPNS_10FileHandleEPKc: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     38              return mbed_fdopen(fh, mode);
+   \   00000002   0x.... 0x....      BL       _ZN4mbed11mbed_fdopenEPNS_10FileHandleEPKc
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+     39          }
+     40          
+     41          } // namespace mbed
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   mbed::FileHandle::deleter ~FileHandle()
+         8   -> operator delete(void *)
+       8   mbed::FileHandle::flen()
+         8   -- Indirect call
+       8   mbed::FileHandle::fsync()
+         8   -- Indirect call
+       0   mbed::FileHandle::isatty()
+       8   mbed::FileHandle::lseek(off_t, int)
+         8   -- Indirect call
+       0   mbed::FileHandle::poll(short) const
+       8   mbed::FileHandle::rewind()
+         8   -- Indirect call
+       0   mbed::FileHandle::set_blocking(bool)
+       0   mbed::FileHandle::sigio(mbed::Callback<void ()>)
+      16   mbed::FileHandle::size()
+        16   -- Indirect call
+       0   mbed::FileHandle::sync()
+       8   mbed::FileHandle::tell()
+         8   -- Indirect call
+       0   mbed::FileHandle::~FileHandle()
+       8   mbed::fdopen(mbed::FileHandle *, char const *)
+         8   -> mbed::mbed_fdopen(mbed::FileHandle *, char const *)
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       8  mbed::FileHandle::deleter ~FileHandle()
+      10  mbed::FileHandle::flen()
+      10  mbed::FileHandle::fsync()
+       4  mbed::FileHandle::isatty()
+      10  mbed::FileHandle::lseek(off_t, int)
+       4  mbed::FileHandle::poll(short) const
+      14  mbed::FileHandle::rewind()
+       6  mbed::FileHandle::set_blocking(bool)
+       2  mbed::FileHandle::sigio(mbed::Callback<void ()>)
+      48  mbed::FileHandle::size()
+       4  mbed::FileHandle::sync()
+      14  mbed::FileHandle::tell()
+       2  mbed::FileHandle::~FileHandle()
+       8  mbed::fdopen(mbed::FileHandle *, char const *)
+     168  -- Other
+
+ 
+ 168 bytes in section .rodata
+ 144 bytes in section .text
+ 
+ 56 bytes of CODE  memory (+  88 bytes shared)
+  0 bytes of CONST memory (+ 168 bytes shared)
+
+Errors: none
+Warnings: none

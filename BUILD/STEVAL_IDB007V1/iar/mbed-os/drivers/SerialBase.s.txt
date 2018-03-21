@@ -1,0 +1,987 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:00
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\drivers\SerialBase.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\SerialBase.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\SerialBase.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\SerialBase.o
+#        .\mbed-os\drivers\SerialBase.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\SerialBase.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\SerialBase.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\drivers\SerialBase.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "drivers/SerialBase.h"
+
+   \                                 In section .text, align 4
+   \   __code __interwork __softfp mbed::Callback<void ()>::Callback(void (*)())
+   \                     _ZN4mbed8CallbackIFvvEEC1EPS1_: (+1)
+   \   00000000   0xB430             PUSH     {R4,R5}
+   \   00000002   0x000A             MOVS     R2,R1
+   \   00000004   0xD106             BNE      ??Callback_0
+   \   00000006   0x2100             MOVS     R1,#+0
+   \   00000008   0x2200             MOVS     R2,#+0
+   \   0000000A   0x2300             MOVS     R3,#+0
+   \   0000000C   0x2400             MOVS     R4,#+0
+   \   0000000E   0xC01E             STM      R0!,{R1-R4}
+   \   00000010   0x3810             SUBS     R0,R0,#+16
+   \   00000012   0xE009             B        ??Callback_1
+   \                     ??Callback_0: (+1)
+   \   00000014   0x2200             MOVS     R2,#+0
+   \   00000016   0x2300             MOVS     R3,#+0
+   \   00000018   0x2400             MOVS     R4,#+0
+   \   0000001A   0x2500             MOVS     R5,#+0
+   \   0000001C   0xC03C             STM      R0!,{R2-R5}
+   \   0000001E   0x3810             SUBS     R0,R0,#+16
+   \   00000020   0xD000             BEQ      ??Callback_2
+   \   00000022   0x6001             STR      R1,[R0, #+0]
+   \                     ??Callback_2: (+1)
+   \   00000024   0x4901             LDR      R1,??Callback_3
+   \   00000026   0x60C1             STR      R1,[R0, #+12]
+   \                     ??Callback_1: (+1)
+   \   00000028   0xBC30             POP      {R4,R5}
+   \   0000002A   0x4770             BX       LR               ;; return
+   \                     ??Callback_3:
+   \   0000002C   0x........         DC32     _ZZN4mbed8CallbackIFvvEE8generateIPS1_EEvRKT_E3ops
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+   \                     _ZN4mbed8CallbackIFvvEEC1ERKS2_: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+   \   00000006   0x68E2             LDR      R2,[R4, #+12]
+   \   00000008   0x2A00             CMP      R2,#+0
+   \   0000000A   0xD001             BEQ      ??Callback_4
+   \   0000000C   0x6852             LDR      R2,[R2, #+4]
+   \   0000000E   0x4790             BLX      R2
+   \                     ??Callback_4: (+1)
+   \   00000010   0x68E0             LDR      R0,[R4, #+12]
+   \   00000012   0x60E8             STR      R0,[R5, #+12]
+   \   00000014   0x0028             MOVS     R0,R5
+   \   00000016   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::Callback<void ()>::~Callback()
+   \                     _ZN4mbed8CallbackIFvvEED1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x68E1             LDR      R1,[R4, #+12]
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD001             BEQ      `?~Callback_0`
+   \   0000000A   0x6889             LDR      R1,[R1, #+8]
+   \   0000000C   0x4788             BLX      R1
+   \                     `?~Callback_0`: (+1)
+   \   0000000E   0x0020             MOVS     R0,R4
+   \   00000010   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp mbed::Callback<void ()> &mbed::Callback<void ()>::operator=(mbed::Callback<void ()> const &)
+   \                     _ZN4mbed8CallbackIFvvEEaSERKS2_: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+   \   00000006   0x42A5             CMP      R5,R4
+   \   00000008   0xD007             BEQ      `??operator=_0`
+   \   0000000A   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEED1Ev
+   \   0000000E   0x2D00             CMP      R5,#+0
+   \   00000010   0xD003             BEQ      `??operator=_0`
+   \   00000012   0x0021             MOVS     R1,R4
+   \   00000014   0x0028             MOVS     R0,R5
+   \   00000016   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEEC1ERKS2_
+   \                     `??operator=_0`: (+1)
+   \   0000001A   0x0028             MOVS     R0,R5
+   \   0000001C   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+
+   \                                 In section .rodata, align 4
+   \   __absolute mbed::Callback<void ()>::ops const mbed::Callback<void ()>::generate<>(void (*const &)())::ops
+   \                     _ZZN4mbed8CallbackIFvvEE8generateIPS1_EEvRKT_E3ops:
+   \   00000000   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_callIPS1_EEvPKv
+   \   00000004   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_moveIPS1_EEvPvPKv
+   \   00000008   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_dtorIPS1_EEvPv
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_call<void (*)()>(void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_callIPS1_EEvPKv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x4780             BLX      R0
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_move<void (*)()>(void *, void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_moveIPS1_EEvPvPKv: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD001             BEQ      ??function_move_0
+   \   00000004   0x6809             LDR      R1,[R1, #+0]
+   \   00000006   0x6001             STR      R1,[R0, #+0]
+   \                     ??function_move_0: (+1)
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_dtor<void (*)()>(void *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_dtorIPS1_EEvPv: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+     17          #include "platform/mbed_wait_api.h"
+     18          #include "platform/mbed_critical.h"
+     19          #include "platform/mbed_sleep.h"
+     20          
+     21          #if DEVICE_SERIAL
+     22          
+     23          namespace mbed {
+     24          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::SerialBase::subobject SerialBase(PinName, PinName, int)
+   \                     _ZN4mbed10SerialBaseC2E7PinNameS1_i: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN4mbed10SerialBaseC1E7PinNameS1_i
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     25          SerialBase::SerialBase(PinName tx, PinName rx, int baud) :
+   \                     _ZN4mbed10SerialBaseC1E7PinNameS1_i: (+1)
+   \   00000000   0xB5F2             PUSH     {R1,R4-R7,LR}
+   \   00000002   0xB084             SUB      SP,SP,#+16
+   \   00000004   0x0006             MOVS     R6,R0
+   \   00000006   0x0017             MOVS     R7,R2
+   \   00000008   0x001C             MOVS     R4,R3
+   \   0000000A   0x....             LDR      R0,??DataTable3
+   \   0000000C   0x6030             STR      R0,[R6, #+0]
+   \   0000000E   0x1D30             ADDS     R0,R6,#+4
+   \   00000010   0x2100             MOVS     R1,#+0
+   \   00000012   0x2200             MOVS     R2,#+0
+   \   00000014   0x2300             MOVS     R3,#+0
+   \   00000016   0x2500             MOVS     R5,#+0
+   \   00000018   0xC02E             STM      R0!,{R1-R3,R5}
+     26          #if DEVICE_SERIAL_ASYNCH
+     27                                                           _thunk_irq(this), _tx_usage(DMA_USAGE_NEVER),
+     28                                                           _rx_usage(DMA_USAGE_NEVER), _tx_callback(NULL),
+     29                                                           _rx_callback(NULL),
+     30          #endif
+     31                                                          _serial(), _baud(baud) {
+   \   0000001A   0x2302             MOVS     R3,#+2
+   \   0000001C   0x2210             MOVS     R2,#+16
+   \   0000001E   0x....             LDR      R1,??DataTable3_1
+   \   00000020   0x0030             MOVS     R0,R6
+   \   00000022   0x3014             ADDS     R0,R0,#+20
+   \   00000024   0x.... 0x....      BL       __aeabi_vec_ctor_nocookie_nodtor
+   \   00000028   0x6374             STR      R4,[R6, #+52]
+     32              // No lock needed in the constructor
+     33          
+     34              for (size_t i = 0; i < sizeof _irq / sizeof _irq[0]; i++) {
+   \   0000002A   0x2400             MOVS     R4,#+0
+   \   0000002C   0x0035             MOVS     R5,R6
+   \   0000002E   0x3514             ADDS     R5,R5,#+20
+     35                  _irq[i] = NULL;
+   \                     ??SerialBase_0: (+1)
+   \   00000030   0x2100             MOVS     R1,#+0
+   \   00000032   0x4668             MOV      R0,SP
+   \   00000034   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEEC1EPS1_
+   \   00000038   0x456D             CMP      R5,SP
+   \   0000003A   0xD008             BEQ      ??SerialBase_1
+   \   0000003C   0x0028             MOVS     R0,R5
+   \   0000003E   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEED1Ev
+   \   00000042   0x2D00             CMP      R5,#+0
+   \   00000044   0xD003             BEQ      ??SerialBase_1
+   \   00000046   0x4669             MOV      R1,SP
+   \   00000048   0x0028             MOVS     R0,R5
+   \   0000004A   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEEC1ERKS2_
+   \                     ??SerialBase_1: (+1)
+   \   0000004E   0x9903             LDR      R1,[SP, #+12]
+   \   00000050   0x2900             CMP      R1,#+0
+   \   00000052   0xD002             BEQ      ??SerialBase_2
+   \   00000054   0x4668             MOV      R0,SP
+   \   00000056   0x6889             LDR      R1,[R1, #+8]
+   \   00000058   0x4788             BLX      R1
+     36              }
+   \                     ??SerialBase_2: (+1)
+   \   0000005A   0x1C64             ADDS     R4,R4,#+1
+   \   0000005C   0x3510             ADDS     R5,R5,#+16
+   \   0000005E   0x2C02             CMP      R4,#+2
+   \   00000060   0xD3E6             BCC      ??SerialBase_0
+     37          
+     38              serial_init(&_serial, tx, rx);
+   \   00000062   0x003A             MOVS     R2,R7
+   \   00000064   0x4669             MOV      R1,SP
+   \   00000066   0x2010             MOVS     R0,#+16
+   \   00000068   0x5609             LDRSB    R1,[R1, R0]
+   \   0000006A   0x1D30             ADDS     R0,R6,#+4
+   \   0000006C   0x.... 0x....      BL       serial_init
+     39              serial_baud(&_serial, _baud);
+   \   00000070   0x6B71             LDR      R1,[R6, #+52]
+   \   00000072   0x1D30             ADDS     R0,R6,#+4
+   \   00000074   0x.... 0x....      BL       serial_baud
+     40              serial_irq_handler(&_serial, SerialBase::_irq_handler, (uint32_t)this);
+   \   00000078   0x0032             MOVS     R2,R6
+   \   0000007A   0x....             LDR      R1,??DataTable3_2
+   \   0000007C   0x1D30             ADDS     R0,R6,#+4
+   \   0000007E   0x.... 0x....      BL       serial_irq_handler
+     41          }
+   \   00000082   0x0030             MOVS     R0,R6
+   \   00000084   0xB005             ADD      SP,SP,#+20
+   \   00000086   0xBDF0             POP      {R4-R7,PC}       ;; return
+     42          
+
+   \                                 In section .text, align 2, keep-with-next
+     43          void SerialBase::baud(int baudrate) {
+   \                     _ZN4mbed10SerialBase4baudEi: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+     44              lock();
+   \   00000006   0x6829             LDR      R1,[R5, #+0]
+   \   00000008   0x6809             LDR      R1,[R1, #+0]
+   \   0000000A   0x4788             BLX      R1
+     45              serial_baud(&_serial, baudrate);
+   \   0000000C   0x0021             MOVS     R1,R4
+   \   0000000E   0x1D28             ADDS     R0,R5,#+4
+   \   00000010   0x.... 0x....      BL       serial_baud
+     46              _baud = baudrate;
+   \   00000014   0x636C             STR      R4,[R5, #+52]
+     47              unlock();
+   \   00000016   0x0028             MOVS     R0,R5
+   \   00000018   0x6829             LDR      R1,[R5, #+0]
+   \   0000001A   0x6849             LDR      R1,[R1, #+4]
+   \   0000001C   0x4788             BLX      R1
+     48          }
+   \   0000001E   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     49          
+
+   \                                 In section .text, align 2, keep-with-next
+     50          void SerialBase::format(int bits, Parity parity, int stop_bits) {
+   \                     _ZN4mbed10SerialBase6formatEiNS0_6ParityEi: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000F             MOVS     R7,R1
+   \   00000006   0x0015             MOVS     R5,R2
+   \   00000008   0x001E             MOVS     R6,R3
+     51              lock();
+   \   0000000A   0x6821             LDR      R1,[R4, #+0]
+   \   0000000C   0x6809             LDR      R1,[R1, #+0]
+   \   0000000E   0x4788             BLX      R1
+     52              serial_format(&_serial, bits, (SerialParity)parity, stop_bits);
+   \   00000010   0x0033             MOVS     R3,R6
+   \   00000012   0x002A             MOVS     R2,R5
+   \   00000014   0x0039             MOVS     R1,R7
+   \   00000016   0x1D20             ADDS     R0,R4,#+4
+   \   00000018   0x.... 0x....      BL       serial_format
+     53              unlock();
+   \   0000001C   0x0020             MOVS     R0,R4
+   \   0000001E   0x6821             LDR      R1,[R4, #+0]
+   \   00000020   0x6849             LDR      R1,[R1, #+4]
+   \   00000022   0x4788             BLX      R1
+     54          }
+   \   00000024   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+     55          
+
+   \                                 In section .text, align 2, keep-with-next
+     56          int SerialBase::readable() {
+   \                     _ZN4mbed10SerialBase8readableEv: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     57              lock();
+   \   00000004   0x6821             LDR      R1,[R4, #+0]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+     58              int ret = serial_readable(&_serial);
+   \   0000000A   0x1D20             ADDS     R0,R4,#+4
+   \   0000000C   0x.... 0x....      BL       serial_readable
+   \   00000010   0x....             B.N      ?Subroutine0
+     59              unlock();
+     60              return ret;
+     61          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0005             MOVS     R5,R0
+   \   00000002   0x0020             MOVS     R0,R4
+   \   00000004   0x6821             LDR      R1,[R4, #+0]
+   \   00000006   0x6849             LDR      R1,[R1, #+4]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0x0028             MOVS     R0,R5
+   \   0000000C   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+     62          
+     63          
+
+   \                                 In section .text, align 2, keep-with-next
+     64          int SerialBase::writeable() {
+   \                     _ZN4mbed10SerialBase9writeableEv: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     65              lock();
+   \   00000004   0x6821             LDR      R1,[R4, #+0]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+     66              int ret = serial_writable(&_serial);
+   \   0000000A   0x1D20             ADDS     R0,R4,#+4
+   \   0000000C   0x.... 0x....      BL       serial_writable
+   \   00000010                      REQUIRE ?Subroutine0
+   \   00000010                      ;; // Fall through to label ?Subroutine0
+     67              unlock();
+     68              return ret;
+     69          }
+     70          
+
+   \                                 In section .text, align 2, keep-with-next
+     71          void SerialBase::attach(Callback<void()> func, IrqType type) {
+   \                     _ZN4mbed10SerialBase6attachENS_8CallbackIFvvEEENS0_7IrqTypeE: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB085             SUB      SP,SP,#+20
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000F             MOVS     R7,R1
+   \   00000008   0x0016             MOVS     R6,R2
+     72              lock();
+   \   0000000A   0x6821             LDR      R1,[R4, #+0]
+   \   0000000C   0x6809             LDR      R1,[R1, #+0]
+   \   0000000E   0x4788             BLX      R1
+     73              // Disable interrupts when attaching interrupt handler
+     74              core_util_critical_section_enter();
+   \   00000010   0x.... 0x....      BL       core_util_critical_section_enter
+     75              if (func) {
+   \   00000014   0x0130             LSLS     R0,R6,#+4
+   \   00000016   0x1825             ADDS     R5,R4,R0
+   \   00000018   0x6A28             LDR      R0,[R5, #+32]
+   \   0000001A   0x68F9             LDR      R1,[R7, #+12]
+   \   0000001C   0x2900             CMP      R1,#+0
+   \   0000001E   0xD00A             BEQ      ??attach_0
+     76                  // lock deep sleep only the first time
+     77                  if (!_irq[type]) {
+   \   00000020   0x2800             CMP      R0,#+0
+   \   00000022   0xD101             BNE      ??attach_1
+     78                      sleep_manager_lock_deep_sleep();
+   \   00000024   0x.... 0x....      BL       sleep_manager_lock_deep_sleep
+     79                  } 
+     80                  _irq[type] = func;
+   \                     ??attach_1: (+1)
+   \   00000028   0x0039             MOVS     R1,R7
+   \   0000002A   0x0028             MOVS     R0,R5
+   \   0000002C   0x3014             ADDS     R0,R0,#+20
+   \   0000002E   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEEaSERKS2_
+     81                  serial_irq_set(&_serial, (SerialIrq)type, 1);
+   \   00000032   0x2201             MOVS     R2,#+1
+   \   00000034   0xE013             B        ??attach_2
+     82              } else {
+     83                  // unlock deep sleep only the first time
+     84                  if (_irq[type]) {
+   \                     ??attach_0: (+1)
+   \   00000036   0x2800             CMP      R0,#+0
+   \   00000038   0xD001             BEQ      ??attach_3
+     85                      sleep_manager_unlock_deep_sleep();
+   \   0000003A   0x.... 0x....      BL       sleep_manager_unlock_deep_sleep
+     86                  } 
+     87                  _irq[type] = NULL;
+   \                     ??attach_3: (+1)
+   \   0000003E   0x2100             MOVS     R1,#+0
+   \   00000040   0x4668             MOV      R0,SP
+   \   00000042   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEEC1EPS1_
+   \   00000046   0x0001             MOVS     R1,R0
+   \   00000048   0x0028             MOVS     R0,R5
+   \   0000004A   0x3014             ADDS     R0,R0,#+20
+   \   0000004C   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEEaSERKS2_
+   \   00000050   0x9903             LDR      R1,[SP, #+12]
+   \   00000052   0x2900             CMP      R1,#+0
+   \   00000054   0xD002             BEQ      ??attach_4
+   \   00000056   0x4668             MOV      R0,SP
+   \   00000058   0x6889             LDR      R1,[R1, #+8]
+   \   0000005A   0x4788             BLX      R1
+     88                  serial_irq_set(&_serial, (SerialIrq)type, 0);
+   \                     ??attach_4: (+1)
+   \   0000005C   0x2200             MOVS     R2,#+0
+   \                     ??attach_2: (+1)
+   \   0000005E   0x0031             MOVS     R1,R6
+   \   00000060   0x1D20             ADDS     R0,R4,#+4
+   \   00000062   0x.... 0x....      BL       serial_irq_set
+     89              }
+     90              core_util_critical_section_exit();
+   \   00000066   0x.... 0x....      BL       core_util_critical_section_exit
+     91              unlock();
+   \   0000006A   0x0020             MOVS     R0,R4
+   \   0000006C   0x6821             LDR      R1,[R4, #+0]
+   \   0000006E   0x6849             LDR      R1,[R1, #+4]
+   \   00000070   0x4788             BLX      R1
+     92          }
+   \   00000072   0xB005             ADD      SP,SP,#+20
+   \   00000074   0xBDF0             POP      {R4-R7,PC}       ;; return
+     93          
+
+   \                                 In section .text, align 2, keep-with-next
+     94          void SerialBase::_irq_handler(uint32_t id, SerialIrq irq_type) {
+     95              SerialBase *handler = (SerialBase*)id;
+     96              if (handler->_irq[irq_type]) {
+   \                     _ZN4mbed10SerialBase12_irq_handlerEj9SerialIrq: (+1)
+   \   00000000   0x0109             LSLS     R1,R1,#+4
+   \   00000002   0x1840             ADDS     R0,R0,R1
+   \   00000004   0x6A01             LDR      R1,[R0, #+32]
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD100             BNE      ??_irq_handler_0
+   \   0000000A   0x4770             BX       LR
+     97                  handler->_irq[irq_type]();
+   \                     ??_irq_handler_0: (+1)
+   \   0000000C   0xB510             PUSH     {R4,LR}
+   \   0000000E   0x0004             MOVS     R4,R0
+   \   00000010   0x3414             ADDS     R4,R4,#+20
+   \   00000012   0x2900             CMP      R1,#+0
+   \   00000014   0xD105             BNE      ??_irq_handler_1
+   \   00000016   0x2284             MOVS     R2,#+132
+   \   00000018   0x0092             LSLS     R2,R2,#+2        ;; #+528
+   \   0000001A   0x....             LDR      R1,??DataTable3_3
+   \   0000001C   0x....             LDR      R0,??DataTable3_4
+   \   0000001E   0x.... 0x....      BL       mbed_assert_internal
+   \                     ??_irq_handler_1: (+1)
+   \   00000022   0x0020             MOVS     R0,R4
+   \   00000024   0x68E1             LDR      R1,[R4, #+12]
+   \   00000026   0x6809             LDR      R1,[R1, #+0]
+   \   00000028   0x4788             BLX      R1
+     98              }
+     99          }
+   \   0000002A   0xBD10             POP      {R4,PC}          ;; return
+    100          
+
+   \                                 In section .text, align 2, keep-with-next
+    101          int SerialBase::_base_getc() {
+   \                     _ZN4mbed10SerialBase10_base_getcEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    102              // Mutex is already held
+    103              return serial_getc(&_serial);
+   \   00000002   0x1D00             ADDS     R0,R0,#+4
+   \   00000004   0x.... 0x....      BL       serial_getc
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+    104          }
+    105          
+
+   \                                 In section .text, align 2, keep-with-next
+    106          int SerialBase::_base_putc(int c) {
+   \                     _ZN4mbed10SerialBase10_base_putcEi: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x000C             MOVS     R4,R1
+    107              // Mutex is already held
+    108              serial_putc(&_serial, c);
+   \   00000004   0x1D00             ADDS     R0,R0,#+4
+   \   00000006   0x.... 0x....      BL       serial_putc
+    109              return c;
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0xBD10             POP      {R4,PC}          ;; return
+    110          }
+    111          
+
+   \                                 In section .text, align 2, keep-with-next
+    112          void SerialBase::send_break() {
+   \                     _ZN4mbed10SerialBase10send_breakEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    113              lock();
+   \   00000004   0x6821             LDR      R1,[R4, #+0]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+    114            // Wait for 1.5 frames before clearing the break condition
+    115            // This will have different effects on our platforms, but should
+    116            // ensure that we keep the break active for at least one frame.
+    117            // We consider a full frame (1 start bit + 8 data bits bits +
+    118            // 1 parity bit + 2 stop bits = 12 bits) for computation.
+    119            // One bit time (in us) = 1000000/_baud
+    120            // Twelve bits: 12000000/baud delay
+    121            // 1.5 frames: 18000000/baud delay
+    122            serial_break_set(&_serial);
+   \   0000000A   0x1D20             ADDS     R0,R4,#+4
+   \   0000000C   0x.... 0x....      BL       serial_break_set
+    123            wait_us(18000000/_baud);
+   \   00000010   0x....             LDR      R0,??DataTable3_5  ;; 0x112a880
+   \   00000012   0x6B61             LDR      R1,[R4, #+52]
+   \   00000014   0x.... 0x....      BL       __aeabi_idiv
+   \   00000018   0x.... 0x....      BL       wait_us
+    124            serial_break_clear(&_serial);
+   \   0000001C   0x1D20             ADDS     R0,R4,#+4
+   \   0000001E   0x.... 0x....      BL       serial_break_clear
+    125            unlock();
+   \   00000022   0x0020             MOVS     R0,R4
+   \   00000024   0x6821             LDR      R1,[R4, #+0]
+   \   00000026   0x6849             LDR      R1,[R1, #+4]
+   \   00000028   0x4788             BLX      R1
+    126          }
+   \   0000002A   0xBD10             POP      {R4,PC}          ;; return
+    127          
+
+   \                                 In section .text, align 2, keep-with-next
+    128          void SerialBase::lock() {
+    129              // Stub
+    130          }
+   \                     _ZN4mbed10SerialBase4lockEv: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+    131          
+
+   \                                 In section .text, align 2, keep-with-next
+    132          void SerialBase:: unlock() {
+    133              // Stub
+    134          }
+   \                     _ZN4mbed10SerialBase6unlockEv: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+    135          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::SerialBase::deleter ~SerialBase()
+   \                     _ZN4mbed10SerialBaseD0Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x.... 0x....      BL       _ZN4mbed10SerialBaseD1Ev
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0x.... 0x....      BL       _ZdlPv
+   \   0000000E   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::SerialBase::subobject ~SerialBase()
+   \                     _ZN4mbed10SerialBaseD2Ev: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN4mbed10SerialBaseD1Ev
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    136          SerialBase::~SerialBase()
+    137          {
+   \                     _ZN4mbed10SerialBaseD1Ev: (+1)
+   \   00000000   0xB530             PUSH     {R4,R5,LR}
+   \   00000002   0xB085             SUB      SP,SP,#+20
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x....             LDR      R0,??DataTable3
+   \   00000008   0x6020             STR      R0,[R4, #+0]
+    138              // No lock needed in destructor
+    139          
+    140              // Detaching interrupts releases the sleep lock if it was locked
+    141              for (int irq = 0; irq < IrqCnt; irq++) {
+    142                  attach(NULL, (IrqType)irq);
+   \   0000000A   0x4668             MOV      R0,SP
+   \   0000000C   0x2100             MOVS     R1,#+0
+   \   0000000E   0x2200             MOVS     R2,#+0
+   \   00000010   0x2300             MOVS     R3,#+0
+   \   00000012   0x2500             MOVS     R5,#+0
+   \   00000014   0xC02E             STM      R0!,{R1-R3,R5}
+   \   00000016   0x4669             MOV      R1,SP
+   \   00000018   0x0020             MOVS     R0,R4
+   \   0000001A   0x.... 0x....      BL       _ZN4mbed10SerialBase6attachENS_8CallbackIFvvEEENS0_7IrqTypeE
+   \   0000001E   0x9903             LDR      R1,[SP, #+12]
+   \   00000020   0x2900             CMP      R1,#+0
+   \   00000022   0xD002             BEQ      `?~SerialBase_0`
+   \   00000024   0x4668             MOV      R0,SP
+   \   00000026   0x6889             LDR      R1,[R1, #+8]
+   \   00000028   0x4788             BLX      R1
+   \                     `?~SerialBase_0`: (+1)
+   \   0000002A   0x4668             MOV      R0,SP
+   \   0000002C   0x2100             MOVS     R1,#+0
+   \   0000002E   0x2200             MOVS     R2,#+0
+   \   00000030   0x2300             MOVS     R3,#+0
+   \   00000032   0xC02E             STM      R0!,{R1-R3,R5}
+   \   00000034   0x2201             MOVS     R2,#+1
+   \   00000036   0x4669             MOV      R1,SP
+   \   00000038   0x0020             MOVS     R0,R4
+   \   0000003A   0x.... 0x....      BL       _ZN4mbed10SerialBase6attachENS_8CallbackIFvvEEENS0_7IrqTypeE
+   \   0000003E   0x9903             LDR      R1,[SP, #+12]
+   \   00000040   0x2900             CMP      R1,#+0
+   \   00000042   0xD002             BEQ      `?~SerialBase_1`
+   \   00000044   0x4668             MOV      R0,SP
+   \   00000046   0x6889             LDR      R1,[R1, #+8]
+   \   00000048   0x4788             BLX      R1
+    143              }
+    144          }
+   \                     `?~SerialBase_1`: (+1)
+   \   0000004A   0x2302             MOVS     R3,#+2
+   \   0000004C   0x2210             MOVS     R2,#+16
+   \   0000004E   0x....             LDR      R1,??DataTable3_6
+   \   00000050   0x0020             MOVS     R0,R4
+   \   00000052   0x3014             ADDS     R0,R0,#+20
+   \   00000054   0x.... 0x....      BL       __aeabi_vec_dtor
+   \   00000058   0x0020             MOVS     R0,R4
+   \   0000005A   0xB005             ADD      SP,SP,#+20
+   \   0000005C   0xBD30             POP      {R4,R5,PC}       ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?_0: (+1)
+   \   00000000   0xB410             PUSH     {R4}
+   \   00000002   0x2100             MOVS     R1,#+0
+   \   00000004   0x2200             MOVS     R2,#+0
+   \   00000006   0x2300             MOVS     R3,#+0
+   \   00000008   0x2400             MOVS     R4,#+0
+   \   0000000A   0xC01E             STM      R0!,{R1-R4}
+   \   0000000C   0x3810             SUBS     R0,R0,#+16
+   \   0000000E   0xBC10             POP      {R4}
+   \   00000010   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3:
+   \   00000000   0x........         DC32     _ZTVN4mbed10SerialBaseE+0x8
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_1:
+   \   00000000   0x........         DC32     ?_0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_2:
+   \   00000000   0x........         DC32     _ZN4mbed10SerialBase12_irq_handlerEj9SerialIrq
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_3:
+   \   00000000   0x........         DC32     _ZZNK4mbed8CallbackIFvvEE4callEvEs_0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_4:
+   \   00000000   0x........         DC32     _ZZNK4mbed8CallbackIFvvEE4callEvEs
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_5:
+   \   00000000   0x0112A880         DC32     0x112a880
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_6:
+   \   00000000   0x........         DC32     _ZN4mbed8CallbackIFvvEED1Ev
+    145          
+    146          #if DEVICE_SERIAL_FC
+    147          void SerialBase::set_flow_control(Flow type, PinName flow1, PinName flow2) {
+    148              lock();
+    149              FlowControl flow_type = (FlowControl)type;
+    150              switch(type) {
+    151                  case RTS:
+    152                      serial_set_flow_control(&_serial, flow_type, flow1, NC);
+    153                      break;
+    154          
+    155                  case CTS:
+    156                      serial_set_flow_control(&_serial, flow_type, NC, flow1);
+    157                      break;
+    158          
+    159                  case RTSCTS:
+    160                  case Disabled:
+    161                      serial_set_flow_control(&_serial, flow_type, flow1, flow2);
+    162                      break;
+    163          
+    164                  default:
+    165                      break;
+    166              }
+    167              unlock();
+    168          }
+    169          #endif
+    170          
+    171          #if DEVICE_SERIAL_ASYNCH
+    172          
+    173          int SerialBase::write(const uint8_t *buffer, int length, const event_callback_t& callback, int event)
+    174          {
+    175              if (serial_tx_active(&_serial)) {
+    176                  return -1; // transaction ongoing
+    177              }
+    178              start_write((void *)buffer, length, 8, callback, event);
+    179              return 0;
+    180          }
+    181          
+    182          int SerialBase::write(const uint16_t *buffer, int length, const event_callback_t& callback, int event)
+    183          {
+    184              if (serial_tx_active(&_serial)) {
+    185                  return -1; // transaction ongoing
+    186              }
+    187              start_write((void *)buffer, length, 16, callback, event);
+    188              return 0;
+    189          }
+    190          
+    191          void SerialBase::start_write(const void *buffer, int buffer_size, char buffer_width, const event_callback_t& callback, int event)
+    192          {
+    193              _tx_callback = callback;
+    194          
+    195              _thunk_irq.callback(&SerialBase::interrupt_handler_asynch);
+    196              sleep_manager_lock_deep_sleep();
+    197              serial_tx_asynch(&_serial, buffer, buffer_size, buffer_width, _thunk_irq.entry(), event, _tx_usage);
+    198          }
+    199          
+    200          void SerialBase::abort_write(void)
+    201          {
+    202              // rx might still be active
+    203              if (_rx_callback) {
+    204                  sleep_manager_unlock_deep_sleep();
+    205              }
+    206              _tx_callback = NULL;
+    207              serial_tx_abort_asynch(&_serial);
+    208          }
+    209          
+    210          void SerialBase::abort_read(void)
+    211          {
+    212              // tx might still be active
+    213              if (_tx_callback) {
+    214                  sleep_manager_unlock_deep_sleep();
+    215              }
+    216              _rx_callback = NULL;
+    217              serial_rx_abort_asynch(&_serial);
+    218          }
+    219          
+    220          int SerialBase::set_dma_usage_tx(DMAUsage usage)
+    221          {
+    222              if (serial_tx_active(&_serial)) {
+    223                  return -1;
+    224              }
+    225              _tx_usage = usage;
+    226              return 0;
+    227          }
+    228          
+    229          int SerialBase::set_dma_usage_rx(DMAUsage usage)
+    230          {
+    231              if (serial_tx_active(&_serial)) {
+    232                  return -1;
+    233              }
+    234              _rx_usage = usage;
+    235              return 0;
+    236          }
+    237          
+    238          int SerialBase::read(uint8_t *buffer, int length, const event_callback_t& callback, int event, unsigned char char_match)
+    239          {
+    240              if (serial_rx_active(&_serial)) {
+    241                  return -1; // transaction ongoing
+    242              }
+    243              start_read((void*)buffer, length, 8, callback, event, char_match);
+    244              return 0;
+    245          }
+    246          
+    247          
+    248          int SerialBase::read(uint16_t *buffer, int length, const event_callback_t& callback, int event, unsigned char char_match)
+    249          {
+    250              if (serial_rx_active(&_serial)) {
+    251                  return -1; // transaction ongoing
+    252              }
+    253              start_read((void*)buffer, length, 16, callback, event, char_match);
+    254              return 0;
+    255          }
+    256          
+    257          
+    258          void SerialBase::start_read(void *buffer, int buffer_size, char buffer_width, const event_callback_t& callback, int event, unsigned char char_match)
+    259          {
+    260              _rx_callback = callback;
+    261              _thunk_irq.callback(&SerialBase::interrupt_handler_asynch);
+    262              sleep_manager_lock_deep_sleep();
+    263              serial_rx_asynch(&_serial, buffer, buffer_size, buffer_width, _thunk_irq.entry(), event, char_match, _rx_usage);
+    264          }
+    265          
+    266          void SerialBase::interrupt_handler_asynch(void)
+    267          {
+    268              int event = serial_irq_handler_asynch(&_serial);
+    269              int rx_event = event & SERIAL_EVENT_RX_MASK;
+    270              bool unlock_deepsleep = false;
+    271          
+    272              if (_rx_callback && rx_event) {
+    273                  unlock_deepsleep = true;
+    274                  _rx_callback.call(rx_event);
+    275              }
+    276          
+    277              int tx_event = event & SERIAL_EVENT_TX_MASK;
+    278              if (_tx_callback && tx_event) {
+    279                  unlock_deepsleep = true;
+    280                  _tx_callback.call(tx_event);
+    281              }
+    282              // unlock if tx or rx events are generated
+    283              if (unlock_deepsleep) {
+    284                  sleep_manager_unlock_deep_sleep();
+    285              }
+    286          }
+    287          
+    288          #endif
+    289          
+    290          } // namespace mbed
+    291          
+    292          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   <Unnamed 0>
+      16   mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+        16   -- Indirect call
+       8   mbed::Callback<void ()>::Callback(void (*)())
+       8   mbed::Callback<void ()>::function_call<void (*)()>(void const *)
+         8   -- Indirect call
+       0   mbed::Callback<void ()>::function_dtor<void (*)()>(void *)
+       0   mbed::Callback<void ()>::function_move<void (*)()>(void *, void const *)
+      16   mbed::Callback<void ()>::operator=(mbed::Callback<void ()> const &)
+        16   -> mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+        16   -> mbed::Callback<void ()>::~Callback()
+       8   mbed::Callback<void ()>::~Callback()
+         8   -- Indirect call
+      40   mbed::SerialBase::SerialBase(PinName, PinName, int)
+        40   -- Indirect call
+        40   -> __aeabi_vec_ctor_nocookie_nodtor
+        40   -> mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+        40   -> mbed::Callback<void ()>::Callback(void (*)())
+        40   -> mbed::Callback<void ()>::~Callback()
+        40   -> serial_baud
+        40   -> serial_init
+        40   -> serial_irq_handler
+       8   mbed::SerialBase::_base_getc()
+         8   -> serial_getc
+       8   mbed::SerialBase::_base_putc(int)
+         8   -> serial_putc
+       8   mbed::SerialBase::_irq_handler(unsigned int, SerialIrq)
+         8   -- Indirect call
+         8   -> mbed_assert_internal
+      40   mbed::SerialBase::attach(mbed::Callback<void ()>, mbed::SerialBase::IrqType)
+        40   -- Indirect call
+        40   -> core_util_critical_section_enter
+        40   -> core_util_critical_section_exit
+        40   -> mbed::Callback<void ()>::Callback(void (*)())
+        40   -> mbed::Callback<void ()>::operator=(mbed::Callback<void ()> const &)
+        40   -> serial_irq_set
+        40   -> sleep_manager_lock_deep_sleep
+        40   -> sleep_manager_unlock_deep_sleep
+      16   mbed::SerialBase::baud(int)
+        16   -- Indirect call
+        16   -> serial_baud
+       8   mbed::SerialBase::deleter ~SerialBase()
+         8   -> mbed::SerialBase::~SerialBase()
+         8   -> operator delete(void *)
+      24   mbed::SerialBase::format(int, mbed::SerialBase::Parity, int)
+        24   -- Indirect call
+        24   -> serial_format
+       0   mbed::SerialBase::lock()
+      16   mbed::SerialBase::readable()
+        16   -- Indirect call
+        16   -> serial_readable
+       8   mbed::SerialBase::send_break()
+         8   -- Indirect call
+         8   -> serial_break_clear
+         8   -> serial_break_set
+         8   -> wait_us
+         8 __aeabi_idiv
+       8   mbed::SerialBase::subobject SerialBase(PinName, PinName, int)
+         8   -> mbed::SerialBase::SerialBase(PinName, PinName, int)
+       8   mbed::SerialBase::subobject ~SerialBase()
+         8   -> mbed::SerialBase::~SerialBase()
+       0   mbed::SerialBase::unlock()
+      16   mbed::SerialBase::writeable()
+        16   -- Indirect call
+        16   -> serial_writable
+      32   mbed::SerialBase::~SerialBase()
+        32   -- Indirect call
+        32   -> __aeabi_vec_dtor
+        32   -> mbed::SerialBase::attach(mbed::Callback<void ()>, mbed::SerialBase::IrqType)
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable3_2
+       4  ??DataTable3_3
+       4  ??DataTable3_4
+       4  ??DataTable3_5
+       4  ??DataTable3_6
+      14  ?Subroutine0
+      18  ?_0
+      24  mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+      48  mbed::Callback<void ()>::Callback(void (*)())
+       8  mbed::Callback<void ()>::function_call<void (*)()>(void const *)
+       2  mbed::Callback<void ()>::function_dtor<void (*)()>(void *)
+      10  mbed::Callback<void ()>::function_move<void (*)()>(void *, void const *)
+      30  mbed::Callback<void ()>::operator=(mbed::Callback<void ()> const &)
+      18  mbed::Callback<void ()>::~Callback()
+     136  mbed::SerialBase::SerialBase(PinName, PinName, int)
+      10  mbed::SerialBase::_base_getc()
+      14  mbed::SerialBase::_base_putc(int)
+      44  mbed::SerialBase::_irq_handler(unsigned int, SerialIrq)
+     118  mbed::SerialBase::attach(mbed::Callback<void ()>, mbed::SerialBase::IrqType)
+      32  mbed::SerialBase::baud(int)
+      16  mbed::SerialBase::deleter ~SerialBase()
+      38  mbed::SerialBase::format(int, mbed::SerialBase::Parity, int)
+       2  mbed::SerialBase::lock()
+      18  mbed::SerialBase::readable()
+      44  mbed::SerialBase::send_break()
+       8  mbed::SerialBase::subobject SerialBase(PinName, PinName, int)
+       8  mbed::SerialBase::subobject ~SerialBase()
+       2  mbed::SerialBase::unlock()
+      16  mbed::SerialBase::writeable()
+      94  mbed::SerialBase::~SerialBase()
+      12  ops
+     156  -- Other
+
+ 
+ 168 bytes in section .rodata
+ 800 bytes in section .text
+ 
+ 660 bytes of CODE  memory (+ 140 bytes shared)
+   0 bytes of CONST memory (+ 168 bytes shared)
+
+Errors: none
+Warnings: none

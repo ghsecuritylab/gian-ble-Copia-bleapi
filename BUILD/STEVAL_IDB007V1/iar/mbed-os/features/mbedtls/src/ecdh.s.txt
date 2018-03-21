@@ -1,0 +1,352 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:25
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\mbedtls\src\ecdh.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ecdh.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ecdh.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ecdh.o
+#        .\mbed-os\features\mbedtls\src\ecdh.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ecdh.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ecdh.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\mbedtls\src\ecdh.c
+      1          /*
+      2           *  Elliptic curve Diffie-Hellman
+      3           *
+      4           *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+      5           *  SPDX-License-Identifier: Apache-2.0
+      6           *
+      7           *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+      8           *  not use this file except in compliance with the License.
+      9           *  You may obtain a copy of the License at
+     10           *
+     11           *  http://www.apache.org/licenses/LICENSE-2.0
+     12           *
+     13           *  Unless required by applicable law or agreed to in writing, software
+     14           *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     15           *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     16           *  See the License for the specific language governing permissions and
+     17           *  limitations under the License.
+     18           *
+     19           *  This file is part of mbed TLS (https://tls.mbed.org)
+     20           */
+     21          
+     22          /*
+     23           * References:
+     24           *
+     25           * SEC1 http://www.secg.org/index.php?action=secg,docs_secg
+     26           * RFC 4492
+     27           */
+     28          
+     29          #if !defined(MBEDTLS_CONFIG_FILE)
+     30          #include "mbedtls/config.h"
+     31          #else
+     32          #include MBEDTLS_CONFIG_FILE
+     33          #endif
+     34          
+     35          #if defined(MBEDTLS_ECDH_C)
+     36          
+     37          #include "mbedtls/ecdh.h"
+     38          
+     39          #include <string.h>
+     40          
+     41          /*
+     42           * Generate public key: simple wrapper around mbedtls_ecp_gen_keypair
+     43           */
+     44          int mbedtls_ecdh_gen_public( mbedtls_ecp_group *grp, mbedtls_mpi *d, mbedtls_ecp_point *Q,
+     45                               int (*f_rng)(void *, unsigned char *, size_t),
+     46                               void *p_rng )
+     47          {
+     48              return mbedtls_ecp_gen_keypair( grp, d, Q, f_rng, p_rng );
+     49          }
+     50          
+     51          /*
+     52           * Compute shared secret (SEC1 3.3.1)
+     53           */
+     54          int mbedtls_ecdh_compute_shared( mbedtls_ecp_group *grp, mbedtls_mpi *z,
+     55                                   const mbedtls_ecp_point *Q, const mbedtls_mpi *d,
+     56                                   int (*f_rng)(void *, unsigned char *, size_t),
+     57                                   void *p_rng )
+     58          {
+     59              int ret;
+     60              mbedtls_ecp_point P;
+     61          
+     62              mbedtls_ecp_point_init( &P );
+     63          
+     64              /*
+     65               * Make sure Q is a valid pubkey before using it
+     66               */
+     67              MBEDTLS_MPI_CHK( mbedtls_ecp_check_pubkey( grp, Q ) );
+     68          
+     69              MBEDTLS_MPI_CHK( mbedtls_ecp_mul( grp, &P, d, Q, f_rng, p_rng ) );
+     70          
+     71              if( mbedtls_ecp_is_zero( &P ) )
+     72              {
+     73                  ret = MBEDTLS_ERR_ECP_BAD_INPUT_DATA;
+     74                  goto cleanup;
+     75              }
+     76          
+     77              MBEDTLS_MPI_CHK( mbedtls_mpi_copy( z, &P.X ) );
+     78          
+     79          cleanup:
+     80              mbedtls_ecp_point_free( &P );
+     81          
+     82              return( ret );
+     83          }
+     84          
+     85          /*
+     86           * Initialize context
+     87           */
+     88          void mbedtls_ecdh_init( mbedtls_ecdh_context *ctx )
+     89          {
+     90              memset( ctx, 0, sizeof( mbedtls_ecdh_context ) );
+     91          }
+     92          
+     93          /*
+     94           * Free context
+     95           */
+     96          void mbedtls_ecdh_free( mbedtls_ecdh_context *ctx )
+     97          {
+     98              if( ctx == NULL )
+     99                  return;
+    100          
+    101              mbedtls_ecp_group_free( &ctx->grp );
+    102              mbedtls_ecp_point_free( &ctx->Q   );
+    103              mbedtls_ecp_point_free( &ctx->Qp  );
+    104              mbedtls_ecp_point_free( &ctx->Vi  );
+    105              mbedtls_ecp_point_free( &ctx->Vf  );
+    106              mbedtls_mpi_free( &ctx->d  );
+    107              mbedtls_mpi_free( &ctx->z  );
+    108              mbedtls_mpi_free( &ctx->_d );
+    109          }
+    110          
+    111          /*
+    112           * Setup and write the ServerKeyExhange parameters (RFC 4492)
+    113           *      struct {
+    114           *          ECParameters    curve_params;
+    115           *          ECPoint         public;
+    116           *      } ServerECDHParams;
+    117           */
+    118          int mbedtls_ecdh_make_params( mbedtls_ecdh_context *ctx, size_t *olen,
+    119                                unsigned char *buf, size_t blen,
+    120                                int (*f_rng)(void *, unsigned char *, size_t),
+    121                                void *p_rng )
+    122          {
+    123              int ret;
+    124              size_t grp_len, pt_len;
+    125          
+    126              if( ctx == NULL || ctx->grp.pbits == 0 )
+    127                  return( MBEDTLS_ERR_ECP_BAD_INPUT_DATA );
+    128          
+    129              if( ( ret = mbedtls_ecdh_gen_public( &ctx->grp, &ctx->d, &ctx->Q, f_rng, p_rng ) )
+    130                          != 0 )
+    131                  return( ret );
+    132          
+    133              if( ( ret = mbedtls_ecp_tls_write_group( &ctx->grp, &grp_len, buf, blen ) )
+    134                          != 0 )
+    135                  return( ret );
+    136          
+    137              buf += grp_len;
+    138              blen -= grp_len;
+    139          
+    140              if( ( ret = mbedtls_ecp_tls_write_point( &ctx->grp, &ctx->Q, ctx->point_format,
+    141                                               &pt_len, buf, blen ) ) != 0 )
+    142                  return( ret );
+    143          
+    144              *olen = grp_len + pt_len;
+    145              return( 0 );
+    146          }
+    147          
+    148          /*
+    149           * Read the ServerKeyExhange parameters (RFC 4492)
+    150           *      struct {
+    151           *          ECParameters    curve_params;
+    152           *          ECPoint         public;
+    153           *      } ServerECDHParams;
+    154           */
+    155          int mbedtls_ecdh_read_params( mbedtls_ecdh_context *ctx,
+    156                                const unsigned char **buf, const unsigned char *end )
+    157          {
+    158              int ret;
+    159          
+    160              if( ( ret = mbedtls_ecp_tls_read_group( &ctx->grp, buf, end - *buf ) ) != 0 )
+    161                  return( ret );
+    162          
+    163              if( ( ret = mbedtls_ecp_tls_read_point( &ctx->grp, &ctx->Qp, buf, end - *buf ) )
+    164                          != 0 )
+    165                  return( ret );
+    166          
+    167              return( 0 );
+    168          }
+    169          
+    170          /*
+    171           * Get parameters from a keypair
+    172           */
+    173          int mbedtls_ecdh_get_params( mbedtls_ecdh_context *ctx, const mbedtls_ecp_keypair *key,
+    174                               mbedtls_ecdh_side side )
+    175          {
+    176              int ret;
+    177          
+    178              if( ( ret = mbedtls_ecp_group_copy( &ctx->grp, &key->grp ) ) != 0 )
+    179                  return( ret );
+    180          
+    181              /* If it's not our key, just import the public part as Qp */
+    182              if( side == MBEDTLS_ECDH_THEIRS )
+    183                  return( mbedtls_ecp_copy( &ctx->Qp, &key->Q ) );
+    184          
+    185              /* Our key: import public (as Q) and private parts */
+    186              if( side != MBEDTLS_ECDH_OURS )
+    187                  return( MBEDTLS_ERR_ECP_BAD_INPUT_DATA );
+    188          
+    189              if( ( ret = mbedtls_ecp_copy( &ctx->Q, &key->Q ) ) != 0 ||
+    190                  ( ret = mbedtls_mpi_copy( &ctx->d, &key->d ) ) != 0 )
+    191                  return( ret );
+    192          
+    193              return( 0 );
+    194          }
+    195          
+    196          /*
+    197           * Setup and export the client public value
+    198           */
+    199          int mbedtls_ecdh_make_public( mbedtls_ecdh_context *ctx, size_t *olen,
+    200                                unsigned char *buf, size_t blen,
+    201                                int (*f_rng)(void *, unsigned char *, size_t),
+    202                                void *p_rng )
+    203          {
+    204              int ret;
+    205          
+    206              if( ctx == NULL || ctx->grp.pbits == 0 )
+    207                  return( MBEDTLS_ERR_ECP_BAD_INPUT_DATA );
+    208          
+    209              if( ( ret = mbedtls_ecdh_gen_public( &ctx->grp, &ctx->d, &ctx->Q, f_rng, p_rng ) )
+    210                          != 0 )
+    211                  return( ret );
+    212          
+    213              return mbedtls_ecp_tls_write_point( &ctx->grp, &ctx->Q, ctx->point_format,
+    214                                          olen, buf, blen );
+    215          }
+    216          
+    217          /*
+    218           * Parse and import the client's public value
+    219           */
+    220          int mbedtls_ecdh_read_public( mbedtls_ecdh_context *ctx,
+    221                                const unsigned char *buf, size_t blen )
+    222          {
+    223              int ret;
+    224              const unsigned char *p = buf;
+    225          
+    226              if( ctx == NULL )
+    227                  return( MBEDTLS_ERR_ECP_BAD_INPUT_DATA );
+    228          
+    229              if( ( ret = mbedtls_ecp_tls_read_point( &ctx->grp, &ctx->Qp, &p, blen ) ) != 0 )
+    230                  return( ret );
+    231          
+    232              if( (size_t)( p - buf ) != blen )
+    233                  return( MBEDTLS_ERR_ECP_BAD_INPUT_DATA );
+    234          
+    235              return( 0 );
+    236          }
+    237          
+    238          /*
+    239           * Derive and export the shared secret
+    240           */
+    241          int mbedtls_ecdh_calc_secret( mbedtls_ecdh_context *ctx, size_t *olen,
+    242                                unsigned char *buf, size_t blen,
+    243                                int (*f_rng)(void *, unsigned char *, size_t),
+    244                                void *p_rng )
+    245          {
+    246              int ret;
+    247          
+    248              if( ctx == NULL )
+    249                  return( MBEDTLS_ERR_ECP_BAD_INPUT_DATA );
+    250          
+    251              if( ( ret = mbedtls_ecdh_compute_shared( &ctx->grp, &ctx->z, &ctx->Qp, &ctx->d,
+    252                                               f_rng, p_rng ) ) != 0 )
+    253              {
+    254                  return( ret );
+    255              }
+    256          
+    257              if( mbedtls_mpi_size( &ctx->z ) > blen )
+    258                  return( MBEDTLS_ERR_ECP_BAD_INPUT_DATA );
+    259          
+    260              *olen = ctx->grp.pbits / 8 + ( ( ctx->grp.pbits % 8 ) != 0 );
+    261              return mbedtls_mpi_write_binary( &ctx->z, buf, *olen );
+    262          }
+    263          
+    264          #endif /* MBEDTLS_ECDH_C */
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

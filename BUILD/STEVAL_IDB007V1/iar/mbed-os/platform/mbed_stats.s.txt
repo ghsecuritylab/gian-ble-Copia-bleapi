@@ -1,0 +1,191 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:47
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\platform\mbed_stats.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_stats.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_stats.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_stats.o
+#        .\mbed-os\platform\mbed_stats.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_stats.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_stats.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\platform\mbed_stats.c
+      1          #include "mbed_stats.h"
+      2          #include <string.h>
+      3          #include <stdlib.h>
+      4          #include "mbed_assert.h"
+      5          
+      6          #if MBED_CONF_RTOS_PRESENT
+      7          #include "cmsis_os2.h"
+      8          #endif
+      9          
+     10          // note: mbed_stats_heap_get defined in mbed_alloc_wrappers.cpp
+     11          
+
+   \                                 In section .text, align 2, keep-with-next
+     12          void mbed_stats_stack_get(mbed_stats_stack_t *stats)
+     13          {
+   \                     mbed_stats_stack_get: (+1)
+   \   00000000   0xB410             PUSH     {R4}
+     14              memset(stats, 0, sizeof(mbed_stats_stack_t));
+   \   00000002   0x2100             MOVS     R1,#+0
+   \   00000004   0x2200             MOVS     R2,#+0
+   \   00000006   0x2300             MOVS     R3,#+0
+   \   00000008   0x2400             MOVS     R4,#+0
+   \   0000000A   0xC01E             STM      R0!,{R1-R4}
+     15          
+     16          #if MBED_STACK_STATS_ENABLED && MBED_CONF_RTOS_PRESENT
+     17              uint32_t thread_n = osThreadGetCount();
+     18              unsigned i;
+     19              osThreadId_t *threads;
+     20          
+     21              threads = malloc(sizeof(osThreadId_t) * thread_n);
+     22              MBED_ASSERT(threads != NULL);
+     23          
+     24              osKernelLock();
+     25              thread_n = osThreadEnumerate(threads, thread_n);
+     26          
+     27              for(i = 0; i < thread_n; i++) {
+     28                  uint32_t stack_size = osThreadGetStackSize(threads[i]);
+     29                  stats->max_size += stack_size - osThreadGetStackSpace(threads[i]);
+     30                  stats->reserved_size += stack_size;
+     31                  stats->stack_cnt++;
+     32              }
+     33              osKernelUnlock();
+     34          
+     35              free(threads);
+     36          #endif
+     37          }
+   \   0000000C   0xBC10             POP      {R4}
+   \   0000000E   0x4770             BX       LR               ;; return
+     38          
+
+   \                                 In section .text, align 2, keep-with-next
+     39          size_t mbed_stats_stack_get_each(mbed_stats_stack_t *stats, size_t count)
+     40          {
+   \                     mbed_stats_stack_get_each: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     41              memset(stats, 0, count*sizeof(mbed_stats_stack_t));
+   \   00000002   0x0109             LSLS     R1,R1,#+4
+   \   00000004   0x.... 0x....      BL       __aeabi_memclr4
+     42              size_t i = 0;
+     43          
+     44          #if MBED_STACK_STATS_ENABLED && MBED_CONF_RTOS_PRESENT
+     45              osThreadId_t *threads;
+     46          
+     47              threads = malloc(sizeof(osThreadId_t) * count);
+     48              MBED_ASSERT(threads != NULL);
+     49          
+     50              osKernelLock();
+     51              count = osThreadEnumerate(threads, count);
+     52          
+     53              for(i = 0; i < count; i++) {
+     54                  uint32_t stack_size = osThreadGetStackSize(threads[i]);
+     55                  stats[i].max_size = stack_size - osThreadGetStackSpace(threads[i]);
+     56                  stats[i].reserved_size = stack_size;
+     57                  stats[i].thread_id = (uint32_t)threads[i];
+     58                  stats[i].stack_cnt = 1;
+     59              }
+     60              osKernelUnlock();
+     61          
+     62              free(threads);
+     63          #endif
+     64          
+     65              return i;
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0xBD02             POP      {R1,PC}          ;; return
+     66          }
+     67          
+     68          #if MBED_STACK_STATS_ENABLED && !MBED_CONF_RTOS_PRESENT
+     69          #warning Stack statistics are currently not supported without the rtos.
+     70          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   mbed_stats_stack_get
+       8   mbed_stats_stack_get_each
+         8   -> __aeabi_memclr4
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      16  mbed_stats_stack_get
+      12  mbed_stats_stack_get_each
+
+ 
+ 28 bytes in section .text
+ 
+ 28 bytes of CODE memory
+
+Errors: none
+Warnings: none

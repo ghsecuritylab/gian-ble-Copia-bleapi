@@ -1,0 +1,1873 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:53
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_mempool.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_mempool.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_mempool.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_mempool.o
+#        .\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_mempool.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_mempool.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_mempool.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_mempool.c
+      1          /*
+      2           * Copyright (c) 2013-2017 ARM Limited. All rights reserved.
+      3           *
+      4           * SPDX-License-Identifier: Apache-2.0
+      5           *
+      6           * Licensed under the Apache License, Version 2.0 (the License); you may
+      7           * not use this file except in compliance with the License.
+      8           * You may obtain a copy of the License at
+      9           *
+     10           * www.apache.org/licenses/LICENSE-2.0
+     11           *
+     12           * Unless required by applicable law or agreed to in writing, software
+     13           * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+     14           * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     15           * See the License for the specific language governing permissions and
+     16           * limitations under the License.
+     17           *
+     18           * -----------------------------------------------------------------------------
+     19           *
+     20           * Project:     CMSIS-RTOS RTX
+     21           * Title:       Memory Pool functions
+     22           *
+     23           * -----------------------------------------------------------------------------
+     24           */
+     25          
+     26          #include "rtx_lib.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     27          
+     28          
+     29          //  ==== Library functions ====
+     30          
+     31          /// Initialize Memory Pool.
+     32          /// \param[in]  mp_info         memory pool info.
+     33          /// \param[in]  block_count     maximum number of memory blocks in memory pool.
+     34          /// \param[in]  block_size      size of a memory block in bytes.
+     35          /// \param[in]  block_mem       pointer to memory for block storage.
+     36          /// \return 1 - success, 0 - failure.
+
+   \                                 In section .text, align 2, keep-with-next
+     37          uint32_t osRtxMemoryPoolInit (os_mp_info_t *mp_info, uint32_t block_count, uint32_t block_size, void *block_mem) {
+   \                     osRtxMemoryPoolInit: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x000D             MOVS     R5,R1
+   \   00000004   0x0017             MOVS     R7,R2
+   \   00000006   0x001C             MOVS     R4,R3
+     38            void *block;
+     39          
+     40            // Check parameters
+     41            if ((mp_info == NULL) || (block_count == 0U) || (block_size  == 0U) || (block_mem   == NULL)) {
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD005             BEQ      ??osRtxMemoryPoolInit_0
+   \   0000000C   0x2D00             CMP      R5,#+0
+   \   0000000E   0xD003             BEQ      ??osRtxMemoryPoolInit_0
+   \   00000010   0x2F00             CMP      R7,#+0
+   \   00000012   0xD001             BEQ      ??osRtxMemoryPoolInit_0
+   \   00000014   0x2C00             CMP      R4,#+0
+   \   00000016   0xD101             BNE      ??osRtxMemoryPoolInit_1
+     42              return 0U;
+   \                     ??osRtxMemoryPoolInit_0: (+1)
+   \   00000018   0x2000             MOVS     R0,#+0
+   \   0000001A   0xBDF2             POP      {R1,R4-R7,PC}
+     43            }
+     44          
+     45            // Initialize information structure
+     46            mp_info->max_blocks  = block_count;
+   \                     ??osRtxMemoryPoolInit_1: (+1)
+   \   0000001C   0x6005             STR      R5,[R0, #+0]
+     47            mp_info->used_blocks = 0U;
+   \   0000001E   0x2600             MOVS     R6,#+0
+   \   00000020   0x6046             STR      R6,[R0, #+4]
+     48            mp_info->block_size  = block_size;
+   \   00000022   0x6087             STR      R7,[R0, #+8]
+     49            mp_info->block_base  = block_mem;
+   \   00000024   0x60C4             STR      R4,[R0, #+12]
+     50            mp_info->block_free  = block_mem;
+   \   00000026   0x6144             STR      R4,[R0, #+20]
+     51            mp_info->block_lim   = (uint8_t *)block_mem + (block_count * block_size);
+   \   00000028   0x4379             MULS     R1,R7,R1
+   \   0000002A   0x1861             ADDS     R1,R4,R1
+   \   0000002C   0x6101             STR      R1,[R0, #+16]
+     52          
+     53            EvrRtxMemoryBlockInit(mp_info, block_count, block_size, block_mem);
+   \   0000002E   0x0029             MOVS     R1,R5
+   \   00000030   0x.... 0x....      BL       EvrRtxMemoryBlockInit
+   \   00000034   0xE002             B        ??osRtxMemoryPoolInit_2
+     54          
+     55            // Link all free blocks
+     56            while (--block_count) {
+     57              block = (uint8_t *)block_mem + block_size;
+     58              *((void **)block_mem) = block;
+   \                     ??osRtxMemoryPoolInit_3: (+1)
+   \   00000036   0x19E0             ADDS     R0,R4,R7
+   \   00000038   0x6020             STR      R0,[R4, #+0]
+     59              block_mem = block;
+   \   0000003A   0x0004             MOVS     R4,R0
+     60            }
+   \                     ??osRtxMemoryPoolInit_2: (+1)
+   \   0000003C   0x1E6D             SUBS     R5,R5,#+1
+   \   0000003E   0xD1FA             BNE      ??osRtxMemoryPoolInit_3
+     61            *((void **)block_mem) = NULL;
+   \   00000040   0x6026             STR      R6,[R4, #+0]
+     62          
+     63            return 1U;
+   \   00000042   0x2001             MOVS     R0,#+1
+   \   00000044   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+     64          }
+     65          
+     66          /// Allocate a memory block from a Memory Pool.
+     67          /// \param[in]  mp_info         memory pool info.
+     68          /// \return address of the allocated memory block or NULL in case of no memory is available.
+
+   \                                 In section .text, align 2, keep-with-next
+     69          void *osRtxMemoryPoolAlloc (os_mp_info_t *mp_info) {
+   \                     osRtxMemoryPoolAlloc: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+     70          #if (__EXCLUSIVE_ACCESS == 0U)
+     71            uint32_t primask = __get_PRIMASK();
+   \   00000002   0xF3EF 0x8110      MRS      R1,PRIMASK
+     72          #endif
+     73            void *block;
+     74          
+     75            if (mp_info == NULL) {
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD104             BNE      ??osRtxMemoryPoolAlloc_0
+     76              EvrRtxMemoryBlockAlloc(NULL, NULL);
+   \   0000000A   0x2100             MOVS     R1,#+0
+   \   0000000C   0x.... 0x....      BL       EvrRtxMemoryBlockAlloc
+     77              return NULL;
+   \   00000010   0x2000             MOVS     R0,#+0
+   \   00000012   0xBD10             POP      {R4,PC}
+     78            }
+     79          
+     80          #if (__EXCLUSIVE_ACCESS == 0U)
+     81            __disable_irq();
+   \                     ??osRtxMemoryPoolAlloc_0: (+1)
+   \   00000014   0xB672             CPSID    I
+     82          
+     83            if (mp_info->used_blocks < mp_info->max_blocks) {
+   \   00000016   0x6842             LDR      R2,[R0, #+4]
+   \   00000018   0x6803             LDR      R3,[R0, #+0]
+   \   0000001A   0x429A             CMP      R2,R3
+   \   0000001C   0xD207             BCS      ??osRtxMemoryPoolAlloc_1
+     84              mp_info->used_blocks++;
+   \   0000001E   0x1C52             ADDS     R2,R2,#+1
+   \   00000020   0x6042             STR      R2,[R0, #+4]
+     85              block = mp_info->block_free;
+   \   00000022   0x6944             LDR      R4,[R0, #+20]
+     86              if (block != NULL) {
+   \   00000024   0x2C00             CMP      R4,#+0
+   \   00000026   0xD003             BEQ      ??osRtxMemoryPoolAlloc_2
+     87                mp_info->block_free = *((void **)block);
+   \   00000028   0x6822             LDR      R2,[R4, #+0]
+   \   0000002A   0x6142             STR      R2,[R0, #+20]
+   \   0000002C   0xE000             B        ??osRtxMemoryPoolAlloc_2
+     88              }
+     89            } else {
+     90              block = NULL;
+   \                     ??osRtxMemoryPoolAlloc_1: (+1)
+   \   0000002E   0x2400             MOVS     R4,#+0
+     91            }
+     92          
+     93            if (primask == 0U) {
+   \                     ??osRtxMemoryPoolAlloc_2: (+1)
+   \   00000030   0x2900             CMP      R1,#+0
+   \   00000032   0xD100             BNE      ??osRtxMemoryPoolAlloc_3
+     94              __enable_irq();
+   \   00000034   0xB662             CPSIE    I
+     95            }
+     96          #else
+     97            if (atomic_inc32_lt(&mp_info->used_blocks, mp_info->max_blocks) < mp_info->max_blocks) {
+     98              block = atomic_link_get(&mp_info->block_free);
+     99            } else {
+    100              block = NULL;
+    101            }
+    102          #endif
+    103          
+    104            EvrRtxMemoryBlockAlloc(mp_info, block);
+   \                     ??osRtxMemoryPoolAlloc_3: (+1)
+   \   00000036   0x0021             MOVS     R1,R4
+   \   00000038   0x.... 0x....      BL       EvrRtxMemoryBlockAlloc
+    105          
+    106            return block;
+   \   0000003C   0x0020             MOVS     R0,R4
+   \   0000003E   0xBD10             POP      {R4,PC}          ;; return
+    107          }
+    108          
+    109          /// Return an allocated memory block back to a Memory Pool.
+    110          /// \param[in]  mp_info         memory pool info.
+    111          /// \param[in]  block           address of the allocated memory block to be returned to the memory pool.
+    112          /// \return status code that indicates the execution status of the function.
+
+   \                                 In section .text, align 2, keep-with-next
+    113          osStatus_t osRtxMemoryPoolFree (os_mp_info_t *mp_info, void *block) {
+   \                     osRtxMemoryPoolFree: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    114          #if (__EXCLUSIVE_ACCESS == 0U)
+    115            uint32_t primask = __get_PRIMASK();
+   \   00000002   0xF3EF 0x8210      MRS      R2,PRIMASK
+    116          #endif
+    117            osStatus_t status;
+    118          
+    119            if ((mp_info == NULL) || (block < mp_info->block_base) || (block >= mp_info->block_lim)) {
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD005             BEQ      ??osRtxMemoryPoolFree_0
+   \   0000000A   0x68C4             LDR      R4,[R0, #+12]
+   \   0000000C   0x42A1             CMP      R1,R4
+   \   0000000E   0xD302             BCC      ??osRtxMemoryPoolFree_0
+   \   00000010   0x6904             LDR      R4,[R0, #+16]
+   \   00000012   0x42A1             CMP      R1,R4
+   \   00000014   0xD302             BCC      ??osRtxMemoryPoolFree_1
+    120              EvrRtxMemoryBlockFree(mp_info, block, osErrorParameter);
+   \                     ??osRtxMemoryPoolFree_0: (+1)
+   \   00000016   0x2403             MOVS     R4,#+3
+   \   00000018   0x43E4             MVNS     R4,R4            ;; #-4
+   \   0000001A   0xE00F             B        ??osRtxMemoryPoolFree_2
+    121              return osErrorParameter;
+    122            }
+    123          
+    124          #if (__EXCLUSIVE_ACCESS == 0U)
+    125            __disable_irq();
+   \                     ??osRtxMemoryPoolFree_1: (+1)
+   \   0000001C   0xB672             CPSID    I
+    126          
+    127            if (mp_info->used_blocks != 0U) {
+   \   0000001E   0x6843             LDR      R3,[R0, #+4]
+   \   00000020   0x2B00             CMP      R3,#+0
+   \   00000022   0xD006             BEQ      ??osRtxMemoryPoolFree_3
+    128              mp_info->used_blocks--;
+   \   00000024   0x1E5B             SUBS     R3,R3,#+1
+   \   00000026   0x6043             STR      R3,[R0, #+4]
+    129              *((void **)block) = mp_info->block_free;
+   \   00000028   0x6943             LDR      R3,[R0, #+20]
+   \   0000002A   0x600B             STR      R3,[R1, #+0]
+    130              mp_info->block_free = block;
+   \   0000002C   0x6141             STR      R1,[R0, #+20]
+    131              status = osOK;
+   \   0000002E   0x2400             MOVS     R4,#+0
+   \   00000030   0xE001             B        ??osRtxMemoryPoolFree_4
+    132            } else {
+    133              status = osErrorResource;
+   \                     ??osRtxMemoryPoolFree_3: (+1)
+   \   00000032   0x2402             MOVS     R4,#+2
+   \   00000034   0x43E4             MVNS     R4,R4            ;; #-3
+    134            }
+    135          
+    136            if (primask == 0U) {
+   \                     ??osRtxMemoryPoolFree_4: (+1)
+   \   00000036   0x2A00             CMP      R2,#+0
+   \   00000038   0xD100             BNE      ??osRtxMemoryPoolFree_2
+    137              __enable_irq();
+   \   0000003A   0xB662             CPSIE    I
+    138            }
+    139          #else
+    140            if (atomic_dec32_nz(&mp_info->used_blocks) != 0U) {
+    141              atomic_link_put(&mp_info->block_free, block);
+    142              status = osOK;
+    143            } else {
+    144              status = osErrorResource;
+    145            }
+    146          #endif
+    147          
+    148            EvrRtxMemoryBlockFree(mp_info, block, status);
+   \                     ??osRtxMemoryPoolFree_2: (+1)
+   \   0000003C   0x0022             MOVS     R2,R4
+   \   0000003E   0x.... 0x....      BL       EvrRtxMemoryBlockFree
+    149          
+    150            return status;
+   \   00000042   0x0020             MOVS     R0,R4
+   \   00000044   0xBD10             POP      {R4,PC}          ;; return
+    151          }
+    152          
+    153          /// Memory Pool post ISR processing.
+    154          /// \param[in]  mp              memory pool object.
+
+   \                                 In section .text, align 2, keep-with-next
+    155          void osRtxMemoryPoolPostProcess (os_memory_pool_t *mp) {
+   \                     osRtxMemoryPoolPostProcess: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    156            void        *block;
+    157            os_thread_t *thread;
+    158          
+    159            if (mp->state == osRtxObjectInactive) {
+   \   00000004   0x7860             LDRB     R0,[R4, #+1]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD013             BEQ      ??osRtxMemoryPoolPostProcess_0
+    160              return;
+    161            }
+    162          
+    163            // Check if Thread is waiting to allocate memory
+    164            if (mp->thread_list != NULL) {
+   \   0000000A   0x68A0             LDR      R0,[R4, #+8]
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD010             BEQ      ??osRtxMemoryPoolPostProcess_0
+    165              // Allocate memory
+    166              block = osRtxMemoryPoolAlloc(&mp->mp_info);
+   \   00000010   0x0020             MOVS     R0,R4
+   \   00000012   0x300C             ADDS     R0,R0,#+12
+   \   00000014   0x.... 0x....      BL       osRtxMemoryPoolAlloc
+   \   00000018   0x0005             MOVS     R5,R0
+    167              if (block != NULL) {
+   \   0000001A   0xD00A             BEQ      ??osRtxMemoryPoolPostProcess_0
+    168                // Wakeup waiting Thread with highest Priority
+    169                thread = osRtxThreadListGet((os_object_t*)mp);
+   \   0000001C   0x0020             MOVS     R0,R4
+   \   0000001E   0x.... 0x....      BL       osRtxThreadListGet
+    170                osRtxThreadWaitExit(thread, (uint32_t)block, false);
+   \   00000022   0x2200             MOVS     R2,#+0
+   \   00000024   0x0029             MOVS     R1,R5
+   \   00000026   0x.... 0x....      BL       osRtxThreadWaitExit
+    171                EvrRtxMemoryPoolAllocated(mp, block);
+   \   0000002A   0x0029             MOVS     R1,R5
+   \   0000002C   0x0020             MOVS     R0,R4
+   \   0000002E   0x.... 0x....      BL       EvrRtxMemoryPoolAllocated
+    172              }
+    173            }
+    174          }
+   \                     ??osRtxMemoryPoolPostProcess_0: (+1)
+   \   00000032   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    175          
+    176          
+    177          //  ==== Service Calls ====
+    178          
+    179          //  Service Calls definitions
+    180          SVC0_3M(MemoryPoolNew,          osMemoryPoolId_t, uint32_t, uint32_t, const osMemoryPoolAttr_t *)
+    181          SVC0_1 (MemoryPoolGetName,      const char *,     osMemoryPoolId_t)
+    182          SVC0_2 (MemoryPoolAlloc,        void *,           osMemoryPoolId_t, uint32_t)
+    183          SVC0_2 (MemoryPoolFree,         osStatus_t,       osMemoryPoolId_t, void *)
+    184          SVC0_1 (MemoryPoolGetCapacity,  uint32_t,         osMemoryPoolId_t)
+    185          SVC0_1 (MemoryPoolGetBlockSize, uint32_t,         osMemoryPoolId_t)
+    186          SVC0_1 (MemoryPoolGetCount,     uint32_t,         osMemoryPoolId_t)
+    187          SVC0_1 (MemoryPoolGetSpace,     uint32_t,         osMemoryPoolId_t)
+    188          SVC0_1 (MemoryPoolDelete,       osStatus_t,       osMemoryPoolId_t)
+    189          
+    190          /// Create and Initialize a Memory Pool object.
+    191          /// \note API identical to osMemoryPoolNew
+
+   \                                 In section .text, align 2, keep-with-next
+    192          osMemoryPoolId_t svcRtxMemoryPoolNew (uint32_t block_count, uint32_t block_size, const osMemoryPoolAttr_t *attr) {
+   \                     svcRtxMemoryPoolNew: (+1)
+   \   00000000   0xB5F1             PUSH     {R0,R4-R7,LR}
+   \   00000002   0xB084             SUB      SP,SP,#+16
+    193            os_memory_pool_t *mp;
+    194            void             *mp_mem;
+    195            uint32_t          mp_size;
+    196            uint32_t          size;
+    197            uint8_t           flags;
+    198            const char       *name;
+    199          
+    200            // Check parameters
+    201            if ((block_count == 0U) || (block_size  == 0U)) {
+   \   00000004   0x2800             CMP      R0,#+0
+   \   00000006   0xD01D             BEQ      ??svcRtxMemoryPoolNew_0
+   \   00000008   0x2900             CMP      R1,#+0
+   \   0000000A   0xD01B             BEQ      ??svcRtxMemoryPoolNew_0
+    202              EvrRtxMemoryPoolError(NULL, osErrorParameter);
+    203              return NULL;
+    204            }
+    205            block_size = (block_size + 3U) & ~3UL;
+   \   0000000C   0x1CCF             ADDS     R7,R1,#+3
+   \   0000000E   0x2003             MOVS     R0,#+3
+   \   00000010   0x4387             BICS     R7,R7,R0
+   \   00000012   0x2000             MOVS     R0,#+0
+    206            if ((__CLZ(block_count) + __CLZ(block_size)) < 32) {
+   \   00000014   0x2180             MOVS     R1,#+128
+   \   00000016   0x0609             LSLS     R1,R1,#+24       ;; #-2147483648
+   \   00000018   0x000B             MOVS     R3,R1
+   \   0000001A   0xE001             B        ??svcRtxMemoryPoolNew_1
+   \                     ??svcRtxMemoryPoolNew_2: (+1)
+   \   0000001C   0x1C40             ADDS     R0,R0,#+1
+   \   0000001E   0x085B             LSRS     R3,R3,#+1
+   \                     ??svcRtxMemoryPoolNew_1: (+1)
+   \   00000020   0x9C04             LDR      R4,[SP, #+16]
+   \   00000022   0x401C             ANDS     R4,R4,R3
+   \   00000024   0xD0FA             BEQ      ??svcRtxMemoryPoolNew_2
+   \   00000026   0x2F00             CMP      R7,#+0
+   \   00000028   0xD101             BNE      ??svcRtxMemoryPoolNew_3
+   \   0000002A   0x2320             MOVS     R3,#+32
+   \   0000002C   0xE005             B        ??svcRtxMemoryPoolNew_4
+   \                     ??svcRtxMemoryPoolNew_3: (+1)
+   \   0000002E   0x2300             MOVS     R3,#+0
+   \   00000030   0xE001             B        ??svcRtxMemoryPoolNew_5
+   \                     ??svcRtxMemoryPoolNew_6: (+1)
+   \   00000032   0x1C5B             ADDS     R3,R3,#+1
+   \   00000034   0x0849             LSRS     R1,R1,#+1
+   \                     ??svcRtxMemoryPoolNew_5: (+1)
+   \   00000036   0x420F             TST      R7,R1
+   \   00000038   0xD0FB             BEQ      ??svcRtxMemoryPoolNew_6
+   \                     ??svcRtxMemoryPoolNew_4: (+1)
+   \   0000003A   0xB2C0             UXTB     R0,R0
+   \   0000003C   0xB2DB             UXTB     R3,R3
+   \   0000003E   0x18C0             ADDS     R0,R0,R3
+   \   00000040   0x2820             CMP      R0,#+32
+   \   00000042   0xDA05             BGE      ??svcRtxMemoryPoolNew_7
+    207              EvrRtxMemoryPoolError(NULL, osErrorParameter);
+   \                     ??svcRtxMemoryPoolNew_0: (+1)
+   \   00000044   0x2103             MOVS     R1,#+3
+   \   00000046   0x43C9             MVNS     R1,R1            ;; #-4
+   \   00000048   0x2000             MOVS     R0,#+0
+   \   0000004A   0x.... 0x....      BL       EvrRtxMemoryPoolError
+    208              return NULL;
+   \   0000004E   0xE064             B.N      ??svcRtxMemoryPoolNew_8
+    209            }
+    210          
+    211            size = block_count * block_size;
+   \                     ??svcRtxMemoryPoolNew_7: (+1)
+   \   00000050   0x9804             LDR      R0,[SP, #+16]
+   \   00000052   0x4378             MULS     R0,R7,R0
+   \   00000054   0x9001             STR      R0,[SP, #+4]
+    212          
+    213            // Process attributes
+    214            if (attr != NULL) {
+   \   00000056   0x2A00             CMP      R2,#+0
+   \   00000058   0xD02E             BEQ      ??svcRtxMemoryPoolNew_9
+    215              name    = attr->name;
+   \   0000005A   0x6810             LDR      R0,[R2, #+0]
+   \   0000005C   0x9002             STR      R0,[SP, #+8]
+    216              mp      = attr->cb_mem;
+   \   0000005E   0x6895             LDR      R5,[R2, #+8]
+    217              mp_mem  = attr->mp_mem;
+   \   00000060   0x6910             LDR      R0,[R2, #+16]
+   \   00000062   0x9000             STR      R0,[SP, #+0]
+    218              mp_size = attr->mp_size;
+   \   00000064   0x6950             LDR      R0,[R2, #+20]
+    219              if (mp != NULL) {
+   \   00000066   0x2D00             CMP      R5,#+0
+   \   00000068   0xD015             BEQ      ??svcRtxMemoryPoolNew_10
+    220                if (((uint32_t)mp & 3U) || (attr->cb_size < sizeof(os_memory_pool_t))) {
+   \   0000006A   0x07A9             LSLS     R1,R5,#+30
+   \   0000006C   0xD116             BNE      ??svcRtxMemoryPoolNew_11
+   \   0000006E   0x68D1             LDR      R1,[R2, #+12]
+   \   00000070   0x2924             CMP      R1,#+36
+   \   00000072   0xD313             BCC      ??svcRtxMemoryPoolNew_11
+    221                  EvrRtxMemoryPoolError(NULL, osRtxErrorInvalidControlBlock);
+    222                  return NULL;
+    223                }
+    224              } else {
+    225                if (attr->cb_size != 0U) {
+    226                  EvrRtxMemoryPoolError(NULL, osRtxErrorInvalidControlBlock);
+    227                  return NULL;
+    228                }
+    229              }
+    230              if (mp_mem != NULL) {
+   \                     ??svcRtxMemoryPoolNew_12: (+1)
+   \   00000074   0x9900             LDR      R1,[SP, #+0]
+   \   00000076   0x2900             CMP      R1,#+0
+   \   00000078   0xD016             BEQ      ??svcRtxMemoryPoolNew_13
+    231                if (((uint32_t)mp_mem & 3U) || (mp_size < size)) {
+   \   0000007A   0x0789             LSLS     R1,R1,#+30
+   \   0000007C   0xD116             BNE      ??svcRtxMemoryPoolNew_14
+   \   0000007E   0x9901             LDR      R1,[SP, #+4]
+   \   00000080   0x4288             CMP      R0,R1
+   \   00000082   0xD313             BCC      ??svcRtxMemoryPoolNew_14
+    232                  EvrRtxMemoryPoolError(NULL, osRtxErrorInvalidDataMemory);
+    233                  return NULL;
+    234                }
+    235              } else {
+    236                if (mp_size != 0U) {
+    237                  EvrRtxMemoryPoolError(NULL, osRtxErrorInvalidDataMemory);
+    238                  return NULL;
+    239                }
+    240              }
+    241            } else {
+    242              name   = NULL;
+    243              mp     = NULL;
+    244              mp_mem = NULL;
+    245            }
+    246          
+    247            // Allocate object memory if not provided
+    248            if (mp == NULL) {
+   \                     ??svcRtxMemoryPoolNew_15: (+1)
+   \   00000084   0x2D00             CMP      R5,#+0
+   \   00000086   0xD12A             BNE      ??svcRtxMemoryPoolNew_16
+    249              if (osRtxInfo.mpi.memory_pool != NULL) {
+   \                     ??svcRtxMemoryPoolNew_17: (+1)
+   \   00000088   0x....             LDR      R4,??DataTable1
+   \   0000008A   0x6B20             LDR      R0,[R4, #+48]
+   \   0000008C   0x2800             CMP      R0,#+0
+   \   0000008E   0xD017             BEQ      ??svcRtxMemoryPoolNew_18
+    250                mp = osRtxMemoryPoolAlloc(osRtxInfo.mpi.memory_pool);
+   \   00000090   0x.... 0x....      BL       osRtxMemoryPoolAlloc
+   \   00000094   0xE019             B        ??svcRtxMemoryPoolNew_19
+    251              } else {
+   \                     ??svcRtxMemoryPoolNew_10: (+1)
+   \   00000096   0x68D1             LDR      R1,[R2, #+12]
+   \   00000098   0x2900             CMP      R1,#+0
+   \   0000009A   0xD0EB             BEQ      ??svcRtxMemoryPoolNew_12
+   \                     ??svcRtxMemoryPoolNew_11: (+1)
+   \   0000009C   0x2108             MOVS     R1,#+8
+   \   0000009E   0x43C9             MVNS     R1,R1            ;; #-9
+   \   000000A0   0x2000             MOVS     R0,#+0
+   \   000000A2   0x.... 0x....      BL       EvrRtxMemoryPoolError
+   \   000000A6   0xE038             B.N      ??svcRtxMemoryPoolNew_8
+   \                     ??svcRtxMemoryPoolNew_13: (+1)
+   \   000000A8   0x2800             CMP      R0,#+0
+   \   000000AA   0xD0EB             BEQ      ??svcRtxMemoryPoolNew_15
+   \                     ??svcRtxMemoryPoolNew_14: (+1)
+   \   000000AC   0x2109             MOVS     R1,#+9
+   \   000000AE   0x43C9             MVNS     R1,R1            ;; #-10
+   \   000000B0   0x2000             MOVS     R0,#+0
+   \   000000B2   0x.... 0x....      BL       EvrRtxMemoryPoolError
+   \   000000B6   0xE030             B.N      ??svcRtxMemoryPoolNew_8
+   \                     ??svcRtxMemoryPoolNew_9: (+1)
+   \   000000B8   0x2000             MOVS     R0,#+0
+   \   000000BA   0x9002             STR      R0,[SP, #+8]
+   \   000000BC   0x9000             STR      R0,[SP, #+0]
+   \   000000BE   0xE7E3             B        ??svcRtxMemoryPoolNew_17
+    252                mp = osRtxMemoryAlloc(osRtxInfo.mem.common, sizeof(os_memory_pool_t), 1U);
+   \                     ??svcRtxMemoryPoolNew_18: (+1)
+   \   000000C0   0x2201             MOVS     R2,#+1
+   \   000000C2   0x2124             MOVS     R1,#+36
+   \   000000C4   0x6960             LDR      R0,[R4, #+20]
+   \   000000C6   0x.... 0x....      BL       osRtxMemoryAlloc
+   \                     ??svcRtxMemoryPoolNew_19: (+1)
+   \   000000CA   0x0005             MOVS     R5,R0
+    253              }
+    254              if (mp == NULL) {
+   \   000000CC   0xD105             BNE      ??svcRtxMemoryPoolNew_20
+    255                EvrRtxMemoryPoolError(NULL, osErrorNoMemory);
+   \   000000CE   0x2104             MOVS     R1,#+4
+   \   000000D0   0x43C9             MVNS     R1,R1            ;; #-5
+   \   000000D2   0x2000             MOVS     R0,#+0
+   \   000000D4   0x.... 0x....      BL       EvrRtxMemoryPoolError
+    256                return NULL;
+   \   000000D8   0xE01F             B.N      ??svcRtxMemoryPoolNew_8
+    257              }
+    258              flags = osRtxFlagSystemObject;
+   \                     ??svcRtxMemoryPoolNew_20: (+1)
+   \   000000DA   0x2601             MOVS     R6,#+1
+   \   000000DC   0xE000             B        ??svcRtxMemoryPoolNew_21
+    259            } else {
+    260              flags = 0U;
+   \                     ??svcRtxMemoryPoolNew_16: (+1)
+   \   000000DE   0x2600             MOVS     R6,#+0
+    261            }
+    262          
+    263            // Allocate data memory if not provided
+    264            if (mp_mem == NULL) {
+   \                     ??svcRtxMemoryPoolNew_21: (+1)
+   \   000000E0   0x....             LDR      R4,??DataTable1
+   \   000000E2   0x9800             LDR      R0,[SP, #+0]
+   \   000000E4   0x2800             CMP      R0,#+0
+   \   000000E6   0xD120             BNE      ??svcRtxMemoryPoolNew_22
+    265              mp_mem = osRtxMemoryAlloc(osRtxInfo.mem.mp_data, size, 0U);
+   \   000000E8   0x2200             MOVS     R2,#+0
+   \   000000EA   0x9901             LDR      R1,[SP, #+4]
+   \   000000EC   0x68E0             LDR      R0,[R4, #+12]
+   \   000000EE   0x.... 0x....      BL       osRtxMemoryAlloc
+   \   000000F2   0x9000             STR      R0,[SP, #+0]
+    266              if (mp_mem == NULL) {
+   \   000000F4   0x2800             CMP      R0,#+0
+   \   000000F6   0xD112             BNE      ??svcRtxMemoryPoolNew_23
+    267                EvrRtxMemoryPoolError(NULL, osErrorNoMemory);
+   \   000000F8   0x2104             MOVS     R1,#+4
+   \   000000FA   0x43C9             MVNS     R1,R1            ;; #-5
+   \   000000FC   0x.... 0x....      BL       EvrRtxMemoryPoolError
+    268                if (flags & osRtxFlagSystemObject) {
+   \   00000100   0x2E00             CMP      R6,#+0
+   \   00000102   0xD00A             BEQ      ??svcRtxMemoryPoolNew_8
+    269                  if (osRtxInfo.mpi.memory_pool != NULL) {
+   \   00000104   0x6B20             LDR      R0,[R4, #+48]
+   \   00000106   0x2800             CMP      R0,#+0
+   \   00000108   0xD003             BEQ      ??svcRtxMemoryPoolNew_24
+    270                    osRtxMemoryPoolFree(osRtxInfo.mpi.memory_pool, mp);
+   \   0000010A   0x0029             MOVS     R1,R5
+   \   0000010C   0x.... 0x....      BL       osRtxMemoryPoolFree
+   \   00000110   0xE003             B        ??svcRtxMemoryPoolNew_8
+    271                  } else {
+    272                    osRtxMemoryFree(osRtxInfo.mem.common, mp);
+   \                     ??svcRtxMemoryPoolNew_24: (+1)
+   \   00000112   0x0029             MOVS     R1,R5
+   \   00000114   0x6960             LDR      R0,[R4, #+20]
+   \   00000116   0x.... 0x....      BL       osRtxMemoryFree
+    273                  }
+    274                }
+    275                return NULL;
+   \                     ??svcRtxMemoryPoolNew_8: (+1)
+   \   0000011A   0x2000             MOVS     R0,#+0
+   \   0000011C   0xE01B             B        ??svcRtxMemoryPoolNew_25
+    276              }
+    277              memset(mp_mem, 0, size);
+   \                     ??svcRtxMemoryPoolNew_23: (+1)
+   \   0000011E   0x9901             LDR      R1,[SP, #+4]
+   \   00000120   0x.... 0x....      BL       __aeabi_memclr
+    278              flags |= osRtxFlagSystemMemory;
+   \   00000124   0x0030             MOVS     R0,R6
+   \   00000126   0x2602             MOVS     R6,#+2
+   \   00000128   0x4306             ORRS     R6,R6,R0
+    279            }
+    280          
+    281            // Initialize control block
+    282            mp->id          = osRtxIdMemoryPool;
+   \                     ??svcRtxMemoryPoolNew_22: (+1)
+   \   0000012A   0x2006             MOVS     R0,#+6
+   \   0000012C   0x7028             STRB     R0,[R5, #+0]
+    283            mp->state       = osRtxObjectActive;
+   \   0000012E   0x2001             MOVS     R0,#+1
+   \   00000130   0x7068             STRB     R0,[R5, #+1]
+    284            mp->flags       = flags;
+   \   00000132   0x70AE             STRB     R6,[R5, #+2]
+    285            mp->name        = name;
+   \   00000134   0x9802             LDR      R0,[SP, #+8]
+   \   00000136   0x6068             STR      R0,[R5, #+4]
+    286            mp->thread_list = NULL;
+   \   00000138   0x2000             MOVS     R0,#+0
+   \   0000013A   0x60A8             STR      R0,[R5, #+8]
+    287            osRtxMemoryPoolInit(&mp->mp_info, block_count, block_size, mp_mem);
+   \   0000013C   0x9B00             LDR      R3,[SP, #+0]
+   \   0000013E   0x003A             MOVS     R2,R7
+   \   00000140   0x9904             LDR      R1,[SP, #+16]
+   \   00000142   0x0028             MOVS     R0,R5
+   \   00000144   0x300C             ADDS     R0,R0,#+12
+   \   00000146   0x.... 0x....      BL       osRtxMemoryPoolInit
+    288          
+    289            // Register post ISR processing function
+    290            osRtxInfo.post_process.memory_pool = osRtxMemoryPoolPostProcess;
+   \   0000014A   0x....             LDR      R0,??DataTable4
+   \   0000014C   0x6020             STR      R0,[R4, #+0]
+    291          
+    292            EvrRtxMemoryPoolCreated(mp);
+   \   0000014E   0x0028             MOVS     R0,R5
+   \   00000150   0x.... 0x....      BL       EvrRtxMemoryPoolCreated
+    293          
+    294            return mp;
+   \   00000154   0x0028             MOVS     R0,R5
+   \                     ??svcRtxMemoryPoolNew_25: (+1)
+   \   00000156   0xB005             ADD      SP,SP,#+20
+   \   00000158   0xBDF0             POP      {R4-R7,PC}       ;; return
+    295          }
+    296          
+    297          /// Get name of a Memory Pool object.
+    298          /// \note API identical to osMemoryPoolGetName
+
+   \                                 In section .text, align 2, keep-with-next
+    299          const char *svcRtxMemoryPoolGetName (osMemoryPoolId_t mp_id) {
+   \                     svcRtxMemoryPoolGetName: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    300            os_memory_pool_t *mp = (os_memory_pool_t *)mp_id;
+    301          
+    302            // Check parameters
+    303            if ((mp == NULL) || (mp->id != osRtxIdMemoryPool)) {
+   \   00000004   0xD005             BEQ      ??svcRtxMemoryPoolGetName_0
+   \   00000006   0x7820             LDRB     R0,[R4, #+0]
+   \   00000008   0x2806             CMP      R0,#+6
+   \   0000000A   0xD102             BNE      ??svcRtxMemoryPoolGetName_0
+    304              EvrRtxMemoryPoolGetName(mp, NULL);
+    305              return NULL;
+    306            }
+    307          
+    308            // Check object state
+    309            if (mp->state == osRtxObjectInactive) {
+   \   0000000C   0x7860             LDRB     R0,[R4, #+1]
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD105             BNE      ??svcRtxMemoryPoolGetName_1
+    310              EvrRtxMemoryPoolGetName(mp, NULL);
+   \                     ??svcRtxMemoryPoolGetName_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x.... 0x....      BL       EvrRtxMemoryPoolGetName
+    311              return NULL;
+   \   0000001A   0x2000             MOVS     R0,#+0
+   \   0000001C   0xBD10             POP      {R4,PC}
+    312            }
+    313          
+    314            EvrRtxMemoryPoolGetName(mp, mp->name);
+   \                     ??svcRtxMemoryPoolGetName_1: (+1)
+   \   0000001E   0x6861             LDR      R1,[R4, #+4]
+   \   00000020   0x0020             MOVS     R0,R4
+   \   00000022   0x.... 0x....      BL       EvrRtxMemoryPoolGetName
+    315          
+    316            return mp->name;
+   \   00000026   0x6860             LDR      R0,[R4, #+4]
+   \   00000028   0xBD10             POP      {R4,PC}          ;; return
+    317          }
+    318          
+    319          /// Allocate a memory block from a Memory Pool.
+    320          /// \note API identical to osMemoryPoolAlloc
+
+   \                                 In section .text, align 2, keep-with-next
+    321          void *svcRtxMemoryPoolAlloc (osMemoryPoolId_t mp_id, uint32_t timeout) {
+   \                     svcRtxMemoryPoolAlloc: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000E             MOVS     R6,R1
+    322            os_memory_pool_t *mp = (os_memory_pool_t *)mp_id;
+    323            void             *block;
+    324          
+    325            // Check parameters
+    326            if ((mp == NULL) || (mp->id != osRtxIdMemoryPool)) {
+   \   00000006   0x2C00             CMP      R4,#+0
+   \   00000008   0xD002             BEQ      ??svcRtxMemoryPoolAlloc_0
+   \   0000000A   0x7820             LDRB     R0,[R4, #+0]
+   \   0000000C   0x2806             CMP      R0,#+6
+   \   0000000E   0xD001             BEQ      ??svcRtxMemoryPoolAlloc_1
+    327              EvrRtxMemoryPoolError(mp, osErrorParameter);
+   \                     ??svcRtxMemoryPoolAlloc_0: (+1)
+   \   00000010   0x2103             MOVS     R1,#+3
+   \   00000012   0xE003             B.N      ??svcRtxMemoryPoolAlloc_2
+    328              return NULL;
+    329            }
+    330          
+    331            // Check object state
+    332            if (mp->state == osRtxObjectInactive) {
+   \                     ??svcRtxMemoryPoolAlloc_1: (+1)
+   \   00000014   0x7860             LDRB     R0,[R4, #+1]
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD106             BNE      ??svcRtxMemoryPoolAlloc_3
+    333              EvrRtxMemoryPoolError(mp, osErrorResource);
+   \   0000001A   0x2102             MOVS     R1,#+2
+   \                     ??svcRtxMemoryPoolAlloc_2: (+1)
+   \   0000001C   0x43C9             MVNS     R1,R1            ;; #-3
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0x.... 0x....      BL       EvrRtxMemoryPoolError
+    334              return NULL;
+   \   00000024   0x2000             MOVS     R0,#+0
+   \   00000026   0xBD70             POP      {R4-R6,PC}
+    335            }
+    336          
+    337            // Allocate memory
+    338            block = osRtxMemoryPoolAlloc(&mp->mp_info);
+   \                     ??svcRtxMemoryPoolAlloc_3: (+1)
+   \   00000028   0x0020             MOVS     R0,R4
+   \   0000002A   0x300C             ADDS     R0,R0,#+12
+   \   0000002C   0x.... 0x....      BL       osRtxMemoryPoolAlloc
+   \   00000030   0x0005             MOVS     R5,R0
+    339            if (block == NULL) {
+   \   00000032   0xD113             BNE      ??svcRtxMemoryPoolAlloc_4
+    340              // No memory available
+    341              if (timeout != 0U) {
+   \   00000034   0x2E00             CMP      R6,#+0
+   \   00000036   0xD00D             BEQ      ??svcRtxMemoryPoolAlloc_5
+    342                EvrRtxMemoryPoolAllocPending(mp, timeout);
+   \   00000038   0x0031             MOVS     R1,R6
+   \   0000003A   0x0020             MOVS     R0,R4
+   \   0000003C   0x.... 0x....      BL       EvrRtxMemoryPoolAllocPending
+    343                // Suspend current Thread
+    344                osRtxThreadListPut((os_object_t*)mp, osRtxThreadGetRunning());
+   \   00000040   0x....             LDR      R0,??DataTable5
+   \   00000042   0x6941             LDR      R1,[R0, #+20]
+   \   00000044   0x0020             MOVS     R0,R4
+   \   00000046   0x.... 0x....      BL       osRtxThreadListPut
+    345                osRtxThreadWaitEnter(osRtxThreadWaitingMemoryPool, timeout);
+   \   0000004A   0x0031             MOVS     R1,R6
+   \   0000004C   0x2073             MOVS     R0,#+115
+   \   0000004E   0x.... 0x....      BL       osRtxThreadWaitEnter
+   \   00000052   0xE007             B        ??svcRtxMemoryPoolAlloc_6
+    346              } else {
+    347                EvrRtxMemoryPoolAllocFailed(mp);
+   \                     ??svcRtxMemoryPoolAlloc_5: (+1)
+   \   00000054   0x0020             MOVS     R0,R4
+   \   00000056   0x.... 0x....      BL       EvrRtxMemoryPoolAllocFailed
+   \   0000005A   0xE003             B        ??svcRtxMemoryPoolAlloc_6
+    348              }
+    349            } else {
+    350              EvrRtxMemoryPoolAllocated(mp, block);
+   \                     ??svcRtxMemoryPoolAlloc_4: (+1)
+   \   0000005C   0x0029             MOVS     R1,R5
+   \   0000005E   0x0020             MOVS     R0,R4
+   \   00000060   0x.... 0x....      BL       EvrRtxMemoryPoolAllocated
+    351            }
+    352          
+    353            return block;
+   \                     ??svcRtxMemoryPoolAlloc_6: (+1)
+   \   00000064   0x0028             MOVS     R0,R5
+   \   00000066   0xBD70             POP      {R4-R6,PC}       ;; return
+    354          }
+    355          
+    356          /// Return an allocated memory block back to a Memory Pool.
+    357          /// \note API identical to osMemoryPoolFree
+
+   \                                 In section .text, align 2, keep-with-next
+    358          osStatus_t svcRtxMemoryPoolFree (osMemoryPoolId_t mp_id, void *block) {
+   \                     svcRtxMemoryPoolFree: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    359            os_memory_pool_t *mp = (os_memory_pool_t *)mp_id;
+    360            os_thread_t      *thread;
+    361            osStatus_t        status;
+    362          
+    363            // Check parameters
+    364            if ((mp == NULL) || (mp->id != osRtxIdMemoryPool)) {
+   \   00000006   0x2C00             CMP      R4,#+0
+   \   00000008   0xD002             BEQ      ??svcRtxMemoryPoolFree_0
+   \   0000000A   0x7820             LDRB     R0,[R4, #+0]
+   \   0000000C   0x2806             CMP      R0,#+6
+   \   0000000E   0xD001             BEQ      ??svcRtxMemoryPoolFree_1
+    365              EvrRtxMemoryPoolError(mp, osErrorParameter);
+   \                     ??svcRtxMemoryPoolFree_0: (+1)
+   \   00000010   0x2503             MOVS     R5,#+3
+   \   00000012   0xE003             B.N      ??svcRtxMemoryPoolFree_2
+    366              return osErrorParameter;
+    367            }
+    368          
+    369            // Check object state
+    370            if (mp->state == osRtxObjectInactive) {
+   \                     ??svcRtxMemoryPoolFree_1: (+1)
+   \   00000014   0x7860             LDRB     R0,[R4, #+1]
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD107             BNE      ??svcRtxMemoryPoolFree_3
+    371              EvrRtxMemoryPoolError(mp, osErrorResource);
+   \   0000001A   0x2502             MOVS     R5,#+2
+   \                     ??svcRtxMemoryPoolFree_2: (+1)
+   \   0000001C   0x43ED             MVNS     R5,R5            ;; #-3
+   \   0000001E   0x0029             MOVS     R1,R5
+   \   00000020   0x0020             MOVS     R0,R4
+   \   00000022   0x.... 0x....      BL       EvrRtxMemoryPoolError
+    372              return osErrorResource;
+   \   00000026   0x0028             MOVS     R0,R5
+   \   00000028   0xBD70             POP      {R4-R6,PC}
+    373            }
+    374          
+    375            // Free memory
+    376            status = osRtxMemoryPoolFree(&mp->mp_info, block);
+   \                     ??svcRtxMemoryPoolFree_3: (+1)
+   \   0000002A   0x0020             MOVS     R0,R4
+   \   0000002C   0x300C             ADDS     R0,R0,#+12
+   \   0000002E   0x.... 0x....      BL       osRtxMemoryPoolFree
+   \   00000032   0x0006             MOVS     R6,R0
+    377            if (status == osOK) {
+   \   00000034   0xD118             BNE      ??svcRtxMemoryPoolFree_4
+    378              EvrRtxMemoryPoolDeallocated(mp, block);
+   \   00000036   0x0029             MOVS     R1,R5
+   \   00000038   0x0020             MOVS     R0,R4
+   \   0000003A   0x.... 0x....      BL       EvrRtxMemoryPoolDeallocated
+    379              // Check if Thread is waiting to allocate memory
+    380              if (mp->thread_list != NULL) {
+   \   0000003E   0x68A0             LDR      R0,[R4, #+8]
+   \   00000040   0x2800             CMP      R0,#+0
+   \   00000042   0xD015             BEQ      ??svcRtxMemoryPoolFree_5
+    381                // Allocate memory
+    382                block = osRtxMemoryPoolAlloc(&mp->mp_info);
+   \   00000044   0x0020             MOVS     R0,R4
+   \   00000046   0x300C             ADDS     R0,R0,#+12
+   \   00000048   0x.... 0x....      BL       osRtxMemoryPoolAlloc
+   \   0000004C   0x0005             MOVS     R5,R0
+    383                if (block != NULL) {
+   \   0000004E   0xD00F             BEQ      ??svcRtxMemoryPoolFree_5
+    384                  // Wakeup waiting Thread with highest Priority
+    385                  thread = osRtxThreadListGet((os_object_t*)mp);
+   \   00000050   0x0020             MOVS     R0,R4
+   \   00000052   0x.... 0x....      BL       osRtxThreadListGet
+    386                  osRtxThreadWaitExit(thread, (uint32_t)block, true);
+   \   00000056   0x2201             MOVS     R2,#+1
+   \   00000058   0x0029             MOVS     R1,R5
+   \   0000005A   0x.... 0x....      BL       osRtxThreadWaitExit
+    387                  EvrRtxMemoryPoolAllocated(mp, block);
+   \   0000005E   0x0029             MOVS     R1,R5
+   \   00000060   0x0020             MOVS     R0,R4
+   \   00000062   0x.... 0x....      BL       EvrRtxMemoryPoolAllocated
+   \   00000066   0xE003             B        ??svcRtxMemoryPoolFree_5
+    388                }
+    389              }
+    390            } else {
+    391              EvrRtxMemoryPoolFreeFailed(mp, block);
+   \                     ??svcRtxMemoryPoolFree_4: (+1)
+   \   00000068   0x0029             MOVS     R1,R5
+   \   0000006A   0x0020             MOVS     R0,R4
+   \   0000006C   0x.... 0x....      BL       EvrRtxMemoryPoolFreeFailed
+    392            }
+    393          
+    394            return status;
+   \                     ??svcRtxMemoryPoolFree_5: (+1)
+   \   00000070   0x0030             MOVS     R0,R6
+   \   00000072   0xBD70             POP      {R4-R6,PC}       ;; return
+    395          }
+    396          
+    397          /// Get maximum number of memory blocks in a Memory Pool.
+    398          /// \note API identical to osMemoryPoolGetCapacity
+
+   \                                 In section .text, align 2, keep-with-next
+    399          uint32_t svcRtxMemoryPoolGetCapacity (osMemoryPoolId_t mp_id) {
+   \                     svcRtxMemoryPoolGetCapacity: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    400            os_memory_pool_t *mp = (os_memory_pool_t *)mp_id;
+    401          
+    402            // Check parameters
+    403            if ((mp == NULL) || (mp->id != osRtxIdMemoryPool)) {
+   \   00000004   0xD005             BEQ      ??svcRtxMemoryPoolGetCapacity_0
+   \   00000006   0x7820             LDRB     R0,[R4, #+0]
+   \   00000008   0x2806             CMP      R0,#+6
+   \   0000000A   0xD102             BNE      ??svcRtxMemoryPoolGetCapacity_0
+    404              EvrRtxMemoryPoolGetCapacity(mp, 0U);
+    405              return 0U;
+    406            }
+    407          
+    408            // Check object state
+    409            if (mp->state == osRtxObjectInactive) {
+   \   0000000C   0x7860             LDRB     R0,[R4, #+1]
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD105             BNE      ??svcRtxMemoryPoolGetCapacity_1
+    410              EvrRtxMemoryPoolGetCapacity(mp, 0U);
+   \                     ??svcRtxMemoryPoolGetCapacity_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x.... 0x....      BL       EvrRtxMemoryPoolGetCapacity
+    411              return 0U;
+   \   0000001A   0x2000             MOVS     R0,#+0
+   \   0000001C   0xBD10             POP      {R4,PC}
+    412            }
+    413          
+    414            EvrRtxMemoryPoolGetCapacity(mp, mp->mp_info.max_blocks);
+   \                     ??svcRtxMemoryPoolGetCapacity_1: (+1)
+   \   0000001E   0x68E1             LDR      R1,[R4, #+12]
+   \   00000020   0x0020             MOVS     R0,R4
+   \   00000022   0x.... 0x....      BL       EvrRtxMemoryPoolGetCapacity
+    415          
+    416            return mp->mp_info.max_blocks;
+   \   00000026   0x68E0             LDR      R0,[R4, #+12]
+   \   00000028   0xBD10             POP      {R4,PC}          ;; return
+    417          }
+    418          
+    419          /// Get memory block size in a Memory Pool.
+    420          /// \note API identical to osMemoryPoolGetBlockSize
+
+   \                                 In section .text, align 2, keep-with-next
+    421          uint32_t svcRtxMemoryPoolGetBlockSize (osMemoryPoolId_t mp_id) {
+   \                     svcRtxMemoryPoolGetBlockSize: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    422            os_memory_pool_t *mp = (os_memory_pool_t *)mp_id;
+    423          
+    424            // Check parameters
+    425            if ((mp == NULL) || (mp->id != osRtxIdMemoryPool)) {
+   \   00000004   0xD005             BEQ      ??svcRtxMemoryPoolGetBlockSize_0
+   \   00000006   0x7820             LDRB     R0,[R4, #+0]
+   \   00000008   0x2806             CMP      R0,#+6
+   \   0000000A   0xD102             BNE      ??svcRtxMemoryPoolGetBlockSize_0
+    426              EvrRtxMemoryPoolGetBlockSize(mp, 0U);
+    427              return 0U;
+    428            }
+    429          
+    430            // Check object state
+    431            if (mp->state == osRtxObjectInactive) {
+   \   0000000C   0x7860             LDRB     R0,[R4, #+1]
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD105             BNE      ??svcRtxMemoryPoolGetBlockSize_1
+    432              EvrRtxMemoryPoolGetBlockSize(mp, 0U);
+   \                     ??svcRtxMemoryPoolGetBlockSize_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x.... 0x....      BL       EvrRtxMemoryPoolGetBlockSize
+    433              return 0U;
+   \   0000001A   0x2000             MOVS     R0,#+0
+   \   0000001C   0xBD10             POP      {R4,PC}
+    434            }
+    435          
+    436            EvrRtxMemoryPoolGetBlockSize(mp, mp->mp_info.block_size);
+   \                     ??svcRtxMemoryPoolGetBlockSize_1: (+1)
+   \   0000001E   0x6961             LDR      R1,[R4, #+20]
+   \   00000020   0x0020             MOVS     R0,R4
+   \   00000022   0x.... 0x....      BL       EvrRtxMemoryPoolGetBlockSize
+    437          
+    438            return mp->mp_info.block_size;
+   \   00000026   0x6960             LDR      R0,[R4, #+20]
+   \   00000028   0xBD10             POP      {R4,PC}          ;; return
+    439          }
+    440          
+    441          /// Get number of memory blocks used in a Memory Pool.
+    442          /// \note API identical to osMemoryPoolGetCount
+
+   \                                 In section .text, align 2, keep-with-next
+    443          uint32_t svcRtxMemoryPoolGetCount (osMemoryPoolId_t mp_id) {
+   \                     svcRtxMemoryPoolGetCount: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    444            os_memory_pool_t *mp = (os_memory_pool_t *)mp_id;
+    445          
+    446            // Check parameters
+    447            if ((mp == NULL) || (mp->id != osRtxIdMemoryPool)) {
+   \   00000004   0xD005             BEQ      ??svcRtxMemoryPoolGetCount_0
+   \   00000006   0x7820             LDRB     R0,[R4, #+0]
+   \   00000008   0x2806             CMP      R0,#+6
+   \   0000000A   0xD102             BNE      ??svcRtxMemoryPoolGetCount_0
+    448              EvrRtxMemoryPoolGetCount(mp, 0U);
+    449              return 0U;
+    450            }
+    451          
+    452            // Check object state
+    453            if (mp->state == osRtxObjectInactive) {
+   \   0000000C   0x7860             LDRB     R0,[R4, #+1]
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD105             BNE      ??svcRtxMemoryPoolGetCount_1
+    454              EvrRtxMemoryPoolGetCount(mp, 0U);
+   \                     ??svcRtxMemoryPoolGetCount_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x.... 0x....      BL       EvrRtxMemoryPoolGetCount
+    455              return 0U;
+   \   0000001A   0x2000             MOVS     R0,#+0
+   \   0000001C   0xBD10             POP      {R4,PC}
+    456            }
+    457          
+    458            EvrRtxMemoryPoolGetCount(mp, mp->mp_info.used_blocks);
+   \                     ??svcRtxMemoryPoolGetCount_1: (+1)
+   \   0000001E   0x6921             LDR      R1,[R4, #+16]
+   \   00000020   0x0020             MOVS     R0,R4
+   \   00000022   0x.... 0x....      BL       EvrRtxMemoryPoolGetCount
+    459          
+    460            return mp->mp_info.used_blocks;
+   \   00000026   0x6920             LDR      R0,[R4, #+16]
+   \   00000028   0xBD10             POP      {R4,PC}          ;; return
+    461          }
+    462          
+    463          /// Get number of memory blocks available in a Memory Pool.
+    464          /// \note API identical to osMemoryPoolGetSpace
+
+   \                                 In section .text, align 2, keep-with-next
+    465          uint32_t svcRtxMemoryPoolGetSpace (osMemoryPoolId_t mp_id) {
+   \                     svcRtxMemoryPoolGetSpace: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    466            os_memory_pool_t *mp = (os_memory_pool_t *)mp_id;
+    467          
+    468            // Check parameters
+    469            if ((mp == NULL) || (mp->id != osRtxIdMemoryPool)) {
+   \   00000004   0xD005             BEQ      ??svcRtxMemoryPoolGetSpace_0
+   \   00000006   0x7820             LDRB     R0,[R4, #+0]
+   \   00000008   0x2806             CMP      R0,#+6
+   \   0000000A   0xD102             BNE      ??svcRtxMemoryPoolGetSpace_0
+    470              EvrRtxMemoryPoolGetSpace(mp, 0U);
+    471              return 0U;
+    472            }
+    473          
+    474            // Check object state
+    475            if (mp->state == osRtxObjectInactive) {
+   \   0000000C   0x7860             LDRB     R0,[R4, #+1]
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD105             BNE      ??svcRtxMemoryPoolGetSpace_1
+    476              EvrRtxMemoryPoolGetSpace(mp, 0U);
+   \                     ??svcRtxMemoryPoolGetSpace_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x.... 0x....      BL       EvrRtxMemoryPoolGetSpace
+    477              return 0U;
+   \   0000001A   0x2000             MOVS     R0,#+0
+   \   0000001C   0xBD10             POP      {R4,PC}
+    478            }
+    479          
+    480            EvrRtxMemoryPoolGetSpace(mp, mp->mp_info.max_blocks - mp->mp_info.used_blocks);
+   \                     ??svcRtxMemoryPoolGetSpace_1: (+1)
+   \   0000001E   0x68E0             LDR      R0,[R4, #+12]
+   \   00000020   0x6921             LDR      R1,[R4, #+16]
+   \   00000022   0x1A41             SUBS     R1,R0,R1
+   \   00000024   0x0020             MOVS     R0,R4
+   \   00000026   0x.... 0x....      BL       EvrRtxMemoryPoolGetSpace
+    481          
+    482            return (mp->mp_info.max_blocks - mp->mp_info.used_blocks);
+   \   0000002A   0x68E0             LDR      R0,[R4, #+12]
+   \   0000002C   0x6921             LDR      R1,[R4, #+16]
+   \   0000002E   0x1A40             SUBS     R0,R0,R1
+   \   00000030   0xBD10             POP      {R4,PC}          ;; return
+    483          }
+    484          
+    485          /// Delete a Memory Pool object.
+    486          /// \note API identical to osMemoryPoolDelete
+
+   \                                 In section .text, align 2, keep-with-next
+    487          osStatus_t svcRtxMemoryPoolDelete (osMemoryPoolId_t mp_id) {
+   \                     svcRtxMemoryPoolDelete: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    488            os_memory_pool_t *mp = (os_memory_pool_t *)mp_id;
+    489            os_thread_t      *thread;
+    490          
+    491            // Check parameters
+    492            if ((mp == NULL) || (mp->id != osRtxIdMemoryPool)) {
+   \   00000004   0xD002             BEQ      ??svcRtxMemoryPoolDelete_0
+   \   00000006   0x7820             LDRB     R0,[R4, #+0]
+   \   00000008   0x2806             CMP      R0,#+6
+   \   0000000A   0xD001             BEQ      ??svcRtxMemoryPoolDelete_1
+    493              EvrRtxMemoryPoolError(mp, osErrorParameter);
+   \                     ??svcRtxMemoryPoolDelete_0: (+1)
+   \   0000000C   0x2503             MOVS     R5,#+3
+   \   0000000E   0xE003             B.N      ??svcRtxMemoryPoolDelete_2
+    494              return osErrorParameter;
+    495            }
+    496          
+    497            // Check object state
+    498            if (mp->state == osRtxObjectInactive) {
+   \                     ??svcRtxMemoryPoolDelete_1: (+1)
+   \   00000010   0x7860             LDRB     R0,[R4, #+1]
+   \   00000012   0x2800             CMP      R0,#+0
+   \   00000014   0xD107             BNE      ??svcRtxMemoryPoolDelete_3
+    499              EvrRtxMemoryPoolError(mp, osErrorResource);
+   \   00000016   0x2502             MOVS     R5,#+2
+   \                     ??svcRtxMemoryPoolDelete_2: (+1)
+   \   00000018   0x43ED             MVNS     R5,R5            ;; #-3
+   \   0000001A   0x0029             MOVS     R1,R5
+   \   0000001C   0x0020             MOVS     R0,R4
+   \   0000001E   0x.... 0x....      BL       EvrRtxMemoryPoolError
+    500              return osErrorResource;
+   \   00000022   0x0028             MOVS     R0,R5
+   \   00000024   0xBD32             POP      {R1,R4,R5,PC}
+    501            }
+    502          
+    503            // Mark object as inactive
+    504            mp->state = osRtxObjectInactive;
+   \                     ??svcRtxMemoryPoolDelete_3: (+1)
+   \   00000026   0x2000             MOVS     R0,#+0
+   \   00000028   0x7060             STRB     R0,[R4, #+1]
+    505          
+    506            // Unblock waiting threads
+    507            if (mp->thread_list != NULL) {
+   \   0000002A   0x68A0             LDR      R0,[R4, #+8]
+   \   0000002C   0x2800             CMP      R0,#+0
+   \   0000002E   0xD00B             BEQ      ??svcRtxMemoryPoolDelete_4
+    508              do {
+    509                thread = osRtxThreadListGet((os_object_t*)mp);
+   \                     ??svcRtxMemoryPoolDelete_5: (+1)
+   \   00000030   0x0020             MOVS     R0,R4
+   \   00000032   0x.... 0x....      BL       osRtxThreadListGet
+    510                osRtxThreadWaitExit(thread, 0U, false);
+   \   00000036   0x2200             MOVS     R2,#+0
+   \   00000038   0x2100             MOVS     R1,#+0
+   \   0000003A   0x.... 0x....      BL       osRtxThreadWaitExit
+    511              } while (mp->thread_list != NULL);
+   \   0000003E   0x68A0             LDR      R0,[R4, #+8]
+   \   00000040   0x2800             CMP      R0,#+0
+   \   00000042   0xD1F5             BNE      ??svcRtxMemoryPoolDelete_5
+    512              osRtxThreadDispatch(NULL);
+   \   00000044   0x.... 0x....      BL       osRtxThreadDispatch
+    513            }
+    514          
+    515            // Free data memory
+    516            if (mp->flags & osRtxFlagSystemMemory) {
+   \                     ??svcRtxMemoryPoolDelete_4: (+1)
+   \   00000048   0x78A0             LDRB     R0,[R4, #+2]
+   \   0000004A   0x0780             LSLS     R0,R0,#+30
+   \   0000004C   0xD504             BPL      ??svcRtxMemoryPoolDelete_6
+    517              osRtxMemoryFree(osRtxInfo.mem.mp_data, mp->mp_info.block_base);
+   \   0000004E   0x69A1             LDR      R1,[R4, #+24]
+   \   00000050   0x....             LDR      R0,??DataTable5
+   \   00000052   0x6F80             LDR      R0,[R0, #+120]
+   \   00000054   0x.... 0x....      BL       osRtxMemoryFree
+    518            }
+    519          
+    520            // Free object memory
+    521            if (mp->flags & osRtxFlagSystemObject) {
+   \                     ??svcRtxMemoryPoolDelete_6: (+1)
+   \   00000058   0x78A0             LDRB     R0,[R4, #+2]
+   \   0000005A   0x07C0             LSLS     R0,R0,#+31
+   \   0000005C   0xD50B             BPL      ??svcRtxMemoryPoolDelete_7
+    522              if (osRtxInfo.mpi.memory_pool != NULL) {
+   \   0000005E   0x....             LDR      R2,??DataTable11
+   \   00000060   0x6A50             LDR      R0,[R2, #+36]
+   \   00000062   0x2800             CMP      R0,#+0
+   \   00000064   0xD003             BEQ      ??svcRtxMemoryPoolDelete_8
+    523                osRtxMemoryPoolFree(osRtxInfo.mpi.memory_pool, mp);
+   \   00000066   0x0021             MOVS     R1,R4
+   \   00000068   0x.... 0x....      BL       osRtxMemoryPoolFree
+   \   0000006C   0xE003             B        ??svcRtxMemoryPoolDelete_7
+    524              } else {
+    525                osRtxMemoryFree(osRtxInfo.mem.common, mp);
+   \                     ??svcRtxMemoryPoolDelete_8: (+1)
+   \   0000006E   0x0021             MOVS     R1,R4
+   \   00000070   0x6890             LDR      R0,[R2, #+8]
+   \   00000072   0x.... 0x....      BL       osRtxMemoryFree
+    526              }
+    527            }
+    528          
+    529            EvrRtxMemoryPoolDestroyed(mp);
+   \                     ??svcRtxMemoryPoolDelete_7: (+1)
+   \   00000076   0x0020             MOVS     R0,R4
+   \   00000078   0x.... 0x....      BL       EvrRtxMemoryPoolDestroyed
+    530          
+    531            return osOK;
+   \   0000007C   0x2000             MOVS     R0,#+0
+   \   0000007E   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    532          }
+    533          
+    534          
+    535          //  ==== ISR Calls ====
+    536          
+    537          /// Allocate a memory block from a Memory Pool.
+    538          /// \note API identical to osMemoryPoolAlloc
+    539          __STATIC_INLINE
+    540          void *isrRtxMemoryPoolAlloc (osMemoryPoolId_t mp_id, uint32_t timeout) {
+    541            os_memory_pool_t *mp = (os_memory_pool_t *)mp_id;
+    542            void             *block;
+    543          
+    544            // Check parameters
+    545            if ((mp == NULL) || (mp->id != osRtxIdMemoryPool) || (timeout != 0U)) {
+    546              EvrRtxMemoryPoolError(mp, osErrorParameter);
+    547              return NULL;
+    548            }
+    549          
+    550            // Check object state
+    551            if (mp->state == osRtxObjectInactive) {
+    552              EvrRtxMemoryPoolError(mp, osErrorResource);
+    553              return NULL;
+    554            }
+    555          
+    556            // Allocate memory
+    557            block = osRtxMemoryPoolAlloc(&mp->mp_info);
+    558            if (block == NULL) {
+    559              EvrRtxMemoryPoolAllocFailed(mp);
+    560            } else {
+    561              EvrRtxMemoryPoolAllocated(mp, block);
+    562            }
+    563          
+    564            return block;
+    565          }
+    566          
+    567          /// Return an allocated memory block back to a Memory Pool.
+    568          /// \note API identical to osMemoryPoolFree
+    569          __STATIC_INLINE
+    570          osStatus_t isrRtxMemoryPoolFree (osMemoryPoolId_t mp_id, void *block) {
+    571            os_memory_pool_t *mp = (os_memory_pool_t *)mp_id;
+    572            osStatus_t        status;
+    573          
+    574            // Check parameters
+    575            if ((mp == NULL) || (mp->id != osRtxIdMemoryPool)) {
+    576              EvrRtxMemoryPoolError(mp, osErrorParameter);
+    577              return osErrorParameter;
+    578            }
+    579          
+    580            // Check object state
+    581            if (mp->state == osRtxObjectInactive) {
+    582              EvrRtxMemoryPoolError(mp, osErrorResource);
+    583              return osErrorResource;
+    584            }
+    585          
+    586            // Free memory
+    587            status = osRtxMemoryPoolFree(&mp->mp_info, block);
+    588            if (status == osOK) {
+    589              // Register post ISR processing
+    590              osRtxPostProcess((os_object_t *)mp);
+    591              EvrRtxMemoryPoolDeallocated(mp, block);
+    592            } else {
+    593              EvrRtxMemoryPoolFreeFailed(mp, block);
+    594            }
+    595          
+    596            return status;
+    597          }
+    598          
+    599          
+    600          //  ==== Public API ====
+    601          
+    602          /// Create and Initialize a Memory Pool object.
+
+   \                                 In section .text, align 4, keep-with-next
+    603          osMemoryPoolId_t osMemoryPoolNew (uint32_t block_count, uint32_t block_size, const osMemoryPoolAttr_t *attr) {
+   \                     osMemoryPoolNew: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0x0015             MOVS     R5,R2
+    604            EvrRtxMemoryPoolNew(block_count, block_size, attr);
+   \   00000008   0x.... 0x....      BL       EvrRtxMemoryPoolNew
+    605            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   0000000C   0xF3EF 0x8005      MRS      R0,IPSR
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD103             BNE      ??osMemoryPoolNew_0
+   \   00000014   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD006             BEQ      ??osMemoryPoolNew_1
+    606              EvrRtxMemoryPoolError(NULL, osErrorISR);
+   \                     ??osMemoryPoolNew_0: (+1)
+   \   0000001C   0x2105             MOVS     R1,#+5
+   \   0000001E   0x43C9             MVNS     R1,R1            ;; #-6
+   \   00000020   0x2000             MOVS     R0,#+0
+   \   00000022   0x.... 0x....      BL       EvrRtxMemoryPoolError
+    607              return NULL;
+   \   00000026   0x2000             MOVS     R0,#+0
+   \   00000028   0xBDF2             POP      {R1,R4-R7,PC}
+    608            }
+    609            return __svcMemoryPoolNew(block_count, block_size, attr);
+   \                     ??osMemoryPoolNew_1: (+1)
+   \   0000002A   0xF3EF 0x8014      MRS      R0,CONTROL
+   \   0000002E   0x0780             LSLS     R0,R0,#+30
+   \   00000030   0xD406             BMI      ??osMemoryPoolNew_2
+   \   00000032   0xF3EF 0x8008      MRS      R0,MSP
+   \   00000036   0x3820             SUBS     R0,R0,#+32
+   \   00000038   0x2107             MOVS     R1,#+7
+   \   0000003A   0x4388             BICS     R0,R0,R1
+   \   0000003C   0xF380 0x8809      MSR      PSP,R0
+   \                     ??osMemoryPoolNew_2: (+1)
+   \   00000040   0x....             LDR      R0,??DataTable11_1
+   \   00000042   0x4607             mov r7,R0
+   \   00000044   0x002A             MOVS     R2,R5
+   \   00000046   0x0031             MOVS     R1,R6
+   \   00000048   0x0020             MOVS     R0,R4
+   \   0000004A   0xDF00             SVC      0x0
+   \   0000004C   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    610          }
+    611          
+    612          /// Get name of a Memory Pool object.
+
+   \                                 In section .text, align 4, keep-with-next
+    613          const char *osMemoryPoolGetName (osMemoryPoolId_t mp_id) {
+   \                     osMemoryPoolGetName: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    614            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000002   0xF3EF 0x8105      MRS      R1,IPSR
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD103             BNE      ??osMemoryPoolGetName_0
+   \   0000000A   0xF3EF 0x8110      MRS      R1,PRIMASK
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD004             BEQ      ??osMemoryPoolGetName_1
+    615              EvrRtxMemoryPoolGetName(mp_id, NULL);
+   \                     ??osMemoryPoolGetName_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x.... 0x....      BL       EvrRtxMemoryPoolGetName
+    616              return NULL;
+   \   00000018   0x2000             MOVS     R0,#+0
+   \   0000001A   0xBD80             POP      {R7,PC}
+    617            }
+    618            return __svcMemoryPoolGetName(mp_id);
+   \                     ??osMemoryPoolGetName_1: (+1)
+   \   0000001C   0x....             LDR      R1,??DataTable11_2
+   \   0000001E   0x460F             mov r7,R1
+   \   00000020   0xDF00             SVC      0x0
+   \   00000022   0xBD80             POP      {R7,PC}          ;; return
+    619          }
+    620          
+    621          /// Allocate a memory block from a Memory Pool.
+
+   \                                 In section .text, align 4, keep-with-next
+    622          void *osMemoryPoolAlloc (osMemoryPoolId_t mp_id, uint32_t timeout) {
+   \                     osMemoryPoolAlloc: (+1)
+   \   00000000   0xB5B0             PUSH     {R4,R5,R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    623            EvrRtxMemoryPoolAlloc(mp_id, timeout);
+   \   00000006   0x.... 0x....      BL       EvrRtxMemoryPoolAlloc
+    624            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   0000000A   0xF3EF 0x8005      MRS      R0,IPSR
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD103             BNE      ??osMemoryPoolAlloc_0
+   \   00000012   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD026             BEQ      ??osMemoryPoolAlloc_1
+    625              return isrRtxMemoryPoolAlloc(mp_id, timeout);
+   \                     ??osMemoryPoolAlloc_0: (+1)
+   \   0000001A   0x2C00             CMP      R4,#+0
+   \   0000001C   0xD01C             BEQ      ??osMemoryPoolAlloc_2
+   \   0000001E   0x7820             LDRB     R0,[R4, #+0]
+   \   00000020   0x2806             CMP      R0,#+6
+   \   00000022   0xD119             BNE      ??osMemoryPoolAlloc_2
+   \   00000024   0x2D00             CMP      R5,#+0
+   \   00000026   0xD117             BNE      ??osMemoryPoolAlloc_2
+   \   00000028   0x7860             LDRB     R0,[R4, #+1]
+   \   0000002A   0x2800             CMP      R0,#+0
+   \   0000002C   0xD105             BNE      ??osMemoryPoolAlloc_3
+   \   0000002E   0x2102             MOVS     R1,#+2
+   \   00000030   0x43C9             MVNS     R1,R1            ;; #-3
+   \   00000032   0x0020             MOVS     R0,R4
+   \   00000034   0x.... 0x....      BL       EvrRtxMemoryPoolError
+   \   00000038   0xE014             B        ??osMemoryPoolAlloc_4
+   \                     ??osMemoryPoolAlloc_3: (+1)
+   \   0000003A   0x0020             MOVS     R0,R4
+   \   0000003C   0x300C             ADDS     R0,R0,#+12
+   \   0000003E   0x.... 0x....      BL       osRtxMemoryPoolAlloc
+   \   00000042   0x0005             MOVS     R5,R0
+   \   00000044   0xD103             BNE      ??osMemoryPoolAlloc_5
+   \   00000046   0x0020             MOVS     R0,R4
+   \   00000048   0x.... 0x....      BL       EvrRtxMemoryPoolAllocFailed
+   \   0000004C   0xE00A             B        ??osMemoryPoolAlloc_4
+   \                     ??osMemoryPoolAlloc_5: (+1)
+   \   0000004E   0x0029             MOVS     R1,R5
+   \   00000050   0x0020             MOVS     R0,R4
+   \   00000052   0x.... 0x....      BL       EvrRtxMemoryPoolAllocated
+   \   00000056   0xE005             B        ??osMemoryPoolAlloc_4
+   \                     ??osMemoryPoolAlloc_2: (+1)
+   \   00000058   0x2103             MOVS     R1,#+3
+   \   0000005A   0x43C9             MVNS     R1,R1            ;; #-4
+   \   0000005C   0x0020             MOVS     R0,R4
+   \   0000005E   0x.... 0x....      BL       EvrRtxMemoryPoolError
+   \   00000062   0x2500             MOVS     R5,#+0
+    626            } else {
+   \                     ??osMemoryPoolAlloc_4: (+1)
+   \   00000064   0x0028             MOVS     R0,R5
+   \   00000066   0xBDB0             POP      {R4,R5,R7,PC}
+    627              return  __svcMemoryPoolAlloc(mp_id, timeout);
+   \                     ??osMemoryPoolAlloc_1: (+1)
+   \   00000068   0x....             LDR      R0,??DataTable11_3
+   \   0000006A   0x4607             mov r7,R0
+   \   0000006C   0x0029             MOVS     R1,R5
+   \   0000006E   0x0020             MOVS     R0,R4
+   \   00000070   0xDF00             SVC      0x0
+   \   00000072   0xBDB0             POP      {R4,R5,R7,PC}    ;; return
+    628            }
+    629          }
+    630          
+    631          /// Return an allocated memory block back to a Memory Pool.
+
+   \                                 In section .text, align 4, keep-with-next
+    632          osStatus_t osMemoryPoolFree (osMemoryPoolId_t mp_id, void *block) {
+   \                     osMemoryPoolFree: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    633            EvrRtxMemoryPoolFree(mp_id, block);
+   \   00000006   0x.... 0x....      BL       EvrRtxMemoryPoolFree
+    634            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   0000000A   0xF3EF 0x8005      MRS      R0,IPSR
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD103             BNE      ??osMemoryPoolFree_0
+   \   00000012   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD025             BEQ      ??osMemoryPoolFree_1
+    635              return isrRtxMemoryPoolFree(mp_id, block);
+   \                     ??osMemoryPoolFree_0: (+1)
+   \   0000001A   0x2C00             CMP      R4,#+0
+   \   0000001C   0xD01B             BEQ      ??osMemoryPoolFree_2
+   \   0000001E   0x7820             LDRB     R0,[R4, #+0]
+   \   00000020   0x2806             CMP      R0,#+6
+   \   00000022   0xD118             BNE      ??osMemoryPoolFree_2
+   \   00000024   0x7860             LDRB     R0,[R4, #+1]
+   \   00000026   0x2800             CMP      R0,#+0
+   \   00000028   0xD101             BNE      ??osMemoryPoolFree_3
+   \   0000002A   0x2602             MOVS     R6,#+2
+   \   0000002C   0xE014             B        ??osMemoryPoolFree_4
+   \                     ??osMemoryPoolFree_3: (+1)
+   \   0000002E   0x0029             MOVS     R1,R5
+   \   00000030   0x0020             MOVS     R0,R4
+   \   00000032   0x300C             ADDS     R0,R0,#+12
+   \   00000034   0x.... 0x....      BL       osRtxMemoryPoolFree
+   \   00000038   0x0006             MOVS     R6,R0
+   \   0000003A   0xD107             BNE      ??osMemoryPoolFree_5
+   \   0000003C   0x0020             MOVS     R0,R4
+   \   0000003E   0x.... 0x....      BL       osRtxPostProcess
+   \   00000042   0x0029             MOVS     R1,R5
+   \   00000044   0x0020             MOVS     R0,R4
+   \   00000046   0x.... 0x....      BL       EvrRtxMemoryPoolDeallocated
+   \   0000004A   0xE00A             B        ??osMemoryPoolFree_6
+   \                     ??osMemoryPoolFree_5: (+1)
+   \   0000004C   0x0029             MOVS     R1,R5
+   \   0000004E   0x0020             MOVS     R0,R4
+   \   00000050   0x.... 0x....      BL       EvrRtxMemoryPoolFreeFailed
+   \   00000054   0xE005             B        ??osMemoryPoolFree_6
+   \                     ??osMemoryPoolFree_2: (+1)
+   \   00000056   0x2603             MOVS     R6,#+3
+   \                     ??osMemoryPoolFree_4: (+1)
+   \   00000058   0x43F6             MVNS     R6,R6            ;; #-4
+   \   0000005A   0x0031             MOVS     R1,R6
+   \   0000005C   0x0020             MOVS     R0,R4
+   \   0000005E   0x.... 0x....      BL       EvrRtxMemoryPoolError
+    636            } else {
+   \                     ??osMemoryPoolFree_6: (+1)
+   \   00000062   0x0030             MOVS     R0,R6
+   \   00000064   0xBDF2             POP      {R1,R4-R7,PC}
+    637              return  __svcMemoryPoolFree(mp_id, block);
+   \                     ??osMemoryPoolFree_1: (+1)
+   \   00000066   0x....             LDR      R0,??DataTable11_4
+   \   00000068   0x4607             mov r7,R0
+   \   0000006A   0x0029             MOVS     R1,R5
+   \   0000006C   0x0020             MOVS     R0,R4
+   \   0000006E   0xDF00             SVC      0x0
+   \   00000070   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    638            }
+    639          }
+    640          
+    641          /// Get maximum number of memory blocks in a Memory Pool.
+
+   \                                 In section .text, align 4, keep-with-next
+    642          uint32_t osMemoryPoolGetCapacity (osMemoryPoolId_t mp_id) {
+   \                     osMemoryPoolGetCapacity: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    643            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000002   0xF3EF 0x8105      MRS      R1,IPSR
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD103             BNE      ??osMemoryPoolGetCapacity_0
+   \   0000000A   0xF3EF 0x8110      MRS      R1,PRIMASK
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD002             BEQ      ??osMemoryPoolGetCapacity_1
+    644              return svcRtxMemoryPoolGetCapacity(mp_id);
+   \                     ??osMemoryPoolGetCapacity_0: (+1)
+   \   00000012   0x.... 0x....      BL       svcRtxMemoryPoolGetCapacity
+   \   00000016   0xBD80             POP      {R7,PC}
+    645            } else {
+    646              return  __svcMemoryPoolGetCapacity(mp_id);
+   \                     ??osMemoryPoolGetCapacity_1: (+1)
+   \   00000018   0x....             LDR      R1,??DataTable11_5
+   \   0000001A   0x460F             mov r7,R1
+   \   0000001C   0xDF00             SVC      0x0
+   \   0000001E   0xBD80             POP      {R7,PC}          ;; return
+    647            }
+    648          }
+    649          
+    650          /// Get memory block size in a Memory Pool.
+
+   \                                 In section .text, align 4, keep-with-next
+    651          uint32_t osMemoryPoolGetBlockSize (osMemoryPoolId_t mp_id) {
+   \                     osMemoryPoolGetBlockSize: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    652            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000002   0xF3EF 0x8105      MRS      R1,IPSR
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD103             BNE      ??osMemoryPoolGetBlockSize_0
+   \   0000000A   0xF3EF 0x8110      MRS      R1,PRIMASK
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD002             BEQ      ??osMemoryPoolGetBlockSize_1
+    653              return svcRtxMemoryPoolGetBlockSize(mp_id);
+   \                     ??osMemoryPoolGetBlockSize_0: (+1)
+   \   00000012   0x.... 0x....      BL       svcRtxMemoryPoolGetBlockSize
+   \   00000016   0xBD80             POP      {R7,PC}
+    654            } else {
+    655              return  __svcMemoryPoolGetBlockSize(mp_id);
+   \                     ??osMemoryPoolGetBlockSize_1: (+1)
+   \   00000018   0x....             LDR      R1,??DataTable11_6
+   \   0000001A   0x460F             mov r7,R1
+   \   0000001C   0xDF00             SVC      0x0
+   \   0000001E   0xBD80             POP      {R7,PC}          ;; return
+    656            }
+    657          }
+    658          
+    659          /// Get number of memory blocks used in a Memory Pool.
+
+   \                                 In section .text, align 4, keep-with-next
+    660          uint32_t osMemoryPoolGetCount (osMemoryPoolId_t mp_id) {
+   \                     osMemoryPoolGetCount: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    661            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000002   0xF3EF 0x8105      MRS      R1,IPSR
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD103             BNE      ??osMemoryPoolGetCount_0
+   \   0000000A   0xF3EF 0x8110      MRS      R1,PRIMASK
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD002             BEQ      ??osMemoryPoolGetCount_1
+    662              return svcRtxMemoryPoolGetCount(mp_id);
+   \                     ??osMemoryPoolGetCount_0: (+1)
+   \   00000012   0x.... 0x....      BL       svcRtxMemoryPoolGetCount
+   \   00000016   0xBD80             POP      {R7,PC}
+    663            } else {
+    664              return  __svcMemoryPoolGetCount(mp_id);
+   \                     ??osMemoryPoolGetCount_1: (+1)
+   \   00000018   0x....             LDR      R1,??DataTable11_7
+   \   0000001A   0x460F             mov r7,R1
+   \   0000001C   0xDF00             SVC      0x0
+   \   0000001E   0xBD80             POP      {R7,PC}          ;; return
+    665            }
+    666          }
+    667          
+    668          /// Get number of memory blocks available in a Memory Pool.
+
+   \                                 In section .text, align 4, keep-with-next
+    669          uint32_t osMemoryPoolGetSpace (osMemoryPoolId_t mp_id) {
+   \                     osMemoryPoolGetSpace: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    670            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000002   0xF3EF 0x8105      MRS      R1,IPSR
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD103             BNE      ??osMemoryPoolGetSpace_0
+   \   0000000A   0xF3EF 0x8110      MRS      R1,PRIMASK
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD002             BEQ      ??osMemoryPoolGetSpace_1
+    671              return svcRtxMemoryPoolGetSpace(mp_id);
+   \                     ??osMemoryPoolGetSpace_0: (+1)
+   \   00000012   0x.... 0x....      BL       svcRtxMemoryPoolGetSpace
+   \   00000016   0xBD80             POP      {R7,PC}
+    672            } else {
+    673              return  __svcMemoryPoolGetSpace(mp_id);
+   \                     ??osMemoryPoolGetSpace_1: (+1)
+   \   00000018   0x....             LDR      R1,??DataTable11_8
+   \   0000001A   0x460F             mov r7,R1
+   \   0000001C   0xDF00             SVC      0x0
+   \   0000001E   0xBD80             POP      {R7,PC}          ;; return
+    674            }
+    675          }
+    676          
+    677          /// Delete a Memory Pool object.
+
+   \                                 In section .text, align 4, keep-with-next
+    678          osStatus_t osMemoryPoolDelete (osMemoryPoolId_t mp_id) {
+   \                     osMemoryPoolDelete: (+1)
+   \   00000000   0xB5B0             PUSH     {R4,R5,R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    679            EvrRtxMemoryPoolDelete(mp_id);
+   \   00000004   0x.... 0x....      BL       EvrRtxMemoryPoolDelete
+    680            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000008   0xF3EF 0x8005      MRS      R0,IPSR
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD103             BNE      ??osMemoryPoolDelete_0
+   \   00000010   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD007             BEQ      ??osMemoryPoolDelete_1
+    681              EvrRtxMemoryPoolError(mp_id, osErrorISR);
+   \                     ??osMemoryPoolDelete_0: (+1)
+   \   00000018   0x2505             MOVS     R5,#+5
+   \   0000001A   0x43ED             MVNS     R5,R5            ;; #-6
+   \   0000001C   0x0029             MOVS     R1,R5
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0x.... 0x....      BL       EvrRtxMemoryPoolError
+    682              return osErrorISR;
+   \   00000024   0x0028             MOVS     R0,R5
+   \   00000026   0xBDB0             POP      {R4,R5,R7,PC}
+    683            }
+    684            return __svcMemoryPoolDelete(mp_id);
+   \                     ??osMemoryPoolDelete_1: (+1)
+   \   00000028   0x....             LDR      R0,??DataTable11_9
+   \   0000002A   0x4607             mov r7,R0
+   \   0000002C   0x0020             MOVS     R0,R4
+   \   0000002E   0xDF00             SVC      0x0
+   \   00000030   0xBDB0             POP      {R4,R5,R7,PC}    ;; return
+    685          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \   00000000   0x........         DC32     osRtxInfo+0x6C
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4:
+   \   00000000   0x........         DC32     osRtxMemoryPoolPostProcess
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5:
+   \   00000000   0x........         DC32     osRtxInfo
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11:
+   \   00000000   0x........         DC32     osRtxInfo+0x78
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_1:
+   \   00000000   0x........         DC32     svcRtxMemoryPoolNew
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_2:
+   \   00000000   0x........         DC32     svcRtxMemoryPoolGetName
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_3:
+   \   00000000   0x........         DC32     svcRtxMemoryPoolAlloc
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_4:
+   \   00000000   0x........         DC32     svcRtxMemoryPoolFree
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_5:
+   \   00000000   0x........         DC32     svcRtxMemoryPoolGetCapacity
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_6:
+   \   00000000   0x........         DC32     svcRtxMemoryPoolGetBlockSize
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_7:
+   \   00000000   0x........         DC32     svcRtxMemoryPoolGetCount
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_8:
+   \   00000000   0x........         DC32     svcRtxMemoryPoolGetSpace
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_9:
+   \   00000000   0x........         DC32     svcRtxMemoryPoolDelete
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   osMemoryPoolAlloc
+        16   -> EvrRtxMemoryPoolAlloc
+        16   -> EvrRtxMemoryPoolAllocFailed
+        16   -> EvrRtxMemoryPoolAllocated
+        16   -> EvrRtxMemoryPoolError
+        16   -> osRtxMemoryPoolAlloc
+      16   osMemoryPoolDelete
+        16   -> EvrRtxMemoryPoolDelete
+        16   -> EvrRtxMemoryPoolError
+      24   osMemoryPoolFree
+        24   -> EvrRtxMemoryPoolDeallocated
+        24   -> EvrRtxMemoryPoolError
+        24   -> EvrRtxMemoryPoolFree
+        24   -> EvrRtxMemoryPoolFreeFailed
+        24   -> osRtxMemoryPoolFree
+        24   -> osRtxPostProcess
+       8   osMemoryPoolGetBlockSize
+         8   -> svcRtxMemoryPoolGetBlockSize
+       8   osMemoryPoolGetCapacity
+         8   -> svcRtxMemoryPoolGetCapacity
+       8   osMemoryPoolGetCount
+         8   -> svcRtxMemoryPoolGetCount
+       8   osMemoryPoolGetName
+         8   -> EvrRtxMemoryPoolGetName
+       8   osMemoryPoolGetSpace
+         8   -> svcRtxMemoryPoolGetSpace
+      24   osMemoryPoolNew
+        24   -> EvrRtxMemoryPoolError
+        24   -> EvrRtxMemoryPoolNew
+       8   osRtxMemoryPoolAlloc
+         8   -> EvrRtxMemoryBlockAlloc
+       8   osRtxMemoryPoolFree
+         8   -> EvrRtxMemoryBlockFree
+      24   osRtxMemoryPoolInit
+        24   -> EvrRtxMemoryBlockInit
+      16   osRtxMemoryPoolPostProcess
+        16   -> EvrRtxMemoryPoolAllocated
+        16   -> osRtxMemoryPoolAlloc
+        16   -> osRtxThreadListGet
+        16   -> osRtxThreadWaitExit
+      16   svcRtxMemoryPoolAlloc
+        16   -> EvrRtxMemoryPoolAllocFailed
+        16   -> EvrRtxMemoryPoolAllocPending
+        16   -> EvrRtxMemoryPoolAllocated
+        16   -> EvrRtxMemoryPoolError
+        16   -> osRtxMemoryPoolAlloc
+        16   -> osRtxThreadListPut
+        16   -> osRtxThreadWaitEnter
+      16   svcRtxMemoryPoolDelete
+        16   -> EvrRtxMemoryPoolDestroyed
+        16   -> EvrRtxMemoryPoolError
+        16   -> osRtxMemoryFree
+        16   -> osRtxMemoryPoolFree
+        16   -> osRtxThreadDispatch
+        16   -> osRtxThreadListGet
+        16   -> osRtxThreadWaitExit
+      16   svcRtxMemoryPoolFree
+        16   -> EvrRtxMemoryPoolAllocated
+        16   -> EvrRtxMemoryPoolDeallocated
+        16   -> EvrRtxMemoryPoolError
+        16   -> EvrRtxMemoryPoolFreeFailed
+        16   -> osRtxMemoryPoolAlloc
+        16   -> osRtxMemoryPoolFree
+        16   -> osRtxThreadListGet
+        16   -> osRtxThreadWaitExit
+       8   svcRtxMemoryPoolGetBlockSize
+         8   -> EvrRtxMemoryPoolGetBlockSize
+       8   svcRtxMemoryPoolGetCapacity
+         8   -> EvrRtxMemoryPoolGetCapacity
+       8   svcRtxMemoryPoolGetCount
+         8   -> EvrRtxMemoryPoolGetCount
+       8   svcRtxMemoryPoolGetName
+         8   -> EvrRtxMemoryPoolGetName
+       8   svcRtxMemoryPoolGetSpace
+         8   -> EvrRtxMemoryPoolGetSpace
+      40   svcRtxMemoryPoolNew
+        40   -> EvrRtxMemoryPoolCreated
+        40   -> EvrRtxMemoryPoolError
+        40   -> __aeabi_memclr
+        40   -> osRtxMemoryAlloc
+        40   -> osRtxMemoryFree
+        40   -> osRtxMemoryPoolAlloc
+        40   -> osRtxMemoryPoolFree
+        40   -> osRtxMemoryPoolInit
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable11
+       4  ??DataTable11_1
+       4  ??DataTable11_2
+       4  ??DataTable11_3
+       4  ??DataTable11_4
+       4  ??DataTable11_5
+       4  ??DataTable11_6
+       4  ??DataTable11_7
+       4  ??DataTable11_8
+       4  ??DataTable11_9
+       4  ??DataTable4
+       4  ??DataTable5
+     116  osMemoryPoolAlloc
+      50  osMemoryPoolDelete
+     114  osMemoryPoolFree
+      32  osMemoryPoolGetBlockSize
+      32  osMemoryPoolGetCapacity
+      32  osMemoryPoolGetCount
+      36  osMemoryPoolGetName
+      32  osMemoryPoolGetSpace
+      78  osMemoryPoolNew
+      64  osRtxMemoryPoolAlloc
+      70  osRtxMemoryPoolFree
+      70  osRtxMemoryPoolInit
+      52  osRtxMemoryPoolPostProcess
+     104  svcRtxMemoryPoolAlloc
+     128  svcRtxMemoryPoolDelete
+     116  svcRtxMemoryPoolFree
+      42  svcRtxMemoryPoolGetBlockSize
+      42  svcRtxMemoryPoolGetCapacity
+      42  svcRtxMemoryPoolGetCount
+      42  svcRtxMemoryPoolGetName
+      50  svcRtxMemoryPoolGetSpace
+     346  svcRtxMemoryPoolNew
+
+ 
+ 1 742 bytes in section .text
+ 
+ 1 742 bytes of CODE memory
+
+Errors: none
+Warnings: 1

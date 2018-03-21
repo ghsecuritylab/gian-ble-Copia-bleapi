@@ -1,0 +1,493 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:41
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\platform\FileBase.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FileBase.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FileBase.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FileBase.o
+#        .\mbed-os\platform\FileBase.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FileBase.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\FileBase.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\platform\FileBase.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "platform/FileBase.h"
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp rtos::Mutex *SingletonPtr<rtos::Mutex>::operator->()
+   \                     _ZN12SingletonPtrIN4rtos5MutexEEptEv: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x6820             LDR      R0,[R4, #+0]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD110             BNE      `??operator->_0`
+   \   0000000A   0x4D0E             LDR      R5,`??operator->_1`
+   \   0000000C   0x2100             MOVS     R1,#+0
+   \   0000000E   0x43C9             MVNS     R1,R1            ;; #-1
+   \   00000010   0x6828             LDR      R0,[R5, #+0]
+   \   00000012   0x.... 0x....      BL       osMutexAcquire
+   \   00000016   0x6820             LDR      R0,[R4, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD104             BNE      `??operator->_2`
+   \   0000001C   0x1D20             ADDS     R0,R4,#+4
+   \   0000001E   0xD001             BEQ      `??operator->_3`
+   \   00000020   0x.... 0x....      BL       _ZN4rtos5MutexC1Ev
+   \                     `??operator->_3`: (+1)
+   \   00000024   0x6020             STR      R0,[R4, #+0]
+   \                     `??operator->_2`: (+1)
+   \   00000026   0x6828             LDR      R0,[R5, #+0]
+   \   00000028   0x.... 0x....      BL       osMutexRelease
+   \                     `??operator->_0`: (+1)
+   \   0000002C   0x6820             LDR      R0,[R4, #+0]
+   \   0000002E   0x1D21             ADDS     R1,R4,#+4
+   \   00000030   0x4288             CMP      R0,R1
+   \   00000032   0xD004             BEQ      `??operator->_4`
+   \   00000034   0x225D             MOVS     R2,#+93
+   \   00000036   0x4904             LDR      R1,`??operator->_1`+0x4
+   \   00000038   0x4804             LDR      R0,`??operator->_1`+0x8
+   \   0000003A   0x.... 0x....      BL       mbed_assert_internal
+   \                     `??operator->_4`: (+1)
+   \   0000003E   0x6820             LDR      R0,[R4, #+0]
+   \   00000040   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+   \   00000042   0xBF00             Nop      
+   \                     `??operator->_1`:
+   \   00000044   0x........         DC32     singleton_mutex_id
+   \   00000048   0x........         DC32     _ZZN12SingletonPtrIN4rtos5MutexEE3getEvEs_0
+   \   0000004C   0x........         DC32     _ZZN12SingletonPtrIN4rtos5MutexEE3getEvEs
+     17          #include "platform/FileLike.h"
+     18          #include "platform/FileHandle.h"
+     19          
+     20          namespace mbed {
+     21          
+
+   \                                 In section .bss, align 4
+     22          FileBase *FileBase::_head = NULL;
+   \                     _ZN4mbed8FileBase5_headE:
+   \   00000000                      DS8 4
+     23          SingletonPtr<PlatformMutex> FileBase::_mutex;
+   \                     _ZN4mbed8FileBase6_mutexE:
+   \   00000004                      DS8 40
+     24          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::FileBase::subobject FileBase(char const *, mbed::PathType)
+   \                     _ZN4mbed8FileBaseC2EPKcNS_8PathTypeE: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN4mbed8FileBaseC1EPKcNS_8PathTypeE
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     25          FileBase::FileBase(const char *name, PathType t) : _next(NULL),
+   \                     _ZN4mbed8FileBaseC1EPKcNS_8PathTypeE: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0006             MOVS     R6,R0
+   \   00000004   0x000F             MOVS     R7,R1
+   \   00000006   0x....             LDR      R0,??DataTable3
+   \   00000008   0x6030             STR      R0,[R6, #+0]
+   \   0000000A   0x2400             MOVS     R4,#+0
+   \   0000000C   0x6074             STR      R4,[R6, #+4]
+     26                                                             _name(name),
+   \   0000000E   0x60B7             STR      R7,[R6, #+8]
+     27                                                             _path_type(t) {
+   \   00000010   0x7332             STRB     R2,[R6, #+12]
+     28              _mutex->lock();
+   \   00000012   0x....             LDR      R5,??DataTable3_1
+   \   00000014   0x1D28             ADDS     R0,R5,#+4
+   \   00000016   0x.... 0x....      BL       _ZN12SingletonPtrIN4rtos5MutexEEptEv
+   \   0000001A   0x2100             MOVS     R1,#+0
+   \   0000001C   0x43C9             MVNS     R1,R1            ;; #-1
+   \   0000001E   0x.... 0x....      BL       _ZN4rtos5Mutex4lockEj
+     29              if (name != NULL) {
+   \   00000022   0x2F00             CMP      R7,#+0
+   \   00000024   0xD003             BEQ      ??FileBase_0
+     30                  // put this object at head of the list
+     31                  _next = _head;
+   \   00000026   0x6828             LDR      R0,[R5, #+0]
+   \   00000028   0x6070             STR      R0,[R6, #+4]
+     32                  _head = this;
+   \   0000002A   0x602E             STR      R6,[R5, #+0]
+   \   0000002C   0xE000             B        ??FileBase_1
+     33              } else {
+     34                  _next = NULL;
+   \                     ??FileBase_0: (+1)
+   \   0000002E   0x6074             STR      R4,[R6, #+4]
+     35              }
+     36              _mutex->unlock();
+   \                     ??FileBase_1: (+1)
+   \   00000030   0x1D28             ADDS     R0,R5,#+4
+   \   00000032   0x.... 0x....      BL       _ZN12SingletonPtrIN4rtos5MutexEEptEv
+   \   00000036   0x.... 0x....      BL       _ZN4rtos5Mutex6unlockEv
+     37          }
+   \   0000003A   0x0030             MOVS     R0,R6
+   \   0000003C   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+     38          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::FileBase::subobject ~FileBase()
+   \                     _ZN4mbed8FileBaseD2Ev: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN4mbed8FileBaseD1Ev
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::FileBase::deleter ~FileBase()
+   \                     _ZN4mbed8FileBaseD0Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x.... 0x....      BL       _ZN4mbed8FileBaseD1Ev
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0x.... 0x....      BL       _ZdlPv
+   \   0000000E   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     39          FileBase::~FileBase() {
+   \                     _ZN4mbed8FileBaseD1Ev: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x....             LDR      R0,??DataTable3
+   \   00000006   0x6020             STR      R0,[R4, #+0]
+     40              _mutex->lock();
+   \   00000008   0x....             LDR      R5,??DataTable3_1
+   \   0000000A   0x1D28             ADDS     R0,R5,#+4
+   \   0000000C   0x.... 0x....      BL       _ZN12SingletonPtrIN4rtos5MutexEEptEv
+   \   00000010   0x2100             MOVS     R1,#+0
+   \   00000012   0x43C9             MVNS     R1,R1            ;; #-1
+   \   00000014   0x.... 0x....      BL       _ZN4rtos5Mutex4lockEj
+     41              if (_name != NULL) {
+   \   00000018   0x68A0             LDR      R0,[R4, #+8]
+   \   0000001A   0x2800             CMP      R0,#+0
+   \   0000001C   0xD00B             BEQ      `?~FileBase_0`
+     42                  // remove this object from the list
+     43                  if (_head == this) { // first in the list, so just drop me
+   \   0000001E   0x6828             LDR      R0,[R5, #+0]
+   \   00000020   0x42A0             CMP      R0,R4
+   \   00000022   0xD103             BNE      `?~FileBase_1`
+     44                      _head = _next;
+   \   00000024   0x6860             LDR      R0,[R4, #+4]
+   \   00000026   0x6028             STR      R0,[R5, #+0]
+   \   00000028   0xE005             B        `?~FileBase_0`
+     45                  } else {             // find the object before me, then drop me
+     46                      FileBase *p = _head;
+     47                      while (p->_next != this) {
+     48                          p = p->_next;
+   \                     `?~FileBase_2`: (+1)
+   \   0000002A   0x0008             MOVS     R0,R1
+     49                      }
+   \                     `?~FileBase_1`: (+1)
+   \   0000002C   0x6841             LDR      R1,[R0, #+4]
+   \   0000002E   0x42A1             CMP      R1,R4
+   \   00000030   0xD1FB             BNE      `?~FileBase_2`
+     50                      p->_next = _next;
+   \   00000032   0x6861             LDR      R1,[R4, #+4]
+   \   00000034   0x6041             STR      R1,[R0, #+4]
+     51                  }
+     52              }
+     53              _mutex->unlock();
+   \                     `?~FileBase_0`: (+1)
+   \   00000036   0x1D28             ADDS     R0,R5,#+4
+   \   00000038   0x.... 0x....      BL       _ZN12SingletonPtrIN4rtos5MutexEEptEv
+   \   0000003C   0x.... 0x....      BL       _ZN4rtos5Mutex6unlockEv
+     54          
+     55              if (getPathType() == FilePathType) {
+   \   00000040   0x7B20             LDRB     R0,[R4, #+12]
+   \   00000042   0x2800             CMP      R0,#+0
+   \   00000044   0xD102             BNE      `?~FileBase_3`
+     56                  extern void remove_filehandle(FileHandle *file);
+     57                  remove_filehandle(static_cast<FileHandle*>(static_cast<FileLike*>(this)));
+   \   00000046   0x1F20             SUBS     R0,R4,#+4
+   \   00000048   0x.... 0x....      BL       _ZN4mbed17remove_filehandleEPNS_10FileHandleE
+     58              }
+     59          }
+   \                     `?~FileBase_3`: (+1)
+   \   0000004C   0x0020             MOVS     R0,R4
+   \   0000004E   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+     60          
+
+   \                                 In section .text, align 2, keep-with-next
+     61          FileBase *FileBase::lookup(const char *name, unsigned int len) {
+   \                     _ZN4mbed8FileBase6lookupEPKcj: (+1)
+   \   00000000   0xB5F1             PUSH     {R0,R4-R7,LR}
+   \   00000002   0x000E             MOVS     R6,R1
+     62              _mutex->lock();
+   \   00000004   0x....             LDR      R5,??DataTable3_1
+   \   00000006   0x1D28             ADDS     R0,R5,#+4
+   \   00000008   0x.... 0x....      BL       _ZN12SingletonPtrIN4rtos5MutexEEptEv
+   \   0000000C   0x2100             MOVS     R1,#+0
+   \   0000000E   0x43C9             MVNS     R1,R1            ;; #-1
+   \   00000010   0x.... 0x....      BL       _ZN4rtos5Mutex4lockEj
+     63              FileBase *p = _head;
+   \   00000014   0x682C             LDR      R4,[R5, #+0]
+   \   00000016   0xE000             B        ??lookup_0
+     64              while (p != NULL) {
+     65                  /* Check that p->_name matches name and is the correct length */
+     66                  if (p->_name != NULL && std::strncmp(p->_name, name, len) == 0 && std::strlen(p->_name) == len) {
+     67                      _mutex->unlock();
+     68                      return p;
+     69                  }
+     70                  p = p->_next;
+   \                     ??lookup_1: (+1)
+   \   00000018   0x6864             LDR      R4,[R4, #+4]
+   \                     ??lookup_0: (+1)
+   \   0000001A   0x2C00             CMP      R4,#+0
+   \   0000001C   0xD015             BEQ      ??lookup_2
+   \   0000001E   0x68A7             LDR      R7,[R4, #+8]
+   \   00000020   0x2F00             CMP      R7,#+0
+   \   00000022   0xD0F9             BEQ      ??lookup_1
+   \   00000024   0x0032             MOVS     R2,R6
+   \   00000026   0x9900             LDR      R1,[SP, #+0]
+   \   00000028   0x0038             MOVS     R0,R7
+   \   0000002A   0x.... 0x....      BL       strncmp
+   \   0000002E   0x2800             CMP      R0,#+0
+   \   00000030   0xD1F2             BNE      ??lookup_1
+   \   00000032   0x0038             MOVS     R0,R7
+   \   00000034   0x.... 0x....      BL       strlen
+   \   00000038   0x42B0             CMP      R0,R6
+   \   0000003A   0xD1ED             BNE      ??lookup_1
+   \   0000003C   0x1D28             ADDS     R0,R5,#+4
+   \   0000003E   0x.... 0x....      BL       _ZN12SingletonPtrIN4rtos5MutexEEptEv
+   \   00000042   0x.... 0x....      BL       _ZN4rtos5Mutex6unlockEv
+   \   00000046   0x0020             MOVS     R0,R4
+   \   00000048   0xBDF2             POP      {R1,R4-R7,PC}
+     71              }
+     72              _mutex->unlock();
+   \                     ??lookup_2: (+1)
+   \   0000004A   0x1D28             ADDS     R0,R5,#+4
+   \   0000004C   0x.... 0x....      BL       _ZN12SingletonPtrIN4rtos5MutexEEptEv
+   \   00000050   0x.... 0x....      BL       _ZN4rtos5Mutex6unlockEv
+     73              return NULL;
+   \   00000054   0x2000             MOVS     R0,#+0
+   \   00000056   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+     74          }
+     75          
+
+   \                                 In section .text, align 2, keep-with-next
+     76          FileBase *FileBase::get(int n) {
+   \                     _ZN4mbed8FileBase3getEi: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     77              _mutex->lock();
+   \   00000004   0x....             LDR      R5,??DataTable3_1
+   \   00000006   0x1D28             ADDS     R0,R5,#+4
+   \   00000008   0x.... 0x....      BL       _ZN12SingletonPtrIN4rtos5MutexEEptEv
+   \   0000000C   0x2100             MOVS     R1,#+0
+   \   0000000E   0x43C9             MVNS     R1,R1            ;; #-1
+   \   00000010   0x.... 0x....      BL       _ZN4rtos5Mutex4lockEj
+     78              FileBase *p = _head;
+   \   00000014   0x682E             LDR      R6,[R5, #+0]
+     79              int m = 0;
+   \   00000016   0x2000             MOVS     R0,#+0
+   \   00000018   0xE001             B        ??get_0
+     80              while (p != NULL) {
+     81                  if (m == n) {
+     82                      _mutex->unlock();
+     83                      return p;
+     84                  }
+     85          
+     86                  m++;
+   \                     ??get_1: (+1)
+   \   0000001A   0x1C40             ADDS     R0,R0,#+1
+     87                  p = p->_next;
+   \   0000001C   0x6876             LDR      R6,[R6, #+4]
+   \                     ??get_0: (+1)
+   \   0000001E   0x2E00             CMP      R6,#+0
+   \   00000020   0xD008             BEQ      ??get_2
+   \   00000022   0x42A0             CMP      R0,R4
+   \   00000024   0xD1F9             BNE      ??get_1
+   \   00000026   0x1D28             ADDS     R0,R5,#+4
+   \   00000028   0x.... 0x....      BL       _ZN12SingletonPtrIN4rtos5MutexEEptEv
+   \   0000002C   0x.... 0x....      BL       _ZN4rtos5Mutex6unlockEv
+   \   00000030   0x0030             MOVS     R0,R6
+   \   00000032   0xBD70             POP      {R4-R6,PC}
+     88              }
+     89              _mutex->unlock();
+   \                     ??get_2: (+1)
+   \   00000034   0x1D28             ADDS     R0,R5,#+4
+   \   00000036   0x.... 0x....      BL       _ZN12SingletonPtrIN4rtos5MutexEEptEv
+   \   0000003A   0x.... 0x....      BL       _ZN4rtos5Mutex6unlockEv
+     90              return NULL;
+   \   0000003E   0x2000             MOVS     R0,#+0
+   \   00000040   0xBD70             POP      {R4-R6,PC}       ;; return
+     91          }
+     92          
+
+   \                                 In section .text, align 2, keep-with-next
+     93          const char* FileBase::getName(void) {
+     94              // Constant read so no lock needed
+     95              return _name;
+   \                     _ZN4mbed8FileBase7getNameEv: (+1)
+   \   00000000   0x6880             LDR      R0,[R0, #+8]
+   \   00000002   0x4770             BX       LR               ;; return
+     96          }
+     97          
+
+   \                                 In section .text, align 2, keep-with-next
+     98          PathType FileBase::getPathType(void) {
+     99              // Constant read so no lock needed
+    100              return _path_type;
+   \                     _ZN4mbed8FileBase11getPathTypeEv: (+1)
+   \   00000000   0x7B00             LDRB     R0,[R0, #+12]
+   \   00000002   0x4770             BX       LR               ;; return
+    101          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3:
+   \   00000000   0x........         DC32     _ZTVN4mbed8FileBaseE+0x8
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_1:
+   \   00000000   0x........         DC32     _ZN4mbed8FileBase5_headE
+    102          
+    103          } // namespace mbed
+    104          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   SingletonPtr<rtos::Mutex>::operator->()
+        16   -> mbed_assert_internal
+        16   -> osMutexAcquire
+        16   -> osMutexRelease
+        16   -> rtos::Mutex::Mutex()
+      24   mbed::FileBase::FileBase(char const *, mbed::PathType)
+        24   -> SingletonPtr<rtos::Mutex>::operator->()
+        24   -> rtos::Mutex::lock(unsigned int)
+        24   -> rtos::Mutex::unlock()
+       8   mbed::FileBase::deleter ~FileBase()
+         8   -> mbed::FileBase::~FileBase()
+         8   -> operator delete(void *)
+      16   mbed::FileBase::get(int)
+        16   -> SingletonPtr<rtos::Mutex>::operator->()
+        16   -> rtos::Mutex::lock(unsigned int)
+        16   -> rtos::Mutex::unlock()
+       0   mbed::FileBase::getName()
+       0   mbed::FileBase::getPathType()
+      24   mbed::FileBase::lookup(char const *, unsigned int)
+        24   -> SingletonPtr<rtos::Mutex>::operator->()
+        24   -> rtos::Mutex::lock(unsigned int)
+        24   -> rtos::Mutex::unlock()
+        24   -> std::strlen
+        24   -> std::strncmp
+       8   mbed::FileBase::subobject FileBase(char const *, mbed::PathType)
+         8   -> mbed::FileBase::FileBase(char const *, mbed::PathType)
+       8   mbed::FileBase::subobject ~FileBase()
+         8   -> mbed::FileBase::~FileBase()
+      16   mbed::FileBase::~FileBase()
+        16   -> SingletonPtr<rtos::Mutex>::operator->()
+        16   -> mbed::remove_filehandle(mbed::FileHandle *)
+        16   -> rtos::Mutex::lock(unsigned int)
+        16   -> rtos::Mutex::unlock()
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+      80  SingletonPtr<rtos::Mutex>::operator->()
+      62  mbed::FileBase::FileBase(char const *, mbed::PathType)
+      44  mbed::FileBase::_head
+          mbed::FileBase::_mutex
+      16  mbed::FileBase::deleter ~FileBase()
+      66  mbed::FileBase::get(int)
+       4  mbed::FileBase::getName()
+       4  mbed::FileBase::getPathType()
+      88  mbed::FileBase::lookup(char const *, unsigned int)
+       8  mbed::FileBase::subobject FileBase(char const *, mbed::PathType)
+       8  mbed::FileBase::subobject ~FileBase()
+      80  mbed::FileBase::~FileBase()
+     252  -- Other
+
+ 
+  44 bytes in section .bss
+ 252 bytes in section .rodata
+ 424 bytes in section .text
+ 
+ 344 bytes of CODE  memory (+  80 bytes shared)
+   0 bytes of CONST memory (+ 252 bytes shared)
+  44 bytes of DATA  memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,311 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:51
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_delay.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_delay.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_delay.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_delay.o
+#        .\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_delay.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_delay.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_delay.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_delay.c
+      1          /*
+      2           * Copyright (c) 2013-2017 ARM Limited. All rights reserved.
+      3           *
+      4           * SPDX-License-Identifier: Apache-2.0
+      5           *
+      6           * Licensed under the Apache License, Version 2.0 (the License); you may
+      7           * not use this file except in compliance with the License.
+      8           * You may obtain a copy of the License at
+      9           *
+     10           * www.apache.org/licenses/LICENSE-2.0
+     11           *
+     12           * Unless required by applicable law or agreed to in writing, software
+     13           * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+     14           * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     15           * See the License for the specific language governing permissions and
+     16           * limitations under the License.
+     17           *
+     18           * -----------------------------------------------------------------------------
+     19           *
+     20           * Project:     CMSIS-RTOS RTX
+     21           * Title:       Delay functions
+     22           *
+     23           * -----------------------------------------------------------------------------
+     24           */
+     25          
+     26          #include "rtx_lib.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     27          
+     28          
+     29          //  ==== Service Calls ====
+     30          
+     31          //  Service Calls definitions
+     32          SVC0_1(Delay,      osStatus_t, uint32_t)
+     33          SVC0_1(DelayUntil, osStatus_t, uint32_t)
+     34          
+     35          /// Wait for Timeout (Time Delay).
+     36          /// \note API identical to osDelay
+
+   \                                 In section .text, align 2, keep-with-next
+     37          osStatus_t svcRtxDelay (uint32_t ticks) {
+     38          
+     39            if (ticks == 0U) {
+   \                     svcRtxDelay: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD100             BNE      ??svcRtxDelay_0
+   \   00000004   0x4770             BX       LR
+     40              return osOK;
+     41            }
+     42          
+     43            osRtxThreadWaitEnter(osRtxThreadWaitingDelay, ticks);
+   \                     ??svcRtxDelay_0: (+1)
+   \   00000006   0xB580             PUSH     {R7,LR}
+   \   00000008   0x0001             MOVS     R1,R0
+   \   0000000A   0x2013             MOVS     R0,#+19
+   \   0000000C   0x.... 0x....      BL       osRtxThreadWaitEnter
+     44          
+     45            return osOK;
+   \   00000010   0x2000             MOVS     R0,#+0
+   \   00000012   0xBD02             POP      {R1,PC}          ;; return
+     46          }
+     47          
+     48          /// Wait until specified time.
+     49          /// \note API identical to osDelayUntil
+
+   \                                 In section .text, align 2, keep-with-next
+     50          osStatus_t svcRtxDelayUntil (uint32_t ticks) {
+   \                     svcRtxDelayUntil: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+     51          
+     52            ticks -= osRtxInfo.kernel.tick;
+   \   00000002   0x....             LDR      R1,??DataTable2
+   \   00000004   0x68C9             LDR      R1,[R1, #+12]
+   \   00000006   0x1A41             SUBS     R1,R0,R1
+     53            if (ticks == 0xFFFFFFFFU) {
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0x43C0             MVNS     R0,R0            ;; #-1
+   \   0000000C   0x4281             CMP      R1,R0
+   \   0000000E   0xD107             BNE      ??svcRtxDelayUntil_0
+     54              EvrRtxThreadError(NULL, osErrorParameter);
+   \   00000010   0x2403             MOVS     R4,#+3
+   \   00000012   0x43E4             MVNS     R4,R4            ;; #-4
+   \   00000014   0x0021             MOVS     R1,R4
+   \   00000016   0x2000             MOVS     R0,#+0
+   \   00000018   0x.... 0x....      BL       EvrRtxThreadError
+     55              return osErrorParameter;
+   \   0000001C   0x0020             MOVS     R0,R4
+   \   0000001E   0xBD10             POP      {R4,PC}
+     56            }
+     57            if (ticks == 0U) {
+   \                     ??svcRtxDelayUntil_0: (+1)
+   \   00000020   0x2900             CMP      R1,#+0
+   \   00000022   0xD002             BEQ      ??svcRtxDelayUntil_1
+     58              return osOK;
+     59            }
+     60          
+     61            osRtxThreadWaitEnter(osRtxThreadWaitingDelay, ticks);
+   \   00000024   0x2013             MOVS     R0,#+19
+   \   00000026   0x.... 0x....      BL       osRtxThreadWaitEnter
+     62          
+     63            return osOK;
+   \                     ??svcRtxDelayUntil_1: (+1)
+   \   0000002A   0x2000             MOVS     R0,#+0
+   \   0000002C   0xBD10             POP      {R4,PC}          ;; return
+     64          }
+     65          
+     66          
+     67          //  ==== Public API ====
+     68          
+     69          /// Wait for Timeout (Time Delay).
+
+   \                                 In section .text, align 4, keep-with-next
+     70          osStatus_t osDelay (uint32_t ticks) {
+   \                     osDelay: (+1)
+   \   00000000   0xB598             PUSH     {R3,R4,R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     71            EvrRtxThreadDelay(ticks);
+   \   00000004   0x.... 0x....      BL       EvrRtxThreadDelay
+     72            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000008   0xF3EF 0x8005      MRS      R0,IPSR
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD103             BNE      ??osDelay_0
+   \   00000010   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD000             BEQ      ??osDelay_1
+     73              EvrRtxThreadError(NULL, osErrorISR);
+   \                     ??osDelay_0: (+1)
+   \   00000018   0x....             B.N      ?Subroutine0
+     74              return osErrorISR;
+     75            }
+     76            return __svcDelay(ticks);
+   \                     ??osDelay_1: (+1)
+   \   0000001A   0x....             LDR      R0,??DataTable2_1
+   \   0000001C   0x4607             mov r7,R0
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0xDF00             SVC      0x0
+   \   00000022   0xBD92             POP      {R1,R4,R7,PC}    ;; return
+     77          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x2405             MOVS     R4,#+5
+   \   00000002   0x43E4             MVNS     R4,R4            ;; #-6
+   \   00000004   0x0021             MOVS     R1,R4
+   \   00000006   0x2000             MOVS     R0,#+0
+   \   00000008   0x.... 0x....      BL       EvrRtxThreadError
+   \   0000000C   0x0020             MOVS     R0,R4
+   \   0000000E   0xBD92             POP      {R1,R4,R7,PC}
+     78          
+     79          /// Wait until specified time.
+
+   \                                 In section .text, align 4, keep-with-next
+     80          osStatus_t osDelayUntil (uint32_t ticks) {
+   \                     osDelayUntil: (+1)
+   \   00000000   0xB598             PUSH     {R3,R4,R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     81            EvrRtxThreadDelayUntil(ticks);
+   \   00000004   0x.... 0x....      BL       EvrRtxThreadDelayUntil
+     82            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000008   0xF3EF 0x8005      MRS      R0,IPSR
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD103             BNE      ??osDelayUntil_0
+   \   00000010   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD000             BEQ      ??osDelayUntil_1
+     83              EvrRtxThreadError(NULL, osErrorISR);
+   \                     ??osDelayUntil_0: (+1)
+   \   00000018   0x....             B.N      ?Subroutine0
+     84              return osErrorISR;
+     85            }
+     86            return __svcDelayUntil(ticks);
+   \                     ??osDelayUntil_1: (+1)
+   \   0000001A   0x....             LDR      R0,??DataTable2_2
+   \   0000001C   0x4607             mov r7,R0
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0xDF00             SVC      0x0
+   \   00000022   0xBD92             POP      {R1,R4,R7,PC}    ;; return
+     87          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \   00000000   0x........         DC32     osRtxInfo
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \   00000000   0x........         DC32     svcRtxDelay
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \   00000000   0x........         DC32     svcRtxDelayUntil
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   osDelay
+        16   -> EvrRtxThreadDelay
+        16   -> EvrRtxThreadError
+      16   osDelayUntil
+        16   -> EvrRtxThreadDelayUntil
+        16   -> EvrRtxThreadError
+       8   svcRtxDelay
+         8   -> osRtxThreadWaitEnter
+       8   svcRtxDelayUntil
+         8   -> EvrRtxThreadError
+         8   -> osRtxThreadWaitEnter
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+      16  ?Subroutine0
+      36  osDelay
+      36  osDelayUntil
+      20  svcRtxDelay
+      46  svcRtxDelayUntil
+
+ 
+ 166 bytes in section .text
+ 
+ 166 bytes of CODE memory
+
+Errors: none
+Warnings: 1

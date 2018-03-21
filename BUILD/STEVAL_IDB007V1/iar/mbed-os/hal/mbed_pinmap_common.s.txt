@@ -1,0 +1,434 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:39
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\hal\mbed_pinmap_common.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_pinmap_common.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_pinmap_common.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_pinmap_common.o
+#        .\mbed-os\hal\mbed_pinmap_common.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_pinmap_common.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_pinmap_common.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\hal\mbed_pinmap_common.c
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "hal/pinmap.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     17          #include "platform/mbed_error.h"
+     18          
+
+   \                                 In section .text, align 4, keep-with-next
+     19          void pinmap_pinout(PinName pin, const PinMap *map) {
+   \                     pinmap_pinout: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     20              if (pin == NC)
+   \   00000004   0x2000             MOVS     R0,#+0
+   \   00000006   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD101             BNE      ??pinmap_pinout_0
+     21                  return;
+   \   0000000C   0xBD10             POP      {R4,PC}
+     22          
+     23              while (map->pin != NC) {
+     24                  if (map->pin == pin) {
+     25                      pin_function(pin, map->function);
+     26          
+     27                      pin_mode(pin, PullNone);
+     28                      return;
+     29                  }
+     30                  map++;
+   \                     ??pinmap_pinout_1: (+1)
+   \   0000000E   0x310C             ADDS     R1,R1,#+12
+   \                     ??pinmap_pinout_0: (+1)
+   \   00000010   0x2200             MOVS     R2,#+0
+   \   00000012   0x568A             LDRSB    R2,[R1, R2]
+   \   00000014   0x4282             CMP      R2,R0
+   \   00000016   0xD00A             BEQ      ??pinmap_pinout_2
+   \   00000018   0x42A2             CMP      R2,R4
+   \   0000001A   0xD1F8             BNE      ??pinmap_pinout_1
+   \   0000001C   0x6889             LDR      R1,[R1, #+8]
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0x.... 0x....      BL       pin_function
+   \   00000024   0x2100             MOVS     R1,#+0
+   \   00000026   0x0020             MOVS     R0,R4
+   \   00000028   0x.... 0x....      BL       pin_mode
+   \   0000002C   0xBD10             POP      {R4,PC}
+     31              }
+     32              error("could not pinout");
+   \                     ??pinmap_pinout_2: (+1)
+   \   0000002E   0xBF00             Nop      
+   \   00000030   0x....             ADR.N    R0,?_0
+   \   00000032   0x.... 0x....      BL       error
+     33          }
+   \   00000036   0xBD10             POP      {R4,PC}          ;; return
+     34          
+
+   \                                 In section .text, align 4, keep-with-next
+     35          uint32_t pinmap_merge(uint32_t a, uint32_t b) {
+     36              // both are the same (inc both NC)
+     37              if (a == b)
+   \                     pinmap_merge: (+1)
+   \   00000000   0x4288             CMP      R0,R1
+   \   00000002   0xD100             BNE      ??pinmap_merge_0
+   \   00000004   0x4770             BX       LR
+     38                  return a;
+     39          
+     40              // one (or both) is not connected
+     41              if (a == (uint32_t)NC)
+   \                     ??pinmap_merge_0: (+1)
+   \   00000006   0xB510             PUSH     {R4,LR}
+   \   00000008   0x2400             MOVS     R4,#+0
+   \   0000000A   0x43E4             MVNS     R4,R4            ;; #-1
+   \   0000000C   0x42A0             CMP      R0,R4
+   \   0000000E   0xD101             BNE      ??pinmap_merge_1
+     42                  return b;
+   \   00000010   0x0008             MOVS     R0,R1
+   \   00000012   0xBD10             POP      {R4,PC}
+     43              if (b == (uint32_t)NC)
+   \                     ??pinmap_merge_1: (+1)
+   \   00000014   0x42A1             CMP      R1,R4
+   \   00000016   0xD003             BEQ      ??pinmap_merge_2
+     44                  return a;
+     45          
+     46              // mis-match error case
+     47              error("pinmap mis-match");
+   \   00000018   0x....             ADR.N    R0,?_1
+   \   0000001A   0x.... 0x....      BL       error
+     48              return (uint32_t)NC;
+   \   0000001E   0x0020             MOVS     R0,R4
+   \                     ??pinmap_merge_2: (+1)
+   \   00000020   0xBD10             POP      {R4,PC}          ;; return
+     49          }
+     50          
+
+   \                                 In section .text, align 2, keep-with-next
+     51          uint32_t pinmap_find_peripheral(PinName pin, const PinMap* map) {
+   \                     pinmap_find_peripheral: (+1)
+   \   00000000   0x0002             MOVS     R2,R0
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000006   0xE000             B        ??pinmap_find_peripheral_0
+     52              while (map->pin != NC) {
+     53                  if (map->pin == pin)
+     54                      return map->peripheral;
+     55                  map++;
+   \                     ??pinmap_find_peripheral_1: (+1)
+   \   00000008   0x310C             ADDS     R1,R1,#+12
+   \                     ??pinmap_find_peripheral_0: (+1)
+   \   0000000A   0x2300             MOVS     R3,#+0
+   \   0000000C   0x56CB             LDRSB    R3,[R1, R3]
+   \   0000000E   0x4283             CMP      R3,R0
+   \   00000010   0xD002             BEQ      ??pinmap_find_peripheral_2
+   \   00000012   0x4293             CMP      R3,R2
+   \   00000014   0xD1F8             BNE      ??pinmap_find_peripheral_1
+   \   00000016   0x6848             LDR      R0,[R1, #+4]
+     56              }
+     57              return (uint32_t)NC;
+   \                     ??pinmap_find_peripheral_2: (+1)
+   \   00000018   0x4770             BX       LR               ;; return
+     58          }
+     59          
+
+   \                                 In section .text, align 4, keep-with-next
+     60          uint32_t pinmap_peripheral(PinName pin, const PinMap* map) {
+   \                     pinmap_peripheral: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0002             MOVS     R2,R0
+     61              uint32_t peripheral = (uint32_t)NC;
+     62          
+     63              if (pin == (PinName)NC)
+   \   00000004   0x2000             MOVS     R0,#+0
+   \   00000006   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000008   0x4282             CMP      R2,R0
+   \   0000000A   0xD101             BNE      ??pinmap_peripheral_0
+     64                  return (uint32_t)NC;
+   \   0000000C   0xBD10             POP      {R4,PC}
+   \                     ??pinmap_peripheral_1: (+1)
+   \   0000000E   0x310C             ADDS     R1,R1,#+12
+   \                     ??pinmap_peripheral_0: (+1)
+   \   00000010   0x2300             MOVS     R3,#+0
+   \   00000012   0x56CB             LDRSB    R3,[R1, R3]
+   \   00000014   0x4283             CMP      R3,R0
+   \   00000016   0xD005             BEQ      ??pinmap_peripheral_2
+   \   00000018   0x4293             CMP      R3,R2
+   \   0000001A   0xD1F8             BNE      ??pinmap_peripheral_1
+   \   0000001C   0x684C             LDR      R4,[R1, #+4]
+     65              peripheral = pinmap_find_peripheral(pin, map);
+     66              if ((uint32_t)NC == peripheral) // no mapping available
+   \   0000001E   0x4284             CMP      R4,R0
+   \   00000020   0xD105             BNE      ??pinmap_peripheral_3
+   \   00000022   0xE000             B        ??pinmap_peripheral_4
+   \                     ??pinmap_peripheral_2: (+1)
+   \   00000024   0x0004             MOVS     R4,R0
+     67                  error("pinmap not found for peripheral");
+   \                     ??pinmap_peripheral_4: (+1)
+   \   00000026   0xBF00             Nop      
+   \   00000028   0x....             ADR.N    R0,?_2
+   \   0000002A   0x.... 0x....      BL       error
+     68              return peripheral;
+   \                     ??pinmap_peripheral_3: (+1)
+   \   0000002E   0x0020             MOVS     R0,R4
+   \   00000030   0xBD10             POP      {R4,PC}          ;; return
+     69          }
+     70          
+
+   \                                 In section .text, align 2, keep-with-next
+     71          uint32_t pinmap_find_function(PinName pin, const PinMap* map) {
+   \                     pinmap_find_function: (+1)
+   \   00000000   0x0002             MOVS     R2,R0
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000006   0xE000             B        ??pinmap_find_function_0
+     72              while (map->pin != NC) {
+     73                  if (map->pin == pin)
+     74                      return map->function;
+     75                  map++;
+   \                     ??pinmap_find_function_1: (+1)
+   \   00000008   0x310C             ADDS     R1,R1,#+12
+   \                     ??pinmap_find_function_0: (+1)
+   \   0000000A   0x2300             MOVS     R3,#+0
+   \   0000000C   0x56CB             LDRSB    R3,[R1, R3]
+   \   0000000E   0x4283             CMP      R3,R0
+   \   00000010   0xD002             BEQ      ??pinmap_find_function_2
+   \   00000012   0x4293             CMP      R3,R2
+   \   00000014   0xD1F8             BNE      ??pinmap_find_function_1
+   \   00000016   0x6888             LDR      R0,[R1, #+8]
+     76              }
+     77              return (uint32_t)NC;
+   \                     ??pinmap_find_function_2: (+1)
+   \   00000018   0x4770             BX       LR               ;; return
+     78          }
+     79          
+
+   \                                 In section .text, align 4, keep-with-next
+     80          uint32_t pinmap_function(PinName pin, const PinMap* map) {
+   \                     pinmap_function: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0002             MOVS     R2,R0
+     81              uint32_t function = (uint32_t)NC;
+     82          
+     83              if (pin == (PinName)NC)
+   \   00000004   0x2000             MOVS     R0,#+0
+   \   00000006   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000008   0x4282             CMP      R2,R0
+   \   0000000A   0xD101             BNE      ??pinmap_function_0
+     84                  return (uint32_t)NC;
+   \   0000000C   0xBD10             POP      {R4,PC}
+   \                     ??pinmap_function_1: (+1)
+   \   0000000E   0x310C             ADDS     R1,R1,#+12
+   \                     ??pinmap_function_0: (+1)
+   \   00000010   0x2300             MOVS     R3,#+0
+   \   00000012   0x56CB             LDRSB    R3,[R1, R3]
+   \   00000014   0x4283             CMP      R3,R0
+   \   00000016   0xD005             BEQ      ??pinmap_function_2
+   \   00000018   0x4293             CMP      R3,R2
+   \   0000001A   0xD1F8             BNE      ??pinmap_function_1
+   \   0000001C   0x688C             LDR      R4,[R1, #+8]
+     85              function = pinmap_find_function(pin, map);
+     86              if ((uint32_t)NC == function) // no mapping available
+   \   0000001E   0x4284             CMP      R4,R0
+   \   00000020   0xD105             BNE      ??pinmap_function_3
+   \   00000022   0xE000             B        ??pinmap_function_4
+   \                     ??pinmap_function_2: (+1)
+   \   00000024   0x0004             MOVS     R4,R0
+     87                  error("pinmap not found for function");
+   \                     ??pinmap_function_4: (+1)
+   \   00000026   0xBF00             Nop      
+   \   00000028   0x....             ADR.N    R0,?_3
+   \   0000002A   0x.... 0x....      BL       error
+     88              return function;
+   \                     ??pinmap_function_3: (+1)
+   \   0000002E   0x0020             MOVS     R0,R4
+   \   00000030   0xBD10             POP      {R4,PC}          ;; return
+     89          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x63 0x6F          DC8 "could not pinout"
+   \              0x75 0x6C    
+   \              0x64 0x20    
+   \              0x6E 0x6F    
+   \              0x74 0x20    
+   \              0x70 0x69    
+   \              0x6E 0x6F    
+   \              0x75 0x74    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x70 0x69          DC8 "pinmap mis-match"
+   \              0x6E 0x6D    
+   \              0x61 0x70    
+   \              0x20 0x6D    
+   \              0x69 0x73    
+   \              0x2D 0x6D    
+   \              0x61 0x74    
+   \              0x63 0x68    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_2:
+   \   00000000   0x70 0x69          DC8 "pinmap not found for peripheral"
+   \              0x6E 0x6D    
+   \              0x61 0x70    
+   \              0x20 0x6E    
+   \              0x6F 0x74    
+   \              0x20 0x66    
+   \              0x6F 0x75    
+   \              0x6E 0x64    
+   \              0x20 0x66    
+   \              0x6F 0x72    
+   \              0x20 0x70    
+   \              0x65 0x72    
+   \              0x69 0x70    
+   \              0x68 0x65    
+   \              0x72 0x61    
+   \              0x6C 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_3:
+   \   00000000   0x70 0x69          DC8 "pinmap not found for function"
+   \              0x6E 0x6D    
+   \              0x61 0x70    
+   \              0x20 0x6E    
+   \              0x6F 0x74    
+   \              0x20 0x66    
+   \              0x6F 0x75    
+   \              0x6E 0x64    
+   \              0x20 0x66    
+   \              0x6F 0x72    
+   \              0x20 0x66    
+   \              0x75 0x6E    
+   \              0x63 0x74    
+   \              0x69 0x6F    
+   \              0x6E 0x00    
+   \   0000001E   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   pinmap_find_function
+       0   pinmap_find_peripheral
+       8   pinmap_function
+         8   -> error
+       8   pinmap_merge
+         8   -> error
+       8   pinmap_peripheral
+         8   -> error
+       8   pinmap_pinout
+         8   -> error
+         8   -> pin_function
+         8   -> pin_mode
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      20  ?_0
+      20  ?_1
+      32  ?_2
+      32  ?_3
+      26  pinmap_find_function
+      26  pinmap_find_peripheral
+      50  pinmap_function
+      34  pinmap_merge
+      50  pinmap_peripheral
+      56  pinmap_pinout
+
+ 
+ 346 bytes in section .text
+ 
+ 346 bytes of CODE memory
+
+Errors: none
+Warnings: 1

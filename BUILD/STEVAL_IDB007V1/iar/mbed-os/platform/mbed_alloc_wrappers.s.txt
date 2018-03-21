@@ -1,0 +1,474 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:44
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\platform\mbed_alloc_wrappers.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_alloc_wrappers.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_alloc_wrappers.s.txt
+#        -o .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_alloc_wrappers.o
+#        .\mbed-os\platform\mbed_alloc_wrappers.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_alloc_wrappers.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_alloc_wrappers.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\platform\mbed_alloc_wrappers.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2016 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          
+     17          #include "platform/mbed_mem_trace.h"
+     18          #include "platform/mbed_stats.h"
+     19          #include "platform/mbed_toolchain.h"
+     20          #include "platform/SingletonPtr.h"
+     21          #include "platform/PlatformMutex.h"
+     22          #include <stddef.h>
+     23          #include <stdio.h>
+     24          #include <string.h>
+     25          #include <stdlib.h>
+     26          
+     27          /* There are two memory tracers in mbed OS:
+     28          
+     29          - the first can be used to detect the maximum heap usage at runtime. It is
+     30            activated by defining the MBED_HEAP_STATS_ENABLED macro.
+     31          - the second can be used to trace each memory call by automatically invoking
+     32            a callback on each memory operation (see hal/api/mbed_mem_trace.h). It is
+     33            activated by defining the MBED_MEM_TRACING_ENABLED macro.
+     34          
+     35          Both tracers can be activated and deactivated in any combination. If both tracers
+     36          are active, the second one (MBED_MEM_TRACING_ENABLED) will trace the first one's
+     37          (MBED_HEAP_STATS_ENABLED) memory calls.*/
+     38          
+     39          /******************************************************************************/
+     40          /* Implementation of the runtime max heap usage checker                       */
+     41          /******************************************************************************/
+     42          
+     43          /* Size must be a multiple of 8 to keep alignment */
+     44          typedef struct {
+     45              uint32_t size;
+     46              uint32_t pad;
+     47          } alloc_info_t;
+     48          
+     49          #ifdef MBED_MEM_TRACING_ENABLED
+     50          static SingletonPtr<PlatformMutex> mem_trace_mutex;
+     51          #endif
+     52          #ifdef MBED_HEAP_STATS_ENABLED
+     53          static SingletonPtr<PlatformMutex> malloc_stats_mutex;
+     54          static mbed_stats_heap_t heap_stats = {0, 0, 0, 0, 0};
+     55          #endif
+     56          
+
+   \                                 In section .text, align 2, keep-with-next
+     57          void mbed_stats_heap_get(mbed_stats_heap_t *stats)
+     58          {
+   \                     mbed_stats_heap_get: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     59          #ifdef MBED_HEAP_STATS_ENABLED
+     60              extern uint32_t mbed_heap_size;
+     61              heap_stats.reserved_size = mbed_heap_size;
+     62          
+     63              malloc_stats_mutex->lock();
+     64              memcpy(stats, &heap_stats, sizeof(mbed_stats_heap_t));
+     65              malloc_stats_mutex->unlock();
+     66          #else
+     67              memset(stats, 0, sizeof(mbed_stats_heap_t));
+   \   00000002   0x2118             MOVS     R1,#+24
+   \   00000004   0x.... 0x....      BL       __aeabi_memclr4
+     68          #endif
+     69          }
+   \   00000008   0xBD01             POP      {R0,PC}          ;; return
+     70          
+     71          /******************************************************************************/
+     72          /* GCC memory allocation wrappers                                             */
+     73          /******************************************************************************/
+     74          
+     75          #if defined(TOOLCHAIN_GCC)
+     76          
+     77          #ifdef   FEATURE_UVISOR
+     78          #include "uvisor-lib/uvisor-lib.h"
+     79          #endif/* FEATURE_UVISOR */
+     80          
+     81          extern "C" {
+     82              void * __real__malloc_r(struct _reent * r, size_t size);
+     83              void * __real__memalign_r(struct _reent * r, size_t alignment, size_t bytes);
+     84              void * __real__realloc_r(struct _reent * r, void * ptr, size_t size);
+     85              void __real__free_r(struct _reent * r, void * ptr);
+     86              void* __real__calloc_r(struct _reent * r, size_t nmemb, size_t size);
+     87          }
+     88          
+     89          // TODO: memory tracing doesn't work with uVisor enabled.
+     90          #if !defined(FEATURE_UVISOR)
+     91          
+     92          extern "C" void * __wrap__malloc_r(struct _reent * r, size_t size) {
+     93              void *ptr = NULL;
+     94          #ifdef MBED_HEAP_STATS_ENABLED
+     95              malloc_stats_mutex->lock();
+     96              alloc_info_t *alloc_info = (alloc_info_t*)__real__malloc_r(r, size + sizeof(alloc_info_t));
+     97              if (alloc_info != NULL) {
+     98                  alloc_info->size = size;
+     99                  ptr = (void*)(alloc_info + 1);
+    100                  heap_stats.current_size += size;
+    101                  heap_stats.total_size += size;
+    102                  heap_stats.alloc_cnt += 1;
+    103                  if (heap_stats.current_size > heap_stats.max_size) {
+    104                      heap_stats.max_size = heap_stats.current_size;
+    105                  }
+    106              } else {
+    107                  heap_stats.alloc_fail_cnt += 1;
+    108              }
+    109              malloc_stats_mutex->unlock();
+    110          #else // #ifdef MBED_HEAP_STATS_ENABLED
+    111              ptr = __real__malloc_r(r, size);
+    112          #endif // #ifdef MBED_HEAP_STATS_ENABLED
+    113          #ifdef MBED_MEM_TRACING_ENABLED
+    114              mem_trace_mutex->lock();
+    115              mbed_mem_trace_malloc(ptr, size, MBED_CALLER_ADDR());
+    116              mem_trace_mutex->unlock();
+    117          #endif // #ifdef MBED_MEM_TRACING_ENABLED
+    118              return ptr;
+    119          }
+    120          
+    121          extern "C" void * __wrap__realloc_r(struct _reent * r, void * ptr, size_t size) {
+    122              void *new_ptr = NULL;
+    123          #ifdef MBED_HEAP_STATS_ENABLED
+    124              // Implement realloc_r with malloc and free.
+    125              // The function realloc_r can't be used here directly since
+    126              // it can call into __wrap__malloc_r (returns ptr + 4) or
+    127              // resize memory directly (returns ptr + 0).
+    128          
+    129              // Note - no lock needed since malloc and free are thread safe
+    130          
+    131              // Get old size
+    132              uint32_t old_size = 0;
+    133              if (ptr != NULL) {
+    134                  alloc_info_t *alloc_info = ((alloc_info_t*)ptr) - 1;
+    135                  old_size = alloc_info->size;
+    136              }
+    137          
+    138              // Allocate space
+    139              if (size != 0) {
+    140                  new_ptr = malloc(size);
+    141              }
+    142          
+    143              // If the new buffer has been allocated copy the data to it
+    144              // and free the old buffer
+    145              if (new_ptr != NULL) {
+    146                  uint32_t copy_size = (old_size < size) ? old_size : size;
+    147                  memcpy(new_ptr, (void*)ptr, copy_size);
+    148                  free(ptr);
+    149              }
+    150          #else // #ifdef MBED_HEAP_STATS_ENABLED
+    151              new_ptr = __real__realloc_r(r, ptr, size);
+    152          #endif // #ifdef MBED_HEAP_STATS_ENABLED
+    153          #ifdef MBED_MEM_TRACING_ENABLED
+    154              mem_trace_mutex->lock();
+    155              mbed_mem_trace_realloc(new_ptr, ptr, size, MBED_CALLER_ADDR());
+    156              mem_trace_mutex->unlock();
+    157          #endif // #ifdef MBED_MEM_TRACING_ENABLED
+    158              return new_ptr;
+    159          }
+    160          
+    161          extern "C" void __wrap__free_r(struct _reent * r, void * ptr) {
+    162          #ifdef MBED_HEAP_STATS_ENABLED
+    163              malloc_stats_mutex->lock();
+    164              alloc_info_t *alloc_info = NULL;
+    165              if (ptr != NULL) {
+    166                  alloc_info = ((alloc_info_t*)ptr) - 1;
+    167                  heap_stats.current_size -= alloc_info->size;
+    168                  heap_stats.alloc_cnt -= 1;
+    169              }
+    170              __real__free_r(r, (void*)alloc_info);
+    171              malloc_stats_mutex->unlock();
+    172          #else // #ifdef MBED_HEAP_STATS_ENABLED
+    173              __real__free_r(r, ptr);
+    174          #endif // #ifdef MBED_HEAP_STATS_ENABLED
+    175          #ifdef MBED_MEM_TRACING_ENABLED
+    176              mem_trace_mutex->lock();
+    177              mbed_mem_trace_free(ptr, MBED_CALLER_ADDR());
+    178              mem_trace_mutex->unlock();
+    179          #endif // #ifdef MBED_MEM_TRACING_ENABLED
+    180          }
+    181          
+    182          extern "C" void * __wrap__calloc_r(struct _reent * r, size_t nmemb, size_t size) {
+    183              void *ptr = NULL;
+    184          #ifdef MBED_HEAP_STATS_ENABLED
+    185              // Note - no lock needed since malloc is thread safe
+    186          
+    187              ptr = malloc(nmemb * size);
+    188              if (ptr != NULL) {
+    189                  memset(ptr, 0, nmemb * size);
+    190              }
+    191          #else // #ifdef MBED_HEAP_STATS_ENABLED
+    192              ptr = __real__calloc_r(r, nmemb, size);
+    193          #endif // #ifdef MBED_HEAP_STATS_ENABLED
+    194          #ifdef MBED_MEM_TRACING_ENABLED
+    195              mem_trace_mutex->lock();
+    196              mbed_mem_trace_calloc(ptr, nmemb, size, MBED_CALLER_ADDR());
+    197              mem_trace_mutex->unlock();
+    198          #endif // #ifdef MBED_MEM_TRACING_ENABLED
+    199              return ptr;
+    200          }
+    201          
+    202          extern "C" void * __wrap__memalign_r(struct _reent * r, size_t alignment, size_t bytes) {
+    203              return __real__memalign_r(r, alignment, bytes);
+    204          }
+    205          
+    206          #endif // if !defined(FEATURE_UVISOR)
+    207          
+    208          
+    209          /******************************************************************************/
+    210          /* ARMCC / IAR memory allocation wrappers                                     */
+    211          /******************************************************************************/
+    212          
+    213          #elif defined(TOOLCHAIN_ARM) || defined(__ICCARM__)
+    214          
+    215          #if defined(TOOLCHAIN_ARM)
+    216          #define SUPER_MALLOC    $Super$$malloc
+    217          #define SUB_MALLOC      $Sub$$malloc
+    218          #define SUPER_REALLOC   $Super$$realloc
+    219          #define SUB_REALLOC     $Sub$$realloc
+    220          #define SUPER_CALLOC    $Super$$calloc
+    221          #define SUB_CALLOC      $Sub$$calloc
+    222          #define SUPER_FREE      $Super$$free
+    223          #define SUB_FREE        $Sub$$free
+    224          #elif defined(__ICCARM__)
+    225          #define SUPER_MALLOC    $Super$$__iar_dlmalloc
+    226          #define SUB_MALLOC      $Sub$$__iar_dlmalloc
+    227          #define SUPER_REALLOC   $Super$$__iar_dlrealloc
+    228          #define SUB_REALLOC     $Sub$$__iar_dlrealloc
+    229          #define SUPER_CALLOC    $Super$$__iar_dlcalloc
+    230          #define SUB_CALLOC      $Sub$$__iar_dlcalloc
+    231          #define SUPER_FREE      $Super$$__iar_dlfree
+    232          #define SUB_FREE        $Sub$$__iar_dlfree
+    233          #endif
+    234          
+    235          /* Enable hooking of memory function only if tracing is also enabled */
+    236          #if defined(MBED_MEM_TRACING_ENABLED) || defined(MBED_HEAP_STATS_ENABLED)
+    237          
+    238          extern "C" {
+    239              void *SUPER_MALLOC(size_t size);
+    240              void *SUPER_REALLOC(void *ptr, size_t size);
+    241              void *SUPER_CALLOC(size_t nmemb, size_t size);
+    242              void SUPER_FREE(void *ptr);
+    243          }
+    244          
+    245          extern "C" void* SUB_MALLOC(size_t size) {
+    246              void *ptr = NULL;
+    247          #ifdef MBED_HEAP_STATS_ENABLED
+    248              malloc_stats_mutex->lock();
+    249              alloc_info_t *alloc_info = (alloc_info_t*)SUPER_MALLOC(size + sizeof(alloc_info_t));
+    250              if (alloc_info != NULL) {
+    251                  alloc_info->size = size;
+    252                  ptr = (void*)(alloc_info + 1);
+    253                  heap_stats.current_size += size;
+    254                  heap_stats.total_size += size;
+    255                  heap_stats.alloc_cnt += 1;
+    256                  if (heap_stats.current_size > heap_stats.max_size) {
+    257                      heap_stats.max_size = heap_stats.current_size;
+    258                  }
+    259              } else {
+    260                  heap_stats.alloc_fail_cnt += 1;
+    261              }
+    262              malloc_stats_mutex->unlock();
+    263          #else // #ifdef MBED_HEAP_STATS_ENABLED
+    264              ptr = SUPER_MALLOC(size);
+    265          #endif // #ifdef MBED_HEAP_STATS_ENABLED
+    266          #ifdef MBED_MEM_TRACING_ENABLED
+    267              mem_trace_mutex->lock();
+    268              mbed_mem_trace_malloc(ptr, size, MBED_CALLER_ADDR());
+    269              mem_trace_mutex->unlock();
+    270          #endif // #ifdef MBED_MEM_TRACING_ENABLED
+    271              return ptr;
+    272          }
+    273          
+    274          extern "C" void* SUB_REALLOC(void *ptr, size_t size) {
+    275              void *new_ptr = NULL;
+    276          #ifdef MBED_HEAP_STATS_ENABLED
+    277              // Note - no lock needed since malloc and free are thread safe
+    278          
+    279              // Get old size
+    280              uint32_t old_size = 0;
+    281              if (ptr != NULL) {
+    282                  alloc_info_t *alloc_info = ((alloc_info_t*)ptr) - 1;
+    283                  old_size = alloc_info->size;
+    284              }
+    285          
+    286              // Allocate space
+    287              if (size != 0) {
+    288                  new_ptr = malloc(size);
+    289              }
+    290          
+    291              // If the new buffer has been allocated copy the data to it
+    292              // and free the old buffer
+    293              if (new_ptr != NULL) {
+    294                  uint32_t copy_size = (old_size < size) ? old_size : size;
+    295                  memcpy(new_ptr, (void*)ptr, copy_size);
+    296                  free(ptr);
+    297              }
+    298          #else // #ifdef MBED_HEAP_STATS_ENABLED
+    299              new_ptr = SUPER_REALLOC(ptr, size);
+    300          #endif // #ifdef MBED_HEAP_STATS_ENABLED
+    301          #ifdef MBED_MEM_TRACING_ENABLED
+    302              mem_trace_mutex->lock();
+    303              mbed_mem_trace_realloc(new_ptr, ptr, size, MBED_CALLER_ADDR());
+    304              mem_trace_mutex->unlock();
+    305          #endif // #ifdef MBED_MEM_TRACING_ENABLED
+    306              return new_ptr;
+    307          }
+    308          
+    309          extern "C" void *SUB_CALLOC(size_t nmemb, size_t size) {
+    310              void *ptr = NULL;
+    311          #ifdef MBED_HEAP_STATS_ENABLED
+    312              // Note - no lock needed since malloc is thread safe
+    313              ptr = malloc(nmemb * size);
+    314              if (ptr != NULL) {
+    315                  memset(ptr, 0, nmemb * size);
+    316              }
+    317          #else // #ifdef MBED_HEAP_STATS_ENABLED
+    318              ptr = SUPER_CALLOC(nmemb, size);
+    319          #endif // #ifdef MBED_HEAP_STATS_ENABLED
+    320          #ifdef MBED_MEM_TRACING_ENABLED
+    321              mem_trace_mutex->lock();
+    322              mbed_mem_trace_calloc(ptr, nmemb, size, MBED_CALLER_ADDR());
+    323              mem_trace_mutex->unlock();
+    324          #endif // #ifdef MBED_MEM_TRACING_ENABLED
+    325              return ptr;
+    326          }
+    327          
+    328          extern "C" void SUB_FREE(void *ptr) {
+    329          #ifdef MBED_HEAP_STATS_ENABLED
+    330              malloc_stats_mutex->lock();
+    331              alloc_info_t *alloc_info = NULL;
+    332              if (ptr != NULL) {
+    333                  alloc_info = ((alloc_info_t*)ptr) - 1;
+    334                  heap_stats.current_size -= alloc_info->size;
+    335                  heap_stats.alloc_cnt -= 1;
+    336              }
+    337              SUPER_FREE((void*)alloc_info);
+    338              malloc_stats_mutex->unlock();
+    339          #else // #ifdef MBED_HEAP_STATS_ENABLED
+    340              SUPER_FREE(ptr);
+    341          #endif // #ifdef MBED_HEAP_STATS_ENABLED
+    342          #ifdef MBED_MEM_TRACING_ENABLED
+    343              mem_trace_mutex->lock();
+    344              mbed_mem_trace_free(ptr, MBED_CALLER_ADDR());
+    345              mem_trace_mutex->unlock();
+    346          #endif // #ifdef MBED_MEM_TRACING_ENABLED
+    347          }
+    348          
+    349          #endif // #if defined(MBED_MEM_TRACING_ENABLED) || defined(MBED_HEAP_STATS_ENABLED)
+    350          
+    351          /******************************************************************************/
+    352          /* Allocation wrappers for other toolchains are not supported yet             */
+    353          /******************************************************************************/
+    354          
+    355          #else
+    356          
+    357          #ifdef MBED_MEM_TRACING_ENABLED
+    358          #error Memory tracing is not supported with the current toolchain.
+    359          #endif
+    360          
+    361          #ifdef MBED_HEAP_STATS_ENABLED
+    362          #error Heap statistics are not supported with the current toolchain.
+    363          #endif
+    364          
+    365          #endif // #if defined(TOOLCHAIN_GCC)
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   mbed_stats_heap_get
+         8   -> __aeabi_memclr4
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      10  mbed_stats_heap_get
+
+ 
+ 10 bytes in section .text
+ 
+ 10 bytes of CODE memory
+
+Errors: none
+Warnings: none

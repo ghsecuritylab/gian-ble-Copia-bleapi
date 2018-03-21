@@ -1,0 +1,411 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:50
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_idle.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_idle.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_idle.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_idle.o
+#        .\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_idle.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_idle.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_idle.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_idle.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2012 ARM Limited
+      3           *
+      4           * Permission is hereby granted, free of charge, to any person obtaining a copy
+      5           * of this software and associated documentation files (the "Software"), to deal
+      6           * in the Software without restriction, including without limitation the rights
+      7           * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+      8           * copies of the Software, and to permit persons to whom the Software is
+      9           * furnished to do so, subject to the following conditions:
+     10           *
+     11           * The above copyright notice and this permission notice shall be included in
+     12           * all copies or substantial portions of the Software.
+     13           *
+     14           * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+     15           * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+     16           * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+     17           * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+     18           * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+     19           * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+     20           * SOFTWARE.
+     21           */
+     22          
+     23          #include "rtos/rtos_idle.h"
+     24          #include "platform/mbed_sleep.h"
+     25          #include "TimerEvent.h"
+     26          #include "lp_ticker_api.h"
+     27          #include "rtx_core_cm.h"
+     28          #include "mbed_critical.h"
+     29          #include "mbed_assert.h"
+     30          #include <new>
+     31          #include "rtx_os.h"
+     32          extern "C" {
+     33          #include "rtx_lib.h"
+     34          }
+     35          
+     36          using namespace mbed;
+     37          
+     38          #ifdef MBED_TICKLESS
+     39          
+     40          #if (defined(NO_SYSTICK))
+     41          /**
+     42           * Return an IRQ number that can be used in the absence of SysTick
+     43           *
+     44           * @return Free IRQ number that can be used
+     45           */
+     46          extern "C" IRQn_Type mbed_get_m0_tick_irqn(void);
+     47          #endif
+     48          
+     49          class RtosTimer : private TimerEvent {
+     50          public:
+     51              RtosTimer(): TimerEvent(get_lp_ticker_data()), _start_time(0), _tick(0) {
+     52                  _start_time = ticker_read_us(_ticker_data);
+     53          #if (defined(NO_SYSTICK))
+     54                  NVIC_SetVector(mbed_get_m0_tick_irqn(), (uint32_t)SysTick_Handler);
+     55                  NVIC_SetPriority(mbed_get_m0_tick_irqn(), 0xFF); /* RTOS requires lowest priority */
+     56                  NVIC_EnableIRQ(mbed_get_m0_tick_irqn());
+     57          #else
+     58                  // Ensure SysTick has the correct priority as it is still used
+     59                  // to trigger software interrupts on each tick. The period does
+     60                  // not matter since it will never start counting.
+     61                  OS_Tick_Setup(osRtxConfig.tick_freq, OS_TICK_HANDLER);
+     62          #endif
+     63              };
+     64          
+     65              /**
+     66               * Schedule an os tick to fire
+     67               *
+     68               * @param delta Tick to fire at relative to current tick
+     69               */
+     70              void schedule_tick(uint32_t delta=1) {
+     71                  insert_absolute(_start_time + (_tick + delta) * 1000000 /  OS_TICK_FREQ);
+     72              }
+     73          
+     74          
+     75              /**
+     76               * Prevent any scheduled ticks from triggering
+     77               */
+     78              void cancel_tick() {
+     79                  remove();
+     80              }
+     81          
+     82              /**
+     83               * Get the current tick count
+     84               *
+     85               * @return The number of ticks since boot. This should match RTX's tick count
+     86               */
+     87              uint32_t get_tick() {
+     88                  return _tick & 0xFFFFFFFF;
+     89              }
+     90          
+     91              /**
+     92               * Update the internal tick count
+     93               *
+     94               * @return The number of ticks incremented
+     95               */
+     96              uint32_t update_tick() {
+     97                  uint64_t new_tick = ticker_read_us(_ticker_data) * OS_TICK_FREQ / 1000000;
+     98                  if (new_tick > _tick) {
+     99                      // Don't update to the current tick. Instead, update to the
+    100                      // previous tick and let the SysTick handler increment it
+    101                      // to the current value. This allows scheduling restart
+    102                      // successfully after the OS is resumed.
+    103                      new_tick--;
+    104                  }
+    105                  uint32_t elapsed_ticks = new_tick - _tick;
+    106                  _tick = new_tick;
+    107                  return elapsed_ticks;
+    108              }
+    109          
+    110              /**
+    111               * Get the time
+    112               *
+    113               * @return Current time in microseconds
+    114               */
+    115              us_timestamp_t get_time() {
+    116                  return ticker_read_us(_ticker_data);
+    117              }
+    118          
+    119              ~RtosTimer() {
+    120          
+    121              };
+    122          
+    123          protected:
+    124          
+    125              void handler() {
+    126          #if (defined(NO_SYSTICK))
+    127                  NVIC_SetPendingIRQ(mbed_get_m0_tick_irqn());
+    128          #else
+    129                  SCB->ICSR = SCB_ICSR_PENDSTSET_Msk;
+    130          #endif
+    131                  _tick++;
+    132              }
+    133          
+    134              us_timestamp_t _start_time;
+    135              uint64_t _tick;
+    136          };
+    137          
+    138          static RtosTimer *os_timer;
+    139          static uint64_t os_timer_data[sizeof(RtosTimer) / 8];
+    140          
+    141          /// Enable System Timer.
+    142          int32_t OS_Tick_Enable (void)
+    143          {
+    144              // Do not use SingletonPtr since this relies on the RTOS
+    145              if (NULL == os_timer) {
+    146                  os_timer = new (os_timer_data) RtosTimer();
+    147              }
+    148          
+    149              // set to fire interrupt on next tick
+    150              os_timer->schedule_tick();
+    151          
+    152              return 0;
+    153          }
+    154          
+    155          /// Disable System Timer.
+    156          int32_t OS_Tick_Disable (void)
+    157          {
+    158              os_timer->cancel_tick();
+    159          
+    160              return 0;
+    161          }
+    162          
+    163          /// Acknowledge System Timer IRQ.
+    164          int32_t OS_Tick_AcknowledgeIRQ (void)
+    165          {
+    166              os_timer->schedule_tick();
+    167          
+    168              return 0;
+    169          }
+    170          
+    171          /// Get System Timer count.
+    172          uint32_t OS_Tick_GetCount (void)
+    173          {
+    174              return os_timer->get_time() & 0xFFFFFFFF;
+    175          }
+    176          
+    177          // Get OS Tick IRQ number.
+    178          int32_t  OS_Tick_GetIRQn (void) {
+    179            return -1;
+    180          }
+    181          
+    182          // Get OS Tick overflow status.
+    183          uint32_t OS_Tick_GetOverflow (void) {
+    184            return 0;
+    185          }
+    186          
+    187          // Get OS Tick interval.
+    188          uint32_t OS_Tick_GetInterval (void) {
+    189            return 1000;
+    190          }
+    191          
+    192          static void default_idle_hook(void)
+    193          {
+    194              uint32_t elapsed_ticks = 0;
+    195          
+    196              core_util_critical_section_enter();
+    197              uint32_t ticks_to_sleep = svcRtxKernelSuspend();
+    198              MBED_ASSERT(os_timer->get_tick() == svcRtxKernelGetTickCount());
+    199              if (ticks_to_sleep) {
+    200                  os_timer->schedule_tick(ticks_to_sleep);
+    201          
+    202                  sleep_manager_lock_deep_sleep();
+    203                  sleep();
+    204                  sleep_manager_unlock_deep_sleep();
+    205          
+    206                  os_timer->cancel_tick();
+    207                  // calculate how long we slept
+    208                  elapsed_ticks = os_timer->update_tick();
+    209              }
+    210              svcRtxKernelResume(elapsed_ticks);
+    211              core_util_critical_section_exit();
+    212          }
+    213          
+    214          #elif defined(FEATURE_UVISOR)
+    215          
+    216          static void default_idle_hook(void)
+    217          {
+    218              /* uVisor can't sleep. See <https://github.com/ARMmbed/uvisor/issues/420>
+    219               * for details. */
+    220          }
+    221          
+    222          #else
+    223          
+
+   \                                 In section .text, align 2, keep-with-next
+    224          static void default_idle_hook(void)
+    225          {
+   \                     _Z17default_idle_hookv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    226              // critical section to complete sleep with locked deepsleep
+    227              core_util_critical_section_enter();
+   \   00000002   0x.... 0x....      BL       core_util_critical_section_enter
+    228              sleep_manager_lock_deep_sleep();
+   \   00000006   0x.... 0x....      BL       sleep_manager_lock_deep_sleep
+    229              sleep();
+    230              sleep_manager_unlock_deep_sleep();
+   \   0000000A   0x.... 0x....      BL       sleep_manager_unlock_deep_sleep
+    231              core_util_critical_section_exit();
+   \   0000000E   0x.... 0x....      BL       core_util_critical_section_exit
+    232          }
+   \   00000012   0xBD01             POP      {R0,PC}          ;; return
+    233          
+    234          #endif // MBED_TICKLESS
+    235          
+
+   \                                 In section .data, align 4
+    236          static void (*idle_hook_fptr)(void) = &default_idle_hook;
+   \                     idle_hook_fptr:
+   \   00000000   0x........         DC32 _Z17default_idle_hookv
+    237          
+
+   \                                 In section .text, align 2, keep-with-next
+    238          void rtos_attach_idle_hook(void (*fptr)(void))
+    239          {
+    240              //Attach the specified idle hook, or the default idle hook in case of a NULL pointer
+    241              if (fptr != NULL) {
+   \                     rtos_attach_idle_hook: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+   \   00000002   0xD100             BNE      ??rtos_attach_idle_hook_0
+    242                  idle_hook_fptr = fptr;
+    243              } else {
+    244                  idle_hook_fptr = default_idle_hook;
+   \   00000004   0x....             LDR      R0,??DataTable1
+   \                     ??rtos_attach_idle_hook_0: (+1)
+   \   00000006   0x....             LDR      R1,??DataTable1_1
+   \   00000008   0x6008             STR      R0,[R1, #+0]
+    245              }
+    246          }
+   \   0000000A   0x4770             BX       LR               ;; return
+    247          
+
+   \                                 In section .text, align 2, keep-with-next
+    248          extern "C" void rtos_idle_loop(void)
+    249          {
+   \                     rtos_idle_loop: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             LDR      R4,??DataTable1_1
+    250              //Continuously call the idle hook function pointer
+    251              while (1) {
+    252                  idle_hook_fptr();
+   \                     ??rtos_idle_loop_0: (+1)
+   \   00000004   0x6820             LDR      R0,[R4, #+0]
+   \   00000006   0x4780             BLX      R0
+   \   00000008   0xE7FC             B        ??rtos_idle_loop_0
+    253              }
+    254          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \   00000000   0x........         DC32     _Z17default_idle_hookv
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_1:
+   \   00000000   0x........         DC32     idle_hook_fptr
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   default_idle_hook()
+         8   -> core_util_critical_section_enter
+         8   -> core_util_critical_section_exit
+         8   -> sleep_manager_lock_deep_sleep
+         8   -> sleep_manager_unlock_deep_sleep
+       0   rtos_attach_idle_hook
+       8   rtos_idle_loop
+         8   -- Indirect call
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+      20  default_idle_hook()
+       4  idle_hook_fptr
+      12  rtos_attach_idle_hook
+      10  rtos_idle_loop
+
+ 
+  4 bytes in section .data
+ 50 bytes in section .text
+ 
+ 50 bytes of CODE memory
+  4 bytes of DATA memory
+
+Errors: none
+Warnings: none

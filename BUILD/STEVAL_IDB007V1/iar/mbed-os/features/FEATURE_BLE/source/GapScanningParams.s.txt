@@ -1,0 +1,326 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:05
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        .\mbed-os\features\FEATURE_BLE\source\GapScanningParams.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\FEATURE_BLE\source\GapScanningParams.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\FEATURE_BLE\source\GapScanningParams.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\FEATURE_BLE\source\GapScanningParams.o
+#        .\mbed-os\features\FEATURE_BLE\source\GapScanningParams.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\FEATURE_BLE\source\GapScanningParams.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\FEATURE_BLE\source\GapScanningParams.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\FEATURE_BLE\source\GapScanningParams.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          
+     17          #include "ble/Gap.h"
+     18          #include "ble/GapScanningParams.h"
+     19          
+
+   \                                 In section .text, align 2, keep-with-next
+     20          GapScanningParams::GapScanningParams(uint16_t interval, uint16_t window, uint16_t timeout, bool activeScanning) :
+   \                     _ZN17GapScanningParamsC1Etttb: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x0008             MOVS     R0,R1
+   \   00000004   0x0015             MOVS     R5,R2
+   \   00000006   0x001E             MOVS     R6,R3
+   \   00000008   0x27FA             MOVS     R7,#+250
+   \   0000000A   0x00BF             LSLS     R7,R7,#+2        ;; #+1000
+   \   0000000C   0x4378             MULS     R0,R7,R0
+   \   0000000E   0x....             LDR      R1,??DataTable2  ;; 0x271
+   \   00000010   0x.... 0x....      BL       __aeabi_uidiv
+   \   00000014   0x8020             STRH     R0,[R4, #+0]
+     21              _interval(MSEC_TO_SCAN_DURATION_UNITS(interval)),
+     22              _window(MSEC_TO_SCAN_DURATION_UNITS(window)),
+   \   00000016   0x436F             MULS     R7,R5,R7
+   \   00000018   0x0038             MOVS     R0,R7
+   \   0000001A   0x....             LDR      R1,??DataTable2  ;; 0x271
+   \   0000001C   0x.... 0x....      BL       __aeabi_uidiv
+   \   00000020   0x8060             STRH     R0,[R4, #+2]
+     23              _timeout(timeout),
+   \   00000022   0x80A6             STRH     R6,[R4, #+4]
+     24              _activeScanning(activeScanning) {
+   \   00000024   0x9805             LDR      R0,[SP, #+20]
+   \   00000026   0x71A0             STRB     R0,[R4, #+6]
+     25              /* stay within limits */
+     26              if (_interval < SCAN_INTERVAL_MIN) {
+   \   00000028   0x8820             LDRH     R0,[R4, #+0]
+   \   0000002A   0x2804             CMP      R0,#+4
+   \   0000002C   0xD201             BCS      ??Subroutine0_0
+     27                  _interval = SCAN_INTERVAL_MIN;
+   \   0000002E   0x2004             MOVS     R0,#+4
+   \   00000030   0xE003             B        ??Subroutine0_1
+     28              }
+     29              if (_interval > SCAN_INTERVAL_MAX) {
+   \                     ??Subroutine0_0: (+1)
+   \   00000032   0x....             LDR      R1,??DataTable2_1  ;; 0x4001
+   \   00000034   0x4288             CMP      R0,R1
+   \   00000036   0xD301             BCC      ??Subroutine0_2
+     30                  _interval = SCAN_INTERVAL_MAX;
+   \   00000038   0x1E48             SUBS     R0,R1,#+1
+   \                     ??Subroutine0_1: (+1)
+   \   0000003A   0x8020             STRH     R0,[R4, #+0]
+     31              }
+     32              if (_window < SCAN_WINDOW_MIN) {
+   \                     ??Subroutine0_2: (+1)
+   \   0000003C   0x8860             LDRH     R0,[R4, #+2]
+   \   0000003E   0x0001             MOVS     R1,R0
+   \   00000040   0x2804             CMP      R0,#+4
+   \   00000042   0xD201             BCS      ??Subroutine0_3
+     33                  _window = SCAN_WINDOW_MIN;
+   \   00000044   0x2104             MOVS     R1,#+4
+   \   00000046   0xE003             B        ??Subroutine0_4
+     34              }
+     35              if (_window > SCAN_WINDOW_MAX) {
+   \                     ??Subroutine0_3: (+1)
+   \   00000048   0x....             LDR      R2,??DataTable2_1  ;; 0x4001
+   \   0000004A   0x4290             CMP      R0,R2
+   \   0000004C   0xD300             BCC      ??Subroutine0_4
+     36                  _window = SCAN_WINDOW_MAX;
+   \   0000004E   0x1E51             SUBS     R1,R2,#+1
+   \                     ??Subroutine0_4: (+1)
+   \   00000050   0x8061             STRH     R1,[R4, #+2]
+     37              }
+     38          }
+   \   00000052   0x0020             MOVS     R0,R4
+   \   00000054   0xBDF0             POP      {R4-R7,PC}       ;; return
+     39          
+
+   \                                 In section .text, align 2, keep-with-next
+     40          ble_error_t
+     41          GapScanningParams::setInterval(uint16_t newIntervalInMS)
+     42          {
+   \                     _ZN17GapScanningParams11setIntervalEt: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     43              uint16_t newInterval = MSEC_TO_SCAN_DURATION_UNITS(newIntervalInMS);
+   \   00000004   0x20FA             MOVS     R0,#+250
+   \   00000006   0x0080             LSLS     R0,R0,#+2        ;; #+1000
+   \   00000008   0x4348             MULS     R0,R1,R0
+   \   0000000A   0x....             LDR      R1,??DataTable2  ;; 0x271
+   \   0000000C   0x.... 0x....      BL       __aeabi_uidiv
+     44              if ((newInterval >= SCAN_INTERVAL_MIN) && (newInterval < SCAN_INTERVAL_MAX)) {
+   \   00000010   0xB280             UXTH     R0,R0
+   \   00000012   0x1F01             SUBS     R1,R0,#+4
+   \   00000014   0x....             LDR      R2,??DataTable2_2  ;; 0x3ffc
+   \   00000016   0x4291             CMP      R1,R2
+   \   00000018   0xD202             BCS      ??setInterval_0
+     45                  _interval = newInterval;
+   \   0000001A   0x8020             STRH     R0,[R4, #+0]
+     46                  return BLE_ERROR_NONE;
+   \   0000001C   0x2000             MOVS     R0,#+0
+   \   0000001E   0xBD10             POP      {R4,PC}
+     47              }
+     48          
+     49              return BLE_ERROR_PARAM_OUT_OF_RANGE;
+   \                     ??setInterval_0: (+1)
+   \   00000020   0x2003             MOVS     R0,#+3
+   \   00000022   0xBD10             POP      {R4,PC}          ;; return
+     50          }
+     51          
+
+   \                                 In section .text, align 2, keep-with-next
+     52          ble_error_t
+     53          GapScanningParams::setWindow(uint16_t newWindowInMS)
+     54          {
+   \                     _ZN17GapScanningParams9setWindowEt: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     55              uint16_t newWindow = MSEC_TO_SCAN_DURATION_UNITS(newWindowInMS);
+   \   00000004   0x20FA             MOVS     R0,#+250
+   \   00000006   0x0080             LSLS     R0,R0,#+2        ;; #+1000
+   \   00000008   0x4348             MULS     R0,R1,R0
+   \   0000000A   0x....             LDR      R1,??DataTable2  ;; 0x271
+   \   0000000C   0x.... 0x....      BL       __aeabi_uidiv
+     56              if ((newWindow >= SCAN_WINDOW_MIN) && (newWindow < SCAN_WINDOW_MAX)) {
+   \   00000010   0xB280             UXTH     R0,R0
+   \   00000012   0x1F01             SUBS     R1,R0,#+4
+   \   00000014   0x....             LDR      R2,??DataTable2_2  ;; 0x3ffc
+   \   00000016   0x4291             CMP      R1,R2
+   \   00000018   0xD202             BCS      ??setWindow_0
+     57                  _window   = newWindow;
+   \   0000001A   0x8060             STRH     R0,[R4, #+2]
+     58                  return BLE_ERROR_NONE;
+   \   0000001C   0x2000             MOVS     R0,#+0
+   \   0000001E   0xBD10             POP      {R4,PC}
+     59              }
+     60          
+     61              return BLE_ERROR_PARAM_OUT_OF_RANGE;
+   \                     ??setWindow_0: (+1)
+   \   00000020   0x2003             MOVS     R0,#+3
+   \   00000022   0xBD10             POP      {R4,PC}          ;; return
+     62          }
+     63          
+
+   \                                 In section .text, align 2, keep-with-next
+     64          ble_error_t
+     65          GapScanningParams::setTimeout(uint16_t newTimeout)
+     66          {
+     67              _timeout  = newTimeout;
+   \                     _ZN17GapScanningParams10setTimeoutEt: (+1)
+   \   00000000   0x8081             STRH     R1,[R0, #+4]
+     68              return BLE_ERROR_NONE;
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x4770             BX       LR               ;; return
+     69          }
+     70          
+
+   \                                 In section .text, align 2, keep-with-next
+     71          void
+     72          GapScanningParams::setActiveScanning(bool activeScanning)
+     73          {
+     74              _activeScanning = activeScanning;
+   \                     _ZN17GapScanningParams17setActiveScanningEb: (+1)
+   \   00000000   0x7181             STRB     R1,[R0, #+6]
+     75          }
+   \   00000002   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp GapScanningParams::subobject GapScanningParams(std::uint16_t, std::uint16_t, std::uint16_t, bool)
+   \                     _ZN17GapScanningParamsC2Etttb: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \   00000000   0x00000271         DC32     0x271
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \   00000000   0x00004001         DC32     0x4001
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \   00000000   0x00003FFC         DC32     0x3ffc
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   GapScanningParams::GapScanningParams(std::uint16_t, std::uint16_t, std::uint16_t, bool)
+        20 __aeabi_uidiv
+       0   GapScanningParams::setActiveScanning(bool)
+       8   GapScanningParams::setInterval(std::uint16_t)
+         8 __aeabi_uidiv
+       0   GapScanningParams::setTimeout(std::uint16_t)
+       8   GapScanningParams::setWindow(std::uint16_t)
+         8 __aeabi_uidiv
+      20   GapScanningParams::subobject GapScanningParams(std::uint16_t, std::uint16_t, std::uint16_t, bool)
+        20 __aeabi_uidiv
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+      86  ?Subroutine0
+       2  GapScanningParams::GapScanningParams(std::uint16_t, std::uint16_t, std::uint16_t, bool)
+       4  GapScanningParams::setActiveScanning(bool)
+      36  GapScanningParams::setInterval(std::uint16_t)
+       6  GapScanningParams::setTimeout(std::uint16_t)
+      36  GapScanningParams::setWindow(std::uint16_t)
+       4  GapScanningParams::subobject GapScanningParams(std::uint16_t, std::uint16_t, std::uint16_t, bool)
+     404  -- Other
+
+ 
+ 404 bytes in section .rodata
+ 186 bytes in section .text
+ 
+ 186 bytes of CODE  memory
+   0 bytes of CONST memory (+ 404 bytes shared)
+
+Errors: none
+Warnings: none

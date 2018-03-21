@@ -1,0 +1,960 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:43
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\platform\Stream.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\Stream.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\Stream.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\Stream.o
+#        .\mbed-os\platform\Stream.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\Stream.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\Stream.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\platform\Stream.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "platform/Stream.h"
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::FileHandle::sync()
+   \                     _ZN4mbed10FileHandle4syncEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::FileHandle::isatty()
+   \                     _ZN4mbed10FileHandle6isattyEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp off_t mbed::FileHandle::tell()
+   \                     _ZN4mbed10FileHandle4tellEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x2201             MOVS     R2,#+1
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x6803             LDR      R3,[R0, #+0]
+   \   00000008   0x691B             LDR      R3,[R3, #+16]
+   \   0000000A   0x4798             BLX      R3
+   \   0000000C   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::FileHandle::rewind()
+   \                     _ZN4mbed10FileHandle6rewindEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x2200             MOVS     R2,#+0
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x6803             LDR      R3,[R0, #+0]
+   \   00000008   0x691B             LDR      R3,[R3, #+16]
+   \   0000000A   0x4798             BLX      R3
+   \   0000000C   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp off_t mbed::FileHandle::lseek(off_t, int)
+   \                     _ZN4mbed10FileHandle5lseekEli: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6803             LDR      R3,[R0, #+0]
+   \   00000004   0x691B             LDR      R3,[R3, #+16]
+   \   00000006   0x4798             BLX      R3
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::FileHandle::fsync()
+   \                     _ZN4mbed10FileHandle5fsyncEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x6989             LDR      R1,[R1, #+24]
+   \   00000006   0x4788             BLX      R1
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp off_t mbed::FileHandle::flen()
+   \                     _ZN4mbed10FileHandle4flenEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x6A89             LDR      R1,[R1, #+40]
+   \   00000006   0x4788             BLX      R1
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::FileHandle::set_blocking(bool)
+   \                     _ZN4mbed10FileHandle12set_blockingEb: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000004   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp short mbed::FileHandle::poll(short) const
+   \                     _ZNK4mbed10FileHandle4pollEs: (+1)
+   \   00000000   0x2011             MOVS     R0,#+17
+   \   00000002   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::FileHandle::sigio(mbed::Callback<void ()>)
+   \                     _ZN4mbed10FileHandle5sigioENS_8CallbackIFvvEEE: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::FileLike::~FileLike()
+   \                     _ZN4mbed8FileLikeD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x1D20             ADDS     R0,R4,#+4
+   \   00000006   0x.... 0x....      BL       _ZN4mbed8FileBaseD2Ev
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::FileLike::deleter ~FileLike()
+   \                     _ZN4mbed8FileLikeD0Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x1D20             ADDS     R0,R4,#+4
+   \   00000006   0x.... 0x....      BL       _ZN4mbed8FileBaseD2Ev
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0x.... 0x....      BL       _ZdlPv
+   \   00000010   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Stream::lock()
+   \                     _ZN4mbed6Stream4lockEv: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Stream::unlock()
+   \                     _ZN4mbed6Stream6unlockEv: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+     17          #include "platform/mbed_error.h"
+     18          #include <errno.h>
+     19          
+     20          namespace mbed {
+     21          
+
+   \                                 In section .text, align 4, keep-with-next
+     22          Stream::Stream(const char *name) : FileLike(name), _file(NULL) {
+   \                     _ZN4mbed6StreamC1EPKc: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0xBF00             Nop      
+   \   00000004                      REQUIRE ?Subroutine0
+   \   00000004                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x2200             MOVS     R2,#+0
+   \   00000004   0x1D20             ADDS     R0,R4,#+4
+   \   00000006   0x.... 0x....      BL       _ZN4mbed8FileBaseC2EPKcNS_8PathTypeE
+   \   0000000A   0x....             LDR      R0,??DataTable4_1
+   \   0000000C   0x0001             MOVS     R1,R0
+   \   0000000E   0x3108             ADDS     R1,R1,#+8
+   \   00000010   0x6021             STR      R1,[R4, #+0]
+   \   00000012   0x3054             ADDS     R0,R0,#+84
+   \   00000014   0x6060             STR      R0,[R4, #+4]
+   \   00000016   0x....             LDR      R0,??DataTable4
+   \   00000018   0x0001             MOVS     R1,R0
+   \   0000001A   0x3108             ADDS     R1,R1,#+8
+   \   0000001C   0x6021             STR      R1,[R4, #+0]
+   \   0000001E   0x3064             ADDS     R0,R0,#+100
+   \   00000020   0x6060             STR      R0,[R4, #+4]
+   \   00000022   0x2000             MOVS     R0,#+0
+   \   00000024   0x6160             STR      R0,[R4, #+20]
+     23              // No lock needed in constructor
+     24              /* open ourselves */
+     25              _file = fdopen(this, "w+");
+   \   00000026   0x....             ADR      R1,??DataTable4_2  ;; 0x77, 0x2B, 0x00, 0x00
+   \   00000028   0x0020             MOVS     R0,R4
+   \   0000002A   0x.... 0x....      BL       _ZN4mbed6fdopenEPNS_10FileHandleEPKc
+   \   0000002E   0x6160             STR      R0,[R4, #+20]
+     26              // fdopen() will make us buffered because Stream::isatty()
+     27              // wrongly returns zero which is not being changed for
+     28              // backward compatibility 
+     29              if (_file) {
+   \   00000030   0x2800             CMP      R0,#+0
+   \   00000032   0xD002             BEQ      ??Subroutine0_0
+     30                  mbed_set_unbuffered_stream(_file);
+   \   00000034   0x.... 0x....      BL       _ZN4mbed26mbed_set_unbuffered_streamEPSt6__FILE
+   \   00000038   0xE005             B        ??Subroutine0_1
+     31              } else {
+     32                  error("Stream obj failure, errno=%d\r\n", errno);
+   \                     ??Subroutine0_0: (+1)
+   \   0000003A   0x.... 0x....      BL       __aeabi_errno_addr
+   \   0000003E   0x6801             LDR      R1,[R0, #+0]
+   \   00000040   0x....             ADR.N    R0,?_1
+   \   00000042   0x.... 0x....      BL       error
+     33              }
+     34          }
+   \                     ??Subroutine0_1: (+1)
+   \   00000046   0x0020             MOVS     R0,R4
+   \   00000048   0xBD10             POP      {R4,PC}          ;; return
+     35          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::Stream::deleter ~Stream()
+   \                     _ZN4mbed6StreamD0Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x....             LDR      R0,??DataTable4
+   \   00000006   0x0001             MOVS     R1,R0
+   \   00000008   0x3108             ADDS     R1,R1,#+8
+   \   0000000A   0x6021             STR      R1,[R4, #+0]
+   \   0000000C   0x3064             ADDS     R0,R0,#+100
+   \   0000000E   0x6060             STR      R0,[R4, #+4]
+   \   00000010   0x6960             LDR      R0,[R4, #+20]
+   \   00000012   0x.... 0x....      BL       fclose
+   \   00000016   0x1D20             ADDS     R0,R4,#+4
+   \   00000018   0x.... 0x....      BL       _ZN4mbed8FileBaseD2Ev
+   \   0000001C   0x0020             MOVS     R0,R4
+   \   0000001E   0x.... 0x....      BL       _ZdlPv
+   \   00000022   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     36          Stream::~Stream() {
+   \                     _ZN4mbed6StreamD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine1
+   \   00000002                      ;; // Fall through to label ?Subroutine1
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine1: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x....             LDR      R0,??DataTable4
+   \   00000004   0x0001             MOVS     R1,R0
+   \   00000006   0x3108             ADDS     R1,R1,#+8
+   \   00000008   0x6021             STR      R1,[R4, #+0]
+   \   0000000A   0x3064             ADDS     R0,R0,#+100
+   \   0000000C   0x6060             STR      R0,[R4, #+4]
+     37              // No lock can be used in destructor
+     38              fclose(_file);
+   \   0000000E   0x6960             LDR      R0,[R4, #+20]
+   \   00000010   0x.... 0x....      BL       fclose
+     39          }
+   \   00000014   0x1D20             ADDS     R0,R4,#+4
+   \   00000016   0x.... 0x....      BL       _ZN4mbed8FileBaseD2Ev
+   \   0000001A   0x0020             MOVS     R0,R4
+   \   0000001C   0xBD10             POP      {R4,PC}          ;; return
+     40          
+
+   \                                 In section .text, align 2, keep-with-next
+     41          int Stream::putc(int c) {
+   \                     _ZN4mbed6Stream4putcEi: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     42              lock();
+   \   00000006   0x6821             LDR      R1,[R4, #+0]
+   \   00000008   0x6CC9             LDR      R1,[R1, #+76]
+   \   0000000A   0x4788             BLX      R1
+     43              fflush(_file);
+   \   0000000C   0x6960             LDR      R0,[R4, #+20]
+   \   0000000E   0x.... 0x....      BL       fflush
+     44              int ret = std::fputc(c, _file);
+   \   00000012   0x6961             LDR      R1,[R4, #+20]
+   \   00000014   0x0028             MOVS     R0,R5
+   \   00000016   0x.... 0x....      BL       fputc
+   \   0000001A   0x....             B.N      ?Subroutine2
+     45              unlock();
+     46              return ret;
+     47          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine2: (+1)
+   \   00000000   0x0005             MOVS     R5,R0
+   \   00000002   0x0020             MOVS     R0,R4
+   \   00000004   0x6821             LDR      R1,[R4, #+0]
+   \   00000006   0x6D09             LDR      R1,[R1, #+80]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0x0028             MOVS     R0,R5
+   \   0000000C   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     48          int Stream::puts(const char *s) {
+   \                     _ZN4mbed6Stream4putsEPKc: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     49              lock();
+   \   00000006   0x6821             LDR      R1,[R4, #+0]
+   \   00000008   0x6CC9             LDR      R1,[R1, #+76]
+   \   0000000A   0x4788             BLX      R1
+     50              fflush(_file);
+   \   0000000C   0x6960             LDR      R0,[R4, #+20]
+   \   0000000E   0x.... 0x....      BL       fflush
+     51              int ret = std::fputs(s, _file);
+   \   00000012   0x6961             LDR      R1,[R4, #+20]
+   \   00000014   0x0028             MOVS     R0,R5
+   \   00000016   0x.... 0x....      BL       fputs
+   \   0000001A                      REQUIRE ?Subroutine2
+   \   0000001A                      ;; // Fall through to label ?Subroutine2
+     52              unlock();
+     53              return ret;
+     54          }
+
+   \                                 In section .text, align 2, keep-with-next
+     55          int Stream::getc() {
+   \                     _ZN4mbed6Stream4getcEv: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     56              lock();
+   \   00000004   0x6821             LDR      R1,[R4, #+0]
+   \   00000006   0x6CC9             LDR      R1,[R1, #+76]
+   \   00000008   0x4788             BLX      R1
+     57              fflush(_file);
+   \   0000000A   0x6960             LDR      R0,[R4, #+20]
+   \   0000000C   0x.... 0x....      BL       fflush
+     58              int ret = mbed_getc(_file);
+   \   00000010   0x6960             LDR      R0,[R4, #+20]
+   \   00000012   0x.... 0x....      BL       _ZN4mbed9mbed_getcEPSt6__FILE
+   \   00000016   0x....             B.N      ?Subroutine2
+     59              unlock();
+     60              return ret;
+     61          }
+
+   \                                 In section .text, align 2, keep-with-next
+     62          char* Stream::gets(char *s, int size) {
+   \                     _ZN4mbed6Stream4getsEPci: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0x0015             MOVS     R5,R2
+     63              lock();
+   \   00000008   0x6821             LDR      R1,[R4, #+0]
+   \   0000000A   0x6CC9             LDR      R1,[R1, #+76]
+   \   0000000C   0x4788             BLX      R1
+     64              fflush(_file);
+   \   0000000E   0x6960             LDR      R0,[R4, #+20]
+   \   00000010   0x.... 0x....      BL       fflush
+     65              char *ret = mbed_gets(s,size,_file);
+   \   00000014   0x6962             LDR      R2,[R4, #+20]
+   \   00000016   0x0029             MOVS     R1,R5
+   \   00000018   0x0030             MOVS     R0,R6
+   \   0000001A   0x.... 0x....      BL       _ZN4mbed9mbed_getsEPciPSt6__FILE
+   \   0000001E   0x....             B.N      ?Subroutine3
+     66              unlock();
+     67              return ret;
+     68          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine3: (+1)
+   \   00000000   0x0005             MOVS     R5,R0
+   \   00000002   0x0020             MOVS     R0,R4
+   \   00000004   0x6821             LDR      R1,[R4, #+0]
+   \   00000006   0x6D09             LDR      R1,[R1, #+80]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0x0028             MOVS     R0,R5
+   \   0000000C   0xBD70             POP      {R4-R6,PC}       ;; return
+     69          
+
+   \                                 In section .text, align 2, keep-with-next
+     70          int Stream::close() {
+     71              return 0;
+   \                     _ZN4mbed6Stream5closeEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+     72          }
+     73          
+
+   \                                 In section .text, align 2, keep-with-next
+     74          ssize_t Stream::write(const void* buffer, size_t length) {
+   \                     _ZN4mbed6Stream5writeEPKvj: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000F             MOVS     R7,R1
+     75              const char* ptr = (const char*)buffer;
+   \   00000006   0x003D             MOVS     R5,R7
+     76              const char* end = ptr + length;
+   \   00000008   0x18A8             ADDS     R0,R5,R2
+   \   0000000A   0x9000             STR      R0,[SP, #+0]
+     77          
+     78              lock();
+   \   0000000C   0x0020             MOVS     R0,R4
+   \   0000000E   0x6821             LDR      R1,[R4, #+0]
+   \   00000010   0x6CC9             LDR      R1,[R1, #+76]
+   \   00000012   0x4788             BLX      R1
+   \   00000014   0x9800             LDR      R0,[SP, #+0]
+   \   00000016   0x4285             CMP      R5,R0
+   \   00000018   0xD00C             BEQ      ??write_0
+   \   0000001A   0x2600             MOVS     R6,#+0
+   \   0000001C   0x43F6             MVNS     R6,R6            ;; #-1
+     79              while (ptr != end) {
+     80                  if (_putc(*ptr++) == EOF) {
+   \                     ??write_1: (+1)
+   \   0000001E   0x7829             LDRB     R1,[R5, #+0]
+   \   00000020   0x0020             MOVS     R0,R4
+   \   00000022   0x6822             LDR      R2,[R4, #+0]
+   \   00000024   0x6C52             LDR      R2,[R2, #+68]
+   \   00000026   0x4790             BLX      R2
+   \   00000028   0x1C6D             ADDS     R5,R5,#+1
+   \   0000002A   0x42B0             CMP      R0,R6
+   \   0000002C   0xD002             BEQ      ??write_0
+     81                      break;
+     82                  }
+     83              }
+   \   0000002E   0x9800             LDR      R0,[SP, #+0]
+   \   00000030   0x4285             CMP      R5,R0
+   \   00000032   0xD1F4             BNE      ??write_1
+     84              unlock();
+   \                     ??write_0: (+1)
+   \   00000034   0x0020             MOVS     R0,R4
+   \   00000036   0x6821             LDR      R1,[R4, #+0]
+   \   00000038   0x6D09             LDR      R1,[R1, #+80]
+   \   0000003A   0x4788             BLX      R1
+     85          
+     86              return ptr - (const char*)buffer;
+   \   0000003C   0x1BE8             SUBS     R0,R5,R7
+   \   0000003E   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+     87          }
+     88          
+
+   \                                 In section .text, align 2, keep-with-next
+     89          ssize_t Stream::read(void* buffer, size_t length) {
+   \                     _ZN4mbed6Stream4readEPvj: (+1)
+   \   00000000   0xB5F2             PUSH     {R1,R4-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     90              char* ptr = (char*)buffer;
+   \   00000004   0x460D             MOV      R5,R1
+     91              char* end = ptr + length;
+   \   00000006   0x18AF             ADDS     R7,R5,R2
+     92          
+     93              lock();
+   \   00000008   0x6821             LDR      R1,[R4, #+0]
+   \   0000000A   0x6CC9             LDR      R1,[R1, #+76]
+   \   0000000C   0x4788             BLX      R1
+   \   0000000E   0x42BD             CMP      R5,R7
+   \   00000010   0xD00B             BEQ      ??read_0
+   \   00000012   0x2600             MOVS     R6,#+0
+   \   00000014   0x43F6             MVNS     R6,R6            ;; #-1
+     94              while (ptr != end) {
+     95                  int c = _getc();
+   \                     ??read_1: (+1)
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0x6821             LDR      R1,[R4, #+0]
+   \   0000001A   0x6C89             LDR      R1,[R1, #+72]
+   \   0000001C   0x4788             BLX      R1
+     96                  if (c==EOF) break;
+   \   0000001E   0x42B0             CMP      R0,R6
+   \   00000020   0xD003             BEQ      ??read_0
+     97                  *ptr++ = c;
+   \   00000022   0x7028             STRB     R0,[R5, #+0]
+   \   00000024   0x1C6D             ADDS     R5,R5,#+1
+     98              }
+   \   00000026   0x42BD             CMP      R5,R7
+   \   00000028   0xD1F5             BNE      ??read_1
+     99              unlock();
+   \                     ??read_0: (+1)
+   \   0000002A   0x0020             MOVS     R0,R4
+   \   0000002C   0x6821             LDR      R1,[R4, #+0]
+   \   0000002E   0x6D09             LDR      R1,[R1, #+80]
+   \   00000030   0x4788             BLX      R1
+    100          
+    101              return ptr - (const char*)buffer;
+   \   00000032   0x9800             LDR      R0,[SP, #+0]
+   \   00000034   0x1A28             SUBS     R0,R5,R0
+   \   00000036   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    102          }
+    103          
+
+   \                                 In section .text, align 2, keep-with-next
+    104          off_t Stream::seek(off_t offset, int whence) {
+    105              return 0;
+   \                     _ZN4mbed6Stream4seekEli: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+    106          }
+    107          
+
+   \                                 In section .text, align 2, keep-with-next
+    108          off_t Stream::tell() {
+    109              return 0;
+   \                     _ZN4mbed6Stream4tellEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+    110          }
+    111          
+
+   \                                 In section .text, align 2, keep-with-next
+    112          void Stream::rewind() {
+    113          }
+   \                     _ZN4mbed6Stream6rewindEv: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+    114          
+
+   \                                 In section .text, align 2, keep-with-next
+    115          int Stream::isatty() {
+    116              return 0;
+   \                     _ZN4mbed6Stream6isattyEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+    117          }
+    118          
+
+   \                                 In section .text, align 2, keep-with-next
+    119          int Stream::sync() {
+    120              return 0;
+   \                     _ZN4mbed6Stream4syncEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+    121          }
+    122          
+
+   \                                 In section .text, align 2, keep-with-next
+    123          off_t Stream::size() {
+    124              return 0;
+   \                     _ZN4mbed6Stream4sizeEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+    125          }
+    126          
+
+   \                                 In section .text, align 2, keep-with-next
+    127          int Stream::printf(const char* format, ...) {
+   \                     _ZN4mbed6Stream6printfEPKcz: (+1)
+   \   00000000   0xB40C             PUSH     {R2,R3}
+   \   00000002   0xB570             PUSH     {R4-R6,LR}
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+    128              lock();
+   \   00000008   0x6821             LDR      R1,[R4, #+0]
+   \   0000000A   0x6CC9             LDR      R1,[R1, #+76]
+   \   0000000C   0x4788             BLX      R1
+    129              std::va_list arg;
+    130              va_start(arg, format);
+   \   0000000E   0xAE04             ADD      R6,SP,#+16
+    131              fflush(_file);
+   \   00000010   0x6960             LDR      R0,[R4, #+20]
+   \   00000012   0x.... 0x....      BL       fflush
+    132              int r = vfprintf(_file, format, arg);
+   \   00000016   0x0032             MOVS     R2,R6
+   \   00000018   0x0029             MOVS     R1,R5
+   \   0000001A   0x6960             LDR      R0,[R4, #+20]
+   \   0000001C   0x.... 0x....      BL       vfprintf
+   \   00000020   0x....             B.N      ?Subroutine4
+    133              va_end(arg);
+    134              unlock();
+    135              return r;
+    136          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine4: (+1)
+   \   00000000   0x0005             MOVS     R5,R0
+   \   00000002   0x0020             MOVS     R0,R4
+   \   00000004   0x6821             LDR      R1,[R4, #+0]
+   \   00000006   0x6D09             LDR      R1,[R1, #+80]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0x0028             MOVS     R0,R5
+   \   0000000C   0x9903             LDR      R1,[SP, #+12]
+   \   0000000E   0xBC70             POP      {R4-R6}
+   \   00000010   0xB003             ADD      SP,SP,#+12
+   \   00000012   0x4708             BX       R1               ;; return
+    137          
+
+   \                                 In section .text, align 2, keep-with-next
+    138          int Stream::scanf(const char* format, ...) {
+   \                     _ZN4mbed6Stream5scanfEPKcz: (+1)
+   \   00000000   0xB40C             PUSH     {R2,R3}
+   \   00000002   0xB570             PUSH     {R4-R6,LR}
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+    139              lock();
+   \   00000008   0x6821             LDR      R1,[R4, #+0]
+   \   0000000A   0x6CC9             LDR      R1,[R1, #+76]
+   \   0000000C   0x4788             BLX      R1
+    140              std::va_list arg;
+    141              va_start(arg, format);
+   \   0000000E   0xAE04             ADD      R6,SP,#+16
+    142              fflush(_file);
+   \   00000010   0x6960             LDR      R0,[R4, #+20]
+   \   00000012   0x.... 0x....      BL       fflush
+    143              int r = vfscanf(_file, format, arg);
+   \   00000016   0x0032             MOVS     R2,R6
+   \   00000018   0x0029             MOVS     R1,R5
+   \   0000001A   0x6960             LDR      R0,[R4, #+20]
+   \   0000001C   0x.... 0x....      BL       vfscanf
+   \   00000020                      REQUIRE ?Subroutine4
+   \   00000020                      ;; // Fall through to label ?Subroutine4
+    144              va_end(arg);
+    145              unlock();
+    146              return r;
+    147          }
+    148          
+
+   \                                 In section .text, align 2, keep-with-next
+    149          int Stream::vprintf(const char* format, std::va_list args) {
+   \                     _ZN4mbed6Stream7vprintfEPKc9__va_list: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    150              lock();
+   \   00000008   0x6821             LDR      R1,[R4, #+0]
+   \   0000000A   0x6CC9             LDR      R1,[R1, #+76]
+   \   0000000C   0x4788             BLX      R1
+    151              fflush(_file);
+   \   0000000E   0x6960             LDR      R0,[R4, #+20]
+   \   00000010   0x.... 0x....      BL       fflush
+    152              int r = vfprintf(_file, format, args);
+   \   00000014   0x0032             MOVS     R2,R6
+   \   00000016   0x0029             MOVS     R1,R5
+   \   00000018   0x6960             LDR      R0,[R4, #+20]
+   \   0000001A   0x.... 0x....      BL       vfprintf
+   \   0000001E                      REQUIRE ?Subroutine3
+   \   0000001E                      ;; // Fall through to label ?Subroutine3
+    153              unlock();
+    154              return r;
+    155          }
+    156          
+
+   \                                 In section .text, align 2, keep-with-next
+    157          int Stream::vscanf(const char* format, std::va_list args) {
+   \                     _ZN4mbed6Stream6vscanfEPKc9__va_list: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    158              lock();
+   \   00000008   0x6821             LDR      R1,[R4, #+0]
+   \   0000000A   0x6CC9             LDR      R1,[R1, #+76]
+   \   0000000C   0x4788             BLX      R1
+    159              fflush(_file);
+   \   0000000E   0x6960             LDR      R0,[R4, #+20]
+   \   00000010   0x.... 0x....      BL       fflush
+    160              int r = vfscanf(_file, format, args);
+   \   00000014   0x0032             MOVS     R2,R6
+   \   00000016   0x0029             MOVS     R1,R5
+   \   00000018   0x6960             LDR      R0,[R4, #+20]
+   \   0000001A   0x.... 0x....      BL       vfscanf
+   \   0000001E   0x....             B.N      ?Subroutine3
+    161              unlock();
+    162              return r;
+    163          }
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x77 0x2B          DC8 "w+"
+   \              0x00         
+   \   00000003   0x00               DC8 0
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::Stream::subobject Stream(char const *)
+   \                     _ZN4mbed6StreamC2EPKc: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __interwork __softfp void mbed::Stream::deleter ~Stream for FileBase/-4/()
+   \                     _ZThn4_N4mbed6StreamD0Ev: (+1)
+   \   00000000   0x1F00             SUBS     R0,R0,#+4
+   \   00000002                      REQUIRE _ZN4mbed6StreamD0Ev
+   \   00000002                      ;; // Fall through to label mbed::Stream::deleter ~Stream()
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::Stream::subobject ~Stream()
+   \                     _ZN4mbed6StreamD2Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine1
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __interwork __softfp void *mbed::Stream::~Stream for FileBase/-4/()
+   \                     _ZThn4_N4mbed6StreamD1Ev: (+1)
+   \   00000000   0x1F00             SUBS     R0,R0,#+4
+   \   00000002                      REQUIRE _ZN4mbed6StreamD1Ev
+   \   00000002                      ;; // Fall through to label mbed::Stream::~Stream()
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4:
+   \   00000000   0x........         DC32     _ZTVN4mbed6StreamE
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_1:
+   \   00000000   0x........         DC32     _ZTVN4mbed8FileLikeE
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_2:
+   \   00000000   0x77 0x2B          DC8      0x77, 0x2B, 0x00, 0x00
+   \              0x00 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x53 0x74          DC8 "Stream obj failure, errno=%d\015\012"
+   \              0x72 0x65    
+   \              0x61 0x6D    
+   \              0x20 0x6F    
+   \              0x62 0x6A    
+   \              0x20 0x66    
+   \              0x61 0x69    
+   \              0x6C 0x75    
+   \              0x72 0x65    
+   \              0x2C 0x20    
+   \              0x65 0x72    
+   \              0x72 0x6E    
+   \              0x6F 0x3D    
+   \              0x25 0x64    
+   \              0x0D 0x0A    
+   \              0x00         
+   \   0000001F   0x00               DC8 0
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void mbed::FileLike::deleter ~FileLike for FileBase/-4/()
+   \                     _ZThn4_N4mbed8FileLikeD0Ev: (+1)
+   \   00000000   0x1F00             SUBS     R0,R0,#+4
+   \   00000002   0x4B01             LDR      R3,`??deleter ~FileLike for FileBase/-4/_0`
+   \   00000004   0x4718             BX       R3
+   \   00000006   0xBF00             Nop      
+   \                     `??deleter ~FileLike for FileBase/-4/_0`:
+   \   00000008   0x........         DC32     _ZN4mbed8FileLikeD0Ev
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void *mbed::FileLike::~FileLike for FileBase/-4/()
+   \                     _ZThn4_N4mbed8FileLikeD1Ev: (+1)
+   \   00000000   0x1F00             SUBS     R0,R0,#+4
+   \   00000002   0x4B01             LDR      R3,`?~FileLike for FileBase/-4/_0`
+   \   00000004   0x4718             BX       R3
+   \   00000006   0xBF00             Nop      
+   \                     `?~FileLike for FileBase/-4/_0`:
+   \   00000008   0x........         DC32     _ZN4mbed8FileLikeD1Ev
+    164          
+    165          } // namespace mbed
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   mbed::FileHandle::flen()
+         8   -- Indirect call
+       8   mbed::FileHandle::fsync()
+         8   -- Indirect call
+       0   mbed::FileHandle::isatty()
+       8   mbed::FileHandle::lseek(off_t, int)
+         8   -- Indirect call
+       0   mbed::FileHandle::poll(short) const
+       8   mbed::FileHandle::rewind()
+         8   -- Indirect call
+       0   mbed::FileHandle::set_blocking(bool)
+       0   mbed::FileHandle::sigio(mbed::Callback<void ()>)
+       0   mbed::FileHandle::sync()
+       8   mbed::FileHandle::tell()
+         8   -- Indirect call
+       0   mbed::FileLike::deleter ~FileLike for FileBase/-4/()
+         0   -> mbed::FileLike::deleter ~FileLike()
+       8   mbed::FileLike::deleter ~FileLike()
+         8   -> mbed::FileBase::subobject ~FileBase()
+         8   -> operator delete(void *)
+       0   mbed::FileLike::~FileLike for FileBase/-4/()
+         0   -> mbed::FileLike::~FileLike()
+       8   mbed::FileLike::~FileLike()
+         8   -> mbed::FileBase::subobject ~FileBase()
+       8   mbed::Stream::Stream(char const *)
+         8   -> error
+         8   -> mbed::FileBase::subobject FileBase(char const *, mbed::PathType)
+         8   -> mbed::fdopen(mbed::FileHandle *, char const *)
+         8   -> mbed::mbed_set_unbuffered_stream(std::FILE *)
+         8   -> std::__aeabi_errno_addr
+       0   mbed::Stream::close()
+       0   mbed::Stream::deleter ~Stream for FileBase/-4/()
+         0   -> mbed::Stream::deleter ~Stream()
+       8   mbed::Stream::deleter ~Stream()
+         8   -> mbed::FileBase::subobject ~FileBase()
+         8   -> operator delete(void *)
+         8   -> std::fclose
+      16   mbed::Stream::getc()
+        16   -- Indirect call
+        16   -> mbed::mbed_getc(std::FILE *)
+        16   -> std::fflush
+      16   mbed::Stream::gets(char *, int)
+        16   -- Indirect call
+        16   -> mbed::mbed_gets(char *, int, std::FILE *)
+        16   -> std::fflush
+       0   mbed::Stream::isatty()
+       0   mbed::Stream::lock()
+      24   mbed::Stream::printf(char const *, ...)
+        24   -- Indirect call
+        24   -> std::fflush
+        24   -> std::vfprintf
+      16   mbed::Stream::putc(int)
+        16   -- Indirect call
+        16   -> std::fflush
+        16   -> std::fputc
+      16   mbed::Stream::puts(char const *)
+        16   -- Indirect call
+        16   -> std::fflush
+        16   -> std::fputs
+      24   mbed::Stream::read(void *, std::size_t)
+        24   -- Indirect call
+       0   mbed::Stream::rewind()
+      24   mbed::Stream::scanf(char const *, ...)
+        24   -- Indirect call
+        24   -> std::fflush
+        24   -> std::vfscanf
+       0   mbed::Stream::seek(off_t, int)
+       0   mbed::Stream::size()
+       8   mbed::Stream::subobject Stream(char const *)
+         8   -> error
+         8   -> mbed::FileBase::subobject FileBase(char const *, mbed::PathType)
+         8   -> mbed::fdopen(mbed::FileHandle *, char const *)
+         8   -> mbed::mbed_set_unbuffered_stream(std::FILE *)
+         8   -> std::__aeabi_errno_addr
+       8   mbed::Stream::subobject ~Stream()
+         8   -> mbed::FileBase::subobject ~FileBase()
+         8   -> std::fclose
+       0   mbed::Stream::sync()
+       0   mbed::Stream::tell()
+       0   mbed::Stream::unlock()
+      16   mbed::Stream::vprintf(char const *, __va_list)
+        16   -- Indirect call
+        16   -> std::fflush
+        16   -> std::vfprintf
+      16   mbed::Stream::vscanf(char const *, __va_list)
+        16   -- Indirect call
+        16   -> std::fflush
+        16   -> std::vfscanf
+      24   mbed::Stream::write(void const *, std::size_t)
+        24   -- Indirect call
+       0   mbed::Stream::~Stream for FileBase/-4/()
+         0   -> mbed::Stream::~Stream()
+       0   mbed::Stream::~Stream()
+         8   -> mbed::FileBase::subobject ~FileBase()
+         8   -> std::fclose
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_2
+      74  ?Subroutine0
+      30  ?Subroutine1
+      14  ?Subroutine2
+      14  ?Subroutine3
+      20  ?Subroutine4
+       4  ?_0
+      32  ?_1
+      10  mbed::FileHandle::flen()
+      10  mbed::FileHandle::fsync()
+       4  mbed::FileHandle::isatty()
+      10  mbed::FileHandle::lseek(off_t, int)
+       4  mbed::FileHandle::poll(short) const
+      14  mbed::FileHandle::rewind()
+       6  mbed::FileHandle::set_blocking(bool)
+       2  mbed::FileHandle::sigio(mbed::Callback<void ()>)
+       4  mbed::FileHandle::sync()
+      14  mbed::FileHandle::tell()
+      12  mbed::FileLike::deleter ~FileLike for FileBase/-4/()
+      18  mbed::FileLike::deleter ~FileLike()
+      12  mbed::FileLike::~FileLike for FileBase/-4/()
+      14  mbed::FileLike::~FileLike()
+       4  mbed::Stream::Stream(char const *)
+       4  mbed::Stream::close()
+       2  mbed::Stream::deleter ~Stream for FileBase/-4/()
+      36  mbed::Stream::deleter ~Stream()
+      24  mbed::Stream::getc()
+      32  mbed::Stream::gets(char *, int)
+       4  mbed::Stream::isatty()
+       2  mbed::Stream::lock()
+      34  mbed::Stream::printf(char const *, ...)
+      28  mbed::Stream::putc(int)
+      26  mbed::Stream::puts(char const *)
+      56  mbed::Stream::read(void *, std::size_t)
+       2  mbed::Stream::rewind()
+      32  mbed::Stream::scanf(char const *, ...)
+       4  mbed::Stream::seek(off_t, int)
+       4  mbed::Stream::size()
+       4  mbed::Stream::subobject Stream(char const *)
+       4  mbed::Stream::subobject ~Stream()
+       4  mbed::Stream::sync()
+       4  mbed::Stream::tell()
+       2  mbed::Stream::unlock()
+      30  mbed::Stream::vprintf(char const *, __va_list)
+      32  mbed::Stream::vscanf(char const *, __va_list)
+      64  mbed::Stream::write(void const *, std::size_t)
+       2  mbed::Stream::~Stream for FileBase/-4/()
+       2  mbed::Stream::~Stream()
+     488  -- Other
+
+ 
+ 492 bytes in section .rodata
+ 772 bytes in section .text
+ 
+ 634 bytes of CODE  memory (+ 138 bytes shared)
+   4 bytes of CONST memory (+ 488 bytes shared)
+
+Errors: none
+Warnings: none

@@ -1,0 +1,280 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:58
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        .\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_rng.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_rng.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_rng.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_rng.o
+#        .\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_rng.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_rng.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_rng.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_rng.c
+      1          /**
+      2            ******************************************************************************
+      3            * @file    BlueNRG1_RNG.c
+      4            * @author  VMA Application Team
+      5            * @version V2.0.0
+      6            * @date    21-March-2016
+      7            * @brief   This file provides all the RNG firmware functions.
+      8            ******************************************************************************
+      9            * @attention
+     10            *
+     11            * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     12            * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     13            * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     14            * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     15            * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     16            * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     17            *
+     18            * <h2><center>&copy; COPYRIGHT 2016 STMicroelectronics</center></h2>
+     19            ******************************************************************************
+     20            */
+     21          
+     22          /* Includes ------------------------------------------------------------------*/
+     23          #include "BlueNRG1_rng.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     24          
+     25          
+     26          /** @addtogroup BLUENRG1_Peripheral_Driver BLUENRG1 Peripheral Driver
+     27            * @{
+     28            */
+     29          
+     30          /** @defgroup RNG_Peripheral  RNG Peripheral
+     31            * @{
+     32            */
+     33          
+     34          /** @defgroup RNG_Private_TypesDefinitions Private Types Definitions
+     35            * @{
+     36            */
+     37          
+     38          /**
+     39            * @}
+     40            */
+     41          
+     42          /** @defgroup RNG_Private_Defines Private Defines
+     43            * @{
+     44            */
+     45          
+     46          
+     47          /**
+     48            * @}
+     49            */ 
+     50          
+     51          /** @defgroup RNG_Private_Macros Private Macros
+     52            * @{
+     53            */
+     54          
+     55          /**
+     56            * @}
+     57            */
+     58          
+     59          /** @defgroup RNG_Private_Variables Private Variables
+     60            * @{
+     61            */
+     62          
+     63          /**
+     64            * @}
+     65            */
+     66          
+     67          /** @defgroup RNG_Private_FunctionPrototypes Private Function Prototypes
+     68            * @{
+     69            */
+     70          
+     71          /**
+     72            * @}
+     73            */
+     74          
+     75          /** @defgroup RNG_Private_Functions Private Functions
+     76            * @{
+     77            */
+     78          
+     79          /**
+     80            * @}
+     81            */
+     82          	
+     83          /** @defgroup RNG_Public_Functions Public Functions
+     84          * @{
+     85          */
+     86          
+     87          /**
+     88            * @brief  Enables or disables the specified RNG peripheral.
+     89            * @param  NewState: functional state @ref FunctionalState
+     90            *         This parameter can be: ENABLE or DISABLE.
+     91            * @retval None
+     92            */
+
+   \                                 In section .text, align 2, keep-with-next
+     93          void RNG_Cmd(FunctionalState NewState)
+     94          {
+     95            /* Check the parameters */
+     96            assert_param(IS_FUNCTIONAL_STATE(NewState));
+     97            
+     98            if (NewState != DISABLE) {
+   \                     RNG_Cmd: (+1)
+   \   00000000   0x21B0             MOVS     R1,#+176
+   \   00000002   0x0609             LSLS     R1,R1,#+24       ;; #-1342177280
+   \   00000004   0x2800             CMP      R0,#+0
+   \   00000006   0x6808             LDR      R0,[R1, #+0]
+   \   00000008   0xD003             BEQ      ??RNG_Cmd_0
+     99              /* Disable RNG peripheral */
+    100              RNG->CR_b.DIS = RESET;
+   \   0000000A   0x2204             MOVS     R2,#+4
+   \   0000000C   0x4390             BICS     R0,R0,R2
+   \   0000000E   0x6008             STR      R0,[R1, #+0]
+   \   00000010   0x4770             BX       LR
+    101            }
+    102            else {
+    103              /* Enable RNG peripheral */
+    104              RNG->CR_b.DIS = SET;
+   \                     ??RNG_Cmd_0: (+1)
+   \   00000012   0x2204             MOVS     R2,#+4
+   \   00000014   0x4302             ORRS     R2,R2,R0
+   \   00000016   0x600A             STR      R2,[R1, #+0]
+    105            }
+    106          }
+   \   00000018   0x4770             BX       LR               ;; return
+    107          
+    108          
+    109          /**
+    110            * @brief  Checks if the RNG flag is set or not.
+    111          * @retval FlagStatus: functional state @ref FlagStatus
+    112          *         This parameter can be: SET or RESET.
+    113            */
+
+   \                                 In section .text, align 2, keep-with-next
+    114          FlagStatus RNG_GetFlagStatus(void)
+    115          {  
+    116            if (RNG->SR_b.RDY == SET) {
+   \                     RNG_GetFlagStatus: (+1)
+   \   00000000   0x....             LDR      R0,??DataTable0  ;; 0xb0000004
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x07C1             LSLS     R1,R0,#+31
+   \   00000006   0x0FC9             LSRS     R1,R1,#+31
+   \   00000008   0x1E48             SUBS     R0,R1,#+1
+   \   0000000A   0x4180             SBCS     R0,R0,R0
+   \   0000000C   0x43C0             MVNS     R0,R0
+   \   0000000E   0x0FC0             LSRS     R0,R0,#+31
+    117              return SET;
+    118            }
+    119            else {
+    120              return RESET;
+   \   00000010   0x4770             BX       LR               ;; return
+    121            }
+    122            
+    123          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \   00000000   0xB0000004         DC32     0xb0000004
+    124          
+    125          /**
+    126            * @}
+    127            */
+    128          
+    129          /**
+    130            * @}
+    131            */
+    132          
+    133          /**
+    134            * @}
+    135            */
+    136          
+    137          /******************* (C) COPYRIGHT 2016 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   RNG_Cmd
+       0   RNG_GetFlagStatus
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+      26  RNG_Cmd
+      18  RNG_GetFlagStatus
+
+ 
+ 48 bytes in section .text
+ 
+ 48 bytes of CODE memory
+
+Errors: none
+Warnings: 1

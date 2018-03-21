@@ -1,0 +1,726 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:00
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\drivers\SPI.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\SPI.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\SPI.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\SPI.o
+#        .\mbed-os\drivers\SPI.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\SPI.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\SPI.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\drivers\SPI.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "drivers/SPI.h"
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp rtos::Mutex *SingletonPtr<rtos::Mutex>::operator->()
+   \                     _ZN12SingletonPtrIN4rtos5MutexEEptEv: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x6820             LDR      R0,[R4, #+0]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD110             BNE      `??operator->_0`
+   \   0000000A   0x4D0E             LDR      R5,`??operator->_1`
+   \   0000000C   0x2100             MOVS     R1,#+0
+   \   0000000E   0x43C9             MVNS     R1,R1            ;; #-1
+   \   00000010   0x6828             LDR      R0,[R5, #+0]
+   \   00000012   0x.... 0x....      BL       osMutexAcquire
+   \   00000016   0x6820             LDR      R0,[R4, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD104             BNE      `??operator->_2`
+   \   0000001C   0x1D20             ADDS     R0,R4,#+4
+   \   0000001E   0xD001             BEQ      `??operator->_3`
+   \   00000020   0x.... 0x....      BL       _ZN4rtos5MutexC1Ev
+   \                     `??operator->_3`: (+1)
+   \   00000024   0x6020             STR      R0,[R4, #+0]
+   \                     `??operator->_2`: (+1)
+   \   00000026   0x6828             LDR      R0,[R5, #+0]
+   \   00000028   0x.... 0x....      BL       osMutexRelease
+   \                     `??operator->_0`: (+1)
+   \   0000002C   0x6820             LDR      R0,[R4, #+0]
+   \   0000002E   0x1D21             ADDS     R1,R4,#+4
+   \   00000030   0x4288             CMP      R0,R1
+   \   00000032   0xD004             BEQ      `??operator->_4`
+   \   00000034   0x225D             MOVS     R2,#+93
+   \   00000036   0x4904             LDR      R1,`??operator->_1`+0x4
+   \   00000038   0x4804             LDR      R0,`??operator->_1`+0x8
+   \   0000003A   0x.... 0x....      BL       mbed_assert_internal
+   \                     `??operator->_4`: (+1)
+   \   0000003E   0x6820             LDR      R0,[R4, #+0]
+   \   00000040   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+   \   00000042   0xBF00             Nop      
+   \                     `??operator->_1`:
+   \   00000044   0x........         DC32     singleton_mutex_id
+   \   00000048   0x........         DC32     _ZZN12SingletonPtrIN4rtos5MutexEE3getEvEs_0
+   \   0000004C   0x........         DC32     _ZZN12SingletonPtrIN4rtos5MutexEE3getEvEs
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::SPI::~SPI()
+   \                     _ZN4mbed3SPID1Ev: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::SPI::deleter ~SPI()
+   \                     _ZN4mbed3SPID0Ev: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZdlPv
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+     17          #include "platform/mbed_critical.h"
+     18          
+     19          #if DEVICE_SPI_ASYNCH
+     20          #include "platform/mbed_sleep.h"
+     21          #endif
+     22          
+     23          #if DEVICE_SPI
+     24          
+     25          namespace mbed {
+     26          
+     27          #if DEVICE_SPI_ASYNCH && TRANSACTION_QUEUE_SIZE_SPI
+     28          CircularBuffer<Transaction<SPI>, TRANSACTION_QUEUE_SIZE_SPI> SPI::_transaction_buffer;
+     29          #endif
+     30          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::SPI::subobject SPI(PinName, PinName, PinName, PinName)
+   \                     _ZN4mbed3SPIC2E7PinNameS1_S1_S1_: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x466D             MOV      R5,SP
+   \   00000004   0x2410             MOVS     R4,#+16
+   \   00000006   0x572C             LDRSB    R4,[R5, R4]
+   \   00000008   0x9400             STR      R4,[SP, #+0]
+   \   0000000A   0x.... 0x....      BL       _ZN4mbed3SPIC1E7PinNameS1_S1_S1_
+   \   0000000E   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     31          SPI::SPI(PinName mosi, PinName miso, PinName sclk, PinName ssel) :
+   \                     _ZN4mbed3SPIC1E7PinNameS1_S1_S1_: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x....             LDR      R0,??DataTable6
+   \   00000006   0x6020             STR      R0,[R4, #+0]
+   \   00000008   0x1D20             ADDS     R0,R4,#+4
+   \   0000000A   0x2500             MOVS     R5,#+0
+   \   0000000C   0x2600             MOVS     R6,#+0
+   \   0000000E   0x2700             MOVS     R7,#+0
+   \   00000010   0xC0E0             STM      R0!,{R5-R7}
+   \   00000012   0x6005             STR      R5,[R0, #0]
+     32                  _spi(),
+     33          #if DEVICE_SPI_ASYNCH
+     34                  _irq(this),
+     35                  _usage(DMA_USAGE_NEVER),
+     36          #endif
+     37                  _bits(8),
+   \   00000014   0x2008             MOVS     R0,#+8
+   \   00000016   0x6160             STR      R0,[R4, #+20]
+     38                  _mode(0),
+   \   00000018   0x61A5             STR      R5,[R4, #+24]
+     39                  _hz(1000000),
+   \   0000001A   0x....             LDR      R0,??DataTable6_1  ;; 0xf4240
+   \   0000001C   0x61E0             STR      R0,[R4, #+28]
+     40                  _write_fill(SPI_FILL_CHAR) {
+   \   0000001E   0x20FF             MOVS     R0,#+255
+   \   00000020   0x2520             MOVS     R5,#+32
+   \   00000022   0x5560             STRB     R0,[R4, R5]
+     41              // No lock needed in the constructor
+     42          
+     43              spi_init(&_spi, mosi, miso, sclk, ssel);
+   \   00000024   0x466D             MOV      R5,SP
+   \   00000026   0x2018             MOVS     R0,#+24
+   \   00000028   0x5628             LDRSB    R0,[R5, R0]
+   \   0000002A   0x9000             STR      R0,[SP, #+0]
+   \   0000002C   0x1D20             ADDS     R0,R4,#+4
+   \   0000002E   0x.... 0x....      BL       spi_init
+     44              _acquire();
+   \   00000032   0x0020             MOVS     R0,R4
+   \   00000034   0x.... 0x....      BL       _ZN4mbed3SPI8_acquireEv
+     45          }
+   \   00000038   0x0020             MOVS     R0,R4
+   \   0000003A   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+     46          
+
+   \                                 In section .text, align 2, keep-with-next
+     47          void SPI::format(int bits, int mode) {
+   \                     _ZN4mbed3SPI6formatEii: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+     48              lock();
+   \   00000008   0x6821             LDR      R1,[R4, #+0]
+   \   0000000A   0x6889             LDR      R1,[R1, #+8]
+   \   0000000C   0x4788             BLX      R1
+     49              _bits = bits;
+   \   0000000E   0x6165             STR      R5,[R4, #+20]
+     50              _mode = mode;
+   \   00000010   0x61A6             STR      R6,[R4, #+24]
+     51              // If changing format while you are the owner than just
+     52              // update format, but if owner is changed than even frequency should be
+     53              // updated which is done by acquire.
+     54              if (_owner == this) {
+   \   00000012   0x....             LDR      R0,??DataTable6_2
+   \   00000014   0x6800             LDR      R0,[R0, #+0]
+   \   00000016   0x42A0             CMP      R0,R4
+   \   00000018   0xD106             BNE      ??format_0
+     55                  spi_format(&_spi, _bits, _mode, 0);
+   \   0000001A   0x2300             MOVS     R3,#+0
+   \   0000001C   0x4632             MOV      R2,R6
+   \   0000001E   0x6961             LDR      R1,[R4, #+20]
+   \   00000020   0x1D20             ADDS     R0,R4,#+4
+   \   00000022   0x.... 0x....      BL       spi_format
+   \   00000026   0xE002             B        ??format_1
+     56              } else {
+     57                  _acquire();
+   \                     ??format_0: (+1)
+   \   00000028   0x0020             MOVS     R0,R4
+   \   0000002A   0x.... 0x....      BL       _ZN4mbed3SPI8_acquireEv
+     58              }
+     59              unlock();
+   \                     ??format_1: (+1)
+   \   0000002E   0x0020             MOVS     R0,R4
+   \   00000030   0x6821             LDR      R1,[R4, #+0]
+   \   00000032   0x68C9             LDR      R1,[R1, #+12]
+   \   00000034   0x4788             BLX      R1
+     60          }
+   \   00000036   0xBD70             POP      {R4-R6,PC}       ;; return
+     61          
+
+   \                                 In section .text, align 2, keep-with-next
+     62          void SPI::frequency(int hz) {
+   \                     _ZN4mbed3SPI9frequencyEi: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+     63              lock();
+   \   00000006   0x6829             LDR      R1,[R5, #+0]
+   \   00000008   0x6889             LDR      R1,[R1, #+8]
+   \   0000000A   0x4788             BLX      R1
+     64              _hz = hz;
+   \   0000000C   0x61EC             STR      R4,[R5, #+28]
+     65              // If changing format while you are the owner than just
+     66              // update frequency, but if owner is changed than even frequency should be
+     67              // updated which is done by acquire.
+     68              if (_owner == this) {
+   \   0000000E   0x....             LDR      R0,??DataTable6_2
+   \   00000010   0x6800             LDR      R0,[R0, #+0]
+   \   00000012   0x42A8             CMP      R0,R5
+   \   00000014   0xD104             BNE      ??frequency_0
+     69                  spi_frequency(&_spi, _hz);
+   \   00000016   0x4621             MOV      R1,R4
+   \   00000018   0x1D28             ADDS     R0,R5,#+4
+   \   0000001A   0x.... 0x....      BL       spi_frequency
+   \   0000001E   0xE002             B        ??frequency_1
+     70              } else {
+     71                  _acquire();
+   \                     ??frequency_0: (+1)
+   \   00000020   0x0028             MOVS     R0,R5
+   \   00000022   0x.... 0x....      BL       _ZN4mbed3SPI8_acquireEv
+     72              }
+     73              unlock();
+   \                     ??frequency_1: (+1)
+   \   00000026   0x0028             MOVS     R0,R5
+   \   00000028   0x6829             LDR      R1,[R5, #+0]
+   \   0000002A   0x68C9             LDR      R1,[R1, #+12]
+   \   0000002C   0x4788             BLX      R1
+     74          }
+   \   0000002E   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     75          
+
+   \                                 In section .bss, align 4
+     76          SPI* SPI::_owner = NULL;
+   \                     _ZN4mbed3SPI6_ownerE:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     77          SingletonPtr<PlatformMutex> SPI::_mutex;
+   \                     _ZN4mbed3SPI6_mutexE:
+   \   00000000                      DS8 40
+     78          
+     79          // ignore the fact there are multiple physical spis, and always update if it wasnt us last
+
+   \                                 In section .text, align 2, keep-with-next
+     80          void SPI::aquire() {
+   \                     _ZN4mbed3SPI6aquireEv: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     81              lock();
+   \   00000004   0x6821             LDR      R1,[R4, #+0]
+   \   00000006   0x6889             LDR      R1,[R1, #+8]
+   \   00000008   0x4788             BLX      R1
+     82               if (_owner != this) {
+   \   0000000A   0x....             LDR      R5,??DataTable6_2
+   \   0000000C   0x6828             LDR      R0,[R5, #+0]
+   \   0000000E   0x42A0             CMP      R0,R4
+   \   00000010   0xD00A             BEQ      ??aquire_0
+     83                  spi_format(&_spi, _bits, _mode, 0);
+   \   00000012   0x2300             MOVS     R3,#+0
+   \   00000014   0x69A2             LDR      R2,[R4, #+24]
+   \   00000016   0x6961             LDR      R1,[R4, #+20]
+   \   00000018   0x1D20             ADDS     R0,R4,#+4
+   \   0000001A   0x.... 0x....      BL       spi_format
+     84                  spi_frequency(&_spi, _hz);
+   \   0000001E   0x69E1             LDR      R1,[R4, #+28]
+   \   00000020   0x1D20             ADDS     R0,R4,#+4
+   \   00000022   0x.... 0x....      BL       spi_frequency
+     85                  _owner = this;
+   \   00000026   0x602C             STR      R4,[R5, #+0]
+     86              }
+     87              unlock();
+   \                     ??aquire_0: (+1)
+   \   00000028   0x0020             MOVS     R0,R4
+   \   0000002A   0x6821             LDR      R1,[R4, #+0]
+   \   0000002C   0x68C9             LDR      R1,[R1, #+12]
+   \   0000002E   0x4788             BLX      R1
+     88          }
+   \   00000030   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     89          
+     90          // Note: Private function with no locking
+
+   \                                 In section .text, align 2, keep-with-next
+     91          void SPI::_acquire() {
+   \                     _ZN4mbed3SPI8_acquireEv: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     92               if (_owner != this) {
+   \   00000004   0x....             LDR      R5,??DataTable6_2
+   \   00000006   0x6828             LDR      R0,[R5, #+0]
+   \   00000008   0x42A0             CMP      R0,R4
+   \   0000000A   0xD00A             BEQ      ??_acquire_0
+     93                  spi_format(&_spi, _bits, _mode, 0);
+   \   0000000C   0x2300             MOVS     R3,#+0
+   \   0000000E   0x69A2             LDR      R2,[R4, #+24]
+   \   00000010   0x6961             LDR      R1,[R4, #+20]
+   \   00000012   0x1D20             ADDS     R0,R4,#+4
+   \   00000014   0x.... 0x....      BL       spi_format
+     94                  spi_frequency(&_spi, _hz);
+   \   00000018   0x69E1             LDR      R1,[R4, #+28]
+   \   0000001A   0x1D20             ADDS     R0,R4,#+4
+   \   0000001C   0x.... 0x....      BL       spi_frequency
+     95                  _owner = this;
+   \   00000020   0x602C             STR      R4,[R5, #+0]
+     96              }
+     97          }
+   \                     ??_acquire_0: (+1)
+   \   00000022   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     98          
+
+   \                                 In section .text, align 2, keep-with-next
+     99          int SPI::write(int value) {
+   \                     _ZN4mbed3SPI5writeEi: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+    100              lock();
+   \   00000006   0x6829             LDR      R1,[R5, #+0]
+   \   00000008   0x6889             LDR      R1,[R1, #+8]
+   \   0000000A   0x4788             BLX      R1
+    101              _acquire();
+   \   0000000C   0x0028             MOVS     R0,R5
+   \   0000000E   0x.... 0x....      BL       _ZN4mbed3SPI8_acquireEv
+    102              int ret = spi_master_write(&_spi, value);
+   \   00000012   0x0021             MOVS     R1,R4
+   \   00000014   0x1D28             ADDS     R0,R5,#+4
+   \   00000016   0x.... 0x....      BL       spi_master_write
+   \   0000001A   0x0004             MOVS     R4,R0
+    103              unlock();
+   \   0000001C   0x0028             MOVS     R0,R5
+   \   0000001E   0x6829             LDR      R1,[R5, #+0]
+   \   00000020   0x68C9             LDR      R1,[R1, #+12]
+   \   00000022   0x4788             BLX      R1
+    104              return ret;
+   \   00000024   0x0020             MOVS     R0,R4
+   \   00000026   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    105          }
+    106          
+
+   \                                 In section .text, align 2, keep-with-next
+    107          int SPI::write(const char *tx_buffer, int tx_length, char *rx_buffer, int rx_length) {
+   \                     _ZN4mbed3SPI5writeEPKciPci: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB083             SUB      SP,SP,#+12
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000F             MOVS     R7,R1
+   \   00000008   0x0015             MOVS     R5,R2
+   \   0000000A   0x001E             MOVS     R6,R3
+    108              lock();
+   \   0000000C   0x6821             LDR      R1,[R4, #+0]
+   \   0000000E   0x6889             LDR      R1,[R1, #+8]
+   \   00000010   0x4788             BLX      R1
+    109              _acquire();
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0x.... 0x....      BL       _ZN4mbed3SPI8_acquireEv
+    110              int ret = spi_master_block_write(&_spi, tx_buffer, tx_length, rx_buffer, rx_length, _write_fill);
+   \   00000018   0x2020             MOVS     R0,#+32
+   \   0000001A   0x5C20             LDRB     R0,[R4, R0]
+   \   0000001C   0x9001             STR      R0,[SP, #+4]
+   \   0000001E   0x9808             LDR      R0,[SP, #+32]
+   \   00000020   0x9000             STR      R0,[SP, #+0]
+   \   00000022   0x0033             MOVS     R3,R6
+   \   00000024   0x002A             MOVS     R2,R5
+   \   00000026   0x0039             MOVS     R1,R7
+   \   00000028   0x1D20             ADDS     R0,R4,#+4
+   \   0000002A   0x.... 0x....      BL       spi_master_block_write
+   \   0000002E   0x0005             MOVS     R5,R0
+    111              unlock();
+   \   00000030   0x0020             MOVS     R0,R4
+   \   00000032   0x6821             LDR      R1,[R4, #+0]
+   \   00000034   0x68C9             LDR      R1,[R1, #+12]
+   \   00000036   0x4788             BLX      R1
+    112              return ret;
+   \   00000038   0x0028             MOVS     R0,R5
+   \   0000003A   0xB003             ADD      SP,SP,#+12
+   \   0000003C   0xBDF0             POP      {R4-R7,PC}       ;; return
+    113          }
+    114          
+
+   \                                 In section .text, align 2, keep-with-next
+    115          void SPI::lock() {
+   \                     _ZN4mbed3SPI4lockEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    116              _mutex->lock();
+   \   00000002   0x....             LDR      R0,??DataTable6_3
+   \   00000004   0x.... 0x....      BL       _ZN12SingletonPtrIN4rtos5MutexEEptEv
+   \   00000008   0x2100             MOVS     R1,#+0
+   \   0000000A   0x43C9             MVNS     R1,R1            ;; #-1
+   \   0000000C   0x.... 0x....      BL       _ZN4rtos5Mutex4lockEj
+    117          }
+   \   00000010   0xBD01             POP      {R0,PC}          ;; return
+    118          
+
+   \                                 In section .text, align 2, keep-with-next
+    119          void SPI::unlock() {
+   \                     _ZN4mbed3SPI6unlockEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    120              _mutex->unlock();
+   \   00000002   0x....             LDR      R0,??DataTable6_3
+   \   00000004   0x.... 0x....      BL       _ZN12SingletonPtrIN4rtos5MutexEEptEv
+   \   00000008   0x.... 0x....      BL       _ZN4rtos5Mutex6unlockEv
+    121          }
+   \   0000000C   0xBD01             POP      {R0,PC}          ;; return
+    122          
+
+   \                                 In section .text, align 2, keep-with-next
+    123          void SPI::set_default_write_value(char data) {
+   \                     _ZN4mbed3SPI23set_default_write_valueEc: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+    124              lock();
+   \   00000006   0x6829             LDR      R1,[R5, #+0]
+   \   00000008   0x6889             LDR      R1,[R1, #+8]
+   \   0000000A   0x4788             BLX      R1
+    125              _write_fill = data;
+   \   0000000C   0x2020             MOVS     R0,#+32
+   \   0000000E   0x542C             STRB     R4,[R5, R0]
+    126              unlock();
+   \   00000010   0x0028             MOVS     R0,R5
+   \   00000012   0x6829             LDR      R1,[R5, #+0]
+   \   00000014   0x68C9             LDR      R1,[R1, #+12]
+   \   00000016   0x4788             BLX      R1
+    127          }
+   \   00000018   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6:
+   \   00000000   0x........         DC32     _ZTVN4mbed3SPIE+0x8
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_1:
+   \   00000000   0x000F4240         DC32     0xf4240
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_2:
+   \   00000000   0x........         DC32     _ZN4mbed3SPI6_ownerE
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_3:
+   \   00000000   0x........         DC32     _ZN4mbed3SPI6_mutexE
+    128          
+    129          #if DEVICE_SPI_ASYNCH
+    130          
+    131          int SPI::transfer(const void *tx_buffer, int tx_length, void *rx_buffer, int rx_length, unsigned char bit_width, const event_callback_t& callback, int event)
+    132          {
+    133              if (spi_active(&_spi)) {
+    134                  return queue_transfer(tx_buffer, tx_length, rx_buffer, rx_length, bit_width, callback, event);
+    135              }
+    136              start_transfer(tx_buffer, tx_length, rx_buffer, rx_length, bit_width, callback, event);
+    137              return 0;
+    138          }
+    139          
+    140          void SPI::abort_transfer()
+    141          {
+    142              spi_abort_asynch(&_spi);
+    143              sleep_manager_unlock_deep_sleep();
+    144          #if TRANSACTION_QUEUE_SIZE_SPI
+    145              dequeue_transaction();
+    146          #endif
+    147          }
+    148          
+    149          
+    150          void SPI::clear_transfer_buffer()
+    151          {
+    152          #if TRANSACTION_QUEUE_SIZE_SPI
+    153              _transaction_buffer.reset();
+    154          #endif
+    155          }
+    156          
+    157          void SPI::abort_all_transfers()
+    158          {
+    159              clear_transfer_buffer();
+    160              abort_transfer();
+    161          }
+    162          
+    163          int SPI::set_dma_usage(DMAUsage usage)
+    164          {
+    165              if (spi_active(&_spi)) {
+    166                  return -1;
+    167              }
+    168              _usage = usage;
+    169              return  0;
+    170          }
+    171          
+    172          int SPI::queue_transfer(const void *tx_buffer, int tx_length, void *rx_buffer, int rx_length, unsigned char bit_width, const event_callback_t& callback, int event)
+    173          {
+    174          #if TRANSACTION_QUEUE_SIZE_SPI
+    175              transaction_t t;
+    176          
+    177              t.tx_buffer = const_cast<void *>(tx_buffer);
+    178              t.tx_length = tx_length;
+    179              t.rx_buffer = rx_buffer;
+    180              t.rx_length = rx_length;
+    181              t.event = event;
+    182              t.callback = callback;
+    183              t.width = bit_width;
+    184              Transaction<SPI> transaction(this, t);
+    185              if (_transaction_buffer.full()) {
+    186                  return -1; // the buffer is full
+    187              } else {
+    188                  core_util_critical_section_enter();
+    189                  _transaction_buffer.push(transaction);
+    190                  if (!spi_active(&_spi)) {
+    191                      dequeue_transaction();
+    192                  }
+    193                  core_util_critical_section_exit();
+    194                  return 0;
+    195              }
+    196          #else
+    197              return -1;
+    198          #endif
+    199          }
+    200          
+    201          void SPI::start_transfer(const void *tx_buffer, int tx_length, void *rx_buffer, int rx_length, unsigned char bit_width, const event_callback_t& callback, int event)
+    202          {
+    203              sleep_manager_lock_deep_sleep();
+    204              _acquire();
+    205              _callback = callback;
+    206              _irq.callback(&SPI::irq_handler_asynch);
+    207              spi_master_transfer(&_spi, tx_buffer, tx_length, rx_buffer, rx_length, bit_width, _irq.entry(), event , _usage);
+    208          }
+    209          
+    210          #if TRANSACTION_QUEUE_SIZE_SPI
+    211          
+    212          void SPI::start_transaction(transaction_t *data)
+    213          {
+    214              start_transfer(data->tx_buffer, data->tx_length, data->rx_buffer, data->rx_length, data->width, data->callback, data->event);
+    215          }
+    216          
+    217          void SPI::dequeue_transaction()
+    218          {
+    219              Transaction<SPI> t;
+    220              if (_transaction_buffer.pop(t)) {
+    221                  SPI* obj = t.get_object();
+    222                  transaction_t* data = t.get_transaction();
+    223                  obj->start_transaction(data);
+    224              }
+    225          }
+    226          
+    227          #endif
+    228          
+    229          void SPI::irq_handler_asynch(void)
+    230          {
+    231              int event = spi_irq_handler_asynch(&_spi);
+    232              if (_callback && (event & SPI_EVENT_ALL)) {
+    233                  sleep_manager_unlock_deep_sleep();
+    234                  _callback.call(event & SPI_EVENT_ALL);
+    235              }
+    236          #if TRANSACTION_QUEUE_SIZE_SPI
+    237              if (event & (SPI_EVENT_ALL | SPI_EVENT_INTERNAL_TRANSFER_COMPLETE)) {
+    238                  // SPI peripheral is free (event happend), dequeue transaction
+    239                  dequeue_transaction();
+    240              }
+    241          #endif
+    242          }
+    243          
+    244          #endif
+    245          
+    246          } // namespace mbed
+    247          
+    248          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   SingletonPtr<rtos::Mutex>::operator->()
+        16   -> mbed_assert_internal
+        16   -> osMutexAcquire
+        16   -> osMutexRelease
+        16   -> rtos::Mutex::Mutex()
+      24   mbed::SPI::SPI(PinName, PinName, PinName, PinName)
+        24   -> mbed::SPI::_acquire()
+        24   -> spi_init
+      16   mbed::SPI::_acquire()
+        16   -> spi_format
+        16   -> spi_frequency
+      16   mbed::SPI::aquire()
+        16   -- Indirect call
+        16   -> spi_format
+        16   -> spi_frequency
+       8   mbed::SPI::deleter ~SPI()
+         8   -> operator delete(void *)
+      16   mbed::SPI::format(int, int)
+        16   -- Indirect call
+        16   -> mbed::SPI::_acquire()
+        16   -> spi_format
+      16   mbed::SPI::frequency(int)
+        16   -- Indirect call
+        16   -> mbed::SPI::_acquire()
+        16   -> spi_frequency
+       8   mbed::SPI::lock()
+         8   -> SingletonPtr<rtos::Mutex>::operator->()
+         8   -> rtos::Mutex::lock(unsigned int)
+      16   mbed::SPI::set_default_write_value(char)
+        16   -- Indirect call
+      16   mbed::SPI::subobject SPI(PinName, PinName, PinName, PinName)
+        16   -> mbed::SPI::SPI(PinName, PinName, PinName, PinName)
+       8   mbed::SPI::unlock()
+         8   -> SingletonPtr<rtos::Mutex>::operator->()
+         8   -> rtos::Mutex::unlock()
+      32   mbed::SPI::write(char const *, int, char *, int)
+        32   -- Indirect call
+        32   -> mbed::SPI::_acquire()
+        32   -> spi_master_block_write
+      16   mbed::SPI::write(int)
+        16   -- Indirect call
+        16   -> mbed::SPI::_acquire()
+        16   -> spi_master_write
+       0   mbed::SPI::~SPI()
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_2
+       4  ??DataTable6_3
+      80  SingletonPtr<rtos::Mutex>::operator->()
+      60  mbed::SPI::SPI(PinName, PinName, PinName, PinName)
+      36  mbed::SPI::_acquire()
+      40  mbed::SPI::_mutex
+       4  mbed::SPI::_owner
+      50  mbed::SPI::aquire()
+       8  mbed::SPI::deleter ~SPI()
+      56  mbed::SPI::format(int, int)
+      48  mbed::SPI::frequency(int)
+      18  mbed::SPI::lock()
+      26  mbed::SPI::set_default_write_value(char)
+      16  mbed::SPI::subobject SPI(PinName, PinName, PinName, PinName)
+      14  mbed::SPI::unlock()
+      62  mbed::SPI::write(char const *, int, char *, int)
+      40  mbed::SPI::write(int)
+       2  mbed::SPI::~SPI()
+     164  -- Other
+
+ 
+  44 bytes in section .bss
+ 164 bytes in section .rodata
+ 532 bytes in section .text
+ 
+ 442 bytes of CODE  memory (+  90 bytes shared)
+   0 bytes of CONST memory (+ 164 bytes shared)
+  44 bytes of DATA  memory
+
+Errors: none
+Warnings: none

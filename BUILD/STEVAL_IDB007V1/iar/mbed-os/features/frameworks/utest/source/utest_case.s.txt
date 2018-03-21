@@ -1,0 +1,716 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       16/Mar/2018  12:16:15
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\frameworks\utest\source\utest_case.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DDEVICE_SERIAL=1 -DTARGET_CORTEX_M -DDEVICE_SPI=1 -DTARGET_LIKE_MBED
+#        -DMBED_BUILD_TIMESTAMP=1521198946.13 -DARM_MATH_CM0 -DTARGET_RELEASE
+#        -D__CORTEX_M0 -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0
+#        -DTOOLCHAIN_object -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -f
+#        .\BUILD\STEVAL_IDB007V1\iar\.includes_fc2e77952737cb4522ab0dffe8cfd8aa.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN
+#        -I./mbed-os/features/frameworks
+#        -I./mbed-os/features/frameworks/greentea-client
+#        -I./mbed-os/features/frameworks/greentea-client/greentea-client
+#        -I./mbed-os/features/frameworks/greentea-client/source
+#        -I./mbed-os/features/frameworks/unity
+#        -I./mbed-os/features/frameworks/unity/source
+#        -I./mbed-os/features/frameworks/unity/unity
+#        -I./mbed-os/features/frameworks/utest
+#        -I./mbed-os/features/frameworks/utest/source
+#        -I./mbed-os/features/frameworks/utest/utest
+#        -I./mbed-os/features/mbedtls -I./mbed-os/features/mbedtls/importer
+#        -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/features/netsocket
+#        -I./mbed-os/features/netsocket/cellular
+#        -I./mbed-os/features/netsocket/cellular/generic_modem_driver
+#        -I./mbed-os/features/netsocket/cellular/utils
+#        -I./mbed-os/features/storage -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\iar\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\utest\source\utest_case.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\utest\source\utest_case.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\utest\source\utest_case.o
+#        .\mbed-os\features\frameworks\utest\source\utest_case.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\utest\source\utest_case.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\utest\source\utest_case.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia\mbed-os\features\frameworks\utest\source\utest_case.cpp
+      1          /****************************************************************************
+      2           * Copyright (c) 2015, ARM Limited, All Rights Reserved
+      3           * SPDX-License-Identifier: Apache-2.0
+      4           *
+      5           * Licensed under the Apache License, Version 2.0 (the "License"); you may
+      6           * not use this file except in compliance with the License.
+      7           * You may obtain a copy of the License at
+      8           *
+      9           * http://www.apache.org/licenses/LICENSE-2.0
+     10           *
+     11           * Unless required by applicable law or agreed to in writing, software
+     12           * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     13           * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     14           * See the License for the specific language governing permissions and
+     15           * limitations under the License.
+     16           ****************************************************************************
+     17           */
+     18          
+     19           #include "utest/utest_case.h"
+
+   \                                 In section .text, align 4
+   \   __code __interwork __softfp mbed::Callback<void ()>::Callback<>(void (*)(void *), void *)
+   \                     _ZN4mbed8CallbackIFvvEEC1IvvEEPFvPT_EPT0_: (+1)
+   \   00000000   0xB470             PUSH     {R4-R6}
+   \   00000002   0x2300             MOVS     R3,#+0
+   \   00000004   0x2400             MOVS     R4,#+0
+   \   00000006   0x2500             MOVS     R5,#+0
+   \   00000008   0x2600             MOVS     R6,#+0
+   \   0000000A   0xC078             STM      R0!,{R3-R6}
+   \   0000000C   0x3810             SUBS     R0,R0,#+16
+   \   0000000E   0xD001             BEQ      ??Callback_0
+   \   00000010   0x6001             STR      R1,[R0, #+0]
+   \   00000012   0x6042             STR      R2,[R0, #+4]
+   \                     ??Callback_0: (+1)
+   \   00000014   0x4901             LDR      R1,??Callback_1
+   \   00000016   0x60C1             STR      R1,[R0, #+12]
+   \   00000018   0xBC70             POP      {R4-R6}
+   \   0000001A   0x4770             BX       LR               ;; return
+   \                     ??Callback_1:
+   \   0000001C   0x........         DC32     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops
+
+   \                                 In section .rodata, align 4
+   \   __absolute mbed::Callback<void ()>::ops const mbed::Callback<void ()>::generate<>(mbed::Callback<void ()>::function_context<void (*)(void *), void> const &)::ops
+   \                     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops:
+   \   00000000   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv
+   \   00000004   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv
+   \   00000008   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x0001             MOVS     R1,R0
+   \   00000004   0x6848             LDR      R0,[R1, #+4]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD001             BEQ      ??function_move_0
+   \   00000004   0xC90C             LDM      R1!,{R2,R3}
+   \   00000006   0xC00C             STM      R0!,{R2,R3}
+   \                     ??function_move_0: (+1)
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::callback<>(void (*)(void *), void *)
+   \                     _ZN4mbed8callbackIvvvEENS_8CallbackIFT1_vEEEPFS2_PT_EPT0_: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEEC1IvvEEPFvPT_EPT0_
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+     20           #include "utest/utest_serial.h"
+     21          
+     22          using namespace utest::v1;
+     23          
+     24          // case_t factory used by Case contructor
+
+   \                                 In section .text, align 2, keep-with-next
+     25          static inline case_t make_case(
+     26              const char *description,
+     27              const case_handler_t handler,
+     28              const case_control_handler_t control_handler,
+     29              const case_call_count_handler_t repeat_count_handler,
+     30              const case_setup_handler_t setup_handler,
+     31              const case_teardown_handler_t teardown_handler,
+     32              const case_failure_handler_t failure_handler)
+     33          {
+   \                     _Z9make_casePKcPFvvEPFN5utest2v19control_tEvEPFS5_jEPFNS4_8status_tEPKNS4_4CaseEjEPFSA_SD_jjNS4_9failure_tEEPFSA_SD_SG_E: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0xB087             SUB      SP,SP,#+28
+     34              case_t result = {
+     35                  description,
+     36                  handler,
+     37                  control_handler,
+     38                  repeat_count_handler,
+     39                  setup_handler,
+     40                  teardown_handler,
+     41                  failure_handler
+     42              };
+   \   00000004   0x9100             STR      R1,[SP, #+0]
+   \   00000006   0x9201             STR      R2,[SP, #+4]
+   \   00000008   0x9302             STR      R3,[SP, #+8]
+   \   0000000A   0x9908             LDR      R1,[SP, #+32]
+   \   0000000C   0x9103             STR      R1,[SP, #+12]
+   \   0000000E   0x9909             LDR      R1,[SP, #+36]
+   \   00000010   0x9104             STR      R1,[SP, #+16]
+   \   00000012   0x990A             LDR      R1,[SP, #+40]
+   \   00000014   0x9105             STR      R1,[SP, #+20]
+   \   00000016   0x990B             LDR      R1,[SP, #+44]
+   \   00000018   0x9106             STR      R1,[SP, #+24]
+     43          
+     44              return result;
+   \   0000001A   0x4669             MOV      R1,SP
+   \   0000001C   0x221C             MOVS     R2,#+28
+   \   0000001E   0x.... 0x....      BL       __aeabi_memcpy4
+   \   00000022   0xB007             ADD      SP,SP,#+28
+   \   00000024   0xBD00             POP      {PC}             ;; return
+     45          }
+     46          
+     47          // normal handler
+
+   \                                 In section .text, align 2, keep-with-next
+     48          Case::Case(const char *description,
+   \                     _ZN5utest2v14CaseC1EPKcPFNS0_8status_tEPKS1_jEPFvvEPFS4_S6_jjNS0_9failure_tEEPFS4_S6_SB_E: (+1)
+   \   00000000   0xBF00             Nop      
+     49                     const case_setup_handler_t setup_handler,
+     50                     const case_handler_t handler,
+     51                     const case_teardown_handler_t teardown_handler,
+     52                     const case_failure_handler_t failure_handler) :
+     53              case_t(make_case(
+     54                  description,
+     55                  handler,
+     56                  ignore_handler,
+     57                  ignore_handler,
+     58                  setup_handler,
+     59                  teardown_handler,
+     60                  failure_handler
+     61              ))
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x6001             STR      R1,[R0, #+0]
+   \   00000002   0x6043             STR      R3,[R0, #+4]
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x6081             STR      R1,[R0, #+8]
+   \   00000008                      REQUIRE ??Subroutine2_0
+   \   00000008                      ;; // Fall through to label ??Subroutine2_0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ??Subroutine2_0: (+1)
+   \   00000000   0x60C1             STR      R1,[R0, #+12]
+   \   00000002   0x6102             STR      R2,[R0, #+16]
+   \   00000004   0x9900             LDR      R1,[SP, #+0]
+   \   00000006   0x6141             STR      R1,[R0, #+20]
+   \   00000008   0x9901             LDR      R1,[SP, #+4]
+   \   0000000A   0x6181             STR      R1,[R0, #+24]
+     62          
+     63          {}
+   \   0000000C   0x4770             BX       LR               ;; return
+     64          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp utest::v1::Case::subobject Case(char const *, void (*)() const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+   \                     _ZN5utest2v14CaseC2EPKcPFvvEPFNS0_8status_tEPKS1_jjNS0_9failure_tEEPFS6_S8_S9_E: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0xB082             SUB      SP,SP,#+8
+   \   00000004   0x9C04             LDR      R4,[SP, #+16]
+   \   00000006   0x9400             STR      R4,[SP, #+0]
+   \   00000008   0x.... 0x....      BL       _ZN5utest2v14CaseC1EPKcPFvvEPFNS0_8status_tEPKS1_jjNS0_9failure_tEEPFS6_S8_S9_E
+   \   0000000C   0xBD16             POP      {R1,R2,R4,PC}    ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     65          Case::Case(const char *description,
+     66                     const case_handler_t handler,
+     67                     const case_teardown_handler_t teardown_handler,
+     68                     const case_failure_handler_t failure_handler) :
+     69              case_t(make_case(
+     70                  description,
+     71                  handler,
+     72                  ignore_handler,
+     73                  ignore_handler,
+     74                  default_handler,
+     75                  teardown_handler,
+     76                  failure_handler
+     77              ))
+   \                     _ZN5utest2v14CaseC1EPKcPFvvEPFNS0_8status_tEPKS1_jjNS0_9failure_tEEPFS6_S8_S9_E: (+1)
+   \   00000000   0x6001             STR      R1,[R0, #+0]
+   \   00000002   0x6042             STR      R2,[R0, #+4]
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x6081             STR      R1,[R0, #+8]
+   \   00000008   0x60C1             STR      R1,[R0, #+12]
+   \   0000000A   0x2101             MOVS     R1,#+1
+   \   0000000C   0x6101             STR      R1,[R0, #+16]
+   \   0000000E   0x6143             STR      R3,[R0, #+20]
+   \   00000010   0x9900             LDR      R1,[SP, #+0]
+   \   00000012   0x6181             STR      R1,[R0, #+24]
+     78          
+     79          {}
+   \   00000014   0x4770             BX       LR               ;; return
+     80          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp utest::v1::Case::subobject Case(char const *, void (*)() const, utest::v1::case_failure_handler_t const)
+   \                     _ZN5utest2v14CaseC2EPKcPFvvEPFNS0_8status_tEPKS1_NS0_9failure_tEE: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN5utest2v14CaseC1EPKcPFvvEPFNS0_8status_tEPKS1_NS0_9failure_tEE
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     81          Case::Case(const char *description,
+     82                     const case_handler_t handler,
+     83                     const case_failure_handler_t failure_handler) :
+     84              case_t(make_case(
+     85                  description,
+     86                  handler,
+     87                  ignore_handler,
+     88                  ignore_handler,
+     89                  default_handler,
+     90                  default_handler,
+     91                  failure_handler
+     92              ))
+   \                     _ZN5utest2v14CaseC1EPKcPFvvEPFNS0_8status_tEPKS1_NS0_9failure_tEE: (+1)
+   \   00000000   0x6001             STR      R1,[R0, #+0]
+   \   00000002   0x6042             STR      R2,[R0, #+4]
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x6081             STR      R1,[R0, #+8]
+   \   00000008   0x60C1             STR      R1,[R0, #+12]
+   \   0000000A   0x2101             MOVS     R1,#+1
+   \   0000000C   0x6101             STR      R1,[R0, #+16]
+   \   0000000E   0x6141             STR      R1,[R0, #+20]
+   \   00000010   0x6183             STR      R3,[R0, #+24]
+     93          {}
+   \   00000012   0x4770             BX       LR               ;; return
+     94          
+     95          // control handler
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp utest::v1::Case::subobject Case(char const *, utest::v1::case_setup_handler_t const, utest::v1::control_t (*)() const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+   \                     _ZN5utest2v14CaseC2EPKcPFNS0_8status_tEPKS1_jEPFNS0_9control_tEvEPFS4_S6_jjNS0_9failure_tEEPFS4_S6_SC_E: (+1)
+   \   00000000   0xB51C             PUSH     {R2-R4,LR}
+   \   00000002   0x9C05             LDR      R4,[SP, #+20]
+   \   00000004   0x9401             STR      R4,[SP, #+4]
+   \   00000006   0x9C04             LDR      R4,[SP, #+16]
+   \   00000008   0x9400             STR      R4,[SP, #+0]
+   \   0000000A   0x.... 0x....      BL       _ZN5utest2v14CaseC1EPKcPFNS0_8status_tEPKS1_jEPFNS0_9control_tEvEPFS4_S6_jjNS0_9failure_tEEPFS4_S6_SC_E
+   \   0000000E   0xBD16             POP      {R1,R2,R4,PC}    ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     96          Case::Case(const char *description,
+     97                     const case_setup_handler_t setup_handler,
+     98                     const case_control_handler_t handler,
+     99                     const case_teardown_handler_t teardown_handler,
+    100                     const case_failure_handler_t failure_handler) :
+    101              case_t(make_case(
+    102                  description,
+    103                  ignore_handler,
+    104                  handler,
+    105                  ignore_handler,
+    106                  setup_handler,
+    107                  teardown_handler,
+    108                  failure_handler
+    109              ))
+   \                     _ZN5utest2v14CaseC1EPKcPFNS0_8status_tEPKS1_jEPFNS0_9control_tEvEPFS4_S6_jjNS0_9failure_tEEPFS4_S6_SC_E: (+1)
+   \   00000000   0x6001             STR      R1,[R0, #+0]
+   \   00000002   0x2100             MOVS     R1,#+0
+   \   00000004   0x6041             STR      R1,[R0, #+4]
+   \   00000006   0x6083             STR      R3,[R0, #+8]
+   \   00000008   0x....             B.N      ??Subroutine2_0
+    110          {}
+    111          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp utest::v1::Case::subobject Case(char const *, utest::v1::control_t (*)() const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+   \                     _ZN5utest2v14CaseC2EPKcPFNS0_9control_tEvEPFNS0_8status_tEPKS1_jjNS0_9failure_tEEPFS7_S9_SA_E: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0xB082             SUB      SP,SP,#+8
+   \   00000004   0x9C04             LDR      R4,[SP, #+16]
+   \   00000006   0x9400             STR      R4,[SP, #+0]
+   \   00000008   0x.... 0x....      BL       _ZN5utest2v14CaseC1EPKcPFNS0_9control_tEvEPFNS0_8status_tEPKS1_jjNS0_9failure_tEEPFS7_S9_SA_E
+   \   0000000C   0xBD16             POP      {R1,R2,R4,PC}    ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    112          Case::Case(const char *description,
+    113                     const case_control_handler_t handler,
+    114                     const case_teardown_handler_t teardown_handler,
+    115                     const case_failure_handler_t failure_handler) :
+   \                     _ZN5utest2v14CaseC1EPKcPFNS0_9control_tEvEPFNS0_8status_tEPKS1_jjNS0_9failure_tEEPFS7_S9_SA_E: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0xB08C             SUB      SP,SP,#+48
+   \   00000004   0x0004             MOVS     R4,R0
+    116              case_t(make_case(
+    117                  description,
+    118                  ignore_handler,
+    119                  handler,
+    120                  ignore_handler,
+    121                  default_handler,
+    122                  teardown_handler,
+    123                  failure_handler
+    124              ))
+   \   00000006   0x980E             LDR      R0,[SP, #+56]
+   \   00000008   0x9003             STR      R0,[SP, #+12]
+   \   0000000A   0x9302             STR      R3,[SP, #+8]
+   \   0000000C   0x2001             MOVS     R0,#+1
+   \   0000000E   0x....             B.N      ?Subroutine1
+    125          {}
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine1: (+1)
+   \   00000000   0x9001             STR      R0,[SP, #+4]
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x9000             STR      R0,[SP, #+0]
+   \   00000006   0x0013             MOVS     R3,R2
+   \   00000008                      REQUIRE ??Subroutine3_0
+   \   00000008                      ;; // Fall through to label ??Subroutine3_0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ??Subroutine3_0: (+1)
+   \   00000000   0x2200             MOVS     R2,#+0
+   \   00000002   0xA804             ADD      R0,SP,#+16
+   \   00000004   0x.... 0x....      BL       _Z9make_casePKcPFvvEPFN5utest2v19control_tEvEPFS5_jEPFNS4_8status_tEPKNS4_4CaseEjEPFSA_SD_jjNS4_9failure_tEEPFSA_SD_SG_E
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xA904             ADD      R1,SP,#+16
+   \   0000000C   0x221C             MOVS     R2,#+28
+   \   0000000E   0x.... 0x....      BL       __aeabi_memcpy4
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0xB00C             ADD      SP,SP,#+48
+   \   00000016   0xBD10             POP      {R4,PC}          ;; return
+    126          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp utest::v1::Case::subobject Case(char const *, utest::v1::control_t (*)() const, utest::v1::case_failure_handler_t const)
+   \                     _ZN5utest2v14CaseC2EPKcPFNS0_9control_tEvEPFNS0_8status_tEPKS1_NS0_9failure_tEE: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN5utest2v14CaseC1EPKcPFNS0_9control_tEvEPFNS0_8status_tEPKS1_NS0_9failure_tEE
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    127          Case::Case(const char *description,
+    128                     const case_control_handler_t handler,
+    129                     const case_failure_handler_t failure_handler) :
+   \                     _ZN5utest2v14CaseC1EPKcPFNS0_9control_tEvEPFNS0_8status_tEPKS1_NS0_9failure_tEE: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0xB08C             SUB      SP,SP,#+48
+   \   00000004   0x0004             MOVS     R4,R0
+    130              case_t(make_case(
+    131                  description,
+    132                  ignore_handler,
+    133                  handler,
+    134                  ignore_handler,
+    135                  default_handler,
+    136                  default_handler,
+    137                  failure_handler
+    138              ))
+   \   00000006   0x9303             STR      R3,[SP, #+12]
+   \   00000008   0x2001             MOVS     R0,#+1
+   \   0000000A   0x9002             STR      R0,[SP, #+8]
+   \   0000000C                      REQUIRE ?Subroutine1
+   \   0000000C                      ;; // Fall through to label ?Subroutine1
+    139          {}
+    140          
+    141          // control flow handler
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp utest::v1::Case::subobject Case(char const *, utest::v1::case_setup_handler_t const, utest::v1::case_call_count_handler_t const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+   \                     _ZN5utest2v14CaseC2EPKcPFNS0_8status_tEPKS1_jEPFNS0_9control_tEjEPFS4_S6_jjNS0_9failure_tEEPFS4_S6_SC_E: (+1)
+   \   00000000   0xB51C             PUSH     {R2-R4,LR}
+   \   00000002   0x9C05             LDR      R4,[SP, #+20]
+   \   00000004   0x9401             STR      R4,[SP, #+4]
+   \   00000006   0x9C04             LDR      R4,[SP, #+16]
+   \   00000008   0x9400             STR      R4,[SP, #+0]
+   \   0000000A   0x.... 0x....      BL       _ZN5utest2v14CaseC1EPKcPFNS0_8status_tEPKS1_jEPFNS0_9control_tEjEPFS4_S6_jjNS0_9failure_tEEPFS4_S6_SC_E
+   \   0000000E   0xBD16             POP      {R1,R2,R4,PC}    ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    142          Case::Case(const char *description,
+    143                     const case_setup_handler_t setup_handler,
+    144                     const case_call_count_handler_t case_repeat_count_handler,
+    145                     const case_teardown_handler_t teardown_handler,
+    146                     const case_failure_handler_t failure_handler) :
+   \                     _ZN5utest2v14CaseC1EPKcPFNS0_8status_tEPKS1_jEPFNS0_9control_tEjEPFS4_S6_jjNS0_9failure_tEEPFS4_S6_SC_E: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0xB08C             SUB      SP,SP,#+48
+   \   00000004   0x0004             MOVS     R4,R0
+    147              case_t(make_case(
+    148                  description,
+    149                  ignore_handler,
+    150                  ignore_handler,
+    151                  case_repeat_count_handler,
+    152                  setup_handler,
+    153                  teardown_handler,
+    154                  failure_handler
+    155              ))
+   \   00000006   0x980F             LDR      R0,[SP, #+60]
+   \   00000008   0x9003             STR      R0,[SP, #+12]
+   \   0000000A   0x980E             LDR      R0,[SP, #+56]
+   \   0000000C   0x9002             STR      R0,[SP, #+8]
+   \   0000000E   0x9201             STR      R2,[SP, #+4]
+   \   00000010   0x9300             STR      R3,[SP, #+0]
+   \   00000012   0x2300             MOVS     R3,#+0
+   \   00000014   0x....             B.N      ??Subroutine3_0
+    156          {}
+    157          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp utest::v1::Case::subobject Case(char const *, utest::v1::case_call_count_handler_t const, utest::v1::case_failure_handler_t const)
+   \                     _ZN5utest2v14CaseC2EPKcPFNS0_9control_tEjEPFNS0_8status_tEPKS1_NS0_9failure_tEE: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN5utest2v14CaseC1EPKcPFNS0_9control_tEjEPFNS0_8status_tEPKS1_NS0_9failure_tEE
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    158          Case::Case(const char *description,
+    159                     const case_call_count_handler_t case_repeat_count_handler,
+    160                     const case_failure_handler_t failure_handler) :
+   \                     _ZN5utest2v14CaseC1EPKcPFNS0_9control_tEjEPFNS0_8status_tEPKS1_NS0_9failure_tEE: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0xB08C             SUB      SP,SP,#+48
+   \   00000004   0x0004             MOVS     R4,R0
+    161              case_t(make_case(
+    162                  description,
+    163                  ignore_handler,
+    164                  ignore_handler,
+    165                  case_repeat_count_handler,
+    166                  default_handler,
+    167                  default_handler,
+    168                  failure_handler
+    169              ))
+   \   00000006   0x9303             STR      R3,[SP, #+12]
+   \   00000008   0x2001             MOVS     R0,#+1
+   \   0000000A   0x9002             STR      R0,[SP, #+8]
+   \   0000000C   0x9001             STR      R0,[SP, #+4]
+   \   0000000E   0x9200             STR      R2,[SP, #+0]
+   \   00000010   0x2300             MOVS     R3,#+0
+   \   00000012   0x....             B.N      ??Subroutine3_0
+    170          {}
+    171          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp utest::v1::Case::subobject Case(char const *, utest::v1::case_call_count_handler_t const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+   \                     _ZN5utest2v14CaseC2EPKcPFNS0_9control_tEjEPFNS0_8status_tEPKS1_jjNS0_9failure_tEEPFS7_S9_SA_E: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0xB082             SUB      SP,SP,#+8
+   \   00000004   0x9C04             LDR      R4,[SP, #+16]
+   \   00000006   0x9400             STR      R4,[SP, #+0]
+   \   00000008   0x.... 0x....      BL       _ZN5utest2v14CaseC1EPKcPFNS0_9control_tEjEPFNS0_8status_tEPKS1_jjNS0_9failure_tEEPFS7_S9_SA_E
+   \   0000000C   0xBD16             POP      {R1,R2,R4,PC}    ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    172          Case::Case(const char *description,
+    173                     const case_call_count_handler_t case_repeat_count_handler,
+    174                     const case_teardown_handler_t teardown_handler,
+    175                     const case_failure_handler_t failure_handler) :
+   \                     _ZN5utest2v14CaseC1EPKcPFNS0_9control_tEjEPFNS0_8status_tEPKS1_jjNS0_9failure_tEEPFS7_S9_SA_E: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0xB08C             SUB      SP,SP,#+48
+   \   00000004   0x0004             MOVS     R4,R0
+    176              case_t(make_case(
+    177                  description,
+    178                  ignore_handler,
+    179                  ignore_handler,
+    180                  case_repeat_count_handler,
+    181                  default_handler,
+    182                  teardown_handler,
+    183                  failure_handler
+    184              ))
+   \   00000006   0x980E             LDR      R0,[SP, #+56]
+   \   00000008   0x9003             STR      R0,[SP, #+12]
+   \   0000000A   0x9302             STR      R3,[SP, #+8]
+   \   0000000C   0x2001             MOVS     R0,#+1
+   \   0000000E   0x9001             STR      R0,[SP, #+4]
+   \   00000010   0x9200             STR      R2,[SP, #+0]
+   \   00000012   0x2300             MOVS     R3,#+0
+   \   00000014   0x....             B.N      ??Subroutine3_0
+    185          {}
+    186          
+
+   \                                 In section .text, align 2, keep-with-next
+    187          const char*
+    188          Case::get_description() const {
+    189              return description;
+   \                     _ZNK5utest2v14Case15get_descriptionEv: (+1)
+   \   00000000   0x6800             LDR      R0,[R0, #+0]
+   \   00000002   0x4770             BX       LR               ;; return
+    190          }
+    191          
+
+   \                                 In section .text, align 2, keep-with-next
+    192          bool
+    193          Case::is_empty() const {
+    194              return !(handler || control_handler || repeat_count_handler || setup_handler || teardown_handler);
+   \                     _ZNK5utest2v14Case8is_emptyEv: (+1)
+   \   00000000   0x6841             LDR      R1,[R0, #+4]
+   \   00000002   0x2900             CMP      R1,#+0
+   \   00000004   0xD10D             BNE      ??is_empty_0
+   \   00000006   0x6881             LDR      R1,[R0, #+8]
+   \   00000008   0x2900             CMP      R1,#+0
+   \   0000000A   0xD10A             BNE      ??is_empty_0
+   \   0000000C   0x68C1             LDR      R1,[R0, #+12]
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD107             BNE      ??is_empty_0
+   \   00000012   0x6901             LDR      R1,[R0, #+16]
+   \   00000014   0x2900             CMP      R1,#+0
+   \   00000016   0xD104             BNE      ??is_empty_0
+   \   00000018   0x6940             LDR      R0,[R0, #+20]
+   \   0000001A   0x2800             CMP      R0,#+0
+   \   0000001C   0xD101             BNE      ??is_empty_0
+   \   0000001E   0x2001             MOVS     R0,#+1
+   \   00000020   0x4770             BX       LR
+   \                     ??is_empty_0: (+1)
+   \   00000022   0x2000             MOVS     R0,#+0
+   \   00000024   0x4770             BX       LR               ;; return
+    195          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp utest::v1::Case::subobject Case(char const *, utest::v1::case_setup_handler_t const, void (*)() const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+   \                     _ZN5utest2v14CaseC2EPKcPFNS0_8status_tEPKS1_jEPFvvEPFS4_S6_jjNS0_9failure_tEEPFS4_S6_SB_E: (+1)
+   \   00000000   0x....             B.N      ?Subroutine0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      32   make_case(char const *, void (*)(), utest::v1::control_t (*)(), utest::v1::case_call_count_handler_t, utest::v1::case_setup_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+        32   -> __aeabi_memcpy4
+      12   mbed::Callback<void ()>::Callback<>(void (*)(void *), void *)
+       8   mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+         8   -- Indirect call
+       0   mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+       0   mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+       8   mbed::callback<>(void (*)(void *), void *)
+         8   -> mbed::Callback<void ()>::Callback<>(void (*)(void *), void *)
+      56   utest::v1::Case::Case(char const *, utest::v1::case_call_count_handler_t, utest::v1::case_failure_handler_t)
+        56   -> __aeabi_memcpy4
+        56   -> make_case(char const *, void (*)(), utest::v1::control_t (*)(), utest::v1::case_call_count_handler_t, utest::v1::case_setup_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+      56   utest::v1::Case::Case(char const *, utest::v1::case_call_count_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+        56   -> __aeabi_memcpy4
+        56   -> make_case(char const *, void (*)(), utest::v1::control_t (*)(), utest::v1::case_call_count_handler_t, utest::v1::case_setup_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+      56   utest::v1::Case::Case(char const *, utest::v1::case_setup_handler_t, utest::v1::case_call_count_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+        56   -> __aeabi_memcpy4
+        56   -> make_case(char const *, void (*)(), utest::v1::control_t (*)(), utest::v1::case_call_count_handler_t, utest::v1::case_setup_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+       0   utest::v1::Case::Case(char const *, utest::v1::case_setup_handler_t, utest::v1::control_t (*)(), utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+       0   utest::v1::Case::Case(char const *, utest::v1::case_setup_handler_t, void (*)(), utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+      56   utest::v1::Case::Case(char const *, utest::v1::control_t (*)(), utest::v1::case_failure_handler_t)
+        56   -> __aeabi_memcpy4
+        56   -> make_case(char const *, void (*)(), utest::v1::control_t (*)(), utest::v1::case_call_count_handler_t, utest::v1::case_setup_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+      56   utest::v1::Case::Case(char const *, utest::v1::control_t (*)(), utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+        56   -> __aeabi_memcpy4
+        56   -> make_case(char const *, void (*)(), utest::v1::control_t (*)(), utest::v1::case_call_count_handler_t, utest::v1::case_setup_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+       0   utest::v1::Case::Case(char const *, void (*)(), utest::v1::case_failure_handler_t)
+       0   utest::v1::Case::Case(char const *, void (*)(), utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+       0   utest::v1::Case::get_description() const
+       0   utest::v1::Case::is_empty() const
+       8   utest::v1::Case::subobject Case(char const *, utest::v1::case_call_count_handler_t const, utest::v1::case_failure_handler_t const)
+         8   -> utest::v1::Case::Case(char const *, utest::v1::case_call_count_handler_t, utest::v1::case_failure_handler_t)
+      16   utest::v1::Case::subobject Case(char const *, utest::v1::case_call_count_handler_t const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+        16   -> utest::v1::Case::Case(char const *, utest::v1::case_call_count_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+      16   utest::v1::Case::subobject Case(char const *, utest::v1::case_setup_handler_t const, utest::v1::case_call_count_handler_t const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+        16   -> utest::v1::Case::Case(char const *, utest::v1::case_setup_handler_t, utest::v1::case_call_count_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+      16   utest::v1::Case::subobject Case(char const *, utest::v1::case_setup_handler_t const, utest::v1::control_t (*)() const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+        16   -> utest::v1::Case::Case(char const *, utest::v1::case_setup_handler_t, utest::v1::control_t (*)(), utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+       0   utest::v1::Case::subobject Case(char const *, utest::v1::case_setup_handler_t const, void (*)() const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+       8   utest::v1::Case::subobject Case(char const *, utest::v1::control_t (*)() const, utest::v1::case_failure_handler_t const)
+         8   -> utest::v1::Case::Case(char const *, utest::v1::control_t (*)(), utest::v1::case_failure_handler_t)
+      16   utest::v1::Case::subobject Case(char const *, utest::v1::control_t (*)() const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+        16   -> utest::v1::Case::Case(char const *, utest::v1::control_t (*)(), utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+       8   utest::v1::Case::subobject Case(char const *, void (*)() const, utest::v1::case_failure_handler_t const)
+         8   -> utest::v1::Case::Case(char const *, void (*)(), utest::v1::case_failure_handler_t)
+      16   utest::v1::Case::subobject Case(char const *, void (*)() const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+        16   -> utest::v1::Case::Case(char const *, void (*)(), utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      14  ??Subroutine2_0
+      24  ??Subroutine3_0
+       8  ?Subroutine0
+       8  ?Subroutine1
+      38  make_case(char const *, void (*)(), utest::v1::control_t (*)(), utest::v1::case_call_count_handler_t, utest::v1::case_setup_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+      32  mbed::Callback<void ()>::Callback<>(void (*)(void *), void *)
+      12  mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+       2  mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+      10  mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+       8  mbed::callback<>(void (*)(void *), void *)
+      12  ops
+      20  utest::v1::Case::Case(char const *, utest::v1::case_call_count_handler_t, utest::v1::case_failure_handler_t)
+      22  utest::v1::Case::Case(char const *, utest::v1::case_call_count_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+      22  utest::v1::Case::Case(char const *, utest::v1::case_setup_handler_t, utest::v1::case_call_count_handler_t, utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+      10  utest::v1::Case::Case(char const *, utest::v1::case_setup_handler_t, utest::v1::control_t (*)(), utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+       2  utest::v1::Case::Case(char const *, utest::v1::case_setup_handler_t, void (*)(), utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+      12  utest::v1::Case::Case(char const *, utest::v1::control_t (*)(), utest::v1::case_failure_handler_t)
+      16  utest::v1::Case::Case(char const *, utest::v1::control_t (*)(), utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+      20  utest::v1::Case::Case(char const *, void (*)(), utest::v1::case_failure_handler_t)
+      22  utest::v1::Case::Case(char const *, void (*)(), utest::v1::case_teardown_handler_t, utest::v1::case_failure_handler_t)
+       4  utest::v1::Case::get_description() const
+      38  utest::v1::Case::is_empty() const
+       8  utest::v1::Case::subobject Case(char const *, utest::v1::case_call_count_handler_t const, utest::v1::case_failure_handler_t const)
+      14  utest::v1::Case::subobject Case(char const *, utest::v1::case_call_count_handler_t const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+      16  utest::v1::Case::subobject Case(char const *, utest::v1::case_setup_handler_t const, utest::v1::case_call_count_handler_t const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+      16  utest::v1::Case::subobject Case(char const *, utest::v1::case_setup_handler_t const, utest::v1::control_t (*)() const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+       2  utest::v1::Case::subobject Case(char const *, utest::v1::case_setup_handler_t const, void (*)() const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+       8  utest::v1::Case::subobject Case(char const *, utest::v1::control_t (*)() const, utest::v1::case_failure_handler_t const)
+      14  utest::v1::Case::subobject Case(char const *, utest::v1::control_t (*)() const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+       8  utest::v1::Case::subobject Case(char const *, void (*)() const, utest::v1::case_failure_handler_t const)
+      14  utest::v1::Case::subobject Case(char const *, void (*)() const, utest::v1::case_teardown_handler_t const, utest::v1::case_failure_handler_t const)
+     292  -- Other
+
+ 
+ 304 bytes in section .rodata
+ 444 bytes in section .text
+ 
+ 380 bytes of CODE  memory (+  64 bytes shared)
+   0 bytes of CONST memory (+ 304 bytes shared)
+
+Errors: none
+Warnings: none

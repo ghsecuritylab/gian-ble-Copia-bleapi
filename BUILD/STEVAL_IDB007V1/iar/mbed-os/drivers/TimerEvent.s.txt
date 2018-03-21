@@ -1,0 +1,345 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:01
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\drivers\TimerEvent.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\TimerEvent.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\TimerEvent.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\TimerEvent.o
+#        .\mbed-os\drivers\TimerEvent.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\TimerEvent.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\TimerEvent.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\drivers\TimerEvent.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "drivers/TimerEvent.h"
+     17          #include "cmsis.h"
+     18          
+     19          #include <stddef.h>
+     20          #include "hal/ticker_api.h"
+     21          #include "hal/us_ticker_api.h"
+     22          
+     23          namespace mbed {
+     24          
+
+   \                                 In section .text, align 2, keep-with-next
+     25          TimerEvent::TimerEvent() : event(), _ticker_data(get_us_ticker_data()) {
+   \                     _ZN4mbed10TimerEventC1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x....             LDR      R0,??DataTable3
+   \   00000004   0x6020             STR      R0,[R4, #+0]
+   \   00000006   0x2210             MOVS     R2,#+16
+   \   00000008   0x2100             MOVS     R1,#+0
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0x3008             ADDS     R0,R0,#+8
+   \   0000000E   0x.... 0x....      BL       memset
+   \   00000012   0x.... 0x....      BL       get_us_ticker_data
+   \   00000016   0x61A0             STR      R0,[R4, #+24]
+     26              ticker_set_handler(_ticker_data, (&TimerEvent::irq));
+   \   00000018   0x....             LDR      R1,??DataTable3_1
+   \   0000001A   0x.... 0x....      BL       ticker_set_handler
+     27          }
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0xBD10             POP      {R4,PC}          ;; return
+     28          
+
+   \                                 In section .text, align 2, keep-with-next
+     29          TimerEvent::TimerEvent(const ticker_data_t *data) : event(), _ticker_data(data) {
+   \                     _ZN4mbed10TimerEventC1EPK13ticker_data_t: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002                      REQUIRE ?Subroutine2
+   \   00000002                      ;; // Fall through to label ?Subroutine2
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine2: (+1)
+   \   00000000   0x0005             MOVS     R5,R0
+   \   00000002   0x000C             MOVS     R4,R1
+   \   00000004   0x....             LDR      R0,??DataTable3
+   \   00000006   0x6028             STR      R0,[R5, #+0]
+   \   00000008   0x2210             MOVS     R2,#+16
+   \   0000000A   0x2100             MOVS     R1,#+0
+   \   0000000C   0x0028             MOVS     R0,R5
+   \   0000000E   0x3008             ADDS     R0,R0,#+8
+   \   00000010   0x.... 0x....      BL       memset
+   \   00000014   0x61AC             STR      R4,[R5, #+24]
+     30              ticker_set_handler(_ticker_data, (&TimerEvent::irq));
+   \   00000016   0x....             LDR      R1,??DataTable3_1
+   \   00000018   0x4620             MOV      R0,R4
+   \   0000001A   0x.... 0x....      BL       ticker_set_handler
+     31          }
+   \   0000001E   0x0028             MOVS     R0,R5
+   \   00000020   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+     32          
+
+   \                                 In section .text, align 2, keep-with-next
+     33          void TimerEvent::irq(uint32_t id) {
+   \                     _ZN4mbed10TimerEvent3irqEj: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     34              TimerEvent *timer_event = (TimerEvent*)id;
+     35              timer_event->handler();
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x6889             LDR      R1,[R1, #+8]
+   \   00000006   0x4788             BLX      R1
+     36          }
+   \   00000008   0xBD01             POP      {R0,PC}          ;; return
+     37          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::TimerEvent::deleter ~TimerEvent()
+   \                     _ZN4mbed10TimerEventD0Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x....             LDR      R0,??DataTable3
+   \   00000006   0x6020             STR      R0,[R4, #+0]
+   \   00000008   0x0021             MOVS     R1,R4
+   \   0000000A   0x3108             ADDS     R1,R1,#+8
+   \   0000000C   0x69A0             LDR      R0,[R4, #+24]
+   \   0000000E   0x.... 0x....      BL       ticker_remove_event
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0x.... 0x....      BL       _ZdlPv
+   \   00000018   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     38          TimerEvent::~TimerEvent() {
+   \                     _ZN4mbed10TimerEventD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine1
+   \   00000002                      ;; // Fall through to label ?Subroutine1
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine1: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x....             LDR      R0,??DataTable3
+   \   00000004   0x6020             STR      R0,[R4, #+0]
+     39              remove();
+   \   00000006   0x0021             MOVS     R1,R4
+   \   00000008   0x3108             ADDS     R1,R1,#+8
+   \   0000000A   0x69A0             LDR      R0,[R4, #+24]
+   \   0000000C   0x.... 0x....      BL       ticker_remove_event
+     40          }
+   \   00000010   0x0020             MOVS     R0,R4
+   \   00000012   0xBD10             POP      {R4,PC}          ;; return
+     41          
+     42          // insert in to linked list
+
+   \                                 In section .text, align 2, keep-with-next
+     43          void TimerEvent::insert(timestamp_t timestamp) {
+   \                     _ZN4mbed10TimerEvent6insertEj: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     44              ticker_insert_event(_ticker_data, &event, timestamp, (uint32_t)this);
+   \   00000002   0x0003             MOVS     R3,R0
+   \   00000004   0x000A             MOVS     R2,R1
+   \   00000006   0x0001             MOVS     R1,R0
+   \   00000008   0x3108             ADDS     R1,R1,#+8
+   \   0000000A   0x6980             LDR      R0,[R0, #+24]
+   \   0000000C   0x.... 0x....      BL       ticker_insert_event
+     45          }
+   \   00000010   0xBD01             POP      {R0,PC}          ;; return
+     46          
+
+   \                                 In section .text, align 2, keep-with-next
+     47          void TimerEvent::insert_absolute(us_timestamp_t timestamp) {
+   \                     _ZN4mbed10TimerEvent15insert_absoluteEy: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     48              ticker_insert_event_us(_ticker_data, &event, timestamp, (uint32_t)this);
+   \   00000002   0x9000             STR      R0,[SP, #+0]
+   \   00000004   0x0001             MOVS     R1,R0
+   \   00000006   0x3108             ADDS     R1,R1,#+8
+   \   00000008   0x6980             LDR      R0,[R0, #+24]
+   \   0000000A   0x.... 0x....      BL       ticker_insert_event_us
+     49          }
+   \   0000000E   0xBD01             POP      {R0,PC}          ;; return
+     50          
+
+   \                                 In section .text, align 2, keep-with-next
+     51          void TimerEvent::remove() {
+   \                     _ZN4mbed10TimerEvent6removeEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     52              ticker_remove_event(_ticker_data, &event);
+   \   00000002   0x0001             MOVS     R1,R0
+   \   00000004   0x3108             ADDS     R1,R1,#+8
+   \   00000006   0x6980             LDR      R0,[R0, #+24]
+   \   00000008   0x.... 0x....      BL       ticker_remove_event
+     53          }
+   \   0000000C   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::TimerEvent::subobject TimerEvent()
+   \                     _ZN4mbed10TimerEventC2Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::TimerEvent::subobject TimerEvent(ticker_data_t const *)
+   \                     _ZN4mbed10TimerEventC2EPK13ticker_data_t: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x....             B.N      ?Subroutine2
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::TimerEvent::subobject ~TimerEvent()
+   \                     _ZN4mbed10TimerEventD2Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3:
+   \   00000000   0x........         DC32     _ZTVN4mbed10TimerEventE+0x8
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_1:
+   \   00000000   0x........         DC32     _ZN4mbed10TimerEvent3irqEj
+     54          
+     55          } // namespace mbed
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   mbed::TimerEvent::TimerEvent()
+         8   -> get_us_ticker_data
+         8   -> memset
+         8   -> ticker_set_handler
+       0   mbed::TimerEvent::TimerEvent(ticker_data_t const *)
+        16   -> memset
+        16   -> ticker_set_handler
+       8   mbed::TimerEvent::deleter ~TimerEvent()
+         8   -> operator delete(void *)
+         8   -> ticker_remove_event
+       8   mbed::TimerEvent::insert(timestamp_t)
+         8   -> ticker_insert_event
+       8   mbed::TimerEvent::insert_absolute(std::uint64_t)
+         8   -> ticker_insert_event_us
+       8   mbed::TimerEvent::irq(unsigned int)
+         8   -- Indirect call
+       8   mbed::TimerEvent::remove()
+         8   -> ticker_remove_event
+       8   mbed::TimerEvent::subobject TimerEvent()
+         8   -> get_us_ticker_data
+         8   -> memset
+         8   -> ticker_set_handler
+      16   mbed::TimerEvent::subobject TimerEvent(ticker_data_t const *)
+        16   -> memset
+        16   -> ticker_set_handler
+       8   mbed::TimerEvent::subobject ~TimerEvent()
+         8   -> ticker_remove_event
+       0   mbed::TimerEvent::~TimerEvent()
+         8   -> ticker_remove_event
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+      34  ?Subroutine0
+      20  ?Subroutine1
+      34  ?Subroutine2
+       2  mbed::TimerEvent::TimerEvent()
+       2  mbed::TimerEvent::TimerEvent(ticker_data_t const *)
+      26  mbed::TimerEvent::deleter ~TimerEvent()
+      18  mbed::TimerEvent::insert(timestamp_t)
+      16  mbed::TimerEvent::insert_absolute(std::uint64_t)
+      10  mbed::TimerEvent::irq(unsigned int)
+      14  mbed::TimerEvent::remove()
+       4  mbed::TimerEvent::subobject TimerEvent()
+       4  mbed::TimerEvent::subobject TimerEvent(ticker_data_t const *)
+       4  mbed::TimerEvent::subobject ~TimerEvent()
+       2  mbed::TimerEvent::~TimerEvent()
+     112  -- Other
+
+ 
+ 112 bytes in section .rodata
+ 198 bytes in section .text
+ 
+ 198 bytes of CODE  memory
+   0 bytes of CONST memory (+ 112 bytes shared)
+
+Errors: none
+Warnings: none

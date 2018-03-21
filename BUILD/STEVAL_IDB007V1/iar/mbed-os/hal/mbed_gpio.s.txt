@@ -1,0 +1,314 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:39
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\hal\mbed_gpio.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_gpio.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_gpio.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_gpio.o
+#        .\mbed-os\hal\mbed_gpio.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_gpio.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_gpio.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\hal\mbed_gpio.c
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "hal/gpio_api.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     17          
+
+   \                                 In section .text, align 2, keep-with-next
+     18          static inline void _gpio_init_in(gpio_t* gpio, PinName pin, PinMode mode)
+   \                     _gpio_init_in: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+     19          {
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x000D             MOVS     R5,R1
+   \   00000004   0x0016             MOVS     R6,R2
+     20              gpio_init(gpio, pin);
+   \   00000006   0x.... 0x....      BL       gpio_init
+     21              if (pin != NC) {
+   \   0000000A   0x2000             MOVS     R0,#+0
+   \   0000000C   0x43C0             MVNS     R0,R0            ;; #-1
+   \   0000000E   0x4285             CMP      R5,R0
+   \   00000010   0xD007             BEQ      ??Subroutine0_0
+     22                  gpio_dir(gpio, PIN_INPUT);
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x.... 0x....      BL       gpio_dir
+     23                  gpio_mode(gpio, mode);
+   \   0000001A   0x0031             MOVS     R1,R6
+   \   0000001C   0x0020             MOVS     R0,R4
+   \   0000001E   0x.... 0x....      BL       gpio_mode
+     24              }
+     25          }
+   \                     ??Subroutine0_0: (+1)
+   \   00000022   0xBD70             POP      {R4-R6,PC}       ;; return
+     26          
+
+   \                                 In section .text, align 2, keep-with-next
+     27          static inline void _gpio_init_out(gpio_t* gpio, PinName pin, PinMode mode, int value)
+     28          {
+   \                     _gpio_init_out: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+   \   00000006   0x0017             MOVS     R7,R2
+   \   00000008   0x001E             MOVS     R6,R3
+     29              gpio_init(gpio, pin);
+   \   0000000A   0x.... 0x....      BL       gpio_init
+     30              if (pin != NC) {
+   \   0000000E   0x2000             MOVS     R0,#+0
+   \   00000010   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000012   0x4284             CMP      R4,R0
+   \   00000014   0xD00B             BEQ      ??_gpio_init_out_0
+     31                  gpio_write(gpio, value);
+   \   00000016   0x0031             MOVS     R1,R6
+   \   00000018   0x0028             MOVS     R0,R5
+   \   0000001A   0x.... 0x....      BL       gpio_write
+     32                  gpio_dir(gpio, PIN_OUTPUT);
+   \   0000001E   0x2101             MOVS     R1,#+1
+   \   00000020   0x0028             MOVS     R0,R5
+   \   00000022   0x.... 0x....      BL       gpio_dir
+     33                  gpio_mode(gpio, mode);
+   \   00000026   0x0039             MOVS     R1,R7
+   \   00000028   0x0028             MOVS     R0,R5
+   \   0000002A   0x.... 0x....      BL       gpio_mode
+     34              }
+     35          }
+   \                     ??_gpio_init_out_0: (+1)
+   \   0000002E   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+     36          
+
+   \                                 In section .text, align 2, keep-with-next
+     37          void gpio_init_in(gpio_t* gpio, PinName pin) {
+   \                     gpio_init_in: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     38              gpio_init_in_ex(gpio, pin, PullDefault);
+   \   00000002   0x2200             MOVS     R2,#+0
+   \   00000004   0x.... 0x....      BL       _gpio_init_in
+     39          }
+   \   00000008   0xBD01             POP      {R0,PC}          ;; return
+     40          
+
+   \                                 In section .text, align 2, keep-with-next
+     41          void gpio_init_in_ex(gpio_t* gpio, PinName pin, PinMode mode) {
+   \                     gpio_init_in_ex: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+     42              _gpio_init_in(gpio, pin, mode);
+     43          }
+     44          
+
+   \                                 In section .text, align 2, keep-with-next
+     45          void gpio_init_out(gpio_t* gpio, PinName pin) {
+   \                     gpio_init_out: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     46              gpio_init_out_ex(gpio, pin, 0);
+   \   00000002   0x2300             MOVS     R3,#+0
+   \   00000004   0x2200             MOVS     R2,#+0
+   \   00000006   0x.... 0x....      BL       _gpio_init_out
+     47          }
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+     48          
+
+   \                                 In section .text, align 2, keep-with-next
+     49          void gpio_init_out_ex(gpio_t* gpio, PinName pin, int value) {
+   \                     gpio_init_out_ex: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+     50              _gpio_init_out(gpio, pin, PullNone, value);
+   \   00000008   0x.... 0x....      BL       gpio_init
+   \   0000000C   0x2000             MOVS     R0,#+0
+   \   0000000E   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000010   0x4285             CMP      R5,R0
+   \   00000012   0xD00B             BEQ      ??gpio_init_out_ex_0
+   \   00000014   0x0031             MOVS     R1,R6
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0x.... 0x....      BL       gpio_write
+   \   0000001C   0x2101             MOVS     R1,#+1
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0x.... 0x....      BL       gpio_dir
+   \   00000024   0x2100             MOVS     R1,#+0
+   \   00000026   0x0020             MOVS     R0,R4
+   \   00000028   0x.... 0x....      BL       gpio_mode
+     51          }
+   \                     ??gpio_init_out_ex_0: (+1)
+   \   0000002C   0xBD70             POP      {R4-R6,PC}       ;; return
+     52          
+
+   \                                 In section .text, align 2, keep-with-next
+     53          void gpio_init_inout(gpio_t* gpio, PinName pin, PinDirection direction, PinMode mode, int value) {
+   \                     gpio_init_inout: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0006             MOVS     R6,R0
+   \   00000004   0x000C             MOVS     R4,R1
+   \   00000006   0x0010             MOVS     R0,R2
+   \   00000008   0x001A             MOVS     R2,R3
+   \   0000000A   0x9D04             LDR      R5,[SP, #+16]
+     54              if (direction == PIN_INPUT) {
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD10B             BNE      ??gpio_init_inout_0
+     55                  _gpio_init_in(gpio, pin, mode);
+   \   00000010   0x0030             MOVS     R0,R6
+   \   00000012   0x.... 0x....      BL       _gpio_init_in
+     56                  if (pin != NC)
+   \   00000016   0x2000             MOVS     R0,#+0
+   \   00000018   0x43C0             MVNS     R0,R0            ;; #-1
+   \   0000001A   0x4284             CMP      R4,R0
+   \   0000001C   0xD008             BEQ      ??gpio_init_inout_1
+     57                      gpio_write(gpio, value); // we prepare the value in case it is switched later
+   \   0000001E   0x0029             MOVS     R1,R5
+   \   00000020   0x0030             MOVS     R0,R6
+   \   00000022   0x.... 0x....      BL       gpio_write
+   \   00000026   0xBD70             POP      {R4-R6,PC}
+     58              } else {
+     59                  _gpio_init_out(gpio, pin, mode, value);
+   \                     ??gpio_init_inout_0: (+1)
+   \   00000028   0x002B             MOVS     R3,R5
+   \   0000002A   0x0030             MOVS     R0,R6
+   \   0000002C   0x.... 0x....      BL       _gpio_init_out
+     60              }
+     61          }
+   \                     ??gpio_init_inout_1: (+1)
+   \   00000030   0xBD70             POP      {R4-R6,PC}       ;; return
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   _gpio_init_in
+        16   -> gpio_dir
+        16   -> gpio_init
+        16   -> gpio_mode
+      24   _gpio_init_out
+        24   -> gpio_dir
+        24   -> gpio_init
+        24   -> gpio_mode
+        24   -> gpio_write
+       8   gpio_init_in
+         8   -> _gpio_init_in
+       0   gpio_init_in_ex
+        16   -> gpio_dir
+        16   -> gpio_init
+        16   -> gpio_mode
+      16   gpio_init_inout
+        16   -> _gpio_init_in
+        16   -> _gpio_init_out
+        16   -> gpio_write
+       8   gpio_init_out
+         8   -> _gpio_init_out
+      16   gpio_init_out_ex
+        16   -> gpio_dir
+        16   -> gpio_init
+        16   -> gpio_mode
+        16   -> gpio_write
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      36  ?Subroutine0
+       4  _gpio_init_in
+      48  _gpio_init_out
+      10  gpio_init_in
+       2  gpio_init_in_ex
+      50  gpio_init_inout
+      12  gpio_init_out
+      46  gpio_init_out_ex
+
+ 
+ 208 bytes in section .text
+ 
+ 208 bytes of CODE memory
+
+Errors: none
+Warnings: 1

@@ -1,0 +1,425 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:53
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_memory.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_memory.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_memory.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_memory.o
+#        .\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_memory.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_memory.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_memory.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_memory.c
+      1          /*
+      2           * Copyright (c) 2013-2017 ARM Limited. All rights reserved.
+      3           *
+      4           * SPDX-License-Identifier: Apache-2.0
+      5           *
+      6           * Licensed under the Apache License, Version 2.0 (the License); you may
+      7           * not use this file except in compliance with the License.
+      8           * You may obtain a copy of the License at
+      9           *
+     10           * www.apache.org/licenses/LICENSE-2.0
+     11           *
+     12           * Unless required by applicable law or agreed to in writing, software
+     13           * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+     14           * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     15           * See the License for the specific language governing permissions and
+     16           * limitations under the License.
+     17           *
+     18           * -----------------------------------------------------------------------------
+     19           *
+     20           * Project:     CMSIS-RTOS RTX
+     21           * Title:       Memory functions
+     22           *
+     23           * -----------------------------------------------------------------------------
+     24           */
+     25          
+     26          #include "rtx_lib.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     27          
+     28          
+     29          //  Memory Pool Header structure
+     30          typedef struct mem_head_s {
+     31            uint32_t size;                // Memory Pool size
+     32            uint32_t used;                // Used Memory
+     33          } mem_head_t;
+     34          
+     35          //  Memory Block Header structure
+     36          typedef struct mem_block_s {
+     37            struct mem_block_s *next;     // Next Memory Block in list
+     38            uint32_t            info;     // Info: length = <31:2>:'00', type = <1:0>
+     39          } mem_block_t;
+     40          
+     41          #define MB_INFO_LEN_MASK        0xFFFFFFFCU
+     42          #define MB_INFO_TYPE_MASK       0x00000003U
+     43          
+     44          
+     45          //  ==== Library functions ====
+     46          
+     47          /// Initialize Memory Pool with variable block size.
+     48          /// \param[in]  mem             pointer to memory pool.
+     49          /// \param[in]  size            size of a memory pool in bytes.
+     50          /// \return 1 - success, 0 - failure.
+
+   \                                 In section .text, align 2
+     51          __WEAK uint32_t osRtxMemoryInit (void *mem, uint32_t size) {
+   \                     osRtxMemoryInit: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+     52            mem_head_t  *head;
+     53            mem_block_t *ptr;
+     54          
+     55            if ((mem == NULL) || ((uint32_t)mem & 7U) || (size & 7U) ||
+     56                (size < (sizeof(mem_head_t) + 2*sizeof(mem_block_t)))) {
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0xD006             BEQ      ??osRtxMemoryInit_0
+   \   00000006   0x2207             MOVS     R2,#+7
+   \   00000008   0x4210             TST      R0,R2
+   \   0000000A   0xD103             BNE      ??osRtxMemoryInit_0
+   \   0000000C   0x400A             ANDS     R2,R2,R1
+   \   0000000E   0xD101             BNE      ??osRtxMemoryInit_0
+   \   00000010   0x2918             CMP      R1,#+24
+   \   00000012   0xD204             BCS      ??osRtxMemoryInit_1
+     57              EvrRtxMemoryInit(mem, size, 0U);
+   \                     ??osRtxMemoryInit_0: (+1)
+   \   00000014   0x2200             MOVS     R2,#+0
+   \   00000016   0x.... 0x....      BL       EvrRtxMemoryInit
+     58              return 0U;
+   \   0000001A   0x2000             MOVS     R0,#+0
+   \   0000001C   0xBD10             POP      {R4,PC}
+     59            }
+     60          
+     61            head = (mem_head_t *)mem;
+     62            head->size = size;
+   \                     ??osRtxMemoryInit_1: (+1)
+   \   0000001E   0x6001             STR      R1,[R0, #+0]
+     63            head->used = sizeof(mem_head_t) + sizeof(mem_block_t);
+   \   00000020   0x2210             MOVS     R2,#+16
+   \   00000022   0x6042             STR      R2,[R0, #+4]
+     64          
+     65            ptr = (mem_block_t *)((uint32_t)mem + sizeof(mem_head_t));
+   \   00000024   0x0002             MOVS     R2,R0
+   \   00000026   0x3208             ADDS     R2,R2,#+8
+     66            ptr->next = (mem_block_t *)((uint32_t)mem + size - sizeof(mem_block_t));
+   \   00000028   0x1843             ADDS     R3,R0,R1
+   \   0000002A   0x3B08             SUBS     R3,R3,#+8
+   \   0000002C   0x6013             STR      R3,[R2, #+0]
+     67            ptr->next->next = NULL;
+   \   0000002E   0x2400             MOVS     R4,#+0
+   \   00000030   0x601C             STR      R4,[R3, #+0]
+     68            ptr->info = 0U;
+   \   00000032   0x6054             STR      R4,[R2, #+4]
+     69          
+     70            EvrRtxMemoryInit(mem, size, 1U);
+   \   00000034   0x2201             MOVS     R2,#+1
+   \   00000036   0x.... 0x....      BL       EvrRtxMemoryInit
+     71          
+     72            return 1U;
+   \   0000003A   0x2001             MOVS     R0,#+1
+   \   0000003C   0xBD10             POP      {R4,PC}          ;; return
+     73          }
+     74          
+     75          /// Allocate a memory block from a Memory Pool.
+     76          /// \param[in]  mem             pointer to memory pool.
+     77          /// \param[in]  size            size of a memory block in bytes.
+     78          /// \param[in]  type            memory block type: 0 - generic, 1 - control block
+     79          /// \return allocated memory block or NULL in case of no memory is available.
+
+   \                                 In section .text, align 2
+     80          __WEAK void *osRtxMemoryAlloc (void *mem, uint32_t size, uint32_t type) {
+   \                     osRtxMemoryAlloc: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+     81            mem_block_t *p, *p_new, *ptr;
+     82            uint32_t     hole_size;
+     83          
+     84            if ((mem == NULL) || (size == 0U) || (type & ~MB_INFO_TYPE_MASK)) {
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0xD022             BEQ      ??osRtxMemoryAlloc_0
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD020             BEQ      ??osRtxMemoryAlloc_0
+   \   0000000A   0x0893             LSRS     R3,R2,#+2
+   \   0000000C   0x009B             LSLS     R3,R3,#+2
+   \   0000000E   0xD11D             BNE      ??osRtxMemoryAlloc_0
+     85              EvrRtxMemoryAlloc(mem, size, type, NULL);
+     86              return NULL;
+     87            }
+     88          
+     89            // Add header to size
+     90            size += sizeof(mem_block_t);
+     91            // Make sure that block is 8-byte aligned
+     92            size = (size + 7U) & ~((uint32_t)7U);
+   \   00000010   0x310F             ADDS     R1,R1,#+15
+   \   00000012   0x2307             MOVS     R3,#+7
+   \   00000014   0x4399             BICS     R1,R1,R3
+     93          
+     94            // Search for hole big enough
+     95            p = (mem_block_t *)((uint32_t)mem + sizeof(mem_head_t));
+   \   00000016   0x0003             MOVS     R3,R0
+   \   00000018   0x3308             ADDS     R3,R3,#+8
+     96            for (;;) {
+     97              hole_size  = (uint32_t)p->next - (uint32_t)p;
+     98              hole_size -= p->info & MB_INFO_LEN_MASK;
+     99              if (hole_size >= size) {
+   \                     ??osRtxMemoryAlloc_1: (+1)
+   \   0000001A   0x001C             MOVS     R4,R3
+   \   0000001C   0x681D             LDR      R5,[R3, #+0]
+   \   0000001E   0x1B2F             SUBS     R7,R5,R4
+   \   00000020   0x46BC             MOV      R12,R7
+   \   00000022   0x685E             LDR      R6,[R3, #+4]
+   \   00000024   0x2703             MOVS     R7,#+3
+   \   00000026   0x43BE             BICS     R6,R6,R7
+   \   00000028   0x4667             MOV      R7,R12
+   \   0000002A   0x1BBE             SUBS     R6,R7,R6
+   \   0000002C   0x428E             CMP      R6,R1
+   \   0000002E   0xD309             BCC      ??osRtxMemoryAlloc_2
+    100                // Hole found
+    101                break;
+    102              }
+    103              p = p->next;
+    104              if (p->next == NULL) {
+    105                // Failed (end of list)
+    106                EvrRtxMemoryAlloc(mem, size, type, NULL);
+    107                return NULL;
+    108              }
+    109            }
+    110          
+    111            ((mem_head_t *)mem)->used += size;
+   \   00000030   0x6845             LDR      R5,[R0, #+4]
+   \   00000032   0x186D             ADDS     R5,R5,R1
+   \   00000034   0x6045             STR      R5,[R0, #+4]
+    112          
+    113            if (p->info == 0U) {
+   \   00000036   0x685E             LDR      R6,[R3, #+4]
+   \   00000038   0x0015             MOVS     R5,R2
+   \   0000003A   0x430D             ORRS     R5,R5,R1
+   \   0000003C   0x2E00             CMP      R6,#+0
+   \   0000003E   0xD10A             BNE      ??osRtxMemoryAlloc_3
+    114              // No block allocated, set info of first element
+    115              p->info = size | type;
+   \   00000040   0x605D             STR      R5,[R3, #+4]
+    116              ptr = (mem_block_t *)((uint32_t)p + sizeof(mem_block_t));
+   \   00000042   0xE00F             B        ??osRtxMemoryAlloc_4
+    117            } else {
+   \                     ??osRtxMemoryAlloc_2: (+1)
+   \   00000044   0x002B             MOVS     R3,R5
+   \   00000046   0x681C             LDR      R4,[R3, #+0]
+   \   00000048   0x2C00             CMP      R4,#+0
+   \   0000004A   0xD1E6             BNE      ??osRtxMemoryAlloc_1
+   \                     ??osRtxMemoryAlloc_0: (+1)
+   \   0000004C   0x2300             MOVS     R3,#+0
+   \   0000004E   0x.... 0x....      BL       EvrRtxMemoryAlloc
+   \   00000052   0x2000             MOVS     R0,#+0
+   \   00000054   0xBDF2             POP      {R1,R4-R7,PC}
+    118              // Insert new element into the list
+    119              p_new = (mem_block_t *)((uint32_t)p + (p->info & MB_INFO_LEN_MASK));
+   \                     ??osRtxMemoryAlloc_3: (+1)
+   \   00000056   0x2703             MOVS     R7,#+3
+   \   00000058   0x43BE             BICS     R6,R6,R7
+   \   0000005A   0x19A4             ADDS     R4,R4,R6
+    120              p_new->next = p->next;
+   \   0000005C   0x681E             LDR      R6,[R3, #+0]
+   \   0000005E   0x6026             STR      R6,[R4, #+0]
+    121              p_new->info = size | type;
+   \   00000060   0x6065             STR      R5,[R4, #+4]
+    122              p->next = p_new;
+   \   00000062   0x601C             STR      R4,[R3, #+0]
+    123              ptr = (mem_block_t *)((uint32_t)p_new + sizeof(mem_block_t));
+   \                     ??osRtxMemoryAlloc_4: (+1)
+   \   00000064   0x3408             ADDS     R4,R4,#+8
+    124            }
+    125          
+    126            EvrRtxMemoryAlloc(mem, size, type, ptr);
+   \   00000066   0x0023             MOVS     R3,R4
+   \   00000068   0x.... 0x....      BL       EvrRtxMemoryAlloc
+    127          
+    128            return ptr;
+   \   0000006C   0x0020             MOVS     R0,R4
+   \   0000006E   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    129          }
+    130          
+    131          /// Return an allocated memory block back to a Memory Pool.
+    132          /// \param[in]  mem             pointer to memory pool.
+    133          /// \param[in]  block           memory block to be returned to the memory pool.
+    134          /// \return 1 - success, 0 - failure.
+
+   \                                 In section .text, align 2
+    135          __WEAK uint32_t osRtxMemoryFree (void *mem, void *block) {
+   \                     osRtxMemoryFree: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+    136            mem_block_t *p, *p_prev, *ptr;
+    137          
+    138            if ((mem == NULL) || (block == NULL)) {
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0xD00D             BEQ      ??osRtxMemoryFree_0
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD00B             BEQ      ??osRtxMemoryFree_0
+    139              EvrRtxMemoryFree(mem, block, 0U);
+    140              return 0U;
+    141            }
+    142          
+    143            ptr = (mem_block_t *)((uint32_t)block - sizeof(mem_block_t));
+   \   0000000A   0x000A             MOVS     R2,R1
+   \   0000000C   0x3A08             SUBS     R2,R2,#+8
+    144          
+    145            // Search for header
+    146            p_prev = NULL;
+   \   0000000E   0x2300             MOVS     R3,#+0
+   \   00000010   0x2400             MOVS     R4,#+0
+    147            p = (mem_block_t *)((uint32_t)mem + sizeof(mem_head_t));
+   \   00000012   0x0005             MOVS     R5,R0
+   \   00000014   0x3508             ADDS     R5,R5,#+8
+    148            while (p != ptr) {
+   \                     ??osRtxMemoryFree_1: (+1)
+   \   00000016   0x4295             CMP      R5,R2
+   \   00000018   0xD008             BEQ      ??osRtxMemoryFree_2
+    149              p_prev = p;
+   \   0000001A   0x002C             MOVS     R4,R5
+    150              p = p->next;
+   \   0000001C   0x682D             LDR      R5,[R5, #+0]
+    151              if (p == NULL) {
+   \   0000001E   0x2D00             CMP      R5,#+0
+   \   00000020   0xD1F9             BNE      ??osRtxMemoryFree_1
+    152                // Not found
+    153                EvrRtxMemoryFree(mem, block, 0U);
+   \                     ??osRtxMemoryFree_0: (+1)
+   \   00000022   0x2200             MOVS     R2,#+0
+   \   00000024   0x.... 0x....      BL       EvrRtxMemoryFree
+    154                return 0U;
+   \   00000028   0x2000             MOVS     R0,#+0
+   \   0000002A   0xBDF2             POP      {R1,R4-R7,PC}
+    155              }
+    156            }
+    157          
+    158            ((mem_head_t *)mem)->used -= p->info & MB_INFO_LEN_MASK;
+   \                     ??osRtxMemoryFree_2: (+1)
+   \   0000002C   0x6842             LDR      R2,[R0, #+4]
+   \   0000002E   0x686E             LDR      R6,[R5, #+4]
+   \   00000030   0x2703             MOVS     R7,#+3
+   \   00000032   0x43BE             BICS     R6,R6,R7
+   \   00000034   0x1B92             SUBS     R2,R2,R6
+   \   00000036   0x6042             STR      R2,[R0, #+4]
+    159          
+    160            if (p_prev == NULL) {
+   \   00000038   0x2C00             CMP      R4,#+0
+   \   0000003A   0xD101             BNE      ??osRtxMemoryFree_3
+    161              // Release first block, only set info to 0
+    162              p->info = 0U;
+   \   0000003C   0x606B             STR      R3,[R5, #+4]
+   \   0000003E   0xE001             B        ??osRtxMemoryFree_4
+    163            } else {
+    164              // Discard block from chained list
+    165              p_prev->next = p->next;
+   \                     ??osRtxMemoryFree_3: (+1)
+   \   00000040   0x682A             LDR      R2,[R5, #+0]
+   \   00000042   0x6022             STR      R2,[R4, #+0]
+    166            }
+    167          
+    168            EvrRtxMemoryFree(mem, block, 1U);
+   \                     ??osRtxMemoryFree_4: (+1)
+   \   00000044   0x2201             MOVS     R2,#+1
+   \   00000046   0x.... 0x....      BL       EvrRtxMemoryFree
+    169          
+    170            return 1U;
+   \   0000004A   0x2001             MOVS     R0,#+1
+   \   0000004C   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    171          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   osRtxMemoryAlloc
+        24   -> EvrRtxMemoryAlloc
+      24   osRtxMemoryFree
+        24   -> EvrRtxMemoryFree
+       8   osRtxMemoryInit
+         8   -> EvrRtxMemoryInit
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+     112  osRtxMemoryAlloc
+      78  osRtxMemoryFree
+      62  osRtxMemoryInit
+
+ 
+ 252 bytes in section .text
+ 
+ 0 bytes of CODE memory (+ 252 bytes shared)
+
+Errors: none
+Warnings: 1

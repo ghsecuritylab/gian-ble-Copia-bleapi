@@ -1,0 +1,531 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:40
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\platform\CallChain.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\CallChain.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\CallChain.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\CallChain.o
+#        .\mbed-os\platform\CallChain.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\CallChain.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\CallChain.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\platform\CallChain.cpp
+      1          
+      2          // Suppress deprecation warnings since this whole
+      3          // class is deprecated already
+      4          #include "mbed_toolchain.h"
+      5          #undef MBED_DEPRECATED_SINCE
+      6          #define MBED_DEPRECATED_SINCE(...)
+      7          
+      8          #include "platform/CallChain.h"
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+   \                     _ZN4mbed8CallbackIFvvEEC1ERKS2_: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+   \   00000006   0x68E2             LDR      R2,[R4, #+12]
+   \   00000008   0x2A00             CMP      R2,#+0
+   \   0000000A   0xD001             BEQ      ??Callback_0
+   \   0000000C   0x6852             LDR      R2,[R2, #+4]
+   \   0000000E   0x4790             BLX      R2
+   \                     ??Callback_0: (+1)
+   \   00000010   0x68E0             LDR      R0,[R4, #+12]
+   \   00000012   0x60E8             STR      R0,[R5, #+12]
+   \   00000014   0x0028             MOVS     R0,R5
+   \   00000016   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+      9          #include "cmsis.h"
+     10          #include "platform/mbed_critical.h"
+     11          
+     12          namespace mbed {
+     13          
+     14          class CallChainLink {
+     15          public:
+     16              CallChainLink(): cb(), next(NULL) {
+     17                  // No work to do
+     18              }
+     19          
+     20              CallChainLink(Callback<void()> &callback): cb(callback), next(NULL) {
+     21                  // No work to do
+     22              }
+     23              Callback<void()> cb;
+     24              CallChainLink * next;
+     25          };
+     26          
+
+   \                                 In section .text, align 2, keep-with-next
+     27          CallChain::CallChain(int size) : _chain(NULL) {
+   \                     _ZN4mbed9CallChainC1Ei: (+1)
+   \   00000000   0xBF00             Nop      
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable3
+   \   00000002   0x6001             STR      R1,[R0, #+0]
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x6041             STR      R1,[R0, #+4]
+     28              // No work to do
+     29          }
+   \   00000008   0x4770             BX       LR               ;; return
+     30          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::CallChain::deleter ~CallChain()
+   \                     _ZN4mbed9CallChainD0Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x....             LDR      R0,??DataTable3
+   \   00000006   0x6020             STR      R0,[R4, #+0]
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0x.... 0x....      BL       _ZN4mbed9CallChain5clearEv
+   \   0000000E   0x0020             MOVS     R0,R4
+   \   00000010   0x.... 0x....      BL       _ZdlPv
+   \   00000014   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     31          CallChain::~CallChain() {
+   \                     _ZN4mbed9CallChainD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine1
+   \   00000002                      ;; // Fall through to label ?Subroutine1
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine1: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x....             LDR      R0,??DataTable3
+   \   00000004   0x6020             STR      R0,[R4, #+0]
+     32              clear();
+   \   00000006   0x0020             MOVS     R0,R4
+   \   00000008   0x.... 0x....      BL       _ZN4mbed9CallChain5clearEv
+     33          }
+   \   0000000C   0x0020             MOVS     R0,R4
+   \   0000000E   0xBD10             POP      {R4,PC}          ;; return
+     34          
+
+   \                                 In section .text, align 2, keep-with-next
+     35          pFunctionPointer_t CallChain::add(Callback<void()> func) {
+   \                     _ZN4mbed9CallChain3addENS_8CallbackIFvvEEE: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0006             MOVS     R6,R0
+   \   00000004   0x000F             MOVS     R7,R1
+     36              CallChainLink *new_link = new CallChainLink(func);
+   \   00000006   0x2014             MOVS     R0,#+20
+   \   00000008   0x.... 0x....      BL       _Znwj
+   \   0000000C   0x0004             MOVS     R4,R0
+   \   0000000E   0x2500             MOVS     R5,#+0
+   \   00000010   0x2C00             CMP      R4,#+0
+   \   00000012   0xD004             BEQ      ??add_0
+   \   00000014   0x0039             MOVS     R1,R7
+   \   00000016   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEEC1ERKS2_
+   \   0000001A   0x6125             STR      R5,[R4, #+16]
+   \   0000001C   0x0020             MOVS     R0,R4
+     37              if (NULL == _chain) {
+   \                     ??add_0: (+1)
+   \   0000001E   0x6871             LDR      R1,[R6, #+4]
+   \   00000020   0x2900             CMP      R1,#+0
+   \   00000022   0xD102             BNE      ??add_1
+     38                  _chain = new_link;
+   \   00000024   0x6070             STR      R0,[R6, #+4]
+     39                  return &new_link->cb;
+   \   00000026   0xBDF2             POP      {R1,R4-R7,PC}
+     40              }
+     41          
+     42              CallChainLink *link = _chain;
+     43              while (true) {
+     44                  if (NULL == link->next) {
+     45                      link->next = new_link;
+     46                      return &new_link->cb;
+     47                  }
+     48                  link = link->next;
+   \                     ??add_2: (+1)
+   \   00000028   0x0011             MOVS     R1,R2
+   \                     ??add_1: (+1)
+   \   0000002A   0x690A             LDR      R2,[R1, #+16]
+   \   0000002C   0x2A00             CMP      R2,#+0
+   \   0000002E   0xD1FB             BNE      ??add_2
+   \   00000030   0x6108             STR      R0,[R1, #+16]
+   \   00000032   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+     49              }
+     50          }
+     51          
+
+   \                                 In section .text, align 2, keep-with-next
+     52          pFunctionPointer_t CallChain::add_front(Callback<void()> func) {
+   \                     _ZN4mbed9CallChain9add_frontENS_8CallbackIFvvEEE: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0006             MOVS     R6,R0
+   \   00000004   0x000F             MOVS     R7,R1
+     53              CallChainLink *link = new CallChainLink(func);
+   \   00000006   0x2014             MOVS     R0,#+20
+   \   00000008   0x.... 0x....      BL       _Znwj
+   \   0000000C   0x0004             MOVS     R4,R0
+   \   0000000E   0x2500             MOVS     R5,#+0
+   \   00000010   0x2C00             CMP      R4,#+0
+   \   00000012   0xD004             BEQ      ??add_front_0
+   \   00000014   0x0039             MOVS     R1,R7
+   \   00000016   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEEC1ERKS2_
+   \   0000001A   0x6125             STR      R5,[R4, #+16]
+   \   0000001C   0x0020             MOVS     R0,R4
+     54              link->next = _chain;
+   \                     ??add_front_0: (+1)
+   \   0000001E   0x6871             LDR      R1,[R6, #+4]
+   \   00000020   0x6101             STR      R1,[R0, #+16]
+     55              _chain = link;
+   \   00000022   0x6070             STR      R0,[R6, #+4]
+     56              return &link->cb;
+   \   00000024   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+     57          }
+     58          
+
+   \                                 In section .text, align 2, keep-with-next
+     59          int CallChain::size() const {
+     60              CallChainLink *link = _chain;
+   \                     _ZNK4mbed9CallChain4sizeEv: (+1)
+   \   00000000   0x6841             LDR      R1,[R0, #+4]
+     61              int elements = 0;
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0xE001             B        ??size_0
+     62              while (link != NULL) {
+     63                  elements++;
+   \                     ??size_1: (+1)
+   \   00000006   0x1C40             ADDS     R0,R0,#+1
+     64                  link = link->next;
+   \   00000008   0x6909             LDR      R1,[R1, #+16]
+     65              }
+   \                     ??size_0: (+1)
+   \   0000000A   0x2900             CMP      R1,#+0
+   \   0000000C   0xD1FB             BNE      ??size_1
+     66              return elements;
+   \   0000000E   0x4770             BX       LR               ;; return
+     67          }
+     68          
+
+   \                                 In section .text, align 2, keep-with-next
+     69          pFunctionPointer_t CallChain::get(int idx) const {
+     70              CallChainLink *link = _chain;
+   \                     _ZNK4mbed9CallChain3getEi: (+1)
+   \   00000000   0x6840             LDR      R0,[R0, #+4]
+     71              for (int i = 0; i < idx; i++) {
+   \   00000002   0x2901             CMP      R1,#+1
+   \   00000004   0xDB04             BLT      ??get_0
+     72                  if (NULL == link) {
+   \                     ??get_1: (+1)
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD002             BEQ      ??get_0
+     73                      break;
+     74                  }
+     75                  link = link->next;
+   \   0000000A   0x6900             LDR      R0,[R0, #+16]
+     76              }
+   \   0000000C   0x1E49             SUBS     R1,R1,#+1
+   \   0000000E   0xD1FA             BNE      ??get_1
+     77              return &link->cb;
+   \                     ??get_0: (+1)
+   \   00000010   0x4770             BX       LR               ;; return
+     78          }
+     79          
+
+   \                                 In section .text, align 2, keep-with-next
+     80          int CallChain::find(pFunctionPointer_t f) const {
+     81              CallChainLink *link = _chain;
+   \                     _ZNK4mbed9CallChain4findEPNS_8CallbackIFvvEEE: (+1)
+   \   00000000   0x6842             LDR      R2,[R0, #+4]
+     82              int i = 0;
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0xE001             B        ??find_0
+     83              while (link != NULL) {
+     84                  if (f == &link->cb) {
+     85                      return i;
+     86                  }
+     87                  i++;
+   \                     ??find_1: (+1)
+   \   00000006   0x1C40             ADDS     R0,R0,#+1
+     88                  link = link->next;
+   \   00000008   0x6912             LDR      R2,[R2, #+16]
+   \                     ??find_0: (+1)
+   \   0000000A   0x2A00             CMP      R2,#+0
+   \   0000000C   0xD002             BEQ      ??find_2
+   \   0000000E   0x4291             CMP      R1,R2
+   \   00000010   0xD1F9             BNE      ??find_1
+   \   00000012   0x4770             BX       LR
+     89              }
+     90              return -1;
+   \                     ??find_2: (+1)
+   \   00000014   0x2000             MOVS     R0,#+0
+   \   00000016   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000018   0x4770             BX       LR               ;; return
+     91          }
+     92          
+
+   \                                 In section .text, align 2, keep-with-next
+     93          void CallChain::clear() {
+   \                     _ZN4mbed9CallChain5clearEv: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+     94              CallChainLink *link = _chain;
+   \   00000002   0x6844             LDR      R4,[R0, #+4]
+     95              _chain = NULL;
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x6041             STR      R1,[R0, #+4]
+   \   00000008   0x2C00             CMP      R4,#+0
+   \   0000000A   0xE00A             B        ??clear_0
+     96              while (link != NULL) {
+     97                  CallChainLink *temp = link->next;
+   \                     ??clear_1: (+1)
+   \   0000000C   0x6925             LDR      R5,[R4, #+16]
+     98                  delete link;
+   \   0000000E   0x68E1             LDR      R1,[R4, #+12]
+   \   00000010   0x2900             CMP      R1,#+0
+   \   00000012   0xD002             BEQ      ??clear_2
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x6889             LDR      R1,[R1, #+8]
+   \   00000018   0x4788             BLX      R1
+   \                     ??clear_2: (+1)
+   \   0000001A   0x0020             MOVS     R0,R4
+   \   0000001C   0x.... 0x....      BL       _ZdlPv
+     99                  link = temp;
+   \   00000020   0x002C             MOVS     R4,R5
+    100              }
+   \                     ??clear_0: (+1)
+   \   00000022   0xD1F3             BNE      ??clear_1
+    101          }
+   \   00000024   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    102          
+
+   \                                 In section .text, align 2, keep-with-next
+    103          bool CallChain::remove(pFunctionPointer_t f) {
+   \                     _ZN4mbed9CallChain6removeEPNS_8CallbackIFvvEEE: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    104              CallChainLink *link = _chain;
+   \   00000002   0x6844             LDR      R4,[R0, #+4]
+   \   00000004   0xE000             B        ??remove_0
+    105              while (link != NULL) {
+    106                  if (f == &link->cb) {
+    107                      delete link;
+    108                      return true;
+    109                  }
+    110                  link = link->next;
+   \                     ??remove_1: (+1)
+   \   00000006   0x6924             LDR      R4,[R4, #+16]
+   \                     ??remove_0: (+1)
+   \   00000008   0x2C00             CMP      R4,#+0
+   \   0000000A   0xD00C             BEQ      ??remove_2
+   \   0000000C   0x42A1             CMP      R1,R4
+   \   0000000E   0xD1FA             BNE      ??remove_1
+   \   00000010   0x68E1             LDR      R1,[R4, #+12]
+   \   00000012   0x2900             CMP      R1,#+0
+   \   00000014   0xD002             BEQ      ??remove_3
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0x6889             LDR      R1,[R1, #+8]
+   \   0000001A   0x4788             BLX      R1
+   \                     ??remove_3: (+1)
+   \   0000001C   0x0020             MOVS     R0,R4
+   \   0000001E   0x.... 0x....      BL       _ZdlPv
+   \   00000022   0x2001             MOVS     R0,#+1
+   \   00000024   0xBD10             POP      {R4,PC}
+    111              }
+    112              return false;
+   \                     ??remove_2: (+1)
+   \   00000026   0x2000             MOVS     R0,#+0
+   \   00000028   0xBD10             POP      {R4,PC}          ;; return
+    113          }
+    114          
+
+   \                                 In section .text, align 2, keep-with-next
+    115          void CallChain::call() {
+   \                     _ZN4mbed9CallChain4callEv: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+    116              CallChainLink *link = _chain;
+   \   00000002   0x6844             LDR      R4,[R0, #+4]
+   \   00000004   0x....             LDR      R7,??DataTable3_1
+   \   00000006   0x....             LDR      R6,??DataTable3_2
+   \   00000008   0x2584             MOVS     R5,#+132
+   \   0000000A   0x00AD             LSLS     R5,R5,#+2        ;; #+528
+   \   0000000C   0xE00C             B        ??call_0
+    117              while (link != NULL) {
+    118                  link->cb.call();
+   \                     ??call_1: (+1)
+   \   0000000E   0x68E0             LDR      R0,[R4, #+12]
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD104             BNE      ??call_2
+   \   00000014   0x002A             MOVS     R2,R5
+   \   00000016   0x0031             MOVS     R1,R6
+   \   00000018   0x0038             MOVS     R0,R7
+   \   0000001A   0x.... 0x....      BL       mbed_assert_internal
+   \                     ??call_2: (+1)
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0x68E1             LDR      R1,[R4, #+12]
+   \   00000022   0x6809             LDR      R1,[R1, #+0]
+   \   00000024   0x4788             BLX      R1
+    119                  link = link->next;
+   \   00000026   0x6924             LDR      R4,[R4, #+16]
+    120              }
+   \                     ??call_0: (+1)
+   \   00000028   0x2C00             CMP      R4,#+0
+   \   0000002A   0xD1F0             BNE      ??call_1
+    121          }
+   \   0000002C   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::CallChain::subobject CallChain(int)
+   \                     _ZN4mbed9CallChainC2Ei: (+1)
+   \   00000000   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::CallChain::subobject ~CallChain()
+   \                     _ZN4mbed9CallChainD2Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3:
+   \   00000000   0x........         DC32     _ZTVN4mbed9CallChainE+0x8
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_1:
+   \   00000000   0x........         DC32     _ZZNK4mbed8CallbackIFvvEE4callEvEs
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_2:
+   \   00000000   0x........         DC32     _ZZNK4mbed8CallbackIFvvEE4callEvEs_0
+    122          
+    123          } // namespace mbed
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   mbed::CallChain::CallChain(int)
+      24   mbed::CallChain::add(mbed::Callback<void ()>)
+        24   -> mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+        24   -> operator new(std::size_t)
+      24   mbed::CallChain::add_front(mbed::Callback<void ()>)
+        24   -> mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+        24   -> operator new(std::size_t)
+      24   mbed::CallChain::call()
+        24   -- Indirect call
+        24   -> mbed_assert_internal
+      16   mbed::CallChain::clear()
+        16   -- Indirect call
+        16   -> operator delete(void *)
+       8   mbed::CallChain::deleter ~CallChain()
+         8   -> mbed::CallChain::clear()
+         8   -> operator delete(void *)
+       0   mbed::CallChain::find(mbed::pFunctionPointer_t) const
+       0   mbed::CallChain::get(int) const
+       8   mbed::CallChain::remove(mbed::pFunctionPointer_t)
+         8   -- Indirect call
+         8   -> operator delete(void *)
+       0   mbed::CallChain::size() const
+       0   mbed::CallChain::subobject CallChain(int)
+       8   mbed::CallChain::subobject ~CallChain()
+         8   -> mbed::CallChain::clear()
+       0   mbed::CallChain::~CallChain()
+         8   -> mbed::CallChain::clear()
+      16   mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+        16   -- Indirect call
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable3_2
+      10  ?Subroutine0
+      16  ?Subroutine1
+       2  mbed::CallChain::CallChain(int)
+      52  mbed::CallChain::add(mbed::Callback<void ()>)
+      38  mbed::CallChain::add_front(mbed::Callback<void ()>)
+      46  mbed::CallChain::call()
+      38  mbed::CallChain::clear()
+      22  mbed::CallChain::deleter ~CallChain()
+      26  mbed::CallChain::find(mbed::pFunctionPointer_t) const
+      18  mbed::CallChain::get(int) const
+      42  mbed::CallChain::remove(mbed::pFunctionPointer_t)
+      16  mbed::CallChain::size() const
+       2  mbed::CallChain::subobject CallChain(int)
+       4  mbed::CallChain::subobject ~CallChain()
+       2  mbed::CallChain::~CallChain()
+      24  mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+     148  -- Other
+
+ 
+ 148 bytes in section .rodata
+ 370 bytes in section .text
+ 
+ 346 bytes of CODE  memory (+  24 bytes shared)
+   0 bytes of CONST memory (+ 148 bytes shared)
+
+Errors: none
+Warnings: none

@@ -1,0 +1,198 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:03
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\events\equeue\equeue_posix.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\equeue\equeue_posix.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\equeue\equeue_posix.s.txt
+#        -o .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\equeue\equeue_posix.o
+#        .\mbed-os\events\equeue\equeue_posix.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\equeue\equeue_posix.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\equeue\equeue_posix.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\events\equeue\equeue_posix.c
+      1          /*
+      2           * Implementation for Posix compliant platforms
+      3           *
+      4           * Copyright (c) 2016 Christopher Haster
+      5           *
+      6           * Licensed under the Apache License, Version 2.0 (the "License");
+      7           * you may not use this file except in compliance with the License.
+      8           * You may obtain a copy of the License at
+      9           *
+     10           *     http://www.apache.org/licenses/LICENSE-2.0
+     11           *
+     12           * Unless required by applicable law or agreed to in writing, software
+     13           * distributed under the License is distributed on an "AS IS" BASIS,
+     14           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     15           * See the License for the specific language governing permissions and
+     16           * limitations under the License.
+     17           */
+     18          #include "equeue/equeue_platform.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     19          
+     20          #if defined(EQUEUE_PLATFORM_POSIX)
+     21          
+     22          #include <time.h>
+     23          #include <sys/time.h>
+     24          #include <errno.h>
+     25          
+     26          
+     27          // Tick operations
+     28          unsigned equeue_tick(void) {
+     29              struct timeval tv;
+     30              gettimeofday(&tv, 0);
+     31              return (unsigned)(tv.tv_sec*1000 + tv.tv_usec/1000);
+     32          }
+     33          
+     34          
+     35          // Mutex operations
+     36          int equeue_mutex_create(equeue_mutex_t *m) {
+     37              return pthread_mutex_init(m, 0);
+     38          }
+     39          
+     40          void equeue_mutex_destroy(equeue_mutex_t *m) {
+     41              pthread_mutex_destroy(m);
+     42          }
+     43          
+     44          void equeue_mutex_lock(equeue_mutex_t *m) {
+     45              pthread_mutex_lock(m);
+     46          }
+     47          
+     48          void equeue_mutex_unlock(equeue_mutex_t *m) {
+     49              pthread_mutex_unlock(m);
+     50          }
+     51          
+     52          
+     53          // Semaphore operations
+     54          int equeue_sema_create(equeue_sema_t *s) {
+     55              int err = pthread_mutex_init(&s->mutex, 0);
+     56              if (err) {
+     57                  return err;
+     58              }
+     59          
+     60              err = pthread_cond_init(&s->cond, 0);
+     61              if (err) {
+     62                  return err;
+     63              }
+     64          
+     65              s->signal = false;
+     66              return 0;
+     67          }
+     68          
+     69          void equeue_sema_destroy(equeue_sema_t *s) {
+     70              pthread_cond_destroy(&s->cond);
+     71              pthread_mutex_destroy(&s->mutex);
+     72          }
+     73          
+     74          void equeue_sema_signal(equeue_sema_t *s) {
+     75              pthread_mutex_lock(&s->mutex);
+     76              s->signal = true;
+     77              pthread_cond_signal(&s->cond);
+     78              pthread_mutex_unlock(&s->mutex);
+     79          }
+     80          
+     81          bool equeue_sema_wait(equeue_sema_t *s, int ms) {
+     82              pthread_mutex_lock(&s->mutex);
+     83              if (!s->signal) {
+     84                  if (ms < 0) {
+     85                      pthread_cond_wait(&s->cond, &s->mutex);
+     86                  } else {
+     87                      struct timeval tv;
+     88                      gettimeofday(&tv, 0);
+     89          
+     90                      struct timespec ts = {
+     91                          .tv_sec = ms/1000 + tv.tv_sec,
+     92                          .tv_nsec = ms*1000000 + tv.tv_usec*1000,
+     93                      };
+     94          
+     95                      pthread_cond_timedwait(&s->cond, &s->mutex, &ts);
+     96                  }
+     97              }
+     98          
+     99              bool signal = s->signal;
+    100              s->signal = false;
+    101              pthread_mutex_unlock(&s->mutex);
+    102          
+    103              return signal;
+    104          }
+    105          
+    106          #endif
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: 1

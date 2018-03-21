@@ -1,0 +1,283 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       16/Mar/2018  12:16:37
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\netsocket\NetworkInterface.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DDEVICE_SERIAL=1 -DTARGET_CORTEX_M -DDEVICE_SPI=1 -DTARGET_LIKE_MBED
+#        -DMBED_BUILD_TIMESTAMP=1521198946.13 -DARM_MATH_CM0 -DTARGET_RELEASE
+#        -D__CORTEX_M0 -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0
+#        -DTOOLCHAIN_object -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -f
+#        .\BUILD\STEVAL_IDB007V1\iar\.includes_fc2e77952737cb4522ab0dffe8cfd8aa.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN
+#        -I./mbed-os/features/frameworks
+#        -I./mbed-os/features/frameworks/greentea-client
+#        -I./mbed-os/features/frameworks/greentea-client/greentea-client
+#        -I./mbed-os/features/frameworks/greentea-client/source
+#        -I./mbed-os/features/frameworks/unity
+#        -I./mbed-os/features/frameworks/unity/source
+#        -I./mbed-os/features/frameworks/unity/unity
+#        -I./mbed-os/features/frameworks/utest
+#        -I./mbed-os/features/frameworks/utest/source
+#        -I./mbed-os/features/frameworks/utest/utest
+#        -I./mbed-os/features/mbedtls -I./mbed-os/features/mbedtls/importer
+#        -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/features/netsocket
+#        -I./mbed-os/features/netsocket/cellular
+#        -I./mbed-os/features/netsocket/cellular/generic_modem_driver
+#        -I./mbed-os/features/netsocket/cellular/utils
+#        -I./mbed-os/features/storage -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\iar\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\NetworkInterface.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\NetworkInterface.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\NetworkInterface.o
+#        .\mbed-os\features\netsocket\NetworkInterface.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\NetworkInterface.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\NetworkInterface.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia\mbed-os\features\netsocket\NetworkInterface.cpp
+      1          /* Socket
+      2           * Copyright (c) 2015 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          
+     17          #include "netsocket/NetworkInterface.h"
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp NetworkInterface::~NetworkInterface()
+   \                     _ZN16NetworkInterfaceD1Ev: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp NetworkInterface::deleter ~NetworkInterface()
+   \                     _ZN16NetworkInterfaceD0Ev: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZdlPv
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+     18          #include "netsocket/NetworkStack.h"
+     19          #include <string.h>
+     20          
+     21          
+     22          // Default network-interface state
+
+   \                                 In section .text, align 2, keep-with-next
+     23          const char *NetworkInterface::get_mac_address()
+     24          {
+     25              return 0;
+   \                     _ZN16NetworkInterface15get_mac_addressEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+     26          }
+     27          
+
+   \                                 In section .text, align 2, keep-with-next
+     28          const char *NetworkInterface::get_ip_address()
+     29          {
+     30              return 0;
+   \                     _ZN16NetworkInterface14get_ip_addressEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+     31          }
+     32          
+
+   \                                 In section .text, align 2, keep-with-next
+     33          const char *NetworkInterface::get_netmask()
+     34          {
+     35              return 0;
+   \                     _ZN16NetworkInterface11get_netmaskEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+     36          }
+     37          
+
+   \                                 In section .text, align 2, keep-with-next
+     38          const char *NetworkInterface::get_gateway()
+     39          {
+     40              return 0;
+   \                     _ZN16NetworkInterface11get_gatewayEv: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+     41          }
+     42          
+
+   \                                 In section .text, align 2, keep-with-next
+     43          nsapi_error_t NetworkInterface::set_network(const char *ip_address, const char *netmask, const char *gateway)
+     44          {
+     45              return NSAPI_ERROR_UNSUPPORTED;
+   \                     _ZN16NetworkInterface11set_networkEPKcS1_S1_: (+1)
+   \   00000000   0x....             LDR      R0,??DataTable1  ;; 0xfffff446
+   \   00000002   0x4770             BX       LR               ;; return
+     46          }
+     47          
+
+   \                                 In section .text, align 2, keep-with-next
+     48          nsapi_error_t NetworkInterface::set_dhcp(bool dhcp)
+     49          {
+     50              if (!dhcp) {
+   \                     _ZN16NetworkInterface8set_dhcpEb: (+1)
+   \   00000000   0x2900             CMP      R1,#+0
+   \   00000002   0xD101             BNE      ??set_dhcp_0
+     51                  return NSAPI_ERROR_UNSUPPORTED;
+   \   00000004   0x....             LDR      R0,??DataTable1  ;; 0xfffff446
+   \   00000006   0x4770             BX       LR
+     52              } else {
+     53                  return NSAPI_ERROR_OK;
+   \                     ??set_dhcp_0: (+1)
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0x4770             BX       LR               ;; return
+     54              }
+     55          }
+     56          
+     57          // DNS operations go through the underlying stack by default
+
+   \                                 In section .text, align 2, keep-with-next
+     58          nsapi_error_t NetworkInterface::gethostbyname(const char *name, SocketAddress *address, nsapi_version_t version)
+     59          {
+   \                     _ZN16NetworkInterface13gethostbynameEPKcP13SocketAddress13nsapi_version: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x000C             MOVS     R4,R1
+   \   00000004   0x0015             MOVS     R5,R2
+   \   00000006   0x001E             MOVS     R6,R3
+     60              return get_stack()->gethostbyname(name, address, version);
+   \   00000008   0x6801             LDR      R1,[R0, #+0]
+   \   0000000A   0x6B09             LDR      R1,[R1, #+48]
+   \   0000000C   0x4788             BLX      R1
+   \   0000000E   0x0033             MOVS     R3,R6
+   \   00000010   0x002A             MOVS     R2,R5
+   \   00000012   0x0021             MOVS     R1,R4
+   \   00000014   0x6804             LDR      R4,[R0, #+0]
+   \   00000016   0x68E4             LDR      R4,[R4, #+12]
+   \   00000018   0x47A0             BLX      R4
+   \   0000001A   0xBD70             POP      {R4-R6,PC}       ;; return
+     61          }
+     62          
+
+   \                                 In section .text, align 2, keep-with-next
+     63          nsapi_error_t NetworkInterface::add_dns_server(const SocketAddress &address)
+     64          {
+   \                     _ZN16NetworkInterface14add_dns_serverERK13SocketAddress: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x000C             MOVS     R4,R1
+     65              return get_stack()->add_dns_server(address);
+   \   00000004   0x6801             LDR      R1,[R0, #+0]
+   \   00000006   0x6B09             LDR      R1,[R1, #+48]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0x0021             MOVS     R1,R4
+   \   0000000C   0x6802             LDR      R2,[R0, #+0]
+   \   0000000E   0x6912             LDR      R2,[R2, #+16]
+   \   00000010   0x4790             BLX      R2
+   \   00000012   0xBD10             POP      {R4,PC}          ;; return
+     66          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \   00000000   0xFFFFF446         DC32     0xfffff446
+     67          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   NetworkInterface::add_dns_server(SocketAddress const &)
+         8   -- Indirect call
+       8   NetworkInterface::deleter ~NetworkInterface()
+         8   -> operator delete(void *)
+       0   NetworkInterface::get_gateway()
+       0   NetworkInterface::get_ip_address()
+       0   NetworkInterface::get_mac_address()
+       0   NetworkInterface::get_netmask()
+      16   NetworkInterface::gethostbyname(char const *, SocketAddress *, nsapi_version)
+        16   -- Indirect call
+       0   NetworkInterface::set_dhcp(bool)
+       0   NetworkInterface::set_network(char const *, char const *, char const *)
+       0   NetworkInterface::~NetworkInterface()
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+      20  NetworkInterface::add_dns_server(SocketAddress const &)
+       8  NetworkInterface::deleter ~NetworkInterface()
+       4  NetworkInterface::get_gateway()
+       4  NetworkInterface::get_ip_address()
+       4  NetworkInterface::get_mac_address()
+       4  NetworkInterface::get_netmask()
+      28  NetworkInterface::gethostbyname(char const *, SocketAddress *, nsapi_version)
+      12  NetworkInterface::set_dhcp(bool)
+       4  NetworkInterface::set_network(char const *, char const *, char const *)
+       2  NetworkInterface::~NetworkInterface()
+      88  -- Other
+
+ 
+ 88 bytes in section .rodata
+ 94 bytes in section .text
+ 
+ 84 bytes of CODE  memory (+ 10 bytes shared)
+  0 bytes of CONST memory (+ 88 bytes shared)
+
+Errors: none
+Warnings: none

@@ -1,0 +1,367 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:43
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\platform\LocalFileSystem.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\LocalFileSystem.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\LocalFileSystem.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\LocalFileSystem.o
+#        .\mbed-os\platform\LocalFileSystem.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\LocalFileSystem.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\LocalFileSystem.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\platform\LocalFileSystem.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "platform/LocalFileSystem.h"
+     17          
+     18          #if DEVICE_LOCALFILESYSTEM
+     19          
+     20          #include "platform/mbed_semihost_api.h"
+     21          #include <string.h>
+     22          #include <stdio.h>
+     23          #include <errno.h>
+     24          
+     25          namespace mbed {
+     26          
+     27          /* Extension to FINFO type defined in RTL.h (in Keil RL) - adds 'create time'. */
+     28          typedef struct {
+     29              unsigned char  hr;   /* Hours    [0..23]                  */
+     30              unsigned char  min;  /* Minutes  [0..59]                  */
+     31              unsigned char  sec;  /* Seconds  [0..59]                  */
+     32              unsigned char  day;  /* Day      [1..31]                  */
+     33              unsigned char  mon;  /* Month    [1..12]                  */
+     34              unsigned short year; /* Year     [1980..2107]             */
+     35          } FTIME;
+     36          
+     37          typedef struct {         /* File Search info record           */
+     38              char  name[32];      /* File name                         */
+     39              long  size;          /* File size in bytes                */
+     40              int   fileID;        /* System File Identification        */
+     41              FTIME create_time;   /* Date & time file was created      */
+     42              FTIME write_time;    /* Date & time of last write         */
+     43          } XFINFO;
+     44          
+     45          #define RESERVED_FOR_USER_APPLICATIONS (0x100) /* 0x100 - 0x1ff */
+     46          #define USR_XFFIND (RESERVED_FOR_USER_APPLICATIONS + 0)
+     47          
+     48          static int xffind (const char *pattern, XFINFO *info) {
+     49              unsigned param[4];
+     50          
+     51              param[0] = (unsigned long)pattern;
+     52              param[1] = (unsigned long)strlen(pattern);
+     53              param[2] = (unsigned long)info;
+     54              param[3] = (unsigned long)sizeof(XFINFO);
+     55          
+     56              return __semihost(USR_XFFIND, param);
+     57          }
+     58          
+     59          #define OPEN_R          0
+     60          #define OPEN_B          1
+     61          #define OPEN_PLUS       2
+     62          #define OPEN_W          4
+     63          #define OPEN_A          8
+     64          #define OPEN_INVALID   -1
+     65          
+     66          int posix_to_semihost_open_flags(int flags) {
+     67              /* POSIX flags -> semihosting open mode */
+     68              int openmode;
+     69              if (flags & O_RDWR) {
+     70                  /* a plus mode */
+     71                  openmode = OPEN_PLUS;
+     72                  if (flags & O_APPEND) {
+     73                      openmode |= OPEN_A;
+     74                  } else if (flags & O_TRUNC) {
+     75                      openmode |= OPEN_W;
+     76                  } else {
+     77                      openmode |= OPEN_R;
+     78                  }
+     79              } else if (flags & O_WRONLY) {
+     80                  /* write or append */
+     81                  if (flags & O_APPEND) {
+     82                      openmode = OPEN_A;
+     83                  } else {
+     84                      openmode = OPEN_W;
+     85                  }
+     86              } else if (flags == O_RDONLY) {
+     87                  /* read mode */
+     88                  openmode = OPEN_R;
+     89              } else {
+     90                  /* invalid flags */
+     91                  openmode = OPEN_INVALID;
+     92              }
+     93          
+     94              return openmode;
+     95          }
+     96          
+     97          FILEHANDLE local_file_open(const char* name, int flags) {
+     98              int openmode = posix_to_semihost_open_flags(flags);
+     99              if (openmode == OPEN_INVALID) {
+    100                  return (FILEHANDLE)NULL;
+    101              }
+    102          
+    103              FILEHANDLE fh = semihost_open(name, openmode);
+    104              if (fh == -1) {
+    105                  return (FILEHANDLE)NULL;
+    106              }
+    107          
+    108              return fh;
+    109          }
+    110          
+    111          LocalFileHandle::LocalFileHandle(FILEHANDLE fh) : _fh(fh), pos(0) {
+    112              // No lock needed in constructor
+    113          }
+    114          
+    115          int LocalFileHandle::close() {
+    116              int retval = semihost_close(_fh);
+    117              delete this;
+    118              return retval;
+    119          }
+    120          
+    121          ssize_t LocalFileHandle::write(const void *buffer, size_t length) {
+    122              lock();
+    123              ssize_t n = semihost_write(_fh, (const unsigned char*)buffer, length, 0); // number of characters not written
+    124              n = length - n; // number of characters written
+    125              pos += n;
+    126              unlock();
+    127              return n;
+    128          }
+    129          
+    130          ssize_t LocalFileHandle::read(void *buffer, size_t length) {
+    131              lock();
+    132              ssize_t n = semihost_read(_fh, (unsigned char*)buffer, length, 0); // number of characters not read
+    133              n = length - n; // number of characters read
+    134              pos += n;
+    135              unlock();
+    136              return n;
+    137          }
+    138          
+    139          int LocalFileHandle::isatty() {
+    140              lock();
+    141              int ret = semihost_istty(_fh);
+    142              unlock();
+    143              return ret;
+    144          }
+    145          
+    146          off_t LocalFileHandle::seek(off_t position, int whence) {
+    147              lock();
+    148              if (whence == SEEK_CUR) {
+    149                  position += pos;
+    150              } else if (whence == SEEK_END) {
+    151                  position += semihost_flen(_fh);
+    152              } /* otherwise SEEK_SET, so position is fine */
+    153          
+    154              /* Always seems to return -1, so just ignore for now. */
+    155              semihost_seek(_fh, position);
+    156              pos = position;
+    157              unlock();
+    158              return position;
+    159          }
+    160          
+    161          int LocalFileHandle::sync() {
+    162              lock();
+    163              int ret = semihost_ensure(_fh);
+    164              unlock();
+    165              return ret;
+    166          }
+    167          
+    168          off_t LocalFileHandle::size() {
+    169              lock();
+    170              off_t off = semihost_flen(_fh);
+    171              unlock();
+    172              return off;
+    173          }
+    174          
+    175          void LocalFileHandle::lock() {
+    176              _mutex.lock();
+    177          }
+    178          
+    179          void LocalFileHandle::unlock() {
+    180              _mutex.unlock();
+    181          }
+    182          
+    183          class LocalDirHandle : public DirHandle {
+    184          
+    185          public:
+    186              XFINFO info;
+    187          
+    188              LocalDirHandle() : info() {
+    189              }
+    190          
+    191              virtual int close() {
+    192                  // No lock can be used in destructor
+    193                  delete this;
+    194                  return 0;
+    195              }
+    196          
+    197              virtual int read(struct dirent *ent) {
+    198                  lock();
+    199                  if (xffind("*", &info)!=0) {
+    200                      unlock();
+    201                      return 0;
+    202                  }
+    203                  memcpy(ent->d_name, info.name, sizeof(info.name));
+    204                  unlock();
+    205                  return 1;
+    206              }
+    207          
+    208              virtual void rewind() {
+    209                  lock();
+    210                  info.fileID = 0;
+    211                  unlock();
+    212              }
+    213          
+    214              virtual off_t tell() {
+    215                  lock();
+    216                  int fileId = info.fileID;
+    217                  unlock();
+    218                  return fileId;
+    219              }
+    220          
+    221              virtual void seek(off_t offset) {
+    222                  lock();
+    223                  info.fileID = offset;
+    224                  unlock();
+    225              }
+    226          
+    227          protected:
+    228              PlatformMutex _mutex;
+    229          
+    230              virtual void lock() {
+    231                  _mutex.lock();
+    232              }
+    233          
+    234              virtual void unlock() {
+    235                  _mutex.unlock();
+    236              }
+    237          };
+    238          
+    239          int LocalFileSystem::open(FileHandle **file, const char* name, int flags) {
+    240              // No global state modified so function is thread safe
+    241          
+    242              /* reject filenames with / in them */
+    243              for (const char *tmp = name; *tmp; tmp++) {
+    244                  if (*tmp == '/') {
+    245                      return -EINVAL;
+    246                  }
+    247              }
+    248          
+    249              int openmode = posix_to_semihost_open_flags(flags);
+    250              if (openmode == OPEN_INVALID) {
+    251                  return -EINVAL;
+    252              }
+    253          
+    254              FILEHANDLE fh = semihost_open(name, openmode);
+    255              if (fh == -1) {
+    256                  return -EIO;
+    257              }
+    258          
+    259              *file = new LocalFileHandle(fh);
+    260              return 0;
+    261          }
+    262          
+    263          int LocalFileSystem::remove(const char *filename) {
+    264              // No global state modified so function is thread safe
+    265          
+    266              return semihost_remove(filename);
+    267          }
+    268          
+    269          int LocalFileSystem::open(DirHandle **dir, const char *name) {
+    270              // No global state modified so function is thread safe
+    271          
+    272              *dir = new LocalDirHandle();
+    273              return 0;
+    274          }
+    275          
+    276          } // namespace mbed
+    277          
+    278          #endif
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

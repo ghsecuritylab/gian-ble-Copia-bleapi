@@ -1,0 +1,252 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       16/Mar/2018  12:16:43
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\netsocket\WiFiAccessPoint.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DDEVICE_SERIAL=1 -DTARGET_CORTEX_M -DDEVICE_SPI=1 -DTARGET_LIKE_MBED
+#        -DMBED_BUILD_TIMESTAMP=1521198946.13 -DARM_MATH_CM0 -DTARGET_RELEASE
+#        -D__CORTEX_M0 -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0
+#        -DTOOLCHAIN_object -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -f
+#        .\BUILD\STEVAL_IDB007V1\iar\.includes_fc2e77952737cb4522ab0dffe8cfd8aa.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN
+#        -I./mbed-os/features/frameworks
+#        -I./mbed-os/features/frameworks/greentea-client
+#        -I./mbed-os/features/frameworks/greentea-client/greentea-client
+#        -I./mbed-os/features/frameworks/greentea-client/source
+#        -I./mbed-os/features/frameworks/unity
+#        -I./mbed-os/features/frameworks/unity/source
+#        -I./mbed-os/features/frameworks/unity/unity
+#        -I./mbed-os/features/frameworks/utest
+#        -I./mbed-os/features/frameworks/utest/source
+#        -I./mbed-os/features/frameworks/utest/utest
+#        -I./mbed-os/features/mbedtls -I./mbed-os/features/mbedtls/importer
+#        -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/features/netsocket
+#        -I./mbed-os/features/netsocket/cellular
+#        -I./mbed-os/features/netsocket/cellular/generic_modem_driver
+#        -I./mbed-os/features/netsocket/cellular/utils
+#        -I./mbed-os/features/storage -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\iar\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\WiFiAccessPoint.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\WiFiAccessPoint.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\WiFiAccessPoint.o
+#        .\mbed-os\features\netsocket\WiFiAccessPoint.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\WiFiAccessPoint.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\WiFiAccessPoint.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia\mbed-os\features\netsocket\WiFiAccessPoint.cpp
+      1          #include "netsocket/WiFiAccessPoint.h"
+      2          
+
+   \                                 In section .text, align 2, keep-with-next
+      3          WiFiAccessPoint::WiFiAccessPoint()
+   \                     _ZN15WiFiAccessPointC1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+      4          {
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+      5              memset(&_ap, 0, sizeof(_ap));
+   \   00000002   0x212A             MOVS     R1,#+42
+   \   00000004   0x.... 0x....      BL       __aeabi_memclr
+      6          }
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xBD10             POP      {R4,PC}          ;; return
+      7          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp WiFiAccessPoint::subobject WiFiAccessPoint(nsapi_wifi_ap)
+   \                     _ZN15WiFiAccessPointC2E13nsapi_wifi_ap: (+1)
+   \   00000000   0xB40E             PUSH     {R1-R3}
+   \   00000002   0xB510             PUSH     {R4,LR}
+   \   00000004   0xB089             SUB      SP,SP,#+36
+   \   00000006   0x0004             MOVS     R4,R0
+   \   00000008   0xA90B             ADD      R1,SP,#+44
+   \   0000000A   0xB083             SUB      SP,SP,#+12
+   \   0000000C   0x4668             MOV      R0,SP
+   \   0000000E   0x222C             MOVS     R2,#+44
+   \   00000010   0x.... 0x....      BL       __aeabi_memcpy4
+   \   00000014   0xBC0E             POP      {R1-R3}
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0x.... 0x....      BL       _ZN15WiFiAccessPointC1E13nsapi_wifi_ap
+   \   0000001C   0xB009             ADD      SP,SP,#+36
+   \   0000001E   0x9901             LDR      R1,[SP, #+4]
+   \   00000020   0xBC10             POP      {R4}
+   \   00000022   0xB004             ADD      SP,SP,#+16
+   \   00000024   0x4708             BX       R1               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+      8          WiFiAccessPoint::WiFiAccessPoint(nsapi_wifi_ap_t ap)
+      9          {
+   \                     _ZN15WiFiAccessPointC1E13nsapi_wifi_ap: (+1)
+   \   00000000   0xB40E             PUSH     {R1-R3}
+   \   00000002   0xB518             PUSH     {R3,R4,LR}
+   \   00000004   0x0004             MOVS     R4,R0
+     10              _ap = ap;
+   \   00000006   0xA903             ADD      R1,SP,#+12
+   \   00000008   0x222A             MOVS     R2,#+42
+   \   0000000A   0x.... 0x....      BL       __aeabi_memcpy
+     11          }
+   \   0000000E   0x0020             MOVS     R0,R4
+   \   00000010   0xB001             ADD      SP,SP,#+4
+   \   00000012   0x9901             LDR      R1,[SP, #+4]
+   \   00000014   0xBC10             POP      {R4}
+   \   00000016   0xB004             ADD      SP,SP,#+16
+   \   00000018   0x4708             BX       R1               ;; return
+     12          
+
+   \                                 In section .text, align 2, keep-with-next
+     13          const char *WiFiAccessPoint::get_ssid() const
+     14          {
+     15              return _ap.ssid;
+   \                     _ZNK15WiFiAccessPoint8get_ssidEv: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+     16          }
+     17          
+
+   \                                 In section .text, align 2, keep-with-next
+     18          const uint8_t *WiFiAccessPoint::get_bssid() const
+     19          {
+     20              return _ap.bssid;
+   \                     _ZNK15WiFiAccessPoint9get_bssidEv: (+1)
+   \   00000000   0x3021             ADDS     R0,R0,#+33
+   \   00000002   0x4770             BX       LR               ;; return
+     21          }
+     22          
+
+   \                                 In section .text, align 2, keep-with-next
+     23          nsapi_security_t WiFiAccessPoint::get_security() const
+     24          {
+     25              return _ap.security;
+   \                     _ZNK15WiFiAccessPoint12get_securityEv: (+1)
+   \   00000000   0x2127             MOVS     R1,#+39
+   \   00000002   0x5C40             LDRB     R0,[R0, R1]
+   \   00000004   0x4770             BX       LR               ;; return
+     26          }
+     27          
+
+   \                                 In section .text, align 2, keep-with-next
+     28          int8_t WiFiAccessPoint::get_rssi() const
+     29          {
+     30              return _ap.rssi;
+   \                     _ZNK15WiFiAccessPoint8get_rssiEv: (+1)
+   \   00000000   0x2128             MOVS     R1,#+40
+   \   00000002   0x5640             LDRSB    R0,[R0, R1]
+   \   00000004   0x4770             BX       LR               ;; return
+     31          }
+     32          
+
+   \                                 In section .text, align 2, keep-with-next
+     33          uint8_t WiFiAccessPoint::get_channel() const
+     34          {
+     35              return _ap.channel;
+   \                     _ZNK15WiFiAccessPoint11get_channelEv: (+1)
+   \   00000000   0x2129             MOVS     R1,#+41
+   \   00000002   0x5C40             LDRB     R0,[R0, R1]
+   \   00000004   0x4770             BX       LR               ;; return
+     36          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp WiFiAccessPoint::subobject WiFiAccessPoint()
+   \                     _ZN15WiFiAccessPointC2Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine0
+     37          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   WiFiAccessPoint::WiFiAccessPoint()
+         8   -> __aeabi_memclr
+      24   WiFiAccessPoint::WiFiAccessPoint(nsapi_wifi_ap)
+        24   -> __aeabi_memcpy
+       0   WiFiAccessPoint::get_bssid() const
+       0   WiFiAccessPoint::get_channel() const
+       0   WiFiAccessPoint::get_rssi() const
+       0   WiFiAccessPoint::get_security() const
+       0   WiFiAccessPoint::get_ssid() const
+       8   WiFiAccessPoint::subobject WiFiAccessPoint()
+         8   -> __aeabi_memclr
+      68   WiFiAccessPoint::subobject WiFiAccessPoint(nsapi_wifi_ap)
+        56   -> WiFiAccessPoint::WiFiAccessPoint(nsapi_wifi_ap)
+        68   -> __aeabi_memcpy4
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ?Subroutine0
+       2  WiFiAccessPoint::WiFiAccessPoint()
+      26  WiFiAccessPoint::WiFiAccessPoint(nsapi_wifi_ap)
+       4  WiFiAccessPoint::get_bssid() const
+       6  WiFiAccessPoint::get_channel() const
+       6  WiFiAccessPoint::get_rssi() const
+       6  WiFiAccessPoint::get_security() const
+       2  WiFiAccessPoint::get_ssid() const
+       4  WiFiAccessPoint::subobject WiFiAccessPoint()
+      38  WiFiAccessPoint::subobject WiFiAccessPoint(nsapi_wifi_ap)
+
+ 
+ 106 bytes in section .text
+ 
+ 106 bytes of CODE memory
+
+Errors: none
+Warnings: none

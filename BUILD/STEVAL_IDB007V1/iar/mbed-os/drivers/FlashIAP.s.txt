@@ -1,0 +1,255 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:32:58
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\drivers\FlashIAP.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\FlashIAP.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\FlashIAP.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\FlashIAP.o
+#        .\mbed-os\drivers\FlashIAP.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\FlashIAP.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\FlashIAP.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\drivers\FlashIAP.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2017 ARM Limited
+      3           *
+      4           * Permission is hereby granted, free of charge, to any person obtaining a copy
+      5           * of this software and associated documentation files (the "Software"), to deal
+      6           * in the Software without restriction, including without limitation the rights
+      7           * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+      8           * copies of the Software, and to permit persons to whom the Software is
+      9           * furnished to do so, subject to the following conditions:
+     10           *
+     11           * The above copyright notice and this permission notice shall be included in
+     12           * all copies or substantial portions of the Software.
+     13           *
+     14           * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+     15           * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+     16           * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+     17           * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+     18           * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+     19           * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+     20           * SOFTWARE.
+     21           */
+     22          
+     23          #include <string.h>
+     24          #include "FlashIAP.h"
+     25          #include "mbed_assert.h"
+     26          
+     27          
+     28          #ifdef DEVICE_FLASH
+     29          
+     30          namespace mbed {
+     31          
+     32          SingletonPtr<PlatformMutex> FlashIAP::_mutex;
+     33          
+     34          static inline bool is_aligned(uint32_t number, uint32_t alignment)
+     35          {
+     36              if ((number % alignment) != 0) {
+     37                  return false;
+     38              } else {
+     39                  return true;
+     40              }
+     41          }
+     42          
+     43          FlashIAP::FlashIAP()
+     44          {
+     45          
+     46          }
+     47          
+     48          FlashIAP::~FlashIAP()
+     49          {
+     50          
+     51          }
+     52          
+     53          int FlashIAP::init()
+     54          {
+     55              int ret = 0;
+     56              _mutex->lock();
+     57              if (flash_init(&_flash)) {
+     58                  ret = -1;
+     59              }
+     60              _mutex->unlock();
+     61              return ret;
+     62          }
+     63          
+     64          int FlashIAP::deinit()
+     65          {
+     66              int ret = 0;
+     67              _mutex->lock();
+     68              if (flash_free(&_flash)) {
+     69                  ret = -1;
+     70              }
+     71              _mutex->unlock();
+     72              return ret;
+     73          }
+     74          
+     75          
+     76          int FlashIAP::read(void *buffer, uint32_t addr, uint32_t size)
+     77          {
+     78              int32_t ret = -1;
+     79              _mutex->lock();
+     80              ret = flash_read(&_flash, addr, (uint8_t *) buffer, size);
+     81              _mutex->unlock();
+     82              return ret;
+     83          }
+     84          
+     85          int FlashIAP::program(const void *buffer, uint32_t addr, uint32_t size)
+     86          {
+     87              uint32_t page_size = get_page_size();
+     88              uint32_t current_sector_size = flash_get_sector_size(&_flash, addr);
+     89              // addr and size should be aligned to page size, and multiple of page size
+     90              // page program should not cross sector boundaries
+     91              if (!is_aligned(addr, page_size) ||
+     92                  !is_aligned(size, page_size) ||
+     93                  (size < page_size) ||
+     94                  (((addr % current_sector_size) + size) > current_sector_size)) {
+     95                  return -1;
+     96              }
+     97          
+     98              int ret = 0;
+     99              _mutex->lock();
+    100              if (flash_program_page(&_flash, addr, (const uint8_t *)buffer, size)) {
+    101                  ret = -1;
+    102              }
+    103              _mutex->unlock();
+    104              return ret;
+    105          }
+    106          
+    107          bool FlashIAP::is_aligned_to_sector(uint32_t addr, uint32_t size)
+    108          {
+    109              uint32_t current_sector_size = flash_get_sector_size(&_flash, addr);
+    110              if (!is_aligned(size, current_sector_size) ||
+    111                  !is_aligned(addr, current_sector_size)) {
+    112                  return false;
+    113              } else {
+    114                  return true;
+    115              }
+    116          }
+    117          
+    118          int FlashIAP::erase(uint32_t addr, uint32_t size)
+    119          {
+    120              uint32_t current_sector_size = 0UL;
+    121          
+    122              if (!is_aligned_to_sector(addr, size)) {
+    123                  return -1;
+    124              }
+    125          
+    126              int32_t ret = 0;
+    127              _mutex->lock();
+    128              while (size) {
+    129                  ret = flash_erase_sector(&_flash, addr);
+    130                  if (ret != 0) {
+    131                      ret = -1;
+    132                      break;
+    133                  }
+    134                  current_sector_size = flash_get_sector_size(&_flash, addr);
+    135                  if (!is_aligned_to_sector(addr, size)) {
+    136                      ret = -1;
+    137                      break;
+    138                  }
+    139                  size -= current_sector_size;
+    140                  addr += current_sector_size;
+    141              }
+    142              _mutex->unlock();
+    143              return ret;
+    144          }
+    145          
+    146          uint32_t FlashIAP::get_page_size() const
+    147          {
+    148              return flash_get_page_size(&_flash);
+    149          }
+    150          
+    151          uint32_t FlashIAP::get_sector_size(uint32_t addr) const
+    152          {
+    153              return flash_get_sector_size(&_flash, addr);
+    154          }
+    155          
+    156          uint32_t FlashIAP::get_flash_start() const
+    157          {
+    158              return flash_get_start_address(&_flash);
+    159          }
+    160          
+    161          uint32_t FlashIAP::get_flash_size() const
+    162          {
+    163              return flash_get_size(&_flash);
+    164          }
+    165          
+    166          }
+    167          
+    168          #endif
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

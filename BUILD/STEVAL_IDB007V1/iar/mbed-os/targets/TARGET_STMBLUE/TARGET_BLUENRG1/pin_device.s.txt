@@ -1,0 +1,188 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:59
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        .\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\pin_device.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\pin_device.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\pin_device.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\pin_device.o
+#        .\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\pin_device.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\pin_device.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\pin_device.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\pin_device.c
+      1          /*
+      2           * pin_device.c
+      3           *
+      4           *  Created on: 29 nov 2017
+      5           *      Author: Gianluca
+      6           */
+      7          
+      8          
+      9          #include "pin_device.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     10          
+     11          
+
+   \                                 In section .text, align 2, keep-with-next
+     12          uint32_t getGpioPin(PinName pin){
+   \                     getGpioPin: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+     13          	return (uint32_t)(1 << ((uint32_t)pin & 0xF)); // Return the pin mask
+   \   00000002   0x2001             MOVS     R0,#+1
+   \   00000004   0x0709             LSLS     R1,R1,#+28
+   \   00000006   0x0F09             LSRS     R1,R1,#+28
+   \   00000008   0x4088             LSLS     R0,R0,R1
+   \   0000000A   0x4770             BX       LR               ;; return
+     14          	/*uint32_t mask;
+     15          	switch (pin)
+     16          	{
+     17          		case(IO_0):
+     18          			mask = GPIO_Pin_0;
+     19          			break;
+     20          		case(IO_1):
+     21          			mask = GPIO_Pin_1;
+     22          			break;
+     23          		case(IO_2):
+     24          			mask = GPIO_Pin_2;
+     25          			break;
+     26          		case(IO_3):
+     27          			mask = GPIO_Pin_3;
+     28          			break;
+     29          		case(IO_4):
+     30          			mask = GPIO_Pin_4;
+     31          			break;
+     32          		case(IO_5):
+     33          			mask = GPIO_Pin_5;
+     34          			break;
+     35          		case(IO_6):
+     36          			mask = GPIO_Pin_6;
+     37          			break;
+     38          		case(IO_7):
+     39          			mask = GPIO_Pin_7;
+     40          			break;
+     41          		case(IO_8):
+     42          			mask = GPIO_Pin_8;
+     43          			break;
+     44          		case(IO_9):
+     45          			mask = GPIO_Pin_9;
+     46          			break;
+     47          		case(IO_10):
+     48          			mask = GPIO_Pin_10;
+     49          			break;
+     50          		case(IO_11):
+     51          			mask = GPIO_Pin_11;
+     52          			break;
+     53          		case(IO_12):
+     54          			mask = GPIO_Pin_12;
+     55          			break;
+     56          		case(IO_13):
+     57          			mask = GPIO_Pin_13;
+     58          			break;
+     59          		case(IO_14):
+     60          			mask = GPIO_Pin_14;
+     61          			break;
+     62          		case(IO_15):
+     63          			mask = GPIO_Pin_15;
+     64          			break;
+     65          		default:
+     66          			mask = GPIO_Pin_14;  //LED3
+     67          			break;
+     68          	}
+     69          	return (mask);*/
+     70          }
+     71          
+     72          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   getGpioPin
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  getGpioPin
+
+ 
+ 12 bytes in section .text
+ 
+ 12 bytes of CODE memory
+
+Errors: none
+Warnings: 1

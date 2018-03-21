@@ -1,0 +1,438 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:32
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\mbedtls\src\platform.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\platform.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\platform.s.txt
+#        -o .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\platform.o
+#        .\mbed-os\features\mbedtls\src\platform.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\platform.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\platform.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\mbedtls\src\platform.c
+      1          /*
+      2           *  Platform abstraction layer
+      3           *
+      4           *  Copyright (C) 2006-2016, ARM Limited, All Rights Reserved
+      5           *  SPDX-License-Identifier: Apache-2.0
+      6           *
+      7           *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+      8           *  not use this file except in compliance with the License.
+      9           *  You may obtain a copy of the License at
+     10           *
+     11           *  http://www.apache.org/licenses/LICENSE-2.0
+     12           *
+     13           *  Unless required by applicable law or agreed to in writing, software
+     14           *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     15           *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     16           *  See the License for the specific language governing permissions and
+     17           *  limitations under the License.
+     18           *
+     19           *  This file is part of mbed TLS (https://tls.mbed.org)
+     20           */
+     21          
+     22          #if !defined(MBEDTLS_CONFIG_FILE)
+     23          #include "mbedtls/config.h"
+     24          #else
+     25          #include MBEDTLS_CONFIG_FILE
+     26          #endif
+     27          
+     28          #if defined(MBEDTLS_PLATFORM_C)
+     29          
+     30          #include "mbedtls/platform.h"
+     31          
+     32          #if defined(MBEDTLS_PLATFORM_MEMORY)
+     33          #if !defined(MBEDTLS_PLATFORM_STD_CALLOC)
+     34          static void *platform_calloc_uninit( size_t n, size_t size )
+     35          {
+     36              ((void) n);
+     37              ((void) size);
+     38              return( NULL );
+     39          }
+     40          
+     41          #define MBEDTLS_PLATFORM_STD_CALLOC   platform_calloc_uninit
+     42          #endif /* !MBEDTLS_PLATFORM_STD_CALLOC */
+     43          
+     44          #if !defined(MBEDTLS_PLATFORM_STD_FREE)
+     45          static void platform_free_uninit( void *ptr )
+     46          {
+     47              ((void) ptr);
+     48          }
+     49          
+     50          #define MBEDTLS_PLATFORM_STD_FREE     platform_free_uninit
+     51          #endif /* !MBEDTLS_PLATFORM_STD_FREE */
+     52          
+     53          void * (*mbedtls_calloc)( size_t, size_t ) = MBEDTLS_PLATFORM_STD_CALLOC;
+     54          void (*mbedtls_free)( void * )     = MBEDTLS_PLATFORM_STD_FREE;
+     55          
+     56          int mbedtls_platform_set_calloc_free( void * (*calloc_func)( size_t, size_t ),
+     57                                        void (*free_func)( void * ) )
+     58          {
+     59              mbedtls_calloc = calloc_func;
+     60              mbedtls_free = free_func;
+     61              return( 0 );
+     62          }
+     63          #endif /* MBEDTLS_PLATFORM_MEMORY */
+     64          
+     65          #if defined(_WIN32)
+     66          #include <stdarg.h>
+     67          int mbedtls_platform_win32_snprintf( char *s, size_t n, const char *fmt, ... )
+     68          {
+     69              int ret;
+     70              va_list argp;
+     71          
+     72              /* Avoid calling the invalid parameter handler by checking ourselves */
+     73              if( s == NULL || n == 0 || fmt == NULL )
+     74                  return( -1 );
+     75          
+     76              va_start( argp, fmt );
+     77          #if defined(_TRUNCATE)
+     78              ret = _vsnprintf_s( s, n, _TRUNCATE, fmt, argp );
+     79          #else
+     80              ret = _vsnprintf( s, n, fmt, argp );
+     81              if( ret < 0 || (size_t) ret == n )
+     82              {
+     83                  s[n-1] = '\0';
+     84                  ret = -1;
+     85              }
+     86          #endif
+     87              va_end( argp );
+     88          
+     89              return( ret );
+     90          }
+     91          #endif
+     92          
+     93          #if defined(MBEDTLS_PLATFORM_SNPRINTF_ALT)
+     94          #if !defined(MBEDTLS_PLATFORM_STD_SNPRINTF)
+     95          /*
+     96           * Make dummy function to prevent NULL pointer dereferences
+     97           */
+     98          static int platform_snprintf_uninit( char * s, size_t n,
+     99                                               const char * format, ... )
+    100          {
+    101              ((void) s);
+    102              ((void) n);
+    103              ((void) format);
+    104              return( 0 );
+    105          }
+    106          
+    107          #define MBEDTLS_PLATFORM_STD_SNPRINTF    platform_snprintf_uninit
+    108          #endif /* !MBEDTLS_PLATFORM_STD_SNPRINTF */
+    109          
+    110          int (*mbedtls_snprintf)( char * s, size_t n,
+    111                                    const char * format,
+    112                                    ... ) = MBEDTLS_PLATFORM_STD_SNPRINTF;
+    113          
+    114          int mbedtls_platform_set_snprintf( int (*snprintf_func)( char * s, size_t n,
+    115                                                           const char * format,
+    116                                                           ... ) )
+    117          {
+    118              mbedtls_snprintf = snprintf_func;
+    119              return( 0 );
+    120          }
+    121          #endif /* MBEDTLS_PLATFORM_SNPRINTF_ALT */
+    122          
+    123          #if defined(MBEDTLS_PLATFORM_PRINTF_ALT)
+    124          #if !defined(MBEDTLS_PLATFORM_STD_PRINTF)
+    125          /*
+    126           * Make dummy function to prevent NULL pointer dereferences
+    127           */
+    128          static int platform_printf_uninit( const char *format, ... )
+    129          {
+    130              ((void) format);
+    131              return( 0 );
+    132          }
+    133          
+    134          #define MBEDTLS_PLATFORM_STD_PRINTF    platform_printf_uninit
+    135          #endif /* !MBEDTLS_PLATFORM_STD_PRINTF */
+    136          
+    137          int (*mbedtls_printf)( const char *, ... ) = MBEDTLS_PLATFORM_STD_PRINTF;
+    138          
+    139          int mbedtls_platform_set_printf( int (*printf_func)( const char *, ... ) )
+    140          {
+    141              mbedtls_printf = printf_func;
+    142              return( 0 );
+    143          }
+    144          #endif /* MBEDTLS_PLATFORM_PRINTF_ALT */
+    145          
+    146          #if defined(MBEDTLS_PLATFORM_FPRINTF_ALT)
+    147          #if !defined(MBEDTLS_PLATFORM_STD_FPRINTF)
+    148          /*
+    149           * Make dummy function to prevent NULL pointer dereferences
+    150           */
+    151          static int platform_fprintf_uninit( FILE *stream, const char *format, ... )
+    152          {
+    153              ((void) stream);
+    154              ((void) format);
+    155              return( 0 );
+    156          }
+    157          
+    158          #define MBEDTLS_PLATFORM_STD_FPRINTF   platform_fprintf_uninit
+    159          #endif /* !MBEDTLS_PLATFORM_STD_FPRINTF */
+    160          
+    161          int (*mbedtls_fprintf)( FILE *, const char *, ... ) =
+    162                                                  MBEDTLS_PLATFORM_STD_FPRINTF;
+    163          
+    164          int mbedtls_platform_set_fprintf( int (*fprintf_func)( FILE *, const char *, ... ) )
+    165          {
+    166              mbedtls_fprintf = fprintf_func;
+    167              return( 0 );
+    168          }
+    169          #endif /* MBEDTLS_PLATFORM_FPRINTF_ALT */
+    170          
+    171          #if defined(MBEDTLS_PLATFORM_EXIT_ALT)
+    172          #if !defined(MBEDTLS_PLATFORM_STD_EXIT)
+    173          /*
+    174           * Make dummy function to prevent NULL pointer dereferences
+    175           */
+    176          static void platform_exit_uninit( int status )
+    177          {
+    178              ((void) status);
+    179          }
+    180          
+    181          #define MBEDTLS_PLATFORM_STD_EXIT   platform_exit_uninit
+    182          #endif /* !MBEDTLS_PLATFORM_STD_EXIT */
+    183          
+    184          void (*mbedtls_exit)( int status ) = MBEDTLS_PLATFORM_STD_EXIT;
+    185          
+    186          int mbedtls_platform_set_exit( void (*exit_func)( int status ) )
+    187          {
+    188              mbedtls_exit = exit_func;
+    189              return( 0 );
+    190          }
+    191          #endif /* MBEDTLS_PLATFORM_EXIT_ALT */
+    192          
+    193          #if defined(MBEDTLS_HAVE_TIME)
+    194          
+    195          #if defined(MBEDTLS_PLATFORM_TIME_ALT)
+    196          #if !defined(MBEDTLS_PLATFORM_STD_TIME)
+    197          /*
+    198           * Make dummy function to prevent NULL pointer dereferences
+    199           */
+    200          static mbedtls_time_t platform_time_uninit( mbedtls_time_t* timer )
+    201          {
+    202              ((void) timer);
+    203              return( 0 );
+    204          }
+    205          
+    206          #define MBEDTLS_PLATFORM_STD_TIME   platform_time_uninit
+    207          #endif /* !MBEDTLS_PLATFORM_STD_TIME */
+    208          
+    209          mbedtls_time_t (*mbedtls_time)( mbedtls_time_t* timer ) = MBEDTLS_PLATFORM_STD_TIME;
+    210          
+    211          int mbedtls_platform_set_time( mbedtls_time_t (*time_func)( mbedtls_time_t* timer ) )
+    212          {
+    213              mbedtls_time = time_func;
+    214              return( 0 );
+    215          }
+    216          #endif /* MBEDTLS_PLATFORM_TIME_ALT */
+    217          
+    218          #endif /* MBEDTLS_HAVE_TIME */
+    219          
+    220          #if defined(MBEDTLS_ENTROPY_NV_SEED)
+    221          #if !defined(MBEDTLS_PLATFORM_NO_STD_FUNCTIONS) && defined(MBEDTLS_FS_IO)
+    222          /* Default implementations for the platform independent seed functions use
+    223           * standard libc file functions to read from and write to a pre-defined filename
+    224           */
+    225          int mbedtls_platform_std_nv_seed_read( unsigned char *buf, size_t buf_len )
+    226          {
+    227              FILE *file;
+    228              size_t n;
+    229          
+    230              if( ( file = fopen( MBEDTLS_PLATFORM_STD_NV_SEED_FILE, "rb" ) ) == NULL )
+    231                  return -1;
+    232          
+    233              if( ( n = fread( buf, 1, buf_len, file ) ) != buf_len )
+    234              {
+    235                  fclose( file );
+    236                  return -1;
+    237              }
+    238          
+    239              fclose( file );
+    240              return( (int)n );
+    241          }
+    242          
+    243          int mbedtls_platform_std_nv_seed_write( unsigned char *buf, size_t buf_len )
+    244          {
+    245              FILE *file;
+    246              size_t n;
+    247          
+    248              if( ( file = fopen( MBEDTLS_PLATFORM_STD_NV_SEED_FILE, "w" ) ) == NULL )
+    249                  return -1;
+    250          
+    251              if( ( n = fwrite( buf, 1, buf_len, file ) ) != buf_len )
+    252              {
+    253                  fclose( file );
+    254                  return -1;
+    255              }
+    256          
+    257              fclose( file );
+    258              return( (int)n );
+    259          }
+    260          #endif /* MBEDTLS_PLATFORM_NO_STD_FUNCTIONS */
+    261          
+    262          #if defined(MBEDTLS_PLATFORM_NV_SEED_ALT)
+    263          #if !defined(MBEDTLS_PLATFORM_STD_NV_SEED_READ)
+    264          /*
+    265           * Make dummy function to prevent NULL pointer dereferences
+    266           */
+    267          static int platform_nv_seed_read_uninit( unsigned char *buf, size_t buf_len )
+    268          {
+    269              ((void) buf);
+    270              ((void) buf_len);
+    271              return( -1 );
+    272          }
+    273          
+    274          #define MBEDTLS_PLATFORM_STD_NV_SEED_READ   platform_nv_seed_read_uninit
+    275          #endif /* !MBEDTLS_PLATFORM_STD_NV_SEED_READ */
+    276          
+    277          #if !defined(MBEDTLS_PLATFORM_STD_NV_SEED_WRITE)
+    278          /*
+    279           * Make dummy function to prevent NULL pointer dereferences
+    280           */
+    281          static int platform_nv_seed_write_uninit( unsigned char *buf, size_t buf_len )
+    282          {
+    283              ((void) buf);
+    284              ((void) buf_len);
+    285              return( -1 );
+    286          }
+    287          
+    288          #define MBEDTLS_PLATFORM_STD_NV_SEED_WRITE   platform_nv_seed_write_uninit
+    289          #endif /* !MBEDTLS_PLATFORM_STD_NV_SEED_WRITE */
+    290          
+    291          int (*mbedtls_nv_seed_read)( unsigned char *buf, size_t buf_len ) =
+    292                      MBEDTLS_PLATFORM_STD_NV_SEED_READ;
+    293          int (*mbedtls_nv_seed_write)( unsigned char *buf, size_t buf_len ) =
+    294                      MBEDTLS_PLATFORM_STD_NV_SEED_WRITE;
+    295          
+    296          int mbedtls_platform_set_nv_seed(
+    297                  int (*nv_seed_read_func)( unsigned char *buf, size_t buf_len ),
+    298                  int (*nv_seed_write_func)( unsigned char *buf, size_t buf_len ) )
+    299          {
+    300              mbedtls_nv_seed_read = nv_seed_read_func;
+    301              mbedtls_nv_seed_write = nv_seed_write_func;
+    302              return( 0 );
+    303          }
+    304          #endif /* MBEDTLS_PLATFORM_NV_SEED_ALT */
+    305          #endif /* MBEDTLS_ENTROPY_NV_SEED */
+    306          
+    307          #if !defined(MBEDTLS_PLATFORM_SETUP_TEARDOWN_ALT)
+    308          /*
+    309           * Placeholder platform setup that does nothing by default
+    310           */
+
+   \                                 In section .text, align 2, keep-with-next
+    311          int mbedtls_platform_setup( mbedtls_platform_context *ctx )
+    312          {
+    313              (void)ctx;
+    314          
+    315              return( 0 );
+   \                     mbedtls_platform_setup: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+    316          }
+    317          
+    318          /*
+    319           * Placeholder platform teardown that does nothing by default
+    320           */
+
+   \                                 In section .text, align 2, keep-with-next
+    321          void mbedtls_platform_teardown( mbedtls_platform_context *ctx )
+    322          {
+    323              (void)ctx;
+    324          }
+   \                     mbedtls_platform_teardown: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+    325          #endif /* MBEDTLS_PLATFORM_SETUP_TEARDOWN_ALT */
+    326          
+    327          #endif /* MBEDTLS_PLATFORM_C */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   mbedtls_platform_setup
+       0   mbedtls_platform_teardown
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  mbedtls_platform_setup
+       2  mbedtls_platform_teardown
+
+ 
+ 6 bytes in section .text
+ 
+ 6 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,435 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:48
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\rtos\EventFlags.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\EventFlags.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\EventFlags.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\EventFlags.o
+#        .\mbed-os\rtos\EventFlags.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\EventFlags.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\EventFlags.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\rtos\EventFlags.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2017 ARM Limited
+      3           *
+      4           * Permission is hereby granted, free of charge, to any person obtaining a copy
+      5           * of this software and associated documentation files (the "Software"), to deal
+      6           * in the Software without restriction, including without limitation the rights
+      7           * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+      8           * copies of the Software, and to permit persons to whom the Software is
+      9           * furnished to do so, subject to the following conditions:
+     10           *
+     11           * The above copyright notice and this permission notice shall be included in
+     12           * all copies or substantial portions of the Software.
+     13           *
+     14           * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+     15           * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+     16           * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+     17           * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+     18           * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+     19           * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+     20           * SOFTWARE.
+     21           */
+     22          #include "rtos/EventFlags.h"
+     23          #include <string.h>
+     24          #include "mbed_error.h"
+     25          #include "mbed_assert.h"
+     26          
+     27          namespace rtos {
+     28          
+
+   \                                 In section .text, align 2, keep-with-next
+     29          EventFlags::EventFlags()
+   \                     _ZN4rtos10EventFlagsC1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+     30          {
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+     31              constructor();
+   \   00000002   0x2100             MOVS     R1,#+0
+   \                     ??Subroutine0_0: (+1)
+   \   00000004   0x.... 0x....      BL       _ZN4rtos10EventFlags11constructorEPKc
+     32          }
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xBD10             POP      {R4,PC}          ;; return
+     33          
+
+   \                                 In section .text, align 2, keep-with-next
+     34          EventFlags::EventFlags(const char *name)
+     35          {
+   \                     _ZN4rtos10EventFlagsC1EPKc: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     36              constructor(name);
+   \   00000004   0x....             B.N      ??Subroutine0_0
+     37          }
+     38          
+
+   \                                 In section .text, align 4, keep-with-next
+     39          void EventFlags::constructor(const char *name)
+     40          {
+   \                     _ZN4rtos10EventFlags11constructorEPKc: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0xB084             SUB      SP,SP,#+16
+   \   00000004   0x0004             MOVS     R4,R0
+     41              memset(&_obj_mem, 0, sizeof(_obj_mem));
+   \   00000006   0x1D20             ADDS     R0,R4,#+4
+   \   00000008   0x2200             MOVS     R2,#+0
+   \   0000000A   0x2300             MOVS     R3,#+0
+   \   0000000C   0x2500             MOVS     R5,#+0
+   \   0000000E   0x2600             MOVS     R6,#+0
+   \   00000010   0xC06C             STM      R0!,{R2,R3,R5,R6}
+     42              osEventFlagsAttr_t attr;
+     43              attr.name = name ? name : "application_unnamed_event_flags";
+   \   00000012   0x2900             CMP      R1,#+0
+   \   00000014   0xD101             BNE      ??constructor_0
+   \   00000016   0xBF00             Nop      
+   \   00000018   0x....             ADR.N    R1,?_0
+   \                     ??constructor_0: (+1)
+   \   0000001A   0x9100             STR      R1,[SP, #+0]
+     44              attr.cb_mem = &_obj_mem;
+   \   0000001C   0x1D20             ADDS     R0,R4,#+4
+   \   0000001E   0x9002             STR      R0,[SP, #+8]
+     45              attr.cb_size = sizeof(_obj_mem);
+   \   00000020   0x2010             MOVS     R0,#+16
+   \   00000022   0x9003             STR      R0,[SP, #+12]
+     46              _id = osEventFlagsNew(&attr);
+   \   00000024   0x4668             MOV      R0,SP
+   \   00000026   0x.... 0x....      BL       osEventFlagsNew
+   \   0000002A   0x6020             STR      R0,[R4, #+0]
+     47              MBED_ASSERT(_id);
+   \   0000002C   0x2800             CMP      R0,#+0
+   \   0000002E   0xD105             BNE      ??constructor_1
+   \   00000030   0x222F             MOVS     R2,#+47
+   \   00000032   0xBF00             Nop      
+   \   00000034   0x....             ADR.N    R1,?_2
+   \   00000036   0x....             ADR      R0,??DataTable3  ;; "_id"
+   \   00000038   0x.... 0x....      BL       mbed_assert_internal
+     48          }
+   \                     ??constructor_1: (+1)
+   \   0000003C   0xB004             ADD      SP,SP,#+16
+   \   0000003E   0xBD70             POP      {R4-R6,PC}       ;; return
+     49          
+
+   \                                 In section .text, align 2, keep-with-next
+     50          uint32_t EventFlags::set(uint32_t flags)
+     51          {
+   \                     _ZN4rtos10EventFlags3setEj: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     52              return osEventFlagsSet(_id, flags);
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x.... 0x....      BL       osEventFlagsSet
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+     53          }
+     54          
+
+   \                                 In section .text, align 2, keep-with-next
+     55          uint32_t EventFlags::clear(uint32_t flags)
+     56          {
+   \                     _ZN4rtos10EventFlags5clearEj: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     57              return osEventFlagsClear(_id, flags);
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x.... 0x....      BL       osEventFlagsClear
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+     58          }
+     59          
+
+   \                                 In section .text, align 2, keep-with-next
+     60          uint32_t EventFlags::get() const
+     61          {
+   \                     _ZNK4rtos10EventFlags3getEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     62              return osEventFlagsGet(_id);
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x.... 0x....      BL       osEventFlagsGet
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+     63          }
+     64          
+
+   \                                 In section .text, align 2, keep-with-next
+     65          uint32_t EventFlags::wait_all(uint32_t flags, uint32_t timeout, bool clear)
+     66          {
+   \                     _ZN4rtos10EventFlags8wait_allEjjb: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+     67              return wait(flags, osFlagsWaitAll, timeout, clear);
+   \   00000002   0x2401             MOVS     R4,#+1
+   \   00000004   0x2B00             CMP      R3,#+0
+   \   00000006   0xD100             BNE      ??wait_all_0
+   \   00000008   0x2403             MOVS     R4,#+3
+   \                     ??wait_all_0: (+1)
+   \   0000000A   0x....             B.N      ?Subroutine2
+     68          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine2: (+1)
+   \   00000000   0x0013             MOVS     R3,R2
+   \   00000002   0x0022             MOVS     R2,R4
+   \                     ??Subroutine2_0: (+1)
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x.... 0x....      BL       osEventFlagsWait
+   \   0000000A   0xBD10             POP      {R4,PC}          ;; return
+     69          
+
+   \                                 In section .text, align 2, keep-with-next
+     70          uint32_t EventFlags::wait_any(uint32_t flags, uint32_t timeout, bool clear)
+     71          {
+   \                     _ZN4rtos10EventFlags8wait_anyEjjb: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+     72              return wait(flags, osFlagsWaitAny, timeout, clear);
+   \   00000002   0x2400             MOVS     R4,#+0
+   \   00000004   0x2B00             CMP      R3,#+0
+   \   00000006   0xD100             BNE      ??wait_any_0
+   \   00000008   0x2402             MOVS     R4,#+2
+   \                     ??wait_any_0: (+1)
+   \   0000000A                      REQUIRE ?Subroutine2
+   \   0000000A                      ;; // Fall through to label ?Subroutine2
+     73          }
+     74          
+
+   \                                 In section .text, align 2, keep-with-next
+     75          EventFlags::~EventFlags()
+   \                     _ZN4rtos10EventFlagsD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine1
+   \   00000002                      ;; // Fall through to label ?Subroutine1
+
+   \                                 In section .text, align 2, keep-with-next
+     76          {
+   \                     ?Subroutine1: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+     77              osEventFlagsDelete(_id);
+   \   00000002   0x6820             LDR      R0,[R4, #+0]
+   \   00000004   0x.... 0x....      BL       osEventFlagsDelete
+     78          }
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xBD10             POP      {R4,PC}          ;; return
+     79          
+
+   \                                 In section .text, align 2, keep-with-next
+     80          uint32_t EventFlags::wait(uint32_t flags, uint32_t opt, uint32_t timeout, bool clear)
+     81          {
+   \                     _ZN4rtos10EventFlags4waitEjjjb: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+     82              if (clear == false) {
+   \   00000002   0x9C02             LDR      R4,[SP, #+8]
+   \   00000004   0x2C00             CMP      R4,#+0
+   \   00000006   0xD102             BNE      ??wait_0
+     83                  opt |= osFlagsNoClear;
+   \   00000008   0x0014             MOVS     R4,R2
+   \   0000000A   0x2202             MOVS     R2,#+2
+   \   0000000C   0x4322             ORRS     R2,R2,R4
+     84              }
+     85          
+     86              return osEventFlagsWait(_id, flags, opt, timeout);
+   \                     ??wait_0: (+1)
+   \   0000000E   0x....             B.N      ??Subroutine2_0
+     87          }
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x5F 0x69          DC8 "_id"
+   \              0x64 0x00    
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp rtos::EventFlags::subobject EventFlags()
+   \                     _ZN4rtos10EventFlagsC2Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp rtos::EventFlags::subobject EventFlags(char const *)
+   \                     _ZN4rtos10EventFlagsC2EPKc: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x....             B.N      ??Subroutine0_0
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp rtos::EventFlags::subobject ~EventFlags()
+   \                     _ZN4rtos10EventFlagsD2Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3:
+   \   00000000   0x5F 0x69          DC8      "_id"
+   \              0x64 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x61 0x70          DC8 "application_unnamed_event_flags"
+   \              0x70 0x6C    
+   \              0x69 0x63    
+   \              0x61 0x74    
+   \              0x69 0x6F    
+   \              0x6E 0x5F    
+   \              0x75 0x6E    
+   \              0x6E 0x61    
+   \              0x6D 0x65    
+   \              0x64 0x5F    
+   \              0x65 0x76    
+   \              0x65 0x6E    
+   \              0x74 0x5F    
+   \              0x66 0x6C    
+   \              0x61 0x67    
+   \              0x73 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_2:
+   \   00000000   0x2E 0x5C          DC8 ".\\mbed-os\\rtos\\EventFlags.cpp"
+   \              0x6D 0x62    
+   \              0x65 0x64    
+   \              0x2D 0x6F    
+   \              0x73 0x5C    
+   \              0x72 0x74    
+   \              0x6F 0x73    
+   \              0x5C 0x45    
+   \              0x76 0x65    
+   \              0x6E 0x74    
+   \              0x46 0x6C    
+   \              0x61 0x67    
+   \              0x73 0x2E    
+   \              0x63 0x70    
+   \              0x70 0x00    
+   \   0000001E   0x00 0x00          DC8 0, 0
+     88          
+     89          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   rtos::EventFlags::EventFlags()
+         8   -> rtos::EventFlags::constructor(char const *)
+       8   rtos::EventFlags::EventFlags(char const *)
+         8   -> rtos::EventFlags::constructor(char const *)
+       8   rtos::EventFlags::clear(unsigned int)
+         8   -> osEventFlagsClear
+      32   rtos::EventFlags::constructor(char const *)
+        32   -> mbed_assert_internal
+        32   -> osEventFlagsNew
+       8   rtos::EventFlags::get() const
+         8   -> osEventFlagsGet
+       8   rtos::EventFlags::set(unsigned int)
+         8   -> osEventFlagsSet
+       8   rtos::EventFlags::subobject EventFlags()
+         8   -> rtos::EventFlags::constructor(char const *)
+       8   rtos::EventFlags::subobject EventFlags(char const *)
+         8   -> rtos::EventFlags::constructor(char const *)
+       8   rtos::EventFlags::subobject ~EventFlags()
+         8   -> osEventFlagsDelete
+       8   rtos::EventFlags::wait(unsigned int, unsigned int, unsigned int, bool)
+         8   -> osEventFlagsWait
+       8   rtos::EventFlags::wait_all(unsigned int, unsigned int, bool)
+         8   -> osEventFlagsWait
+       8   rtos::EventFlags::wait_any(unsigned int, unsigned int, bool)
+         8   -> osEventFlagsWait
+       0   rtos::EventFlags::~EventFlags()
+         8   -> osEventFlagsDelete
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+      12  ?Subroutine0
+      12  ?Subroutine1
+      12  ?Subroutine2
+      32  ?_0
+       4  ?_1
+      32  ?_2
+       2  rtos::EventFlags::EventFlags()
+       6  rtos::EventFlags::EventFlags(char const *)
+      10  rtos::EventFlags::clear(unsigned int)
+      64  rtos::EventFlags::constructor(char const *)
+      10  rtos::EventFlags::get() const
+      10  rtos::EventFlags::set(unsigned int)
+       4  rtos::EventFlags::subobject EventFlags()
+       6  rtos::EventFlags::subobject EventFlags(char const *)
+       4  rtos::EventFlags::subobject ~EventFlags()
+      16  rtos::EventFlags::wait(unsigned int, unsigned int, unsigned int, bool)
+      12  rtos::EventFlags::wait_all(unsigned int, unsigned int, bool)
+      10  rtos::EventFlags::wait_any(unsigned int, unsigned int, bool)
+       2  rtos::EventFlags::~EventFlags()
+
+ 
+   4 bytes in section .rodata
+ 260 bytes in section .text
+ 
+ 260 bytes of CODE  memory
+   4 bytes of CONST memory
+
+Errors: none
+Warnings: none

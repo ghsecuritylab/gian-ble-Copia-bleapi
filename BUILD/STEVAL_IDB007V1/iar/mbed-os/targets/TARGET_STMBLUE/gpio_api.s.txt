@@ -1,0 +1,481 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:34:00
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\targets\TARGET_STMBLUE\gpio_api.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\gpio_api.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\gpio_api.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\gpio_api.o
+#        .\mbed-os\targets\TARGET_STMBLUE\gpio_api.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\gpio_api.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\gpio_api.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\gpio_api.c
+      1          /* mbed Microcontroller Library
+      2           *******************************************************************************
+      3           *******************************************************************************
+      4           */
+      5          #include "mbed_assert.h"	// arm
+      6          #include "gpio_api.h"		// arm
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+      7          #include "pinmap.h"			// arm
+      8          #include "mbed_error.h"		// arm
+      9          #include "pin_device.h"
+     10          
+     11          //#include "serial_mylib.h"
+     12          
+     13          //extern const uint32_t ll_pin_defines[16];
+     14          
+     15          #define GPIOA_BASE GPIO_BASE
+     16          
+     17          // Enable GPIO clock and return GPIO base address
+
+   \                                 In section .text, align 4, keep-with-next
+     18          GPIO_TypeDef *Set_GPIO_Clock(uint32_t port_idx) {
+   \                     Set_GPIO_Clock: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+     19              uint32_t gpio_add = 0;
+   \   00000002   0x2400             MOVS     R4,#+0
+     20              switch (port_idx) {
+   \   00000004   0x2800             CMP      R0,#+0
+   \   00000006   0xD106             BNE      ??Set_GPIO_Clock_0
+     21                  case PortA:
+     22                      gpio_add = GPIOA_BASE;
+   \   00000008   0x2480             MOVS     R4,#+128
+   \   0000000A   0x05E4             LSLS     R4,R4,#+23       ;; #+1073741824
+     23                      //__HAL_RCC_GPIOA_CLK_ENABLE();
+     24                      SysCtrl_PeripheralClockCmd(CLOCK_PERIPH_GPIO, ENABLE);
+   \   0000000C   0x2101             MOVS     R1,#+1
+   \   0000000E   0x2001             MOVS     R0,#+1
+   \   00000010   0x.... 0x....      BL       SysCtrl_PeripheralClockCmd
+     25                      break;
+   \   00000014   0xE003             B        ??Set_GPIO_Clock_1
+     26                  default:
+     27                      error("Pinmap error: wrong port number.");
+   \                     ??Set_GPIO_Clock_0: (+1)
+   \   00000016   0xBF00             Nop      
+   \   00000018   0x....             ADR.N    R0,?_0
+   \   0000001A   0x.... 0x....      BL       error
+     28                      break;
+     29              }
+     30              return (GPIO_TypeDef *) gpio_add;
+   \                     ??Set_GPIO_Clock_1: (+1)
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0xBD10             POP      {R4,PC}          ;; return
+     31          }
+     32          
+     33          
+
+   \                                 In section .text, align 2, keep-with-next
+     34          void gpio_mode(gpio_t *obj, PinMode mode) {
+   \                     gpio_mode: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     35          	uint8_t current_mode = obj->GPIO_Mode;
+   \   00000004   0x7920             LDRB     R0,[R4, #+4]
+   \   00000006   0x0005             MOVS     R5,R0
+     36          	if (mode){
+   \   00000008   0x1E4A             SUBS     R2,R1,#+1
+   \   0000000A   0x4192             SBCS     R2,R2,R2
+   \   0000000C   0x43D2             MVNS     R2,R2
+   \   0000000E   0x0FD2             LSRS     R2,R2,#+31
+   \   00000010   0x71A2             STRB     R2,[R4, #+6]
+     37          		obj->GPIO_Pull = ENABLE;
+     38          	}
+     39          	else{
+     40          		obj->GPIO_Pull = DISABLE;
+     41          	}
+     42          	if (obj->GPIO_Mode==GPIO_Output) {
+   \   00000012   0x2806             CMP      R0,#+6
+   \   00000014   0xD102             BNE      ??gpio_mode_0
+     43          		obj->GPIO_Pull = ENABLE;
+   \   00000016   0x2001             MOVS     R0,#+1
+   \   00000018   0x71A0             STRB     R0,[R4, #+6]
+     44          		obj->GPIO_HighPwr = ENABLE;
+   \   0000001A   0x7160             STRB     R0,[R4, #+5]
+     45          	}
+     46          	GPIO_Init(obj);
+   \                     ??gpio_mode_0: (+1)
+   \   0000001C   0x....             B.N      ?Subroutine0
+     47          	obj->GPIO_Mode = current_mode;
+     48          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0020             MOVS     R0,R4
+   \   00000002   0x.... 0x....      BL       GPIO_Init
+   \   00000006   0x7125             STRB     R5,[R4, #+4]
+   \   00000008   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     49          
+
+   \                                 In section .text, align 2, keep-with-next
+     50          inline void gpio_dir(gpio_t *obj, PinDirection direction) {
+   \                     gpio_dir: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     51          	uint8_t current_mode;
+     52          	if (direction){
+   \   00000004   0x2900             CMP      R1,#+0
+   \   00000006   0xD004             BEQ      ??gpio_dir_0
+     53          		obj->GPIO_Mode = GPIO_Output;
+   \   00000008   0x2506             MOVS     R5,#+6
+   \   0000000A   0x2006             MOVS     R0,#+6
+     54          		current_mode = GPIO_Output;
+     55          		obj->GPIO_Pull = ENABLE;
+   \   0000000C   0x2101             MOVS     R1,#+1
+     56          		obj->GPIO_HighPwr = ENABLE;
+   \   0000000E   0x2201             MOVS     R2,#+1
+   \   00000010   0xE002             B        ??gpio_dir_1
+     57          	}
+     58          	else{
+     59          		obj->GPIO_Mode = GPIO_Input;
+   \                     ??gpio_dir_0: (+1)
+   \   00000012   0x2500             MOVS     R5,#+0
+   \   00000014   0x2000             MOVS     R0,#+0
+     60          		current_mode = GPIO_Input;
+     61          		obj->GPIO_Pull = DISABLE;
+     62          		obj->GPIO_HighPwr = DISABLE;
+   \   00000016   0x2200             MOVS     R2,#+0
+   \                     ??gpio_dir_1: (+1)
+   \   00000018   0x71A1             STRB     R1,[R4, #+6]
+   \   0000001A   0x7162             STRB     R2,[R4, #+5]
+   \   0000001C   0x7120             STRB     R0,[R4, #+4]
+     63          	}
+     64          	GPIO_Init(obj);
+   \   0000001E                      REQUIRE ?Subroutine0
+   \   0000001E                      ;; // Fall through to label ?Subroutine0
+     65          	obj->GPIO_Mode = current_mode;
+     66          }
+     67          
+
+   \                                 In section .text, align 2, keep-with-next
+     68          inline void gpio_write(gpio_t *obj, int value){
+   \                     gpio_write: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     69          	if (value!=0){
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x2900             CMP      R1,#+0
+   \   00000006   0xD000             BEQ      ??gpio_write_0
+     70          		GPIO_WriteBit(obj->GPIO_Pin, Bit_SET);
+   \   00000008   0x2101             MOVS     R1,#+1
+     71          	}
+     72              else{
+     73              	GPIO_WriteBit(obj->GPIO_Pin, Bit_RESET);
+   \                     ??gpio_write_0: (+1)
+   \   0000000A   0x.... 0x....      BL       GPIO_WriteBit
+     74              }
+     75          }
+   \   0000000E   0xBD01             POP      {R0,PC}          ;; return
+     76          
+     77          
+
+   \                                 In section .text, align 4, keep-with-next
+     78          uint32_t gpio_set(PinName pin) {
+   \                     gpio_set: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     79          	MBED_ASSERT(pin != (PinName)NC);
+   \   00000004   0x2000             MOVS     R0,#+0
+   \   00000006   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD106             BNE      ??gpio_set_0
+   \   0000000C   0x224F             MOVS     R2,#+79
+   \   0000000E   0xBF00             Nop      
+   \   00000010   0x....             ADR.N    R1,?_2
+   \   00000012   0xBF00             Nop      
+   \   00000014   0x....             ADR.N    R0,?_1
+   \   00000016   0x.... 0x....      BL       mbed_assert_internal
+     80          	// pin_function(): pinmap.h:ARM
+     81          	//void pin_function(PinName pin, int function);
+     82          	//pin_function(pin, STM_PIN_DATA(STM_MODE_INPUT, GPIO_NOPULL, 0));
+     83          	//return (uint32_t)(1 << ((uint32_t)pin & 0xF)); // Return the pin mask
+     84          	int data = (int)GPIO_Input;
+     85          	pin_function(pin, data);
+   \                     ??gpio_set_0: (+1)
+   \   0000001A   0x2100             MOVS     R1,#+0
+   \   0000001C   0x0020             MOVS     R0,R4
+   \   0000001E   0x.... 0x....      BL       pin_function
+     86          	return getGpioPin(pin);
+   \   00000022   0x0020             MOVS     R0,R4
+   \   00000024   0x.... 0x....      BL       getGpioPin
+   \   00000028   0xBD10             POP      {R4,PC}          ;; return
+     87          }
+     88          
+     89          
+     90          
+
+   \                                 In section .text, align 2, keep-with-next
+     91          void gpio_init(gpio_t *obj, PinName pin) {
+   \                     gpio_init: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     92          	/* Enable the GPIO Clock */
+     93          	SysCtrl_PeripheralClockCmd(CLOCK_PERIPH_GPIO, ENABLE);
+   \   00000006   0x2101             MOVS     R1,#+1
+   \   00000008   0x2001             MOVS     R0,#+1
+   \   0000000A   0x.... 0x....      BL       SysCtrl_PeripheralClockCmd
+     94          	// get pin mask
+     95          	obj->GPIO_Pin = getGpioPin(pin);
+   \   0000000E   0x0028             MOVS     R0,R5
+   \   00000010   0x.... 0x....      BL       getGpioPin
+   \   00000014   0x6020             STR      R0,[R4, #+0]
+     96          	// preset
+     97          	obj->GPIO_Mode = GPIO_Output;
+   \   00000016   0x2506             MOVS     R5,#+6
+   \   00000018   0x7125             STRB     R5,[R4, #+4]
+     98          	obj->GPIO_Pull = ENABLE;
+   \   0000001A   0x2001             MOVS     R0,#+1
+   \   0000001C   0x71A0             STRB     R0,[R4, #+6]
+     99          	obj->GPIO_HighPwr = ENABLE;
+   \   0000001E   0x7160             STRB     R0,[R4, #+5]
+    100          	GPIO_Init(obj);
+   \   00000020   0x....             B.N      ?Subroutine0
+    101          	obj->GPIO_Mode = GPIO_Output;
+    102          }
+    103          
+
+   \                                 In section .text, align 2, keep-with-next
+    104          int gpio_read(gpio_t *obj){
+   \                     gpio_read: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    105          	if (GPIO_ReadBit(obj->GPIO_Pin))
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x.... 0x....      BL       GPIO_ReadBit
+   \   00000008   0x1E40             SUBS     R0,R0,#+1
+   \   0000000A   0x4180             SBCS     R0,R0,R0
+   \   0000000C   0x43C0             MVNS     R0,R0
+   \   0000000E   0x0FC0             LSRS     R0,R0,#+31
+    106          	    return SET;
+    107          	  else
+    108          	    return RESET;
+   \   00000010   0xBD02             POP      {R1,PC}          ;; return
+    109          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x50 0x69          DC8 "Pinmap error: wrong port number."
+   \              0x6E 0x6D    
+   \              0x61 0x70    
+   \              0x20 0x65    
+   \              0x72 0x72    
+   \              0x6F 0x72    
+   \              0x3A 0x20    
+   \              0x77 0x72    
+   \              0x6F 0x6E    
+   \              0x67 0x20    
+   \              0x70 0x6F    
+   \              0x72 0x74    
+   \              0x20 0x6E    
+   \              0x75 0x6D    
+   \              0x62 0x65    
+   \              0x72 0x2E    
+   \              0x00         
+   \   00000021   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x70 0x69          DC8 "pin != (PinName)NC"
+   \              0x6E 0x20    
+   \              0x21 0x3D    
+   \              0x20 0x28    
+   \              0x50 0x69    
+   \              0x6E 0x4E    
+   \              0x61 0x6D    
+   \              0x65 0x29    
+   \              0x4E 0x43    
+   \              0x00         
+   \   00000013   0x00               DC8 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_2:
+   \   00000000   0x2E 0x5C          DC8 ".\\mbed-os\\targets\\TARGET_STMBLUE\\gpio_api.c"
+   \              0x6D 0x62    
+   \              0x65 0x64    
+   \              0x2D 0x6F    
+   \              0x73 0x5C    
+   \              0x74 0x61    
+   \              0x72 0x67    
+   \              0x65 0x74    
+   \              0x73 0x5C    
+   \              0x54 0x41    
+   \              0x52 0x47    
+   \              0x45 0x54    
+   \              0x5F 0x53    
+   \              0x54 0x4D    
+   \              0x42 0x4C    
+   \              0x55 0x45    
+   \              0x5C 0x67    
+   \              0x70 0x69    
+   \              0x6F 0x5F    
+   \              0x61 0x70    
+   \              0x69 0x2E    
+   \              0x63 0x00    
+    110          
+    111          
+    112          
+    113          
+    114          
+    115          #ifdef stm
+    116          
+    117          uint32_t gpio_set(PinName pin) {
+    118          	    MBED_ASSERT(pin != (PinName)NC);
+    119          	    //pin_function(): pinmap.h:ARM -> pinmap.c:STM
+    120          	    pin_function(pin, STM_PIN_DATA(STM_MODE_INPUT, GPIO_NOPULL, 0));
+    121          	    return (uint32_t)(1 << ((uint32_t)pin & 0xF)); // Return the pin mask
+    122          }
+    123          
+    124          void gpio_init(gpio_t *obj, PinName pin) {
+    125              obj->pin = pin;
+    126              if (pin == (PinName)NC) {
+    127                  return;
+    128              }
+    129              uint32_t port_index = STM_PORT(pin);
+    130              // Enable GPIO clock
+    131              GPIO_TypeDef *gpio = Set_GPIO_Clock(port_index);
+    132              // Fill GPIO object structure for future use
+    133              obj->mask    = gpio_set(pin);
+    134              obj->gpio  = gpio;
+    135              obj->ll_pin  = ll_pin_defines[STM_PIN(obj->pin)];
+    136              obj->reg_in  = &gpio->IDR;
+    137              obj->reg_set = &gpio->BSRR;
+    138          #ifdef GPIO_IP_WITHOUT_BRR
+    139              obj->reg_clr = &gpio->BSRR;
+    140          #else
+    141              obj->reg_clr = &gpio->BRR;
+    142          #endif
+    143          }
+    144          
+    145          void gpio_mode(gpio_t *obj, PinMode mode) {
+    146              pin_mode(obj->pin, mode);
+    147          }
+    148          
+    149          inline void gpio_dir(gpio_t *obj, PinDirection direction) {
+    150              if (direction == PIN_INPUT) {
+    151                  LL_GPIO_SetPinMode(obj->gpio, obj->ll_pin, LL_GPIO_MODE_INPUT);
+    152              } else {
+    153                  LL_GPIO_SetPinMode(obj->gpio, obj->ll_pin, LL_GPIO_MODE_OUTPUT);
+    154              }
+    155          }
+    156          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   Set_GPIO_Clock
+         8   -> SysCtrl_PeripheralClockCmd
+         8   -> error
+      16   gpio_dir
+        16   -> GPIO_Init
+      16   gpio_init
+        16   -> GPIO_Init
+        16   -> SysCtrl_PeripheralClockCmd
+        16   -> getGpioPin
+      16   gpio_mode
+        16   -> GPIO_Init
+       8   gpio_read
+         8   -> GPIO_ReadBit
+       8   gpio_set
+         8   -> getGpioPin
+         8   -> mbed_assert_internal
+         8   -> pin_function
+       8   gpio_write
+         8   -> GPIO_WriteBit
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      10  ?Subroutine0
+      36  ?_0
+      20  ?_1
+      44  ?_2
+      34  Set_GPIO_Clock
+      30  gpio_dir
+      34  gpio_init
+      30  gpio_mode
+      18  gpio_read
+      42  gpio_set
+      16  gpio_write
+
+ 
+ 314 bytes in section .text
+ 
+ 314 bytes of CODE memory
+
+Errors: none
+Warnings: 1

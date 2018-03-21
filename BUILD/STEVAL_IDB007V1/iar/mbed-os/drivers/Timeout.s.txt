@@ -1,0 +1,226 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:01
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\drivers\Timeout.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Timeout.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Timeout.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Timeout.o
+#        .\mbed-os\drivers\Timeout.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Timeout.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Timeout.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\drivers\Timeout.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "drivers/Timeout.h"
+
+   \                                 In section .text, align 4
+   \   __code __interwork __softfp mbed::Ticker::~Ticker()
+   \                     _ZN4mbed6TickerD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x4808             LDR      R0,`?~Ticker_0`
+   \   00000006   0x6020             STR      R0,[R4, #+0]
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0x.... 0x....      BL       _ZN4mbed6Ticker6detachEv
+   \   0000000E   0x6B61             LDR      R1,[R4, #+52]
+   \   00000010   0x2900             CMP      R1,#+0
+   \   00000012   0xD003             BEQ      `?~Ticker_1`
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x3028             ADDS     R0,R0,#+40
+   \   00000018   0x6889             LDR      R1,[R1, #+8]
+   \   0000001A   0x4788             BLX      R1
+   \                     `?~Ticker_1`: (+1)
+   \   0000001C   0x0020             MOVS     R0,R4
+   \   0000001E   0x.... 0x....      BL       _ZN4mbed10TimerEventD2Ev
+   \   00000022   0x0020             MOVS     R0,R4
+   \   00000024   0xBD10             POP      {R4,PC}          ;; return
+   \   00000026   0xBF00             Nop      
+   \                     `?~Ticker_0`:
+   \   00000028   0x........         DC32     _ZTVN4mbed6TickerE+0x8
+
+   \                                 In section .text, align 4
+   \   __code __interwork __softfp mbed::Timeout::deleter ~Timeout()
+   \                     _ZN4mbed7TimeoutD0Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x4809             LDR      R0,`??deleter ~Timeout_0`
+   \   00000006   0x6020             STR      R0,[R4, #+0]
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0x.... 0x....      BL       _ZN4mbed6Ticker6detachEv
+   \   0000000E   0x6B61             LDR      R1,[R4, #+52]
+   \   00000010   0x2900             CMP      R1,#+0
+   \   00000012   0xD003             BEQ      `??deleter ~Timeout_1`
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x3028             ADDS     R0,R0,#+40
+   \   00000018   0x6889             LDR      R1,[R1, #+8]
+   \   0000001A   0x4788             BLX      R1
+   \                     `??deleter ~Timeout_1`: (+1)
+   \   0000001C   0x0020             MOVS     R0,R4
+   \   0000001E   0x.... 0x....      BL       _ZN4mbed10TimerEventD2Ev
+   \   00000022   0x0020             MOVS     R0,R4
+   \   00000024   0x.... 0x....      BL       _ZdlPv
+   \   00000028   0xBD10             POP      {R4,PC}          ;; return
+   \   0000002A   0xBF00             Nop      
+   \                     `??deleter ~Timeout_0`:
+   \   0000002C   0x........         DC32     _ZTVN4mbed6TickerE+0x8
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::Timeout::~Timeout()
+   \                     _ZN4mbed7TimeoutD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x.... 0x....      BL       _ZN4mbed6TickerD1Ev
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xBD10             POP      {R4,PC}          ;; return
+     17          
+     18          namespace mbed {
+     19          
+
+   \                                 In section .text, align 4, keep-with-next
+     20          void Timeout::handler() {
+   \                     _ZN4mbed7Timeout7handlerEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     21              _function.call();
+   \   00000004   0x6B60             LDR      R0,[R4, #+52]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD105             BNE      ??handler_0
+   \   0000000A   0x2284             MOVS     R2,#+132
+   \   0000000C   0x0092             LSLS     R2,R2,#+2        ;; #+528
+   \   0000000E   0x4905             LDR      R1,??handler_1
+   \   00000010   0x4805             LDR      R0,??handler_1+0x4
+   \   00000012   0x.... 0x....      BL       mbed_assert_internal
+   \                     ??handler_0: (+1)
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0x3028             ADDS     R0,R0,#+40
+   \   0000001A   0x6B61             LDR      R1,[R4, #+52]
+   \   0000001C   0x6809             LDR      R1,[R1, #+0]
+   \   0000001E   0x4788             BLX      R1
+     22          }
+   \   00000020   0xBD10             POP      {R4,PC}          ;; return
+   \   00000022   0xBF00             Nop      
+   \                     ??handler_1:
+   \   00000024   0x........         DC32     _ZZNK4mbed8CallbackIFvvEE4callEvEs_0
+   \   00000028   0x........         DC32     _ZZNK4mbed8CallbackIFvvEE4callEvEs
+     23          
+     24          } // namespace mbed
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   mbed::Ticker::~Ticker()
+         8   -- Indirect call
+         8   -> mbed::Ticker::detach()
+         8   -> mbed::TimerEvent::subobject ~TimerEvent()
+       8   mbed::Timeout::deleter ~Timeout()
+         8   -- Indirect call
+         8   -> mbed::Ticker::detach()
+         8   -> mbed::TimerEvent::subobject ~TimerEvent()
+         8   -> operator delete(void *)
+       8   mbed::Timeout::handler()
+         8   -- Indirect call
+         8   -> mbed_assert_internal
+       8   mbed::Timeout::~Timeout()
+         8   -> mbed::Ticker::~Ticker()
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      44  mbed::Ticker::~Ticker()
+      48  mbed::Timeout::deleter ~Timeout()
+      44  mbed::Timeout::handler()
+      12  mbed::Timeout::~Timeout()
+     244  -- Other
+
+ 
+ 244 bytes in section .rodata
+ 148 bytes in section .text
+ 
+ 44 bytes of CODE  memory (+ 104 bytes shared)
+  0 bytes of CONST memory (+ 244 bytes shared)
+
+Errors: none
+Warnings: none

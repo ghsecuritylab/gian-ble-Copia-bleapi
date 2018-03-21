@@ -1,0 +1,259 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:55
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\rtos\TARGET_CORTEX\rtx5\Source\os_tick_ptim.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\Source\os_tick_ptim.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\Source\os_tick_ptim.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\Source\os_tick_ptim.o
+#        .\mbed-os\rtos\TARGET_CORTEX\rtx5\Source\os_tick_ptim.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\Source\os_tick_ptim.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\Source\os_tick_ptim.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\rtos\TARGET_CORTEX\rtx5\Source\os_tick_ptim.c
+      1          /**************************************************************************//**
+      2           * @file     os_tick_ptim.c
+      3           * @brief    CMSIS OS Tick implementation for Private Timer
+      4           * @version  V1.0.0
+      5           * @date     29. June 2017
+      6           ******************************************************************************/
+      7          /*
+      8           * Copyright (c) 2017 ARM Limited. All rights reserved.
+      9           *
+     10           * SPDX-License-Identifier: Apache-2.0
+     11           *
+     12           * Licensed under the Apache License, Version 2.0 (the License); you may
+     13           * not use this file except in compliance with the License.
+     14           * You may obtain a copy of the License at
+     15           *
+     16           * www.apache.org/licenses/LICENSE-2.0
+     17           *
+     18           * Unless required by applicable law or agreed to in writing, software
+     19           * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+     20           * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     21           * See the License for the specific language governing permissions and
+     22           * limitations under the License.
+     23           */
+     24          
+     25          #if defined(PTIM)
+     26          
+     27          #include "os_tick.h"
+     28          #include "irq_ctrl.h"
+     29          
+     30          #include <cmsis.h>
+     31          
+     32          #ifndef PTIM_IRQ_PRIORITY
+     33          #define PTIM_IRQ_PRIORITY           0xFFU
+     34          #endif
+     35          
+     36          static uint8_t PTIM_PendIRQ;        // Timer interrupt pending flag
+     37          
+     38          // Setup OS Tick.
+     39          int32_t  OS_Tick_Setup (uint32_t freq, IRQHandler_t handler) {
+     40            uint32_t load;
+     41            uint32_t prio;
+     42            uint32_t bits;
+     43          
+     44            if (freq == 0U) {
+     45              return (-1);
+     46            }
+     47          
+     48            PTIM_PendIRQ = 0U;
+     49          
+     50            // Private Timer runs with the system frequency
+     51            load = (SystemCoreClock / freq) - 1U;
+     52          
+     53            // Disable Private Timer and set load value
+     54            PTIM_SetControl   (0U);
+     55            PTIM_SetLoadValue (load);
+     56          
+     57            // Disable corresponding IRQ
+     58            IRQ_Disable     (PrivTimer_IRQn);
+     59            IRQ_ClearPending(PrivTimer_IRQn);
+     60          
+     61            // Determine number of implemented priority bits
+     62            IRQ_SetPriority (PrivTimer_IRQn, 0xFFU);
+     63          
+     64            prio = IRQ_GetPriority (PrivTimer_IRQn);
+     65          
+     66            // At least bits [7:4] must be implemented
+     67            if ((prio & 0xF0U) == 0U) {
+     68              return (-1);
+     69            }
+     70          
+     71            for (bits = 0; bits < 4; bits++) {
+     72              if ((prio & 0x01) != 0) {
+     73                break;
+     74              }
+     75              prio >>= 1;
+     76            }
+     77            
+     78            // Adjust configured priority to the number of implemented priority bits
+     79            prio = (PTIM_IRQ_PRIORITY << bits) & 0xFFUL;
+     80          
+     81            // Set Private Timer interrupt priority
+     82            IRQ_SetPriority(PrivTimer_IRQn, prio-1U);
+     83          
+     84            // Set edge-triggered IRQ
+     85            IRQ_SetMode(PrivTimer_IRQn, IRQ_MODE_TRIG_EDGE);
+     86          
+     87            // Register tick interrupt handler function
+     88            IRQ_SetHandler(PrivTimer_IRQn, handler);
+     89          
+     90            // Enable corresponding interrupt
+     91            IRQ_Enable (PrivTimer_IRQn);
+     92          
+     93            // Set bits: IRQ enable and Auto reload
+     94            PTIM_SetControl (0x06U);
+     95          
+     96            return (0);
+     97          }
+     98          
+     99          /// Enable OS Tick.
+    100          int32_t  OS_Tick_Enable (void) {
+    101            uint32_t ctrl;
+    102          
+    103            // Set pending interrupt if flag set
+    104            if (PTIM_PendIRQ != 0U) {
+    105              PTIM_PendIRQ = 0U;
+    106              IRQ_SetPending (PrivTimer_IRQn);
+    107            }
+    108          
+    109            // Start the Private Timer
+    110            ctrl  = PTIM_GetControl();
+    111            // Set bit: Timer enable
+    112            ctrl |= 1U;
+    113            PTIM_SetControl (ctrl);
+    114          
+    115            return (0);
+    116          }
+    117          
+    118          /// Disable OS Tick.
+    119          int32_t  OS_Tick_Disable (void) {
+    120            uint32_t ctrl;
+    121            
+    122            // Stop the Private Timer
+    123            ctrl  = PTIM_GetControl();
+    124            // Clear bit: Timer enable
+    125            ctrl &= ~1U;
+    126            PTIM_SetControl (ctrl);
+    127          
+    128            // Remember pending interrupt flag
+    129            if (IRQ_GetPending(PrivTimer_IRQn) != 0) {
+    130              IRQ_ClearPending (PrivTimer_IRQn);
+    131              PTIM_PendIRQ = 1U;
+    132            }
+    133          
+    134            return (0);
+    135          }
+    136          
+    137          // Acknowledge OS Tick IRQ.
+    138          int32_t  OS_Tick_AcknowledgeIRQ (void) {
+    139            PTIM_ClearEventFlag();
+    140            return (0);
+    141          }
+    142          
+    143          // Get OS Tick IRQ number.
+    144          int32_t  OS_Tick_GetIRQn (void) {
+    145            return (PrivTimer_IRQn);
+    146          }
+    147          
+    148          // Get OS Tick clock.
+    149          uint32_t OS_Tick_GetClock (void) {
+    150            return (SystemCoreClock);
+    151          }
+    152          
+    153          // Get OS Tick interval.
+    154          uint32_t OS_Tick_GetInterval (void) {
+    155            return (PTIM_GetLoadValue() + 1U);
+    156          }
+    157          
+    158          // Get OS Tick count value.
+    159          uint32_t OS_Tick_GetCount (void) {
+    160            uint32_t load = PTIM_GetLoadValue();
+    161            return  (load - PTIM_GetCurrentValue());
+    162          }
+    163          
+    164          // Get OS Tick overflow status.
+    165          uint32_t OS_Tick_GetOverflow (void) {
+    166            return (PTIM->ISR & 1);
+    167          }
+    168          
+    169          #endif  // PTIM
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

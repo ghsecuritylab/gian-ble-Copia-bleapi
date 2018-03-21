@@ -1,0 +1,1195 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:55
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_timer.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_timer.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_timer.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_timer.o
+#        .\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_timer.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_timer.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_timer.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_timer.c
+      1          /*
+      2           * Copyright (c) 2013-2017 ARM Limited. All rights reserved.
+      3           *
+      4           * SPDX-License-Identifier: Apache-2.0
+      5           *
+      6           * Licensed under the Apache License, Version 2.0 (the License); you may
+      7           * not use this file except in compliance with the License.
+      8           * You may obtain a copy of the License at
+      9           *
+     10           * www.apache.org/licenses/LICENSE-2.0
+     11           *
+     12           * Unless required by applicable law or agreed to in writing, software
+     13           * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+     14           * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     15           * See the License for the specific language governing permissions and
+     16           * limitations under the License.
+     17           *
+     18           * -----------------------------------------------------------------------------
+     19           *
+     20           * Project:     CMSIS-RTOS RTX
+     21           * Title:       Timer functions
+     22           *
+     23           * -----------------------------------------------------------------------------
+     24           */
+     25          
+     26          #include "rtx_lib.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     27          
+     28          
+     29          //  ==== Helper functions ====
+     30          
+     31          /// Insert Timer into the Timer List sorted by Time.
+     32          /// \param[in]  timer           timer object.
+     33          /// \param[in]  tick            timer tick.
+
+   \                                 In section .text, align 2, keep-with-next
+     34          static void TimerInsert (os_timer_t *timer, uint32_t tick) {
+   \                     TimerInsert: (+1)
+   \   00000000   0xB430             PUSH     {R4,R5}
+     35            os_timer_t *prev, *next;
+     36          
+     37            prev = NULL;
+   \   00000002   0x2300             MOVS     R3,#+0
+     38            next = osRtxInfo.timer.list;
+   \   00000004   0x....             LDR      R2,??DataTable5
+   \   00000006   0x6C54             LDR      R4,[R2, #+68]
+   \   00000008   0xE002             B        ??TimerInsert_0
+     39            while ((next != NULL) && (next->tick <= tick)) {
+     40              tick -= next->tick;
+   \                     ??TimerInsert_1: (+1)
+   \   0000000A   0x1B49             SUBS     R1,R1,R5
+     41              prev  = next;
+   \   0000000C   0x0023             MOVS     R3,R4
+     42              next  = next->next;
+   \   0000000E   0x68E4             LDR      R4,[R4, #+12]
+     43            }
+   \                     ??TimerInsert_0: (+1)
+   \   00000010   0x2C00             CMP      R4,#+0
+   \   00000012   0xD002             BEQ      ??TimerInsert_2
+   \   00000014   0x6925             LDR      R5,[R4, #+16]
+   \   00000016   0x42A9             CMP      R1,R5
+   \   00000018   0xD2F7             BCS      ??TimerInsert_1
+     44            timer->tick = tick;
+   \                     ??TimerInsert_2: (+1)
+   \   0000001A   0x6101             STR      R1,[R0, #+16]
+     45            timer->prev = prev;
+   \   0000001C   0x6083             STR      R3,[R0, #+8]
+     46            timer->next = next;
+   \   0000001E   0x60C4             STR      R4,[R0, #+12]
+     47            if (next != NULL) {
+   \   00000020   0x2C00             CMP      R4,#+0
+   \   00000022   0xD004             BEQ      ??TimerInsert_3
+     48              next->tick -= timer->tick;
+   \   00000024   0x6921             LDR      R1,[R4, #+16]
+   \   00000026   0x6905             LDR      R5,[R0, #+16]
+   \   00000028   0x1B49             SUBS     R1,R1,R5
+   \   0000002A   0x6121             STR      R1,[R4, #+16]
+     49              next->prev  = timer;
+   \   0000002C   0x60A0             STR      R0,[R4, #+8]
+     50            }
+     51            if (prev != NULL) {
+   \                     ??TimerInsert_3: (+1)
+   \   0000002E   0x2B00             CMP      R3,#+0
+   \   00000030   0xD001             BEQ      ??TimerInsert_4
+     52              prev->next = timer;
+   \   00000032   0x60D8             STR      R0,[R3, #+12]
+   \   00000034   0xE000             B        ??TimerInsert_5
+     53            } else {
+     54              osRtxInfo.timer.list = timer;
+   \                     ??TimerInsert_4: (+1)
+   \   00000036   0x6450             STR      R0,[R2, #+68]
+     55            }
+     56          }
+   \                     ??TimerInsert_5: (+1)
+   \   00000038   0xBC30             POP      {R4,R5}
+   \   0000003A   0x4770             BX       LR               ;; return
+     57          
+     58          /// Remove Timer from the Timer List.
+     59          /// \param[in]  timer           timer object.
+
+   \                                 In section .text, align 2, keep-with-next
+     60          static void TimerRemove (os_timer_t *timer) {
+     61          
+     62            if (timer->next != NULL) {
+   \                     TimerRemove: (+1)
+   \   00000000   0x68C1             LDR      R1,[R0, #+12]
+   \   00000002   0x2900             CMP      R1,#+0
+   \   00000004   0xD005             BEQ      ??TimerRemove_0
+     63              timer->next->tick += timer->tick;
+   \   00000006   0x690A             LDR      R2,[R1, #+16]
+   \   00000008   0x6903             LDR      R3,[R0, #+16]
+   \   0000000A   0x18D2             ADDS     R2,R2,R3
+   \   0000000C   0x610A             STR      R2,[R1, #+16]
+     64              timer->next->prev  = timer->prev;
+   \   0000000E   0x6882             LDR      R2,[R0, #+8]
+   \   00000010   0x608A             STR      R2,[R1, #+8]
+     65            }
+     66            if (timer->prev != NULL) {
+   \                     ??TimerRemove_0: (+1)
+   \   00000012   0x68C1             LDR      R1,[R0, #+12]
+   \   00000014   0x6880             LDR      R0,[R0, #+8]
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD001             BEQ      ??TimerRemove_1
+     67              timer->prev->next  = timer->next;
+   \   0000001A   0x60C1             STR      R1,[R0, #+12]
+   \   0000001C   0x4770             BX       LR
+     68            } else {
+     69              osRtxInfo.timer.list = timer->next;
+   \                     ??TimerRemove_1: (+1)
+   \   0000001E   0x....             LDR      R0,??DataTable5
+   \   00000020   0x6441             STR      R1,[R0, #+68]
+     70            }
+     71          }
+   \   00000022   0x4770             BX       LR               ;; return
+     72          
+     73          /// Unlink Timer from the Timer List Head.
+     74          /// \param[in]  timer           timer object.
+     75          static void TimerUnlink (os_timer_t *timer) {
+     76          
+     77            if (timer->next != NULL) {
+     78              timer->next->prev = timer->prev;
+     79            }
+     80            osRtxInfo.timer.list = timer->next;
+     81          }
+     82          
+     83          
+     84          //  ==== Library functions ====
+     85          
+     86          /// Timer Tick (called each SysTick).
+
+   \                                 In section .text, align 2, keep-with-next
+     87          void osRtxTimerTick (void) {
+   \                     osRtxTimerTick: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+     88            os_timer_t *timer;
+     89            osStatus_t  status;
+     90          
+     91            timer = osRtxInfo.timer.list;
+   \   00000002   0x....             LDR      R5,??DataTable5
+   \   00000004   0x6C6C             LDR      R4,[R5, #+68]
+     92            if (timer == NULL) {
+   \   00000006   0x2C00             CMP      R4,#+0
+   \   00000008   0xD026             BEQ      ??osRtxTimerTick_0
+     93              return;
+     94            }
+     95          
+     96            timer->tick--;
+   \   0000000A   0x6920             LDR      R0,[R4, #+16]
+   \   0000000C   0x1E40             SUBS     R0,R0,#+1
+   \   0000000E   0x6120             STR      R0,[R4, #+16]
+   \                     ??osRtxTimerTick_1: (+1)
+   \   00000010   0x6920             LDR      R0,[R4, #+16]
+   \   00000012   0x2800             CMP      R0,#+0
+   \   00000014   0xD120             BNE      ??osRtxTimerTick_0
+     97            while ((timer != NULL) && (timer->tick == 0U)) {
+     98              TimerUnlink(timer);
+   \   00000016   0x68E0             LDR      R0,[R4, #+12]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD001             BEQ      ??osRtxTimerTick_2
+   \   0000001C   0x68A1             LDR      R1,[R4, #+8]
+   \   0000001E   0x6081             STR      R1,[R0, #+8]
+   \                     ??osRtxTimerTick_2: (+1)
+   \   00000020   0x68E0             LDR      R0,[R4, #+12]
+   \   00000022   0x6468             STR      R0,[R5, #+68]
+     99              status = osMessageQueuePut(osRtxInfo.timer.mq, &timer->finfo, 0U, 0U);
+    100              if (status != osOK) {
+   \   00000024   0x2300             MOVS     R3,#+0
+   \   00000026   0x2200             MOVS     R2,#+0
+   \   00000028   0x0021             MOVS     R1,R4
+   \   0000002A   0x3118             ADDS     R1,R1,#+24
+   \   0000002C   0x6CE8             LDR      R0,[R5, #+76]
+   \   0000002E   0x.... 0x....      BL       osMessageQueuePut
+   \   00000032   0x2800             CMP      R0,#+0
+   \   00000034   0xD003             BEQ      ??osRtxTimerTick_3
+    101                osRtxErrorNotify(osRtxErrorTimerQueueOverflow, timer);
+   \   00000036   0x0021             MOVS     R1,R4
+   \   00000038   0x2003             MOVS     R0,#+3
+   \   0000003A   0x.... 0x....      BL       osRtxErrorNotify
+    102              }
+    103              if (timer->type == osRtxTimerPeriodic) {
+   \                     ??osRtxTimerTick_3: (+1)
+   \   0000003E   0x78E0             LDRB     R0,[R4, #+3]
+   \   00000040   0x2801             CMP      R0,#+1
+   \   00000042   0xD104             BNE      ??osRtxTimerTick_4
+    104                TimerInsert(timer, timer->load);
+   \   00000044   0x6961             LDR      R1,[R4, #+20]
+   \   00000046   0x0020             MOVS     R0,R4
+   \   00000048   0x.... 0x....      BL       TimerInsert
+   \   0000004C   0xE001             B        ??osRtxTimerTick_5
+    105              } else {
+    106                timer->state = osRtxTimerStopped;
+   \                     ??osRtxTimerTick_4: (+1)
+   \   0000004E   0x2001             MOVS     R0,#+1
+   \   00000050   0x7060             STRB     R0,[R4, #+1]
+    107              }
+    108              timer = osRtxInfo.timer.list;
+   \                     ??osRtxTimerTick_5: (+1)
+   \   00000052   0x6C6C             LDR      R4,[R5, #+68]
+    109            }
+   \   00000054   0x2C00             CMP      R4,#+0
+   \   00000056   0xD1DB             BNE      ??osRtxTimerTick_1
+    110          }
+   \                     ??osRtxTimerTick_0: (+1)
+   \   00000058   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    111          
+    112          /// Timer Thread
+
+   \                                 In section .text, align 4
+    113          __WEAK void osRtxTimerThread (void *argument) {
+   \                     osRtxTimerThread: (+1)
+   \   00000000   0xB530             PUSH     {R4,R5,LR}
+   \   00000002   0xB083             SUB      SP,SP,#+12
+    114            os_timer_finfo_t finfo;
+    115            osStatus_t       status;
+    116            (void)           argument;
+    117          
+    118            osRtxInfo.timer.mq = osMessageQueueNew(osRtxConfig.timer_mq_mcnt, sizeof(os_timer_finfo_t), osRtxConfig.timer_mq_attr);
+   \   00000004   0x4810             LDR      R0,??osRtxTimerThread_0
+   \   00000006   0x6E02             LDR      R2,[R0, #+96]
+   \   00000008   0x2108             MOVS     R1,#+8
+   \   0000000A   0x6E40             LDR      R0,[R0, #+100]
+   \   0000000C   0x.... 0x....      BL       osMessageQueueNew
+   \   00000010   0x4C0E             LDR      R4,??osRtxTimerThread_0+0x4
+   \   00000012   0x64E0             STR      R0,[R4, #+76]
+    119            if (osRtxInfo.timer.mq == NULL) {
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD101             BNE      ??osRtxTimerThread_1
+    120              return;
+   \   00000018   0xB003             ADD      SP,SP,#+12
+   \   0000001A   0xBD30             POP      {R4,R5,PC}       ;; return
+    121            }
+    122            osRtxInfo.timer.tick = osRtxTimerTick;
+   \                     ??osRtxTimerThread_1: (+1)
+   \   0000001C   0x480C             LDR      R0,??osRtxTimerThread_0+0x8
+   \   0000001E   0x6520             STR      R0,[R4, #+80]
+   \   00000020   0x2500             MOVS     R5,#+0
+   \   00000022   0x43ED             MVNS     R5,R5            ;; #-1
+   \   00000024   0xE006             B        ??osRtxTimerThread_2
+    123            for (;;) {
+    124              status = osMessageQueueGet(osRtxInfo.timer.mq, &finfo, NULL, osWaitForever);
+    125              if (status == osOK) {
+    126                EvrRtxTimerCallback(*(osTimerFunc_t)finfo.fp, finfo.arg);
+   \                     ??osRtxTimerThread_3: (+1)
+   \   00000026   0x9901             LDR      R1,[SP, #+4]
+   \   00000028   0x9800             LDR      R0,[SP, #+0]
+   \   0000002A   0x.... 0x....      BL       EvrRtxTimerCallback
+    127                (*(osTimerFunc_t)finfo.fp)(finfo.arg);
+   \   0000002E   0x9801             LDR      R0,[SP, #+4]
+   \   00000030   0x9900             LDR      R1,[SP, #+0]
+   \   00000032   0x4788             BLX      R1
+    128              }
+   \                     ??osRtxTimerThread_2: (+1)
+   \   00000034   0x002B             MOVS     R3,R5
+   \   00000036   0x2200             MOVS     R2,#+0
+   \   00000038   0x4669             MOV      R1,SP
+   \   0000003A   0x6CE0             LDR      R0,[R4, #+76]
+   \   0000003C   0x.... 0x....      BL       osMessageQueueGet
+   \   00000040   0x2800             CMP      R0,#+0
+   \   00000042   0xD1F7             BNE      ??osRtxTimerThread_2
+   \   00000044   0xE7EF             B        ??osRtxTimerThread_3
+   \   00000046   0xBF00             Nop      
+   \                     ??osRtxTimerThread_0:
+   \   00000048   0x........         DC32     osRtxConfig
+   \   0000004C   0x........         DC32     osRtxInfo
+   \   00000050   0x........         DC32     osRtxTimerTick
+    129            }
+    130          }
+    131          
+    132          //  ==== Service Calls ====
+    133          
+    134          //  Service Calls definitions
+    135          SVC0_4M(TimerNew,       osTimerId_t,  osTimerFunc_t, osTimerType_t, void *, const osTimerAttr_t *)
+    136          SVC0_1 (TimerGetName,   const char *, osTimerId_t)
+    137          SVC0_2 (TimerStart,     osStatus_t,   osTimerId_t, uint32_t)
+    138          SVC0_1 (TimerStop,      osStatus_t,   osTimerId_t)
+    139          SVC0_1 (TimerIsRunning, uint32_t,     osTimerId_t)
+    140          SVC0_1 (TimerDelete,    osStatus_t,   osTimerId_t)
+    141          
+    142          /// Create and Initialize a timer.
+    143          /// \note API identical to osTimerNew
+
+   \                                 In section .text, align 2, keep-with-next
+    144          osTimerId_t svcRtxTimerNew (osTimerFunc_t func, osTimerType_t type, void *argument, const osTimerAttr_t *attr) {
+   \                     svcRtxTimerNew: (+1)
+   \   00000000   0xB5F4             PUSH     {R2,R4-R7,LR}
+   \   00000002   0x0007             MOVS     R7,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    145            os_timer_t *timer;
+    146            uint8_t     flags;
+    147            const char *name;
+    148          
+    149            // Check parameters
+    150            if ((func == NULL) || ((type != osTimerOnce) && (type != osTimerPeriodic))) {
+   \   00000006   0x0038             MOVS     R0,R7
+   \   00000008   0xD003             BEQ      ??svcRtxTimerNew_0
+   \   0000000A   0x0028             MOVS     R0,R5
+   \   0000000C   0xD003             BEQ      ??svcRtxTimerNew_1
+   \   0000000E   0x2D01             CMP      R5,#+1
+   \   00000010   0xD001             BEQ      ??svcRtxTimerNew_1
+    151              EvrRtxTimerError(NULL, osErrorParameter);
+   \                     ??svcRtxTimerNew_0: (+1)
+   \   00000012   0x2103             MOVS     R1,#+3
+   \   00000014   0xE023             B.N      ??svcRtxTimerNew_2
+    152              return NULL;
+    153            }
+    154          
+    155            // Process attributes
+    156            if (attr != NULL) {
+   \                     ??svcRtxTimerNew_1: (+1)
+   \   00000016   0x2B00             CMP      R3,#+0
+   \   00000018   0xD022             BEQ      ??svcRtxTimerNew_3
+    157              name  = attr->name;
+   \   0000001A   0x681C             LDR      R4,[R3, #+0]
+    158              timer = attr->cb_mem;
+   \   0000001C   0x689E             LDR      R6,[R3, #+8]
+    159              if (timer != NULL) {
+   \   0000001E   0x2E00             CMP      R6,#+0
+   \   00000020   0xD019             BEQ      ??svcRtxTimerNew_4
+    160                if (((uint32_t)timer & 3U) || (attr->cb_size < sizeof(os_timer_t))) {
+   \   00000022   0x07B0             LSLS     R0,R6,#+30
+   \   00000024   0xD11A             BNE      ??svcRtxTimerNew_5
+   \   00000026   0x68D8             LDR      R0,[R3, #+12]
+   \   00000028   0x2820             CMP      R0,#+32
+   \   0000002A   0xD317             BCC      ??svcRtxTimerNew_5
+    161                  EvrRtxTimerError(NULL, osRtxErrorInvalidControlBlock);
+    162                  return NULL;
+    163                }
+    164              } else {
+    165                if (attr->cb_size != 0U) {
+    166                  EvrRtxTimerError(NULL, osRtxErrorInvalidControlBlock);
+    167                  return NULL;
+    168                }
+    169              }
+    170            } else {
+    171              name  = NULL;
+    172              timer = NULL;
+    173            }
+    174          
+    175            // Allocate object memory if not provided
+    176            if (timer == NULL) {
+    177              if (osRtxInfo.mpi.timer != NULL) {
+    178                timer = osRtxMemoryPoolAlloc(osRtxInfo.mpi.timer);
+    179              } else {
+    180                timer = osRtxMemoryAlloc(osRtxInfo.mem.common, sizeof(os_timer_t), 1U);
+    181              }
+    182              if (timer == NULL) {
+    183                EvrRtxTimerError(NULL, osErrorNoMemory);
+    184                return NULL;
+    185              }
+    186              flags = osRtxFlagSystemObject;
+    187            } else {
+    188              flags = 0U;
+   \   0000002C   0x2000             MOVS     R0,#+0
+    189            }
+    190          
+    191            // Initialize control block
+    192            timer->id        = osRtxIdTimer;
+   \                     ??svcRtxTimerNew_6: (+1)
+   \   0000002E   0x2102             MOVS     R1,#+2
+   \   00000030   0x7031             STRB     R1,[R6, #+0]
+    193            timer->state     = osRtxTimerStopped;
+   \   00000032   0x2101             MOVS     R1,#+1
+   \   00000034   0x7071             STRB     R1,[R6, #+1]
+    194            timer->flags     = flags;
+   \   00000036   0x70B0             STRB     R0,[R6, #+2]
+    195            timer->type      = (uint8_t)type;
+   \   00000038   0x70F5             STRB     R5,[R6, #+3]
+    196            timer->name      = name;
+   \   0000003A   0x6074             STR      R4,[R6, #+4]
+    197            timer->prev      = NULL;
+   \   0000003C   0x2000             MOVS     R0,#+0
+   \   0000003E   0x60B0             STR      R0,[R6, #+8]
+    198            timer->next      = NULL;
+   \   00000040   0x60F0             STR      R0,[R6, #+12]
+    199            timer->tick      = 0U;
+   \   00000042   0x6130             STR      R0,[R6, #+16]
+    200            timer->load      = 0U;
+   \   00000044   0x6170             STR      R0,[R6, #+20]
+    201            timer->finfo.fp  = (void *)func;
+   \   00000046   0x61B7             STR      R7,[R6, #+24]
+    202            timer->finfo.arg = argument;
+   \   00000048   0x9800             LDR      R0,[SP, #+0]
+   \   0000004A   0x61F0             STR      R0,[R6, #+28]
+    203          
+    204            EvrRtxTimerCreated(timer);
+   \   0000004C   0x0030             MOVS     R0,R6
+   \   0000004E   0x.... 0x....      BL       EvrRtxTimerCreated
+    205          
+    206            return timer;
+   \   00000052   0x0030             MOVS     R0,R6
+   \   00000054   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+   \                     ??svcRtxTimerNew_4: (+1)
+   \   00000056   0x68D8             LDR      R0,[R3, #+12]
+   \   00000058   0x2800             CMP      R0,#+0
+   \   0000005A   0xD002             BEQ      ??svcRtxTimerNew_7
+   \                     ??svcRtxTimerNew_5: (+1)
+   \   0000005C   0x2108             MOVS     R1,#+8
+   \                     ??svcRtxTimerNew_2: (+1)
+   \   0000005E   0x....             B.N      ?Subroutine0
+   \                     ??svcRtxTimerNew_3: (+1)
+   \   00000060   0x2400             MOVS     R4,#+0
+   \                     ??svcRtxTimerNew_7: (+1)
+   \   00000062   0x....             LDR      R3,??DataTable10
+   \   00000064   0x68D8             LDR      R0,[R3, #+12]
+   \   00000066   0x2800             CMP      R0,#+0
+   \   00000068   0xD002             BEQ      ??svcRtxTimerNew_8
+   \   0000006A   0x.... 0x....      BL       osRtxMemoryPoolAlloc
+   \   0000006E   0xE004             B        ??svcRtxTimerNew_9
+   \                     ??svcRtxTimerNew_8: (+1)
+   \   00000070   0x2201             MOVS     R2,#+1
+   \   00000072   0x2120             MOVS     R1,#+32
+   \   00000074   0x6818             LDR      R0,[R3, #+0]
+   \   00000076   0x.... 0x....      BL       osRtxMemoryAlloc
+   \                     ??svcRtxTimerNew_9: (+1)
+   \   0000007A   0x0006             MOVS     R6,R0
+   \   0000007C   0xD101             BNE      ??svcRtxTimerNew_10
+   \   0000007E   0x2104             MOVS     R1,#+4
+   \   00000080   0xE7ED             B.N      ??svcRtxTimerNew_2
+   \                     ??svcRtxTimerNew_10: (+1)
+   \   00000082   0x2001             MOVS     R0,#+1
+   \   00000084   0xE7D3             B        ??svcRtxTimerNew_6
+    207          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x43C9             MVNS     R1,R1            ;; #-9
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x.... 0x....      BL       EvrRtxTimerError
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0xBDF2             POP      {R1,R4-R7,PC}
+    208          
+    209          /// Get name of a timer.
+    210          /// \note API identical to osTimerGetName
+
+   \                                 In section .text, align 2, keep-with-next
+    211          const char *svcRtxTimerGetName (osTimerId_t timer_id) {
+   \                     svcRtxTimerGetName: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    212            os_timer_t *timer = (os_timer_t *)timer_id;
+    213          
+    214            // Check parameters
+    215            if ((timer == NULL) || (timer->id != osRtxIdTimer)) {
+   \   00000004   0xD005             BEQ      ??svcRtxTimerGetName_0
+   \   00000006   0x7820             LDRB     R0,[R4, #+0]
+   \   00000008   0x2802             CMP      R0,#+2
+   \   0000000A   0xD102             BNE      ??svcRtxTimerGetName_0
+    216              EvrRtxTimerGetName(timer, NULL);
+    217              return NULL;
+    218            }
+    219          
+    220            // Check object state
+    221            if (timer->state == osRtxObjectInactive) {
+   \   0000000C   0x7860             LDRB     R0,[R4, #+1]
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD105             BNE      ??svcRtxTimerGetName_1
+    222              EvrRtxTimerGetName(timer, NULL);
+   \                     ??svcRtxTimerGetName_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x.... 0x....      BL       EvrRtxTimerGetName
+    223              return NULL;
+   \   0000001A   0x2000             MOVS     R0,#+0
+   \   0000001C   0xBD10             POP      {R4,PC}
+    224            }
+    225          
+    226            EvrRtxTimerGetName(timer, timer->name);
+   \                     ??svcRtxTimerGetName_1: (+1)
+   \   0000001E   0x6861             LDR      R1,[R4, #+4]
+   \   00000020   0x0020             MOVS     R0,R4
+   \   00000022   0x.... 0x....      BL       EvrRtxTimerGetName
+    227          
+    228            return timer->name;
+   \   00000026   0x6860             LDR      R0,[R4, #+4]
+   \   00000028   0xBD10             POP      {R4,PC}          ;; return
+    229          }
+    230          
+    231          /// Start or restart a timer.
+    232          /// \note API identical to osTimerStart
+
+   \                                 In section .text, align 2, keep-with-next
+    233          osStatus_t svcRtxTimerStart (osTimerId_t timer_id, uint32_t ticks) {
+   \                     svcRtxTimerStart: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+    234            os_timer_t *timer = (os_timer_t *)timer_id;
+    235          
+    236            // Check parameters
+    237            if ((timer == NULL) || (timer->id != osRtxIdTimer) || (ticks == 0U)) {
+   \   00000006   0x2D00             CMP      R5,#+0
+   \   00000008   0xD004             BEQ      ??svcRtxTimerStart_0
+   \   0000000A   0x7828             LDRB     R0,[R5, #+0]
+   \   0000000C   0x2802             CMP      R0,#+2
+   \   0000000E   0xD101             BNE      ??svcRtxTimerStart_0
+   \   00000010   0x2C00             CMP      R4,#+0
+   \   00000012   0xD101             BNE      ??svcRtxTimerStart_1
+    238              EvrRtxTimerError(timer, osErrorParameter);
+   \                     ??svcRtxTimerStart_0: (+1)
+   \   00000014   0x2403             MOVS     R4,#+3
+   \   00000016   0xE01A             B.N      ??svcRtxTimerStart_2
+    239              return osErrorParameter;
+    240            }
+    241          
+    242            // Check object state
+    243            switch (timer->state) {
+   \                     ??svcRtxTimerStart_1: (+1)
+   \   00000018   0x7868             LDRB     R0,[R5, #+1]
+   \   0000001A   0x2801             CMP      R0,#+1
+   \   0000001C   0xD002             BEQ      ??svcRtxTimerStart_3
+   \   0000001E   0x2802             CMP      R0,#+2
+   \   00000020   0xD010             BEQ      ??svcRtxTimerStart_4
+   \   00000022   0xE013             B        ??svcRtxTimerStart_5
+    244              case osRtxTimerStopped:
+    245                if (osRtxInfo.timer.tick == NULL) {
+   \                     ??svcRtxTimerStart_3: (+1)
+   \   00000024   0x....             LDR      R0,??DataTable5
+   \   00000026   0x6D00             LDR      R0,[R0, #+80]
+   \   00000028   0x2800             CMP      R0,#+0
+   \   0000002A   0xD00F             BEQ      ??svcRtxTimerStart_5
+    246                  EvrRtxTimerError(timer, osErrorResource);
+    247                  return osErrorResource;
+    248                }
+    249                timer->state = osRtxTimerRunning;
+   \   0000002C   0x2002             MOVS     R0,#+2
+   \   0000002E   0x7068             STRB     R0,[R5, #+1]
+    250                timer->load  = ticks;
+   \   00000030   0x616C             STR      R4,[R5, #+20]
+    251                break;
+    252              case osRtxTimerRunning:
+    253                TimerRemove(timer);
+    254                break;
+    255              case osRtxTimerInactive:
+    256              default:
+    257                EvrRtxTimerError(timer, osErrorResource);
+    258                return osErrorResource;
+    259            }
+    260          
+    261            TimerInsert(timer, ticks);
+   \                     ??svcRtxTimerStart_6: (+1)
+   \   00000032   0x0021             MOVS     R1,R4
+   \   00000034   0x0028             MOVS     R0,R5
+   \   00000036   0x.... 0x....      BL       TimerInsert
+    262          
+    263            EvrRtxTimerStarted(timer);
+   \   0000003A   0x0028             MOVS     R0,R5
+   \   0000003C   0x.... 0x....      BL       EvrRtxTimerStarted
+    264          
+    265            return osOK;
+   \   00000040   0x2000             MOVS     R0,#+0
+   \   00000042   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+   \                     ??svcRtxTimerStart_4: (+1)
+   \   00000044   0x0028             MOVS     R0,R5
+   \   00000046   0x.... 0x....      BL       TimerRemove
+   \   0000004A   0xE7F2             B        ??svcRtxTimerStart_6
+   \                     ??svcRtxTimerStart_5: (+1)
+   \   0000004C   0x2402             MOVS     R4,#+2
+   \                     ??svcRtxTimerStart_2: (+1)
+   \   0000004E                      REQUIRE ?Subroutine1
+   \   0000004E                      ;; // Fall through to label ?Subroutine1
+    266          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine1: (+1)
+   \   00000000   0x43E4             MVNS     R4,R4            ;; #-3
+   \   00000002   0x0021             MOVS     R1,R4
+   \   00000004   0x0028             MOVS     R0,R5
+   \   00000006   0x.... 0x....      BL       EvrRtxTimerError
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0xBD32             POP      {R1,R4,R5,PC}
+    267          
+    268          /// Stop a timer.
+    269          /// \note API identical to osTimerStop
+
+   \                                 In section .text, align 2, keep-with-next
+    270          osStatus_t svcRtxTimerStop (osTimerId_t timer_id) {
+   \                     svcRtxTimerStop: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+    271            os_timer_t *timer = (os_timer_t *)timer_id;
+    272          
+    273            // Check parameters
+    274            if ((timer == NULL) || (timer->id != osRtxIdTimer)) {
+   \   00000004   0xD002             BEQ      ??svcRtxTimerStop_0
+   \   00000006   0x7828             LDRB     R0,[R5, #+0]
+   \   00000008   0x2802             CMP      R0,#+2
+   \   0000000A   0xD001             BEQ      ??svcRtxTimerStop_1
+    275              EvrRtxTimerError(timer, osErrorParameter);
+   \                     ??svcRtxTimerStop_0: (+1)
+   \   0000000C   0x2403             MOVS     R4,#+3
+   \   0000000E   0xE003             B.N      ??svcRtxTimerStop_2
+    276              return osErrorParameter;
+    277            }
+    278          
+    279            // Check object state
+    280            if (timer->state != osRtxTimerRunning) {
+   \                     ??svcRtxTimerStop_1: (+1)
+   \   00000010   0x7868             LDRB     R0,[R5, #+1]
+   \   00000012   0x2802             CMP      R0,#+2
+   \   00000014   0xD001             BEQ      ??svcRtxTimerStop_3
+    281              EvrRtxTimerError(timer, osErrorResource);
+   \   00000016   0x2402             MOVS     R4,#+2
+    282              return osErrorResource;
+    283            }
+   \                     ??svcRtxTimerStop_2: (+1)
+   \   00000018   0x....             B.N      ?Subroutine1
+    284          
+    285            timer->state = osRtxTimerStopped;
+   \                     ??svcRtxTimerStop_3: (+1)
+   \   0000001A   0x2001             MOVS     R0,#+1
+   \   0000001C   0x7068             STRB     R0,[R5, #+1]
+    286          
+    287            TimerRemove(timer);
+   \   0000001E   0x0028             MOVS     R0,R5
+   \   00000020   0x.... 0x....      BL       TimerRemove
+    288          
+    289            EvrRtxTimerStopped(timer);
+   \   00000024   0x0028             MOVS     R0,R5
+   \   00000026   0x.... 0x....      BL       EvrRtxTimerStopped
+    290          
+    291            return osOK;
+   \   0000002A   0x2000             MOVS     R0,#+0
+   \   0000002C   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    292          }
+    293          
+    294          /// Check if a timer is running.
+    295          /// \note API identical to osTimerIsRunning
+
+   \                                 In section .text, align 2, keep-with-next
+    296          uint32_t svcRtxTimerIsRunning (osTimerId_t timer_id) {
+   \                     svcRtxTimerIsRunning: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    297            os_timer_t *timer = (os_timer_t *)timer_id;
+    298          
+    299            // Check parameters
+    300            if ((timer == NULL) || (timer->id != osRtxIdTimer)) {
+   \   00000002   0x2800             CMP      R0,#+0
+   \   00000004   0xD00A             BEQ      ??svcRtxTimerIsRunning_0
+   \   00000006   0x7801             LDRB     R1,[R0, #+0]
+   \   00000008   0x2902             CMP      R1,#+2
+   \   0000000A   0xD107             BNE      ??svcRtxTimerIsRunning_0
+    301              EvrRtxTimerIsRunning(timer, 0U);
+    302              return 0U;
+    303            }
+    304          
+    305            // Check object state
+    306            if (timer->state == osRtxTimerRunning) {
+   \   0000000C   0x7841             LDRB     R1,[R0, #+1]
+   \   0000000E   0x2902             CMP      R1,#+2
+   \   00000010   0xD104             BNE      ??svcRtxTimerIsRunning_0
+    307              EvrRtxTimerIsRunning(timer, 1U);
+   \   00000012   0x2101             MOVS     R1,#+1
+   \   00000014   0x.... 0x....      BL       EvrRtxTimerIsRunning
+    308              return 1U;
+   \   00000018   0x2001             MOVS     R0,#+1
+   \   0000001A   0xBD02             POP      {R1,PC}
+    309            }
+    310          
+    311            EvrRtxTimerIsRunning(timer, 0U);
+   \                     ??svcRtxTimerIsRunning_0: (+1)
+   \   0000001C   0x2100             MOVS     R1,#+0
+   \   0000001E   0x.... 0x....      BL       EvrRtxTimerIsRunning
+    312            return 0U;
+   \   00000022   0x2000             MOVS     R0,#+0
+   \   00000024   0xBD02             POP      {R1,PC}          ;; return
+    313          }
+    314          
+    315          /// Delete a timer.
+    316          /// \note API identical to osTimerDelete
+
+   \                                 In section .text, align 2, keep-with-next
+    317          osStatus_t svcRtxTimerDelete (osTimerId_t timer_id) {
+   \                     svcRtxTimerDelete: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+    318            os_timer_t *timer = (os_timer_t *)timer_id;
+    319          
+    320            // Check parameters
+    321            if ((timer == NULL) || (timer->id != osRtxIdTimer)) {
+   \   00000004   0xD002             BEQ      ??svcRtxTimerDelete_0
+   \   00000006   0x7828             LDRB     R0,[R5, #+0]
+   \   00000008   0x2802             CMP      R0,#+2
+   \   0000000A   0xD001             BEQ      ??svcRtxTimerDelete_1
+    322              EvrRtxTimerError(timer, osErrorParameter);
+   \                     ??svcRtxTimerDelete_0: (+1)
+   \   0000000C   0x2403             MOVS     R4,#+3
+   \   0000000E   0xE015             B.N      ??svcRtxTimerDelete_2
+    323              return osErrorParameter;
+    324            }
+    325          
+    326            // Check object state
+    327            switch (timer->state) {
+   \                     ??svcRtxTimerDelete_1: (+1)
+   \   00000010   0x7868             LDRB     R0,[R5, #+1]
+   \   00000012   0x2801             CMP      R0,#+1
+   \   00000014   0xD004             BEQ      ??svcRtxTimerDelete_3
+   \   00000016   0x2802             CMP      R0,#+2
+   \   00000018   0xD10F             BNE      ??svcRtxTimerDelete_4
+    328              case osRtxTimerStopped:
+    329                break;
+    330              case osRtxTimerRunning:
+    331                TimerRemove(timer);
+   \   0000001A   0x0028             MOVS     R0,R5
+   \   0000001C   0x.... 0x....      BL       TimerRemove
+    332                break;
+    333              case osRtxTimerInactive:
+    334              default:
+    335                EvrRtxTimerError(timer, osErrorResource);
+    336                return osErrorResource;
+    337            }
+    338          
+    339            // Mark object as inactive
+    340            timer->state = osRtxTimerInactive;
+   \                     ??svcRtxTimerDelete_3: (+1)
+   \   00000020   0x2000             MOVS     R0,#+0
+   \   00000022   0x7068             STRB     R0,[R5, #+1]
+    341          
+    342            // Free object memory
+    343            if (timer->flags & osRtxFlagSystemObject) {
+   \   00000024   0x78A8             LDRB     R0,[R5, #+2]
+   \   00000026   0x07C0             LSLS     R0,R0,#+31
+   \   00000028   0xD50D             BPL      ??svcRtxTimerDelete_5
+    344              if (osRtxInfo.mpi.timer != NULL) {
+   \   0000002A   0x....             LDR      R2,??DataTable10
+   \   0000002C   0x68D0             LDR      R0,[R2, #+12]
+   \   0000002E   0x2800             CMP      R0,#+0
+   \   00000030   0xD005             BEQ      ??svcRtxTimerDelete_6
+    345                osRtxMemoryPoolFree(osRtxInfo.mpi.timer, timer);
+   \   00000032   0x0029             MOVS     R1,R5
+   \   00000034   0x.... 0x....      BL       osRtxMemoryPoolFree
+   \   00000038   0xE005             B        ??svcRtxTimerDelete_5
+    346              } else {
+   \                     ??svcRtxTimerDelete_4: (+1)
+   \   0000003A   0x2402             MOVS     R4,#+2
+   \                     ??svcRtxTimerDelete_2: (+1)
+   \   0000003C   0x....             B.N      ?Subroutine1
+    347                osRtxMemoryFree(osRtxInfo.mem.common, timer);
+   \                     ??svcRtxTimerDelete_6: (+1)
+   \   0000003E   0x0029             MOVS     R1,R5
+   \   00000040   0x6810             LDR      R0,[R2, #+0]
+   \   00000042   0x.... 0x....      BL       osRtxMemoryFree
+    348              }
+    349            }
+    350          
+    351            EvrRtxTimerDestroyed(timer);
+   \                     ??svcRtxTimerDelete_5: (+1)
+   \   00000046   0x0028             MOVS     R0,R5
+   \   00000048   0x.... 0x....      BL       EvrRtxTimerDestroyed
+    352          
+    353            return osOK;
+   \   0000004C   0x2000             MOVS     R0,#+0
+   \   0000004E   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    354          }
+    355          
+    356          
+    357          //  ==== Public API ====
+    358          
+    359          /// Create and Initialize a timer.
+
+   \                                 In section .text, align 4, keep-with-next
+    360          osTimerId_t osTimerNew (osTimerFunc_t func, osTimerType_t type, void *argument, const osTimerAttr_t *attr) {
+   \                     osTimerNew: (+1)
+   \   00000000   0xB5F2             PUSH     {R1,R4-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x0016             MOVS     R6,R2
+   \   00000006   0x001D             MOVS     R5,R3
+    361            EvrRtxTimerNew(func, type, argument, attr);
+   \   00000008   0x.... 0x....      BL       EvrRtxTimerNew
+    362            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   0000000C   0xF3EF 0x8005      MRS      R0,IPSR
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD103             BNE      ??osTimerNew_0
+   \   00000014   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD001             BEQ      ??osTimerNew_1
+    363              EvrRtxTimerError(NULL, osErrorISR);
+   \                     ??osTimerNew_0: (+1)
+   \   0000001C   0x2105             MOVS     R1,#+5
+   \   0000001E   0x....             B.N      ?Subroutine0
+    364              return NULL;
+    365            }
+    366            return __svcTimerNew(func, type, argument, attr);
+   \                     ??osTimerNew_1: (+1)
+   \   00000020   0xF3EF 0x8014      MRS      R0,CONTROL
+   \   00000024   0x0780             LSLS     R0,R0,#+30
+   \   00000026   0xD406             BMI      ??osTimerNew_2
+   \   00000028   0xF3EF 0x8008      MRS      R0,MSP
+   \   0000002C   0x3820             SUBS     R0,R0,#+32
+   \   0000002E   0x2107             MOVS     R1,#+7
+   \   00000030   0x4388             BICS     R0,R0,R1
+   \   00000032   0xF380 0x8809      MSR      PSP,R0
+   \                     ??osTimerNew_2: (+1)
+   \   00000036   0x....             LDR      R0,??DataTable10_1
+   \   00000038   0x4607             mov r7,R0
+   \   0000003A   0x002B             MOVS     R3,R5
+   \   0000003C   0x0032             MOVS     R2,R6
+   \   0000003E   0x4668             MOV      R0,SP
+   \   00000040   0x7801             LDRB     R1,[R0, #+0]
+   \   00000042   0x0020             MOVS     R0,R4
+   \   00000044   0xDF00             SVC      0x0
+   \   00000046   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    367          }
+    368          
+    369          /// Get name of a timer.
+
+   \                                 In section .text, align 4, keep-with-next
+    370          const char *osTimerGetName (osTimerId_t timer_id) {
+   \                     osTimerGetName: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    371            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000002   0xF3EF 0x8105      MRS      R1,IPSR
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD103             BNE      ??osTimerGetName_0
+   \   0000000A   0xF3EF 0x8110      MRS      R1,PRIMASK
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD004             BEQ      ??osTimerGetName_1
+    372              EvrRtxTimerGetName(timer_id, NULL);
+   \                     ??osTimerGetName_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x.... 0x....      BL       EvrRtxTimerGetName
+    373              return NULL;
+   \   00000018   0x2000             MOVS     R0,#+0
+   \   0000001A   0xBD80             POP      {R7,PC}
+    374            }
+    375            return __svcTimerGetName(timer_id);
+   \                     ??osTimerGetName_1: (+1)
+   \   0000001C   0x....             LDR      R1,??DataTable10_2
+   \   0000001E   0x460F             mov r7,R1
+   \   00000020   0xDF00             SVC      0x0
+   \   00000022   0xBD80             POP      {R7,PC}          ;; return
+    376          }
+    377          
+    378          /// Start or restart a timer.
+
+   \                                 In section .text, align 4, keep-with-next
+    379          osStatus_t osTimerStart (osTimerId_t timer_id, uint32_t ticks) {
+   \                     osTimerStart: (+1)
+   \   00000000   0xB5B0             PUSH     {R4,R5,R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    380            EvrRtxTimerStart(timer_id, ticks);
+   \   00000006   0x.... 0x....      BL       EvrRtxTimerStart
+    381            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   0000000A   0xF3EF 0x8005      MRS      R0,IPSR
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD103             BNE      ??osTimerStart_0
+   \   00000012   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD000             BEQ      ??osTimerStart_1
+    382              EvrRtxTimerError(timer_id, osErrorISR);
+   \                     ??osTimerStart_0: (+1)
+   \   0000001A   0x....             B.N      ?Subroutine2
+    383              return osErrorISR;
+    384            }
+    385            return __svcTimerStart(timer_id, ticks);
+   \                     ??osTimerStart_1: (+1)
+   \   0000001C   0x....             LDR      R0,??DataTable10_3
+   \   0000001E   0x4607             mov r7,R0
+   \   00000020   0x0029             MOVS     R1,R5
+   \   00000022   0x0020             MOVS     R0,R4
+   \   00000024   0xDF00             SVC      0x0
+   \   00000026   0xBDB0             POP      {R4,R5,R7,PC}    ;; return
+    386          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine2: (+1)
+   \   00000000   0x2505             MOVS     R5,#+5
+   \   00000002   0x43ED             MVNS     R5,R5            ;; #-6
+   \   00000004   0x0029             MOVS     R1,R5
+   \   00000006   0x0020             MOVS     R0,R4
+   \   00000008   0x.... 0x....      BL       EvrRtxTimerError
+   \   0000000C   0x0028             MOVS     R0,R5
+   \   0000000E   0xBDB0             POP      {R4,R5,R7,PC}
+    387          
+    388          /// Stop a timer.
+
+   \                                 In section .text, align 4, keep-with-next
+    389          osStatus_t osTimerStop (osTimerId_t timer_id) {
+   \                     osTimerStop: (+1)
+   \   00000000   0xB5B0             PUSH     {R4,R5,R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    390            EvrRtxTimerStop(timer_id);
+   \   00000004   0x.... 0x....      BL       EvrRtxTimerStop
+    391            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000008   0xF3EF 0x8005      MRS      R0,IPSR
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD103             BNE      ??osTimerStop_0
+   \   00000010   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD000             BEQ      ??osTimerStop_1
+    392              EvrRtxTimerError(timer_id, osErrorISR);
+   \                     ??osTimerStop_0: (+1)
+   \   00000018   0x....             B.N      ?Subroutine2
+    393              return osErrorISR;
+    394            }
+    395            return __svcTimerStop(timer_id);
+   \                     ??osTimerStop_1: (+1)
+   \   0000001A   0x....             LDR      R0,??DataTable10_4
+   \   0000001C   0x4607             mov r7,R0
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0xDF00             SVC      0x0
+   \   00000022   0xBDB0             POP      {R4,R5,R7,PC}    ;; return
+    396          }
+    397          
+    398          /// Check if a timer is running.
+
+   \                                 In section .text, align 4, keep-with-next
+    399          uint32_t osTimerIsRunning (osTimerId_t timer_id) {
+   \                     osTimerIsRunning: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    400            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000002   0xF3EF 0x8105      MRS      R1,IPSR
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD103             BNE      ??osTimerIsRunning_0
+   \   0000000A   0xF3EF 0x8110      MRS      R1,PRIMASK
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD004             BEQ      ??osTimerIsRunning_1
+    401              EvrRtxTimerIsRunning(timer_id, 0U);
+   \                     ??osTimerIsRunning_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x.... 0x....      BL       EvrRtxTimerIsRunning
+    402              return 0U;
+   \   00000018   0x2000             MOVS     R0,#+0
+   \   0000001A   0xBD80             POP      {R7,PC}
+    403            }
+    404            return __svcTimerIsRunning(timer_id);
+   \                     ??osTimerIsRunning_1: (+1)
+   \   0000001C   0x....             LDR      R1,??DataTable10_5
+   \   0000001E   0x460F             mov r7,R1
+   \   00000020   0xDF00             SVC      0x0
+   \   00000022   0xBD80             POP      {R7,PC}          ;; return
+    405          }
+    406          
+    407          /// Delete a timer.
+
+   \                                 In section .text, align 4, keep-with-next
+    408          osStatus_t osTimerDelete (osTimerId_t timer_id) {
+   \                     osTimerDelete: (+1)
+   \   00000000   0xB5B0             PUSH     {R4,R5,R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    409            EvrRtxTimerDelete(timer_id);
+   \   00000004   0x.... 0x....      BL       EvrRtxTimerDelete
+    410            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000008   0xF3EF 0x8005      MRS      R0,IPSR
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD103             BNE      ??osTimerDelete_0
+   \   00000010   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD000             BEQ      ??osTimerDelete_1
+    411              EvrRtxTimerError(timer_id, osErrorISR);
+   \                     ??osTimerDelete_0: (+1)
+   \   00000018   0x....             B.N      ?Subroutine2
+    412              return osErrorISR;
+    413            }
+    414            return __svcTimerDelete(timer_id);
+   \                     ??osTimerDelete_1: (+1)
+   \   0000001A   0x....             LDR      R0,??DataTable10_6
+   \   0000001C   0x4607             mov r7,R0
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0xDF00             SVC      0x0
+   \   00000022   0xBDB0             POP      {R4,R5,R7,PC}    ;; return
+    415          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5:
+   \   00000000   0x........         DC32     osRtxInfo
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable10:
+   \   00000000   0x........         DC32     osRtxInfo+0x80
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable10_1:
+   \   00000000   0x........         DC32     svcRtxTimerNew
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable10_2:
+   \   00000000   0x........         DC32     svcRtxTimerGetName
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable10_3:
+   \   00000000   0x........         DC32     svcRtxTimerStart
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable10_4:
+   \   00000000   0x........         DC32     svcRtxTimerStop
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable10_5:
+   \   00000000   0x........         DC32     svcRtxTimerIsRunning
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable10_6:
+   \   00000000   0x........         DC32     svcRtxTimerDelete
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   TimerInsert
+       0   TimerRemove
+      24   osRtxTimerThread
+        24   -- Indirect call
+        24   -> EvrRtxTimerCallback
+        24   -> osMessageQueueGet
+        24   -> osMessageQueueNew
+      16   osRtxTimerTick
+        16   -> TimerInsert
+        16   -> osMessageQueuePut
+        16   -> osRtxErrorNotify
+      16   osTimerDelete
+        16   -> EvrRtxTimerDelete
+        16   -> EvrRtxTimerError
+       8   osTimerGetName
+         8   -> EvrRtxTimerGetName
+       8   osTimerIsRunning
+         8   -> EvrRtxTimerIsRunning
+      24   osTimerNew
+        24   -> EvrRtxTimerError
+        24   -> EvrRtxTimerNew
+      16   osTimerStart
+        16   -> EvrRtxTimerError
+        16   -> EvrRtxTimerStart
+      16   osTimerStop
+        16   -> EvrRtxTimerError
+        16   -> EvrRtxTimerStop
+      16   svcRtxTimerDelete
+        16   -> EvrRtxTimerDestroyed
+        16   -> EvrRtxTimerError
+        16   -> TimerRemove
+        16   -> osRtxMemoryFree
+        16   -> osRtxMemoryPoolFree
+       8   svcRtxTimerGetName
+         8   -> EvrRtxTimerGetName
+       8   svcRtxTimerIsRunning
+         8   -> EvrRtxTimerIsRunning
+      24   svcRtxTimerNew
+        24   -> EvrRtxTimerCreated
+        24   -> EvrRtxTimerError
+        24   -> osRtxMemoryAlloc
+        24   -> osRtxMemoryPoolAlloc
+      16   svcRtxTimerStart
+        16   -> EvrRtxTimerError
+        16   -> EvrRtxTimerStarted
+        16   -> TimerInsert
+        16   -> TimerRemove
+      16   svcRtxTimerStop
+        16   -> EvrRtxTimerError
+        16   -> EvrRtxTimerStopped
+        16   -> TimerRemove
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+       4  ??DataTable10_1
+       4  ??DataTable10_2
+       4  ??DataTable10_3
+       4  ??DataTable10_4
+       4  ??DataTable10_5
+       4  ??DataTable10_6
+       4  ??DataTable5
+      12  ?Subroutine0
+      14  ?Subroutine1
+      16  ?Subroutine2
+      60  TimerInsert
+      36  TimerRemove
+      84  osRtxTimerThread
+      90  osRtxTimerTick
+      36  osTimerDelete
+      36  osTimerGetName
+      36  osTimerIsRunning
+      72  osTimerNew
+      40  osTimerStart
+      36  osTimerStop
+      80  svcRtxTimerDelete
+      42  svcRtxTimerGetName
+      38  svcRtxTimerIsRunning
+     134  svcRtxTimerNew
+      78  svcRtxTimerStart
+      46  svcRtxTimerStop
+
+ 
+ 1 018 bytes in section .text
+ 
+ 934 bytes of CODE memory (+ 84 bytes shared)
+
+Errors: none
+Warnings: 1

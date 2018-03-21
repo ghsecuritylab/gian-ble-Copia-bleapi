@@ -1,0 +1,479 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:00
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\drivers\Serial.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Serial.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Serial.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Serial.o
+#        .\mbed-os\drivers\Serial.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Serial.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Serial.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\drivers\Serial.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "drivers/Serial.h"
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp off_t mbed::FileHandle::lseek(off_t, int)
+   \                     _ZN4mbed10FileHandle5lseekEli: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6803             LDR      R3,[R0, #+0]
+   \   00000004   0x691B             LDR      R3,[R3, #+16]
+   \   00000006   0x4798             BLX      R3
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::FileHandle::fsync()
+   \                     _ZN4mbed10FileHandle5fsyncEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x6989             LDR      R1,[R1, #+24]
+   \   00000006   0x4788             BLX      R1
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp off_t mbed::FileHandle::flen()
+   \                     _ZN4mbed10FileHandle4flenEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x6A89             LDR      R1,[R1, #+40]
+   \   00000006   0x4788             BLX      R1
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::FileHandle::set_blocking(bool)
+   \                     _ZN4mbed10FileHandle12set_blockingEb: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000004   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp short mbed::FileHandle::poll(short) const
+   \                     _ZNK4mbed10FileHandle4pollEs: (+1)
+   \   00000000   0x2011             MOVS     R0,#+17
+   \   00000002   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::FileHandle::sigio(mbed::Callback<void ()>)
+   \                     _ZN4mbed10FileHandle5sigioENS_8CallbackIFvvEEE: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::Serial::deleter ~Serial()
+   \                     _ZN4mbed6SerialD0Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x.... 0x....      BL       _ZN4mbed6SerialD1Ev
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0x.... 0x....      BL       _ZdlPv
+   \   0000000E   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 4
+   \   __code __interwork __softfp mbed::Serial::~Serial()
+   \                     _ZN4mbed6SerialD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x480A             LDR      R0,`?~Serial_0`
+   \   00000006   0x0001             MOVS     R1,R0
+   \   00000008   0x3108             ADDS     R1,R1,#+8
+   \   0000000A   0x6021             STR      R1,[R4, #+0]
+   \   0000000C   0x0001             MOVS     R1,R0
+   \   0000000E   0x3184             ADDS     R1,R1,#+132
+   \   00000010   0x63E1             STR      R1,[R4, #+60]
+   \   00000012   0x3028             ADDS     R0,R0,#+40
+   \   00000014   0x63A0             STR      R0,[R4, #+56]
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0x3050             ADDS     R0,R0,#+80
+   \   0000001A   0x.... 0x....      BL       _ZN4rtos5MutexD1Ev
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0x3038             ADDS     R0,R0,#+56
+   \   00000022   0x.... 0x....      BL       _ZN4mbed6StreamD2Ev
+   \   00000026   0x0020             MOVS     R0,R4
+   \   00000028   0x.... 0x....      BL       _ZN4mbed10SerialBaseD2Ev
+   \   0000002C   0x0020             MOVS     R0,R4
+   \   0000002E   0xBD10             POP      {R4,PC}          ;; return
+   \                     `?~Serial_0`:
+   \   00000030   0x........         DC32     _ZTVN4mbed6SerialE
+     17          #include "platform/mbed_wait_api.h"
+     18          
+     19          #if DEVICE_SERIAL
+     20          
+     21          namespace mbed {
+     22          
+
+   \                                 In section .text, align 2, keep-with-next
+     23          Serial::Serial(PinName tx, PinName rx, const char *name, int baud) : SerialBase(tx, rx, baud), Stream(name) {
+   \                     _ZN4mbed6SerialC1E7PinNameS1_PKci: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x001D             MOVS     R5,R3
+   \   00000004   0x9B04             LDR      R3,[SP, #+16]
+   \   00000006   0x.... 0x....      BL       _ZN4mbed10SerialBaseC2E7PinNameS1_i
+   \   0000000A   0x0029             MOVS     R1,R5
+   \   0000000C   0x0020             MOVS     R0,R4
+   \   0000000E   0x3038             ADDS     R0,R0,#+56
+   \   00000010   0x.... 0x....      BL       _ZN4mbed6StreamC2EPKc
+   \   00000014   0x....             LDR      R0,??DataTable1
+   \   00000016   0x0001             MOVS     R1,R0
+   \   00000018   0x3108             ADDS     R1,R1,#+8
+   \   0000001A   0x6021             STR      R1,[R4, #+0]
+   \   0000001C   0x0001             MOVS     R1,R0
+   \   0000001E   0x3184             ADDS     R1,R1,#+132
+   \   00000020   0x63E1             STR      R1,[R4, #+60]
+   \   00000022   0x3028             ADDS     R0,R0,#+40
+   \   00000024   0x63A0             STR      R0,[R4, #+56]
+   \   00000026   0x0020             MOVS     R0,R4
+   \   00000028   0x3050             ADDS     R0,R0,#+80
+   \   0000002A   0x.... 0x....      BL       _ZN4rtos5MutexC1Ev
+     24          }
+   \   0000002E   0x0020             MOVS     R0,R4
+   \   00000030   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+     25          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::Serial::subobject Serial(PinName, PinName, int)
+   \                     _ZN4mbed6SerialC2E7PinNameS1_i: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN4mbed6SerialC1E7PinNameS1_i
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     26          Serial::Serial(PinName tx, PinName rx, int baud): SerialBase(tx, rx, baud), Stream(NULL) {
+   \                     _ZN4mbed6SerialC1E7PinNameS1_i: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x.... 0x....      BL       _ZN4mbed10SerialBaseC2E7PinNameS1_i
+   \   00000008   0x2100             MOVS     R1,#+0
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0x3038             ADDS     R0,R0,#+56
+   \   0000000E   0x.... 0x....      BL       _ZN4mbed6StreamC2EPKc
+   \   00000012   0x....             LDR      R0,??DataTable1
+   \   00000014   0x0001             MOVS     R1,R0
+   \   00000016   0x3108             ADDS     R1,R1,#+8
+   \   00000018   0x6021             STR      R1,[R4, #+0]
+   \   0000001A   0x0001             MOVS     R1,R0
+   \   0000001C   0x3184             ADDS     R1,R1,#+132
+   \   0000001E   0x63E1             STR      R1,[R4, #+60]
+   \   00000020   0x3028             ADDS     R0,R0,#+40
+   \   00000022   0x63A0             STR      R0,[R4, #+56]
+   \   00000024   0x0020             MOVS     R0,R4
+   \   00000026   0x3050             ADDS     R0,R0,#+80
+   \   00000028   0x.... 0x....      BL       _ZN4rtos5MutexC1Ev
+     27          }
+   \   0000002C   0x0020             MOVS     R0,R4
+   \   0000002E   0xBD10             POP      {R4,PC}          ;; return
+     28          
+
+   \                                 In section .text, align 2, keep-with-next
+     29          int Serial::_getc() {
+   \                     _ZN4mbed6Serial5_getcEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     30              // Mutex is already held
+     31              return _base_getc();
+   \   00000002   0x.... 0x....      BL       _ZN4mbed10SerialBase10_base_getcEv
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+     32          }
+     33          
+
+   \                                 In section .text, align 2, keep-with-next
+     34          int Serial::_putc(int c) {
+   \                     _ZN4mbed6Serial5_putcEi: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     35              // Mutex is already held
+     36              return _base_putc(c);
+   \   00000002   0x.... 0x....      BL       _ZN4mbed10SerialBase10_base_putcEi
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+     37          }
+     38          
+
+   \                                 In section .text, align 2, keep-with-next
+     39          void Serial::lock() {
+   \                     _ZN4mbed6Serial4lockEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     40              _mutex.lock();
+   \   00000002   0x2100             MOVS     R1,#+0
+   \   00000004   0x43C9             MVNS     R1,R1            ;; #-1
+   \   00000006   0x3050             ADDS     R0,R0,#+80
+   \   00000008   0x.... 0x....      BL       _ZN4rtos5Mutex4lockEj
+     41          }
+   \   0000000C   0xBD01             POP      {R0,PC}          ;; return
+     42          
+
+   \                                 In section .text, align 2, keep-with-next
+     43          void Serial::unlock() {
+   \                     _ZN4mbed6Serial6unlockEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     44              _mutex.unlock();
+   \   00000002   0x3050             ADDS     R0,R0,#+80
+   \   00000004   0x.... 0x....      BL       _ZN4rtos5Mutex6unlockEv
+     45          }
+   \   00000008   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::Serial::subobject Serial(PinName, PinName, char const *, int)
+   \                     _ZN4mbed6SerialC2E7PinNameS1_PKci: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \   00000000   0x........         DC32     _ZTVN4mbed6SerialE
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __interwork __softfp int mbed::Serial::_getc for Stream/-56/()
+   \                     _ZThn56_N4mbed6Serial5_getcEv: (+1)
+   \   00000000   0x3838             SUBS     R0,R0,#+56
+   \   00000002                      REQUIRE _ZN4mbed6Serial5_getcEv
+   \   00000002                      ;; // Fall through to label mbed::Serial::_getc()
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __interwork __softfp int mbed::Serial::_putc for Stream/-56/(int)
+   \                     _ZThn56_N4mbed6Serial5_putcEi: (+1)
+   \   00000000   0x3838             SUBS     R0,R0,#+56
+   \   00000002                      REQUIRE _ZN4mbed6Serial5_putcEi
+   \   00000002                      ;; // Fall through to label mbed::Serial::_putc(int)
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __interwork __softfp void mbed::Serial::lock for Stream/-56/()
+   \                     _ZThn56_N4mbed6Serial4lockEv: (+1)
+   \   00000000   0x3838             SUBS     R0,R0,#+56
+   \   00000002                      REQUIRE _ZN4mbed6Serial4lockEv
+   \   00000002                      ;; // Fall through to label mbed::Serial::lock()
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __interwork __softfp void mbed::Serial::unlock for Stream/-56/()
+   \                     _ZThn56_N4mbed6Serial6unlockEv: (+1)
+   \   00000000   0x3838             SUBS     R0,R0,#+56
+   \   00000002                      REQUIRE _ZN4mbed6Serial6unlockEv
+   \   00000002                      ;; // Fall through to label mbed::Serial::unlock()
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void mbed::Serial::deleter ~Serial for FileBase/-60/()
+   \                     _ZThn60_N4mbed6SerialD0Ev: (+1)
+   \   00000000   0x383C             SUBS     R0,R0,#+60
+   \   00000002   0x4B01             LDR      R3,`??deleter ~Serial for FileBase/-60/_0`
+   \   00000004   0x4718             BX       R3
+   \   00000006   0xBF00             Nop      
+   \                     `??deleter ~Serial for FileBase/-60/_0`:
+   \   00000008   0x........         DC32     _ZN4mbed6SerialD0Ev
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void mbed::Serial::deleter ~Serial for FileHandle/-56/()
+   \                     _ZThn56_N4mbed6SerialD0Ev: (+1)
+   \   00000000   0x3838             SUBS     R0,R0,#+56
+   \   00000002   0x4B01             LDR      R3,`??deleter ~Serial for FileHandle/-56/_0`
+   \   00000004   0x4718             BX       R3
+   \   00000006   0xBF00             Nop      
+   \                     `??deleter ~Serial for FileHandle/-56/_0`:
+   \   00000008   0x........         DC32     _ZN4mbed6SerialD0Ev
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void *mbed::Serial::~Serial for FileBase/-60/()
+   \                     _ZThn60_N4mbed6SerialD1Ev: (+1)
+   \   00000000   0x383C             SUBS     R0,R0,#+60
+   \   00000002   0x4B01             LDR      R3,`?~Serial for FileBase/-60/_0`
+   \   00000004   0x4718             BX       R3
+   \   00000006   0xBF00             Nop      
+   \                     `?~Serial for FileBase/-60/_0`:
+   \   00000008   0x........         DC32     _ZN4mbed6SerialD1Ev
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void *mbed::Serial::~Serial for FileHandle/-56/()
+   \                     _ZThn56_N4mbed6SerialD1Ev: (+1)
+   \   00000000   0x3838             SUBS     R0,R0,#+56
+   \   00000002   0x4B01             LDR      R3,`?~Serial for FileHandle/-56/_0`
+   \   00000004   0x4718             BX       R3
+   \   00000006   0xBF00             Nop      
+   \                     `?~Serial for FileHandle/-56/_0`:
+   \   00000008   0x........         DC32     _ZN4mbed6SerialD1Ev
+     46          
+     47          } // namespace mbed
+     48          
+     49          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   mbed::FileHandle::flen()
+         8   -- Indirect call
+       8   mbed::FileHandle::fsync()
+         8   -- Indirect call
+       8   mbed::FileHandle::lseek(off_t, int)
+         8   -- Indirect call
+       0   mbed::FileHandle::poll(short) const
+       0   mbed::FileHandle::set_blocking(bool)
+       0   mbed::FileHandle::sigio(mbed::Callback<void ()>)
+       0   mbed::Serial::Serial(PinName, PinName, char const *, int)
+        16   -> mbed::SerialBase::subobject SerialBase(PinName, PinName, int)
+        16   -> mbed::Stream::subobject Stream(char const *)
+        16   -> rtos::Mutex::Mutex()
+       8   mbed::Serial::Serial(PinName, PinName, int)
+         8   -> mbed::SerialBase::subobject SerialBase(PinName, PinName, int)
+         8   -> mbed::Stream::subobject Stream(char const *)
+         8   -> rtos::Mutex::Mutex()
+       0   mbed::Serial::_getc for Stream/-56/()
+         0   -> mbed::Serial::_getc()
+       8   mbed::Serial::_getc()
+         8   -> mbed::SerialBase::_base_getc()
+       0   mbed::Serial::_putc for Stream/-56/(int)
+         0   -> mbed::Serial::_putc(int)
+       8   mbed::Serial::_putc(int)
+         8   -> mbed::SerialBase::_base_putc(int)
+       0   mbed::Serial::deleter ~Serial for FileBase/-60/()
+         0   -> mbed::Serial::deleter ~Serial()
+       0   mbed::Serial::deleter ~Serial for FileHandle/-56/()
+         0   -> mbed::Serial::deleter ~Serial()
+       8   mbed::Serial::deleter ~Serial()
+         8   -> mbed::Serial::~Serial()
+         8   -> operator delete(void *)
+       0   mbed::Serial::lock for Stream/-56/()
+         0   -> mbed::Serial::lock()
+       8   mbed::Serial::lock()
+         8   -> rtos::Mutex::lock(unsigned int)
+      16   mbed::Serial::subobject Serial(PinName, PinName, char const *, int)
+        16   -> mbed::SerialBase::subobject SerialBase(PinName, PinName, int)
+        16   -> mbed::Stream::subobject Stream(char const *)
+        16   -> rtos::Mutex::Mutex()
+       8   mbed::Serial::subobject Serial(PinName, PinName, int)
+         8   -> mbed::Serial::Serial(PinName, PinName, int)
+       0   mbed::Serial::unlock for Stream/-56/()
+         0   -> mbed::Serial::unlock()
+       8   mbed::Serial::unlock()
+         8   -> rtos::Mutex::unlock()
+       0   mbed::Serial::~Serial for FileBase/-60/()
+         0   -> mbed::Serial::~Serial()
+       0   mbed::Serial::~Serial for FileHandle/-56/()
+         0   -> mbed::Serial::~Serial()
+       8   mbed::Serial::~Serial()
+         8   -> mbed::SerialBase::subobject ~SerialBase()
+         8   -> mbed::Stream::subobject ~Stream()
+         8   -> rtos::Mutex::~Mutex()
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+      50  ?Subroutine0
+      10  mbed::FileHandle::flen()
+      10  mbed::FileHandle::fsync()
+      10  mbed::FileHandle::lseek(off_t, int)
+       4  mbed::FileHandle::poll(short) const
+       6  mbed::FileHandle::set_blocking(bool)
+       2  mbed::FileHandle::sigio(mbed::Callback<void ()>)
+       2  mbed::Serial::Serial(PinName, PinName, char const *, int)
+      48  mbed::Serial::Serial(PinName, PinName, int)
+       2  mbed::Serial::_getc for Stream/-56/()
+       8  mbed::Serial::_getc()
+       2  mbed::Serial::_putc for Stream/-56/(int)
+       8  mbed::Serial::_putc(int)
+      12  mbed::Serial::deleter ~Serial for FileBase/-60/()
+      12  mbed::Serial::deleter ~Serial for FileHandle/-56/()
+      16  mbed::Serial::deleter ~Serial()
+       2  mbed::Serial::lock for Stream/-56/()
+      14  mbed::Serial::lock()
+       4  mbed::Serial::subobject Serial(PinName, PinName, char const *, int)
+       8  mbed::Serial::subobject Serial(PinName, PinName, int)
+       2  mbed::Serial::unlock for Stream/-56/()
+      10  mbed::Serial::unlock()
+      12  mbed::Serial::~Serial for FileBase/-60/()
+      12  mbed::Serial::~Serial for FileHandle/-56/()
+      52  mbed::Serial::~Serial()
+     528  -- Other
+
+ 
+ 528 bytes in section .rodata
+ 322 bytes in section .text
+ 
+ 164 bytes of CODE  memory (+ 158 bytes shared)
+   0 bytes of CONST memory (+ 528 bytes shared)
+
+Errors: none
+Warnings: none

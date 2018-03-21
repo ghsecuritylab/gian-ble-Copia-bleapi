@@ -1,0 +1,163 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       16/Mar/2018  12:16:18
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        .\mbed-os\features\frameworks\utest\source\utest_stack_trace.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DDEVICE_SERIAL=1 -DTARGET_CORTEX_M -DDEVICE_SPI=1 -DTARGET_LIKE_MBED
+#        -DMBED_BUILD_TIMESTAMP=1521198946.13 -DARM_MATH_CM0 -DTARGET_RELEASE
+#        -D__CORTEX_M0 -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0
+#        -DTOOLCHAIN_object -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -f
+#        .\BUILD\STEVAL_IDB007V1\iar\.includes_fc2e77952737cb4522ab0dffe8cfd8aa.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN
+#        -I./mbed-os/features/frameworks
+#        -I./mbed-os/features/frameworks/greentea-client
+#        -I./mbed-os/features/frameworks/greentea-client/greentea-client
+#        -I./mbed-os/features/frameworks/greentea-client/source
+#        -I./mbed-os/features/frameworks/unity
+#        -I./mbed-os/features/frameworks/unity/source
+#        -I./mbed-os/features/frameworks/unity/unity
+#        -I./mbed-os/features/frameworks/utest
+#        -I./mbed-os/features/frameworks/utest/source
+#        -I./mbed-os/features/frameworks/utest/utest
+#        -I./mbed-os/features/mbedtls -I./mbed-os/features/mbedtls/importer
+#        -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/features/netsocket
+#        -I./mbed-os/features/netsocket/cellular
+#        -I./mbed-os/features/netsocket/cellular/generic_modem_driver
+#        -I./mbed-os/features/netsocket/cellular/utils
+#        -I./mbed-os/features/storage -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\iar\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\utest\source\utest_stack_trace.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\utest\source\utest_stack_trace.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\utest\source\utest_stack_trace.o
+#        .\mbed-os\features\frameworks\utest\source\utest_stack_trace.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\utest\source\utest_stack_trace.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\utest\source\utest_stack_trace.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia\mbed-os\features\frameworks\utest\source\utest_stack_trace.cpp
+      1          /****************************************************************************
+      2           * Copyright (c) 2016, ARM Limited, All Rights Reserved
+      3           * SPDX-License-Identifier: Apache-2.0
+      4           *
+      5           * Licensed under the Apache License, Version 2.0 (the "License");
+      6           * you may not use this file except in compliance with the License.
+      7           * You may obtain a copy of the License at
+      8           *
+      9           *     http://www.apache.org/licenses/LICENSE-2.0
+     10           *
+     11           * Unless required by applicable law or agreed to in writing, software
+     12           * distributed under the License is distributed on an "AS IS" BASIS,
+     13           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     14           * See the License for the specific language governing permissions and
+     15           * limitations under the License.
+     16           */
+     17          #ifdef UTEST_STACK_TRACE
+     18           
+     19          #include "greentea-client/test_env.h"
+     20          #include "mbed.h"
+     21          #include "utest/utest.h"
+     22          #include "unity/unity.h"
+     23          #include "utest/utest_stack_trace.h"
+     24          #include "utest/utest_serial.h"
+     25          
+     26          using namespace utest::v1;
+     27          
+     28          std::string utest_trace[UTEST_MAX_BACKTRACE];
+     29          
+     30          static unsigned trace_index = 0;
+     31          static unsigned total_calls = 0;
+     32          
+     33          void utest_trace_initialise()
+     34          {
+     35              total_calls = 0;
+     36              trace_index = 0;
+     37              for(unsigned i = 0; i < UTEST_MAX_BACKTRACE; i++) {
+     38                  utest_trace[i].clear();        
+     39              }
+     40          }
+     41          
+     42          void utest_add_to_trace(char *func_name)
+     43          {    
+     44              utest_trace[trace_index] = std::string(func_name);   
+     45              trace_index = (trace_index + 1 == UTEST_MAX_BACKTRACE) ? 0 : trace_index + 1;
+     46              total_calls ++;
+     47          }
+     48          
+     49          void utest_dump_trace()
+     50          {
+     51              unsigned current = (trace_index == 0) ? UTEST_MAX_BACKTRACE - 1 : trace_index - 1;
+     52          
+     53              utest_printf("==================================================================\n");
+     54              utest_printf("Utest back trace: Total calls logged = %u.\n", total_calls);
+     55              utest_printf("==================================================================\n");
+     56              while (current != trace_index) {
+     57              
+     58                  utest_printf("%u > %s\n", current, utest_trace[current].c_str());
+     59                  current = (current == 0) ? UTEST_MAX_BACKTRACE - 1 : current - 1;
+     60              }
+     61              utest_printf("==================================================================\n");
+     62          }
+     63          
+     64          #endif
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

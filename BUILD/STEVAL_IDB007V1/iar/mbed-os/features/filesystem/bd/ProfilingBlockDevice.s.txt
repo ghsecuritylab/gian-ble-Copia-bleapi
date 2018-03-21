@@ -1,0 +1,539 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:16
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\filesystem\bd\ProfilingBlockDevice.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\bd\ProfilingBlockDevice.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\bd\ProfilingBlockDevice.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\bd\ProfilingBlockDevice.o
+#        .\mbed-os\features\filesystem\bd\ProfilingBlockDevice.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\bd\ProfilingBlockDevice.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\bd\ProfilingBlockDevice.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\filesystem\bd\ProfilingBlockDevice.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2017 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          
+     17          #include "ProfilingBlockDevice.h"
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int BlockDevice::trim(bd_addr_t, bd_size_t)
+   \                     _ZN11BlockDevice4trimEyy: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x4770             BX       LR               ;; return
+
+   \                                 In section .rodata, align 4
+   \   __absolute mbed::Callback<void ()>::ops const mbed::Callback<void ()>::generate<>(mbed::Callback<void ()>::function_context<void (*)(void *), void> const &)::ops
+   \                     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops:
+   \   00000000   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv
+   \   00000004   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv
+   \   00000008   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x0001             MOVS     R1,R0
+   \   00000004   0x6848             LDR      R0,[R1, #+4]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD001             BEQ      ??function_move_0
+   \   00000004   0xC90C             LDM      R1!,{R2,R3}
+   \   00000006   0xC00C             STM      R0!,{R2,R3}
+   \                     ??function_move_0: (+1)
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void mbed::callback<>(void (*)(void *), void *)
+   \                     _ZN4mbed8callbackIvvvEENS_8CallbackIFT1_vEEEPFS2_PT_EPT0_: (+1)
+   \   00000000   0xB470             PUSH     {R4-R6}
+   \   00000002   0x2300             MOVS     R3,#+0
+   \   00000004   0x2400             MOVS     R4,#+0
+   \   00000006   0x2500             MOVS     R5,#+0
+   \   00000008   0x2600             MOVS     R6,#+0
+   \   0000000A   0xC078             STM      R0!,{R3-R6}
+   \   0000000C   0x3810             SUBS     R0,R0,#+16
+   \   0000000E   0xD001             BEQ      ??callback_0
+   \   00000010   0x6001             STR      R1,[R0, #+0]
+   \   00000012   0x6042             STR      R2,[R0, #+4]
+   \                     ??callback_0: (+1)
+   \   00000014   0x4901             LDR      R1,??callback_1
+   \   00000016   0x60C1             STR      R1,[R0, #+12]
+   \   00000018   0xBC70             POP      {R4-R6}
+   \   0000001A   0x4770             BX       LR               ;; return
+   \                     ??callback_1:
+   \   0000001C   0x........         DC32     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp ProfilingBlockDevice::~ProfilingBlockDevice()
+   \                     _ZN20ProfilingBlockDeviceD1Ev: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp ProfilingBlockDevice::deleter ~ProfilingBlockDevice()
+   \                     _ZN20ProfilingBlockDeviceD0Ev: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZdlPv
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+     18          
+     19          
+
+   \                                 In section .text, align 2, keep-with-next
+     20          ProfilingBlockDevice::ProfilingBlockDevice(BlockDevice *bd)
+   \                     _ZN20ProfilingBlockDeviceC1EP11BlockDevice: (+1)
+   \   00000000   0xBF00             Nop      
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0002             MOVS     R2,R0
+   \   00000002   0x....             LDR      R0,??DataTable0
+   \   00000004   0x6010             STR      R0,[R2, #+0]
+     21              : _bd(bd)
+   \   00000006   0x6051             STR      R1,[R2, #+4]
+     22              , _read_count(0)
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0x2100             MOVS     R1,#+0
+   \   0000000C   0x0013             MOVS     R3,R2
+   \   0000000E   0x3308             ADDS     R3,R3,#+8
+   \   00000010   0xC303             STM      R3!,{R0,R1}
+     23              , _program_count(0)
+   \   00000012   0x0013             MOVS     R3,R2
+   \   00000014   0x3310             ADDS     R3,R3,#+16
+   \   00000016   0xC303             STM      R3!,{R0,R1}
+     24              , _erase_count(0)
+   \   00000018   0x0013             MOVS     R3,R2
+   \   0000001A   0x3318             ADDS     R3,R3,#+24
+   \   0000001C   0xC303             STM      R3!,{R0,R1}
+     25          {
+     26          }
+   \   0000001E   0x0010             MOVS     R0,R2
+   \   00000020   0x4770             BX       LR               ;; return
+     27          
+
+   \                                 In section .text, align 2, keep-with-next
+     28          int ProfilingBlockDevice::init()
+     29          {
+   \                     _ZN20ProfilingBlockDevice4initEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     30              return _bd->init();
+   \   00000002   0x6840             LDR      R0,[R0, #+4]
+   \   00000004   0x6801             LDR      R1,[R0, #+0]
+   \   00000006   0x6889             LDR      R1,[R1, #+8]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD02             POP      {R1,PC}          ;; return
+     31          }
+     32          
+
+   \                                 In section .text, align 2, keep-with-next
+     33          int ProfilingBlockDevice::deinit()
+     34          {
+   \                     _ZN20ProfilingBlockDevice6deinitEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     35              return _bd->deinit();
+   \   00000002   0x6840             LDR      R0,[R0, #+4]
+   \   00000004   0x6801             LDR      R1,[R0, #+0]
+   \   00000006   0x68C9             LDR      R1,[R1, #+12]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD02             POP      {R1,PC}          ;; return
+     36          }
+     37          
+
+   \                                 In section .text, align 2, keep-with-next
+     38          int ProfilingBlockDevice::read(void *b, bd_addr_t addr, bd_size_t size)
+     39          {
+   \                     _ZN20ProfilingBlockDevice4readEPvyy: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB083             SUB      SP,SP,#+12
+   \   00000004   0x0006             MOVS     R6,R0
+     40              int err = _bd->read(b, addr, size);
+   \   00000006   0x6870             LDR      R0,[R6, #+4]
+   \   00000008   0xAC08             ADD      R4,SP,#+32
+   \   0000000A   0xCC30             LDM      R4,{R4,R5}
+   \   0000000C   0x9400             STR      R4,[SP, #+0]
+   \   0000000E   0x9501             STR      R5,[SP, #+4]
+   \   00000010   0x6807             LDR      R7,[R0, #+0]
+   \   00000012   0x693F             LDR      R7,[R7, #+16]
+   \   00000014   0x47B8             BLX      R7
+     41              if (!err) {
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD107             BNE      ??read_0
+     42                  _read_count += size;
+   \   0000001A   0x0031             MOVS     R1,R6
+   \   0000001C   0x3108             ADDS     R1,R1,#+8
+   \   0000001E   0xC90C             LDM      R1!,{R2,R3}
+   \   00000020   0x18A4             ADDS     R4,R4,R2
+   \   00000022   0x415D             ADCS     R5,R5,R3
+   \   00000024   0x0031             MOVS     R1,R6
+   \   00000026   0x3108             ADDS     R1,R1,#+8
+   \   00000028   0xC130             STM      R1!,{R4,R5}
+     43              }
+     44              return err;
+   \                     ??read_0: (+1)
+   \   0000002A   0xB003             ADD      SP,SP,#+12
+   \   0000002C   0xBDF0             POP      {R4-R7,PC}       ;; return
+     45          }
+     46          
+
+   \                                 In section .text, align 2, keep-with-next
+     47          int ProfilingBlockDevice::program(const void *b, bd_addr_t addr, bd_size_t size)
+     48          {
+   \                     _ZN20ProfilingBlockDevice7programEPKvyy: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB083             SUB      SP,SP,#+12
+   \   00000004   0x0006             MOVS     R6,R0
+     49              int err = _bd->program(b, addr, size);
+   \   00000006   0x6870             LDR      R0,[R6, #+4]
+   \   00000008   0xAC08             ADD      R4,SP,#+32
+   \   0000000A   0xCC30             LDM      R4,{R4,R5}
+   \   0000000C   0x9400             STR      R4,[SP, #+0]
+   \   0000000E   0x9501             STR      R5,[SP, #+4]
+   \   00000010   0x6807             LDR      R7,[R0, #+0]
+   \   00000012   0x697F             LDR      R7,[R7, #+20]
+   \   00000014   0x47B8             BLX      R7
+     50              if (!err) {
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD107             BNE      ??program_0
+     51                  _program_count += size;
+   \   0000001A   0x0031             MOVS     R1,R6
+   \   0000001C   0x3110             ADDS     R1,R1,#+16
+   \   0000001E   0xC90C             LDM      R1!,{R2,R3}
+   \   00000020   0x18A4             ADDS     R4,R4,R2
+   \   00000022   0x415D             ADCS     R5,R5,R3
+   \   00000024   0x0031             MOVS     R1,R6
+   \   00000026   0x3110             ADDS     R1,R1,#+16
+   \   00000028   0xC130             STM      R1!,{R4,R5}
+     52              }
+     53              return err;
+   \                     ??program_0: (+1)
+   \   0000002A   0xB003             ADD      SP,SP,#+12
+   \   0000002C   0xBDF0             POP      {R4-R7,PC}       ;; return
+     54          }
+     55          
+
+   \                                 In section .text, align 2, keep-with-next
+     56          int ProfilingBlockDevice::erase(bd_addr_t addr, bd_size_t size)
+     57          {
+   \                     _ZN20ProfilingBlockDevice5eraseEyy: (+1)
+   \   00000000   0xB57C             PUSH     {R2-R6,LR}
+   \   00000002   0x0006             MOVS     R6,R0
+     58              int err = _bd->erase(addr, size);
+   \   00000004   0x6870             LDR      R0,[R6, #+4]
+   \   00000006   0xA906             ADD      R1,SP,#+24
+   \   00000008   0xC930             LDM      R1!,{R4,R5}
+   \   0000000A   0x9400             STR      R4,[SP, #+0]
+   \   0000000C   0x9501             STR      R5,[SP, #+4]
+   \   0000000E   0x6801             LDR      R1,[R0, #+0]
+   \   00000010   0x6989             LDR      R1,[R1, #+24]
+   \   00000012   0x4788             BLX      R1
+     59              if (!err) {
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD107             BNE      ??erase_0
+     60                  _erase_count += size;
+   \   00000018   0x0031             MOVS     R1,R6
+   \   0000001A   0x3118             ADDS     R1,R1,#+24
+   \   0000001C   0xC90C             LDM      R1!,{R2,R3}
+   \   0000001E   0x18A4             ADDS     R4,R4,R2
+   \   00000020   0x415D             ADCS     R5,R5,R3
+   \   00000022   0x0031             MOVS     R1,R6
+   \   00000024   0x3118             ADDS     R1,R1,#+24
+   \   00000026   0xC130             STM      R1!,{R4,R5}
+     61              }
+     62              return err;
+   \                     ??erase_0: (+1)
+   \   00000028   0xBD76             POP      {R1,R2,R4-R6,PC}  ;; return
+     63          }
+     64          
+
+   \                                 In section .text, align 2, keep-with-next
+     65          bd_size_t ProfilingBlockDevice::get_read_size() const
+     66          {
+   \                     _ZNK20ProfilingBlockDevice13get_read_sizeEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     67              return _bd->get_read_size();
+   \   00000002   0x6840             LDR      R0,[R0, #+4]
+   \   00000004   0x6801             LDR      R1,[R0, #+0]
+   \   00000006   0x6A09             LDR      R1,[R1, #+32]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD04             POP      {R2,PC}          ;; return
+     68          }
+     69          
+
+   \                                 In section .text, align 2, keep-with-next
+     70          bd_size_t ProfilingBlockDevice::get_program_size() const
+     71          {
+   \                     _ZNK20ProfilingBlockDevice16get_program_sizeEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     72              return _bd->get_program_size();
+   \   00000002   0x6840             LDR      R0,[R0, #+4]
+   \   00000004   0x6801             LDR      R1,[R0, #+0]
+   \   00000006   0x6A49             LDR      R1,[R1, #+36]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD04             POP      {R2,PC}          ;; return
+     73          }
+     74          
+
+   \                                 In section .text, align 2, keep-with-next
+     75          bd_size_t ProfilingBlockDevice::get_erase_size() const
+     76          {
+   \                     _ZNK20ProfilingBlockDevice14get_erase_sizeEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     77              return _bd->get_erase_size();
+   \   00000002   0x6840             LDR      R0,[R0, #+4]
+   \   00000004   0x6801             LDR      R1,[R0, #+0]
+   \   00000006   0x6A89             LDR      R1,[R1, #+40]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD04             POP      {R2,PC}          ;; return
+     78          }
+     79          
+
+   \                                 In section .text, align 2, keep-with-next
+     80          bd_size_t ProfilingBlockDevice::size() const
+     81          {
+   \                     _ZNK20ProfilingBlockDevice4sizeEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     82              return _bd->size();
+   \   00000002   0x6840             LDR      R0,[R0, #+4]
+   \   00000004   0x6801             LDR      R1,[R0, #+0]
+   \   00000006   0x6AC9             LDR      R1,[R1, #+44]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD04             POP      {R2,PC}          ;; return
+     83          }
+     84          
+
+   \                                 In section .text, align 2, keep-with-next
+     85          void ProfilingBlockDevice::reset()
+     86          {
+   \                     _ZN20ProfilingBlockDevice5resetEv: (+1)
+   \   00000000   0x0002             MOVS     R2,R0
+     87              _read_count = 0;
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x0013             MOVS     R3,R2
+   \   00000008   0x3308             ADDS     R3,R3,#+8
+   \   0000000A   0xC303             STM      R3!,{R0,R1}
+     88              _program_count = 0;
+   \   0000000C   0x0013             MOVS     R3,R2
+   \   0000000E   0x3310             ADDS     R3,R3,#+16
+   \   00000010   0xC303             STM      R3!,{R0,R1}
+     89              _erase_count = 0;
+   \   00000012   0x3218             ADDS     R2,R2,#+24
+   \   00000014   0xC203             STM      R2!,{R0,R1}
+     90          }
+   \   00000016   0x4770             BX       LR               ;; return
+     91          
+
+   \                                 In section .text, align 2, keep-with-next
+     92          bd_size_t ProfilingBlockDevice::get_read_count() const
+     93          {
+     94              return _read_count;
+   \                     _ZNK20ProfilingBlockDevice14get_read_countEv: (+1)
+   \   00000000   0x3008             ADDS     R0,R0,#+8
+   \   00000002   0xC803             LDM      R0,{R0,R1}
+   \   00000004   0x4770             BX       LR               ;; return
+     95          }
+     96          
+
+   \                                 In section .text, align 2, keep-with-next
+     97          bd_size_t ProfilingBlockDevice::get_program_count() const
+     98          {
+     99              return _program_count;
+   \                     _ZNK20ProfilingBlockDevice17get_program_countEv: (+1)
+   \   00000000   0x3010             ADDS     R0,R0,#+16
+   \   00000002   0xC803             LDM      R0,{R0,R1}
+   \   00000004   0x4770             BX       LR               ;; return
+    100          }
+    101          
+
+   \                                 In section .text, align 2, keep-with-next
+    102          bd_size_t ProfilingBlockDevice::get_erase_count() const
+    103          {
+    104              return _erase_count;
+   \                     _ZNK20ProfilingBlockDevice15get_erase_countEv: (+1)
+   \   00000000   0x3018             ADDS     R0,R0,#+24
+   \   00000002   0xC803             LDM      R0,{R0,R1}
+   \   00000004   0x4770             BX       LR               ;; return
+    105          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp ProfilingBlockDevice::subobject ProfilingBlockDevice(BlockDevice *)
+   \                     _ZN20ProfilingBlockDeviceC2EP11BlockDevice: (+1)
+   \   00000000   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \   00000000   0x........         DC32     _ZTV20ProfilingBlockDevice+0x8
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   BlockDevice::trim(bd_addr_t, bd_size_t)
+       0   ProfilingBlockDevice::ProfilingBlockDevice(BlockDevice *)
+       8   ProfilingBlockDevice::deinit()
+         8   -- Indirect call
+       8   ProfilingBlockDevice::deleter ~ProfilingBlockDevice()
+         8   -> operator delete(void *)
+      24   ProfilingBlockDevice::erase(bd_addr_t, bd_size_t)
+        24   -- Indirect call
+       0   ProfilingBlockDevice::get_erase_count() const
+       8   ProfilingBlockDevice::get_erase_size() const
+         8   -- Indirect call
+       0   ProfilingBlockDevice::get_program_count() const
+       8   ProfilingBlockDevice::get_program_size() const
+         8   -- Indirect call
+       0   ProfilingBlockDevice::get_read_count() const
+       8   ProfilingBlockDevice::get_read_size() const
+         8   -- Indirect call
+       8   ProfilingBlockDevice::init()
+         8   -- Indirect call
+      32   ProfilingBlockDevice::program(void const *, bd_addr_t, bd_size_t)
+        32   -- Indirect call
+      32   ProfilingBlockDevice::read(void *, bd_addr_t, bd_size_t)
+        32   -- Indirect call
+       0   ProfilingBlockDevice::reset()
+       8   ProfilingBlockDevice::size() const
+         8   -- Indirect call
+       0   ProfilingBlockDevice::subobject ProfilingBlockDevice(BlockDevice *)
+       0   ProfilingBlockDevice::~ProfilingBlockDevice()
+       8   mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+         8   -- Indirect call
+       0   mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+       0   mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+      12   mbed::callback<>(void (*)(void *), void *)
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+      34  ?Subroutine0
+       4  BlockDevice::trim(bd_addr_t, bd_size_t)
+       2  ProfilingBlockDevice::ProfilingBlockDevice(BlockDevice *)
+      12  ProfilingBlockDevice::deinit()
+       8  ProfilingBlockDevice::deleter ~ProfilingBlockDevice()
+      42  ProfilingBlockDevice::erase(bd_addr_t, bd_size_t)
+       6  ProfilingBlockDevice::get_erase_count() const
+      12  ProfilingBlockDevice::get_erase_size() const
+       6  ProfilingBlockDevice::get_program_count() const
+      12  ProfilingBlockDevice::get_program_size() const
+       6  ProfilingBlockDevice::get_read_count() const
+      12  ProfilingBlockDevice::get_read_size() const
+      12  ProfilingBlockDevice::init()
+      46  ProfilingBlockDevice::program(void const *, bd_addr_t, bd_size_t)
+      46  ProfilingBlockDevice::read(void *, bd_addr_t, bd_size_t)
+      24  ProfilingBlockDevice::reset()
+      12  ProfilingBlockDevice::size() const
+       2  ProfilingBlockDevice::subobject ProfilingBlockDevice(BlockDevice *)
+       2  ProfilingBlockDevice::~ProfilingBlockDevice()
+      12  mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+       2  mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+      10  mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+      32  mbed::callback<>(void (*)(void *), void *)
+      12  ops
+     408  -- Other
+
+ 
+ 420 bytes in section .rodata
+ 360 bytes in section .text
+ 
+ 290 bytes of CODE  memory (+  70 bytes shared)
+   0 bytes of CONST memory (+ 420 bytes shared)
+
+Errors: none
+Warnings: none

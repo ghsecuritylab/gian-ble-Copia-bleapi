@@ -1,0 +1,419 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       16/Mar/2018  12:16:10
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        .\mbed-os\features\frameworks\greentea-client\source\greentea_metrics.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DDEVICE_SERIAL=1 -DTARGET_CORTEX_M -DDEVICE_SPI=1 -DTARGET_LIKE_MBED
+#        -DMBED_BUILD_TIMESTAMP=1521198946.13 -DARM_MATH_CM0 -DTARGET_RELEASE
+#        -D__CORTEX_M0 -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0
+#        -DTOOLCHAIN_object -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -f
+#        .\BUILD\STEVAL_IDB007V1\iar\.includes_fc2e77952737cb4522ab0dffe8cfd8aa.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN
+#        -I./mbed-os/features/frameworks
+#        -I./mbed-os/features/frameworks/greentea-client
+#        -I./mbed-os/features/frameworks/greentea-client/greentea-client
+#        -I./mbed-os/features/frameworks/greentea-client/source
+#        -I./mbed-os/features/frameworks/unity
+#        -I./mbed-os/features/frameworks/unity/source
+#        -I./mbed-os/features/frameworks/unity/unity
+#        -I./mbed-os/features/frameworks/utest
+#        -I./mbed-os/features/frameworks/utest/source
+#        -I./mbed-os/features/frameworks/utest/utest
+#        -I./mbed-os/features/mbedtls -I./mbed-os/features/mbedtls/importer
+#        -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/features/netsocket
+#        -I./mbed-os/features/netsocket/cellular
+#        -I./mbed-os/features/netsocket/cellular/generic_modem_driver
+#        -I./mbed-os/features/netsocket/cellular/utils
+#        -I./mbed-os/features/storage -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\iar\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\greentea-client\source\greentea_metrics.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\greentea-client\source\greentea_metrics.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\greentea-client\source\greentea_metrics.o
+#        .\mbed-os\features\frameworks\greentea-client\source\greentea_metrics.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\greentea-client\source\greentea_metrics.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\frameworks\greentea-client\source\greentea_metrics.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia\mbed-os\features\frameworks\greentea-client\source\greentea_metrics.cpp
+      1          /*
+      2           * Copyright (c) 2013-2016, ARM Limited, All Rights Reserved
+      3           * SPDX-License-Identifier: Apache-2.0
+      4           *
+      5           * Licensed under the Apache License, Version 2.0 (the "License"); you may
+      6           * not use this file except in compliance with the License.
+      7           * You may obtain a copy of the License at
+      8           *
+      9           * http://www.apache.org/licenses/LICENSE-2.0
+     10           *
+     11           * Unless required by applicable law or agreed to in writing, software
+     12           * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     13           * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     14           * See the License for the specific language governing permissions and
+     15           * limitations under the License.
+     16           */
+     17          
+     18          #include "mbed.h"
+
+   \                                 In section .rodata, align 4
+   \   __absolute mbed::Callback<void ()>::ops const mbed::Callback<void ()>::generate<>(mbed::Callback<void ()>::function_context<void (*)(void *), void> const &)::ops
+   \                     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops:
+   \   00000000   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv
+   \   00000004   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv
+   \   00000008   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x0001             MOVS     R1,R0
+   \   00000004   0x6848             LDR      R0,[R1, #+4]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD001             BEQ      ??function_move_0
+   \   00000004   0xC90C             LDM      R1!,{R2,R3}
+   \   00000006   0xC00C             STM      R0!,{R2,R3}
+   \                     ??function_move_0: (+1)
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void mbed::callback<>(void (*)(void *), void *)
+   \                     _ZN4mbed8callbackIvvvEENS_8CallbackIFT1_vEEEPFS2_PT_EPT0_: (+1)
+   \   00000000   0xB470             PUSH     {R4-R6}
+   \   00000002   0x2300             MOVS     R3,#+0
+   \   00000004   0x2400             MOVS     R4,#+0
+   \   00000006   0x2500             MOVS     R5,#+0
+   \   00000008   0x2600             MOVS     R6,#+0
+   \   0000000A   0xC078             STM      R0!,{R3-R6}
+   \   0000000C   0x3810             SUBS     R0,R0,#+16
+   \   0000000E   0xD001             BEQ      ??callback_0
+   \   00000010   0x6001             STR      R1,[R0, #+0]
+   \   00000012   0x6042             STR      R2,[R0, #+4]
+   \                     ??callback_0: (+1)
+   \   00000014   0x4901             LDR      R1,??callback_1
+   \   00000016   0x60C1             STR      R1,[R0, #+12]
+   \   00000018   0xBC70             POP      {R4-R6}
+   \   0000001A   0x4770             BX       LR               ;; return
+   \                     ??callback_1:
+   \   0000001C   0x........         DC32     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops
+     19          #include "rtos.h"
+     20          #include "mbed_stats.h"
+     21          #include "cmsis_os2.h"
+     22          #include "greentea-client/test_env.h"
+     23          #include "greentea-client/greentea_metrics.h"
+     24          #include "SingletonPtr.h"
+     25          #include "CircularBuffer.h"
+     26          
+     27          #define THREAD_BUF_COUNT    16
+     28          
+     29          typedef struct {
+     30              uint32_t entry;
+     31              uint32_t stack_size;
+     32              uint32_t max_stack;
+     33          } thread_info_t;
+     34          
+     35          #if defined(MBED_STACK_STATS_ENABLED) && MBED_STACK_STATS_ENABLED
+     36          // Mutex to protect "buf"
+     37          static SingletonPtr<Mutex> mutex;
+     38          static char buf[128];
+     39          static SingletonPtr<CircularBuffer<thread_info_t, THREAD_BUF_COUNT> > queue;
+     40          #endif
+     41          
+     42          static void send_heap_info(void);
+     43          #if defined(MBED_STACK_STATS_ENABLED) && MBED_STACK_STATS_ENABLED
+     44          static void send_stack_info(void);
+     45          static void on_thread_terminate(osThreadId_t id);
+     46          static void enqeue_thread_info(osThreadId_t id);
+     47          static void deque_and_print_thread_info(void);
+     48          
+     49          // sprintf uses a lot of stack so use these instead
+     50          static uint32_t print_hex(char *buf, uint32_t value);
+     51          static uint32_t print_dec(char *buf, uint32_t value);
+     52          #endif
+     53          
+
+   \                                 In section .text, align 2, keep-with-next
+     54          void greentea_metrics_setup()
+     55          {
+     56          #if defined(MBED_STACK_STATS_ENABLED) && MBED_STACK_STATS_ENABLED
+     57              Thread::attach_terminate_hook(on_thread_terminate);
+     58          #endif
+     59          }
+   \                     _Z22greentea_metrics_setupv: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+     60          
+
+   \                                 In section .text, align 4, keep-with-next
+     61          void greentea_metrics_report()
+     62          {
+   \                     _Z23greentea_metrics_reportv: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0xB087             SUB      SP,SP,#+28
+     63              send_heap_info();
+   \   00000004   0x4668             MOV      R0,SP
+   \   00000006   0x.... 0x....      BL       mbed_stats_heap_get
+   \   0000000A   0x9901             LDR      R1,[SP, #+4]
+   \   0000000C   0x....             ADR.N    R0,?_0
+   \   0000000E   0x.... 0x....      BL       _Z16greentea_send_kvPKci
+   \   00000012   0x9903             LDR      R1,[SP, #+12]
+   \   00000014   0x....             ADR.N    R0,?_1
+   \   00000016   0x.... 0x....      BL       _Z16greentea_send_kvPKci
+     64          #if defined(MBED_STACK_STATS_ENABLED) && MBED_STACK_STATS_ENABLED
+     65              send_stack_info();
+     66              Thread::attach_terminate_hook(NULL);
+     67          #endif
+     68          }
+   \   0000001A   0xB007             ADD      SP,SP,#+28
+   \   0000001C   0xBD00             POP      {PC}             ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x6D 0x61          DC8 "max_heap_usage"
+   \              0x78 0x5F    
+   \              0x68 0x65    
+   \              0x61 0x70    
+   \              0x5F 0x75    
+   \              0x73 0x61    
+   \              0x67 0x65    
+   \              0x00         
+   \   0000000F   0x00               DC8 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x72 0x65          DC8 "reserved_heap"
+   \              0x73 0x65    
+   \              0x72 0x76    
+   \              0x65 0x64    
+   \              0x5F 0x68    
+   \              0x65 0x61    
+   \              0x70 0x00    
+   \   0000000E   0x00 0x00          DC8 0, 0
+     69          
+     70          static void send_heap_info()
+     71          {
+     72              mbed_stats_heap_t heap_stats;
+     73              mbed_stats_heap_get(&heap_stats);
+     74              greentea_send_kv("max_heap_usage",heap_stats.max_size);
+     75              greentea_send_kv("reserved_heap",heap_stats.reserved_size);
+     76          }
+     77          
+     78          #if defined(MBED_STACK_STATS_ENABLED) && MBED_STACK_STATS_ENABLED
+     79          MBED_UNUSED static void send_stack_info()
+     80          {
+     81              mutex->lock();
+     82          
+     83              // Flush any queued stack entries
+     84              while (!queue->empty()) {
+     85                  deque_and_print_thread_info();
+     86              }
+     87          
+     88              // Print info for all other threads
+     89              uint32_t thread_n = osThreadGetCount();
+     90              osThreadId_t *threads = new osThreadId_t[thread_n];
+     91              thread_n = osThreadEnumerate(threads, thread_n);
+     92          
+     93              for(size_t i = 0; i < thread_n; i++) {
+     94                  enqeue_thread_info(threads[i]);
+     95                  deque_and_print_thread_info();
+     96              }
+     97          
+     98              delete[] threads;
+     99          
+    100              mutex->unlock();
+    101          }
+    102          
+    103          MBED_UNUSED static void on_thread_terminate(osThreadId_t id)
+    104          {
+    105              mutex->lock();
+    106          
+    107              // There should always be space in the queue
+    108              enqeue_thread_info(id);
+    109          
+    110              // If queue is full then print out a single entry
+    111              if (queue->full()) {
+    112                  deque_and_print_thread_info();
+    113              }
+    114          
+    115              mutex->unlock();
+    116          }
+    117          
+    118          static void enqeue_thread_info(osThreadId_t id)
+    119          {
+    120              thread_info_t thread_info = {};
+    121          
+    122              thread_info.entry = (uint32_t)id;
+    123              thread_info.stack_size = osThreadGetStackSize(id);
+    124              thread_info.max_stack = thread_info.stack_size - osThreadGetStackSpace(id);
+    125              queue->push(thread_info);
+    126          }
+    127          
+    128          static void deque_and_print_thread_info()
+    129          {
+    130              thread_info_t thread_info;
+    131              bool ret = queue->pop(thread_info);
+    132              MBED_ASSERT(ret);
+    133              uint32_t pos = 0;
+    134              buf[pos++] = '\"';
+    135              pos += print_hex(buf + pos, thread_info.entry);
+    136              buf[pos++] = '\"';
+    137              buf[pos++] = ',';
+    138              pos += print_dec(buf + pos, thread_info.max_stack);
+    139              buf[pos++] = ',';
+    140              pos += print_dec(buf + pos, thread_info.stack_size);
+    141              buf[pos++] = 0;
+    142              greentea_send_kv("__thread_info", buf);
+    143          }
+    144          
+    145          static uint32_t print_hex(char *buf, uint32_t value)
+    146          {
+    147              uint32_t pos = 0;
+    148              buf[pos] = '0';
+    149              pos++;
+    150              buf[pos] = 'x';
+    151              pos++;
+    152              for (int i = 8; i >= 0; i--) {
+    153                  uint32_t val = (value >> (4 * i)) & 0xF;
+    154                  if (val <= 9) {
+    155                      buf[pos] = '0' + val;
+    156                      pos++;
+    157                  } else {
+    158                      buf[pos] = 'a' + val - 10;
+    159                      pos++;
+    160                  }
+    161              }
+    162              return pos;
+    163          }
+    164          
+    165          static uint32_t print_dec(char *buf, uint32_t value)
+    166          {
+    167              uint32_t pos = 0;
+    168          
+    169              // The value 0 is special case
+    170              if (0 == value) {
+    171                  buf[pos] = '0';
+    172                  pos++;
+    173                  return pos;
+    174              }
+    175          
+    176              // Write out value in reverse order
+    177              while (value != 0) {
+    178                  uint32_t next = value / 10;
+    179                  buf[pos] = '0' + (value - next * 10);
+    180                  value = next;
+    181                  pos++;
+    182              }
+    183          
+    184              // Reverse order
+    185              for (uint32_t i = 0; i < pos / 2; i++) {
+    186                  char temp = buf[i];
+    187                  buf[i] = buf[pos - 1 - i];
+    188                  buf[pos - 1 - i] = temp;
+    189              }
+    190          
+    191              return pos;
+    192          }
+    193          
+    194          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      32   greentea_metrics_report()
+        32   -> greentea_send_kv(char const *, int)
+        32   -> mbed_stats_heap_get
+       0   greentea_metrics_setup()
+       8   mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+         8   -- Indirect call
+       0   mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+       0   mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+      12   mbed::callback<>(void (*)(void *), void *)
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      16  ?_0
+      16  ?_1
+      30  greentea_metrics_report()
+       2  greentea_metrics_setup()
+      12  mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+       2  mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+      10  mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+      32  mbed::callback<>(void (*)(void *), void *)
+      12  ops
+     292  -- Other
+
+ 
+ 304 bytes in section .rodata
+ 120 bytes in section .text
+ 
+ 64 bytes of CODE  memory (+  56 bytes shared)
+  0 bytes of CONST memory (+ 304 bytes shared)
+
+Errors: none
+Warnings: none

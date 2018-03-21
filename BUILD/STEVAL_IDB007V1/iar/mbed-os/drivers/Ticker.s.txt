@@ -1,0 +1,409 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:01
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\drivers\Ticker.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Ticker.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Ticker.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Ticker.o
+#        .\mbed-os\drivers\Ticker.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Ticker.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\Ticker.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\drivers\Ticker.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "drivers/Ticker.h"
+
+   \                                 In section .text, align 4
+   \   __code __interwork __softfp mbed::Callback<void ()>::Callback(void (*)())
+   \                     _ZN4mbed8CallbackIFvvEEC1EPS1_: (+1)
+   \   00000000   0xB430             PUSH     {R4,R5}
+   \   00000002   0x000A             MOVS     R2,R1
+   \   00000004   0xD106             BNE      ??Callback_0
+   \   00000006   0x2100             MOVS     R1,#+0
+   \   00000008   0x2200             MOVS     R2,#+0
+   \   0000000A   0x2300             MOVS     R3,#+0
+   \   0000000C   0x2400             MOVS     R4,#+0
+   \   0000000E   0xC01E             STM      R0!,{R1-R4}
+   \   00000010   0x3810             SUBS     R0,R0,#+16
+   \   00000012   0xE009             B        ??Callback_1
+   \                     ??Callback_0: (+1)
+   \   00000014   0x2200             MOVS     R2,#+0
+   \   00000016   0x2300             MOVS     R3,#+0
+   \   00000018   0x2400             MOVS     R4,#+0
+   \   0000001A   0x2500             MOVS     R5,#+0
+   \   0000001C   0xC03C             STM      R0!,{R2-R5}
+   \   0000001E   0x3810             SUBS     R0,R0,#+16
+   \   00000020   0xD000             BEQ      ??Callback_2
+   \   00000022   0x6001             STR      R1,[R0, #+0]
+   \                     ??Callback_2: (+1)
+   \   00000024   0x4901             LDR      R1,??Callback_3
+   \   00000026   0x60C1             STR      R1,[R0, #+12]
+   \                     ??Callback_1: (+1)
+   \   00000028   0xBC30             POP      {R4,R5}
+   \   0000002A   0x4770             BX       LR               ;; return
+   \                     ??Callback_3:
+   \   0000002C   0x........         DC32     _ZZN4mbed8CallbackIFvvEE8generateIPS1_EEvRKT_E3ops
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+   \                     _ZN4mbed8CallbackIFvvEEC1ERKS2_: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+   \   00000006   0x68E2             LDR      R2,[R4, #+12]
+   \   00000008   0x2A00             CMP      R2,#+0
+   \   0000000A   0xD001             BEQ      ??Callback_4
+   \   0000000C   0x6852             LDR      R2,[R2, #+4]
+   \   0000000E   0x4790             BLX      R2
+   \                     ??Callback_4: (+1)
+   \   00000010   0x68E0             LDR      R0,[R4, #+12]
+   \   00000012   0x60E8             STR      R0,[R5, #+12]
+   \   00000014   0x0028             MOVS     R0,R5
+   \   00000016   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+
+   \                                 In section .rodata, align 4
+   \   __absolute mbed::Callback<void ()>::ops const mbed::Callback<void ()>::generate<>(void (*const &)())::ops
+   \                     _ZZN4mbed8CallbackIFvvEE8generateIPS1_EEvRKT_E3ops:
+   \   00000000   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_callIPS1_EEvPKv
+   \   00000004   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_moveIPS1_EEvPvPKv
+   \   00000008   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_dtorIPS1_EEvPv
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_call<void (*)()>(void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_callIPS1_EEvPKv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x4780             BLX      R0
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_move<void (*)()>(void *, void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_moveIPS1_EEvPvPKv: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD001             BEQ      ??function_move_0
+   \   00000004   0x6809             LDR      R1,[R1, #+0]
+   \   00000006   0x6001             STR      R1,[R0, #+0]
+   \                     ??function_move_0: (+1)
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_dtor<void (*)()>(void *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_dtorIPS1_EEvPv: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4
+   \   __code __interwork __softfp mbed::Ticker::~Ticker()
+   \                     _ZN4mbed6TickerD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x4808             LDR      R0,`?~Ticker_0`
+   \   00000006   0x6020             STR      R0,[R4, #+0]
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0x.... 0x....      BL       _ZN4mbed6Ticker6detachEv
+   \   0000000E   0x6B61             LDR      R1,[R4, #+52]
+   \   00000010   0x2900             CMP      R1,#+0
+   \   00000012   0xD003             BEQ      `?~Ticker_1`
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x3028             ADDS     R0,R0,#+40
+   \   00000018   0x6889             LDR      R1,[R1, #+8]
+   \   0000001A   0x4788             BLX      R1
+   \                     `?~Ticker_1`: (+1)
+   \   0000001C   0x0020             MOVS     R0,R4
+   \   0000001E   0x.... 0x....      BL       _ZN4mbed10TimerEventD2Ev
+   \   00000022   0x0020             MOVS     R0,R4
+   \   00000024   0xBD10             POP      {R4,PC}          ;; return
+   \   00000026   0xBF00             Nop      
+   \                     `?~Ticker_0`:
+   \   00000028   0x........         DC32     _ZTVN4mbed6TickerE+0x8
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp mbed::Ticker::deleter ~Ticker()
+   \                     _ZN4mbed6TickerD0Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x.... 0x....      BL       _ZN4mbed6TickerD1Ev
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0x.... 0x....      BL       _ZdlPv
+   \   0000000E   0xBD10             POP      {R4,PC}          ;; return
+     17          
+     18          #include "drivers/TimerEvent.h"
+     19          #include "platform/FunctionPointer.h"
+     20          #include "hal/ticker_api.h"
+     21          #include "platform/mbed_critical.h"
+     22          
+     23          namespace mbed {
+     24          
+
+   \                                 In section .text, align 2, keep-with-next
+     25          void Ticker::detach() {
+   \                     _ZN4mbed6Ticker6detachEv: (+1)
+   \   00000000   0xB530             PUSH     {R4,R5,LR}
+   \   00000002   0xB085             SUB      SP,SP,#+20
+   \   00000004   0x0004             MOVS     R4,R0
+     26              core_util_critical_section_enter();
+   \   00000006   0x.... 0x....      BL       core_util_critical_section_enter
+     27              remove();
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0x.... 0x....      BL       _ZN4mbed10TimerEvent6removeEv
+     28              // unlocked only if we were attached (we locked it) and this is not low power ticker
+     29              if(_function && _lock_deepsleep) {
+   \   00000010   0x0025             MOVS     R5,R4
+   \   00000012   0x3534             ADDS     R5,R5,#+52
+   \   00000014   0x6828             LDR      R0,[R5, #+0]
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD004             BEQ      ??detach_0
+   \   0000001A   0x7928             LDRB     R0,[R5, #+4]
+   \   0000001C   0x2800             CMP      R0,#+0
+   \   0000001E   0xD001             BEQ      ??detach_0
+     30                  sleep_manager_unlock_deep_sleep();
+   \   00000020   0x.... 0x....      BL       sleep_manager_unlock_deep_sleep
+     31              }
+     32          
+     33              _function = 0;
+   \                     ??detach_0: (+1)
+   \   00000024   0x2100             MOVS     R1,#+0
+   \   00000026   0x4668             MOV      R0,SP
+   \   00000028   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEEC1EPS1_
+   \   0000002C   0x0020             MOVS     R0,R4
+   \   0000002E   0x3028             ADDS     R0,R0,#+40
+   \   00000030   0x4568             CMP      R0,SP
+   \   00000032   0xD00E             BEQ      ??detach_1
+   \   00000034   0x6829             LDR      R1,[R5, #+0]
+   \   00000036   0x2900             CMP      R1,#+0
+   \   00000038   0xD003             BEQ      ??detach_2
+   \   0000003A   0x0020             MOVS     R0,R4
+   \   0000003C   0x3028             ADDS     R0,R0,#+40
+   \   0000003E   0x6889             LDR      R1,[R1, #+8]
+   \   00000040   0x4788             BLX      R1
+   \                     ??detach_2: (+1)
+   \   00000042   0x0020             MOVS     R0,R4
+   \   00000044   0x3028             ADDS     R0,R0,#+40
+   \   00000046   0xD004             BEQ      ??detach_1
+   \   00000048   0x4669             MOV      R1,SP
+   \   0000004A   0x0020             MOVS     R0,R4
+   \   0000004C   0x3028             ADDS     R0,R0,#+40
+   \   0000004E   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEEC1ERKS2_
+   \                     ??detach_1: (+1)
+   \   00000052   0x9903             LDR      R1,[SP, #+12]
+   \   00000054   0x2900             CMP      R1,#+0
+   \   00000056   0xD002             BEQ      ??detach_3
+   \   00000058   0x4668             MOV      R0,SP
+   \   0000005A   0x6889             LDR      R1,[R1, #+8]
+   \   0000005C   0x4788             BLX      R1
+     34              core_util_critical_section_exit();
+   \                     ??detach_3: (+1)
+   \   0000005E   0x.... 0x....      BL       core_util_critical_section_exit
+     35          }
+   \   00000062   0xB005             ADD      SP,SP,#+20
+   \   00000064   0xBD30             POP      {R4,R5,PC}       ;; return
+     36          
+
+   \                                 In section .text, align 2, keep-with-next
+     37          void Ticker::setup(us_timestamp_t t) {
+   \                     _ZN4mbed6Ticker5setupEy: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0006             MOVS     R6,R0
+   \   00000004   0x0014             MOVS     R4,R2
+   \   00000006   0x001D             MOVS     R5,R3
+     38              core_util_critical_section_enter();
+   \   00000008   0x.... 0x....      BL       core_util_critical_section_enter
+     39              remove();
+   \   0000000C   0x0030             MOVS     R0,R6
+   \   0000000E   0x.... 0x....      BL       _ZN4mbed10TimerEvent6removeEv
+     40              _delay = t;
+   \   00000012   0x0030             MOVS     R0,R6
+   \   00000014   0x3020             ADDS     R0,R0,#+32
+   \   00000016   0xC030             STM      R0!,{R4,R5}
+     41              insert_absolute(_delay + ticker_read_us(_ticker_data));
+   \   00000018   0x69B0             LDR      R0,[R6, #+24]
+   \   0000001A   0x.... 0x....      BL       ticker_read_us
+   \   0000001E   0x0002             MOVS     R2,R0
+   \   00000020   0x000B             MOVS     R3,R1
+   \   00000022   0x0030             MOVS     R0,R6
+   \   00000024   0x3020             ADDS     R0,R0,#+32
+   \   00000026   0xC803             LDM      R0,{R0,R1}
+   \   00000028   0x1812             ADDS     R2,R2,R0
+   \   0000002A   0x414B             ADCS     R3,R3,R1
+   \   0000002C   0x0030             MOVS     R0,R6
+   \   0000002E   0x.... 0x....      BL       _ZN4mbed10TimerEvent15insert_absoluteEy
+     42              core_util_critical_section_exit();
+   \   00000032   0x.... 0x....      BL       core_util_critical_section_exit
+     43          }
+   \   00000036   0xBD70             POP      {R4-R6,PC}       ;; return
+     44          
+
+   \                                 In section .text, align 2, keep-with-next
+     45          void Ticker::handler() {
+   \                     _ZN4mbed6Ticker7handlerEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     46              insert_absolute(event.timestamp + _delay);
+   \   00000004   0x3008             ADDS     R0,R0,#+8
+   \   00000006   0xC803             LDM      R0,{R0,R1}
+   \   00000008   0x0022             MOVS     R2,R4
+   \   0000000A   0x3220             ADDS     R2,R2,#+32
+   \   0000000C   0xCA0C             LDM      R2,{R2,R3}
+   \   0000000E   0x1812             ADDS     R2,R2,R0
+   \   00000010   0x414B             ADCS     R3,R3,R1
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0x.... 0x....      BL       _ZN4mbed10TimerEvent15insert_absoluteEy
+     47              if (_function) {
+   \   00000018   0x6B60             LDR      R0,[R4, #+52]
+   \   0000001A   0x2800             CMP      R0,#+0
+   \   0000001C   0xD004             BEQ      ??handler_0
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0x3028             ADDS     R0,R0,#+40
+   \   00000022   0x6B61             LDR      R1,[R4, #+52]
+   \   00000024   0x6809             LDR      R1,[R1, #+0]
+   \   00000026   0x4788             BLX      R1
+     48                  _function();
+     49              }
+     50          }
+   \                     ??handler_0: (+1)
+   \   00000028   0xBD10             POP      {R4,PC}          ;; return
+     51          
+     52          } // namespace mbed
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+        16   -- Indirect call
+       8   mbed::Callback<void ()>::Callback(void (*)())
+       8   mbed::Callback<void ()>::function_call<void (*)()>(void const *)
+         8   -- Indirect call
+       0   mbed::Callback<void ()>::function_dtor<void (*)()>(void *)
+       0   mbed::Callback<void ()>::function_move<void (*)()>(void *, void const *)
+       8   mbed::Ticker::deleter ~Ticker()
+         8   -> mbed::Ticker::~Ticker()
+         8   -> operator delete(void *)
+      32   mbed::Ticker::detach()
+        32   -- Indirect call
+        32   -> core_util_critical_section_enter
+        32   -> core_util_critical_section_exit
+        32   -> mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+        32   -> mbed::Callback<void ()>::Callback(void (*)())
+        32   -> mbed::TimerEvent::remove()
+        32   -> sleep_manager_unlock_deep_sleep
+       8   mbed::Ticker::handler()
+         8   -- Indirect call
+         8   -> mbed::TimerEvent::insert_absolute(std::uint64_t)
+      16   mbed::Ticker::setup(std::uint64_t)
+        16   -> core_util_critical_section_enter
+        16   -> core_util_critical_section_exit
+        16   -> mbed::TimerEvent::insert_absolute(std::uint64_t)
+        16   -> mbed::TimerEvent::remove()
+        16   -> ticker_read_us
+       8   mbed::Ticker::~Ticker()
+         8   -- Indirect call
+         8   -> mbed::Ticker::detach()
+         8   -> mbed::TimerEvent::subobject ~TimerEvent()
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      24  mbed::Callback<void ()>::Callback(mbed::Callback<void ()> const &)
+      48  mbed::Callback<void ()>::Callback(void (*)())
+       8  mbed::Callback<void ()>::function_call<void (*)()>(void const *)
+       2  mbed::Callback<void ()>::function_dtor<void (*)()>(void *)
+      10  mbed::Callback<void ()>::function_move<void (*)()>(void *, void const *)
+      16  mbed::Ticker::deleter ~Ticker()
+     102  mbed::Ticker::detach()
+      42  mbed::Ticker::handler()
+      56  mbed::Ticker::setup(std::uint64_t)
+      44  mbed::Ticker::~Ticker()
+      12  ops
+     200  -- Other
+
+ 
+ 212 bytes in section .rodata
+ 352 bytes in section .text
+ 
+ 200 bytes of CODE  memory (+ 152 bytes shared)
+   0 bytes of CONST memory (+ 212 bytes shared)
+
+Errors: none
+Warnings: none

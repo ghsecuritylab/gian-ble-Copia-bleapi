@@ -1,0 +1,259 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:32:58
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\drivers\I2C.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\I2C.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\I2C.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\I2C.o
+#        .\mbed-os\drivers\I2C.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\I2C.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\I2C.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\drivers\I2C.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2015 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "drivers/I2C.h"
+     17          
+     18          #if DEVICE_I2C
+     19          
+     20          #if DEVICE_I2C_ASYNCH
+     21          #include "platform/mbed_sleep.h"
+     22          #endif
+     23          
+     24          namespace mbed {
+     25          
+     26          I2C *I2C::_owner = NULL;
+     27          SingletonPtr<PlatformMutex> I2C::_mutex;
+     28          
+     29          I2C::I2C(PinName sda, PinName scl) :
+     30          #if DEVICE_I2C_ASYNCH
+     31                                               _irq(this), _usage(DMA_USAGE_NEVER),
+     32          #endif
+     33                                                _i2c(), _hz(100000) {
+     34              // No lock needed in the constructor
+     35          
+     36              // The init function also set the frequency to 100000
+     37              i2c_init(&_i2c, sda, scl);
+     38          
+     39              // Used to avoid unnecessary frequency updates
+     40              _owner = this;
+     41          }
+     42          
+     43          void I2C::frequency(int hz) {
+     44              lock();
+     45              _hz = hz;
+     46          
+     47              // We want to update the frequency even if we are already the bus owners
+     48              i2c_frequency(&_i2c, _hz);
+     49          
+     50              // Updating the frequency of the bus we become the owners of it
+     51              _owner = this;
+     52              unlock();
+     53          }
+     54          
+     55          void I2C::aquire() {
+     56              lock();
+     57              if (_owner != this) {
+     58                  i2c_frequency(&_i2c, _hz);
+     59                  _owner = this;
+     60              }
+     61              unlock();
+     62          }
+     63          
+     64          // write - Master Transmitter Mode
+     65          int I2C::write(int address, const char* data, int length, bool repeated) {
+     66              lock();
+     67              aquire();
+     68          
+     69              int stop = (repeated) ? 0 : 1;
+     70              int written = i2c_write(&_i2c, address, data, length, stop);
+     71          
+     72              unlock();
+     73              return length != written;
+     74          }
+     75          
+     76          int I2C::write(int data) {
+     77              lock();
+     78              int ret = i2c_byte_write(&_i2c, data);
+     79              unlock();
+     80              return ret;
+     81          }
+     82          
+     83          // read - Master Reciever Mode
+     84          int I2C::read(int address, char* data, int length, bool repeated) {
+     85              lock();
+     86              aquire();
+     87          
+     88              int stop = (repeated) ? 0 : 1;
+     89              int read = i2c_read(&_i2c, address, data, length, stop);
+     90          
+     91              unlock();
+     92              return length != read;
+     93          }
+     94          
+     95          int I2C::read(int ack) {
+     96              lock();
+     97              int ret;
+     98              if (ack) {
+     99                  ret = i2c_byte_read(&_i2c, 0);
+    100              } else {
+    101                  ret = i2c_byte_read(&_i2c, 1);
+    102              }
+    103              unlock();
+    104              return ret;
+    105          }
+    106          
+    107          void I2C::start(void) {
+    108              lock();
+    109              i2c_start(&_i2c);
+    110              unlock();
+    111          }
+    112          
+    113          void I2C::stop(void) {
+    114              lock();
+    115              i2c_stop(&_i2c);
+    116              unlock();
+    117          }
+    118          
+    119          void I2C::lock() {
+    120              _mutex->lock();
+    121          }
+    122          
+    123          void I2C::unlock() {
+    124              _mutex->unlock();
+    125          }
+    126          
+    127          #if DEVICE_I2C_ASYNCH
+    128          
+    129          int I2C::transfer(int address, const char *tx_buffer, int tx_length, char *rx_buffer, int rx_length, const event_callback_t& callback, int event, bool repeated)
+    130          {
+    131              lock();
+    132              if (i2c_active(&_i2c)) {
+    133                  unlock();
+    134                  return -1; // transaction ongoing
+    135              }
+    136              sleep_manager_lock_deep_sleep();
+    137              aquire();
+    138          
+    139              _callback = callback;
+    140              int stop = (repeated) ? 0 : 1;
+    141              _irq.callback(&I2C::irq_handler_asynch);
+    142              i2c_transfer_asynch(&_i2c, (void *)tx_buffer, tx_length, (void *)rx_buffer, rx_length, address, stop, _irq.entry(), event, _usage);
+    143              unlock();
+    144              return 0;
+    145          }
+    146          
+    147          void I2C::abort_transfer(void)
+    148          {
+    149              lock();
+    150              i2c_abort_asynch(&_i2c);
+    151              sleep_manager_unlock_deep_sleep();
+    152              unlock();
+    153          }
+    154          
+    155          void I2C::irq_handler_asynch(void)
+    156          {
+    157              int event = i2c_irq_handler_asynch(&_i2c);
+    158              if (_callback && event) {
+    159                  _callback.call(event);
+    160              }
+    161              if (event) {
+    162                  sleep_manager_unlock_deep_sleep();
+    163              }
+    164          
+    165          }
+    166          
+    167          
+    168          #endif
+    169          
+    170          } // namespace mbed
+    171          
+    172          #endif
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

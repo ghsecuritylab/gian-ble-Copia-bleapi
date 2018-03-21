@@ -1,0 +1,1789 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:02
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\events\equeue\equeue.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\equeue\equeue.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\equeue\equeue.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\equeue\equeue.o
+#        .\mbed-os\events\equeue\equeue.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\equeue\equeue.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\equeue\equeue.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\events\equeue\equeue.c
+      1          /*
+      2           * Flexible event queue for dispatching events
+      3           *
+      4           * Copyright (c) 2016 Christopher Haster
+      5           *
+      6           * Licensed under the Apache License, Version 2.0 (the "License");
+      7           * you may not use this file except in compliance with the License.
+      8           * You may obtain a copy of the License at
+      9           *
+     10           *     http://www.apache.org/licenses/LICENSE-2.0
+     11           *
+     12           * Unless required by applicable law or agreed to in writing, software
+     13           * distributed under the License is distributed on an "AS IS" BASIS,
+     14           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     15           * See the License for the specific language governing permissions and
+     16           * limitations under the License.
+     17           */
+     18          #include "equeue/equeue.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     19          
+     20          #include <stdlib.h>
+     21          #include <string.h>
+     22          
+     23          
+     24          // calculate the relative-difference between absolute times while
+     25          // correctly handling overflow conditions
+     26          static inline int equeue_tickdiff(unsigned a, unsigned b) {
+     27              return (int)(unsigned)(a - b);
+     28          }
+     29          
+     30          // calculate the relative-difference between absolute times, but
+     31          // also clamp to zero, resulting in only non-zero values.
+     32          static inline int equeue_clampdiff(unsigned a, unsigned b) {
+     33              int diff = equeue_tickdiff(a, b);
+     34              return ~(diff >> (8*sizeof(int)-1)) & diff;
+     35          }
+     36          
+     37          // Increment the unique id in an event, hiding the event from cancel
+     38          static inline void equeue_incid(equeue_t *q, struct equeue_event *e) {
+     39              e->id += 1;
+     40              if (!(e->id << q->npw2)) {
+     41                  e->id = 1;
+     42              }
+     43          }
+     44          
+     45          
+     46          // equeue lifetime management
+
+   \                                 In section .text, align 2, keep-with-next
+     47          int equeue_create(equeue_t *q, size_t size) {
+   \                     equeue_create: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000E             MOVS     R6,R1
+     48              // dynamically allocate the specified buffer
+     49              void *buffer = malloc(size);
+   \   00000006   0x0030             MOVS     R0,R6
+   \   00000008   0x.... 0x....      BL       malloc
+   \   0000000C   0x0005             MOVS     R5,R0
+     50              if (!buffer) {
+   \   0000000E   0xD102             BNE      ??equeue_create_0
+     51                  return -1;
+   \   00000010   0x2000             MOVS     R0,#+0
+   \   00000012   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000014   0xBD70             POP      {R4-R6,PC}
+     52              }
+     53          
+     54              int err = equeue_create_inplace(q, size, buffer);
+   \                     ??equeue_create_0: (+1)
+   \   00000016   0x002A             MOVS     R2,R5
+   \   00000018   0x0031             MOVS     R1,R6
+   \   0000001A   0x0020             MOVS     R0,R4
+   \   0000001C   0x.... 0x....      BL       equeue_create_inplace
+     55              q->allocated = buffer;
+   \   00000020   0x61A5             STR      R5,[R4, #+24]
+     56              return err;
+   \   00000022   0xBD70             POP      {R4-R6,PC}       ;; return
+     57          }
+     58          
+
+   \                                 In section .text, align 2, keep-with-next
+     59          int equeue_create_inplace(equeue_t *q, size_t size, void *buffer) {
+   \                     equeue_create_inplace: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     60              // setup queue around provided buffer
+     61              q->buffer = buffer;
+   \   00000004   0x6122             STR      R2,[R4, #+16]
+     62              q->allocated = 0;
+   \   00000006   0x2500             MOVS     R5,#+0
+   \   00000008   0x61A5             STR      R5,[R4, #+24]
+     63          
+     64              q->npw2 = 0;
+   \   0000000A   0x6165             STR      R5,[R4, #+20]
+     65              for (unsigned s = size; s; s >>= 1) {
+   \   0000000C   0x0008             MOVS     R0,R1
+   \   0000000E   0xE003             B        ??equeue_create_inplace_0
+     66                  q->npw2++;
+   \                     ??equeue_create_inplace_1: (+1)
+   \   00000010   0x6963             LDR      R3,[R4, #+20]
+   \   00000012   0x1C5B             ADDS     R3,R3,#+1
+   \   00000014   0x6163             STR      R3,[R4, #+20]
+     67              }
+   \   00000016   0x0840             LSRS     R0,R0,#+1
+   \                     ??equeue_create_inplace_0: (+1)
+   \   00000018   0xD1FA             BNE      ??equeue_create_inplace_1
+     68          
+     69              q->chunks = 0;
+   \   0000001A   0x61E5             STR      R5,[R4, #+28]
+     70              q->slab.size = size;
+   \   0000001C   0x6221             STR      R1,[R4, #+32]
+     71              q->slab.data = buffer;
+   \   0000001E   0x6262             STR      R2,[R4, #+36]
+     72          
+     73              q->queue = 0;
+   \   00000020   0x6025             STR      R5,[R4, #+0]
+     74              q->tick = equeue_tick();
+   \   00000022   0x.... 0x....      BL       equeue_tick
+   \   00000026   0x6060             STR      R0,[R4, #+4]
+     75              q->generation = 0;
+   \   00000028   0x7325             STRB     R5,[R4, #+12]
+     76              q->breaks = 0;
+   \   0000002A   0x60A5             STR      R5,[R4, #+8]
+     77          
+     78              q->background.active = false;
+   \   0000002C   0x0020             MOVS     R0,R4
+   \   0000002E   0x3028             ADDS     R0,R0,#+40
+   \   00000030   0x7005             STRB     R5,[R0, #+0]
+     79              q->background.update = 0;
+   \   00000032   0x6045             STR      R5,[R0, #+4]
+     80              q->background.timer = 0;
+   \   00000034   0x6085             STR      R5,[R0, #+8]
+     81          
+     82              // initialize platform resources
+     83              int err;
+     84              err = equeue_sema_create(&q->eventsema);
+   \   00000036   0x0020             MOVS     R0,R4
+   \   00000038   0x3034             ADDS     R0,R0,#+52
+   \   0000003A   0x.... 0x....      BL       equeue_sema_create
+     85              if (err < 0) {
+   \   0000003E   0x2800             CMP      R0,#+0
+   \   00000040   0xD40C             BMI      ??equeue_create_inplace_2
+     86                  return err;
+     87              }
+     88          
+     89              err = equeue_mutex_create(&q->queuelock);
+   \   00000042   0x0020             MOVS     R0,R4
+   \   00000044   0x3048             ADDS     R0,R0,#+72
+   \   00000046   0x.... 0x....      BL       equeue_mutex_create
+     90              if (err < 0) {
+   \   0000004A   0x2800             CMP      R0,#+0
+   \   0000004C   0xD406             BMI      ??equeue_create_inplace_2
+     91                  return err;
+     92              }
+     93          
+     94              err = equeue_mutex_create(&q->memlock);
+   \   0000004E   0x0020             MOVS     R0,R4
+   \   00000050   0x304C             ADDS     R0,R0,#+76
+   \   00000052   0x.... 0x....      BL       equeue_mutex_create
+     95              if (err < 0) {
+   \   00000056   0x2800             CMP      R0,#+0
+   \   00000058   0xDD00             BLE      ??equeue_create_inplace_2
+   \   0000005A   0x2000             MOVS     R0,#+0
+     96                  return err;
+   \                     ??equeue_create_inplace_2: (+1)
+   \   0000005C   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+     97              }
+     98          
+     99              return 0;
+    100          }
+    101          
+
+   \                                 In section .text, align 2, keep-with-next
+    102          void equeue_destroy(equeue_t *q) {
+   \                     equeue_destroy: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    103              // call destructors on pending events
+    104              for (struct equeue_event *es = q->queue; es; es = es->next) {
+   \   00000004   0x6825             LDR      R5,[R4, #+0]
+   \   00000006   0xE009             B        ??equeue_destroy_0
+    105                  for (struct equeue_event *e = q->queue; e; e = e->sibling) {
+    106                      if (e->dtor) {
+   \                     ??equeue_destroy_1: (+1)
+   \   00000008   0x69F1             LDR      R1,[R6, #+28]
+   \   0000000A   0x0008             MOVS     R0,R1
+   \   0000000C   0xD002             BEQ      ??equeue_destroy_2
+    107                          e->dtor(e + 1);
+   \   0000000E   0x0030             MOVS     R0,R6
+   \   00000010   0x3024             ADDS     R0,R0,#+36
+   \   00000012   0x4788             BLX      R1
+    108                      }
+    109                  }
+   \                     ??equeue_destroy_2: (+1)
+   \   00000014   0x68F6             LDR      R6,[R6, #+12]
+   \                     ??equeue_destroy_3: (+1)
+   \   00000016   0x2E00             CMP      R6,#+0
+   \   00000018   0xD1F6             BNE      ??equeue_destroy_1
+   \   0000001A   0x68AD             LDR      R5,[R5, #+8]
+   \                     ??equeue_destroy_0: (+1)
+   \   0000001C   0x2D00             CMP      R5,#+0
+   \   0000001E   0xD001             BEQ      ??equeue_destroy_4
+   \   00000020   0x6826             LDR      R6,[R4, #+0]
+   \   00000022   0xE7F8             B        ??equeue_destroy_3
+    110              }
+    111          
+    112              // notify background timer
+    113              if (q->background.update) {
+   \                     ??equeue_destroy_4: (+1)
+   \   00000024   0x6AE2             LDR      R2,[R4, #+44]
+   \   00000026   0x0010             MOVS     R0,R2
+   \   00000028   0xD003             BEQ      ??equeue_destroy_5
+    114                  q->background.update(q->background.timer, -1);
+   \   0000002A   0x2100             MOVS     R1,#+0
+   \   0000002C   0x43C9             MVNS     R1,R1            ;; #-1
+   \   0000002E   0x6B20             LDR      R0,[R4, #+48]
+   \   00000030   0x4790             BLX      R2
+    115              }
+    116          
+    117              // clean up platform resources + memory
+    118              equeue_mutex_destroy(&q->memlock);
+   \                     ??equeue_destroy_5: (+1)
+   \   00000032   0x0020             MOVS     R0,R4
+   \   00000034   0x304C             ADDS     R0,R0,#+76
+   \   00000036   0x.... 0x....      BL       equeue_mutex_destroy
+    119              equeue_mutex_destroy(&q->queuelock);
+   \   0000003A   0x0020             MOVS     R0,R4
+   \   0000003C   0x3048             ADDS     R0,R0,#+72
+   \   0000003E   0x.... 0x....      BL       equeue_mutex_destroy
+    120              equeue_sema_destroy(&q->eventsema);
+   \   00000042   0x0020             MOVS     R0,R4
+   \   00000044   0x3034             ADDS     R0,R0,#+52
+   \   00000046   0x.... 0x....      BL       equeue_sema_destroy
+    121              free(q->allocated);
+   \   0000004A   0x69A0             LDR      R0,[R4, #+24]
+   \   0000004C   0x.... 0x....      BL       free
+    122          }
+   \   00000050   0xBD70             POP      {R4-R6,PC}       ;; return
+    123          
+    124          
+    125          // equeue chunk allocation functions
+    126          static struct equeue_event *equeue_mem_alloc(equeue_t *q, size_t size) {
+    127              // add event overhead
+    128              size += sizeof(struct equeue_event);
+    129              size = (size + sizeof(void*)-1) & ~(sizeof(void*)-1);
+    130          
+    131              equeue_mutex_lock(&q->memlock);
+    132          
+    133              // check if a good chunk is available
+    134              for (struct equeue_event **p = &q->chunks; *p; p = &(*p)->next) {
+    135                  if ((*p)->size >= size) {
+    136                      struct equeue_event *e = *p;
+    137                      if (e->sibling) {
+    138                          *p = e->sibling;
+    139                          (*p)->next = e->next;
+    140                      } else {
+    141                          *p = e->next;
+    142                      }
+    143          
+    144                      equeue_mutex_unlock(&q->memlock);
+    145                      return e;
+    146                  }
+    147              }
+    148          
+    149              // otherwise allocate a new chunk out of the slab
+    150              if (q->slab.size >= size) {
+    151                  struct equeue_event *e = (struct equeue_event *)q->slab.data;
+    152                  q->slab.data += size;
+    153                  q->slab.size -= size;
+    154                  e->size = size;
+    155                  e->id = 1;
+    156          
+    157                  equeue_mutex_unlock(&q->memlock);
+    158                  return e;
+    159              }
+    160          
+    161              equeue_mutex_unlock(&q->memlock);
+    162              return 0;
+    163          }
+    164          
+    165          static void equeue_mem_dealloc(equeue_t *q, struct equeue_event *e) {
+    166              equeue_mutex_lock(&q->memlock);
+    167          
+    168              // stick chunk into list of chunks
+    169              struct equeue_event **p = &q->chunks;
+    170              while (*p && (*p)->size < e->size) {
+    171                  p = &(*p)->next;
+    172              }
+    173          
+    174              if (*p && (*p)->size == e->size) {
+    175                  e->sibling = *p;
+    176                  e->next = (*p)->next;
+    177              } else {
+    178                  e->sibling = 0;
+    179                  e->next = *p;
+    180              }
+    181              *p = e;
+    182          
+    183              equeue_mutex_unlock(&q->memlock);
+    184          }
+    185          
+
+   \                                 In section .text, align 2, keep-with-next
+    186          void *equeue_alloc(equeue_t *q, size_t size) {
+   \                     equeue_alloc: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+    187              struct equeue_event *e = equeue_mem_alloc(q, size);
+   \   00000004   0x3127             ADDS     R1,R1,#+39
+   \   00000006   0x2003             MOVS     R0,#+3
+   \   00000008   0x4381             BICS     R1,R1,R0
+   \   0000000A   0x000C             MOVS     R4,R1
+   \   0000000C   0x0028             MOVS     R0,R5
+   \   0000000E   0x304C             ADDS     R0,R0,#+76
+   \   00000010   0x.... 0x....      BL       equeue_mutex_lock
+   \   00000014   0x0028             MOVS     R0,R5
+   \   00000016   0x301C             ADDS     R0,R0,#+28
+   \   00000018   0xE001             B        ??equeue_alloc_0
+   \                     ??equeue_alloc_1: (+1)
+   \   0000001A   0x0008             MOVS     R0,R1
+   \   0000001C   0x3008             ADDS     R0,R0,#+8
+   \                     ??equeue_alloc_0: (+1)
+   \   0000001E   0x6801             LDR      R1,[R0, #+0]
+   \   00000020   0x2900             CMP      R1,#+0
+   \   00000022   0xD014             BEQ      ??equeue_alloc_2
+   \   00000024   0x680A             LDR      R2,[R1, #+0]
+   \   00000026   0x42A2             CMP      R2,R4
+   \   00000028   0xD3F7             BCC      ??equeue_alloc_1
+   \   0000002A   0x460E             MOV      R6,R1
+   \   0000002C   0x68F1             LDR      R1,[R6, #+12]
+   \   0000002E   0x2900             CMP      R1,#+0
+   \   00000030   0xD003             BEQ      ??equeue_alloc_3
+   \   00000032   0x6001             STR      R1,[R0, #+0]
+   \   00000034   0x68B0             LDR      R0,[R6, #+8]
+   \   00000036   0x6088             STR      R0,[R1, #+8]
+   \   00000038   0xE001             B        ??equeue_alloc_4
+   \                     ??equeue_alloc_3: (+1)
+   \   0000003A   0x68B1             LDR      R1,[R6, #+8]
+   \   0000003C   0x6001             STR      R1,[R0, #+0]
+   \                     ??equeue_alloc_4: (+1)
+   \   0000003E   0x0028             MOVS     R0,R5
+   \   00000040   0x304C             ADDS     R0,R0,#+76
+   \   00000042   0x.... 0x....      BL       equeue_mutex_unlock
+    188              if (!e) {
+   \   00000046   0x2E00             CMP      R6,#+0
+   \   00000048   0xD112             BNE      ??equeue_alloc_5
+    189                  return 0;
+   \                     ??equeue_alloc_6: (+1)
+   \   0000004A   0x2000             MOVS     R0,#+0
+   \   0000004C   0xBD70             POP      {R4-R6,PC}
+   \                     ??equeue_alloc_2: (+1)
+   \   0000004E   0x6A28             LDR      R0,[R5, #+32]
+   \   00000050   0x42A0             CMP      R0,R4
+   \   00000052   0xD308             BCC      ??equeue_alloc_7
+   \   00000054   0x6A6E             LDR      R6,[R5, #+36]
+   \   00000056   0x1931             ADDS     R1,R6,R4
+   \   00000058   0x6269             STR      R1,[R5, #+36]
+   \   0000005A   0x1B00             SUBS     R0,R0,R4
+   \   0000005C   0x6228             STR      R0,[R5, #+32]
+   \   0000005E   0x6034             STR      R4,[R6, #+0]
+   \   00000060   0x2001             MOVS     R0,#+1
+   \   00000062   0x7130             STRB     R0,[R6, #+4]
+   \   00000064   0xE7EB             B        ??equeue_alloc_4
+   \                     ??equeue_alloc_7: (+1)
+   \   00000066   0x0028             MOVS     R0,R5
+   \   00000068   0x304C             ADDS     R0,R0,#+76
+   \   0000006A   0x.... 0x....      BL       equeue_mutex_unlock
+   \   0000006E   0xE7EC             B        ??equeue_alloc_6
+    190              }
+    191          
+    192              e->target = 0;
+   \                     ??equeue_alloc_5: (+1)
+   \   00000070   0x2000             MOVS     R0,#+0
+   \   00000072   0x6170             STR      R0,[R6, #+20]
+    193              e->period = -1;
+   \   00000074   0x2100             MOVS     R1,#+0
+   \   00000076   0x43C9             MVNS     R1,R1            ;; #-1
+   \   00000078   0x61B1             STR      R1,[R6, #+24]
+    194              e->dtor = 0;
+   \   0000007A   0x61F0             STR      R0,[R6, #+28]
+    195          
+    196              return e + 1;
+   \   0000007C   0x0030             MOVS     R0,R6
+   \   0000007E   0x3024             ADDS     R0,R0,#+36
+   \   00000080   0xBD70             POP      {R4-R6,PC}       ;; return
+    197          }
+    198          
+
+   \                                 In section .text, align 2, keep-with-next
+    199          void equeue_dealloc(equeue_t *q, void *p) {
+   \                     equeue_dealloc: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x0008             MOVS     R0,R1
+    200              struct equeue_event *e = (struct equeue_event*)p - 1;
+    201          
+    202              if (e->dtor) {
+   \   00000006   0x0005             MOVS     R5,R0
+   \   00000008   0x3D24             SUBS     R5,R5,#+36
+   \   0000000A   0x69E9             LDR      R1,[R5, #+28]
+   \   0000000C   0x000A             MOVS     R2,R1
+   \   0000000E   0xD000             BEQ      ??equeue_dealloc_0
+    203                  e->dtor(e+1);
+   \   00000010   0x4788             BLX      R1
+    204              }
+    205          
+    206              equeue_mem_dealloc(q, e);
+   \                     ??equeue_dealloc_0: (+1)
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0x304C             ADDS     R0,R0,#+76
+   \   00000016   0x.... 0x....      BL       equeue_mutex_lock
+   \   0000001A   0x0020             MOVS     R0,R4
+   \   0000001C   0x301C             ADDS     R0,R0,#+28
+   \   0000001E   0x682B             LDR      R3,[R5, #+0]
+   \   00000020   0xE001             B        ??equeue_dealloc_1
+   \                     ??equeue_dealloc_2: (+1)
+   \   00000022   0x0008             MOVS     R0,R1
+   \   00000024   0x3008             ADDS     R0,R0,#+8
+   \                     ??equeue_dealloc_1: (+1)
+   \   00000026   0x6801             LDR      R1,[R0, #+0]
+   \   00000028   0x2900             CMP      R1,#+0
+   \   0000002A   0xD002             BEQ      ??equeue_dealloc_3
+   \   0000002C   0x680A             LDR      R2,[R1, #+0]
+   \   0000002E   0x429A             CMP      R2,R3
+   \   00000030   0xD3F7             BCC      ??equeue_dealloc_2
+   \                     ??equeue_dealloc_3: (+1)
+   \   00000032   0x2900             CMP      R1,#+0
+   \   00000034   0xD006             BEQ      ??equeue_dealloc_4
+   \   00000036   0x680A             LDR      R2,[R1, #+0]
+   \   00000038   0x429A             CMP      R2,R3
+   \   0000003A   0xD103             BNE      ??equeue_dealloc_4
+   \   0000003C   0x60E9             STR      R1,[R5, #+12]
+   \   0000003E   0x6801             LDR      R1,[R0, #+0]
+   \   00000040   0x6889             LDR      R1,[R1, #+8]
+   \   00000042   0xE002             B        ??equeue_dealloc_5
+   \                     ??equeue_dealloc_4: (+1)
+   \   00000044   0x2100             MOVS     R1,#+0
+   \   00000046   0x60E9             STR      R1,[R5, #+12]
+   \   00000048   0x6801             LDR      R1,[R0, #+0]
+   \                     ??equeue_dealloc_5: (+1)
+   \   0000004A   0x60A9             STR      R1,[R5, #+8]
+   \   0000004C   0x6005             STR      R5,[R0, #+0]
+   \   0000004E   0x0020             MOVS     R0,R4
+   \   00000050   0x304C             ADDS     R0,R0,#+76
+   \   00000052   0x.... 0x....      BL       equeue_mutex_unlock
+    207          }
+   \   00000056   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    208          
+    209          
+    210          // equeue scheduling functions
+
+   \                                 In section .text, align 2, keep-with-next
+    211          static int equeue_enqueue(equeue_t *q, struct equeue_event *e, unsigned tick) {
+   \                     equeue_enqueue: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0017             MOVS     R7,R2
+    212              // setup event and hash local id with buffer offset for unique id
+    213              int id = (e->id << q->npw2) | ((unsigned char *)e - q->buffer);
+   \   00000008   0x7928             LDRB     R0,[R5, #+4]
+   \   0000000A   0x6961             LDR      R1,[R4, #+20]
+   \   0000000C   0x4088             LSLS     R0,R0,R1
+   \   0000000E   0x6921             LDR      R1,[R4, #+16]
+   \   00000010   0x1A6E             SUBS     R6,R5,R1
+   \   00000012   0x4306             ORRS     R6,R6,R0
+    214              e->target = tick + equeue_clampdiff(e->target, tick);
+   \   00000014   0x6968             LDR      R0,[R5, #+20]
+   \   00000016   0x1BC0             SUBS     R0,R0,R7
+   \   00000018   0x17C1             ASRS     R1,R0,#+31
+   \   0000001A   0x4388             BICS     R0,R0,R1
+   \   0000001C   0x1838             ADDS     R0,R7,R0
+   \   0000001E   0x6168             STR      R0,[R5, #+20]
+    215              e->generation = q->generation;
+   \   00000020   0x7B20             LDRB     R0,[R4, #+12]
+   \   00000022   0x7168             STRB     R0,[R5, #+5]
+    216          
+    217              equeue_mutex_lock(&q->queuelock);
+   \   00000024   0x0020             MOVS     R0,R4
+   \   00000026   0x3048             ADDS     R0,R0,#+72
+   \   00000028   0x.... 0x....      BL       equeue_mutex_lock
+    218          
+    219              // find the event slot
+    220              struct equeue_event **p = &q->queue;
+   \   0000002C   0x0020             MOVS     R0,R4
+   \   0000002E   0x6969             LDR      R1,[R5, #+20]
+   \   00000030   0xE001             B        ??equeue_enqueue_0
+    221              while (*p && equeue_tickdiff((*p)->target, e->target) < 0) {
+    222                  p = &(*p)->next;
+   \                     ??equeue_enqueue_1: (+1)
+   \   00000032   0x0010             MOVS     R0,R2
+   \   00000034   0x3008             ADDS     R0,R0,#+8
+    223              }
+   \                     ??equeue_enqueue_0: (+1)
+   \   00000036   0x6802             LDR      R2,[R0, #+0]
+   \   00000038   0x2A00             CMP      R2,#+0
+   \   0000003A   0xD002             BEQ      ??equeue_enqueue_2
+   \   0000003C   0x6953             LDR      R3,[R2, #+20]
+   \   0000003E   0x1A5B             SUBS     R3,R3,R1
+   \   00000040   0xD4F7             BMI      ??equeue_enqueue_1
+    224          
+    225              // insert at head in slot
+    226              if (*p && (*p)->target == e->target) {
+   \                     ??equeue_enqueue_2: (+1)
+   \   00000042   0x4611             MOV      R1,R2
+   \   00000044   0x2900             CMP      R1,#+0
+   \   00000046   0xD00F             BEQ      ??equeue_enqueue_3
+   \   00000048   0x694A             LDR      R2,[R1, #+20]
+   \   0000004A   0x696B             LDR      R3,[R5, #+20]
+   \   0000004C   0x429A             CMP      R2,R3
+   \   0000004E   0xD10B             BNE      ??equeue_enqueue_3
+    227                  e->next = (*p)->next;
+   \   00000050   0x6889             LDR      R1,[R1, #+8]
+   \   00000052   0x60A9             STR      R1,[R5, #+8]
+    228                  if (e->next) {
+   \   00000054   0x2900             CMP      R1,#+0
+   \   00000056   0xD002             BEQ      ??equeue_enqueue_4
+    229                      e->next->ref = &e->next;
+   \   00000058   0x002A             MOVS     R2,R5
+   \   0000005A   0x3208             ADDS     R2,R2,#+8
+   \   0000005C   0x610A             STR      R2,[R1, #+16]
+    230                  }
+    231          
+    232                  e->sibling = *p;
+   \                     ??equeue_enqueue_4: (+1)
+   \   0000005E   0x6801             LDR      R1,[R0, #+0]
+    233                  e->sibling->ref = &e->sibling;
+   \   00000060   0x002A             MOVS     R2,R5
+   \   00000062   0x320C             ADDS     R2,R2,#+12
+   \   00000064   0x610A             STR      R2,[R1, #+16]
+   \   00000066   0xE006             B        ??equeue_enqueue_5
+    234              } else {
+    235                  e->next = *p;
+   \                     ??equeue_enqueue_3: (+1)
+   \   00000068   0x60A9             STR      R1,[R5, #+8]
+    236                  if (e->next) {
+   \   0000006A   0x2900             CMP      R1,#+0
+   \   0000006C   0xD002             BEQ      ??equeue_enqueue_6
+    237                      e->next->ref = &e->next;
+   \   0000006E   0x002A             MOVS     R2,R5
+   \   00000070   0x3208             ADDS     R2,R2,#+8
+   \   00000072   0x610A             STR      R2,[R1, #+16]
+    238                  }
+    239          
+    240                  e->sibling = 0;
+   \                     ??equeue_enqueue_6: (+1)
+   \   00000074   0x2100             MOVS     R1,#+0
+   \                     ??equeue_enqueue_5: (+1)
+   \   00000076   0x60E9             STR      R1,[R5, #+12]
+    241              }
+    242          
+    243              *p = e;
+   \   00000078   0x6005             STR      R5,[R0, #+0]
+    244              e->ref = p;
+   \   0000007A   0x6128             STR      R0,[R5, #+16]
+    245          
+    246              // notify background timer
+    247              if ((q->background.update && q->background.active) &&
+    248                  (q->queue == e && !e->sibling)) {
+   \   0000007C   0x0020             MOVS     R0,R4
+   \   0000007E   0x3028             ADDS     R0,R0,#+40
+   \   00000080   0x6842             LDR      R2,[R0, #+4]
+   \   00000082   0x0011             MOVS     R1,R2
+   \   00000084   0xD00E             BEQ      ??equeue_enqueue_7
+   \   00000086   0x7801             LDRB     R1,[R0, #+0]
+   \   00000088   0x2900             CMP      R1,#+0
+   \   0000008A   0xD00B             BEQ      ??equeue_enqueue_7
+   \   0000008C   0x6821             LDR      R1,[R4, #+0]
+   \   0000008E   0x42A9             CMP      R1,R5
+   \   00000090   0xD108             BNE      ??equeue_enqueue_7
+   \   00000092   0x68E9             LDR      R1,[R5, #+12]
+   \   00000094   0x2900             CMP      R1,#+0
+   \   00000096   0xD105             BNE      ??equeue_enqueue_7
+    249                  q->background.update(q->background.timer,
+    250                          equeue_clampdiff(e->target, tick));
+   \   00000098   0x6969             LDR      R1,[R5, #+20]
+   \   0000009A   0x1BC9             SUBS     R1,R1,R7
+    251              }
+   \   0000009C   0x17CB             ASRS     R3,R1,#+31
+   \   0000009E   0x4399             BICS     R1,R1,R3
+   \   000000A0   0x6880             LDR      R0,[R0, #+8]
+   \   000000A2   0x4790             BLX      R2
+    252          
+    253              equeue_mutex_unlock(&q->queuelock);
+   \                     ??equeue_enqueue_7: (+1)
+   \   000000A4   0x....             B.N      ?Subroutine0
+    254          
+    255              return id;
+    256          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0020             MOVS     R0,R4
+   \   00000002   0x3048             ADDS     R0,R0,#+72
+   \   00000004   0x.... 0x....      BL       equeue_mutex_unlock
+   \   00000008   0x0030             MOVS     R0,R6
+   \   0000000A   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    257          
+
+   \                                 In section .text, align 2, keep-with-next
+    258          static struct equeue_event *equeue_unqueue(equeue_t *q, int id) {
+   \                     equeue_unqueue: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000F             MOVS     R7,R1
+    259              // decode event from unique id and check that the local id matches
+    260              struct equeue_event *e = (struct equeue_event *)
+    261                      &q->buffer[id & ((1 << q->npw2)-1)];
+   \   00000006   0x2501             MOVS     R5,#+1
+   \   00000008   0x6920             LDR      R0,[R4, #+16]
+   \   0000000A   0x6961             LDR      R1,[R4, #+20]
+   \   0000000C   0x2201             MOVS     R2,#+1
+   \   0000000E   0x408A             LSLS     R2,R2,R1
+   \   00000010   0x1E52             SUBS     R2,R2,#+1
+   \   00000012   0x403A             ANDS     R2,R2,R7
+   \   00000014   0x1886             ADDS     R6,R0,R2
+    262          
+    263              equeue_mutex_lock(&q->queuelock);
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0x3048             ADDS     R0,R0,#+72
+   \   0000001A   0x.... 0x....      BL       equeue_mutex_lock
+    264              if (e->id != id >> q->npw2) {
+   \   0000001E   0x7930             LDRB     R0,[R6, #+4]
+   \   00000020   0x6961             LDR      R1,[R4, #+20]
+   \   00000022   0x410F             ASRS     R7,R7,R1
+   \   00000024   0x42B8             CMP      R0,R7
+   \   00000026   0xD10C             BNE      ??equeue_unqueue_0
+    265                  equeue_mutex_unlock(&q->queuelock);
+    266                  return 0;
+    267              }
+    268          
+    269              // clear the event and check if already in-flight
+    270              e->cb = 0;
+   \   00000028   0x2000             MOVS     R0,#+0
+   \   0000002A   0x6230             STR      R0,[R6, #+32]
+    271              e->period = -1;
+   \   0000002C   0x43C0             MVNS     R0,R0            ;; #-1
+   \   0000002E   0x61B0             STR      R0,[R6, #+24]
+    272          
+    273              int diff = equeue_tickdiff(e->target, q->tick);
+   \   00000030   0x6970             LDR      R0,[R6, #+20]
+   \   00000032   0x6861             LDR      R1,[R4, #+4]
+   \   00000034   0x1A40             SUBS     R0,R0,R1
+    274              if (diff < 0 || (diff == 0 && e->generation != q->generation)) {
+   \   00000036   0xD404             BMI      ??equeue_unqueue_0
+   \   00000038   0xD109             BNE      ??equeue_unqueue_1
+   \   0000003A   0x7970             LDRB     R0,[R6, #+5]
+   \   0000003C   0x7B21             LDRB     R1,[R4, #+12]
+   \   0000003E   0x4288             CMP      R0,R1
+   \   00000040   0xD005             BEQ      ??equeue_unqueue_1
+    275                  equeue_mutex_unlock(&q->queuelock);
+   \                     ??equeue_unqueue_0: (+1)
+   \   00000042   0x0020             MOVS     R0,R4
+   \   00000044   0x3048             ADDS     R0,R0,#+72
+   \   00000046   0x.... 0x....      BL       equeue_mutex_unlock
+    276                  return 0;
+   \   0000004A   0x2000             MOVS     R0,#+0
+   \   0000004C   0xBDF2             POP      {R1,R4-R7,PC}
+    277              }
+    278          
+    279              // disentangle from queue
+    280              if (e->sibling) {
+   \                     ??equeue_unqueue_1: (+1)
+   \   0000004E   0x68B0             LDR      R0,[R6, #+8]
+   \   00000050   0x68F1             LDR      R1,[R6, #+12]
+   \   00000052   0x2900             CMP      R1,#+0
+   \   00000054   0xD00B             BEQ      ??equeue_unqueue_2
+    281                  e->sibling->next = e->next;
+   \   00000056   0x6088             STR      R0,[R1, #+8]
+    282                  if (e->sibling->next) {
+   \   00000058   0x68F0             LDR      R0,[R6, #+12]
+   \   0000005A   0x6881             LDR      R1,[R0, #+8]
+   \   0000005C   0x2900             CMP      R1,#+0
+   \   0000005E   0xD002             BEQ      ??equeue_unqueue_3
+    283                      e->sibling->next->ref = &e->sibling->next;
+   \   00000060   0x0002             MOVS     R2,R0
+   \   00000062   0x3208             ADDS     R2,R2,#+8
+   \   00000064   0x610A             STR      R2,[R1, #+16]
+    284                  }
+    285          
+    286                  *e->ref = e->sibling;
+   \                     ??equeue_unqueue_3: (+1)
+   \   00000066   0x6931             LDR      R1,[R6, #+16]
+   \   00000068   0x6008             STR      R0,[R1, #+0]
+    287                  e->sibling->ref = e->ref;
+   \   0000006A   0x68F0             LDR      R0,[R6, #+12]
+   \   0000006C   0xE004             B        ??equeue_unqueue_4
+    288              } else {
+    289                  *e->ref = e->next;
+   \                     ??equeue_unqueue_2: (+1)
+   \   0000006E   0x6931             LDR      R1,[R6, #+16]
+   \   00000070   0x6008             STR      R0,[R1, #+0]
+    290                  if (e->next) {
+   \   00000072   0x68B0             LDR      R0,[R6, #+8]
+   \   00000074   0x2800             CMP      R0,#+0
+   \   00000076   0xD000             BEQ      ??equeue_unqueue_5
+    291                      e->next->ref = e->ref;
+   \                     ??equeue_unqueue_4: (+1)
+   \   00000078   0x6101             STR      R1,[R0, #+16]
+    292                  }
+    293              }
+    294          
+    295              equeue_incid(q, e);
+   \                     ??equeue_unqueue_5: (+1)
+   \   0000007A   0x7930             LDRB     R0,[R6, #+4]
+   \   0000007C   0x1C40             ADDS     R0,R0,#+1
+   \   0000007E   0x7130             STRB     R0,[R6, #+4]
+   \   00000080   0xB2C0             UXTB     R0,R0
+   \   00000082   0x6961             LDR      R1,[R4, #+20]
+   \   00000084   0x4088             LSLS     R0,R0,R1
+   \   00000086   0xD100             BNE      ??equeue_unqueue_6
+   \   00000088   0x7135             STRB     R5,[R6, #+4]
+    296              equeue_mutex_unlock(&q->queuelock);
+   \                     ??equeue_unqueue_6: (+1)
+   \   0000008A                      REQUIRE ?Subroutine0
+   \   0000008A                      ;; // Fall through to label ?Subroutine0
+    297          
+    298              return e;
+    299          }
+    300          
+    301          static struct equeue_event *equeue_dequeue(equeue_t *q, unsigned target) {
+    302              equeue_mutex_lock(&q->queuelock);
+    303          
+    304              // find all expired events and mark a new generation
+    305              q->generation += 1;
+    306              if (equeue_tickdiff(q->tick, target) <= 0) {
+    307                  q->tick = target;
+    308              }
+    309          
+    310              struct equeue_event *head = q->queue;
+    311              struct equeue_event **p = &head;
+    312              while (*p && equeue_tickdiff((*p)->target, target) <= 0) {
+    313                  p = &(*p)->next;
+    314              }
+    315          
+    316              q->queue = *p;
+    317              if (q->queue) {
+    318                  q->queue->ref = &q->queue;
+    319              }
+    320          
+    321              *p = 0;
+    322          
+    323              equeue_mutex_unlock(&q->queuelock);
+    324          
+    325              // reverse and flatten each slot to match insertion order
+    326              struct equeue_event **tail = &head;
+    327              struct equeue_event *ess = head;
+    328              while (ess) {
+    329                  struct equeue_event *es = ess;
+    330                  ess = es->next;
+    331          
+    332                  struct equeue_event *prev = 0;
+    333                  for (struct equeue_event *e = es; e; e = e->sibling) {
+    334                      e->next = prev;
+    335                      prev = e;
+    336                  }
+    337          
+    338                  *tail = prev;
+    339                  tail = &es->next;
+    340              }
+    341          
+    342              return head;
+    343          }
+    344          
+
+   \                                 In section .text, align 2, keep-with-next
+    345          int equeue_post(equeue_t *q, void (*cb)(void*), void *p) {
+   \                     equeue_post: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0x0015             MOVS     R5,R2
+    346              struct equeue_event *e = (struct equeue_event*)p - 1;
+    347              unsigned tick = equeue_tick();
+   \   00000008   0x.... 0x....      BL       equeue_tick
+    348              e->cb = cb;
+   \   0000000C   0x0029             MOVS     R1,R5
+   \   0000000E   0x3910             SUBS     R1,R1,#+16
+   \   00000010   0x60CE             STR      R6,[R1, #+12]
+    349              e->target = tick + e->target;
+   \   00000012   0x680A             LDR      R2,[R1, #+0]
+   \   00000014   0x1812             ADDS     R2,R2,R0
+   \   00000016   0x600A             STR      R2,[R1, #+0]
+    350          
+    351              int id = equeue_enqueue(q, e, tick);
+   \   00000018   0x0002             MOVS     R2,R0
+   \   0000001A   0x3D24             SUBS     R5,R5,#+36
+   \   0000001C   0x0029             MOVS     R1,R5
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0x.... 0x....      BL       equeue_enqueue
+   \   00000024   0x0005             MOVS     R5,R0
+    352              equeue_sema_signal(&q->eventsema);
+   \   00000026   0x0020             MOVS     R0,R4
+   \   00000028   0x3034             ADDS     R0,R0,#+52
+   \   0000002A   0x.... 0x....      BL       equeue_sema_signal
+    353              return id;
+   \   0000002E   0x0028             MOVS     R0,R5
+   \   00000030   0xBD70             POP      {R4-R6,PC}       ;; return
+    354          }
+    355          
+
+   \                                 In section .text, align 2, keep-with-next
+    356          void equeue_cancel(equeue_t *q, int id) {
+   \                     equeue_cancel: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    357              if (!id) {
+   \   00000004   0x2900             CMP      R1,#+0
+   \   00000006   0xD008             BEQ      ??equeue_cancel_0
+    358                  return;
+    359              }
+    360          
+    361              struct equeue_event *e = equeue_unqueue(q, id);
+   \   00000008   0x.... 0x....      BL       equeue_unqueue
+    362              if (e) {
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD004             BEQ      ??equeue_cancel_0
+    363                  equeue_dealloc(q, e + 1);
+   \   00000010   0x0001             MOVS     R1,R0
+   \   00000012   0x3124             ADDS     R1,R1,#+36
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x.... 0x....      BL       equeue_dealloc
+    364              }
+    365          }
+   \                     ??equeue_cancel_0: (+1)
+   \   0000001A   0xBD10             POP      {R4,PC}          ;; return
+    366          
+
+   \                                 In section .text, align 2, keep-with-next
+    367          void equeue_break(equeue_t *q) {
+   \                     equeue_break: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    368              equeue_mutex_lock(&q->queuelock);
+   \   00000004   0x3048             ADDS     R0,R0,#+72
+   \   00000006   0x.... 0x....      BL       equeue_mutex_lock
+    369              q->breaks++;
+   \   0000000A   0x68A0             LDR      R0,[R4, #+8]
+   \   0000000C   0x1C40             ADDS     R0,R0,#+1
+   \   0000000E   0x60A0             STR      R0,[R4, #+8]
+    370              equeue_mutex_unlock(&q->queuelock);
+   \   00000010   0x0020             MOVS     R0,R4
+   \   00000012   0x3048             ADDS     R0,R0,#+72
+   \   00000014   0x.... 0x....      BL       equeue_mutex_unlock
+    371              equeue_sema_signal(&q->eventsema);
+   \   00000018   0x0020             MOVS     R0,R4
+   \   0000001A   0x3034             ADDS     R0,R0,#+52
+   \   0000001C   0x.... 0x....      BL       equeue_sema_signal
+    372          }
+   \   00000020   0xBD10             POP      {R4,PC}          ;; return
+    373          
+
+   \                                 In section .text, align 2, keep-with-next
+    374          void equeue_dispatch(equeue_t *q, int ms) {
+   \                     equeue_dispatch: (+1)
+   \   00000000   0xB5F2             PUSH     {R1,R4-R7,LR}
+   \   00000002   0xB082             SUB      SP,SP,#+8
+   \   00000004   0x0004             MOVS     R4,R0
+    375              unsigned tick = equeue_tick();
+   \   00000006   0x.... 0x....      BL       equeue_tick
+   \   0000000A   0x0005             MOVS     R5,R0
+    376              unsigned timeout = tick + ms;
+   \   0000000C   0x9802             LDR      R0,[SP, #+8]
+   \   0000000E   0x1828             ADDS     R0,R5,R0
+   \   00000010   0x9001             STR      R0,[SP, #+4]
+   \   00000012   0x2700             MOVS     R7,#+0
+   \   00000014   0x2128             MOVS     R1,#+40
+   \   00000016   0x5467             STRB     R7,[R4, R1]
+   \   00000018   0xE006             B        ??equeue_dispatch_0
+    377              q->background.active = false;
+    378          
+    379              while (1) {
+    380                  // collect all the available events and next deadline
+    381                  struct equeue_event *es = equeue_dequeue(q, tick);
+    382          
+    383                  // dispatch events
+    384                  while (es) {
+    385                      struct equeue_event *e = es;
+    386                      es = e->next;
+    387          
+    388                      // actually dispatch the callbacks
+    389                      void (*cb)(void *) = e->cb;
+    390                      if (cb) {
+    391                          cb(e + 1);
+    392                      }
+    393          
+    394                      // reenqueue periodic events or deallocate
+    395                      if (e->period >= 0) {
+    396                          e->target += e->period;
+    397                          equeue_enqueue(q, e, equeue_tick());
+    398                      } else {
+    399                          equeue_incid(q, e);
+    400                          equeue_dealloc(q, e+1);
+    401                      }
+    402                  }
+    403          
+    404                  int deadline = -1;
+    405                  tick = equeue_tick();
+    406          
+    407                  // check if we should stop dispatching soon
+    408                  if (ms >= 0) {
+    409                      deadline = equeue_tickdiff(timeout, tick);
+    410                      if (deadline <= 0) {
+    411                          // update background timer if necessary
+    412                          if (q->background.update) {
+    413                              equeue_mutex_lock(&q->queuelock);
+    414                              if (q->background.update && q->queue) {
+    415                                  q->background.update(q->background.timer,
+    416                                          equeue_clampdiff(q->queue->target, tick));
+    417                              }
+    418                              q->background.active = true;
+    419                              equeue_mutex_unlock(&q->queuelock);
+    420                          }
+    421                          return;
+    422                      }
+    423                  }
+    424          
+    425                  // find closest deadline
+    426                  equeue_mutex_lock(&q->queuelock);
+    427                  if (q->queue) {
+    428                      int diff = equeue_clampdiff(q->queue->target, tick);
+    429                      if ((unsigned)diff < (unsigned)deadline) {
+    430                          deadline = diff;
+    431                      }
+    432                  }
+    433                  equeue_mutex_unlock(&q->queuelock);
+    434          
+    435                  // wait for events
+    436                  equeue_sema_wait(&q->eventsema, deadline);
+    437          
+    438                  // check if we were notified to break out of dispatch
+    439                  if (q->breaks) {
+    440                      equeue_mutex_lock(&q->queuelock);
+    441                      if (q->breaks > 0) {
+    442                          q->breaks--;
+    443                          equeue_mutex_unlock(&q->queuelock);
+    444                          return;
+    445                      }
+    446                      equeue_mutex_unlock(&q->queuelock);
+   \                     ??equeue_dispatch_1: (+1)
+   \   0000001A   0x0020             MOVS     R0,R4
+   \   0000001C   0x3048             ADDS     R0,R0,#+72
+   \   0000001E   0x.... 0x....      BL       equeue_mutex_unlock
+    447                  }
+    448          
+    449                  // update tick for next iteration
+    450                  tick = equeue_tick();
+   \                     ??equeue_dispatch_2: (+1)
+   \   00000022   0x.... 0x....      BL       equeue_tick
+   \   00000026   0x0005             MOVS     R5,R0
+   \                     ??equeue_dispatch_0: (+1)
+   \   00000028   0x0020             MOVS     R0,R4
+   \   0000002A   0x3048             ADDS     R0,R0,#+72
+   \   0000002C   0x.... 0x....      BL       equeue_mutex_lock
+   \   00000030   0x7B20             LDRB     R0,[R4, #+12]
+   \   00000032   0x1C40             ADDS     R0,R0,#+1
+   \   00000034   0x7320             STRB     R0,[R4, #+12]
+   \   00000036   0x6860             LDR      R0,[R4, #+4]
+   \   00000038   0x1B40             SUBS     R0,R0,R5
+   \   0000003A   0x2801             CMP      R0,#+1
+   \   0000003C   0xDA00             BGE      ??equeue_dispatch_3
+   \   0000003E   0x6065             STR      R5,[R4, #+4]
+   \                     ??equeue_dispatch_3: (+1)
+   \   00000040   0x6820             LDR      R0,[R4, #+0]
+   \   00000042   0x9000             STR      R0,[SP, #+0]
+   \   00000044   0x4668             MOV      R0,SP
+   \   00000046   0xE001             B        ??equeue_dispatch_4
+   \                     ??equeue_dispatch_5: (+1)
+   \   00000048   0x0008             MOVS     R0,R1
+   \   0000004A   0x3008             ADDS     R0,R0,#+8
+   \                     ??equeue_dispatch_4: (+1)
+   \   0000004C   0x6801             LDR      R1,[R0, #+0]
+   \   0000004E   0x2900             CMP      R1,#+0
+   \   00000050   0xD003             BEQ      ??equeue_dispatch_6
+   \   00000052   0x694A             LDR      R2,[R1, #+20]
+   \   00000054   0x1B52             SUBS     R2,R2,R5
+   \   00000056   0x2A01             CMP      R2,#+1
+   \   00000058   0xDBF6             BLT      ??equeue_dispatch_5
+   \                     ??equeue_dispatch_6: (+1)
+   \   0000005A   0x6021             STR      R1,[R4, #+0]
+   \   0000005C   0x2900             CMP      R1,#+0
+   \   0000005E   0xD000             BEQ      ??equeue_dispatch_7
+   \   00000060   0x610C             STR      R4,[R1, #+16]
+   \                     ??equeue_dispatch_7: (+1)
+   \   00000062   0x6007             STR      R7,[R0, #+0]
+   \   00000064   0x0020             MOVS     R0,R4
+   \   00000066   0x3048             ADDS     R0,R0,#+72
+   \   00000068   0x.... 0x....      BL       equeue_mutex_unlock
+   \   0000006C   0x4668             MOV      R0,SP
+   \   0000006E   0x9900             LDR      R1,[SP, #+0]
+   \   00000070   0xE00B             B        ??equeue_dispatch_8
+   \                     ??equeue_dispatch_9: (+1)
+   \   00000072   0x000A             MOVS     R2,R1
+   \   00000074   0x6891             LDR      R1,[R2, #+8]
+   \   00000076   0x2300             MOVS     R3,#+0
+   \   00000078   0x0015             MOVS     R5,R2
+   \                     ??equeue_dispatch_10: (+1)
+   \   0000007A   0x60AB             STR      R3,[R5, #+8]
+   \   0000007C   0x002B             MOVS     R3,R5
+   \   0000007E   0x68ED             LDR      R5,[R5, #+12]
+   \   00000080   0x2D00             CMP      R5,#+0
+   \   00000082   0xD1FA             BNE      ??equeue_dispatch_10
+   \   00000084   0x6003             STR      R3,[R0, #+0]
+   \   00000086   0x0010             MOVS     R0,R2
+   \   00000088   0x3008             ADDS     R0,R0,#+8
+   \                     ??equeue_dispatch_8: (+1)
+   \   0000008A   0x2900             CMP      R1,#+0
+   \   0000008C   0xD1F1             BNE      ??equeue_dispatch_9
+   \   0000008E   0x9E00             LDR      R6,[SP, #+0]
+   \   00000090   0xE009             B        ??equeue_dispatch_11
+   \                     ??equeue_dispatch_12: (+1)
+   \   00000092   0x6969             LDR      R1,[R5, #+20]
+   \   00000094   0x1808             ADDS     R0,R1,R0
+   \   00000096   0x6168             STR      R0,[R5, #+20]
+   \   00000098   0x.... 0x....      BL       equeue_tick
+   \   0000009C   0x0002             MOVS     R2,R0
+   \   0000009E   0x0029             MOVS     R1,R5
+   \   000000A0   0x0020             MOVS     R0,R4
+   \   000000A2   0x.... 0x....      BL       equeue_enqueue
+   \                     ??equeue_dispatch_11: (+1)
+   \   000000A6   0x2E00             CMP      R6,#+0
+   \   000000A8   0xD019             BEQ      ??equeue_dispatch_13
+   \   000000AA   0x0035             MOVS     R5,R6
+   \   000000AC   0x68AE             LDR      R6,[R5, #+8]
+   \   000000AE   0x6A29             LDR      R1,[R5, #+32]
+   \   000000B0   0x0008             MOVS     R0,R1
+   \   000000B2   0xD002             BEQ      ??equeue_dispatch_14
+   \   000000B4   0x0028             MOVS     R0,R5
+   \   000000B6   0x3024             ADDS     R0,R0,#+36
+   \   000000B8   0x4788             BLX      R1
+   \                     ??equeue_dispatch_14: (+1)
+   \   000000BA   0x69A8             LDR      R0,[R5, #+24]
+   \   000000BC   0x2800             CMP      R0,#+0
+   \   000000BE   0xD5E8             BPL      ??equeue_dispatch_12
+   \   000000C0   0x7928             LDRB     R0,[R5, #+4]
+   \   000000C2   0x1C40             ADDS     R0,R0,#+1
+   \   000000C4   0x7128             STRB     R0,[R5, #+4]
+   \   000000C6   0xB2C0             UXTB     R0,R0
+   \   000000C8   0x6961             LDR      R1,[R4, #+20]
+   \   000000CA   0x4088             LSLS     R0,R0,R1
+   \   000000CC   0xD101             BNE      ??equeue_dispatch_15
+   \   000000CE   0x2001             MOVS     R0,#+1
+   \   000000D0   0x7128             STRB     R0,[R5, #+4]
+   \                     ??equeue_dispatch_15: (+1)
+   \   000000D2   0x0029             MOVS     R1,R5
+   \   000000D4   0x3124             ADDS     R1,R1,#+36
+   \   000000D6   0x0020             MOVS     R0,R4
+   \   000000D8   0x.... 0x....      BL       equeue_dealloc
+   \   000000DC   0xE7E3             B        ??equeue_dispatch_11
+   \                     ??equeue_dispatch_13: (+1)
+   \   000000DE   0x2500             MOVS     R5,#+0
+   \   000000E0   0x43ED             MVNS     R5,R5            ;; #-1
+   \   000000E2   0x.... 0x....      BL       equeue_tick
+   \   000000E6   0x0006             MOVS     R6,R0
+   \   000000E8   0x9802             LDR      R0,[SP, #+8]
+   \   000000EA   0x2800             CMP      R0,#+0
+   \   000000EC   0xD420             BMI      ??equeue_dispatch_16
+   \   000000EE   0x9801             LDR      R0,[SP, #+4]
+   \   000000F0   0x1B85             SUBS     R5,R0,R6
+   \   000000F2   0x2D01             CMP      R5,#+1
+   \   000000F4   0xDA1C             BGE      ??equeue_dispatch_16
+   \   000000F6   0x0020             MOVS     R0,R4
+   \   000000F8   0x3028             ADDS     R0,R0,#+40
+   \   000000FA   0x6840             LDR      R0,[R0, #+4]
+   \   000000FC   0x2800             CMP      R0,#+0
+   \   000000FE   0xD040             BEQ      ??equeue_dispatch_17
+   \   00000100   0x0020             MOVS     R0,R4
+   \   00000102   0x3048             ADDS     R0,R0,#+72
+   \   00000104   0x.... 0x....      BL       equeue_mutex_lock
+   \   00000108   0x0020             MOVS     R0,R4
+   \   0000010A   0x3028             ADDS     R0,R0,#+40
+   \   0000010C   0x6842             LDR      R2,[R0, #+4]
+   \   0000010E   0x0010             MOVS     R0,R2
+   \   00000110   0xD00A             BEQ      ??equeue_dispatch_18
+   \   00000112   0x6820             LDR      R0,[R4, #+0]
+   \   00000114   0x2800             CMP      R0,#+0
+   \   00000116   0xD007             BEQ      ??equeue_dispatch_18
+   \   00000118   0x6940             LDR      R0,[R0, #+20]
+   \   0000011A   0x1B81             SUBS     R1,R0,R6
+   \   0000011C   0x17C8             ASRS     R0,R1,#+31
+   \   0000011E   0x4381             BICS     R1,R1,R0
+   \   00000120   0x0020             MOVS     R0,R4
+   \   00000122   0x3028             ADDS     R0,R0,#+40
+   \   00000124   0x6880             LDR      R0,[R0, #+8]
+   \   00000126   0x4790             BLX      R2
+   \                     ??equeue_dispatch_18: (+1)
+   \   00000128   0x2001             MOVS     R0,#+1
+   \   0000012A   0x2128             MOVS     R1,#+40
+   \   0000012C   0x5460             STRB     R0,[R4, R1]
+   \   0000012E   0xE024             B        ??equeue_dispatch_19
+   \                     ??equeue_dispatch_16: (+1)
+   \   00000130   0x0020             MOVS     R0,R4
+   \   00000132   0x3048             ADDS     R0,R0,#+72
+   \   00000134   0x.... 0x....      BL       equeue_mutex_lock
+   \   00000138   0x6820             LDR      R0,[R4, #+0]
+   \   0000013A   0x2800             CMP      R0,#+0
+   \   0000013C   0xD006             BEQ      ??equeue_dispatch_20
+   \   0000013E   0x6940             LDR      R0,[R0, #+20]
+   \   00000140   0x1B80             SUBS     R0,R0,R6
+   \   00000142   0x17C1             ASRS     R1,R0,#+31
+   \   00000144   0x4388             BICS     R0,R0,R1
+   \   00000146   0x42A8             CMP      R0,R5
+   \   00000148   0xD200             BCS      ??equeue_dispatch_20
+   \   0000014A   0x0005             MOVS     R5,R0
+   \                     ??equeue_dispatch_20: (+1)
+   \   0000014C   0x0020             MOVS     R0,R4
+   \   0000014E   0x3048             ADDS     R0,R0,#+72
+   \   00000150   0x.... 0x....      BL       equeue_mutex_unlock
+   \   00000154   0x0029             MOVS     R1,R5
+   \   00000156   0x0020             MOVS     R0,R4
+   \   00000158   0x3034             ADDS     R0,R0,#+52
+   \   0000015A   0x.... 0x....      BL       equeue_sema_wait
+   \   0000015E   0x68A0             LDR      R0,[R4, #+8]
+   \   00000160   0x2800             CMP      R0,#+0
+   \   00000162   0xD100             BNE      .+4
+   \   00000164   0xE75D             B        ??equeue_dispatch_2
+   \   00000166   0x0020             MOVS     R0,R4
+   \   00000168   0x3048             ADDS     R0,R0,#+72
+   \   0000016A   0x.... 0x....      BL       equeue_mutex_lock
+   \   0000016E   0x68A0             LDR      R0,[R4, #+8]
+   \   00000170   0x2800             CMP      R0,#+0
+   \   00000172   0xD100             BNE      .+4
+   \   00000174   0xE751             B        ??equeue_dispatch_1
+   \   00000176   0x1E40             SUBS     R0,R0,#+1
+   \   00000178   0x60A0             STR      R0,[R4, #+8]
+   \                     ??equeue_dispatch_19: (+1)
+   \   0000017A   0x0020             MOVS     R0,R4
+   \   0000017C   0x3048             ADDS     R0,R0,#+72
+   \   0000017E   0x.... 0x....      BL       equeue_mutex_unlock
+   \                     ??equeue_dispatch_17: (+1)
+   \   00000182   0xB003             ADD      SP,SP,#+12
+   \   00000184   0xBDF0             POP      {R4-R7,PC}       ;; return
+    451              }
+    452          }
+    453          
+    454          
+    455          // event functions
+
+   \                                 In section .text, align 2, keep-with-next
+    456          void equeue_event_delay(void *p, int ms) {
+    457              struct equeue_event *e = (struct equeue_event*)p - 1;
+    458              e->target = ms;
+   \                     equeue_event_delay: (+1)
+   \   00000000   0x3810             SUBS     R0,R0,#+16
+   \   00000002   0x6001             STR      R1,[R0, #+0]
+    459          }
+   \   00000004   0x4770             BX       LR               ;; return
+    460          
+
+   \                                 In section .text, align 2, keep-with-next
+    461          void equeue_event_period(void *p, int ms) {
+    462              struct equeue_event *e = (struct equeue_event*)p - 1;
+    463              e->period = ms;
+   \                     equeue_event_period: (+1)
+   \   00000000   0x380C             SUBS     R0,R0,#+12
+   \   00000002   0x6001             STR      R1,[R0, #+0]
+    464          }
+   \   00000004   0x4770             BX       LR               ;; return
+    465          
+
+   \                                 In section .text, align 2, keep-with-next
+    466          void equeue_event_dtor(void *p, void (*dtor)(void *)) {
+    467              struct equeue_event *e = (struct equeue_event*)p - 1;
+    468              e->dtor = dtor;
+   \                     equeue_event_dtor: (+1)
+   \   00000000   0x3808             SUBS     R0,R0,#+8
+   \   00000002   0x6001             STR      R1,[R0, #+0]
+    469          }
+   \   00000004   0x4770             BX       LR               ;; return
+    470          
+    471          
+    472          // simple callbacks 
+    473          struct ecallback {
+    474              void (*cb)(void*);
+    475              void *data;
+    476          };
+    477          
+
+   \                                 In section .text, align 2, keep-with-next
+    478          static void ecallback_dispatch(void *p) {
+   \                     ecallback_dispatch: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x0001             MOVS     R1,R0
+    479              struct ecallback *e = (struct ecallback*)p;
+    480              e->cb(e->data);
+   \   00000004   0x6848             LDR      R0,[R1, #+4]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+    481          }
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+    482          
+
+   \                                 In section .text, align 2, keep-with-next
+    483          int equeue_call(equeue_t *q, void (*cb)(void*), void *data) {
+   \                     equeue_call: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0006             MOVS     R6,R0
+   \   00000004   0x000C             MOVS     R4,R1
+   \   00000006   0x0015             MOVS     R5,R2
+    484              struct ecallback *e = equeue_alloc(q, sizeof(struct ecallback));
+   \   00000008   0x2108             MOVS     R1,#+8
+   \   0000000A   0x.... 0x....      BL       equeue_alloc
+    485              if (!e) {
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD006             BEQ      ??equeue_call_0
+    486                  return 0;
+    487              }
+    488          
+    489              e->cb = cb;
+   \   00000012   0x6004             STR      R4,[R0, #+0]
+    490              e->data = data;
+   \   00000014   0x6045             STR      R5,[R0, #+4]
+    491              return equeue_post(q, ecallback_dispatch, e);
+   \   00000016   0x0002             MOVS     R2,R0
+   \   00000018   0x....             LDR      R1,??DataTable4
+   \   0000001A   0x0030             MOVS     R0,R6
+   \   0000001C   0x.... 0x....      BL       equeue_post
+   \                     ??equeue_call_0: (+1)
+   \   00000020   0xBD70             POP      {R4-R6,PC}       ;; return
+    492          }
+    493          
+
+   \                                 In section .text, align 2, keep-with-next
+    494          int equeue_call_in(equeue_t *q, int ms, void (*cb)(void*), void *data) {
+   \                     equeue_call_in: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0007             MOVS     R7,R0
+   \   00000004   0x000C             MOVS     R4,R1
+   \   00000006   0x0016             MOVS     R6,R2
+   \   00000008   0x001D             MOVS     R5,R3
+    495              struct ecallback *e = equeue_alloc(q, sizeof(struct ecallback));
+   \   0000000A   0x2108             MOVS     R1,#+8
+   \   0000000C   0x.... 0x....      BL       equeue_alloc
+    496              if (!e) {
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD009             BEQ      ??equeue_call_in_0
+    497                  return 0;
+    498              }
+    499          
+    500              equeue_event_delay(e, ms);
+   \   00000014   0x0001             MOVS     R1,R0
+   \   00000016   0x3910             SUBS     R1,R1,#+16
+   \   00000018   0x600C             STR      R4,[R1, #+0]
+    501              e->cb = cb;
+   \   0000001A   0x6006             STR      R6,[R0, #+0]
+    502              e->data = data;
+   \   0000001C   0x6045             STR      R5,[R0, #+4]
+    503              return equeue_post(q, ecallback_dispatch, e);
+   \   0000001E   0x0002             MOVS     R2,R0
+   \   00000020   0x....             LDR      R1,??DataTable4
+   \   00000022   0x0038             MOVS     R0,R7
+   \   00000024   0x.... 0x....      BL       equeue_post
+   \                     ??equeue_call_in_0: (+1)
+   \   00000028   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    504          }
+    505          
+
+   \                                 In section .text, align 2, keep-with-next
+    506          int equeue_call_every(equeue_t *q, int ms, void (*cb)(void*), void *data) {
+   \                     equeue_call_every: (+1)
+   \   00000000   0xB5F2             PUSH     {R1,R4-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x0017             MOVS     R7,R2
+   \   00000006   0x001D             MOVS     R5,R3
+    507              struct ecallback *e = equeue_alloc(q, sizeof(struct ecallback));
+   \   00000008   0x304C             ADDS     R0,R0,#+76
+   \   0000000A   0x.... 0x....      BL       equeue_mutex_lock
+   \   0000000E   0x0020             MOVS     R0,R4
+   \   00000010   0x301C             ADDS     R0,R0,#+28
+   \   00000012   0xE001             B        ??equeue_call_every_0
+   \                     ??equeue_call_every_1: (+1)
+   \   00000014   0x0008             MOVS     R0,R1
+   \   00000016   0x3008             ADDS     R0,R0,#+8
+   \                     ??equeue_call_every_0: (+1)
+   \   00000018   0x6801             LDR      R1,[R0, #+0]
+   \   0000001A   0x2900             CMP      R1,#+0
+   \   0000001C   0xD01F             BEQ      ??equeue_call_every_2
+   \   0000001E   0x680A             LDR      R2,[R1, #+0]
+   \   00000020   0x2A2C             CMP      R2,#+44
+   \   00000022   0xD3F7             BCC      ??equeue_call_every_1
+   \   00000024   0x460E             MOV      R6,R1
+   \   00000026   0x68F1             LDR      R1,[R6, #+12]
+   \   00000028   0x2900             CMP      R1,#+0
+   \   0000002A   0xD003             BEQ      ??equeue_call_every_3
+   \   0000002C   0x6001             STR      R1,[R0, #+0]
+   \   0000002E   0x68B0             LDR      R0,[R6, #+8]
+   \   00000030   0x6088             STR      R0,[R1, #+8]
+   \   00000032   0xE001             B        ??equeue_call_every_4
+   \                     ??equeue_call_every_3: (+1)
+   \   00000034   0x68B1             LDR      R1,[R6, #+8]
+   \   00000036   0x6001             STR      R1,[R0, #+0]
+   \                     ??equeue_call_every_4: (+1)
+   \   00000038   0x0020             MOVS     R0,R4
+   \   0000003A   0x304C             ADDS     R0,R0,#+76
+   \   0000003C   0x.... 0x....      BL       equeue_mutex_unlock
+   \   00000040   0x2E00             CMP      R6,#+0
+   \   00000042   0xD00A             BEQ      ??equeue_call_every_5
+   \   00000044   0x0030             MOVS     R0,R6
+   \   00000046   0x3014             ADDS     R0,R0,#+20
+   \   00000048   0x2100             MOVS     R1,#+0
+   \   0000004A   0x6001             STR      R1,[R0, #+0]
+   \   0000004C   0x2200             MOVS     R2,#+0
+   \   0000004E   0x43D2             MVNS     R2,R2            ;; #-1
+   \   00000050   0x61B2             STR      R2,[R6, #+24]
+   \   00000052   0x61F1             STR      R1,[R6, #+28]
+   \   00000054   0x0032             MOVS     R2,R6
+   \   00000056   0x3224             ADDS     R2,R2,#+36
+    508              if (!e) {
+   \   00000058   0xD114             BNE      ??equeue_call_every_6
+    509                  return 0;
+   \                     ??equeue_call_every_5: (+1)
+   \   0000005A   0x2000             MOVS     R0,#+0
+   \   0000005C   0xBDF2             POP      {R1,R4-R7,PC}
+   \                     ??equeue_call_every_2: (+1)
+   \   0000005E   0x6A20             LDR      R0,[R4, #+32]
+   \   00000060   0x282C             CMP      R0,#+44
+   \   00000062   0xD30A             BCC      ??equeue_call_every_7
+   \   00000064   0x6A66             LDR      R6,[R4, #+36]
+   \   00000066   0x0031             MOVS     R1,R6
+   \   00000068   0x312C             ADDS     R1,R1,#+44
+   \   0000006A   0x6261             STR      R1,[R4, #+36]
+   \   0000006C   0x382C             SUBS     R0,R0,#+44
+   \   0000006E   0x6220             STR      R0,[R4, #+32]
+   \   00000070   0x202C             MOVS     R0,#+44
+   \   00000072   0x6030             STR      R0,[R6, #+0]
+   \   00000074   0x2001             MOVS     R0,#+1
+   \   00000076   0x7130             STRB     R0,[R6, #+4]
+   \   00000078   0xE7DE             B        ??equeue_call_every_4
+   \                     ??equeue_call_every_7: (+1)
+   \   0000007A   0x0020             MOVS     R0,R4
+   \   0000007C   0x304C             ADDS     R0,R0,#+76
+   \   0000007E   0x.... 0x....      BL       equeue_mutex_unlock
+   \   00000082   0xE7EA             B        ??equeue_call_every_5
+    510              }
+    511          
+    512              equeue_event_delay(e, ms);
+   \                     ??equeue_call_every_6: (+1)
+   \   00000084   0x9900             LDR      R1,[SP, #+0]
+   \   00000086   0x6001             STR      R1,[R0, #+0]
+    513              equeue_event_period(e, ms);
+   \   00000088   0x9900             LDR      R1,[SP, #+0]
+   \   0000008A   0x6041             STR      R1,[R0, #+4]
+    514              e->cb = cb;
+   \   0000008C   0x6017             STR      R7,[R2, #+0]
+    515              e->data = data;
+   \   0000008E   0x6055             STR      R5,[R2, #+4]
+    516              return equeue_post(q, ecallback_dispatch, e);
+   \   00000090   0x....             LDR      R1,??DataTable4
+   \   00000092   0x0020             MOVS     R0,R4
+   \   00000094   0x.... 0x....      BL       equeue_post
+   \   00000098   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    517          }
+    518          
+    519          
+    520          // backgrounding
+
+   \                                 In section .text, align 2, keep-with-next
+    521          void equeue_background(equeue_t *q,
+    522                  void (*update)(void *timer, int ms), void *timer) {
+   \                     equeue_background: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0017             MOVS     R7,R2
+    523              equeue_mutex_lock(&q->queuelock);
+   \   00000008   0x3048             ADDS     R0,R0,#+72
+   \   0000000A   0x.... 0x....      BL       equeue_mutex_lock
+    524              if (q->background.update) {
+   \   0000000E   0x0026             MOVS     R6,R4
+   \   00000010   0x3628             ADDS     R6,R6,#+40
+   \   00000012   0x6872             LDR      R2,[R6, #+4]
+   \   00000014   0x0010             MOVS     R0,R2
+   \   00000016   0xD003             BEQ      ??equeue_background_0
+    525                  q->background.update(q->background.timer, -1);
+   \   00000018   0x2100             MOVS     R1,#+0
+   \   0000001A   0x43C9             MVNS     R1,R1            ;; #-1
+   \   0000001C   0x68B0             LDR      R0,[R6, #+8]
+   \   0000001E   0x4790             BLX      R2
+    526              }
+    527          
+    528              q->background.update = update;
+   \                     ??equeue_background_0: (+1)
+   \   00000020   0x6075             STR      R5,[R6, #+4]
+    529              q->background.timer = timer;
+   \   00000022   0x60B7             STR      R7,[R6, #+8]
+    530          
+    531              if (q->background.update && q->queue) {
+   \   00000024   0x6870             LDR      R0,[R6, #+4]
+   \   00000026   0x2800             CMP      R0,#+0
+   \   00000028   0xD00C             BEQ      ??equeue_background_1
+   \   0000002A   0x6820             LDR      R0,[R4, #+0]
+   \   0000002C   0x2800             CMP      R0,#+0
+   \   0000002E   0xD009             BEQ      ??equeue_background_1
+    532                  q->background.update(q->background.timer,
+    533                          equeue_clampdiff(q->queue->target, equeue_tick()));
+   \   00000030   0x.... 0x....      BL       equeue_tick
+   \   00000034   0x6821             LDR      R1,[R4, #+0]
+   \   00000036   0x6949             LDR      R1,[R1, #+20]
+   \   00000038   0x1A09             SUBS     R1,R1,R0
+    534              }
+   \   0000003A   0x17C8             ASRS     R0,R1,#+31
+   \   0000003C   0x4381             BICS     R1,R1,R0
+   \   0000003E   0x68B0             LDR      R0,[R6, #+8]
+   \   00000040   0x6872             LDR      R2,[R6, #+4]
+   \   00000042   0x4790             BLX      R2
+    535              q->background.active = true;
+   \                     ??equeue_background_1: (+1)
+   \   00000044   0x2001             MOVS     R0,#+1
+   \   00000046   0x7030             STRB     R0,[R6, #+0]
+    536              equeue_mutex_unlock(&q->queuelock);
+   \   00000048   0x0020             MOVS     R0,R4
+   \   0000004A   0x3048             ADDS     R0,R0,#+72
+   \   0000004C   0x.... 0x....      BL       equeue_mutex_unlock
+    537          }
+   \   00000050   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+    538          
+    539          struct equeue_chain_context {
+    540              equeue_t *q;
+    541              equeue_t *target;
+    542              int id;
+    543          };
+    544          
+
+   \                                 In section .text, align 2, keep-with-next
+    545          static void equeue_chain_dispatch(void *p) {
+   \                     equeue_chain_dispatch: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    546              equeue_dispatch((equeue_t *)p, 0);
+   \   00000002   0x2100             MOVS     R1,#+0
+   \   00000004   0x.... 0x....      BL       equeue_dispatch
+    547          }
+   \   00000008   0xBD01             POP      {R0,PC}          ;; return
+    548          
+
+   \                                 In section .text, align 2, keep-with-next
+    549          static void equeue_chain_update(void *p, int ms) {
+   \                     equeue_chain_update: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    550              struct equeue_chain_context *c = (struct equeue_chain_context *)p;
+    551              equeue_cancel(c->target, c->id);
+   \   00000006   0x68A1             LDR      R1,[R4, #+8]
+   \   00000008   0x6866             LDR      R6,[R4, #+4]
+   \   0000000A   0x2900             CMP      R1,#+0
+   \   0000000C   0xD009             BEQ      ??equeue_chain_update_0
+   \   0000000E   0x0030             MOVS     R0,R6
+   \   00000010   0x.... 0x....      BL       equeue_unqueue
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD004             BEQ      ??equeue_chain_update_0
+   \   00000018   0x0001             MOVS     R1,R0
+   \   0000001A   0x3124             ADDS     R1,R1,#+36
+   \   0000001C   0x0030             MOVS     R0,R6
+   \   0000001E   0x.... 0x....      BL       equeue_dealloc
+    552          
+    553              if (ms >= 0) {
+   \                     ??equeue_chain_update_0: (+1)
+   \   00000022   0x6860             LDR      R0,[R4, #+4]
+   \   00000024   0x2D00             CMP      R5,#+0
+   \   00000026   0xD406             BMI      ??equeue_chain_update_1
+    554                  c->id = equeue_call_in(c->target, ms, equeue_chain_dispatch, c->q);
+   \   00000028   0x6823             LDR      R3,[R4, #+0]
+   \   0000002A   0x....             LDR      R2,??DataTable4_1
+   \   0000002C   0x0029             MOVS     R1,R5
+   \   0000002E   0x.... 0x....      BL       equeue_call_in
+   \   00000032   0x60A0             STR      R0,[R4, #+8]
+   \   00000034   0xBD70             POP      {R4-R6,PC}
+    555              } else {
+    556                  equeue_dealloc(c->target, c);
+   \                     ??equeue_chain_update_1: (+1)
+   \   00000036   0x0021             MOVS     R1,R4
+   \   00000038   0x.... 0x....      BL       equeue_dealloc
+    557              }
+    558          }
+   \   0000003C   0xBD70             POP      {R4-R6,PC}       ;; return
+    559          
+
+   \                                 In section .text, align 2, keep-with-next
+    560          void equeue_chain(equeue_t *q, equeue_t *target) {
+   \                     equeue_chain: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    561              if (!target) {
+   \   00000006   0xD102             BNE      ??equeue_chain_0
+    562                  equeue_background(q, 0, 0);
+   \   00000008   0x2200             MOVS     R2,#+0
+   \   0000000A   0x2100             MOVS     R1,#+0
+   \   0000000C   0xE040             B        ??equeue_chain_1
+    563                  return;
+    564              }
+    565          
+    566              struct equeue_chain_context *c = equeue_alloc(q,
+    567                      sizeof(struct equeue_chain_context));
+   \                     ??equeue_chain_0: (+1)
+   \   0000000E   0x304C             ADDS     R0,R0,#+76
+   \   00000010   0x.... 0x....      BL       equeue_mutex_lock
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x301C             ADDS     R0,R0,#+28
+   \   00000018   0xE001             B        ??equeue_chain_2
+   \                     ??equeue_chain_3: (+1)
+   \   0000001A   0x0008             MOVS     R0,R1
+   \   0000001C   0x3008             ADDS     R0,R0,#+8
+   \                     ??equeue_chain_2: (+1)
+   \   0000001E   0x6801             LDR      R1,[R0, #+0]
+   \   00000020   0x2900             CMP      R1,#+0
+   \   00000022   0xD014             BEQ      ??equeue_chain_4
+   \   00000024   0x680A             LDR      R2,[R1, #+0]
+   \   00000026   0x2A30             CMP      R2,#+48
+   \   00000028   0xD3F7             BCC      ??equeue_chain_3
+   \   0000002A   0x460E             MOV      R6,R1
+   \   0000002C   0x68F1             LDR      R1,[R6, #+12]
+   \   0000002E   0x2900             CMP      R1,#+0
+   \   00000030   0xD003             BEQ      ??equeue_chain_5
+   \   00000032   0x6001             STR      R1,[R0, #+0]
+   \   00000034   0x68B0             LDR      R0,[R6, #+8]
+   \   00000036   0x6088             STR      R0,[R1, #+8]
+   \   00000038   0xE001             B        ??equeue_chain_6
+   \                     ??equeue_chain_5: (+1)
+   \   0000003A   0x68B1             LDR      R1,[R6, #+8]
+   \   0000003C   0x6001             STR      R1,[R0, #+0]
+   \                     ??equeue_chain_6: (+1)
+   \   0000003E   0x0020             MOVS     R0,R4
+   \   00000040   0x304C             ADDS     R0,R0,#+76
+   \   00000042   0x.... 0x....      BL       equeue_mutex_unlock
+   \   00000046   0x2E00             CMP      R6,#+0
+   \   00000048   0xD114             BNE      ??equeue_chain_7
+   \                     ??equeue_chain_8: (+1)
+   \   0000004A   0x2200             MOVS     R2,#+0
+   \   0000004C   0xE01A             B        ??equeue_chain_9
+   \                     ??equeue_chain_4: (+1)
+   \   0000004E   0x6A20             LDR      R0,[R4, #+32]
+   \   00000050   0x2830             CMP      R0,#+48
+   \   00000052   0xD30A             BCC      ??equeue_chain_10
+   \   00000054   0x6A66             LDR      R6,[R4, #+36]
+   \   00000056   0x0031             MOVS     R1,R6
+   \   00000058   0x3130             ADDS     R1,R1,#+48
+   \   0000005A   0x6261             STR      R1,[R4, #+36]
+   \   0000005C   0x3830             SUBS     R0,R0,#+48
+   \   0000005E   0x6220             STR      R0,[R4, #+32]
+   \   00000060   0x2030             MOVS     R0,#+48
+   \   00000062   0x6030             STR      R0,[R6, #+0]
+   \   00000064   0x2001             MOVS     R0,#+1
+   \   00000066   0x7130             STRB     R0,[R6, #+4]
+   \   00000068   0xE7E9             B        ??equeue_chain_6
+   \                     ??equeue_chain_10: (+1)
+   \   0000006A   0x0020             MOVS     R0,R4
+   \   0000006C   0x304C             ADDS     R0,R0,#+76
+   \   0000006E   0x.... 0x....      BL       equeue_mutex_unlock
+   \   00000072   0xE7EA             B        ??equeue_chain_8
+   \                     ??equeue_chain_7: (+1)
+   \   00000074   0x2000             MOVS     R0,#+0
+   \   00000076   0x6170             STR      R0,[R6, #+20]
+   \   00000078   0x2100             MOVS     R1,#+0
+   \   0000007A   0x43C9             MVNS     R1,R1            ;; #-1
+   \   0000007C   0x61B1             STR      R1,[R6, #+24]
+   \   0000007E   0x61F0             STR      R0,[R6, #+28]
+   \   00000080   0x0032             MOVS     R2,R6
+   \   00000082   0x3224             ADDS     R2,R2,#+36
+    568          
+    569              c->q = q;
+   \                     ??equeue_chain_9: (+1)
+   \   00000084   0x6014             STR      R4,[R2, #+0]
+    570              c->target = target;
+   \   00000086   0x6055             STR      R5,[R2, #+4]
+    571              c->id = 0;
+   \   00000088   0x2000             MOVS     R0,#+0
+   \   0000008A   0x6090             STR      R0,[R2, #+8]
+    572          
+    573              equeue_background(q, equeue_chain_update, c);
+   \   0000008C   0x....             LDR      R1,??DataTable4_2
+   \   0000008E   0x0020             MOVS     R0,R4
+   \                     ??equeue_chain_1: (+1)
+   \   00000090   0x.... 0x....      BL       equeue_background
+    574          }
+   \   00000094   0xBD70             POP      {R4-R6,PC}       ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4:
+   \   00000000   0x........         DC32     ecallback_dispatch
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_1:
+   \   00000000   0x........         DC32     equeue_chain_dispatch
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_2:
+   \   00000000   0x........         DC32     equeue_chain_update
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   ecallback_dispatch
+         8   -- Indirect call
+      16   equeue_alloc
+        16   -> equeue_mutex_lock
+        16   -> equeue_mutex_unlock
+      24   equeue_background
+        24   -- Indirect call
+        24   -> equeue_mutex_lock
+        24   -> equeue_mutex_unlock
+        24   -> equeue_tick
+       8   equeue_break
+         8   -> equeue_mutex_lock
+         8   -> equeue_mutex_unlock
+         8   -> equeue_sema_signal
+      16   equeue_call
+        16   -> equeue_alloc
+        16   -> equeue_post
+      24   equeue_call_every
+        24   -> equeue_mutex_lock
+        24   -> equeue_mutex_unlock
+        24   -> equeue_post
+      24   equeue_call_in
+        24   -> equeue_alloc
+        24   -> equeue_post
+       8   equeue_cancel
+         8   -> equeue_dealloc
+         8   -> equeue_unqueue
+      16   equeue_chain
+        16   -> equeue_background
+        16   -> equeue_mutex_lock
+        16   -> equeue_mutex_unlock
+       8   equeue_chain_dispatch
+         8   -> equeue_dispatch
+      16   equeue_chain_update
+        16   -> equeue_call_in
+        16   -> equeue_dealloc
+        16   -> equeue_unqueue
+      16   equeue_create
+        16   -> equeue_create_inplace
+        16   -> malloc
+      16   equeue_create_inplace
+        16   -> equeue_mutex_create
+        16   -> equeue_sema_create
+        16   -> equeue_tick
+      16   equeue_dealloc
+        16   -- Indirect call
+        16   -> equeue_mutex_lock
+        16   -> equeue_mutex_unlock
+      16   equeue_destroy
+        16   -- Indirect call
+        16   -> equeue_mutex_destroy
+        16   -> equeue_sema_destroy
+        16   -> free
+      32   equeue_dispatch
+        32   -- Indirect call
+        32   -> equeue_dealloc
+        32   -> equeue_enqueue
+        32   -> equeue_mutex_lock
+        32   -> equeue_mutex_unlock
+        32   -> equeue_sema_wait
+        32   -> equeue_tick
+      24   equeue_enqueue
+        24   -- Indirect call
+        24   -> equeue_mutex_lock
+        24   -> equeue_mutex_unlock
+       0   equeue_event_delay
+       0   equeue_event_dtor
+       0   equeue_event_period
+      16   equeue_post
+        16   -> equeue_enqueue
+        16   -> equeue_sema_signal
+        16   -> equeue_tick
+      24   equeue_unqueue
+        24   -> equeue_mutex_lock
+        24   -> equeue_mutex_unlock
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_2
+      12  ?Subroutine0
+      12  ecallback_dispatch
+     130  equeue_alloc
+      82  equeue_background
+      34  equeue_break
+      34  equeue_call
+     154  equeue_call_every
+      42  equeue_call_in
+      28  equeue_cancel
+     150  equeue_chain
+      10  equeue_chain_dispatch
+      62  equeue_chain_update
+      36  equeue_create
+      94  equeue_create_inplace
+      88  equeue_dealloc
+      82  equeue_destroy
+     390  equeue_dispatch
+     166  equeue_enqueue
+       6  equeue_event_delay
+       6  equeue_event_dtor
+       6  equeue_event_period
+      50  equeue_post
+     138  equeue_unqueue
+
+ 
+ 1 824 bytes in section .text
+ 
+ 1 824 bytes of CODE memory
+
+Errors: none
+Warnings: 1

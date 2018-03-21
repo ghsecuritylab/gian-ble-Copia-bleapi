@@ -1,0 +1,1179 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:40
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\hal\mbed_ticker_api.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_ticker_api.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_ticker_api.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_ticker_api.o
+#        .\mbed-os\hal\mbed_ticker_api.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_ticker_api.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\hal\mbed_ticker_api.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\hal\mbed_ticker_api.c
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2015 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include <stdio.h>
+     17          #include <stddef.h>
+     18          #include "hal/ticker_api.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     19          #include "platform/mbed_critical.h"
+     20          #include "mbed_assert.h"
+     21          
+     22          static void schedule_interrupt(const ticker_data_t *const ticker);
+     23          static void update_present_time(const ticker_data_t *const ticker);
+     24          
+     25          /*
+     26           * Initialize a ticker instance.  
+     27           */
+
+   \                                 In section .text, align 4, keep-with-next
+     28          static void initialize(const ticker_data_t *ticker)
+     29          {
+   \                     initialize: (+1)
+   \   00000000   0xB5F1             PUSH     {R0,R4-R7,LR}
+   \   00000002   0xB084             SUB      SP,SP,#+16
+     30              // return if the queue has already been initialized, in that case the 
+     31              // interface used by the queue is already initialized.
+     32              if (ticker->queue->initialized) { 
+   \   00000004   0x6840             LDR      R0,[R0, #+4]
+   \   00000006   0x2138             MOVS     R1,#+56
+   \   00000008   0x5C40             LDRB     R0,[R0, R1]
+   \   0000000A   0x2800             CMP      R0,#+0
+   \   0000000C   0xD165             BNE      ??initialize_0
+     33                  return;
+     34              }
+     35          
+     36              ticker->interface->init();
+   \   0000000E   0x9804             LDR      R0,[SP, #+16]
+   \   00000010   0x6800             LDR      R0,[R0, #+0]
+   \   00000012   0x6800             LDR      R0,[R0, #+0]
+   \   00000014   0x4780             BLX      R0
+     37          
+     38              const ticker_info_t *info = ticker->interface->get_info();
+   \   00000016   0x9804             LDR      R0,[SP, #+16]
+   \   00000018   0x6800             LDR      R0,[R0, #+0]
+   \   0000001A   0x6980             LDR      R0,[R0, #+24]
+   \   0000001C   0x4780             BLX      R0
+   \   0000001E   0x0004             MOVS     R4,R0
+     39              uint32_t frequency = info->frequency;
+   \   00000020   0x6820             LDR      R0,[R4, #+0]
+   \   00000022   0x9000             STR      R0,[SP, #+0]
+     40              if (info->frequency == 0) {
+   \   00000024   0x2800             CMP      R0,#+0
+   \   00000026   0xD107             BNE      ??initialize_1
+     41                  MBED_ASSERT(0);
+   \   00000028   0x2229             MOVS     R2,#+41
+   \   0000002A   0xBF00             Nop      
+   \   0000002C   0x....             ADR.N    R1,?_1
+   \   0000002E   0x....             ADR      R0,??DataTable4  ;; "0"
+   \   00000030   0x.... 0x....      BL       mbed_assert_internal
+     42                  frequency = 1000000;
+   \   00000034   0x....             LDR      R0,??DataTable4_1  ;; 0xf4240
+   \   00000036   0x9000             STR      R0,[SP, #+0]
+     43              }
+     44          
+     45              uint32_t bits = info->bits;
+   \                     ??initialize_1: (+1)
+   \   00000038   0x6860             LDR      R0,[R4, #+4]
+   \   0000003A   0x0007             MOVS     R7,R0
+     46              if ((info->bits > 32) || (info->bits < 4)) {
+   \   0000003C   0x1F00             SUBS     R0,R0,#+4
+   \   0000003E   0x281D             CMP      R0,#+29
+   \   00000040   0xD305             BCC      ??initialize_2
+     47                  MBED_ASSERT(0);
+   \   00000042   0x222F             MOVS     R2,#+47
+   \   00000044   0x....             ADR.N    R1,?_1
+   \   00000046   0x....             ADR      R0,??DataTable4  ;; "0"
+   \   00000048   0x.... 0x....      BL       mbed_assert_internal
+     48                  bits = 32;
+   \   0000004C   0x2720             MOVS     R7,#+32
+     49              }
+     50              uint32_t max_delta = 0x7 << (bits - 4); // 7/16th
+   \                     ??initialize_2: (+1)
+   \   0000004E   0x2007             MOVS     R0,#+7
+   \   00000050   0x1F39             SUBS     R1,R7,#+4
+   \   00000052   0x4088             LSLS     R0,R0,R1
+   \   00000054   0x9002             STR      R0,[SP, #+8]
+     51              uint64_t max_delta_us =
+     52                      ((uint64_t)max_delta * 1000000 + frequency - 1) / frequency;
+     53          
+     54              ticker->queue->event_handler = NULL;
+   \   00000056   0x9804             LDR      R0,[SP, #+16]
+   \   00000058   0x6840             LDR      R0,[R0, #+4]
+   \   0000005A   0x2100             MOVS     R1,#+0
+   \   0000005C   0x6001             STR      R1,[R0, #+0]
+     55              ticker->queue->head = NULL;
+   \   0000005E   0x6041             STR      R1,[R0, #+4]
+     56              ticker->queue->tick_last_read = ticker->interface->read();
+   \   00000060   0x9804             LDR      R0,[SP, #+16]
+   \   00000062   0x6800             LDR      R0,[R0, #+0]
+   \   00000064   0x6840             LDR      R0,[R0, #+4]
+   \   00000066   0x4780             BLX      R0
+   \   00000068   0x9904             LDR      R1,[SP, #+16]
+   \   0000006A   0x6849             LDR      R1,[R1, #+4]
+   \   0000006C   0x9101             STR      R1,[SP, #+4]
+   \   0000006E   0x460E             MOV      R6,R1
+   \   00000070   0x3608             ADDS     R6,R6,#+8
+   \   00000072   0x61B0             STR      R0,[R6, #+24]
+     57              ticker->queue->tick_remainder = 0;
+   \   00000074   0x2400             MOVS     R4,#+0
+   \   00000076   0x2500             MOVS     R5,#+0
+   \   00000078   0x0030             MOVS     R0,R6
+   \   0000007A   0x3020             ADDS     R0,R0,#+32
+   \   0000007C   0xC030             STM      R0!,{R4,R5}
+     58              ticker->queue->frequency = frequency;
+   \   0000007E   0x9800             LDR      R0,[SP, #+0]
+   \   00000080   0x6030             STR      R0,[R6, #+0]
+     59              ticker->queue->bitmask = ((uint64_t)1 << bits) - 1;
+   \   00000082   0x2001             MOVS     R0,#+1
+   \   00000084   0x2100             MOVS     R1,#+0
+   \   00000086   0x003A             MOVS     R2,R7
+   \   00000088   0x.... 0x....      BL       __aeabi_llsl
+   \   0000008C   0x1E40             SUBS     R0,R0,#+1
+   \   0000008E   0x6070             STR      R0,[R6, #+4]
+     60              ticker->queue->max_delta = max_delta;
+   \   00000090   0x9802             LDR      R0,[SP, #+8]
+   \   00000092   0x60B0             STR      R0,[R6, #+8]
+   \   00000094   0x9802             LDR      R0,[SP, #+8]
+   \   00000096   0x2100             MOVS     R1,#+0
+   \   00000098   0x....             LDR      R2,??DataTable4_1  ;; 0xf4240
+   \   0000009A   0x2300             MOVS     R3,#+0
+   \   0000009C   0x.... 0x....      BL       __aeabi_lmul
+   \   000000A0   0x0002             MOVS     R2,R0
+   \   000000A2   0x000B             MOVS     R3,R1
+   \   000000A4   0x9800             LDR      R0,[SP, #+0]
+   \   000000A6   0x2100             MOVS     R1,#+0
+   \   000000A8   0x1880             ADDS     R0,R0,R2
+   \   000000AA   0x4159             ADCS     R1,R1,R3
+   \   000000AC   0x2200             MOVS     R2,#+0
+   \   000000AE   0x1E40             SUBS     R0,R0,#+1
+   \   000000B0   0x4191             SBCS     R1,R1,R2
+   \   000000B2   0x9A00             LDR      R2,[SP, #+0]
+   \   000000B4   0x2300             MOVS     R3,#+0
+   \   000000B6   0x.... 0x....      BL       __aeabi_uldivmod
+   \   000000BA   0x0032             MOVS     R2,R6
+   \   000000BC   0x3210             ADDS     R2,R2,#+16
+   \   000000BE   0xC203             STM      R2!,{R0,R1}
+     61              ticker->queue->max_delta_us = max_delta_us;
+     62              ticker->queue->present_time = 0;
+   \   000000C0   0x0030             MOVS     R0,R6
+   \   000000C2   0x3028             ADDS     R0,R0,#+40
+   \   000000C4   0xC030             STM      R0!,{R4,R5}
+     63              ticker->queue->initialized = true;
+   \   000000C6   0x2001             MOVS     R0,#+1
+   \   000000C8   0x9901             LDR      R1,[SP, #+4]
+   \   000000CA   0x2238             MOVS     R2,#+56
+   \   000000CC   0x5488             STRB     R0,[R1, R2]
+     64              
+     65              update_present_time(ticker);
+   \   000000CE   0x9804             LDR      R0,[SP, #+16]
+   \   000000D0   0x.... 0x....      BL       update_present_time
+     66              schedule_interrupt(ticker);
+   \   000000D4   0x9804             LDR      R0,[SP, #+16]
+   \   000000D6   0x.... 0x....      BL       schedule_interrupt
+     67          }
+   \                     ??initialize_0: (+1)
+   \   000000DA   0xB005             ADD      SP,SP,#+20
+   \   000000DC   0xBDF0             POP      {R4-R7,PC}       ;; return
+     68          
+     69          /**
+     70           * Set the event handler function of a ticker instance. 
+     71           */
+     72          static void set_handler(const ticker_data_t *const ticker, ticker_event_handler handler)
+     73          {
+     74              ticker->queue->event_handler = handler;
+     75          }
+     76          
+     77          /*
+     78           * Convert a 32 bit timestamp into a 64 bit timestamp.
+     79           *
+     80           * A 64 bit timestamp is used as the point of time of reference while the 
+     81           * timestamp to convert is relative to this point of time. 
+     82           *
+     83           * The lower 32 bits of the timestamp returned will be equal to the timestamp to 
+     84           * convert. 
+     85           * 
+     86           * If the timestamp to convert is less than the lower 32 bits of the time 
+     87           * reference then the timestamp to convert is seen as an overflowed value and 
+     88           * the upper 32 bit of the timestamp returned will be equal to the upper 32 bit 
+     89           * of the reference point + 1. 
+     90           * Otherwise, the upper 32 bit returned will be equal to the upper 32 bit of the 
+     91           * reference point. 
+     92           *
+     93           * @param ref: The 64 bit timestamp of reference.
+     94           * @param timestamp: The timestamp to convert.
+     95           */
+     96          static us_timestamp_t convert_timestamp(us_timestamp_t ref, timestamp_t timestamp)
+     97          {
+     98              bool overflow = timestamp < ((timestamp_t) ref) ? true : false;
+     99          
+    100              us_timestamp_t result = (ref & ~((us_timestamp_t)UINT32_MAX)) | timestamp;
+    101              if (overflow) { 
+    102                  result += (1ULL<<32);
+    103              }
+    104          
+    105              return result;
+    106          }
+    107          
+    108          /**
+    109           * Update the present timestamp value of a ticker.
+    110           */
+
+   \                                 In section .text, align 2, keep-with-next
+    111          static void update_present_time(const ticker_data_t *const ticker)
+    112          {
+   \                     update_present_time: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB083             SUB      SP,SP,#+12
+   \   00000004   0x0005             MOVS     R5,R0
+    113          
+    114              ticker_event_queue_t *queue = ticker->queue;
+   \   00000006   0x686C             LDR      R4,[R5, #+4]
+    115              uint32_t ticker_time = ticker->interface->read();
+   \   00000008   0x6828             LDR      R0,[R5, #+0]
+   \   0000000A   0x6840             LDR      R0,[R0, #+4]
+   \   0000000C   0x4780             BLX      R0
+   \   0000000E   0x0002             MOVS     R2,R0
+    116              if (ticker_time == ticker->queue->tick_last_read) {
+   \   00000010   0x6868             LDR      R0,[R5, #+4]
+   \   00000012   0x6A00             LDR      R0,[R0, #+32]
+   \   00000014   0x4282             CMP      R2,R0
+   \   00000016   0xD06B             BEQ      ??update_present_time_0
+    117                  // No work to do
+    118                  return;
+    119              }
+    120          
+    121              uint64_t elapsed_ticks = (ticker_time - queue->tick_last_read) & queue->bitmask;
+   \   00000018   0x6A20             LDR      R0,[R4, #+32]
+   \   0000001A   0x1A11             SUBS     R1,R2,R0
+   \   0000001C   0x68E0             LDR      R0,[R4, #+12]
+   \   0000001E   0x4008             ANDS     R0,R0,R1
+   \   00000020   0x2100             MOVS     R1,#+0
+    122              queue->tick_last_read = ticker_time;
+   \   00000022   0x6222             STR      R2,[R4, #+32]
+    123          
+    124              uint64_t elapsed_us;
+    125              if (1000000 == queue->frequency) {
+   \   00000024   0x68A2             LDR      R2,[R4, #+8]
+   \   00000026   0x9202             STR      R2,[SP, #+8]
+   \   00000028   0x....             LDR      R3,??DataTable4_1  ;; 0xf4240
+   \   0000002A   0x429A             CMP      R2,R3
+   \   0000002C   0xD102             BNE      ??update_present_time_1
+    126                  // Optimized for 1MHz
+    127          
+    128                  elapsed_us = elapsed_ticks;
+   \   0000002E   0x0006             MOVS     R6,R0
+   \   00000030   0x2700             MOVS     R7,#+0
+   \   00000032   0xE055             B        ??update_present_time_2
+    129              } else if (32768 == queue->frequency) {
+   \                     ??update_present_time_1: (+1)
+   \   00000034   0x461A             MOV      R2,R3
+   \   00000036   0x2300             MOVS     R3,#+0
+   \   00000038   0x.... 0x....      BL       __aeabi_lmul
+   \   0000003C   0x9A02             LDR      R2,[SP, #+8]
+   \   0000003E   0x2380             MOVS     R3,#+128
+   \   00000040   0x021B             LSLS     R3,R3,#+8        ;; #+32768
+   \   00000042   0x429A             CMP      R2,R3
+   \   00000044   0xD119             BNE      ??update_present_time_3
+    130                  // Optimized for 32KHz
+    131          
+    132                  uint64_t us_x_ticks = elapsed_ticks * 1000000;
+    133                  elapsed_us = us_x_ticks >> 15;
+   \   00000046   0x0BC6             LSRS     R6,R0,#+15
+   \   00000048   0x044A             LSLS     R2,R1,#+17
+   \   0000004A   0x4316             ORRS     R6,R6,R2
+   \   0000004C   0x0BCF             LSRS     R7,R1,#+15
+    134          
+    135                  // Update remainder
+    136                  queue->tick_remainder += us_x_ticks - (elapsed_us << 15);
+   \   0000004E   0x0022             MOVS     R2,R4
+   \   00000050   0x3228             ADDS     R2,R2,#+40
+   \   00000052   0xCA0C             LDM      R2,{R2,R3}
+   \   00000054   0x1880             ADDS     R0,R0,R2
+   \   00000056   0x4159             ADCS     R1,R1,R3
+   \   00000058   0x03FB             LSLS     R3,R7,#+15
+   \   0000005A   0x0C75             LSRS     R5,R6,#+17
+   \   0000005C   0x432B             ORRS     R3,R3,R5
+   \   0000005E   0x03F2             LSLS     R2,R6,#+15
+   \   00000060   0x1A80             SUBS     R0,R0,R2
+   \   00000062   0x4199             SBCS     R1,R1,R3
+   \   00000064   0x0022             MOVS     R2,R4
+   \   00000066   0x3228             ADDS     R2,R2,#+40
+   \   00000068   0xC203             STM      R2!,{R0,R1}
+    137                  if (queue->tick_remainder >= queue->frequency) {
+   \   0000006A   0x2280             MOVS     R2,#+128
+   \   0000006C   0x0212             LSLS     R2,R2,#+8        ;; #+32768
+   \   0000006E   0x2300             MOVS     R3,#+0
+   \   00000070   0x4299             CMP      R1,R3
+   \   00000072   0xD828             BHI      ??update_present_time_4
+   \   00000074   0x4290             CMP      R0,R2
+   \   00000076   0xD333             BCC      ??update_present_time_2
+   \   00000078   0xE025             B        ??update_present_time_4
+    138                      elapsed_us += 1;
+    139                      queue->tick_remainder -= queue->frequency;
+    140                  }
+    141              } else {
+    142                  // General case
+    143          
+    144                  uint64_t us_x_ticks = elapsed_ticks * 1000000;
+   \                     ??update_present_time_3: (+1)
+   \   0000007A   0x466A             MOV      R2,SP
+   \   0000007C   0xC203             STM      R2!,{R0,R1}
+   \   0000007E   0x4668             MOV      R0,SP
+   \   00000080   0xC803             LDM      R0,{R0,R1}
+   \   00000082   0x9A02             LDR      R2,[SP, #+8]
+   \   00000084   0x2300             MOVS     R3,#+0
+   \   00000086   0x.... 0x....      BL       __aeabi_uldivmod
+   \   0000008A   0x0006             MOVS     R6,R0
+   \   0000008C   0x000F             MOVS     R7,R1
+    145                  elapsed_us = us_x_ticks / queue->frequency;
+    146          
+    147                  // Update remainder
+    148                  queue->tick_remainder += us_x_ticks - elapsed_us * queue->frequency;
+   \   0000008E   0x0020             MOVS     R0,R4
+   \   00000090   0x3028             ADDS     R0,R0,#+40
+   \   00000092   0xC80C             LDM      R0!,{R2,R3}
+   \   00000094   0x4668             MOV      R0,SP
+   \   00000096   0xC803             LDM      R0,{R0,R1}
+   \   00000098   0x1880             ADDS     R0,R0,R2
+   \   0000009A   0x4159             ADCS     R1,R1,R3
+   \   0000009C   0x9000             STR      R0,[SP, #+0]
+   \   0000009E   0x9101             STR      R1,[SP, #+4]
+   \   000000A0   0x0030             MOVS     R0,R6
+   \   000000A2   0x0039             MOVS     R1,R7
+   \   000000A4   0x9A02             LDR      R2,[SP, #+8]
+   \   000000A6   0x2300             MOVS     R3,#+0
+   \   000000A8   0x.... 0x....      BL       __aeabi_lmul
+   \   000000AC   0x9A00             LDR      R2,[SP, #+0]
+   \   000000AE   0x9B01             LDR      R3,[SP, #+4]
+   \   000000B0   0x1A12             SUBS     R2,R2,R0
+   \   000000B2   0x418B             SBCS     R3,R3,R1
+   \   000000B4   0x0020             MOVS     R0,R4
+   \   000000B6   0x3028             ADDS     R0,R0,#+40
+   \   000000B8   0xC00C             STM      R0!,{R2,R3}
+    149                  if (queue->tick_remainder >= queue->frequency) {
+   \   000000BA   0x9802             LDR      R0,[SP, #+8]
+   \   000000BC   0x2100             MOVS     R1,#+0
+   \   000000BE   0x428B             CMP      R3,R1
+   \   000000C0   0xD801             BHI      ??update_present_time_4
+   \   000000C2   0x4282             CMP      R2,R0
+   \   000000C4   0xD30C             BCC      ??update_present_time_2
+    150                      elapsed_us += 1;
+   \                     ??update_present_time_4: (+1)
+   \   000000C6   0x2000             MOVS     R0,#+0
+   \   000000C8   0x1C76             ADDS     R6,R6,#+1
+   \   000000CA   0x4147             ADCS     R7,R7,R0
+    151                      queue->tick_remainder -= queue->frequency;
+   \   000000CC   0x0020             MOVS     R0,R4
+   \   000000CE   0x3028             ADDS     R0,R0,#+40
+   \   000000D0   0xC803             LDM      R0,{R0,R1}
+   \   000000D2   0x9A02             LDR      R2,[SP, #+8]
+   \   000000D4   0x2300             MOVS     R3,#+0
+   \   000000D6   0x1A80             SUBS     R0,R0,R2
+   \   000000D8   0x4199             SBCS     R1,R1,R3
+   \   000000DA   0x0022             MOVS     R2,R4
+   \   000000DC   0x3228             ADDS     R2,R2,#+40
+   \   000000DE   0xC203             STM      R2!,{R0,R1}
+    152                  }
+    153              }
+    154          
+    155              // Update current time
+    156              queue->present_time += elapsed_us;
+   \                     ??update_present_time_2: (+1)
+   \   000000E0   0x0020             MOVS     R0,R4
+   \   000000E2   0x3030             ADDS     R0,R0,#+48
+   \   000000E4   0xC803             LDM      R0,{R0,R1}
+   \   000000E6   0x1836             ADDS     R6,R6,R0
+   \   000000E8   0x414F             ADCS     R7,R7,R1
+   \   000000EA   0x0020             MOVS     R0,R4
+   \   000000EC   0x3030             ADDS     R0,R0,#+48
+   \   000000EE   0xC0C0             STM      R0!,{R6,R7}
+    157          }
+   \                     ??update_present_time_0: (+1)
+   \   000000F0   0xB003             ADD      SP,SP,#+12
+   \   000000F2   0xBDF0             POP      {R4-R7,PC}       ;; return
+    158          
+    159          /**
+    160           * Given the absolute timestamp compute the hal tick timestamp.
+    161           */
+
+   \                                 In section .text, align 2, keep-with-next
+    162          static timestamp_t compute_tick(const ticker_data_t *const ticker, us_timestamp_t timestamp)
+    163          {
+   \                     compute_tick: (+1)
+   \   00000000   0xB539             PUSH     {R0,R3-R5,LR}
+   \   00000002   0xB081             SUB      SP,SP,#+4
+    164              ticker_event_queue_t *queue = ticker->queue;
+   \   00000004   0x6844             LDR      R4,[R0, #+4]
+   \   00000006   0x0020             MOVS     R0,R4
+   \   00000008   0x3008             ADDS     R0,R0,#+8
+   \   0000000A   0x3028             ADDS     R0,R0,#+40
+   \   0000000C   0xC803             LDM      R0,{R0,R1}
+   \   0000000E   0x1A12             SUBS     R2,R2,R0
+   \   00000010   0x418B             SBCS     R3,R3,R1
+   \   00000012   0x0010             MOVS     R0,R2
+   \   00000014   0x0019             MOVS     R1,R3
+    165              us_timestamp_t delta_us = timestamp - queue->present_time;
+    166          
+    167              timestamp_t delta = ticker->queue->max_delta;
+   \   00000016   0x6925             LDR      R5,[R4, #+16]
+    168              if (delta_us <=  ticker->queue->max_delta_us) {
+   \   00000018   0x0022             MOVS     R2,R4
+   \   0000001A   0x3218             ADDS     R2,R2,#+24
+   \   0000001C   0xCA0C             LDM      R2,{R2,R3}
+   \   0000001E   0x428B             CMP      R3,R1
+   \   00000020   0xD319             BCC      ??compute_tick_0
+   \   00000022   0xD801             BHI      ??compute_tick_1
+   \   00000024   0x4282             CMP      R2,R0
+   \   00000026   0xD316             BCC      ??compute_tick_0
+    169                  // Checking max_delta_us ensures the operation will not overflow
+    170          
+    171                  if (1000000 == queue->frequency) {
+   \                     ??compute_tick_1: (+1)
+   \   00000028   0x68A2             LDR      R2,[R4, #+8]
+   \   0000002A   0x....             LDR      R3,??DataTable4_1  ;; 0xf4240
+   \   0000002C   0x429A             CMP      R2,R3
+   \   0000002E   0xD00F             BEQ      ??compute_tick_2
+   \   00000030   0x2380             MOVS     R3,#+128
+   \   00000032   0x021B             LSLS     R3,R3,#+8        ;; #+32768
+   \   00000034   0x429A             CMP      R2,R3
+   \   00000036   0xD104             BNE      ??compute_tick_3
+    172                      // Optimized for 1MHz
+    173          
+    174                      delta = delta_us;
+    175                      if (delta > ticker->queue->max_delta) {
+    176                          delta = ticker->queue->max_delta;
+    177                      }
+    178                  } else if (32768 == queue->frequency) {
+    179                      // Optimized for 32KHz
+    180          
+    181                      delta = (delta_us << 15) / 1000000;
+   \   00000038   0x03C9             LSLS     R1,R1,#+15
+   \   0000003A   0x0C42             LSRS     R2,R0,#+17
+   \   0000003C   0x4311             ORRS     R1,R1,R2
+   \   0000003E   0x03C0             LSLS     R0,R0,#+15
+   \   00000040   0xE002             B        ??compute_tick_4
+    182                      if (delta > ticker->queue->max_delta) {
+    183                          delta = ticker->queue->max_delta;
+    184                      }
+    185                  } else {
+    186                      // General case
+    187          
+    188                      delta = delta_us * queue->frequency / 1000000;
+   \                     ??compute_tick_3: (+1)
+   \   00000042   0x2300             MOVS     R3,#+0
+   \   00000044   0x.... 0x....      BL       __aeabi_lmul
+   \                     ??compute_tick_4: (+1)
+   \   00000048   0x....             LDR      R2,??DataTable4_1  ;; 0xf4240
+   \   0000004A   0x2300             MOVS     R3,#+0
+   \   0000004C   0x.... 0x....      BL       __aeabi_uldivmod
+    189                      if (delta > ticker->queue->max_delta) {
+   \                     ??compute_tick_2: (+1)
+   \   00000050   0x4285             CMP      R5,R0
+   \   00000052   0xD900             BLS      ??compute_tick_0
+   \   00000054   0x0005             MOVS     R5,R0
+    190                          delta = ticker->queue->max_delta;
+    191                      }
+    192                  }
+    193              }
+    194              return (queue->tick_last_read + delta) & queue->bitmask;
+   \                     ??compute_tick_0: (+1)
+   \   00000056   0x0020             MOVS     R0,R4
+   \   00000058   0x3008             ADDS     R0,R0,#+8
+   \   0000005A   0x6980             LDR      R0,[R0, #+24]
+   \   0000005C   0x1941             ADDS     R1,R0,R5
+   \   0000005E   0x0020             MOVS     R0,R4
+   \   00000060   0x3008             ADDS     R0,R0,#+8
+   \   00000062   0x6840             LDR      R0,[R0, #+4]
+   \   00000064   0x4008             ANDS     R0,R0,R1
+   \   00000066   0xB003             ADD      SP,SP,#+12
+   \   00000068   0xBD30             POP      {R4,R5,PC}       ;; return
+    195          }
+    196          
+    197          /**
+    198           * Return 1 if the tick has incremented to or past match_tick, otherwise 0.
+    199           */
+
+   \                                 In section .text, align 2, keep-with-next
+    200          int _ticker_match_interval_passed(timestamp_t prev_tick, timestamp_t cur_tick, timestamp_t match_tick)
+    201          {
+    202              if (match_tick > prev_tick) {
+   \                     _ticker_match_interval_passed: (+1)
+   \   00000000   0x4290             CMP      R0,R2
+   \   00000002   0xD206             BCS      ??_ticker_match_interval_passed_0
+    203                  return (cur_tick >= match_tick) || (cur_tick < prev_tick);
+   \   00000004   0x4291             CMP      R1,R2
+   \   00000006   0xD202             BCS      ??_ticker_match_interval_passed_1
+   \   00000008   0x4281             CMP      R1,R0
+   \   0000000A   0x4180             SBCS     R0,R0,R0
+   \   0000000C   0xE006             B.N      ??_ticker_match_interval_passed_2
+   \                     ??_ticker_match_interval_passed_1: (+1)
+   \   0000000E   0x2001             MOVS     R0,#+1
+   \   00000010   0x4770             BX       LR
+    204              } else {
+    205                  return (cur_tick < prev_tick) && (cur_tick >= match_tick);
+   \                     ??_ticker_match_interval_passed_0: (+1)
+   \   00000012   0x4281             CMP      R1,R0
+   \   00000014   0xD204             BCS      ??_ticker_match_interval_passed_3
+   \   00000016   0x4291             CMP      R1,R2
+   \   00000018   0x4180             SBCS     R0,R0,R0
+   \   0000001A   0x43C0             MVNS     R0,R0
+   \                     ??_ticker_match_interval_passed_2: (+1)
+   \   0000001C   0x0FC0             LSRS     R0,R0,#+31
+   \   0000001E   0x4770             BX       LR
+   \                     ??_ticker_match_interval_passed_3: (+1)
+   \   00000020   0x2000             MOVS     R0,#+0
+   \   00000022   0x4770             BX       LR               ;; return
+    206              }
+    207          }
+    208          
+    209          /**
+    210           * Compute the time when the interrupt has to be triggered and schedule it.  
+    211           * 
+    212           * If there is no event in the queue or the next event to execute is in more 
+    213           * than ticker.queue.max_delta ticks from now then the ticker irq will be
+    214           * scheduled in ticker.queue.max_delta ticks. Otherwise the irq will be
+    215           * scheduled to happen when the running counter reach the timestamp of the
+    216           * first event in the queue.
+    217           * 
+    218           * @note If there is no event in the queue then the interrupt is scheduled to 
+    219           * in ticker.queue.max_delta. This is necessary to keep track
+    220           * of the timer overflow.
+    221           */
+
+   \                                 In section .text, align 2, keep-with-next
+    222          static void schedule_interrupt(const ticker_data_t *const ticker)
+    223          {
+   \                     schedule_interrupt: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    224              ticker_event_queue_t *queue = ticker->queue;
+   \   00000004   0x6865             LDR      R5,[R4, #+4]
+    225              update_present_time(ticker);
+   \   00000006   0x.... 0x....      BL       update_present_time
+    226          
+    227              if (ticker->queue->head) {
+   \   0000000A   0x6860             LDR      R0,[R4, #+4]
+   \   0000000C   0x6841             LDR      R1,[R0, #+4]
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD021             BEQ      ??schedule_interrupt_0
+    228                  us_timestamp_t present = ticker->queue->present_time;
+    229                  us_timestamp_t match_time = ticker->queue->head->timestamp;
+   \   00000012   0xC90C             LDM      R1!,{R2,R3}
+    230          
+    231                  // if the event at the head of the queue is in the past then schedule
+    232                  // it immediately.
+    233                  if (match_time <= present) {
+   \   00000014   0x3030             ADDS     R0,R0,#+48
+   \   00000016   0xC803             LDM      R0,{R0,R1}
+   \   00000018   0x4299             CMP      R1,R3
+   \   0000001A   0xD302             BCC      ??schedule_interrupt_1
+   \   0000001C   0xD817             BHI      ??schedule_interrupt_2
+   \   0000001E   0x4290             CMP      R0,R2
+   \   00000020   0xD215             BCS      ??schedule_interrupt_2
+    234                      ticker->interface->fire_interrupt();
+    235                      return;
+    236                  }
+    237          
+    238                  timestamp_t match_tick = compute_tick(ticker, match_time);
+   \                     ??schedule_interrupt_1: (+1)
+   \   00000022   0x0020             MOVS     R0,R4
+   \   00000024   0x.... 0x....      BL       compute_tick
+   \   00000028   0x0006             MOVS     R6,R0
+    239                  ticker->interface->set_interrupt(match_tick);
+   \   0000002A   0x6821             LDR      R1,[R4, #+0]
+   \   0000002C   0x6909             LDR      R1,[R1, #+16]
+   \   0000002E   0x4788             BLX      R1
+    240                  timestamp_t cur_tick = ticker->interface->read();
+   \   00000030   0x6820             LDR      R0,[R4, #+0]
+   \   00000032   0x6840             LDR      R0,[R0, #+4]
+   \   00000034   0x4780             BLX      R0
+    241          
+    242                  if (_ticker_match_interval_passed(queue->tick_last_read, cur_tick, match_tick)) {
+   \   00000036   0x6A29             LDR      R1,[R5, #+32]
+   \   00000038   0x42B1             CMP      R1,R6
+   \   0000003A   0xD204             BCS      ??schedule_interrupt_3
+   \   0000003C   0x42B0             CMP      R0,R6
+   \   0000003E   0xD206             BCS      ??schedule_interrupt_2
+   \   00000040   0x4288             CMP      R0,R1
+   \   00000042   0xD210             BCS      ??schedule_interrupt_4
+   \   00000044   0xE003             B        ??schedule_interrupt_2
+   \                     ??schedule_interrupt_3: (+1)
+   \   00000046   0x4288             CMP      R0,R1
+   \   00000048   0xD20D             BCS      ??schedule_interrupt_4
+   \   0000004A   0x42B0             CMP      R0,R6
+   \   0000004C   0xD30B             BCC      ??schedule_interrupt_4
+    243                      ticker->interface->fire_interrupt();
+   \                     ??schedule_interrupt_2: (+1)
+   \   0000004E   0x6820             LDR      R0,[R4, #+0]
+   \   00000050   0x6940             LDR      R0,[R0, #+20]
+   \   00000052   0x4780             BLX      R0
+   \   00000054   0xBD70             POP      {R4-R6,PC}
+    244                  }
+    245              } else {
+    246                  uint32_t match_tick =
+    247                          (queue->tick_last_read + queue->max_delta) & queue->bitmask;
+    248                  ticker->interface->set_interrupt(match_tick);
+   \                     ??schedule_interrupt_0: (+1)
+   \   00000056   0x6A28             LDR      R0,[R5, #+32]
+   \   00000058   0x6929             LDR      R1,[R5, #+16]
+   \   0000005A   0x1841             ADDS     R1,R0,R1
+   \   0000005C   0x68E8             LDR      R0,[R5, #+12]
+   \   0000005E   0x4008             ANDS     R0,R0,R1
+   \   00000060   0x6821             LDR      R1,[R4, #+0]
+   \   00000062   0x6909             LDR      R1,[R1, #+16]
+   \   00000064   0x4788             BLX      R1
+    249              }
+    250          }
+   \                     ??schedule_interrupt_4: (+1)
+   \   00000066   0xBD70             POP      {R4-R6,PC}       ;; return
+    251          
+
+   \                                 In section .text, align 2, keep-with-next
+    252          void ticker_set_handler(const ticker_data_t *const ticker, ticker_event_handler handler)
+    253          {
+   \                     ticker_set_handler: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+    254              initialize(ticker);
+   \   00000006   0x.... 0x....      BL       initialize
+    255              set_handler(ticker, handler);
+   \   0000000A   0x6868             LDR      R0,[R5, #+4]
+   \   0000000C   0x6004             STR      R4,[R0, #+0]
+    256          }
+   \   0000000E   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    257          
+
+   \                                 In section .text, align 2, keep-with-next
+    258          void ticker_irq_handler(const ticker_data_t *const ticker)
+    259          {
+   \                     ticker_irq_handler: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    260              ticker->interface->clear_interrupt();
+   \   00000004   0x6820             LDR      R0,[R4, #+0]
+   \   00000006   0x68C0             LDR      R0,[R0, #+12]
+   \   00000008   0x4780             BLX      R0
+   \   0000000A   0xE006             B        ??ticker_irq_handler_0
+    261          
+    262              /* Go through all the pending TimerEvents */
+    263              while (1) {
+    264                  if (ticker->queue->head == NULL) {
+    265                      break;
+    266                  }
+    267          
+    268                  // update the current timestamp used by the queue 
+    269                  update_present_time(ticker);
+    270          
+    271                  if (ticker->queue->head->timestamp <= ticker->queue->present_time) { 
+    272                      // This event was in the past:
+    273                      //      point to the following one and execute its handler
+    274                      ticker_event_t *p = ticker->queue->head;
+    275                      ticker->queue->head = ticker->queue->head->next;
+   \                     ??ticker_irq_handler_1: (+1)
+   \   0000000C   0x68E8             LDR      R0,[R5, #+12]
+   \   0000000E   0x6070             STR      R0,[R6, #+4]
+    276                      if (ticker->queue->event_handler != NULL) {
+   \   00000010   0x6831             LDR      R1,[R6, #+0]
+   \   00000012   0x0008             MOVS     R0,R1
+   \   00000014   0xD001             BEQ      ??ticker_irq_handler_0
+    277                          (*ticker->queue->event_handler)(p->id); // NOTE: the handler can set new events
+   \   00000016   0x68A8             LDR      R0,[R5, #+8]
+   \   00000018   0x4788             BLX      R1
+    278                      }
+    279                      /* Note: We continue back to examining the head because calling the
+    280                       * event handler may have altered the chain of pending events. */
+    281                  } else {
+   \                     ??ticker_irq_handler_0: (+1)
+   \   0000001A   0x6860             LDR      R0,[R4, #+4]
+   \   0000001C   0x6840             LDR      R0,[R0, #+4]
+   \   0000001E   0x2800             CMP      R0,#+0
+   \   00000020   0xD00E             BEQ      ??ticker_irq_handler_2
+   \   00000022   0x0020             MOVS     R0,R4
+   \   00000024   0x.... 0x....      BL       update_present_time
+   \   00000028   0x6866             LDR      R6,[R4, #+4]
+   \   0000002A   0x6875             LDR      R5,[R6, #+4]
+   \   0000002C   0x0030             MOVS     R0,R6
+   \   0000002E   0x3030             ADDS     R0,R0,#+48
+   \   00000030   0xC80C             LDM      R0!,{R2,R3}
+   \   00000032   0xCD03             LDM      R5!,{R0,R1}
+   \   00000034   0x3D08             SUBS     R5,R5,#+8
+   \   00000036   0x428B             CMP      R3,R1
+   \   00000038   0xD8E8             BHI      ??ticker_irq_handler_1
+   \   0000003A   0xD301             BCC      ??ticker_irq_handler_2
+   \   0000003C   0x4282             CMP      R2,R0
+   \   0000003E   0xD2E5             BCS      ??ticker_irq_handler_1
+    282                      break;
+    283                  } 
+    284              }
+    285          
+    286              schedule_interrupt(ticker);
+   \                     ??ticker_irq_handler_2: (+1)
+   \   00000040   0x0020             MOVS     R0,R4
+   \   00000042   0x.... 0x....      BL       schedule_interrupt
+    287          }
+   \   00000046   0xBD70             POP      {R4-R6,PC}       ;; return
+    288          
+
+   \                                 In section .text, align 2, keep-with-next
+    289          void ticker_insert_event(const ticker_data_t *const ticker, ticker_event_t *obj, timestamp_t timestamp, uint32_t id)
+    290          {
+   \                     ticker_insert_event: (+1)
+   \   00000000   0xB5FB             PUSH     {R0,R1,R3-R7,LR}
+   \   00000002   0x0006             MOVS     R6,R0
+   \   00000004   0x0017             MOVS     R7,R2
+    291              core_util_critical_section_enter();
+   \   00000006   0x.... 0x....      BL       core_util_critical_section_enter
+    292          
+    293              // update the current timestamp
+    294              update_present_time(ticker);
+   \   0000000A   0x0030             MOVS     R0,R6
+   \   0000000C   0x.... 0x....      BL       update_present_time
+    295              us_timestamp_t absolute_timestamp = convert_timestamp(
+    296                  ticker->queue->present_time, 
+    297                  timestamp
+    298              );
+   \   00000010   0x6870             LDR      R0,[R6, #+4]
+   \   00000012   0x3030             ADDS     R0,R0,#+48
+   \   00000014   0xC803             LDM      R0,{R0,R1}
+   \   00000016   0x4287             CMP      R7,R0
+   \   00000018   0x4192             SBCS     R2,R2,R2
+   \   0000001A   0x0FD2             LSRS     R2,R2,#+31
+   \   0000001C   0x2500             MOVS     R5,#+0
+   \   0000001E   0x43ED             MVNS     R5,R5            ;; #-1
+   \   00000020   0x400D             ANDS     R5,R5,R1
+   \   00000022   0x003C             MOVS     R4,R7
+   \   00000024   0x2A00             CMP      R2,#+0
+   \   00000026   0xD003             BEQ      ??ticker_insert_event_0
+   \   00000028   0x2400             MOVS     R4,#+0
+   \   0000002A   0x2501             MOVS     R5,#+1
+   \   0000002C   0x19E4             ADDS     R4,R4,R7
+   \   0000002E   0x414D             ADCS     R5,R5,R1
+    299              core_util_critical_section_exit();
+   \                     ??ticker_insert_event_0: (+1)
+   \   00000030   0x.... 0x....      BL       core_util_critical_section_exit
+    300          
+    301              // defer to ticker_insert_event_us
+    302              ticker_insert_event_us(
+    303                  ticker, 
+    304                  obj, absolute_timestamp, id
+    305              );
+   \   00000034   0x9802             LDR      R0,[SP, #+8]
+   \   00000036   0x9000             STR      R0,[SP, #+0]
+   \   00000038   0x0022             MOVS     R2,R4
+   \   0000003A   0x002B             MOVS     R3,R5
+   \   0000003C   0x9901             LDR      R1,[SP, #+4]
+   \   0000003E   0x0030             MOVS     R0,R6
+   \   00000040   0x.... 0x....      BL       ticker_insert_event_us
+    306          }
+   \   00000044   0xB003             ADD      SP,SP,#+12
+   \   00000046   0xBDF0             POP      {R4-R7,PC}       ;; return
+    307          
+
+   \                                 In section .text, align 2, keep-with-next
+    308          void ticker_insert_event_us(const ticker_data_t *const ticker, ticker_event_t *obj, us_timestamp_t timestamp, uint32_t id)
+    309          {
+   \                     ticker_insert_event_us: (+1)
+   \   00000000   0xB5F1             PUSH     {R0,R4-R7,LR}
+   \   00000002   0x000C             MOVS     R4,R1
+   \   00000004   0x0016             MOVS     R6,R2
+   \   00000006   0x001F             MOVS     R7,R3
+    310              core_util_critical_section_enter();
+   \   00000008   0x.... 0x....      BL       core_util_critical_section_enter
+    311          
+    312              // update the current timestamp
+    313              update_present_time(ticker);
+   \   0000000C   0x9800             LDR      R0,[SP, #+0]
+   \   0000000E   0x.... 0x....      BL       update_present_time
+    314          
+    315              // initialise our data
+    316              obj->timestamp = timestamp;
+   \   00000012   0xC4C0             STM      R4!,{R6,R7}
+   \   00000014   0x3C08             SUBS     R4,R4,#+8
+    317              obj->id = id;
+   \   00000016   0x9806             LDR      R0,[SP, #+24]
+   \   00000018   0x60A0             STR      R0,[R4, #+8]
+    318          
+    319              /* Go through the list until we either reach the end, or find
+    320                 an element this should come before (which is possibly the
+    321                 head). */
+    322              ticker_event_t *prev = NULL, *p = ticker->queue->head;
+   \   0000001A   0x2200             MOVS     R2,#+0
+   \   0000001C   0x9800             LDR      R0,[SP, #+0]
+   \   0000001E   0x6843             LDR      R3,[R0, #+4]
+   \   00000020   0x685D             LDR      R5,[R3, #+4]
+   \   00000022   0xE001             B        ??ticker_insert_event_us_0
+    323              while (p != NULL) {
+    324                  /* check if we come before p */
+    325                  if (timestamp < p->timestamp) {
+    326                      break;
+    327                  }
+    328                  /* go to the next element */
+    329                  prev = p;
+   \                     ??ticker_insert_event_us_1: (+1)
+   \   00000024   0x002A             MOVS     R2,R5
+    330                  p = p->next;
+   \   00000026   0x68ED             LDR      R5,[R5, #+12]
+   \                     ??ticker_insert_event_us_0: (+1)
+   \   00000028   0x2D00             CMP      R5,#+0
+   \   0000002A   0xD006             BEQ      ??ticker_insert_event_us_2
+   \   0000002C   0xCD03             LDM      R5!,{R0,R1}
+   \   0000002E   0x3D08             SUBS     R5,R5,#+8
+   \   00000030   0x428F             CMP      R7,R1
+   \   00000032   0xD8F7             BHI      ??ticker_insert_event_us_1
+   \   00000034   0xD301             BCC      ??ticker_insert_event_us_2
+   \   00000036   0x4286             CMP      R6,R0
+   \   00000038   0xD2F4             BCS      ??ticker_insert_event_us_1
+    331              }
+    332              
+    333              /* if we're at the end p will be NULL, which is correct */
+    334              obj->next = p;
+   \                     ??ticker_insert_event_us_2: (+1)
+   \   0000003A   0x60E5             STR      R5,[R4, #+12]
+    335          
+    336              /* if prev is NULL we're at the head */
+    337              if (prev == NULL) {
+   \   0000003C   0x2A00             CMP      R2,#+0
+   \   0000003E   0xD101             BNE      ??ticker_insert_event_us_3
+    338                  ticker->queue->head = obj;
+   \   00000040   0x605C             STR      R4,[R3, #+4]
+   \   00000042   0xE000             B        ??ticker_insert_event_us_4
+    339              } else {
+    340                  prev->next = obj;
+   \                     ??ticker_insert_event_us_3: (+1)
+   \   00000044   0x60D4             STR      R4,[R2, #+12]
+    341              }
+    342          
+    343              schedule_interrupt(ticker);
+   \                     ??ticker_insert_event_us_4: (+1)
+   \   00000046   0x9800             LDR      R0,[SP, #+0]
+   \   00000048   0x.... 0x....      BL       schedule_interrupt
+    344          
+    345              core_util_critical_section_exit();
+   \   0000004C   0x.... 0x....      BL       core_util_critical_section_exit
+    346          }
+   \   00000050   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+    347          
+
+   \                                 In section .text, align 2, keep-with-next
+    348          void ticker_remove_event(const ticker_data_t *const ticker, ticker_event_t *obj)
+    349          {
+   \                     ticker_remove_event: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+    350              core_util_critical_section_enter();
+   \   00000006   0x.... 0x....      BL       core_util_critical_section_enter
+    351          
+    352              // remove this object from the list
+    353              if (ticker->queue->head == obj) {
+   \   0000000A   0x6868             LDR      R0,[R5, #+4]
+   \   0000000C   0x6841             LDR      R1,[R0, #+4]
+   \   0000000E   0x42A1             CMP      R1,R4
+   \   00000010   0xD106             BNE      ??ticker_remove_event_0
+    354                  // first in the list, so just drop me
+    355                  ticker->queue->head = obj->next;
+   \   00000012   0x68E1             LDR      R1,[R4, #+12]
+   \   00000014   0x6041             STR      R1,[R0, #+4]
+    356                  schedule_interrupt(ticker);
+   \   00000016   0x0028             MOVS     R0,R5
+   \   00000018   0x.... 0x....      BL       schedule_interrupt
+   \   0000001C   0xE007             B        ??ticker_remove_event_1
+    357              } else {
+    358                  // find the object before me, then drop me
+    359                  ticker_event_t* p = ticker->queue->head;
+    360                  while (p != NULL) {
+    361                      if (p->next == obj) {
+    362                          p->next = obj->next;
+    363                          break;
+    364                      }
+    365                      p = p->next;
+   \                     ??ticker_remove_event_2: (+1)
+   \   0000001E   0x0001             MOVS     R1,R0
+   \                     ??ticker_remove_event_0: (+1)
+   \   00000020   0x2900             CMP      R1,#+0
+   \   00000022   0xD004             BEQ      ??ticker_remove_event_1
+   \   00000024   0x68C8             LDR      R0,[R1, #+12]
+   \   00000026   0x42A0             CMP      R0,R4
+   \   00000028   0xD1F9             BNE      ??ticker_remove_event_2
+   \   0000002A   0x68E0             LDR      R0,[R4, #+12]
+   \   0000002C   0x60C8             STR      R0,[R1, #+12]
+    366                  }
+    367              }
+    368          
+    369              core_util_critical_section_exit();
+   \                     ??ticker_remove_event_1: (+1)
+   \   0000002E   0x.... 0x....      BL       core_util_critical_section_exit
+    370          }
+   \   00000032   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    371          
+
+   \                                 In section .text, align 2, keep-with-next
+    372          timestamp_t ticker_read(const ticker_data_t *const ticker)
+   \                     ticker_read: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+    373          {
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+    374              return ticker_read_us(ticker);
+   \   00000002   0x.... 0x....      BL       initialize
+   \   00000006   0x0020             MOVS     R0,R4
+   \   00000008   0x.... 0x....      BL       update_present_time
+   \   0000000C   0x6860             LDR      R0,[R4, #+4]
+   \   0000000E   0x3030             ADDS     R0,R0,#+48
+   \   00000010   0xC803             LDM      R0,{R0,R1}
+   \   00000012   0xBD10             POP      {R4,PC}          ;; return
+    375          }
+    376          
+
+   \                                 In section .text, align 2, keep-with-next
+    377          us_timestamp_t ticker_read_us(const ticker_data_t *const ticker)
+   \                     ticker_read_us: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+    378          {
+    379              initialize(ticker);
+    380              update_present_time(ticker);
+    381              return ticker->queue->present_time;
+    382          }
+    383          
+
+   \                                 In section .text, align 2, keep-with-next
+    384          int ticker_get_next_timestamp(const ticker_data_t *const data, timestamp_t *timestamp)
+    385          {
+   \                     ticker_get_next_timestamp: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+    386              int ret = 0;
+   \   00000006   0x2600             MOVS     R6,#+0
+    387          
+    388              /* if head is NULL, there are no pending events */
+    389              core_util_critical_section_enter();
+   \   00000008   0x.... 0x....      BL       core_util_critical_section_enter
+   \   0000000C   0x6868             LDR      R0,[R5, #+4]
+   \   0000000E   0x6840             LDR      R0,[R0, #+4]
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD002             BEQ      ??ticker_get_next_timestamp_0
+    390              if (data->queue->head != NULL) {
+    391                  *timestamp = data->queue->head->timestamp;
+   \   00000014   0xC803             LDM      R0,{R0,R1}
+   \   00000016   0x6020             STR      R0,[R4, #+0]
+    392                  ret = 1;
+   \   00000018   0x2601             MOVS     R6,#+1
+    393              }
+    394              core_util_critical_section_exit();
+   \                     ??ticker_get_next_timestamp_0: (+1)
+   \   0000001A   0x.... 0x....      BL       core_util_critical_section_exit
+    395          
+    396              return ret;
+   \   0000001E   0x0030             MOVS     R0,R6
+   \   00000020   0xBD70             POP      {R4-R6,PC}       ;; return
+    397          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x2E 0x5C          DC8 ".\\mbed-os\\hal\\mbed_ticker_api.c"
+   \              0x6D 0x62    
+   \              0x65 0x64    
+   \              0x2D 0x6F    
+   \              0x73 0x5C    
+   \              0x68 0x61    
+   \              0x6C 0x5C    
+   \              0x6D 0x62    
+   \              0x65 0x64    
+   \              0x5F 0x74    
+   \              0x69 0x63    
+   \              0x6B 0x65    
+   \              0x72 0x5F    
+   \              0x61 0x70    
+   \              0x69 0x2E    
+   \              0x63 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4:
+   \   00000000   0x30 0x00          DC8      "0",0x0,0x0
+   \              0x00 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_1:
+   \   00000000   0x000F4240         DC32     0xf4240
+
+   \                                 In section .rodata, align 2, keep-with-next
+   \                     ?_0:
+   \   00000000   0x30 0x00          DC8 "0"
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   _ticker_match_interval_passed
+      24   compute_tick
+        24 __aeabi_lmul
+        24 __aeabi_uldivmod
+      40   initialize
+        40   -- Indirect call
+        40   -> mbed_assert_internal
+        40   -> schedule_interrupt
+        40   -> update_present_time
+        40 __aeabi_llsl
+        40 __aeabi_lmul
+        40 __aeabi_uldivmod
+      16   schedule_interrupt
+        16   -- Indirect call
+        16   -> compute_tick
+        16   -> update_present_time
+      16   ticker_get_next_timestamp
+        16   -> core_util_critical_section_enter
+        16   -> core_util_critical_section_exit
+      32   ticker_insert_event
+        32   -> core_util_critical_section_enter
+        32   -> core_util_critical_section_exit
+        32   -> ticker_insert_event_us
+        32   -> update_present_time
+      24   ticker_insert_event_us
+        24   -> core_util_critical_section_enter
+        24   -> core_util_critical_section_exit
+        24   -> schedule_interrupt
+        24   -> update_present_time
+      16   ticker_irq_handler
+        16   -- Indirect call
+        16   -> schedule_interrupt
+        16   -> update_present_time
+       8   ticker_read
+         8   -> initialize
+         8   -> update_present_time
+       0   ticker_read_us
+         8   -> initialize
+         8   -> update_present_time
+      16   ticker_remove_event
+        16   -> core_util_critical_section_enter
+        16   -> core_util_critical_section_exit
+        16   -> schedule_interrupt
+      16   ticker_set_handler
+        16   -> initialize
+      32   update_present_time
+        32   -- Indirect call
+        32 __aeabi_lmul
+        32 __aeabi_uldivmod
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+      20  ?Subroutine0
+       2  ?_0
+      32  ?_1
+      36  _ticker_match_interval_passed
+     106  compute_tick
+     222  initialize
+     104  schedule_interrupt
+      34  ticker_get_next_timestamp
+      72  ticker_insert_event
+      82  ticker_insert_event_us
+      72  ticker_irq_handler
+       4  ticker_read
+       2  ticker_read_us
+      52  ticker_remove_event
+      16  ticker_set_handler
+     244  update_present_time
+
+ 
+     2 bytes in section .rodata
+ 1 106 bytes in section .text
+ 
+ 1 106 bytes of CODE  memory
+     2 bytes of CONST memory
+
+Errors: none
+Warnings: 1

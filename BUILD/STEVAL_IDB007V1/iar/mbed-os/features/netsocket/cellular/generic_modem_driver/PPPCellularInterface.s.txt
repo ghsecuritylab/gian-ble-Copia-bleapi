@@ -1,0 +1,975 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       16/Mar/2018  12:16:44
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        .\mbed-os\features\netsocket\cellular\generic_modem_driver\PPPCellularInterface.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DDEVICE_SERIAL=1 -DTARGET_CORTEX_M -DDEVICE_SPI=1 -DTARGET_LIKE_MBED
+#        -DMBED_BUILD_TIMESTAMP=1521198946.13 -DARM_MATH_CM0 -DTARGET_RELEASE
+#        -D__CORTEX_M0 -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0
+#        -DTOOLCHAIN_object -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -f
+#        .\BUILD\STEVAL_IDB007V1\iar\.includes_fc2e77952737cb4522ab0dffe8cfd8aa.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN
+#        -I./mbed-os/features/frameworks
+#        -I./mbed-os/features/frameworks/greentea-client
+#        -I./mbed-os/features/frameworks/greentea-client/greentea-client
+#        -I./mbed-os/features/frameworks/greentea-client/source
+#        -I./mbed-os/features/frameworks/unity
+#        -I./mbed-os/features/frameworks/unity/source
+#        -I./mbed-os/features/frameworks/unity/unity
+#        -I./mbed-os/features/frameworks/utest
+#        -I./mbed-os/features/frameworks/utest/source
+#        -I./mbed-os/features/frameworks/utest/utest
+#        -I./mbed-os/features/mbedtls -I./mbed-os/features/mbedtls/importer
+#        -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/features/netsocket
+#        -I./mbed-os/features/netsocket/cellular
+#        -I./mbed-os/features/netsocket/cellular/generic_modem_driver
+#        -I./mbed-os/features/netsocket/cellular/utils
+#        -I./mbed-os/features/storage -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\iar\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\cellular\generic_modem_driver\PPPCellularInterface.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\cellular\generic_modem_driver\PPPCellularInterface.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\cellular\generic_modem_driver\PPPCellularInterface.o
+#        .\mbed-os\features\netsocket\cellular\generic_modem_driver\PPPCellularInterface.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\cellular\generic_modem_driver\PPPCellularInterface.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\iar\mbed-os\features\netsocket\cellular\generic_modem_driver\PPPCellularInterface.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia\mbed-os\features\netsocket\cellular\generic_modem_driver\PPPCellularInterface.cpp
+      1          /* Copyright (c) 2017 ARM Limited
+      2           *
+      3           * Licensed under the Apache License, Version 2.0 (the "License");
+      4           * you may not use this file except in compliance with the License.
+      5           * You may obtain a copy of the License at
+      6           *
+      7           *     http://www.apache.org/licenses/LICENSE-2.0
+      8           *
+      9           * Unless required by applicable law or agreed to in writing, software
+     10           * distributed under the License is distributed on an "AS IS" BASIS,
+     11           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     12           * See the License for the specific language governing permissions and
+     13           * limitations under the License.
+     14           */
+     15          #include "PPPCellularInterface.h"
+
+   \                                 In section .rodata, align 4
+   \   __absolute mbed::Callback<void ()>::ops const mbed::Callback<void ()>::generate<>(mbed::Callback<void ()>::function_context<void (*)(void *), void> const &)::ops
+   \                     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops:
+   \   00000000   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv
+   \   00000004   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv
+   \   00000008   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x0001             MOVS     R1,R0
+   \   00000004   0x6848             LDR      R0,[R1, #+4]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD001             BEQ      ??function_move_0
+   \   00000004   0xC90C             LDM      R1!,{R2,R3}
+   \   00000006   0xC00C             STM      R0!,{R2,R3}
+   \                     ??function_move_0: (+1)
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void mbed::callback<>(void (*)(void *), void *)
+   \                     _ZN4mbed8callbackIvvvEENS_8CallbackIFT1_vEEEPFS2_PT_EPT0_: (+1)
+   \   00000000   0xB470             PUSH     {R4-R6}
+   \   00000002   0x2300             MOVS     R3,#+0
+   \   00000004   0x2400             MOVS     R4,#+0
+   \   00000006   0x2500             MOVS     R5,#+0
+   \   00000008   0x2600             MOVS     R6,#+0
+   \   0000000A   0xC078             STM      R0!,{R3-R6}
+   \   0000000C   0x3810             SUBS     R0,R0,#+16
+   \   0000000E   0xD001             BEQ      ??callback_0
+   \   00000010   0x6001             STR      R1,[R0, #+0]
+   \   00000012   0x6042             STR      R2,[R0, #+4]
+   \                     ??callback_0: (+1)
+   \   00000014   0x4901             LDR      R1,??callback_1
+   \   00000016   0x60C1             STR      R1,[R0, #+12]
+   \   00000018   0xBC70             POP      {R4-R6}
+   \   0000001A   0x4770             BX       LR               ;; return
+   \                     ??callback_1:
+   \   0000001C   0x........         DC32     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops
+     16          
+     17          #if NSAPI_PPP_AVAILABLE
+     18          
+     19          #include <string.h>
+     20          #include "nsapi_ppp.h"
+     21          #if MBED_CONF_PPP_CELL_IFACE_APN_LOOKUP
+     22          #include "utils/APN_db.h"
+     23          #endif //MBED_CONF_PPP_CELL_IFACE_APN_LOOKUP
+     24          #if defined(FEATURE_COMMON_PAL)
+     25          #include "mbed_trace.h"
+     26          #define TRACE_GROUP "UCID"
+     27          #else
+     28          #define tr_debug(...) (void(0)) //dummies if feature common pal is not added
+     29          #define tr_info(...)  (void(0)) //dummies if feature common pal is not added
+     30          #define tr_error(...) (void(0)) //dummies if feature common pal is not added
+     31          #endif //defined(FEATURE_COMMON_PAL)
+     32          
+     33          /**
+     34           * PDP (packet data profile) Context
+     35           */
+     36          #define CTX "1"
+     37          
+     38          /**
+     39           * Output Enter sequence for the modem , default CR
+     40           */
+     41          #define OUTPUT_ENTER_KEY  "\r"
+     42          
+     43          #if MBED_CONF_PPP_CELL_IFACE_AT_PARSER_BUFFER_SIZE
+     44          #define AT_PARSER_BUFFER_SIZE   MBED_CONF_PPP_CELL_IFACE_AT_PARSER_BUFFER_SIZE //bytes
+     45          #else
+     46          #define AT_PARSER_BUFFER_SIZE   256 //bytes
+     47          #endif //MBED_CONF_PPP_CELL_IFACE_AT_PARSER_BUFFER_SIZE
+     48          
+     49          #if MBED_CONF_PPP_CELL_IFACE_AT_PARSER_TIMEOUT
+     50          #define AT_PARSER_TIMEOUT       MBED_CONF_PPP_CELL_IFACE_AT_PARSER_TIMEOUT
+     51          #else
+     52          #define AT_PARSER_TIMEOUT       8*1000 //miliseconds
+     53          #endif //MBED_CONF_PPP_CELL_IFACE_AT_PARSER_TIMEOUT
+     54          
+     55          static bool initialized;
+     56          static bool set_credentials_api_used;
+     57          static bool set_sim_pin_check_request;
+     58          static bool change_pin;
+     59          static device_info dev_info;
+     60          
+     61          static void parser_abort(ATCmdParser *at)
+     62          {
+     63              at->abort();
+     64          }
+     65          
+     66          static bool get_CCID(ATCmdParser *at)
+     67          {
+     68              // Returns the ICCID (Integrated Circuit Card ID) of the SIM-card.
+     69              // ICCID is a serial number identifying the SIM.
+     70              bool success = at->send("AT+CCID") && at->recv("+CCID: %20[^\n]\nOK\n", dev_info.ccid);
+     71              tr_debug("DevInfo: CCID=%s", dev_info.ccid);
+     72              return success;
+     73          }
+     74          
+     75          static bool get_IMSI(ATCmdParser *at)
+     76          {
+     77              // International mobile subscriber identification
+     78              bool success = at->send("AT+CIMI") && at->recv("%15[^\n]\nOK\n", dev_info.imsi);
+     79              tr_debug("DevInfo: IMSI=%s", dev_info.imsi);
+     80              return success;
+     81          }
+     82          
+     83          static bool get_IMEI(ATCmdParser *at)
+     84          {
+     85              // International mobile equipment identifier
+     86              bool success = at->send("AT+CGSN") && at->recv("%15[^\n]\nOK\n", dev_info.imei);
+     87              tr_debug("DevInfo: IMEI=%s", dev_info.imei);
+     88              return success;
+     89          }
+     90          
+     91          static bool get_MEID(ATCmdParser *at)
+     92          {
+     93              // Mobile equipment identifier
+     94              bool success = at->send("AT+GSN")
+     95                      && at->recv("%18[^\n]\nOK\n", dev_info.meid);
+     96              tr_debug("DevInfo: MEID=%s", dev_info.meid);
+     97              return success;
+     98          }
+     99          
+    100          static bool set_CMGF(ATCmdParser *at)
+    101          {
+    102              // Preferred message format
+    103              // set AT+CMGF=[mode] , 0 PDU mode, 1 text mode
+    104              bool success = at->send("AT+CMGF=1") && at->recv("OK");
+    105              return success;
+    106          }
+    107          
+    108          static bool set_CNMI(ATCmdParser *at)
+    109          {
+    110              // New SMS indication configuration
+    111              // set AT+CMTI=[mode, index] , 0 PDU mode, 1 text mode
+    112              // Multiple URCs for SMS, i.e., CMT, CMTI, UCMT, CBMI, CDSI as DTE could be following any of these SMS formats
+    113              bool success = at->send("AT+CNMI=2," CTX) && at->recv("OK");
+    114              return success;
+    115          }
+    116          
+    117          static void CMTI_URC(ATCmdParser *at)
+    118          {
+    119              // our CMGF = 1, i.e., text mode. So we expect response in this format:
+    120              //+CMTI: <mem>,<index>,
+    121              at->recv(": %*u,%*u");
+    122              tr_info("New SMS received");
+    123          
+    124          }
+    125          
+    126          static void CMT_URC(ATCmdParser *at)
+    127          {
+    128              // our CMGF = 1, i.e., text mode. So we expect response in this format:
+    129              //+CMT: <oa>,[<alpha>],<scts>[,<tooa>,
+    130              //<fo>,<pid>,<dcs>,<sca>,<tosca>,
+    131              //<length>]<CR><LF><data>
+    132              // By default detailed SMS header CSDH=0 , so we are not expecting  [,<tooa>,
+    133              //<fo>,<pid>,<dcs>,<sca>,<tosca>
+    134              char sms[50];
+    135              char service_timestamp[15];
+    136              at->recv(": %49[^\"]\",,%14[^\"]\"\n", sms, service_timestamp);
+    137          
+    138              tr_info("SMS:%s, %s", service_timestamp, sms);
+    139          
+    140          }
+    141          
+    142          static bool set_atd(ATCmdParser *at)
+    143          {
+    144              bool success = at->send("ATD*99***" CTX "#") && at->recv("CONNECT");
+    145          
+    146              return success;
+    147          }
+    148          
+    149          /**
+    150           * Enables or disables SIM pin check lock
+    151           */
+    152          static nsapi_error_t do_sim_pin_check(ATCmdParser *at, const char *pin)
+    153          {
+    154              bool success;
+    155              if (set_sim_pin_check_request) {
+    156                  /* use the SIM locked */
+    157                  success = at->send("AT+CLCK=\"SC\",1,\"%s\"", pin) && at->recv("OK");
+    158              } else {
+    159                  /* use the SIM unlocked */
+    160                  success = at->send("AT+CLCK=\"SC\",0,\"%s\"",pin) && at->recv("OK");
+    161              }
+    162          
+    163              if (success) return NSAPI_ERROR_OK;
+    164          
+    165              return NSAPI_ERROR_AUTH_FAILURE;
+    166          }
+    167          
+    168          /**
+    169           * Change the pin code for the SIM card
+    170           */
+    171          static nsapi_error_t do_change_sim_pin(ATCmdParser *at, const char *old_pin, const char *new_pin)
+    172          {
+    173              /* changes the SIM pin */
+    174                 bool success = at->send("AT+CPWD=\"SC\",\"%s\",\"%s\"", old_pin, new_pin) && at->recv("OK");
+    175                 if (success) {
+    176                     return NSAPI_ERROR_OK;
+    177                 }
+    178          
+    179                 return NSAPI_ERROR_AUTH_FAILURE;
+    180          }
+    181          
+    182          static void set_nwk_reg_status_csd(unsigned int status)
+    183          {
+    184              switch (status) {
+    185                  case CSD_NOT_REGISTERED_NOT_SEARCHING:
+    186                  case CSD_NOT_REGISTERED_SEARCHING:
+    187                      break;
+    188                  case CSD_REGISTERED:
+    189                  case CSD_REGISTERED_ROAMING:
+    190                      tr_debug("Registered for circuit switched service");
+    191                      break;
+    192                  case CSD_REGISTRATION_DENIED:
+    193                      tr_debug("Circuit switched service denied");
+    194                      break;
+    195                  case CSD_UNKNOWN_COVERAGE:
+    196                      tr_debug("Out of circuit switched service coverage");
+    197                      break;
+    198                  case CSD_SMS_ONLY:
+    199                      tr_debug("SMS service only");
+    200                      break;
+    201                  case CSD_SMS_ONLY_ROAMING:
+    202                      tr_debug("SMS service only");
+    203                      break;
+    204                  case CSD_CSFB_NOT_PREFERRED:
+    205                      tr_debug("Registered for circuit switched service with CSFB not preferred");
+    206                      break;
+    207                  default:
+    208                      tr_debug("Unknown circuit switched service registration status. %u", status);
+    209                      break;
+    210              }
+    211          
+    212              dev_info.reg_status_csd = static_cast<nwk_registration_status_csd>(status);
+    213          }
+    214          
+    215          static void set_nwk_reg_status_psd(unsigned int status)
+    216          {
+    217              switch (status) {
+    218                  case PSD_NOT_REGISTERED_NOT_SEARCHING:
+    219                  case PSD_NOT_REGISTERED_SEARCHING:
+    220                      break;
+    221                  case PSD_REGISTERED:
+    222                  case PSD_REGISTERED_ROAMING:
+    223                      tr_debug("Registered for packet switched service");
+    224                      break;
+    225                  case PSD_REGISTRATION_DENIED:
+    226                      tr_debug("Packet switched service denied");
+    227                      break;
+    228                  case PSD_UNKNOWN_COVERAGE:
+    229                      tr_debug("Out of packet switched service coverage");
+    230                      break;
+    231                  case PSD_EMERGENCY_SERVICES_ONLY:
+    232                      tr_debug("Limited access for packet switched service. Emergency use only.");
+    233                      break;
+    234                  default:
+    235                      tr_debug("Unknown packet switched service registration status. %u", status);
+    236                      break;
+    237              }
+    238          
+    239              dev_info.reg_status_psd = static_cast<nwk_registration_status_psd>(status);
+    240          }
+    241          
+    242          static bool is_registered_csd()
+    243          {
+    244            return (dev_info.reg_status_csd == CSD_REGISTERED) ||
+    245                    (dev_info.reg_status_csd == CSD_REGISTERED_ROAMING) ||
+    246                    (dev_info.reg_status_csd == CSD_CSFB_NOT_PREFERRED);
+    247          }
+    248          
+    249          static bool is_registered_psd()
+    250          {
+    251              return (dev_info.reg_status_psd == PSD_REGISTERED) ||
+    252                      (dev_info.reg_status_psd == PSD_REGISTERED_ROAMING);
+    253          }
+    254          
+    255          PPPCellularInterface::PPPCellularInterface(FileHandle *fh, bool debug)
+    256          {
+    257              _new_pin = NULL;
+    258              _pin = NULL;
+    259              _at = NULL;
+    260              _apn = "internet";
+    261              _uname = NULL;
+    262              _pwd = NULL;
+    263              _fh = fh;
+    264              _debug_trace_on = debug;
+    265              _stack = DEFAULT_STACK;
+    266              dev_info.reg_status_csd = CSD_NOT_REGISTERED_NOT_SEARCHING;
+    267              dev_info.reg_status_psd = PSD_NOT_REGISTERED_NOT_SEARCHING;
+    268              dev_info.ppp_connection_up = false;
+    269          }
+    270          
+    271          
+    272          PPPCellularInterface::~PPPCellularInterface()
+    273          {
+    274              delete _at;
+    275          }
+    276          
+    277          void PPPCellularInterface::enable_hup(bool)
+    278          {
+    279              //meant to be overridden
+    280          }
+    281          
+    282          void PPPCellularInterface::modem_init()
+    283          {
+    284              //meant to be overridden
+    285          }
+    286          
+    287          void PPPCellularInterface::modem_deinit()
+    288          {
+    289              //meant to be overridden
+    290          }
+    291          
+    292          void PPPCellularInterface::modem_power_up()
+    293          {
+    294              //meant to be overridden
+    295          }
+    296          
+    297          void PPPCellularInterface::modem_power_down()
+    298          {
+    299              //meant to be overridden
+    300          }
+    301          
+    302          void PPPCellularInterface::modem_debug_on(bool on)
+    303          {
+    304              _debug_trace_on = on;
+    305          }
+    306          
+    307          void PPPCellularInterface::connection_status_cb(Callback<void(nsapi_error_t)> cb)
+    308          {
+    309              _connection_status_cb = cb;
+    310          }
+    311          
+    312          /**
+    313           * Public API. Sets up the flag for the driver to enable or disable SIM pin check
+    314           * at the next boot.
+    315           */
+    316          void PPPCellularInterface::set_sim_pin_check(bool check)
+    317          {
+    318              set_sim_pin_check_request = check;
+    319          }
+    320          
+    321          /**
+    322           * Public API. Sets up the flag for the driver to change pin code for SIM card
+    323           */
+    324          void PPPCellularInterface::set_new_sim_pin(const char *new_pin)
+    325          {
+    326              change_pin = true;
+    327              _new_pin = new_pin;
+    328          }
+    329          
+    330          bool PPPCellularInterface::nwk_registration(uint8_t nwk_type)
+    331          {
+    332              bool success = false;
+    333               bool registered = false;
+    334          
+    335               char str[35];
+    336               int retcode;
+    337               int retry_counter = 0;
+    338               unsigned int reg_status;
+    339          
+    340               success = nwk_type == PACKET_SWITCHED ?
+    341                               _at->send("AT+CGREG=0") :
+    342                               _at->send("AT+CREG=0") && _at->recv("OK\n");
+    343          
+    344               success = _at->send("AT+COPS=0") //initiate auto-registration
+    345                              && _at->recv("OK");
+    346               if (!success) {
+    347                   tr_error("Modem not responding.");
+    348                   return false;
+    349               }
+    350          
+    351               //Network search
+    352               //If not registered after 60 attempts, i.e., 30 seconds wait, give up
+    353               tr_debug("Searching Network ...");
+    354          
+    355               while (!registered) {
+    356          
+    357                   if (retry_counter > 60) {
+    358                       success = false;
+    359                       goto give_up;
+    360                   }
+    361          
+    362                   success = nwk_type == PACKET_SWITCHED ?
+    363                                   _at->send("AT+CGREG?")
+    364                                   && _at->recv("+CGREG: %34[^\n]\n", str)
+    365                                   && _at->recv("OK\n") :
+    366                                   _at->send("AT+CREG?")
+    367                                   && _at->recv("+CREG: %34[^\n]\n", str)
+    368                                   && _at->recv("OK\n");
+    369          
+    370                   retcode = sscanf(str, "%*u,%u", &reg_status);
+    371          
+    372                   if (retcode >= 1) {
+    373                       if (nwk_type == PACKET_SWITCHED) {
+    374                           set_nwk_reg_status_psd(reg_status);
+    375                           if (is_registered_psd()) {
+    376                               registered = true;
+    377                           }
+    378                       } else if (nwk_type == CIRCUIT_SWITCHED) {
+    379                           set_nwk_reg_status_csd(reg_status);
+    380                           if (is_registered_csd()) {
+    381                               registered = true;
+    382                           }
+    383                       }
+    384                   }
+    385          
+    386                   if (registered) {
+    387                       break;
+    388                   } else {
+    389                       wait_ms(500);
+    390                   }
+    391          
+    392                   retry_counter++;
+    393               }
+    394          
+    395           give_up:
+    396               return registered;
+    397          }
+    398          
+    399          bool PPPCellularInterface::is_connected()
+    400          {
+    401              return dev_info.ppp_connection_up;
+    402          }
+    403          
+    404          // Get the SIM card going.
+    405          nsapi_error_t PPPCellularInterface::initialize_sim_card()
+    406          {
+    407              nsapi_error_t nsapi_error = NSAPI_ERROR_AUTH_FAILURE;
+    408              int retry_count = 0;
+    409              bool done = false;
+    410          
+    411              /* SIM initialization may take a significant amount, so an error is
+    412               * kind of expected. We should retry 10 times until we succeed or timeout. */
+    413              for (retry_count = 0; !done && (retry_count < 10); retry_count++) {
+    414                  char pinstr[16];
+    415          
+    416                  if (_at->send("AT+CPIN?") && _at->recv("+CPIN: %15[^\n]\nOK\n", pinstr)) {
+    417                      if (strcmp(pinstr, "SIM PIN") == 0) {
+    418                          if (!_at->send("AT+CPIN=\"%s\"", _pin) || !_at->recv("OK")) {
+    419                              tr_debug("PIN correct");
+    420                              nsapi_error = NSAPI_ERROR_OK;
+    421                          }
+    422                      } else if (strcmp(pinstr, "READY") == 0) {
+    423                          tr_debug("SIM Ready");
+    424                          nsapi_error = NSAPI_ERROR_OK;
+    425                          done = true;
+    426                      } else {
+    427                          tr_debug("Unexpected response from SIM: \"%s\"", pinstr);
+    428                      }
+    429                  }
+    430          
+    431                  /* wait for a second before retry */
+    432                  wait_ms(1000);
+    433              }
+    434          
+    435              if (!done) {
+    436                  tr_error("SIM not ready.");
+    437              }
+    438          
+    439              return nsapi_error;
+    440          }
+    441          
+    442          void PPPCellularInterface::set_sim_pin(const char *pin) {
+    443              /* overwrite the default pin by user provided pin */
+    444              _pin = pin;
+    445          }
+    446          
+    447          nsapi_error_t PPPCellularInterface::setup_context_and_credentials()
+    448          {
+    449              bool success;
+    450          
+    451              if (!_apn) {
+    452                  return NSAPI_ERROR_PARAMETER;
+    453              }
+    454          
+    455          #if NSAPI_PPP_IPV4_AVAILABLE && NSAPI_PPP_IPV6_AVAILABLE
+    456              const char ipv4v6_pdp_type[] = {"IPV4V6"};
+    457              const char ipv4_pdp_type[] = {"IP"};
+    458              const char *pdp_type = ipv4v6_pdp_type;
+    459              _stack = IPV4V6_STACK;
+    460          #elif NSAPI_PPP_IPV6_AVAILABLE
+    461              const char pdp_type[] = {"IPV6"};
+    462          #elif NSAPI_PPP_IPV4_AVAILABLE
+    463              const char pdp_type[] = {"IP"};
+    464          #endif
+    465              const char *auth = _uname && _pwd ? "CHAP:" : "";
+    466          
+    467          #if NSAPI_PPP_IPV4_AVAILABLE && NSAPI_PPP_IPV6_AVAILABLE
+    468          retry_without_dual_stack:
+    469          #endif
+    470              success = _at->send("AT"
+    471                                    "+FCLASS=0;" // set to connection (ATD) to data mode
+    472                                    "+CGDCONT=" CTX ",\"%s\",\"%s%s\"",
+    473                                    pdp_type, auth, _apn
+    474                                   )
+    475                             && _at->recv("OK");
+    476          
+    477          #if NSAPI_PPP_IPV4_AVAILABLE && NSAPI_PPP_IPV6_AVAILABLE
+    478              if (_stack == IPV4V6_STACK) {
+    479                  if (!success) {
+    480                      // fallback to ipv4
+    481                      pdp_type = ipv4_pdp_type;
+    482                      _stack = IPV4_STACK;
+    483                      goto retry_without_dual_stack;
+    484                  }
+    485              }
+    486          #endif
+    487          
+    488              if (!success) {
+    489                  _at->recv("OK");
+    490              }
+    491          
+    492              return success ? NSAPI_ERROR_OK : NSAPI_ERROR_PARAMETER;
+    493          
+    494          }
+    495          
+    496          void  PPPCellularInterface::set_credentials(const char *apn, const char *uname,
+    497                                                                         const char *pwd)
+    498          {
+    499              _apn = apn;
+    500              _uname = uname;
+    501              _pwd = pwd;
+    502              set_credentials_api_used = true;
+    503          }
+    504          
+    505          
+    506          
+    507          void PPPCellularInterface::setup_at_parser()
+    508          {
+    509              if (_at) {
+    510                  return;
+    511              }
+    512          
+    513              _at = new ATCmdParser(_fh, OUTPUT_ENTER_KEY, AT_PARSER_BUFFER_SIZE, AT_PARSER_TIMEOUT,
+    514                                   _debug_trace_on ? true : false);
+    515          
+    516              /* Error cases, out of band handling  */
+    517              _at->oob("ERROR", callback(parser_abort, _at));
+    518              _at->oob("+CME ERROR", callback(parser_abort, _at));
+    519              _at->oob("+CMS ERROR", callback(parser_abort, _at));
+    520              _at->oob("NO CARRIER", callback(parser_abort, _at));
+    521          
+    522              /* URCs, handled out of band */
+    523              _at->oob("+CMT", callback(CMT_URC, _at));
+    524              _at->oob("+CMTI", callback(CMTI_URC, _at));
+    525          }
+    526          
+    527          void PPPCellularInterface::shutdown_at_parser()
+    528          {
+    529              delete _at;
+    530              _at = NULL;
+    531          }
+    532          
+    533          nsapi_error_t PPPCellularInterface::connect(const char *sim_pin, const char *apn, const char *uname, const char *pwd)
+    534          {
+    535              if (!sim_pin) {
+    536                  return NSAPI_ERROR_PARAMETER;
+    537              }
+    538          
+    539              if (apn) {
+    540                  _apn = apn;
+    541              }
+    542          
+    543              if (uname && pwd) {
+    544                  _uname = uname;
+    545                  _pwd = pwd;
+    546              } else {
+    547                  _uname = NULL;
+    548                  _pwd = NULL;
+    549              }
+    550          
+    551              _pin = sim_pin;
+    552          
+    553              return connect();
+    554          }
+    555          
+    556          nsapi_error_t PPPCellularInterface::connect()
+    557          {
+    558              nsapi_error_t retcode;
+    559              bool success;
+    560              bool did_init = false;
+    561              const char *apn_config = NULL;
+    562          
+    563              if (dev_info.ppp_connection_up) {
+    564                  return NSAPI_ERROR_IS_CONNECTED;
+    565              }
+    566          
+    567              do {
+    568                  retry_init:
+    569          
+    570                  /* setup AT parser */
+    571                  setup_at_parser();
+    572          
+    573                  if (!initialized) {
+    574          
+    575                      /* If we have hangup (eg DCD) detection, we don't want it active
+    576                       * as long as we are using ATCmdParser.
+    577                       * As soon as we get into data mode, we will turn it back on. */
+    578                      enable_hup(false);
+    579          
+    580                      if (!power_up()) {
+    581                          return NSAPI_ERROR_DEVICE_ERROR;
+    582                      }
+    583          
+    584                      retcode = initialize_sim_card();
+    585                      if (retcode != NSAPI_ERROR_OK) {
+    586                          return retcode;
+    587                      }
+    588          
+    589                      success = nwk_registration(PACKET_SWITCHED) //perform network registration
+    590                      && get_CCID(_at)//get integrated circuit ID of the SIM
+    591                      && get_IMSI(_at)//get international mobile subscriber information
+    592                      && get_IMEI(_at)//get international mobile equipment identifier
+    593                      && get_MEID(_at)//its same as IMEI
+    594                      && set_CMGF(_at)//set message format for SMS
+    595                      && set_CNMI(_at);//set new SMS indication
+    596          
+    597                      if (!success) {
+    598                          return NSAPI_ERROR_NO_CONNECTION;
+    599                      }
+    600          
+    601          #if MBED_CONF_PPP_CELL_IFACE_APN_LOOKUP
+    602                      if (!apn_config) {
+    603                          apn_config = apnconfig(dev_info.imsi);
+    604                      }
+    605          #endif
+    606          
+    607                      /* Check if user want skip SIM pin checking on boot up */
+    608                      if (set_sim_pin_check_request) {
+    609                          retcode = do_sim_pin_check(_at, _pin);
+    610                          if (retcode != NSAPI_ERROR_OK) {
+    611                              return retcode;
+    612                          }
+    613                          /* set this request to false, as it is unnecessary to repeat in case of retry */
+    614                          set_sim_pin_check_request = false;
+    615                      }
+    616          
+    617                      /* check if the user requested a sim pin change */
+    618                      if (change_pin) {
+    619                          retcode = do_change_sim_pin(_at, _pin, _new_pin);
+    620                          if (retcode != NSAPI_ERROR_OK) {
+    621                              return retcode;
+    622                          }
+    623                          /* set this request to false, as it is unnecessary to repeat in case of retry */
+    624                          change_pin = false;
+    625                      }
+    626          
+    627          #if MBED_CONF_PPP_CELL_IFACE_APN_LOOKUP
+    628                      if (apn_config) {
+    629                          _apn = _APN_GET(apn_config);
+    630                          _uname = _APN_GET(apn_config);
+    631                          _pwd = _APN_GET(apn_config);
+    632                          tr_info("Looked up APN %s.", _apn);
+    633                      }
+    634          #endif
+    635          
+    636                      //sets up APN and IP protocol for external PDP context
+    637                      retcode = setup_context_and_credentials();
+    638                      if (retcode != NSAPI_ERROR_OK) {
+    639                          return retcode;
+    640                      }
+    641          
+    642                      if (!success) {
+    643                          shutdown_at_parser();
+    644                          return NSAPI_ERROR_NO_CONNECTION;
+    645                      }
+    646          
+    647                      initialized = true;
+    648                      did_init = true;
+    649                  } else {
+    650                      /* If we were already initialized, we expect to receive NO_CARRIER response
+    651                       * from the modem as we were kicked out of Data mode */
+    652                      _at->recv("NO CARRIER");
+    653                      success = _at->send("AT") && _at->recv("OK");
+    654                  }
+    655          
+    656                  /* Attempt to enter data mode */
+    657                  success = set_atd(_at); //enter into Data mode with the modem
+    658                  if (!success) {
+    659                      power_down();
+    660                      initialized = false;
+    661          
+    662                      /* if we were previously initialized , i.e., not in this particular attempt,
+    663                       * we want to re-initialize */
+    664                      if (!did_init) {
+    665                          goto retry_init;
+    666                      }
+    667          
+    668                      /* shutdown AT parser before notifying application of the failure */
+    669                      shutdown_at_parser();
+    670          
+    671                      return NSAPI_ERROR_NO_CONNECTION;
+    672                  }
+    673          
+    674                  /* This is the success case.
+    675                   * Save RAM, discard AT Parser as we have entered Data mode. */
+    676                  shutdown_at_parser();
+    677          
+    678                  /* We now want hangup (e.g., DCD) detection if available */
+    679                  enable_hup(true);
+    680          
+    681                  /* Initialize PPP
+    682                   * mbed_ppp_init() is a blocking call, it will block until
+    683                   * connected, or timeout after 30 seconds*/
+    684                  retcode = nsapi_ppp_connect(_fh, _connection_status_cb, _uname, _pwd, _stack);
+    685                  if (retcode == NSAPI_ERROR_OK) {
+    686                      dev_info.ppp_connection_up = true;
+    687                  }
+    688          
+    689              }while(!dev_info.ppp_connection_up && apn_config && *apn_config);
+    690          
+    691              return retcode;
+    692          }
+    693          
+    694          /**
+    695           * User initiated disconnect
+    696           *
+    697           * Disconnects from PPP connection only and brings down the underlying network
+    698           * interface
+    699           */
+    700          nsapi_error_t PPPCellularInterface::disconnect()
+    701          {
+    702              nsapi_error_t ret = nsapi_ppp_disconnect(_fh);
+    703              if (ret == NSAPI_ERROR_OK) {
+    704                  dev_info.ppp_connection_up = false;
+    705                  return NSAPI_ERROR_OK;
+    706              }
+    707          
+    708              return ret;
+    709          }
+    710          
+    711          const char *PPPCellularInterface::get_ip_address()
+    712          {
+    713              return nsapi_ppp_get_ip_addr(_fh);
+    714          }
+    715          
+    716          const char *PPPCellularInterface::get_netmask()
+    717          {
+    718              return nsapi_ppp_get_netmask(_fh);
+    719          }
+    720          
+    721          const char *PPPCellularInterface::get_gateway()
+    722          {
+    723              return nsapi_ppp_get_ip_addr(_fh);
+    724          }
+    725          
+    726          /** Power down modem
+    727           *  Uses AT command to do it */
+    728          void PPPCellularInterface::power_down()
+    729          {
+    730              modem_power_down();
+    731              modem_deinit();
+    732          }
+    733          
+    734          /**
+    735           * Powers up the modem
+    736           *
+    737           * Enables the GPIO lines to the modem and then wriggles the power line in short pulses.
+    738           */
+    739          bool PPPCellularInterface::power_up()
+    740          {
+    741              /* Initialize GPIO lines */
+    742              modem_init();
+    743              /* Give modem a little time to settle down */
+    744              wait(0.25);
+    745          
+    746              bool success = false;
+    747          
+    748              int retry_count = 0;
+    749              while (true) {
+    750                  modem_power_up();
+    751                  /* Modem tends to spit out noise during power up - don't confuse the parser */
+    752                  _at->flush();
+    753                  /* It is mandatory to avoid sending data to the serial port during the first 200 ms
+    754                   * of the module startup. Telit_xE910 Global form factor App note.
+    755                   * Not necessary for all types of modems however. Let's wait just to be on the safe side */
+    756                  wait_ms(200);
+    757                  _at->set_timeout(1000);
+    758                  if (_at->send("AT") && _at->recv("OK")) {
+    759                      tr_info("Modem Ready.");
+    760                      break;
+    761                  }
+    762          
+    763                  if (++retry_count > 10) {
+    764                      goto failure;
+    765                  }
+    766              }
+    767          
+    768              _at->set_timeout(8000);
+    769          
+    770              /*For more details regarding DCD and DTR circuitry, please refer to Modem AT manual */
+    771              success = _at->send("AT"
+    772                                  "E0;" //turn off modem echoing
+    773                                  "+CMEE=2;"//turn on verbose responses
+    774                                  "&K0"//turn off RTC/CTS handshaking
+    775                                  "+IPR=115200;"//setup baud rate
+    776                                  "&C1;"//set DCD circuit(109), changes in accordance with the carrier detect status
+    777                                  "&D0")//set DTR circuit, we ignore the state change of DTR
+    778                        && _at->recv("OK");
+    779          
+    780              if (!success) {
+    781                  goto failure;
+    782              }
+    783          
+    784              /* If everything alright, return from here with success*/
+    785              return success;
+    786          
+    787          failure:
+    788              tr_error("Preliminary modem setup failed.");
+    789              return false;
+    790          }
+    791          
+    792          /**
+    793           * Get a pointer to the underlying network stack
+    794           */
+    795          NetworkStack *PPPCellularInterface::get_stack()
+    796          {
+    797              return nsapi_ppp_get_stack();
+    798          }
+    799          
+    800          #endif // NSAPI_PPP_AVAILABLE
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+         8   -- Indirect call
+       0   mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+       0   mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+      12   mbed::callback<>(void (*)(void *), void *)
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+       2  mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+      10  mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+      32  mbed::callback<>(void (*)(void *), void *)
+      12  ops
+     292  -- Other
+
+ 
+ 304 bytes in section .rodata
+  56 bytes in section .text
+ 
+ 0 bytes of CODE  memory (+  56 bytes shared)
+ 0 bytes of CONST memory (+ 304 bytes shared)
+
+Errors: none
+Warnings: none

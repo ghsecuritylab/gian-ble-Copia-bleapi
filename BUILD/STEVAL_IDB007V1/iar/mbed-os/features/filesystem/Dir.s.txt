@@ -1,0 +1,664 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:10
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\filesystem\Dir.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\Dir.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\Dir.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\Dir.o
+#        .\mbed-os\features\filesystem\Dir.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\Dir.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\Dir.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\filesystem\Dir.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2015 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          
+     17          #include "Dir.h"
+
+   \                                 In section .rodata, align 4
+   \   __absolute mbed::Callback<void ()>::ops const mbed::Callback<void ()>::generate<>(mbed::Callback<void ()>::function_context<void (*)(void *), void> const &)::ops
+   \                     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops:
+   \   00000000   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv
+   \   00000004   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv
+   \   00000008   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x0001             MOVS     R1,R0
+   \   00000004   0x6848             LDR      R0,[R1, #+4]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD001             BEQ      ??function_move_0
+   \   00000004   0xC90C             LDM      R1!,{R2,R3}
+   \   00000006   0xC00C             STM      R0!,{R2,R3}
+   \                     ??function_move_0: (+1)
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void mbed::callback<>(void (*)(void *), void *)
+   \                     _ZN4mbed8callbackIvvvEENS_8CallbackIFT1_vEEEPFS2_PT_EPT0_: (+1)
+   \   00000000   0xB470             PUSH     {R4-R6}
+   \   00000002   0x2300             MOVS     R3,#+0
+   \   00000004   0x2400             MOVS     R4,#+0
+   \   00000006   0x2500             MOVS     R5,#+0
+   \   00000008   0x2600             MOVS     R6,#+0
+   \   0000000A   0xC078             STM      R0!,{R3-R6}
+   \   0000000C   0x3810             SUBS     R0,R0,#+16
+   \   0000000E   0xD001             BEQ      ??callback_0
+   \   00000010   0x6001             STR      R1,[R0, #+0]
+   \   00000012   0x6042             STR      R2,[R0, #+4]
+   \                     ??callback_0: (+1)
+   \   00000014   0x4901             LDR      R1,??callback_1
+   \   00000016   0x60C1             STR      R1,[R0, #+12]
+   \   00000018   0xBC70             POP      {R4-R6}
+   \   0000001A   0x4770             BX       LR               ;; return
+   \                     ??callback_1:
+   \   0000001C   0x........         DC32     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::DirHandle::closedir()
+   \                     _ZN4mbed9DirHandle8closedirEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x68C9             LDR      R1,[R1, #+12]
+   \   00000006   0x4788             BLX      R1
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp dirent *mbed::DirHandle::readdir()
+   \                     _ZN4mbed9DirHandle7readdirEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x4C05             LDR      R4,??readdir_0
+   \   00000004   0x0021             MOVS     R1,R4
+   \   00000006   0x6802             LDR      R2,[R0, #+0]
+   \   00000008   0x6892             LDR      R2,[R2, #+8]
+   \   0000000A   0x4790             BLX      R2
+   \   0000000C   0x2801             CMP      R0,#+1
+   \   0000000E   0xDA00             BGE      ??readdir_1
+   \   00000010   0x2400             MOVS     R4,#+0
+   \                     ??readdir_1: (+1)
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0xBD10             POP      {R4,PC}          ;; return
+   \   00000016   0xBF00             Nop      
+   \                     ??readdir_0:
+   \   00000018   0x........         DC32     _ZZN4mbed9DirHandle7readdirEvE3ent
+
+   \                                 In section .bss, align 4
+   \   __absolute dirent mbed::DirHandle::readdir()::ent
+   \                     _ZZN4mbed9DirHandle7readdirEvE3ent:
+   \   00000000                      DS8 260
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::DirHandle::rewinddir()
+   \                     _ZN4mbed9DirHandle9rewinddirEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x6989             LDR      R1,[R1, #+24]
+   \   00000006   0x4788             BLX      R1
+   \   00000008   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp off_t mbed::DirHandle::telldir()
+   \                     _ZN4mbed9DirHandle7telldirEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x6949             LDR      R1,[R1, #+20]
+   \   00000006   0x4788             BLX      R1
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::DirHandle::seekdir(off_t)
+   \                     _ZN4mbed9DirHandle7seekdirEl: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6802             LDR      R2,[R0, #+0]
+   \   00000004   0x6912             LDR      R2,[R2, #+16]
+   \   00000006   0x4790             BLX      R2
+   \   00000008   0xBD01             POP      {R0,PC}          ;; return
+     18          #include "mbed.h"
+     19          #include <errno.h>
+     20          
+     21          
+
+   \                                 In section .text, align 2, keep-with-next
+     22          Dir::Dir()
+   \                     _ZN4mbed3DirC1Ev: (+1)
+   \   00000000   0xBF00             Nop      
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable10
+   \   00000002   0x6001             STR      R1,[R0, #+0]
+     23              : _fs(0), _dir(0)
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x6041             STR      R1,[R0, #+4]
+   \   00000008   0x6081             STR      R1,[R0, #+8]
+     24          {
+     25          }
+   \   0000000A   0x4770             BX       LR               ;; return
+     26          
+
+   \                                 In section .text, align 2, keep-with-next
+     27          Dir::Dir(FileSystem *fs, const char *path)
+   \                     _ZN4mbed3DirC1EPNS_10FileSystemEPKc: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine1
+   \   00000002                      ;; // Fall through to label ?Subroutine1
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine1: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x....             LDR      R0,??DataTable10
+   \   00000004   0x6020             STR      R0,[R4, #+0]
+     28              : _fs(0), _dir(0)
+   \   00000006   0x2000             MOVS     R0,#+0
+   \   00000008   0x6060             STR      R0,[R4, #+4]
+   \   0000000A   0x60A0             STR      R0,[R4, #+8]
+     29          {
+     30              open(fs, path);
+   \   0000000C   0x0020             MOVS     R0,R4
+   \   0000000E   0x.... 0x....      BL       _ZN4mbed3Dir4openEPNS_10FileSystemEPKc
+     31          }
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0xBD10             POP      {R4,PC}          ;; return
+     32          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::Dir::deleter ~Dir()
+   \                     _ZN4mbed3DirD0Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x....             LDR      R0,??DataTable10
+   \   00000006   0x6020             STR      R0,[R4, #+0]
+   \   00000008   0x6860             LDR      R0,[R4, #+4]
+   \   0000000A   0x2800             CMP      R0,#+0
+   \   0000000C   0xD002             BEQ      `??deleter ~Dir_0`
+   \   0000000E   0x0020             MOVS     R0,R4
+   \   00000010   0x.... 0x....      BL       _ZN4mbed3Dir5closeEv
+   \                     `??deleter ~Dir_0`: (+1)
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x.... 0x....      BL       _ZdlPv
+   \   0000001A   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     33          Dir::~Dir()
+   \                     _ZN4mbed3DirD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine2
+   \   00000002                      ;; // Fall through to label ?Subroutine2
+
+   \                                 In section .text, align 2, keep-with-next
+     34          {
+   \                     ?Subroutine2: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x....             LDR      R0,??DataTable10
+   \   00000004   0x6020             STR      R0,[R4, #+0]
+     35              if (_fs) {
+   \   00000006   0x6860             LDR      R0,[R4, #+4]
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD002             BEQ      ??Subroutine2_0
+     36                  close();
+   \   0000000C   0x0020             MOVS     R0,R4
+   \   0000000E   0x.... 0x....      BL       _ZN4mbed3Dir5closeEv
+     37              }
+     38          }
+   \                     ??Subroutine2_0: (+1)
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0xBD10             POP      {R4,PC}          ;; return
+     39          
+
+   \                                 In section .text, align 2, keep-with-next
+     40          int Dir::open(FileSystem *fs, const char *path)
+     41          {
+   \                     _ZN4mbed3Dir4openEPNS_10FileSystemEPKc: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+     42              if (_fs) {
+   \   00000006   0x6868             LDR      R0,[R5, #+4]
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD002             BEQ      ??open_0
+     43                  return -EINVAL;
+   \   0000000C   0x2015             MOVS     R0,#+21
+   \   0000000E   0x43C0             MVNS     R0,R0            ;; #-22
+   \   00000010   0xBD32             POP      {R1,R4,R5,PC}
+     44              }
+     45          
+     46              int err = fs->dir_open(&_dir, path);
+   \                     ??open_0: (+1)
+   \   00000012   0x0029             MOVS     R1,R5
+   \   00000014   0x3108             ADDS     R1,R1,#+8
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0x6823             LDR      R3,[R4, #+0]
+   \   0000001A   0x6D5B             LDR      R3,[R3, #+84]
+   \   0000001C   0x4798             BLX      R3
+     47              if (!err) {
+   \   0000001E   0x2800             CMP      R0,#+0
+   \   00000020   0xD100             BNE      ??open_1
+     48                  _fs = fs;
+   \   00000022   0x606C             STR      R4,[R5, #+4]
+     49              }
+     50          
+     51              return err;
+   \                     ??open_1: (+1)
+   \   00000024   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+     52          }
+     53          
+
+   \                                 In section .text, align 2, keep-with-next
+     54          int Dir::close()
+     55          {
+   \                     _ZN4mbed3Dir5closeEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     56              if (!_fs) {
+   \   00000004   0x6860             LDR      R0,[R4, #+4]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD102             BNE      ??close_0
+     57                  return -EINVAL;
+   \   0000000A   0x2015             MOVS     R0,#+21
+   \   0000000C   0x43C0             MVNS     R0,R0            ;; #-22
+   \   0000000E   0xBD10             POP      {R4,PC}
+     58              }
+     59          
+     60              int err = _fs->dir_close(_dir);
+   \                     ??close_0: (+1)
+   \   00000010   0x68A1             LDR      R1,[R4, #+8]
+   \   00000012   0x6802             LDR      R2,[R0, #+0]
+   \   00000014   0x6D92             LDR      R2,[R2, #+88]
+   \   00000016   0x4790             BLX      R2
+     61              _fs = 0;
+   \   00000018   0x2100             MOVS     R1,#+0
+   \   0000001A   0x6061             STR      R1,[R4, #+4]
+     62              return err;
+   \   0000001C   0xBD10             POP      {R4,PC}          ;; return
+     63          }
+     64          
+
+   \                                 In section .text, align 4, keep-with-next
+     65          ssize_t Dir::read(struct dirent *ent)
+     66          {
+   \                     _ZN4mbed3Dir4readEP6dirent: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     67              MBED_ASSERT(_fs);
+   \   00000006   0x6860             LDR      R0,[R4, #+4]
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD105             BNE      ??read_0
+   \   0000000C   0x2243             MOVS     R2,#+67
+   \   0000000E   0xBF00             Nop      
+   \   00000010   0x....             ADR.N    R1,?_1
+   \   00000012   0x....             ADR      R0,??DataTable10_1  ;; "_fs"
+   \   00000014   0x.... 0x....      BL       mbed_assert_internal
+     68              memset(ent, 0, sizeof(struct dirent));
+   \                     ??read_0: (+1)
+   \   00000018   0x21FF             MOVS     R1,#+255
+   \   0000001A   0x1C89             ADDS     R1,R1,#+2        ;; #+257
+   \   0000001C   0x0028             MOVS     R0,R5
+   \   0000001E   0x.... 0x....      BL       __aeabi_memclr
+     69              return _fs->dir_read(_dir, ent);
+   \   00000022   0x6860             LDR      R0,[R4, #+4]
+   \   00000024   0x002A             MOVS     R2,R5
+   \   00000026   0x68A1             LDR      R1,[R4, #+8]
+   \   00000028   0x6803             LDR      R3,[R0, #+0]
+   \   0000002A   0x6DDB             LDR      R3,[R3, #+92]
+   \   0000002C   0x4798             BLX      R3
+   \   0000002E   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+     70          }
+     71          
+
+   \                                 In section .text, align 4, keep-with-next
+     72          void Dir::seek(off_t offset)
+     73          {
+   \                     _ZN4mbed3Dir4seekEl: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     74              MBED_ASSERT(_fs);
+   \   00000006   0x6860             LDR      R0,[R4, #+4]
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD105             BNE      ??seek_0
+   \   0000000C   0x224A             MOVS     R2,#+74
+   \   0000000E   0xBF00             Nop      
+   \   00000010   0x....             ADR.N    R1,?_1
+   \   00000012   0x....             ADR      R0,??DataTable10_1  ;; "_fs"
+   \   00000014   0x.... 0x....      BL       mbed_assert_internal
+     75              return _fs->dir_seek(_dir, offset);
+   \                     ??seek_0: (+1)
+   \   00000018   0x6860             LDR      R0,[R4, #+4]
+   \   0000001A   0x002A             MOVS     R2,R5
+   \   0000001C   0x68A1             LDR      R1,[R4, #+8]
+   \   0000001E   0x6803             LDR      R3,[R0, #+0]
+   \   00000020   0x6E1B             LDR      R3,[R3, #+96]
+   \   00000022   0x4798             BLX      R3
+   \   00000024   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     76          }
+     77          
+
+   \                                 In section .text, align 4, keep-with-next
+     78          off_t Dir::tell()
+     79          {
+   \                     _ZN4mbed3Dir4tellEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     80              MBED_ASSERT(_fs);
+   \   00000004   0x6860             LDR      R0,[R4, #+4]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD104             BNE      ??tell_0
+   \   0000000A   0x2250             MOVS     R2,#+80
+   \   0000000C   0x....             ADR.N    R1,?_1
+   \   0000000E   0x....             ADR      R0,??DataTable10_1  ;; "_fs"
+   \   00000010   0x.... 0x....      BL       mbed_assert_internal
+     81              return _fs->dir_tell(_dir);
+   \                     ??tell_0: (+1)
+   \   00000014   0x6860             LDR      R0,[R4, #+4]
+   \   00000016   0x68A1             LDR      R1,[R4, #+8]
+   \   00000018   0x6802             LDR      R2,[R0, #+0]
+   \   0000001A   0x6E52             LDR      R2,[R2, #+100]
+   \   0000001C   0x4790             BLX      R2
+   \   0000001E   0xBD10             POP      {R4,PC}          ;; return
+     82          }
+     83          
+
+   \                                 In section .text, align 4, keep-with-next
+     84          void Dir::rewind()
+     85          {
+   \                     _ZN4mbed3Dir6rewindEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     86              MBED_ASSERT(_fs);
+   \   00000004   0x6860             LDR      R0,[R4, #+4]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD104             BNE      ??rewind_0
+   \   0000000A   0x2256             MOVS     R2,#+86
+   \   0000000C   0x....             ADR.N    R1,?_1
+   \   0000000E   0x....             ADR      R0,??DataTable10_1  ;; "_fs"
+   \   00000010   0x.... 0x....      BL       mbed_assert_internal
+     87              return _fs->dir_rewind(_dir);
+   \                     ??rewind_0: (+1)
+   \   00000014   0x6860             LDR      R0,[R4, #+4]
+   \   00000016   0x68A1             LDR      R1,[R4, #+8]
+   \   00000018   0x6802             LDR      R2,[R0, #+0]
+   \   0000001A   0x6E92             LDR      R2,[R2, #+104]
+   \   0000001C   0x4790             BLX      R2
+   \   0000001E   0xBD10             POP      {R4,PC}          ;; return
+     88          }
+     89          
+
+   \                                 In section .text, align 4, keep-with-next
+     90          size_t Dir::size()
+     91          {
+   \                     _ZN4mbed3Dir4sizeEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     92              MBED_ASSERT(_fs);
+   \   00000004   0x6860             LDR      R0,[R4, #+4]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD104             BNE      ??size_0
+   \   0000000A   0x225C             MOVS     R2,#+92
+   \   0000000C   0x....             ADR.N    R1,?_1
+   \   0000000E   0x....             ADR      R0,??DataTable10_1  ;; "_fs"
+   \   00000010   0x.... 0x....      BL       mbed_assert_internal
+     93              return _fs->dir_size(_dir);
+   \                     ??size_0: (+1)
+   \   00000014   0x6860             LDR      R0,[R4, #+4]
+   \   00000016   0x68A1             LDR      R1,[R4, #+8]
+   \   00000018   0x6802             LDR      R2,[R0, #+0]
+   \   0000001A   0x6ED2             LDR      R2,[R2, #+108]
+   \   0000001C   0x4790             BLX      R2
+   \   0000001E   0xBD10             POP      {R4,PC}          ;; return
+     94          }
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x5F 0x66          DC8 "_fs"
+   \              0x73 0x00    
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::Dir::subobject Dir()
+   \                     _ZN4mbed3DirC2Ev: (+1)
+   \   00000000   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::Dir::subobject Dir(mbed::FileSystem *, char const *)
+   \                     _ZN4mbed3DirC2EPNS_10FileSystemEPKc: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine1
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::Dir::subobject ~Dir()
+   \                     _ZN4mbed3DirD2Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine2
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable10:
+   \   00000000   0x........         DC32     _ZTVN4mbed3DirE+0x8
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable10_1:
+   \   00000000   0x5F 0x66          DC8      "_fs"
+   \              0x73 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x2E 0x5C          DC8 ".\\mbed-os\\features\\filesystem\\Dir.cpp"
+   \              0x6D 0x62    
+   \              0x65 0x64    
+   \              0x2D 0x6F    
+   \              0x73 0x5C    
+   \              0x66 0x65    
+   \              0x61 0x74    
+   \              0x75 0x72    
+   \              0x65 0x73    
+   \              0x5C 0x66    
+   \              0x69 0x6C    
+   \              0x65 0x73    
+   \              0x79 0x73    
+   \              0x74 0x65    
+   \              0x6D 0x5C    
+   \              0x44 0x69    
+   \              0x72 0x2E    
+   \              0x63 0x70    
+   \              0x70 0x00    
+   \   00000026   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+         8   -- Indirect call
+       0   mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+       0   mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+       0   mbed::Dir::Dir()
+       0   mbed::Dir::Dir(mbed::FileSystem *, char const *)
+         8   -> mbed::Dir::open(mbed::FileSystem *, char const *)
+       8   mbed::Dir::close()
+         8   -- Indirect call
+       8   mbed::Dir::deleter ~Dir()
+         8   -> mbed::Dir::close()
+         8   -> operator delete(void *)
+      16   mbed::Dir::open(mbed::FileSystem *, char const *)
+        16   -- Indirect call
+      16   mbed::Dir::read(dirent *)
+        16   -- Indirect call
+        16   -> __aeabi_memclr
+        16   -> mbed_assert_internal
+       8   mbed::Dir::rewind()
+         8   -- Indirect call
+         8   -> mbed_assert_internal
+      16   mbed::Dir::seek(off_t)
+        16   -- Indirect call
+        16   -> mbed_assert_internal
+       8   mbed::Dir::size()
+         8   -- Indirect call
+         8   -> mbed_assert_internal
+       0   mbed::Dir::subobject Dir()
+       8   mbed::Dir::subobject Dir(mbed::FileSystem *, char const *)
+         8   -> mbed::Dir::open(mbed::FileSystem *, char const *)
+       8   mbed::Dir::subobject ~Dir()
+         8   -> mbed::Dir::close()
+       8   mbed::Dir::tell()
+         8   -- Indirect call
+         8   -> mbed_assert_internal
+       0   mbed::Dir::~Dir()
+         8   -> mbed::Dir::close()
+       8   mbed::DirHandle::closedir()
+         8   -- Indirect call
+       8   mbed::DirHandle::readdir()
+         8   -- Indirect call
+       8   mbed::DirHandle::rewinddir()
+         8   -- Indirect call
+       8   mbed::DirHandle::seekdir(off_t)
+         8   -- Indirect call
+       8   mbed::DirHandle::telldir()
+         8   -- Indirect call
+      12   mbed::callback<>(void (*)(void *), void *)
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+       4  ??DataTable10_1
+      12  ?Subroutine0
+      22  ?Subroutine1
+      22  ?Subroutine2
+       4  ?_0
+      40  ?_1
+     260  ent
+      12  mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+       2  mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+      10  mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+       2  mbed::Dir::Dir()
+       2  mbed::Dir::Dir(mbed::FileSystem *, char const *)
+      30  mbed::Dir::close()
+      28  mbed::Dir::deleter ~Dir()
+      38  mbed::Dir::open(mbed::FileSystem *, char const *)
+      48  mbed::Dir::read(dirent *)
+      32  mbed::Dir::rewind()
+      38  mbed::Dir::seek(off_t)
+      32  mbed::Dir::size()
+       2  mbed::Dir::subobject Dir()
+       4  mbed::Dir::subobject Dir(mbed::FileSystem *, char const *)
+       4  mbed::Dir::subobject ~Dir()
+      32  mbed::Dir::tell()
+       2  mbed::Dir::~Dir()
+      10  mbed::DirHandle::closedir()
+      28  mbed::DirHandle::readdir()
+      10  mbed::DirHandle::rewinddir()
+      10  mbed::DirHandle::seekdir(off_t)
+      10  mbed::DirHandle::telldir()
+      32  mbed::callback<>(void (*)(void *), void *)
+      12  ops
+     424  -- Other
+
+ 
+ 260 bytes in section .bss
+ 440 bytes in section .rodata
+ 522 bytes in section .text
+ 
+ 398 bytes of CODE  memory (+ 124 bytes shared)
+   4 bytes of CONST memory (+ 436 bytes shared)
+   0 bytes of DATA  memory (+ 260 bytes shared)
+
+Errors: none
+Warnings: none

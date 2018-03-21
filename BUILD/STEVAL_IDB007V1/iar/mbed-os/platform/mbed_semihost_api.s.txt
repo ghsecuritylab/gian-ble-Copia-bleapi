@@ -1,0 +1,255 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:47
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\platform\mbed_semihost_api.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_semihost_api.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_semihost_api.s.txt
+#        -o .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_semihost_api.o
+#        .\mbed-os\platform\mbed_semihost_api.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_semihost_api.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_semihost_api.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\platform\mbed_semihost_api.c
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "cmsis.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     17          #include "platform/mbed_semihost_api.h"
+     18          
+     19          #include <stdint.h>
+     20          #include <string.h>
+     21          
+     22          #if DEVICE_SEMIHOST
+     23          
+     24          // ARM Semihosting Commands
+     25          #define SYS_OPEN   (0x1)
+     26          #define SYS_CLOSE  (0x2)
+     27          #define SYS_WRITE  (0x5)
+     28          #define SYS_READ   (0x6)
+     29          #define SYS_ISTTY  (0x9)
+     30          #define SYS_SEEK   (0xa)
+     31          #define SYS_ENSURE (0xb)
+     32          #define SYS_FLEN   (0xc)
+     33          #define SYS_REMOVE (0xe)
+     34          #define SYS_RENAME (0xf)
+     35          #define SYS_EXIT   (0x18)
+     36          
+     37          // mbed Semihosting Commands
+     38          #define RESERVED_FOR_USER_APPLICATIONS (0x100) // 0x100 - 0x1ff
+     39          #define USR_XFFIND      (RESERVED_FOR_USER_APPLICATIONS + 0)
+     40          #define USR_UID      (RESERVED_FOR_USER_APPLICATIONS + 1)
+     41          #define USR_RESET     (RESERVED_FOR_USER_APPLICATIONS + 2)
+     42          #define USR_VBUS     (RESERVED_FOR_USER_APPLICATIONS + 3)
+     43          #define USR_POWERDOWN     (RESERVED_FOR_USER_APPLICATIONS + 4)
+     44          #define USR_DISABLEDEBUG (RESERVED_FOR_USER_APPLICATIONS + 5)
+     45          
+     46          #if DEVICE_LOCALFILESYSTEM
+     47          FILEHANDLE semihost_open(const char* name, int openmode) {
+     48              uint32_t args[3];
+     49              args[0] = (uint32_t)name;
+     50              args[1] = (uint32_t)openmode;
+     51              args[2] = (uint32_t)strlen(name);
+     52              return __semihost(SYS_OPEN, args);
+     53          }
+     54          
+     55          int semihost_close(FILEHANDLE fh) {
+     56              return __semihost(SYS_CLOSE, &fh);
+     57          }
+     58          
+     59          int semihost_write(FILEHANDLE fh, const unsigned char* buffer, unsigned int length, int mode) {
+     60              if (length == 0) return 0;
+     61          
+     62              uint32_t args[3];
+     63              args[0] = (uint32_t)fh;
+     64              args[1] = (uint32_t)buffer;
+     65              args[2] = (uint32_t)length;
+     66              return __semihost(SYS_WRITE, args);
+     67          }
+     68          
+     69          int semihost_read(FILEHANDLE fh, unsigned char* buffer, unsigned int length, int mode) {
+     70              uint32_t args[3];
+     71              args[0] = (uint32_t)fh;
+     72              args[1] = (uint32_t)buffer;
+     73              args[2] = (uint32_t)length;
+     74              return __semihost(SYS_READ, args);
+     75          }
+     76          
+     77          int semihost_istty(FILEHANDLE fh) {
+     78              return __semihost(SYS_ISTTY, &fh);
+     79          }
+     80          
+     81          int semihost_seek(FILEHANDLE fh, long position) {
+     82              uint32_t args[2];
+     83              args[0] = (uint32_t)fh;
+     84              args[1] = (uint32_t)position;
+     85              return __semihost(SYS_SEEK, args);
+     86          }
+     87          
+     88          int semihost_ensure(FILEHANDLE fh) {
+     89              return __semihost(SYS_ENSURE, &fh);
+     90          }
+     91          
+     92          long semihost_flen(FILEHANDLE fh) {
+     93              return __semihost(SYS_FLEN, &fh);
+     94          }
+     95          
+     96          int semihost_remove(const char *name) {
+     97              uint32_t args[2];
+     98              args[0] = (uint32_t)name;
+     99              args[1] = (uint32_t)strlen(name);
+    100              return __semihost(SYS_REMOVE, args);
+    101          }
+    102          
+    103          int semihost_rename(const char *old_name, const char *new_name) {
+    104              uint32_t args[4];
+    105              args[0] = (uint32_t)old_name;
+    106              args[1] = (uint32_t)strlen(old_name);
+    107              args[0] = (uint32_t)new_name;
+    108              args[1] = (uint32_t)strlen(new_name);
+    109              return __semihost(SYS_RENAME, args);
+    110          }
+    111          #endif
+    112          
+    113          int semihost_exit(void) {
+    114              uint32_t args[4];
+    115              return __semihost(SYS_EXIT, args);
+    116          }
+    117          
+    118          int semihost_uid(char *uid) {
+    119              uint32_t args[2];
+    120              args[0] = (uint32_t)uid;
+    121              args[1] = DEVICE_ID_LENGTH + 1;
+    122              return __semihost(USR_UID, &args);
+    123          }
+    124          
+    125          int semihost_reset(void) {
+    126              // Does not normally return, however if used with older firmware versions
+    127              // that do not support this call it will return -1.
+    128              return __semihost(USR_RESET, NULL);
+    129          }
+    130          
+    131          int semihost_vbus(void) {
+    132              return __semihost(USR_VBUS, NULL);
+    133          }
+    134          
+    135          int semihost_powerdown(void) {
+    136              return __semihost(USR_POWERDOWN, NULL);
+    137          }
+    138          
+    139          #if DEVICE_DEBUG_AWARENESS
+    140          
+    141          int semihost_connected(void) {
+    142              return (CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) ? 1 : 0;
+    143          }
+    144          
+    145          #else
+    146          // These processors cannot know if the interface is connect, assume so:
+    147          static int is_debugger_attached = 1;
+    148          
+    149          int semihost_connected(void) {
+    150              return is_debugger_attached;
+    151          }
+    152          #endif
+    153          
+    154          int semihost_disabledebug(void) {
+    155              uint32_t args[1];
+    156          #if !(DEVICE_DEBUG_AWARENESS)
+    157              is_debugger_attached = 0;
+    158          #endif
+    159              return __semihost(USR_DISABLEDEBUG, &args);
+    160          }
+    161          
+    162          #endif
+    163          
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: 1

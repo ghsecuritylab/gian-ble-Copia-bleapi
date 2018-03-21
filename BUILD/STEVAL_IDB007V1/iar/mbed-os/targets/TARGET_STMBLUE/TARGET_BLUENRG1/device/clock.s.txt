@@ -1,0 +1,277 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:59
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        .\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\clock.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\clock.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\clock.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\clock.o
+#        .\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\clock.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\clock.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\clock.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\clock.c
+      1          /**
+      2          ******************************************************************************
+      3          * @file    clock.c 
+      4          * @author  AMS - VMA RF Application Team
+      5          * @version V1.0.0
+      6          * @date    14-September-2015
+      7          * @brief   clock APIs based on SySTick
+      8          ******************************************************************************
+      9          * @attention
+     10          *
+     11          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     12          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     13          * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     14          * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     15          * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     16          * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     17          *
+     18          * <h2><center>&copy; COPYRIGHT 2015 STMicroelectronics</center></h2>
+     19          ******************************************************************************
+     20          */ 
+     21          /* Includes ------------------------------------------------------------------*/
+     22          #include "clock.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     23          //#ifdef blue
+     24          #include "BlueNRG_x_device.h"
+     25          //#include "BlueNRG1_conf.h"
+     26          
+     27          
+     28          /** @addtogroup BlueNRG1_StdPeriph_Examples
+     29          * @{
+     30          */
+     31          
+     32          /** @addtogroup UART Interrupt Example
+     33          * @{
+     34          */
+     35          
+     36          /* Private typedef -----------------------------------------------------------*/
+     37          /* Private define ------------------------------------------------------------*/
+     38          
+     39          #if (HS_SPEED_XTAL == HS_SPEED_XTAL_32MHZ)
+     40            #define SYSCLK_FREQ 	32000000            /* System clock frequency */ 
+     41          #elif (HS_SPEED_XTAL == HS_SPEED_XTAL_16MHZ)
+     42             #define SYSCLK_FREQ 	16000000            /* System clock frequency */ 
+     43          #else
+     44          #error "No definition for SYSCLK_FREQ"
+     45          #endif
+     46          
+     47          /* Private macro -------------------------------------------------------------*/
+     48          /* Private variables ---------------------------------------------------------*/
+
+   \                                 In section .bss, align 4
+     49          static volatile tClockTime sys_tick_count;
+   \                     sys_tick_count:
+   \   00000000                      DS8 4
+
+   \                                 In section .rodata, align 4, keep-with-next
+     50          const tClockTime CLOCK_SECOND = 1000;
+   \                     CLOCK_SECOND:
+   \   00000000   0x000003E8         DC32 1000
+     51          
+     52          /*---------------------------------------------------------------------------*/
+
+   \                                 In section .text, align 2, keep-with-next
+     53          void SysCount_Handler(void) 
+     54          {
+     55            sys_tick_count++;
+   \                     SysCount_Handler: (+1)
+   \   00000000   0x....             LDR      R0,??DataTable4
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x1C49             ADDS     R1,R1,#+1
+   \   00000006   0x6001             STR      R1,[R0, #+0]
+     56          }
+   \   00000008   0x4770             BX       LR               ;; return
+     57          
+     58          /*---------------------------------------------------------------------------*/
+     59          
+
+   \                                 In section .text, align 2, keep-with-next
+     60          void Clock_Init(void)
+     61          {
+     62            /** Configure SysTick to generate Interrupt with 1ms period */
+     63            SysTick_Config(SYSCLK_FREQ/1000 - 1);
+   \                     Clock_Init: (+1)
+   \   00000000   0x....             LDR      R0,??DataTable4_1  ;; 0xe000e010
+   \   00000002   0x....             LDR      R1,??DataTable4_2  ;; 0x3e7e
+   \   00000004   0x6041             STR      R1,[R0, #+4]
+   \   00000006   0x....             LDR      R1,??DataTable4_3  ;; 0xe000ed20
+   \   00000008   0x680A             LDR      R2,[R1, #+0]
+   \   0000000A   0x0212             LSLS     R2,R2,#+8
+   \   0000000C   0x0A12             LSRS     R2,R2,#+8
+   \   0000000E   0x23C0             MOVS     R3,#+192
+   \   00000010   0x061B             LSLS     R3,R3,#+24       ;; #-1073741824
+   \   00000012   0x4313             ORRS     R3,R3,R2
+   \   00000014   0x600B             STR      R3,[R1, #+0]
+   \   00000016   0x2100             MOVS     R1,#+0
+   \   00000018   0x6081             STR      R1,[R0, #+8]
+   \   0000001A   0x2107             MOVS     R1,#+7
+   \   0000001C   0x6001             STR      R1,[R0, #+0]
+     64          }
+   \   0000001E   0x4770             BX       LR               ;; return
+     65          
+     66          /*---------------------------------------------------------------------------*/
+     67          
+
+   \                                 In section .text, align 2, keep-with-next
+     68          tClockTime Clock_Time(void)
+     69          {
+     70            return sys_tick_count;
+   \                     Clock_Time: (+1)
+   \   00000000   0x....             LDR      R0,??DataTable4
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x4770             BX       LR               ;; return
+     71          }
+     72          
+     73          /*---------------------------------------------------------------------------*/
+     74          /**
+     75           * Wait for a multiple of 1 ms.
+     76           *
+     77           */
+
+   \                                 In section .text, align 2, keep-with-next
+     78          void Clock_Wait(uint32_t i)
+     79          {
+     80            tClockTime start;
+     81          
+     82            start = Clock_Time();
+   \                     Clock_Wait: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable4
+   \   00000002   0x680A             LDR      R2,[R1, #+0]
+     83            while(Clock_Time() - start < (tClockTime)i);
+   \                     ??Clock_Wait_0: (+1)
+   \   00000004   0x680B             LDR      R3,[R1, #+0]
+   \   00000006   0x1A9B             SUBS     R3,R3,R2
+   \   00000008   0x4283             CMP      R3,R0
+   \   0000000A   0xD3FB             BCC      ??Clock_Wait_0
+     84          }
+   \   0000000C   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4:
+   \   00000000   0x........         DC32     sys_tick_count
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_1:
+   \   00000000   0xE000E010         DC32     0xe000e010
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_2:
+   \   00000000   0x00003E7E         DC32     0x3e7e
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_3:
+   \   00000000   0xE000ED20         DC32     0xe000ed20
+     85          /*---------------------------------------------------------------------------*/
+     86          //#endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   Clock_Init
+       0   Clock_Time
+       0   Clock_Wait
+       0   SysCount_Handler
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_2
+       4  ??DataTable4_3
+       4  CLOCK_SECOND
+      32  Clock_Init
+       6  Clock_Time
+      14  Clock_Wait
+      10  SysCount_Handler
+       4  sys_tick_count
+
+ 
+  4 bytes in section .bss
+  4 bytes in section .rodata
+ 78 bytes in section .text
+ 
+ 78 bytes of CODE  memory
+  4 bytes of CONST memory
+  4 bytes of DATA  memory
+
+Errors: none
+Warnings: 1

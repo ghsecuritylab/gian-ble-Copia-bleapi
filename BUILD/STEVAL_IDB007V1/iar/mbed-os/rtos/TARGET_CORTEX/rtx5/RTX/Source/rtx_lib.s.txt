@@ -1,0 +1,849 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:52
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_lib.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_lib.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_lib.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_lib.o
+#        .\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_lib.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_lib.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_lib.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_lib.c
+      1          /*
+      2           * Copyright (c) 2013-2017 ARM Limited. All rights reserved.
+      3           *
+      4           * SPDX-License-Identifier: Apache-2.0
+      5           *
+      6           * Licensed under the Apache License, Version 2.0 (the License); you may
+      7           * not use this file except in compliance with the License.
+      8           * You may obtain a copy of the License at
+      9           *
+     10           * www.apache.org/licenses/LICENSE-2.0
+     11           *
+     12           * Unless required by applicable law or agreed to in writing, software
+     13           * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+     14           * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     15           * See the License for the specific language governing permissions and
+     16           * limitations under the License.
+     17           *
+     18           * -----------------------------------------------------------------------------
+     19           *
+     20           * Project:     CMSIS-RTOS RTX
+     21           * Title:       RTX Library Configuration
+     22           *
+     23           * -----------------------------------------------------------------------------
+     24           */
+     25          
+     26          #include "cmsis_compiler.h"
+     27          #include "rtx_os.h"
+     28          #include "RTX_Config.h"
+     29          
+     30          
+     31          // System Configuration
+     32          // ====================
+     33          
+     34          // Dynamic Memory
+     35          #if (OS_DYNAMIC_MEM_SIZE != 0)
+     36          #if ((OS_DYNAMIC_MEM_SIZE & 7) != 0)
+     37          #error "Invalid Dynamic Memory size!"
+     38          #endif
+     39          static uint64_t os_mem[OS_DYNAMIC_MEM_SIZE/8] \
+     40          __attribute__((section(".bss.os")));
+     41          #endif
+     42          
+     43          // Kernel Tick Frequency
+     44          #if (OS_TICK_FREQ < 1)
+     45          #error "Invalid Kernel Tick Frequency!"
+     46          #endif
+     47          
+     48          // ISR FIFO Queue
+
+   \                                 In section .bss.os, align 4
+     49          static void *os_isr_queue[OS_ISR_FIFO_QUEUE] \
+   \                     os_isr_queue:
+   \   00000000                      DS8 64
+     50          __attribute__((section(".bss.os")));
+     51          
+     52          
+     53          // Thread Configuration
+     54          // ====================
+     55          
+     56          #if (((OS_STACK_SIZE & 7) != 0) || (OS_STACK_SIZE < 72))
+     57          #error "Invalid default Thread Stack size!"
+     58          #endif
+     59          
+     60          #if (((OS_IDLE_THREAD_STACK_SIZE & 7) != 0) || (OS_IDLE_THREAD_STACK_SIZE < 72))
+     61          #error "Invalid Idle Thread Stack size!"
+     62          #endif
+     63          
+     64          
+     65          #if (OS_THREAD_OBJ_MEM != 0)
+     66          
+     67          #if (OS_THREAD_NUM == 0)
+     68          #error "Invalid number of user Threads!"
+     69          #endif
+     70          
+     71          #if ((OS_THREAD_USER_STACK_SIZE != 0) && ((OS_THREAD_USER_STACK_SIZE & 7) != 0))
+     72          #error "Invalid total Stack size!"
+     73          #endif
+     74          
+     75          // Thread Control Blocks
+     76          static osRtxThread_t os_thread_cb[OS_THREAD_NUM] \
+     77          __attribute__((section(".bss.os.thread.cb")));
+     78          
+     79          // Thread Default Stack
+     80          #if (OS_THREAD_DEF_STACK_NUM != 0)
+     81          static uint64_t os_thread_def_stack[OS_THREAD_DEF_STACK_NUM*(OS_STACK_SIZE/8)] \
+     82          __attribute__((section(".bss.os.thread.stack")));
+     83          #endif
+     84          
+     85          // Memory Pool for Thread Control Blocks
+     86          static osRtxMpInfo_t os_mpi_thread \
+     87          __attribute__((section(".data.os.thread.mpi"))) =
+     88          { (uint32_t)OS_THREAD_NUM, 0U, (uint32_t)osRtxThreadCbSize, &os_thread_cb, NULL, NULL };
+     89          
+     90          // Memory Pool for Thread Default Stack
+     91          #if (OS_THREAD_DEF_STACK_NUM != 0)
+     92          static osRtxMpInfo_t os_mpi_def_stack \
+     93          __attribute__((section(".data.os.thread.mpi"))) =
+     94          { (uint32_t)OS_THREAD_DEF_STACK_NUM, 0U, (uint32_t)OS_STACK_SIZE, &os_thread_def_stack, NULL, NULL };
+     95          #endif
+     96          
+     97          // Memory Pool for Thread Stack
+     98          #if (OS_THREAD_USER_STACK_SIZE != 0)
+     99          static uint64_t os_thread_stack[OS_THREAD_USER_STACK_SIZE/8] \
+    100          __attribute__((section(".bss.os.thread.stack")));
+    101          #endif
+    102          
+    103          #endif  // (OS_THREAD_OBJ_MEM != 0)
+    104          
+    105          
+    106          // Stack overrun checking
+    107          #if (OS_STACK_CHECK == 0)
+    108          // Override library function
+    109          void osRtxThreadStackCheck (void);
+    110          void osRtxThreadStackCheck (void) {}
+    111          #endif
+    112          
+    113          
+    114          // Idle Thread Control Block
+
+   \                                 In section .bss.os.thread.cb, align 4
+    115          static osRtxThread_t os_idle_thread_cb \
+   \                     os_idle_thread_cb:
+   \   00000000                      DS8 72
+    116          __attribute__((section(".bss.os.thread.cb")));
+    117          
+    118          // Idle Thread Stack
+
+   \                                 In section .bss.os.thread.stack, align 8
+    119          static uint64_t os_idle_thread_stack[OS_IDLE_THREAD_STACK_SIZE/8] \
+   \                     os_idle_thread_stack:
+   \   00000000                      DS8 512
+    120          __attribute__((section(".bss.os.thread.stack")));
+    121          
+    122          // Idle Thread Attributes
+
+   \                                 In section .rodata, align 4, keep-with-next
+    123          static const osThreadAttr_t os_idle_thread_attr = {
+   \                     os_idle_thread_attr:
+   \   00000000   0x00000000         DC32 0H, 0, os_idle_thread_cb, 72, os_idle_thread_stack, 512, 1, 0, 0
+   \              0x00000000   
+   \              0x........   
+   \              0x00000048   
+   \              0x........   
+   \              0x00000200   
+   \              0x00000001   
+   \              0x00000000   
+   \              0x00000000   
+    124            NULL,
+    125            osThreadDetached,
+    126            &os_idle_thread_cb,
+    127            (uint32_t)sizeof(os_idle_thread_cb),
+    128            &os_idle_thread_stack,
+    129            (uint32_t)sizeof(os_idle_thread_stack),
+    130            osPriorityIdle,
+    131            0U, 0U
+    132          };
+    133          
+    134          
+    135          // Timer Configuration
+    136          // ===================
+    137          
+    138          #if (OS_TIMER_OBJ_MEM != 0)
+    139          
+    140          #if (OS_TIMER_NUM == 0)
+    141          #error "Invalid number of Timer objects!"
+    142          #endif
+    143          
+    144          // Timer Control Blocks
+    145          static osRtxTimer_t os_timer_cb[OS_TIMER_NUM] \
+    146          __attribute__((section(".bss.os.timer.cb")));
+    147          
+    148          // Memory Pool for Timer Control Blocks
+    149          static osRtxMpInfo_t os_mpi_timer \
+    150          __attribute__((section(".data.os.timer.mpi"))) =
+    151          { (uint32_t)OS_TIMER_NUM, 0U, (uint32_t)osRtxTimerCbSize, &os_timer_cb, NULL, NULL };
+    152          
+    153          #endif  // (OS_TIMER_OBJ_MEM != 0)
+    154          
+    155          
+    156          #if ((OS_TIMER_THREAD_STACK_SIZE != 0) && (OS_TIMER_CB_QUEUE != 0))
+    157          
+    158          #if (((OS_TIMER_THREAD_STACK_SIZE & 7) != 0) || (OS_TIMER_THREAD_STACK_SIZE < 96))
+    159          #error "Invalid Timer Thread Stack size!"
+    160          #endif
+    161          
+    162          // Timer Thread Control Block
+
+   \                                 In section .bss.os.thread.cb, align 4
+    163          static osRtxThread_t os_timer_thread_cb \
+   \                     os_timer_thread_cb:
+   \   00000000                      DS8 72
+    164          __attribute__((section(".bss.os.thread.cb")));
+    165          
+    166          // Timer Thread Stack
+
+   \                                 In section .bss.os.thread.stack, align 8
+    167          static uint64_t os_timer_thread_stack[OS_TIMER_THREAD_STACK_SIZE/8] \
+   \                     os_timer_thread_stack:
+   \   00000000                      DS8 768
+    168          __attribute__((section(".bss.os.thread.stack")));
+    169          
+    170          // Timer Thread Attributes
+
+   \                                 In section .rodata, align 4, keep-with-next
+    171          static const osThreadAttr_t os_timer_thread_attr = {
+   \                     os_timer_thread_attr:
+   \   00000000   0x00000000         DC32 0H, 0, os_timer_thread_cb, 72, os_timer_thread_stack, 768, 40, 0
+   \              0x00000000   
+   \              0x........   
+   \              0x00000048   
+   \              0x........   
+   \              0x00000300   
+   \              0x00000028   
+   \              0x00000000   
+   \   00000020   0x00000000         DC32 0
+    172            NULL,
+    173            osThreadDetached,
+    174            &os_timer_thread_cb,
+    175            (uint32_t)sizeof(os_timer_thread_cb),
+    176            &os_timer_thread_stack,
+    177            (uint32_t)sizeof(os_timer_thread_stack),
+    178            (osPriority_t)OS_TIMER_THREAD_PRIO,
+    179            0U, 0U
+    180          };
+    181          
+    182          // Timer Message Queue Control Block
+
+   \                                 In section .bss.os.msgqueue.cb, align 4
+    183          static osRtxMessageQueue_t os_timer_mq_cb \
+   \                     os_timer_mq_cb:
+   \   00000000                      DS8 52
+    184          __attribute__((section(".bss.os.msgqueue.cb")));
+    185          
+    186          // Timer Message Queue Data
+
+   \                                 In section .bss.os.msgqueue.mem, align 4
+    187          static uint32_t os_timer_mq_data[osRtxMessageQueueMemSize(OS_TIMER_CB_QUEUE,8)/4] \
+   \                     os_timer_mq_data:
+   \   00000000                      DS8 80
+    188          __attribute__((section(".bss.os.msgqueue.mem")));
+    189          
+    190          // Timer Message Queue Attributes
+
+   \                                 In section .rodata, align 4, keep-with-next
+    191          static const osMessageQueueAttr_t os_timer_mq_attr = {
+   \                     os_timer_mq_attr:
+   \   00000000   0x00000000         DC32 0H, 0, os_timer_mq_cb, 52, os_timer_mq_data, 80
+   \              0x00000000   
+   \              0x........   
+   \              0x00000034   
+   \              0x........   
+   \              0x00000050   
+    192            NULL,
+    193            0U,
+    194            &os_timer_mq_cb,
+    195            (uint32_t)sizeof(os_timer_mq_cb),
+    196            &os_timer_mq_data,
+    197            (uint32_t)sizeof(os_timer_mq_data)
+    198          };
+    199          
+    200          #else
+    201          
+    202          extern void osRtxTimerThread (void *argument);
+    203                 void osRtxTimerThread (void *argument) {}
+    204          
+    205          #endif  // ((OS_TIMER_THREAD_STACK_SIZE != 0) && (OS_TIMER_CB_QUEUE != 0))
+    206          
+    207          
+    208          // Event Flags Configuration
+    209          // =========================
+    210          
+    211          #if (OS_EVFLAGS_OBJ_MEM != 0)
+    212          
+    213          #if (OS_EVFLAGS_NUM == 0)
+    214          #error "Invalid number of Event Flags objects!"
+    215          #endif
+    216          
+    217          // Event Flags Control Blocks
+    218          static osRtxEventFlags_t os_ef_cb[OS_EVFLAGS_NUM] \
+    219          __attribute__((section(".bss.os.evflags.cb")));
+    220          
+    221          // Memory Pool for Event Flags Control Blocks
+    222          static osRtxMpInfo_t os_mpi_ef \
+    223          __attribute__((section(".data.os.evflags.mpi"))) =
+    224          { (uint32_t)OS_EVFLAGS_NUM, 0U, (uint32_t)osRtxEventFlagsCbSize, &os_ef_cb, NULL, NULL };
+    225          
+    226          #endif  // (OS_EVFLAGS_OBJ_MEM != 0)
+    227          
+    228          
+    229          // Mutex Configuration
+    230          // ===================
+    231          
+    232          #if (OS_MUTEX_OBJ_MEM != 0)
+    233          
+    234          #if (OS_MUTEX_NUM == 0)
+    235          #error "Invalid number of Mutex objects!"
+    236          #endif
+    237          
+    238          // Mutex Control Blocks
+    239          static osRtxMutex_t os_mutex_cb[OS_MUTEX_NUM] \
+    240          __attribute__((section(".bss.os.mutex.cb")));
+    241          
+    242          // Memory Pool for Mutex Control Blocks
+    243          static osRtxMpInfo_t os_mpi_mutex \
+    244          __attribute__((section(".data.os.mutex.mpi"))) =
+    245          { (uint32_t)OS_MUTEX_NUM, 0U, (uint32_t)osRtxMutexCbSize, &os_mutex_cb, NULL, NULL };
+    246          
+    247          #endif  // (OS_MUTEX_OBJ_MEM != 0)
+    248          
+    249          
+    250          // Semaphore Configuration
+    251          // =======================
+    252          
+    253          #if (OS_SEMAPHORE_OBJ_MEM != 0)
+    254          
+    255          #if (OS_SEMAPHORE_NUM == 0)
+    256          #error "Invalid number of Semaphore objects!"
+    257          #endif
+    258          
+    259          // Semaphore Control Blocks
+    260          static osRtxSemaphore_t os_semaphore_cb[OS_SEMAPHORE_NUM] \
+    261          __attribute__((section(".bss.os.semaphore.cb")));
+    262          
+    263          // Memory Pool for Semaphore Control Blocks
+    264          static osRtxMpInfo_t os_mpi_semaphore \
+    265          __attribute__((section(".data.os.semaphore.mpi"))) =
+    266          { (uint32_t)OS_SEMAPHORE_NUM, 0U, (uint32_t)osRtxSemaphoreCbSize, &os_semaphore_cb, NULL, NULL };
+    267          
+    268          #endif  // (OS_SEMAPHORE_OBJ_MEM != 0)
+    269          
+    270          
+    271          // Memory Pool Configuration
+    272          // =========================
+    273          
+    274          #if (OS_MEMPOOL_OBJ_MEM != 0)
+    275          
+    276          #if (OS_MEMPOOL_NUM == 0)
+    277          #error "Invalid number of Memory Pool objects!"
+    278          #endif
+    279          
+    280          // Memory Pool Control Blocks
+    281          static osRtxMemoryPool_t os_mp_cb[OS_MEMPOOL_NUM] \
+    282          __attribute__((section(".bss.os.mempool.cb")));
+    283          
+    284          // Memory Pool for Memory Pool Control Blocks
+    285          static osRtxMpInfo_t os_mpi_mp \
+    286          __attribute__((section(".data.os.mempool.mpi"))) =
+    287          { (uint32_t)OS_MEMPOOL_NUM, 0U, (uint32_t)osRtxMemoryPoolCbSize, &os_mp_cb, NULL, NULL };
+    288          
+    289          // Memory Pool for Memory Pool Data Storage
+    290          #if (OS_MEMPOOL_DATA_SIZE != 0)
+    291          #if ((OS_MEMPOOL_DATA_SIZE & 7) != 0)
+    292          #error "Invalid Data Memory size for Memory Pools!"
+    293          #endif
+    294          static uint64_t os_mp_data[OS_MEMPOOL_DATA_SIZE/8] \
+    295          __attribute__((section(".bss.os.mempool.mem")));
+    296          #endif
+    297          
+    298          #endif  // (OS_MEMPOOL_OBJ_MEM != 0)
+    299          
+    300          
+    301          // Message Queue Configuration
+    302          // ===========================
+    303          
+    304          #if (OS_MSGQUEUE_OBJ_MEM != 0)
+    305          
+    306          #if (OS_MSGQUEUE_NUM == 0)
+    307          #error "Invalid number of Message Queue objects!"
+    308          #endif
+    309          
+    310          // Message Queue Control Blocks
+    311          static osRtxMessageQueue_t os_mq_cb[OS_MSGQUEUE_NUM] \
+    312          __attribute__((section(".bss.os.msgqueue.cb")));
+    313          
+    314          // Memory Pool for Message Queue Control Blocks
+    315          static osRtxMpInfo_t os_mpi_mq \
+    316          __attribute__((section(".data.os.msgqueue.mpi"))) =
+    317          { (uint32_t)OS_MSGQUEUE_NUM, 0U, (uint32_t)osRtxMessageQueueCbSize, &os_mq_cb, NULL, NULL };
+    318          
+    319          // Memory Pool for Message Queue Data Storage
+    320          #if (OS_MSGQUEUE_DATA_SIZE != 0)
+    321          #if ((OS_MSGQUEUE_DATA_SIZE & 7) != 0)
+    322          #error "Invalid Data Memory size for Message Queues!"
+    323          #endif
+    324          static uint64_t os_mq_data[OS_MSGQUEUE_DATA_SIZE/8] \
+    325          __attribute__((section(".bss.os.msgqueue.mem")));
+    326          #endif
+    327          
+    328          #endif  // (OS_MSGQUEUE_OBJ_MEM != 0)
+    329          
+    330          
+    331          // OS Configuration
+    332          // ================
+    333          
+    334          __USED
+    335          __attribute__((section(".rodata")))
+
+   \                                 In section .rodata, align 4
+    336          const osRtxConfig_t osRtxConfig = {
+   \                     osRtxConfig:
+   \   00000000   0x00000003         DC32 3, 1000, 5, os_isr_queue
+   \              0x000003E8   
+   \              0x00000005   
+   \              0x........   
+   \   00000010   0x0010 0x0000      DC16 16, 0
+   \   00000014   0x00000000         DC32 0H, 0, 0H, 0, 0H, 0, 0H, 0, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 4096
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00001000   
+   \   00000058   0x........         DC32 os_idle_thread_attr, os_timer_thread_attr, os_timer_mq_attr, 4
+   \              0x........   
+   \              0x........   
+   \              0x00000004   
+    337            0U   // Flags
+    338          #if (OS_PRIVILEGE_MODE != 0)
+    339            | osRtxConfigPrivilegedMode
+    340          #endif
+    341          #if (OS_STACK_CHECK != 0)
+    342            | osRtxConfigStackCheck
+    343          #endif
+    344          #if (OS_STACK_WATERMARK != 0)
+    345            | osRtxConfigStackWatermark
+    346          #endif
+    347            ,
+    348            (uint32_t)OS_TICK_FREQ,
+    349          #if (OS_ROBIN_ENABLE != 0)
+    350            (uint32_t)OS_ROBIN_TIMEOUT,
+    351          #else
+    352            0U,
+    353          #endif
+    354            { &os_isr_queue[0], sizeof(os_isr_queue)/sizeof(void *), 0U },
+    355            { 
+    356              // Memory Pools (Variable Block Size)
+    357          #if ((OS_THREAD_OBJ_MEM != 0) && (OS_THREAD_USER_STACK_SIZE != 0))
+    358              &os_thread_stack, (uint32_t)OS_THREAD_USER_STACK_SIZE,
+    359          #else
+    360              NULL, 0U,
+    361          #endif
+    362          #if ((OS_MEMPOOL_OBJ_MEM != 0) && (OS_MEMPOOL_DATA_SIZE != 0))
+    363              &os_mp_data, (uint32_t)OS_MEMPOOL_DATA_SIZE,
+    364          #else
+    365              NULL, 0U,
+    366          #endif
+    367          #if ((OS_MSGQUEUE_OBJ_MEM != 0) && (OS_MSGQUEUE_DATA_SIZE != 0))
+    368              &os_mq_data, (uint32_t)OS_MSGQUEUE_DATA_SIZE,
+    369          #else
+    370              NULL, 0U,
+    371          #endif
+    372          #if (OS_DYNAMIC_MEM_SIZE != 0)
+    373              &os_mem, (uint32_t)OS_DYNAMIC_MEM_SIZE,
+    374          #else
+    375              NULL, 0U
+    376          #endif
+    377            },
+    378            {
+    379              // Memory Pools (Fixed Block Size)
+    380          #if (OS_THREAD_OBJ_MEM != 0)
+    381          #if (OS_THREAD_DEF_STACK_NUM != 0)
+    382              &os_mpi_def_stack,
+    383          #else
+    384              NULL,
+    385          #endif
+    386              &os_mpi_thread,
+    387          #else
+    388              NULL, 
+    389              NULL,
+    390          #endif
+    391          #if (OS_TIMER_OBJ_MEM != 0)
+    392              &os_mpi_timer,
+    393          #else
+    394              NULL,
+    395          #endif
+    396          #if (OS_EVFLAGS_OBJ_MEM != 0)
+    397              &os_mpi_ef,
+    398          #else
+    399              NULL,
+    400          #endif
+    401          #if (OS_MUTEX_OBJ_MEM != 0)
+    402              &os_mpi_mutex,
+    403          #else
+    404              NULL,
+    405          #endif
+    406          #if (OS_SEMAPHORE_OBJ_MEM != 0)
+    407              &os_mpi_semaphore,
+    408          #else
+    409              NULL,
+    410          #endif
+    411          #if (OS_MEMPOOL_OBJ_MEM != 0)
+    412              &os_mpi_mp,
+    413          #else
+    414              NULL,
+    415          #endif
+    416          #if (OS_MSGQUEUE_OBJ_MEM != 0)
+    417              &os_mpi_mq,
+    418          #else
+    419              NULL,
+    420          #endif
+    421            },
+    422            (uint32_t)OS_STACK_SIZE,
+    423            &os_idle_thread_attr,
+    424          #if ((OS_TIMER_THREAD_STACK_SIZE != 0) && (OS_TIMER_CB_QUEUE != 0))
+    425            &os_timer_thread_attr,
+    426            &os_timer_mq_attr,
+    427            (uint32_t)OS_TIMER_CB_QUEUE
+    428          #else
+    429            NULL,
+    430            NULL,
+    431            0U
+    432          #endif
+    433          };
+    434          
+    435          
+    436          // Non weak reference to library irq module
+    437          extern       uint8_t  irqRtxLib;
+    438          extern const uint8_t *irqRtxLibRef;
+
+   \                                 In section .data, align 4
+    439                 const uint8_t *irqRtxLibRef = &irqRtxLib;
+   \                     irqRtxLibRef:
+   \   00000000   0x........         DC32 irqRtxLib
+    440          
+    441          // Default User SVC Table
+    442          extern void * const osRtxUserSVC[];
+
+   \                                 In section .rodata, align 4
+    443          __WEAK void * const osRtxUserSVC[1] = { (void *)0 };
+   \                     osRtxUserSVC:
+   \   00000000   0x00000000         DC32 0H
+    444          
+    445          
+    446          // OS Sections
+    447          // ===========
+    448          
+    449          #if (defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050))
+    450          __asm (
+    451            ".weakref __os_thread_cb_start__,    .bss.os.thread.cb$$Base\n\t"
+    452            ".weakref __os_thread_cb_end__,      .bss.os.thread.cb$$Limit\n\t"
+    453            ".weakref __os_timer_cb_start__,     .bss.os.timer.cb$$Base\n\t"
+    454            ".weakref __os_timer_cb_end__,       .bss.os.timer.cb$$Limit\n\t"
+    455            ".weakref __os_evflags_cb_start__,   .bss.os.evflags.cb$$Base\n\t"
+    456            ".weakref __os_evflags_cb_end__,     .bss.os.evflags.cb$$Limit\n\t"
+    457            ".weakref __os_mutex_cb_start__,     .bss.os.mutex.cb$$Base\n\t"
+    458            ".weakref __os_mutex_cb_end__,       .bss.os.mutex.cb$$Limit\n\t"
+    459            ".weakref __os_semaphore_cb_start__, .bss.os.semaphore.cb$$Base\n\t"
+    460            ".weakref __os_semaphore_cb_end__,   .bss.os.semaphore.cb$$Limit\n\t"
+    461            ".weakref __os_mempool_cb_start__,   .bss.os.mempool.cb$$Base\n\t"
+    462            ".weakref __os_mempool_cb_end__,     .bss.os.mempool.cb$$Limit\n\t"
+    463            ".weakref __os_msgqueue_cb_start__,  .bss.os.msgqueue.cb$$Base\n\t"
+    464            ".weakref __os_msgqueue_cb_end__,    .bss.os.msgqueue.cb$$Limit\n\t"
+    465          );
+    466          #endif
+    467          
+    468          #if (defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)) || \
+    469              (defined(__GNUC__) && !defined(__CC_ARM))
+    470          
+    471          extern __attribute__((weak)) uint32_t __os_thread_cb_start__;
+    472          extern __attribute__((weak)) uint32_t __os_thread_cb_end__;
+    473          extern __attribute__((weak)) uint32_t __os_timer_cb_start__;
+    474          extern __attribute__((weak)) uint32_t __os_timer_cb_end__;
+    475          extern __attribute__((weak)) uint32_t __os_evflags_cb_start__;
+    476          extern __attribute__((weak)) uint32_t __os_evflags_cb_end__;
+    477          extern __attribute__((weak)) uint32_t __os_mutex_cb_start__;
+    478          extern __attribute__((weak)) uint32_t __os_mutex_cb_end__;
+    479          extern __attribute__((weak)) uint32_t __os_semaphore_cb_start__;
+    480          extern __attribute__((weak)) uint32_t __os_semaphore_cb_end__;
+    481          extern __attribute__((weak)) uint32_t __os_mempool_cb_start__;
+    482          extern __attribute__((weak)) uint32_t __os_mempool_cb_end__;
+    483          extern __attribute__((weak)) uint32_t __os_msgqueue_cb_start__;
+    484          extern __attribute__((weak)) uint32_t __os_msgqueue_cb_end__;
+    485          
+    486          __asm (".global os_cb_sections");
+    487          
+    488          extern const uint32_t os_cb_sections[];
+    489          
+    490          __attribute__((section(".rodata")))
+    491          const uint32_t os_cb_sections[] = {
+    492            (uint32_t)&__os_thread_cb_start__,
+    493            (uint32_t)&__os_thread_cb_end__,
+    494            (uint32_t)&__os_timer_cb_start__,
+    495            (uint32_t)&__os_timer_cb_end__,
+    496            (uint32_t)&__os_evflags_cb_start__,
+    497            (uint32_t)&__os_evflags_cb_end__,
+    498            (uint32_t)&__os_mutex_cb_start__,
+    499            (uint32_t)&__os_mutex_cb_end__,
+    500            (uint32_t)&__os_semaphore_cb_start__,
+    501            (uint32_t)&__os_semaphore_cb_end__,
+    502            (uint32_t)&__os_mempool_cb_start__,
+    503            (uint32_t)&__os_mempool_cb_end__,
+    504            (uint32_t)&__os_msgqueue_cb_start__,
+    505            (uint32_t)&__os_msgqueue_cb_end__
+    506          };
+    507          
+    508          #endif
+    509          
+    510          
+    511          // OS Initialization
+    512          // =================
+    513          
+    514          #if  defined(__CC_ARM) || \
+    515              (defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050))
+    516          
+    517          #ifndef __MICROLIB
+    518          extern void _platform_post_stackheap_init (void);
+    519          __WEAK void _platform_post_stackheap_init (void) {
+    520            osKernelInitialize();
+    521          }
+    522          #endif
+    523          
+    524          #elif defined(__GNUC__)
+    525          
+    526          extern void software_init_hook (void);
+    527          __WEAK void software_init_hook (void) {
+    528            osKernelInitialize();
+    529          }
+    530          
+    531          #endif
+    532          
+    533          
+    534          // C/C++ Standard Library Multithreading Interface
+    535          // ===============================================
+    536          
+    537          #if (( defined(__CC_ARM) || \
+    538                (defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050))) && \
+    539                !defined(__MICROLIB))
+    540          
+    541          #define LIBSPACE_SIZE 96
+    542          
+    543          // Memory for libspace
+    544          static uint32_t os_libspace[OS_THREAD_LIBSPACE_NUM+1][LIBSPACE_SIZE/sizeof(uint32_t)] \
+    545          __attribute__((section(".bss.os")));
+    546          
+    547          // Thread IDs for libspace
+    548          static osThreadId_t os_libspace_id[OS_THREAD_LIBSPACE_NUM] \
+    549          __attribute__((section(".bss.os")));
+    550          
+    551          // Check if Kernel has been started
+    552          static uint32_t os_kernel_is_active (void) {
+    553            static uint8_t os_kernel_active = 0U;
+    554          
+    555            if (os_kernel_active == 0U) {
+    556              if (osKernelGetState() > osKernelReady) {
+    557                os_kernel_active = 1U;
+    558                return 1U;
+    559              }
+    560              return 0U;
+    561            } else {
+    562              return 1U;
+    563            }
+    564          }
+    565          
+    566          // Provide libspace for current thread
+    567          void *__user_perthread_libspace (void);
+    568          void *__user_perthread_libspace (void) {
+    569            osThreadId_t id;
+    570            uint32_t     n;
+    571          
+    572            if (!os_kernel_is_active()) {
+    573              return (void *)&os_libspace[OS_THREAD_LIBSPACE_NUM][0];
+    574            }
+    575          
+    576            id = osThreadGetId();
+    577            for (n = 0U; n < OS_THREAD_LIBSPACE_NUM; n++) {
+    578              if (os_libspace_id[n] == NULL) {
+    579                os_libspace_id[n] = id;
+    580                return (void *)&os_libspace[n][0];
+    581              }
+    582              if (os_libspace_id[n] == id) {
+    583                return (void *)&os_libspace[n][0];
+    584              }
+    585            }
+    586          
+    587            if (n == OS_THREAD_LIBSPACE_NUM) {
+    588              osRtxErrorNotify(osRtxErrorClibSpace, id);
+    589            }
+    590          
+    591            return (void *)&os_libspace[n][0];
+    592          }
+    593          
+    594          // Mutex identifier
+    595          typedef void *mutex;
+    596          
+    597          // Initialize mutex
+    598          #if !defined(__ARMCC_VERSION) || __ARMCC_VERSION < 6010050
+    599          __USED
+    600          #endif
+    601          int _mutex_initialize(mutex *m);
+    602          __WEAK int _mutex_initialize(mutex *m) {
+    603            *m = osMutexNew(NULL);
+    604            if (*m == NULL) {
+    605              osRtxErrorNotify(osRtxErrorClibMutex, m);
+    606              return 0;
+    607            }
+    608            return 1;
+    609          }
+    610          
+    611          // Acquire mutex
+    612          __USED
+    613          void _mutex_acquire(mutex *m);
+    614          void _mutex_acquire(mutex *m) {
+    615            if (os_kernel_is_active()) {
+    616              osMutexAcquire(*m, osWaitForever);
+    617            }
+    618          }
+    619          
+    620          // Release mutex
+    621          __USED
+    622          void _mutex_release(mutex *m);
+    623          void _mutex_release(mutex *m) {
+    624            if (os_kernel_is_active()) {
+    625              osMutexRelease(*m);
+    626            }
+    627          }
+    628          
+    629          // Free mutex
+    630          __USED
+    631          void _mutex_free(mutex *m);
+    632          void _mutex_free(mutex *m) {
+    633            osMutexDelete(*m);
+    634          }
+    635          
+    636          #endif
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  irqRtxLibRef
+     104  osRtxConfig
+       4  osRtxUserSVC
+      36  os_idle_thread_attr
+      72  os_idle_thread_cb
+     512  os_idle_thread_stack
+      64  os_isr_queue
+      24  os_timer_mq_attr
+      52  os_timer_mq_cb
+      80  os_timer_mq_data
+      36  os_timer_thread_attr
+      72  os_timer_thread_cb
+     768  os_timer_thread_stack
+
+ 
+    64 bytes in section .bss.os
+    52 bytes in section .bss.os.msgqueue.cb
+    80 bytes in section .bss.os.msgqueue.mem
+   144 bytes in section .bss.os.thread.cb
+ 1 280 bytes in section .bss.os.thread.stack
+     4 bytes in section .data
+   204 bytes in section .rodata
+ 
+   204 bytes of CONST memory
+ 1 624 bytes of DATA  memory
+
+Errors: none
+Warnings: none

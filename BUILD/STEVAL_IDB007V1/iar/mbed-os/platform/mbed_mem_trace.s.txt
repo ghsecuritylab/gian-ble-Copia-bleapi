@@ -1,0 +1,495 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:45
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\platform\mbed_mem_trace.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_mem_trace.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_mem_trace.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_mem_trace.o
+#        .\mbed-os\platform\mbed_mem_trace.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_mem_trace.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_mem_trace.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\platform\mbed_mem_trace.c
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2016 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          
+     17          #include <stdlib.h>
+     18          #include <stdarg.h>
+     19          #include <stdio.h>
+     20          #include "platform/mbed_mem_trace.h"
+     21          #include "platform/mbed_critical.h"
+     22          
+     23          /******************************************************************************
+     24           * Internal variables, functions and helpers
+     25           *****************************************************************************/
+     26          
+     27          /* The callback function that will be called after a traced memory operations finishes. */
+
+   \                                 In section .bss, align 4
+     28          static mbed_mem_trace_cb_t mem_trace_cb;
+   \                     mem_trace_cb:
+   \   00000000                      DS8 4
+   \   00000004                      DS8 1
+     29          /* 'trave_level' guards "trace inside trace" situations (for example, the implementation
+     30           * of realloc() might call malloc() internally, and since malloc() is also traced, this could
+     31           * result in two calls to the callback function instead of one. */
+     32          static uint8_t trace_level;
+     33          
+     34          /******************************************************************************
+     35           * Public interface
+     36           *****************************************************************************/
+     37          
+
+   \                                 In section .text, align 2, keep-with-next
+     38          void mbed_mem_trace_set_callback(mbed_mem_trace_cb_t cb) {
+     39              mem_trace_cb = cb;
+   \                     mbed_mem_trace_set_callback: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable10
+   \   00000002   0x6008             STR      R0,[R1, #+0]
+     40          }
+   \   00000004   0x4770             BX       LR               ;; return
+     41          
+
+   \                                 In section .text, align 2, keep-with-next
+     42          void *mbed_mem_trace_malloc(void *res, size_t size, void *caller) {
+   \                     mbed_mem_trace_malloc: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0006             MOVS     R6,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0017             MOVS     R7,R2
+     43              if (mem_trace_cb) {
+   \   00000008   0x....             LDR      R4,??DataTable10
+   \   0000000A   0x6820             LDR      R0,[R4, #+0]
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD00F             BEQ      ??mbed_mem_trace_malloc_0
+     44                  if (core_util_atomic_incr_u8(&trace_level, 1) == 1) {
+   \   00000010   0x2101             MOVS     R1,#+1
+   \   00000012   0x1D20             ADDS     R0,R4,#+4
+   \   00000014   0x.... 0x....      BL       core_util_atomic_incr_u8
+   \   00000018   0x2801             CMP      R0,#+1
+   \   0000001A   0xD105             BNE      ??mbed_mem_trace_malloc_1
+     45                      mem_trace_cb(MBED_MEM_TRACE_MALLOC, res, caller, size);
+   \   0000001C   0x002B             MOVS     R3,R5
+   \   0000001E   0x003A             MOVS     R2,R7
+   \   00000020   0x0031             MOVS     R1,R6
+   \   00000022   0x2000             MOVS     R0,#+0
+   \   00000024   0x6825             LDR      R5,[R4, #+0]
+   \   00000026   0x47A8             BLX      R5
+     46                  }
+     47                  core_util_atomic_decr_u8(&trace_level, 1);
+   \                     ??mbed_mem_trace_malloc_1: (+1)
+   \   00000028   0x2101             MOVS     R1,#+1
+   \   0000002A   0x1D20             ADDS     R0,R4,#+4
+   \   0000002C   0x.... 0x....      BL       core_util_atomic_decr_u8
+     48              }
+     49              return res;
+   \                     ??mbed_mem_trace_malloc_0: (+1)
+   \   00000030   0x0030             MOVS     R0,R6
+   \   00000032   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+     50          }
+     51          
+
+   \                                 In section .text, align 2, keep-with-next
+     52          void *mbed_mem_trace_realloc(void *res, void *ptr, size_t size, void *caller) {
+   \                     mbed_mem_trace_realloc: (+1)
+   \   00000000   0xB5F4             PUSH     {R2,R4-R7,LR}
+   \   00000002   0xB082             SUB      SP,SP,#+8
+   \   00000004   0x0007             MOVS     R7,R0
+   \   00000006   0x000E             MOVS     R6,R1
+   \   00000008   0x001D             MOVS     R5,R3
+     53              if (mem_trace_cb) {
+   \   0000000A   0x....             LDR      R4,??DataTable10
+   \   0000000C   0x6820             LDR      R0,[R4, #+0]
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD011             BEQ      ??mbed_mem_trace_realloc_0
+     54                  if (core_util_atomic_incr_u8(&trace_level, 1) == 1) {
+   \   00000012   0x2101             MOVS     R1,#+1
+   \   00000014   0x1D20             ADDS     R0,R4,#+4
+   \   00000016   0x.... 0x....      BL       core_util_atomic_incr_u8
+   \   0000001A   0x2801             CMP      R0,#+1
+   \   0000001C   0xD107             BNE      ??mbed_mem_trace_realloc_1
+     55                      mem_trace_cb(MBED_MEM_TRACE_REALLOC, res, caller, ptr, size);
+   \   0000001E   0x9802             LDR      R0,[SP, #+8]
+   \   00000020   0x9000             STR      R0,[SP, #+0]
+   \   00000022   0x0033             MOVS     R3,R6
+   \   00000024   0x002A             MOVS     R2,R5
+   \   00000026   0x0039             MOVS     R1,R7
+   \   00000028   0x2001             MOVS     R0,#+1
+   \   0000002A   0x6825             LDR      R5,[R4, #+0]
+   \   0000002C   0x47A8             BLX      R5
+     56                  }
+     57                  core_util_atomic_decr_u8(&trace_level, 1);
+   \                     ??mbed_mem_trace_realloc_1: (+1)
+   \   0000002E   0x2101             MOVS     R1,#+1
+   \   00000030   0x1D20             ADDS     R0,R4,#+4
+   \   00000032   0x.... 0x....      BL       core_util_atomic_decr_u8
+     58              }
+     59              return res;
+   \                     ??mbed_mem_trace_realloc_0: (+1)
+   \   00000036   0x0038             MOVS     R0,R7
+   \   00000038   0xB003             ADD      SP,SP,#+12
+   \   0000003A   0xBDF0             POP      {R4-R7,PC}       ;; return
+     60          }
+     61          
+
+   \                                 In section .text, align 2, keep-with-next
+     62          void *mbed_mem_trace_calloc(void *res, size_t num, size_t size, void *caller) {
+   \                     mbed_mem_trace_calloc: (+1)
+   \   00000000   0xB5F4             PUSH     {R2,R4-R7,LR}
+   \   00000002   0xB082             SUB      SP,SP,#+8
+   \   00000004   0x0007             MOVS     R7,R0
+   \   00000006   0x000E             MOVS     R6,R1
+   \   00000008   0x001D             MOVS     R5,R3
+     63              if (mem_trace_cb) {
+   \   0000000A   0x....             LDR      R4,??DataTable10
+   \   0000000C   0x6820             LDR      R0,[R4, #+0]
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD011             BEQ      ??mbed_mem_trace_calloc_0
+     64                  if (core_util_atomic_incr_u8(&trace_level, 1) == 1) {
+   \   00000012   0x2101             MOVS     R1,#+1
+   \   00000014   0x1D20             ADDS     R0,R4,#+4
+   \   00000016   0x.... 0x....      BL       core_util_atomic_incr_u8
+   \   0000001A   0x2801             CMP      R0,#+1
+   \   0000001C   0xD107             BNE      ??mbed_mem_trace_calloc_1
+     65                      mem_trace_cb(MBED_MEM_TRACE_CALLOC, res, caller, num, size);
+   \   0000001E   0x9802             LDR      R0,[SP, #+8]
+   \   00000020   0x9000             STR      R0,[SP, #+0]
+   \   00000022   0x0033             MOVS     R3,R6
+   \   00000024   0x002A             MOVS     R2,R5
+   \   00000026   0x0039             MOVS     R1,R7
+   \   00000028   0x2002             MOVS     R0,#+2
+   \   0000002A   0x6825             LDR      R5,[R4, #+0]
+   \   0000002C   0x47A8             BLX      R5
+     66                  }
+     67                  core_util_atomic_decr_u8(&trace_level, 1);
+   \                     ??mbed_mem_trace_calloc_1: (+1)
+   \   0000002E   0x2101             MOVS     R1,#+1
+   \   00000030   0x1D20             ADDS     R0,R4,#+4
+   \   00000032   0x.... 0x....      BL       core_util_atomic_decr_u8
+     68              }
+     69              return res;
+   \                     ??mbed_mem_trace_calloc_0: (+1)
+   \   00000036   0x0038             MOVS     R0,R7
+   \   00000038   0xB003             ADD      SP,SP,#+12
+   \   0000003A   0xBDF0             POP      {R4-R7,PC}       ;; return
+     70          }
+     71          
+
+   \                                 In section .text, align 2, keep-with-next
+     72          void mbed_mem_trace_free(void *ptr, void *caller) {
+   \                     mbed_mem_trace_free: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000E             MOVS     R6,R1
+     73              if (mem_trace_cb) {
+   \   00000006   0x....             LDR      R4,??DataTable10
+   \   00000008   0x6820             LDR      R0,[R4, #+0]
+   \   0000000A   0x2800             CMP      R0,#+0
+   \   0000000C   0xD00F             BEQ      ??mbed_mem_trace_free_0
+     74                  if (core_util_atomic_incr_u8(&trace_level, 1) == 1) {
+   \   0000000E   0x2101             MOVS     R1,#+1
+   \   00000010   0x1D20             ADDS     R0,R4,#+4
+   \   00000012   0x.... 0x....      BL       core_util_atomic_incr_u8
+   \   00000016   0x2801             CMP      R0,#+1
+   \   00000018   0xD105             BNE      ??mbed_mem_trace_free_1
+     75                      mem_trace_cb(MBED_MEM_TRACE_FREE, NULL, caller, ptr);
+   \   0000001A   0x002B             MOVS     R3,R5
+   \   0000001C   0x0032             MOVS     R2,R6
+   \   0000001E   0x2100             MOVS     R1,#+0
+   \   00000020   0x2003             MOVS     R0,#+3
+   \   00000022   0x6825             LDR      R5,[R4, #+0]
+   \   00000024   0x47A8             BLX      R5
+     76                  }
+     77                  core_util_atomic_decr_u8(&trace_level, 1);
+   \                     ??mbed_mem_trace_free_1: (+1)
+   \   00000026   0x2101             MOVS     R1,#+1
+   \   00000028   0x1D20             ADDS     R0,R4,#+4
+   \   0000002A   0x.... 0x....      BL       core_util_atomic_decr_u8
+     78              }
+     79          }
+   \                     ??mbed_mem_trace_free_0: (+1)
+   \   0000002E   0xBD70             POP      {R4-R6,PC}       ;; return
+     80          
+
+   \                                 In section .text, align 4, keep-with-next
+     81          void mbed_mem_trace_default_callback(uint8_t op, void *res, void *caller, ...) {
+   \                     mbed_mem_trace_default_callback: (+1)
+   \   00000000   0xB408             PUSH     {R3}
+   \   00000002   0xB500             PUSH     {LR}
+   \   00000004   0xB082             SUB      SP,SP,#+8
+     82              va_list va;
+     83              size_t temp_s1, temp_s2;
+     84              void *temp_ptr;
+     85          
+     86              va_start(va, caller);
+   \   00000006   0xAB03             ADD      R3,SP,#+12
+     87              switch(op) {
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD005             BEQ      ??mbed_mem_trace_default_callback_0
+   \   0000000C   0x2802             CMP      R0,#+2
+   \   0000000E   0xD00D             BEQ      ??mbed_mem_trace_default_callback_1
+   \   00000010   0xD306             BCC      ??mbed_mem_trace_default_callback_2
+   \   00000012   0x2803             CMP      R0,#+3
+   \   00000014   0xD012             BEQ      ??mbed_mem_trace_default_callback_3
+   \   00000016   0xE017             B        ??mbed_mem_trace_default_callback_4
+     88                  case MBED_MEM_TRACE_MALLOC:
+     89                      temp_s1 = va_arg(va, size_t);
+     90                      printf(MBED_MEM_DEFAULT_TRACER_PREFIX "m:%p;%p-%u\n", res, caller, temp_s1);
+   \                     ??mbed_mem_trace_default_callback_0: (+1)
+   \   00000018   0x681B             LDR      R3,[R3, #+0]
+   \   0000001A   0xBF00             Nop      
+   \   0000001C   0x....             ADR.N    R0,?_0
+   \   0000001E   0xE010             B.N      ??mbed_mem_trace_default_callback_5
+     91                      break;
+     92          
+     93                  case MBED_MEM_TRACE_REALLOC:
+     94                      temp_ptr = va_arg(va, void*);
+     95                      temp_s1 = va_arg(va, size_t);
+     96                      printf(MBED_MEM_DEFAULT_TRACER_PREFIX "r:%p;%p-%p;%u\n", res, caller, temp_ptr, temp_s1);
+   \                     ??mbed_mem_trace_default_callback_2: (+1)
+   \   00000020   0x1D18             ADDS     R0,R3,#+4
+   \   00000022   0x6800             LDR      R0,[R0, #+0]
+   \   00000024   0x9000             STR      R0,[SP, #+0]
+   \   00000026   0x681B             LDR      R3,[R3, #+0]
+   \   00000028   0x....             ADR.N    R0,?_1
+   \   0000002A   0xE004             B.N      ??mbed_mem_trace_default_callback_6
+     97                      break;
+     98          
+     99                  case MBED_MEM_TRACE_CALLOC:
+    100                      temp_s1 = va_arg(va, size_t);
+    101                      temp_s2 = va_arg(va, size_t);
+    102                      printf(MBED_MEM_DEFAULT_TRACER_PREFIX "c:%p;%p-%u;%u\n", res, caller, temp_s1, temp_s2);
+   \                     ??mbed_mem_trace_default_callback_1: (+1)
+   \   0000002C   0x1D18             ADDS     R0,R3,#+4
+   \   0000002E   0x6800             LDR      R0,[R0, #+0]
+   \   00000030   0x9000             STR      R0,[SP, #+0]
+   \   00000032   0x681B             LDR      R3,[R3, #+0]
+   \   00000034   0x....             ADR.N    R0,?_2
+   \                     ??mbed_mem_trace_default_callback_6: (+1)
+   \   00000036   0x.... 0x....      BL       printf
+    103                      break;
+   \   0000003A   0xE008             B        ??mbed_mem_trace_default_callback_7
+    104          
+    105                  case MBED_MEM_TRACE_FREE:
+    106                      temp_ptr = va_arg(va, void*);
+    107                      printf(MBED_MEM_DEFAULT_TRACER_PREFIX "f:%p;%p-%p\n", res, caller, temp_ptr);
+   \                     ??mbed_mem_trace_default_callback_3: (+1)
+   \   0000003C   0x681B             LDR      R3,[R3, #+0]
+   \   0000003E   0xBF00             Nop      
+   \   00000040   0x....             ADR.N    R0,?_3
+   \                     ??mbed_mem_trace_default_callback_5: (+1)
+   \   00000042   0x.... 0x....      BL       printf
+    108                      break;
+   \   00000046   0xE002             B        ??mbed_mem_trace_default_callback_7
+    109          
+    110                  default:
+    111                      printf("?\n");
+   \                     ??mbed_mem_trace_default_callback_4: (+1)
+   \   00000048   0x....             ADR      R0,??DataTable10_1  ;; 0x3F, 0x0A, 0x00, 0x00
+   \   0000004A   0x.... 0x....      BL       printf
+    112              }
+    113              va_end(va);
+    114          }
+   \                     ??mbed_mem_trace_default_callback_7: (+1)
+   \   0000004E   0x9802             LDR      R0,[SP, #+8]
+   \   00000050   0xB004             ADD      SP,SP,#+16
+   \   00000052   0x4700             BX       R0               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable10:
+   \   00000000   0x........         DC32     mem_trace_cb
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable10_1:
+   \   00000000   0x3F 0x0A          DC8      0x3F, 0x0A, 0x00, 0x00
+   \              0x00 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x23 0x6D          DC8 "#m:%p;%p-%u\012"
+   \              0x3A 0x25    
+   \              0x70 0x3B    
+   \              0x25 0x70    
+   \              0x2D 0x25    
+   \              0x75 0x0A    
+   \              0x00         
+   \   0000000D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x23 0x72          DC8 "#r:%p;%p-%p;%u\012"
+   \              0x3A 0x25    
+   \              0x70 0x3B    
+   \              0x25 0x70    
+   \              0x2D 0x25    
+   \              0x70 0x3B    
+   \              0x25 0x75    
+   \              0x0A 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_2:
+   \   00000000   0x23 0x63          DC8 "#c:%p;%p-%u;%u\012"
+   \              0x3A 0x25    
+   \              0x70 0x3B    
+   \              0x25 0x70    
+   \              0x2D 0x25    
+   \              0x75 0x3B    
+   \              0x25 0x75    
+   \              0x0A 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_3:
+   \   00000000   0x23 0x66          DC8 "#f:%p;%p-%p\012"
+   \              0x3A 0x25    
+   \              0x70 0x3B    
+   \              0x25 0x70    
+   \              0x2D 0x25    
+   \              0x70 0x0A    
+   \              0x00         
+   \   0000000D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_4:
+   \   00000000   0x3F 0x0A          DC8 "?\012"
+   \              0x00         
+   \   00000003   0x00               DC8 0
+    115          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      32   mbed_mem_trace_calloc
+        32   -- Indirect call
+        32   -> core_util_atomic_decr_u8
+        32   -> core_util_atomic_incr_u8
+      16   mbed_mem_trace_default_callback
+        16   -> printf
+      16   mbed_mem_trace_free
+        16   -- Indirect call
+        16   -> core_util_atomic_decr_u8
+        16   -> core_util_atomic_incr_u8
+      24   mbed_mem_trace_malloc
+        24   -- Indirect call
+        24   -> core_util_atomic_decr_u8
+        24   -> core_util_atomic_incr_u8
+      32   mbed_mem_trace_realloc
+        32   -- Indirect call
+        32   -> core_util_atomic_decr_u8
+        32   -> core_util_atomic_incr_u8
+       0   mbed_mem_trace_set_callback
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+       4  ??DataTable10_1
+      16  ?_0
+      16  ?_1
+      16  ?_2
+      16  ?_3
+       4  ?_4
+      60  mbed_mem_trace_calloc
+      84  mbed_mem_trace_default_callback
+      48  mbed_mem_trace_free
+      52  mbed_mem_trace_malloc
+      60  mbed_mem_trace_realloc
+       6  mbed_mem_trace_set_callback
+       5  mem_trace_cb
+          trace_level
+
+ 
+   5 bytes in section .bss
+   4 bytes in section .rodata
+ 382 bytes in section .text
+ 
+ 382 bytes of CODE  memory
+   4 bytes of CONST memory
+   5 bytes of DATA  memory
+
+Errors: none
+Warnings: none

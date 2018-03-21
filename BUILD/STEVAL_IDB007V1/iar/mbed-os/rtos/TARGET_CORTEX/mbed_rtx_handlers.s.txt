@@ -1,0 +1,646 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:50
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_handlers.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_handlers.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_handlers.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_handlers.o
+#        .\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_handlers.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_handlers.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_handlers.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\rtos\TARGET_CORTEX\mbed_rtx_handlers.c
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2016 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          
+     17          #include "cmsis_compiler.h"
+     18          #include "rtx_os.h"
+     19          #include "rtx_evr.h"
+     20          #include "mbed_rtx.h"
+     21          #include "mbed_error.h"
+     22          #include "RTX_Config.h"
+     23          
+     24          #ifdef RTE_Compiler_EventRecorder
+     25          #include "EventRecorder.h"              // Keil::Compiler:Event Recorder
+     26          // Used from rtx_evr.c
+     27          #define EvtRtxThreadExit               EventID(EventLevelAPI, 0xF2U, 0x19U)
+     28          #define EvtRtxThreadTerminate          EventID(EventLevelAPI, 0xF2U, 0x1AU)
+     29          #endif
+     30          
+     31          extern void rtos_idle_loop(void);
+     32          extern void thread_terminate_hook(osThreadId_t id);
+     33          
+
+   \                                 In section .text, align 2, keep-with-next
+     34          __NO_RETURN void osRtxIdleThread (void *argument)
+     35          {
+     36              for (;;) {
+     37                rtos_idle_loop();
+   \                     osRtxIdleThread: (+1)
+   \                     ??osRtxIdleThread_0: (+1)
+   \   00000000   0x.... 0x....      BL       rtos_idle_loop
+   \   00000004   0xE7FC             B        ??osRtxIdleThread_0
+     38              }
+     39          }
+     40          
+
+   \                                 In section .text, align 4, keep-with-next
+     41          __NO_RETURN uint32_t osRtxErrorNotify (uint32_t code, void *object_id)
+     42          {
+   \                     osRtxErrorNotify: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x000D             MOVS     R5,R1
+     43              osThreadId_t tid = osThreadGetId();
+   \   00000004   0x.... 0x....      BL       osThreadGetId
+     44          
+     45              switch (code) {
+   \   00000008   0x2C01             CMP      R4,#+1
+   \   0000000A   0xD007             BEQ      ??osRtxErrorNotify_0
+   \   0000000C   0xD324             BCC      ??osRtxErrorNotify_1
+   \   0000000E   0x2C03             CMP      R4,#+3
+   \   00000010   0xD012             BEQ      ??osRtxErrorNotify_2
+   \   00000012   0xD30B             BCC      ??osRtxErrorNotify_3
+   \   00000014   0x2C05             CMP      R4,#+5
+   \   00000016   0xD01B             BEQ      ??osRtxErrorNotify_4
+   \   00000018   0xD316             BCC      ??osRtxErrorNotify_5
+   \   0000001A   0xE01D             B        ??osRtxErrorNotify_1
+     46                case osRtxErrorStackUnderflow:
+     47                  // Stack underflow detected for thread (thread_id=object_id)
+     48                  error("CMSIS-RTOS error: Stack underflow (status: 0x%X, task ID: 0x%X, task name: %s)\n\r",
+     49                          code, object_id, osThreadGetName(object_id));
+   \                     ??osRtxErrorNotify_0: (+1)
+   \   0000001C   0x0028             MOVS     R0,R5
+   \   0000001E   0x.... 0x....      BL       osThreadGetName
+   \   00000022   0x0003             MOVS     R3,R0
+   \   00000024   0x002A             MOVS     R2,R5
+   \   00000026   0x2101             MOVS     R1,#+1
+   \   00000028   0x....             ADR.N    R0,?_0
+   \   0000002A   0xE00A             B.N      ??osRtxErrorNotify_6
+     50                  break;
+     51                case osRtxErrorISRQueueOverflow:
+     52                  // ISR Queue overflow detected when inserting object (object_id)
+     53                  error("CMSIS-RTOS error: ISR Queue overflow (status: 0x%X, task ID: 0x%X, object ID: 0x%X)\n\r",
+     54                          code, tid, object_id);
+   \                     ??osRtxErrorNotify_3: (+1)
+   \   0000002C   0x002B             MOVS     R3,R5
+   \   0000002E   0x0002             MOVS     R2,R0
+   \   00000030   0x2102             MOVS     R1,#+2
+   \   00000032   0xBF00             Nop      
+   \   00000034   0x....             ADR.N    R0,?_1
+   \   00000036   0xE004             B.N      ??osRtxErrorNotify_6
+     55                  break;
+     56                case osRtxErrorTimerQueueOverflow:
+     57                  // User Timer Callback Queue overflow detected for timer (timer_id=object_id)
+     58                  error("CMSIS-RTOS error: User Timer Callback Queue overflow (status: 0x%X, task ID: 0x%X, timer ID: 0x%X)\n\r",
+     59                          code, tid, object_id);
+   \                     ??osRtxErrorNotify_2: (+1)
+   \   00000038   0x002B             MOVS     R3,R5
+   \   0000003A   0x0002             MOVS     R2,R0
+   \   0000003C   0x2103             MOVS     R1,#+3
+   \   0000003E   0xBF00             Nop      
+   \   00000040   0x....             ADR.N    R0,?_2
+   \                     ??osRtxErrorNotify_6: (+1)
+   \   00000042   0x.... 0x....      BL       error
+     60                  break;
+   \   00000046   0xE00C             B        ??osRtxErrorNotify_7
+     61                case osRtxErrorClibSpace:
+     62                  // Standard C/C++ library libspace not available: increase OS_THREAD_LIBSPACE_NUM
+     63                  error("CMSIS-RTOS error: STD C/C++ library libspace not available (status: 0x%X, task ID: 0x%X)\n\r",
+     64                          code, tid);
+   \                     ??osRtxErrorNotify_5: (+1)
+   \   00000048   0x0002             MOVS     R2,R0
+   \   0000004A   0x2104             MOVS     R1,#+4
+   \   0000004C   0x....             ADR.N    R0,?_3
+   \   0000004E   0xE006             B        ??osRtxErrorNotify_8
+     65                  break;
+     66                case osRtxErrorClibMutex:
+     67                  // Standard C/C++ library mutex initialization failed
+     68                  error("CMSIS-RTOS error: STD C/C++ library mutex initialization failed (status: 0x%X, task ID: 0x%X)\n\r",
+     69                          code, tid);
+   \                     ??osRtxErrorNotify_4: (+1)
+   \   00000050   0x0002             MOVS     R2,R0
+   \   00000052   0x2105             MOVS     R1,#+5
+   \   00000054   0x....             ADR.N    R0,?_4
+   \   00000056   0xE002             B        ??osRtxErrorNotify_8
+     70                  break;
+     71                default:
+     72                  error("CMSIS-RTOS error: Unknown (status: 0x%X, task ID: 0x%X)\n\r", code, tid);
+   \                     ??osRtxErrorNotify_1: (+1)
+   \   00000058   0x0002             MOVS     R2,R0
+   \   0000005A   0x0021             MOVS     R1,R4
+   \   0000005C   0x....             ADR.N    R0,?_5
+   \                     ??osRtxErrorNotify_8: (+1)
+   \   0000005E   0x.... 0x....      BL       error
+     73                  break;
+     74              }
+     75          
+     76              /* That shouldn't be reached */
+     77              for (;;) {}
+   \                     ??osRtxErrorNotify_7: (+1)
+   \   00000062   0xE7FE             B        ??osRtxErrorNotify_7
+     78          }
+     79          
+     80          #if defined(MBED_TRAP_ERRORS_ENABLED) && MBED_TRAP_ERRORS_ENABLED
+     81          
+     82          static const char* error_msg(int32_t status)
+     83          {
+     84              switch (status) {
+     85              case osError:
+     86                  return "Unspecified RTOS error";
+     87              case osErrorTimeout:
+     88                  return "Operation not completed within the timeout period";
+     89              case osErrorResource:
+     90                  return "Resource not available";
+     91              case osErrorParameter:
+     92                  return "Parameter error";
+     93              case osErrorNoMemory:
+     94                  return "System is out of memory";
+     95              case osErrorISR:
+     96                  return "Not allowed in ISR context";
+     97              default:
+     98                  return "Unknown";
+     99              }
+    100          }
+    101          
+    102          void EvrRtxKernelError (int32_t status)
+    103          {
+    104              error("Kernel error %i: %s\r\n", status, error_msg(status));
+    105          }
+    106          
+    107          void EvrRtxThreadError (osThreadId_t thread_id, int32_t status)
+    108          {
+    109              error("Thread %p error %i: %s\r\n", thread_id, status, error_msg(status));
+    110          }
+    111          
+    112          void EvrRtxTimerError (osTimerId_t timer_id, int32_t status)
+    113          {
+    114              error("Timer %p error %i: %s\r\n", timer_id, status, error_msg(status));
+    115          }
+    116          
+    117          void EvrRtxEventFlagsError (osEventFlagsId_t ef_id, int32_t status)
+    118          {
+    119              error("Event %p error %i: %s\r\n", ef_id, status, error_msg(status));
+    120          }
+    121          
+    122          void EvrRtxMutexError (osMutexId_t mutex_id, int32_t status)
+    123          {
+    124              error("Mutex %p error %i: %s\r\n", mutex_id, status, error_msg(status));
+    125          }
+    126          
+    127          void EvrRtxSemaphoreError (osSemaphoreId_t semaphore_id, int32_t status)
+    128          {
+    129              // Ignore semaphore overflow, the count will saturate with a returned error
+    130              if (status == osRtxErrorSemaphoreCountLimit) {
+    131                  return;
+    132              }
+    133          
+    134              error("Semaphore %p error %i\r\n", semaphore_id, status);
+    135          }
+    136          
+    137          void EvrRtxMemoryPoolError (osMemoryPoolId_t mp_id, int32_t status)
+    138          {
+    139              error("Memory Pool %p error %i\r\n", mp_id, status);
+    140          }
+    141          
+    142          void EvrRtxMessageQueueError (osMessageQueueId_t mq_id, int32_t status)
+    143          {
+    144              error("Message Queue %p error %i\r\n", mq_id, status);
+    145          }
+    146          
+    147          #endif
+    148          
+    149          // RTX hook which gets called when a thread terminates, using the event function to call hook
+
+   \                                 In section .text, align 2, keep-with-next
+    150          void EvrRtxThreadExit (void)
+    151          {
+   \                     EvrRtxThreadExit: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    152              osThreadId_t thread_id = osThreadGetId();
+   \   00000002   0x.... 0x....      BL       osThreadGetId
+    153              thread_terminate_hook(thread_id);
+   \   00000006   0x.... 0x....      BL       thread_terminate_hook
+    154          #if (!defined(EVR_RTX_DISABLE) && (OS_EVR_THREAD != 0) && !defined(EVR_RTX_THREAD_EXIT_DISABLE) && defined(RTE_Compiler_EventRecorder))
+    155              EventRecord2(EvtRtxThreadExit, 0U, 0U);
+    156          #endif
+    157          }
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+    158          
+
+   \                                 In section .text, align 2, keep-with-next
+    159          void EvrRtxThreadTerminate (osThreadId_t thread_id)
+    160          {
+   \                     EvrRtxThreadTerminate: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    161              thread_terminate_hook(thread_id);
+   \   00000002   0x.... 0x....      BL       thread_terminate_hook
+    162          #if (!defined(EVR_RTX_DISABLE) && (OS_EVR_THREAD != 0) && !defined(EVR_RTX_THREAD_TERMINATE_DISABLE) && defined(RTE_Compiler_EventRecorder))
+    163              EventRecord2(EvtRtxThreadTerminate, (uint32_t)thread_id, 0U);
+    164          #endif
+    165          }
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x43 0x4D          DC8 43H, 4DH, 53H, 49H, 53H, 2DH, 52H, 54H
+   \              0x53 0x49    
+   \              0x53 0x2D    
+   \              0x52 0x54    
+   \   00000008   0x4F 0x53          DC8 4FH, 53H, 20H, 65H, 72H, 72H, 6FH, 72H
+   \              0x20 0x65    
+   \              0x72 0x72    
+   \              0x6F 0x72    
+   \   00000010   0x3A 0x20          DC8 3AH, 20H, 53H, 74H, 61H, 63H, 6BH, 20H
+   \              0x53 0x74    
+   \              0x61 0x63    
+   \              0x6B 0x20    
+   \   00000018   0x75 0x6E          DC8 75H, 6EH, 64H, 65H, 72H, 66H, 6CH, 6FH
+   \              0x64 0x65    
+   \              0x72 0x66    
+   \              0x6C 0x6F    
+   \   00000020   0x77 0x20          DC8 77H, 20H, 28H, 73H, 74H, 61H, 74H, 75H
+   \              0x28 0x73    
+   \              0x74 0x61    
+   \              0x74 0x75    
+   \   00000028   0x73 0x3A          DC8 73H, 3AH, 20H, 30H, 78H, 25H, 58H, 2CH
+   \              0x20 0x30    
+   \              0x78 0x25    
+   \              0x58 0x2C    
+   \   00000030   0x20 0x74          DC8 20H, 74H, 61H, 73H, 6BH, 20H, 49H, 44H
+   \              0x61 0x73    
+   \              0x6B 0x20    
+   \              0x49 0x44    
+   \   00000038   0x3A 0x20          DC8 3AH, 20H, 30H, 78H, 25H, 58H, 2CH, 20H
+   \              0x30 0x78    
+   \              0x25 0x58    
+   \              0x2C 0x20    
+   \   00000040   0x74 0x61          DC8 74H, 61H, 73H, 6BH, 20H, 6EH, 61H, 6DH
+   \              0x73 0x6B    
+   \              0x20 0x6E    
+   \              0x61 0x6D    
+   \   00000048   0x65 0x3A          DC8 65H, 3AH, 20H, 25H, 73H, 29H, 0AH, 0DH
+   \              0x20 0x25    
+   \              0x73 0x29    
+   \              0x0A 0x0D    
+   \   00000050   0x00               DC8 0
+   \   00000051   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x43 0x4D          DC8 43H, 4DH, 53H, 49H, 53H, 2DH, 52H, 54H
+   \              0x53 0x49    
+   \              0x53 0x2D    
+   \              0x52 0x54    
+   \   00000008   0x4F 0x53          DC8 4FH, 53H, 20H, 65H, 72H, 72H, 6FH, 72H
+   \              0x20 0x65    
+   \              0x72 0x72    
+   \              0x6F 0x72    
+   \   00000010   0x3A 0x20          DC8 3AH, 20H, 49H, 53H, 52H, 20H, 51H, 75H
+   \              0x49 0x53    
+   \              0x52 0x20    
+   \              0x51 0x75    
+   \   00000018   0x65 0x75          DC8 65H, 75H, 65H, 20H, 6FH, 76H, 65H, 72H
+   \              0x65 0x20    
+   \              0x6F 0x76    
+   \              0x65 0x72    
+   \   00000020   0x66 0x6C          DC8 66H, 6CH, 6FH, 77H, 20H, 28H, 73H, 74H
+   \              0x6F 0x77    
+   \              0x20 0x28    
+   \              0x73 0x74    
+   \   00000028   0x61 0x74          DC8 61H, 74H, 75H, 73H, 3AH, 20H, 30H, 78H
+   \              0x75 0x73    
+   \              0x3A 0x20    
+   \              0x30 0x78    
+   \   00000030   0x25 0x58          DC8 25H, 58H, 2CH, 20H, 74H, 61H, 73H, 6BH
+   \              0x2C 0x20    
+   \              0x74 0x61    
+   \              0x73 0x6B    
+   \   00000038   0x20 0x49          DC8 20H, 49H, 44H, 3AH, 20H, 30H, 78H, 25H
+   \              0x44 0x3A    
+   \              0x20 0x30    
+   \              0x78 0x25    
+   \   00000040   0x58 0x2C          DC8 58H, 2CH, 20H, 6FH, 62H, 6AH, 65H, 63H
+   \              0x20 0x6F    
+   \              0x62 0x6A    
+   \              0x65 0x63    
+   \   00000048   0x74 0x20          DC8 74H, 20H, 49H, 44H, 3AH, 20H, 30H, 78H
+   \              0x49 0x44    
+   \              0x3A 0x20    
+   \              0x30 0x78    
+   \   00000050   0x25 0x58          DC8 25H, 58H, 29H, 0AH, 0DH, 0
+   \              0x29 0x0A    
+   \              0x0D 0x00    
+   \   00000056   0x00 0x00          DC8 0, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_2:
+   \   00000000   0x43 0x4D          DC8 43H, 4DH, 53H, 49H, 53H, 2DH, 52H, 54H
+   \              0x53 0x49    
+   \              0x53 0x2D    
+   \              0x52 0x54    
+   \   00000008   0x4F 0x53          DC8 4FH, 53H, 20H, 65H, 72H, 72H, 6FH, 72H
+   \              0x20 0x65    
+   \              0x72 0x72    
+   \              0x6F 0x72    
+   \   00000010   0x3A 0x20          DC8 3AH, 20H, 55H, 73H, 65H, 72H, 20H, 54H
+   \              0x55 0x73    
+   \              0x65 0x72    
+   \              0x20 0x54    
+   \   00000018   0x69 0x6D          DC8 69H, 6DH, 65H, 72H, 20H, 43H, 61H, 6CH
+   \              0x65 0x72    
+   \              0x20 0x43    
+   \              0x61 0x6C    
+   \   00000020   0x6C 0x62          DC8 6CH, 62H, 61H, 63H, 6BH, 20H, 51H, 75H
+   \              0x61 0x63    
+   \              0x6B 0x20    
+   \              0x51 0x75    
+   \   00000028   0x65 0x75          DC8 65H, 75H, 65H, 20H, 6FH, 76H, 65H, 72H
+   \              0x65 0x20    
+   \              0x6F 0x76    
+   \              0x65 0x72    
+   \   00000030   0x66 0x6C          DC8 66H, 6CH, 6FH, 77H, 20H, 28H, 73H, 74H
+   \              0x6F 0x77    
+   \              0x20 0x28    
+   \              0x73 0x74    
+   \   00000038   0x61 0x74          DC8 61H, 74H, 75H, 73H, 3AH, 20H, 30H, 78H
+   \              0x75 0x73    
+   \              0x3A 0x20    
+   \              0x30 0x78    
+   \   00000040   0x25 0x58          DC8 25H, 58H, 2CH, 20H, 74H, 61H, 73H, 6BH
+   \              0x2C 0x20    
+   \              0x74 0x61    
+   \              0x73 0x6B    
+   \   00000048   0x20 0x49          DC8 20H, 49H, 44H, 3AH, 20H, 30H, 78H, 25H
+   \              0x44 0x3A    
+   \              0x20 0x30    
+   \              0x78 0x25    
+   \   00000050   0x58 0x2C          DC8 58H, 2CH, 20H, 74H, 69H, 6DH, 65H, 72H
+   \              0x20 0x74    
+   \              0x69 0x6D    
+   \              0x65 0x72    
+   \   00000058   0x20 0x49          DC8 20H, 49H, 44H, 3AH, 20H, 30H, 78H, 25H
+   \              0x44 0x3A    
+   \              0x20 0x30    
+   \              0x78 0x25    
+   \   00000060   0x58 0x29          DC8 58H, 29H, 0AH, 0DH, 0
+   \              0x0A 0x0D    
+   \              0x00         
+   \   00000065   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_3:
+   \   00000000   0x43 0x4D          DC8 43H, 4DH, 53H, 49H, 53H, 2DH, 52H, 54H
+   \              0x53 0x49    
+   \              0x53 0x2D    
+   \              0x52 0x54    
+   \   00000008   0x4F 0x53          DC8 4FH, 53H, 20H, 65H, 72H, 72H, 6FH, 72H
+   \              0x20 0x65    
+   \              0x72 0x72    
+   \              0x6F 0x72    
+   \   00000010   0x3A 0x20          DC8 3AH, 20H, 53H, 54H, 44H, 20H, 43H, 2FH
+   \              0x53 0x54    
+   \              0x44 0x20    
+   \              0x43 0x2F    
+   \   00000018   0x43 0x2B          DC8 43H, 2BH, 2BH, 20H, 6CH, 69H, 62H, 72H
+   \              0x2B 0x20    
+   \              0x6C 0x69    
+   \              0x62 0x72    
+   \   00000020   0x61 0x72          DC8 61H, 72H, 79H, 20H, 6CH, 69H, 62H, 73H
+   \              0x79 0x20    
+   \              0x6C 0x69    
+   \              0x62 0x73    
+   \   00000028   0x70 0x61          DC8 70H, 61H, 63H, 65H, 20H, 6EH, 6FH, 74H
+   \              0x63 0x65    
+   \              0x20 0x6E    
+   \              0x6F 0x74    
+   \   00000030   0x20 0x61          DC8 20H, 61H, 76H, 61H, 69H, 6CH, 61H, 62H
+   \              0x76 0x61    
+   \              0x69 0x6C    
+   \              0x61 0x62    
+   \   00000038   0x6C 0x65          DC8 6CH, 65H, 20H, 28H, 73H, 74H, 61H, 74H
+   \              0x20 0x28    
+   \              0x73 0x74    
+   \              0x61 0x74    
+   \   00000040   0x75 0x73          DC8 75H, 73H, 3AH, 20H, 30H, 78H, 25H, 58H
+   \              0x3A 0x20    
+   \              0x30 0x78    
+   \              0x25 0x58    
+   \   00000048   0x2C 0x20          DC8 2CH, 20H, 74H, 61H, 73H, 6BH, 20H, 49H
+   \              0x74 0x61    
+   \              0x73 0x6B    
+   \              0x20 0x49    
+   \   00000050   0x44 0x3A          DC8 44H, 3AH, 20H, 30H, 78H, 25H, 58H, 29H
+   \              0x20 0x30    
+   \              0x78 0x25    
+   \              0x58 0x29    
+   \   00000058   0x0A 0x0D          DC8 0AH, 0DH, 0
+   \              0x00         
+   \   0000005B   0x00               DC8 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_4:
+   \   00000000   0x43 0x4D          DC8 43H, 4DH, 53H, 49H, 53H, 2DH, 52H, 54H
+   \              0x53 0x49    
+   \              0x53 0x2D    
+   \              0x52 0x54    
+   \   00000008   0x4F 0x53          DC8 4FH, 53H, 20H, 65H, 72H, 72H, 6FH, 72H
+   \              0x20 0x65    
+   \              0x72 0x72    
+   \              0x6F 0x72    
+   \   00000010   0x3A 0x20          DC8 3AH, 20H, 53H, 54H, 44H, 20H, 43H, 2FH
+   \              0x53 0x54    
+   \              0x44 0x20    
+   \              0x43 0x2F    
+   \   00000018   0x43 0x2B          DC8 43H, 2BH, 2BH, 20H, 6CH, 69H, 62H, 72H
+   \              0x2B 0x20    
+   \              0x6C 0x69    
+   \              0x62 0x72    
+   \   00000020   0x61 0x72          DC8 61H, 72H, 79H, 20H, 6DH, 75H, 74H, 65H
+   \              0x79 0x20    
+   \              0x6D 0x75    
+   \              0x74 0x65    
+   \   00000028   0x78 0x20          DC8 78H, 20H, 69H, 6EH, 69H, 74H, 69H, 61H
+   \              0x69 0x6E    
+   \              0x69 0x74    
+   \              0x69 0x61    
+   \   00000030   0x6C 0x69          DC8 6CH, 69H, 7AH, 61H, 74H, 69H, 6FH, 6EH
+   \              0x7A 0x61    
+   \              0x74 0x69    
+   \              0x6F 0x6E    
+   \   00000038   0x20 0x66          DC8 20H, 66H, 61H, 69H, 6CH, 65H, 64H, 20H
+   \              0x61 0x69    
+   \              0x6C 0x65    
+   \              0x64 0x20    
+   \   00000040   0x28 0x73          DC8 28H, 73H, 74H, 61H, 74H, 75H, 73H, 3AH
+   \              0x74 0x61    
+   \              0x74 0x75    
+   \              0x73 0x3A    
+   \   00000048   0x20 0x30          DC8 20H, 30H, 78H, 25H, 58H, 2CH, 20H, 74H
+   \              0x78 0x25    
+   \              0x58 0x2C    
+   \              0x20 0x74    
+   \   00000050   0x61 0x73          DC8 61H, 73H, 6BH, 20H, 49H, 44H, 3AH, 20H
+   \              0x6B 0x20    
+   \              0x49 0x44    
+   \              0x3A 0x20    
+   \   00000058   0x30 0x78          DC8 30H, 78H, 25H, 58H, 29H, 0AH, 0DH, 0
+   \              0x25 0x58    
+   \              0x29 0x0A    
+   \              0x0D 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_5:
+   \   00000000   0x43 0x4D          DC8 43H, 4DH, 53H, 49H, 53H, 2DH, 52H, 54H
+   \              0x53 0x49    
+   \              0x53 0x2D    
+   \              0x52 0x54    
+   \   00000008   0x4F 0x53          DC8 4FH, 53H, 20H, 65H, 72H, 72H, 6FH, 72H
+   \              0x20 0x65    
+   \              0x72 0x72    
+   \              0x6F 0x72    
+   \   00000010   0x3A 0x20          DC8 3AH, 20H, 55H, 6EH, 6BH, 6EH, 6FH, 77H
+   \              0x55 0x6E    
+   \              0x6B 0x6E    
+   \              0x6F 0x77    
+   \   00000018   0x6E 0x20          DC8 6EH, 20H, 28H, 73H, 74H, 61H, 74H, 75H
+   \              0x28 0x73    
+   \              0x74 0x61    
+   \              0x74 0x75    
+   \   00000020   0x73 0x3A          DC8 73H, 3AH, 20H, 30H, 78H, 25H, 58H, 2CH
+   \              0x20 0x30    
+   \              0x78 0x25    
+   \              0x58 0x2C    
+   \   00000028   0x20 0x74          DC8 20H, 74H, 61H, 73H, 6BH, 20H, 49H, 44H
+   \              0x61 0x73    
+   \              0x6B 0x20    
+   \              0x49 0x44    
+   \   00000030   0x3A 0x20          DC8 3AH, 20H, 30H, 78H, 25H, 58H, 29H, 0AH
+   \              0x30 0x78    
+   \              0x25 0x58    
+   \              0x29 0x0A    
+   \   00000038   0x0D 0x00          DC8 0DH, 0
+   \   0000003A   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   EvrRtxThreadExit
+         8   -> osThreadGetId
+         8   -> thread_terminate_hook
+       8   EvrRtxThreadTerminate
+         8   -> thread_terminate_hook
+       0   osRtxErrorNotify
+         0   -> error
+         0   -> osThreadGetId
+         0   -> osThreadGetName
+       0   osRtxIdleThread
+         0   -> rtos_idle_loop
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      84  ?_0
+      88  ?_1
+     104  ?_2
+      92  ?_3
+      96  ?_4
+      60  ?_5
+      12  EvrRtxThreadExit
+       8  EvrRtxThreadTerminate
+     100  osRtxErrorNotify
+       6  osRtxIdleThread
+
+ 
+ 650 bytes in section .text
+ 
+ 650 bytes of CODE memory
+
+Errors: none
+Warnings: none

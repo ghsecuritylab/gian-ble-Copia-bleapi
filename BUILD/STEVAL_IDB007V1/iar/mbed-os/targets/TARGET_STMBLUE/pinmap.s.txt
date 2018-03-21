@@ -1,0 +1,301 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:34:00
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\targets\TARGET_STMBLUE\pinmap.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\pinmap.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\pinmap.s.txt
+#        -o .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\pinmap.o
+#        .\mbed-os\targets\TARGET_STMBLUE\pinmap.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\pinmap.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\pinmap.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\pinmap.c
+      1          /* mbed Microcontroller Library
+      2           *******************************************************************************
+      3           *******************************************************************************
+      4           */
+      5          #include "mbed_assert.h"
+      6          #include "pinmap.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+      7          #include "bluenrg_x_device.h"
+      8          
+      9          
+
+   \                                 In section .text, align 4, keep-with-next
+     10          void pin_function(PinName pin, int data){
+   \                     pin_function: (+1)
+   \   00000000   0xB410             PUSH     {R4}
+     11          	uint8_t mode = data & 0xFF;
+   \   00000002   0xB2C9             UXTB     R1,R1
+     12          	if(pin < 8) {
+   \   00000004   0x0002             MOVS     R2,R0
+   \   00000006   0x2A08             CMP      R2,#+8
+   \   00000008   0xDA09             BGE      ??pin_function_0
+     13          				MODIFY_REG(GPIO->MODE0, (0xF<<(pin*4)), (mode << (pin*4)) );
+   \   0000000A   0x0080             LSLS     R0,R0,#+2
+   \   0000000C   0x4A0B             LDR      R2,??pin_function_1  ;; 0x4000002c
+   \   0000000E   0x6813             LDR      R3,[R2, #+0]
+   \   00000010   0x240F             MOVS     R4,#+15
+   \   00000012   0x4084             LSLS     R4,R4,R0
+   \   00000014   0x43A3             BICS     R3,R3,R4
+   \   00000016   0x4081             LSLS     R1,R1,R0
+   \   00000018   0x4319             ORRS     R1,R1,R3
+   \   0000001A   0x6011             STR      R1,[R2, #+0]
+   \   0000001C   0xE00C             B        ??pin_function_2
+     14          			}
+     15          			else if((pin > 7) && (pin < 16)) {
+   \                     ??pin_function_0: (+1)
+   \   0000001E   0x3A08             SUBS     R2,R2,#+8
+   \   00000020   0x2A08             CMP      R2,#+8
+   \   00000022   0xD209             BCS      ??pin_function_2
+     16          				MODIFY_REG(GPIO->MODE1, (0xF<<((pin-8)*4)), (mode << ((pin-8)*4)) );
+   \   00000024   0x3808             SUBS     R0,R0,#+8
+   \   00000026   0x0080             LSLS     R0,R0,#+2
+   \   00000028   0x4A04             LDR      R2,??pin_function_1  ;; 0x4000002c
+   \   0000002A   0x6853             LDR      R3,[R2, #+4]
+   \   0000002C   0x240F             MOVS     R4,#+15
+   \   0000002E   0x4084             LSLS     R4,R4,R0
+   \   00000030   0x43A3             BICS     R3,R3,R4
+   \   00000032   0x4081             LSLS     R1,R1,R0
+   \   00000034   0x4319             ORRS     R1,R1,R3
+   \   00000036   0x6051             STR      R1,[R2, #+4]
+     17          			}
+     18          		#ifdef BLUENRG2_DEVICE
+     19          			else if((pin > 15) && (pin < 24)) {
+     20          				MODIFY_REG(GPIO->MODE2, (0xF<<((pin-16)*4)), (mode << ((pin-16)*4)) );
+     21          			}
+     22          			else if(pin > 23) {
+     23          				MODIFY_REG(GPIO->MODE3, (0xF<<((pin-24)*4)), (mode << ((pin-24)*4)) );
+     24          			}
+     25          		#endif
+     26          }
+   \                     ??pin_function_2: (+1)
+   \   00000038   0xBC10             POP      {R4}
+   \   0000003A   0x4770             BX       LR               ;; return
+   \                     ??pin_function_1:
+   \   0000003C   0x4000002C         DC32     0x4000002c
+     27          
+     28          #ifdef stm
+     29          #include "mbed_assert.h"
+     30          #include "pinmap.h"
+     31          #include "PortNames.h"
+     32          #include "mbed_error.h"
+     33          #include "pin_device.h"
+     34          
+     35          extern GPIO_TypeDef *Set_GPIO_Clock(uint32_t port_idx);
+     36          
+     37          const uint32_t ll_pin_defines[16] = {
+     38              LL_GPIO_PIN_0,
+     39              LL_GPIO_PIN_1,
+     40              LL_GPIO_PIN_2,
+     41              LL_GPIO_PIN_3,
+     42              LL_GPIO_PIN_4,
+     43              LL_GPIO_PIN_5,
+     44              LL_GPIO_PIN_6,
+     45              LL_GPIO_PIN_7,
+     46              LL_GPIO_PIN_8,
+     47              LL_GPIO_PIN_9,
+     48              LL_GPIO_PIN_10,
+     49              LL_GPIO_PIN_11,
+     50              LL_GPIO_PIN_12,
+     51              LL_GPIO_PIN_13,
+     52              LL_GPIO_PIN_14,
+     53              LL_GPIO_PIN_15
+     54          };
+     55          
+     56          /**
+     57           * Configure pin (mode, speed, output type and pull-up/pull-down)
+     58           */
+     59          void pin_function(PinName pin, int data)
+     60          {
+     61              MBED_ASSERT(pin != (PinName)NC);
+     62          
+     63              // Get the pin informations
+     64              uint32_t mode  = STM_PIN_FUNCTION(data);
+     65              uint32_t afnum = STM_PIN_AFNUM(data);
+     66              uint32_t port = STM_PORT(pin);
+     67              uint32_t ll_pin  = ll_pin_defines[STM_PIN(pin)];
+     68              uint32_t ll_mode = 0;
+     69          
+     70              // Enable GPIO clock
+     71              GPIO_TypeDef *gpio = Set_GPIO_Clock(port);
+     72          
+     73              /*  Set default speed to high.
+     74               *  For most families there are dedicated registers so it is
+     75               *  not so important, register can be set at any time.
+     76               *  But for families like F1, speed only applies to output.
+     77               */
+     78          #if defined (TARGET_STM32F1)
+     79          if (mode == STM_PIN_OUTPUT) {
+     80          #endif
+     81              LL_GPIO_SetPinSpeed(gpio, ll_pin, LL_GPIO_SPEED_FREQ_HIGH);
+     82          #if defined (TARGET_STM32F1)
+     83          }
+     84          #endif
+     85          
+     86              switch (mode) {
+     87                  case STM_PIN_INPUT:
+     88                      ll_mode = LL_GPIO_MODE_INPUT;
+     89                      break;
+     90                  case STM_PIN_OUTPUT:
+     91                      ll_mode = LL_GPIO_MODE_OUTPUT;
+     92                      break;
+     93                  case STM_PIN_ALTERNATE:
+     94                      ll_mode = LL_GPIO_MODE_ALTERNATE;
+     95                      // In case of ALT function, also set he afnum
+     96                     stm_pin_SetAFPin(gpio, pin, afnum);
+     97                      break;
+     98                  case STM_PIN_ANALOG:
+     99                      ll_mode = LL_GPIO_MODE_ANALOG;
+    100                      break;
+    101                  default:
+    102                      MBED_ASSERT(0);
+    103                      break;
+    104              }
+    105              LL_GPIO_SetPinMode(gpio, ll_pin, ll_mode);
+    106          
+    107          #if defined(GPIO_ASCR_ASC0)
+    108              /*  For families where Analog Control ASC0 register is present */
+    109              if (STM_PIN_ANALOG_CONTROL(data)) {
+    110                  LL_GPIO_EnablePinAnalogControl(gpio, ll_pin);
+    111              } else {
+    112                  LL_GPIO_DisablePinAnalogControl(gpio, ll_pin);
+    113              }
+    114          #endif
+    115          
+    116              /*  For now by default use Speed HIGH for output or alt modes */
+    117              if ((mode == STM_PIN_OUTPUT) ||(mode == STM_PIN_ALTERNATE)) {
+    118              if (STM_PIN_OD(data)) {
+    119                      LL_GPIO_SetPinOutputType(gpio, ll_pin, LL_GPIO_OUTPUT_OPENDRAIN);
+    120              } else {
+    121                      LL_GPIO_SetPinOutputType(gpio, ll_pin, LL_GPIO_OUTPUT_PUSHPULL);
+    122              }
+    123              }
+    124          
+    125              stm_pin_PullConfig(gpio, ll_pin, STM_PIN_PUPD(data));
+    126          
+    127              stm_pin_DisconnectDebug(pin);
+    128          }
+    129          
+    130          /**
+    131           * Configure pin pull-up/pull-down
+    132           */
+    133          void pin_mode(PinName pin, PinMode mode)
+    134          {
+    135              MBED_ASSERT(pin != (PinName)NC);
+    136          
+    137              uint32_t port_index = STM_PORT(pin);
+    138              uint32_t ll_pin  = ll_pin_defines[STM_PIN(pin)];
+    139              // Enable GPIO clock
+    140              GPIO_TypeDef *gpio = Set_GPIO_Clock(port_index);
+    141              uint32_t function = LL_GPIO_GetPinMode(gpio, ll_pin);
+    142          
+    143              if ((function == LL_GPIO_MODE_OUTPUT) || (function == LL_GPIO_MODE_ALTERNATE))
+    144              {
+    145                  if ((mode == OpenDrainNoPull) || (mode == OpenDrainPullUp) || (mode == OpenDrainPullDown)) {
+    146                      LL_GPIO_SetPinOutputType(gpio, ll_pin, LL_GPIO_OUTPUT_OPENDRAIN);
+    147                  } else {
+    148                      LL_GPIO_SetPinOutputType(gpio, ll_pin, LL_GPIO_OUTPUT_PUSHPULL);
+    149                  }
+    150              }
+    151          
+    152              if ((mode == OpenDrainPullUp) || (mode == PullUp)) {
+    153                  stm_pin_PullConfig(gpio, ll_pin, GPIO_PULLUP);
+    154              } else if ((mode == OpenDrainPullDown) || (mode == PullDown)) {
+    155                  stm_pin_PullConfig(gpio, ll_pin, GPIO_PULLDOWN);
+    156              } else {
+    157                  stm_pin_PullConfig(gpio, ll_pin, GPIO_NOPULL);
+    158              }
+    159          }
+    160          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   pin_function
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      64  pin_function
+
+ 
+ 64 bytes in section .text
+ 
+ 64 bytes of CODE memory
+
+Errors: none
+Warnings: 1

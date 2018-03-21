@@ -1,0 +1,1304 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:54
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        .\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_semaphore.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_semaphore.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_semaphore.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_semaphore.o
+#        .\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_semaphore.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_semaphore.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_semaphore.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\rtos\TARGET_CORTEX\rtx5\RTX\Source\rtx_semaphore.c
+      1          /*
+      2           * Copyright (c) 2013-2017 ARM Limited. All rights reserved.
+      3           *
+      4           * SPDX-License-Identifier: Apache-2.0
+      5           *
+      6           * Licensed under the Apache License, Version 2.0 (the License); you may
+      7           * not use this file except in compliance with the License.
+      8           * You may obtain a copy of the License at
+      9           *
+     10           * www.apache.org/licenses/LICENSE-2.0
+     11           *
+     12           * Unless required by applicable law or agreed to in writing, software
+     13           * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+     14           * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     15           * See the License for the specific language governing permissions and
+     16           * limitations under the License.
+     17           *
+     18           * -----------------------------------------------------------------------------
+     19           *
+     20           * Project:     CMSIS-RTOS RTX
+     21           * Title:       Semaphore functions
+     22           *
+     23           * -----------------------------------------------------------------------------
+     24           */
+     25          
+     26          #include "rtx_lib.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     27          
+     28          
+     29          //  ==== Helper functions ====
+     30          
+     31          /// Decrement Semaphore tokens.
+     32          /// \param[in]  semaphore       semaphore object.
+     33          /// \return 1 - success, 0 - failure.
+
+   \                                 In section .text, align 2, keep-with-next
+     34          static uint32_t SemaphoreTokenDecrement (os_semaphore_t *semaphore) {
+     35          #if (__EXCLUSIVE_ACCESS == 0U)
+     36            uint32_t primask = __get_PRIMASK();
+   \                     SemaphoreTokenDecrement: (+1)
+   \   00000000   0xF3EF 0x8110      MRS      R1,PRIMASK
+     37          #endif
+     38            uint32_t ret;
+     39          
+     40          #if (__EXCLUSIVE_ACCESS == 0U)
+     41            __disable_irq();
+   \   00000004   0xB672             CPSID    I
+     42          
+     43            if (semaphore->tokens != 0U) {
+   \   00000006   0x8982             LDRH     R2,[R0, #+12]
+   \   00000008   0x0013             MOVS     R3,R2
+   \   0000000A   0xD003             BEQ      ??SemaphoreTokenDecrement_0
+     44              semaphore->tokens--;
+   \   0000000C   0x1E52             SUBS     R2,R2,#+1
+   \   0000000E   0x8182             STRH     R2,[R0, #+12]
+     45              ret = 1U;
+   \   00000010   0x2001             MOVS     R0,#+1
+   \   00000012   0xE000             B        ??SemaphoreTokenDecrement_1
+     46            } else {
+     47              ret = 0U;
+   \                     ??SemaphoreTokenDecrement_0: (+1)
+   \   00000014   0x2000             MOVS     R0,#+0
+     48            }
+     49          
+     50            if (primask == 0U) {
+   \                     ??SemaphoreTokenDecrement_1: (+1)
+   \   00000016   0x2900             CMP      R1,#+0
+   \   00000018   0xD100             BNE      ??SemaphoreTokenDecrement_2
+     51              __enable_irq();
+   \   0000001A   0xB662             CPSIE    I
+     52            }
+     53          #else
+     54            if (atomic_dec16_nz(&semaphore->tokens) != 0U) {
+     55              ret = 1U;
+     56            } else {
+     57              ret = 0U;
+     58            }
+     59          #endif
+     60          
+     61            return ret;
+   \                     ??SemaphoreTokenDecrement_2: (+1)
+   \   0000001C   0x4770             BX       LR               ;; return
+     62          }
+     63          
+     64          /// Increment Semaphore tokens.
+     65          /// \param[in]  semaphore       semaphore object.
+     66          /// \return 1 - success, 0 - failure.
+
+   \                                 In section .text, align 2, keep-with-next
+     67          static uint32_t SemaphoreTokenIncrement (os_semaphore_t *semaphore) {
+   \                     SemaphoreTokenIncrement: (+1)
+   \   00000000   0xB410             PUSH     {R4}
+     68          #if (__EXCLUSIVE_ACCESS == 0U)
+     69            uint32_t primask = __get_PRIMASK();
+   \   00000002   0xF3EF 0x8110      MRS      R1,PRIMASK
+     70          #endif
+     71            uint32_t ret;
+     72          
+     73          #if (__EXCLUSIVE_ACCESS == 0U)
+     74            __disable_irq();
+   \   00000006   0xB672             CPSID    I
+     75          
+     76            if (semaphore->tokens < semaphore->max_tokens) {
+   \   00000008   0x8982             LDRH     R2,[R0, #+12]
+   \   0000000A   0x89C4             LDRH     R4,[R0, #+14]
+   \   0000000C   0x42A2             CMP      R2,R4
+   \   0000000E   0xD203             BCS      ??SemaphoreTokenIncrement_0
+     77              semaphore->tokens++;
+   \   00000010   0x1C52             ADDS     R2,R2,#+1
+   \   00000012   0x8182             STRH     R2,[R0, #+12]
+     78              ret = 1U;
+   \   00000014   0x2001             MOVS     R0,#+1
+   \   00000016   0xE000             B        ??SemaphoreTokenIncrement_1
+     79            } else {
+     80              ret = 0U;
+   \                     ??SemaphoreTokenIncrement_0: (+1)
+   \   00000018   0x2000             MOVS     R0,#+0
+     81            }
+     82          
+     83            if (primask == 0U) {
+   \                     ??SemaphoreTokenIncrement_1: (+1)
+   \   0000001A   0x2900             CMP      R1,#+0
+   \   0000001C   0xD100             BNE      ??SemaphoreTokenIncrement_2
+     84              __enable_irq();
+   \   0000001E   0xB662             CPSIE    I
+     85            }
+     86          #else
+     87            if (atomic_inc16_lt(&semaphore->tokens, semaphore->max_tokens) < semaphore->max_tokens) {
+     88              ret = 1U;
+     89            } else {
+     90              ret = 0U;
+     91            }
+     92          #endif
+     93          
+     94            return ret;
+   \                     ??SemaphoreTokenIncrement_2: (+1)
+   \   00000020   0xBC10             POP      {R4}
+   \   00000022   0x4770             BX       LR               ;; return
+     95          }
+     96          
+     97          
+     98          //  ==== Library functions ====
+     99          
+    100          /// Semaphore post ISR processing.
+    101          /// \param[in]  semaphore       semaphore object.
+
+   \                                 In section .text, align 2, keep-with-next
+    102          void osRtxSemaphorePostProcess (os_semaphore_t *semaphore) {
+   \                     osRtxSemaphorePostProcess: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    103            os_thread_t *thread;
+    104          
+    105            if (semaphore->state == osRtxObjectInactive) {
+   \   00000004   0x7860             LDRB     R0,[R4, #+1]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD011             BEQ      ??osRtxSemaphorePostProcess_0
+    106              return;
+    107            }
+    108          
+    109            // Check if Thread is waiting for a token
+    110            if (semaphore->thread_list != NULL) {
+   \   0000000A   0x68A0             LDR      R0,[R4, #+8]
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD00E             BEQ      ??osRtxSemaphorePostProcess_0
+    111              // Try to acquire token
+    112              if (SemaphoreTokenDecrement(semaphore) != 0U) {
+   \   00000010   0x0020             MOVS     R0,R4
+   \   00000012   0x.... 0x....      BL       SemaphoreTokenDecrement
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD009             BEQ      ??osRtxSemaphorePostProcess_0
+    113                // Wakeup waiting Thread with highest Priority
+    114                thread = osRtxThreadListGet((os_object_t*)semaphore);
+   \   0000001A   0x0020             MOVS     R0,R4
+   \   0000001C   0x.... 0x....      BL       osRtxThreadListGet
+    115                osRtxThreadWaitExit(thread, (uint32_t)osOK, false);
+   \   00000020   0x2200             MOVS     R2,#+0
+   \   00000022   0x2100             MOVS     R1,#+0
+   \   00000024   0x.... 0x....      BL       osRtxThreadWaitExit
+    116                EvrRtxSemaphoreAcquired(semaphore);
+   \   00000028   0x0020             MOVS     R0,R4
+   \   0000002A   0x.... 0x....      BL       EvrRtxSemaphoreAcquired
+    117              }
+    118            }
+    119          }
+   \                     ??osRtxSemaphorePostProcess_0: (+1)
+   \   0000002E   0xBD10             POP      {R4,PC}          ;; return
+    120          
+    121          
+    122          //  ==== Service Calls ====
+    123          
+    124          //  Service Calls definitions
+    125          SVC0_3M(SemaphoreNew,      osSemaphoreId_t, uint32_t, uint32_t, const osSemaphoreAttr_t *)
+    126          SVC0_1 (SemaphoreGetName,  const char *,    osSemaphoreId_t)
+    127          SVC0_2 (SemaphoreAcquire,  osStatus_t,      osSemaphoreId_t, uint32_t)
+    128          SVC0_1 (SemaphoreRelease,  osStatus_t,      osSemaphoreId_t)
+    129          SVC0_1 (SemaphoreGetCount, uint32_t,        osSemaphoreId_t)
+    130          SVC0_1 (SemaphoreDelete,   osStatus_t,      osSemaphoreId_t)
+    131          
+    132          /// Create and Initialize a Semaphore object.
+    133          /// \note API identical to osSemaphoreNew
+
+   \                                 In section .text, align 2, keep-with-next
+    134          osSemaphoreId_t svcRtxSemaphoreNew (uint32_t max_count, uint32_t initial_count, const osSemaphoreAttr_t *attr) {
+   \                     svcRtxSemaphoreNew: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000F             MOVS     R7,R1
+    135            os_semaphore_t *semaphore;
+    136            uint8_t         flags;
+    137            const char     *name;
+    138          
+    139            // Check parameters
+    140            if ((max_count == 0U) || (max_count > osRtxSemaphoreTokenLimit) || (initial_count > max_count)) {
+   \   00000006   0x2D00             CMP      R5,#+0
+   \   00000008   0xD005             BEQ      ??svcRtxSemaphoreNew_0
+   \   0000000A   0x2080             MOVS     R0,#+128
+   \   0000000C   0x0240             LSLS     R0,R0,#+9        ;; #+65536
+   \   0000000E   0x4285             CMP      R5,R0
+   \   00000010   0xD201             BCS      ??svcRtxSemaphoreNew_0
+   \   00000012   0x42BD             CMP      R5,R7
+   \   00000014   0xD201             BCS      ??svcRtxSemaphoreNew_1
+    141              EvrRtxSemaphoreError(NULL, osErrorParameter);
+   \                     ??svcRtxSemaphoreNew_0: (+1)
+   \   00000016   0x2103             MOVS     R1,#+3
+   \   00000018   0xE021             B.N      ??svcRtxSemaphoreNew_2
+    142              return NULL;
+    143            }
+    144          
+    145            // Process attributes
+    146            if (attr != NULL) {
+   \                     ??svcRtxSemaphoreNew_1: (+1)
+   \   0000001A   0x2A00             CMP      R2,#+0
+   \   0000001C   0xD020             BEQ      ??svcRtxSemaphoreNew_3
+    147              name      = attr->name;
+   \   0000001E   0x6814             LDR      R4,[R2, #+0]
+    148              semaphore = attr->cb_mem;
+   \   00000020   0x6896             LDR      R6,[R2, #+8]
+    149              if (semaphore != NULL) {
+   \   00000022   0x2E00             CMP      R6,#+0
+   \   00000024   0xD017             BEQ      ??svcRtxSemaphoreNew_4
+    150                if (((uint32_t)semaphore & 3U) || (attr->cb_size < sizeof(os_semaphore_t))) {
+   \   00000026   0x07B0             LSLS     R0,R6,#+30
+   \   00000028   0xD118             BNE      ??svcRtxSemaphoreNew_5
+   \   0000002A   0x68D0             LDR      R0,[R2, #+12]
+   \   0000002C   0x2810             CMP      R0,#+16
+   \   0000002E   0xD315             BCC      ??svcRtxSemaphoreNew_5
+    151                  EvrRtxSemaphoreError(NULL, osRtxErrorInvalidControlBlock);
+    152                  return NULL;
+    153                }
+    154              } else {
+    155                if (attr->cb_size != 0U) {
+    156                  EvrRtxSemaphoreError(NULL, osRtxErrorInvalidControlBlock);
+    157                  return NULL;
+    158                }
+    159              }
+    160            } else {
+    161              name      = NULL;
+    162              semaphore = NULL;
+    163            }
+    164          
+    165            // Allocate object memory if not provided
+    166            if (semaphore == NULL) {
+    167              if (osRtxInfo.mpi.semaphore != NULL) {
+    168                semaphore = osRtxMemoryPoolAlloc(osRtxInfo.mpi.semaphore);
+    169              } else {
+    170                semaphore = osRtxMemoryAlloc(osRtxInfo.mem.common, sizeof(os_semaphore_t), 1U);
+    171              }
+    172              if (semaphore == NULL) {
+    173                EvrRtxSemaphoreError(NULL, osErrorNoMemory);
+    174                return NULL;
+    175              }
+    176              flags = osRtxFlagSystemObject;
+    177            } else {
+    178              flags = 0U;
+   \   00000030   0x2000             MOVS     R0,#+0
+    179            }
+    180          
+    181            // Initialize control block
+    182            semaphore->id          = osRtxIdSemaphore;
+   \                     ??svcRtxSemaphoreNew_6: (+1)
+   \   00000032   0x2105             MOVS     R1,#+5
+   \   00000034   0x7031             STRB     R1,[R6, #+0]
+    183            semaphore->state       = osRtxObjectActive;
+   \   00000036   0x2101             MOVS     R1,#+1
+   \   00000038   0x7071             STRB     R1,[R6, #+1]
+    184            semaphore->flags       = flags;
+   \   0000003A   0x70B0             STRB     R0,[R6, #+2]
+    185            semaphore->name        = name;
+   \   0000003C   0x6074             STR      R4,[R6, #+4]
+    186            semaphore->thread_list = NULL;
+   \   0000003E   0x2000             MOVS     R0,#+0
+   \   00000040   0x60B0             STR      R0,[R6, #+8]
+    187            semaphore->tokens      = (uint16_t)initial_count;
+   \   00000042   0x81B7             STRH     R7,[R6, #+12]
+    188            semaphore->max_tokens  = (uint16_t)max_count;
+   \   00000044   0x81F5             STRH     R5,[R6, #+14]
+    189          
+    190            // Register post ISR processing function
+    191            osRtxInfo.post_process.semaphore = osRtxSemaphorePostProcess;
+   \   00000046   0x....             LDR      R0,??DataTable5
+   \   00000048   0x....             LDR      R1,??DataTable5_1
+   \   0000004A   0x6688             STR      R0,[R1, #+104]
+    192          
+    193            EvrRtxSemaphoreCreated(semaphore);
+   \   0000004C   0x0030             MOVS     R0,R6
+   \   0000004E   0x.... 0x....      BL       EvrRtxSemaphoreCreated
+    194          
+    195            return semaphore;
+   \   00000052   0x0030             MOVS     R0,R6
+   \   00000054   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+   \                     ??svcRtxSemaphoreNew_4: (+1)
+   \   00000056   0x68D0             LDR      R0,[R2, #+12]
+   \   00000058   0x2800             CMP      R0,#+0
+   \   0000005A   0xD002             BEQ      ??svcRtxSemaphoreNew_7
+   \                     ??svcRtxSemaphoreNew_5: (+1)
+   \   0000005C   0x2108             MOVS     R1,#+8
+   \                     ??svcRtxSemaphoreNew_2: (+1)
+   \   0000005E   0x....             B.N      ?Subroutine0
+   \                     ??svcRtxSemaphoreNew_3: (+1)
+   \   00000060   0x2400             MOVS     R4,#+0
+   \                     ??svcRtxSemaphoreNew_7: (+1)
+   \   00000062   0x....             LDR      R3,??DataTable5_2
+   \   00000064   0x6B18             LDR      R0,[R3, #+48]
+   \   00000066   0x2800             CMP      R0,#+0
+   \   00000068   0xD002             BEQ      ??svcRtxSemaphoreNew_8
+   \   0000006A   0x.... 0x....      BL       osRtxMemoryPoolAlloc
+   \   0000006E   0xE004             B        ??svcRtxSemaphoreNew_9
+   \                     ??svcRtxSemaphoreNew_8: (+1)
+   \   00000070   0x2201             MOVS     R2,#+1
+   \   00000072   0x2110             MOVS     R1,#+16
+   \   00000074   0x6998             LDR      R0,[R3, #+24]
+   \   00000076   0x.... 0x....      BL       osRtxMemoryAlloc
+   \                     ??svcRtxSemaphoreNew_9: (+1)
+   \   0000007A   0x0006             MOVS     R6,R0
+   \   0000007C   0xD101             BNE      ??svcRtxSemaphoreNew_10
+   \   0000007E   0x2104             MOVS     R1,#+4
+   \   00000080   0xE7ED             B.N      ??svcRtxSemaphoreNew_2
+   \                     ??svcRtxSemaphoreNew_10: (+1)
+   \   00000082   0x2001             MOVS     R0,#+1
+   \   00000084   0xE7D5             B        ??svcRtxSemaphoreNew_6
+    196          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x43C9             MVNS     R1,R1            ;; #-9
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x.... 0x....      BL       EvrRtxSemaphoreError
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0xBDF2             POP      {R1,R4-R7,PC}
+    197          
+    198          /// Get name of a Semaphore object.
+    199          /// \note API identical to osSemaphoreGetName
+
+   \                                 In section .text, align 2, keep-with-next
+    200          const char *svcRtxSemaphoreGetName (osSemaphoreId_t semaphore_id) {
+   \                     svcRtxSemaphoreGetName: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    201            os_semaphore_t *semaphore = (os_semaphore_t *)semaphore_id;
+    202          
+    203            // Check parameters
+    204            if ((semaphore == NULL) || (semaphore->id != osRtxIdSemaphore)) {
+   \   00000004   0xD005             BEQ      ??svcRtxSemaphoreGetName_0
+   \   00000006   0x7820             LDRB     R0,[R4, #+0]
+   \   00000008   0x2805             CMP      R0,#+5
+   \   0000000A   0xD102             BNE      ??svcRtxSemaphoreGetName_0
+    205              EvrRtxSemaphoreGetName(semaphore, NULL);
+    206              return NULL;
+    207            }
+    208          
+    209            // Check object state
+    210            if (semaphore->state == osRtxObjectInactive) {
+   \   0000000C   0x7860             LDRB     R0,[R4, #+1]
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD105             BNE      ??svcRtxSemaphoreGetName_1
+    211              EvrRtxSemaphoreGetName(semaphore, NULL);
+   \                     ??svcRtxSemaphoreGetName_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x.... 0x....      BL       EvrRtxSemaphoreGetName
+    212              return NULL;
+   \   0000001A   0x2000             MOVS     R0,#+0
+   \   0000001C   0xBD10             POP      {R4,PC}
+    213            }
+    214          
+    215            EvrRtxSemaphoreGetName(semaphore, semaphore->name);
+   \                     ??svcRtxSemaphoreGetName_1: (+1)
+   \   0000001E   0x6861             LDR      R1,[R4, #+4]
+   \   00000020   0x0020             MOVS     R0,R4
+   \   00000022   0x.... 0x....      BL       EvrRtxSemaphoreGetName
+    216          
+    217            return semaphore->name;
+   \   00000026   0x6860             LDR      R0,[R4, #+4]
+   \   00000028   0xBD10             POP      {R4,PC}          ;; return
+    218          }
+    219          
+    220          /// Acquire a Semaphore token or timeout if no tokens are available.
+    221          /// \note API identical to osSemaphoreAcquire
+
+   \                                 In section .text, align 2, keep-with-next
+    222          osStatus_t svcRtxSemaphoreAcquire (osSemaphoreId_t semaphore_id, uint32_t timeout) {
+   \                     svcRtxSemaphoreAcquire: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+    223            os_semaphore_t *semaphore = (os_semaphore_t *)semaphore_id;
+    224          
+    225            // Check parameters
+    226            if ((semaphore == NULL) || (semaphore->id != osRtxIdSemaphore)) {
+   \   00000006   0x2D00             CMP      R5,#+0
+   \   00000008   0xD002             BEQ      ??svcRtxSemaphoreAcquire_0
+   \   0000000A   0x7828             LDRB     R0,[R5, #+0]
+   \   0000000C   0x2805             CMP      R0,#+5
+   \   0000000E   0xD001             BEQ      ??svcRtxSemaphoreAcquire_1
+    227              EvrRtxSemaphoreError(semaphore, osErrorParameter);
+   \                     ??svcRtxSemaphoreAcquire_0: (+1)
+   \   00000010   0x2403             MOVS     R4,#+3
+   \   00000012   0xE003             B.N      ??svcRtxSemaphoreAcquire_2
+    228              return osErrorParameter;
+    229            }
+    230          
+    231            // Check object state
+    232            if (semaphore->state == osRtxObjectInactive) {
+   \                     ??svcRtxSemaphoreAcquire_1: (+1)
+   \   00000014   0x7868             LDRB     R0,[R5, #+1]
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD107             BNE      ??svcRtxSemaphoreAcquire_3
+    233              EvrRtxSemaphoreError(semaphore, osErrorResource);
+   \   0000001A   0x2402             MOVS     R4,#+2
+   \                     ??svcRtxSemaphoreAcquire_2: (+1)
+   \   0000001C   0x43E4             MVNS     R4,R4            ;; #-3
+   \   0000001E   0x0021             MOVS     R1,R4
+   \   00000020   0x0028             MOVS     R0,R5
+   \   00000022   0x.... 0x....      BL       EvrRtxSemaphoreError
+    234              return osErrorResource;
+   \   00000026   0x0020             MOVS     R0,R4
+   \   00000028   0xBD32             POP      {R1,R4,R5,PC}
+    235            }
+    236          
+    237            // Try to acquire token
+    238            if (SemaphoreTokenDecrement(semaphore) == 0U) {
+   \                     ??svcRtxSemaphoreAcquire_3: (+1)
+   \   0000002A   0x0028             MOVS     R0,R5
+   \   0000002C   0x.... 0x....      BL       SemaphoreTokenDecrement
+   \   00000030   0x2800             CMP      R0,#+0
+   \   00000032   0xD116             BNE      ??svcRtxSemaphoreAcquire_4
+    239              // No token available
+    240              if (timeout != 0U) {
+   \   00000034   0x2C00             CMP      R4,#+0
+   \   00000036   0xD00E             BEQ      ??svcRtxSemaphoreAcquire_5
+    241                EvrRtxSemaphoreAcquirePending(semaphore, timeout);
+   \   00000038   0x0021             MOVS     R1,R4
+   \   0000003A   0x0028             MOVS     R0,R5
+   \   0000003C   0x.... 0x....      BL       EvrRtxSemaphoreAcquirePending
+    242                // Suspend current Thread
+    243                osRtxThreadListPut((os_object_t*)semaphore, osRtxThreadGetRunning());
+   \   00000040   0x....             LDR      R0,??DataTable5_1
+   \   00000042   0x6941             LDR      R1,[R0, #+20]
+   \   00000044   0x0028             MOVS     R0,R5
+   \   00000046   0x.... 0x....      BL       osRtxThreadListPut
+    244                osRtxThreadWaitEnter(osRtxThreadWaitingSemaphore, timeout);
+   \   0000004A   0x0021             MOVS     R1,R4
+   \   0000004C   0x2063             MOVS     R0,#+99
+   \   0000004E   0x.... 0x....      BL       osRtxThreadWaitEnter
+    245                return osErrorTimeout;
+   \   00000052   0x2001             MOVS     R0,#+1
+   \   00000054   0xE003             B.N      ??svcRtxSemaphoreAcquire_6
+    246              } else {
+    247                EvrRtxSemaphoreNotAcquired(semaphore);
+   \                     ??svcRtxSemaphoreAcquire_5: (+1)
+   \   00000056   0x0028             MOVS     R0,R5
+   \   00000058   0x.... 0x....      BL       EvrRtxSemaphoreNotAcquired
+    248                return osErrorResource;
+   \   0000005C   0x2002             MOVS     R0,#+2
+   \                     ??svcRtxSemaphoreAcquire_6: (+1)
+   \   0000005E   0x43C0             MVNS     R0,R0            ;; #-3
+   \   00000060   0xBD32             POP      {R1,R4,R5,PC}
+    249              }
+    250            }
+    251          
+    252            EvrRtxSemaphoreAcquired(semaphore);
+   \                     ??svcRtxSemaphoreAcquire_4: (+1)
+   \   00000062   0x0028             MOVS     R0,R5
+   \   00000064   0x.... 0x....      BL       EvrRtxSemaphoreAcquired
+    253          
+    254            return osOK;
+   \   00000068   0x2000             MOVS     R0,#+0
+   \   0000006A   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    255          }
+    256          
+    257          /// Release a Semaphore token that was acquired by osSemaphoreAcquire.
+    258          /// \note API identical to osSemaphoreRelease
+
+   \                                 In section .text, align 2, keep-with-next
+    259          osStatus_t svcRtxSemaphoreRelease (osSemaphoreId_t semaphore_id) {
+   \                     svcRtxSemaphoreRelease: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    260            os_semaphore_t *semaphore = (os_semaphore_t *)semaphore_id;
+    261            os_thread_t    *thread;
+    262          
+    263            // Check parameters
+    264            if ((semaphore == NULL) || (semaphore->id != osRtxIdSemaphore)) {
+   \   00000004   0xD002             BEQ      ??svcRtxSemaphoreRelease_0
+   \   00000006   0x7820             LDRB     R0,[R4, #+0]
+   \   00000008   0x2805             CMP      R0,#+5
+   \   0000000A   0xD001             BEQ      ??svcRtxSemaphoreRelease_1
+    265              EvrRtxSemaphoreError(semaphore, osErrorParameter);
+   \                     ??svcRtxSemaphoreRelease_0: (+1)
+   \   0000000C   0x2503             MOVS     R5,#+3
+   \   0000000E   0xE003             B.N      ??svcRtxSemaphoreRelease_2
+    266              return osErrorParameter;
+    267            }
+    268          
+    269            // Check object state
+    270            if (semaphore->state == osRtxObjectInactive) {
+   \                     ??svcRtxSemaphoreRelease_1: (+1)
+   \   00000010   0x7860             LDRB     R0,[R4, #+1]
+   \   00000012   0x2800             CMP      R0,#+0
+   \   00000014   0xD101             BNE      ??svcRtxSemaphoreRelease_3
+    271              EvrRtxSemaphoreError(semaphore, osErrorResource);
+   \   00000016   0x2502             MOVS     R5,#+2
+    272              return osErrorResource;
+    273            }
+   \                     ??svcRtxSemaphoreRelease_2: (+1)
+   \   00000018   0x....             B.N      ?Subroutine1
+    274          
+    275            // Check if Thread is waiting for a token
+    276            if (semaphore->thread_list != NULL) {
+   \                     ??svcRtxSemaphoreRelease_3: (+1)
+   \   0000001A   0x68A0             LDR      R0,[R4, #+8]
+   \   0000001C   0x2800             CMP      R0,#+0
+   \   0000001E   0xD00D             BEQ      ??svcRtxSemaphoreRelease_4
+    277              EvrRtxSemaphoreReleased(semaphore);
+   \   00000020   0x0020             MOVS     R0,R4
+   \   00000022   0x.... 0x....      BL       EvrRtxSemaphoreReleased
+    278              // Wakeup waiting Thread with highest Priority
+    279              thread = osRtxThreadListGet((os_object_t*)semaphore);
+   \   00000026   0x0020             MOVS     R0,R4
+   \   00000028   0x.... 0x....      BL       osRtxThreadListGet
+    280              osRtxThreadWaitExit(thread, (uint32_t)osOK, true);
+   \   0000002C   0x2201             MOVS     R2,#+1
+   \   0000002E   0x2100             MOVS     R1,#+0
+   \   00000030   0x.... 0x....      BL       osRtxThreadWaitExit
+    281              EvrRtxSemaphoreAcquired(semaphore);
+   \   00000034   0x0020             MOVS     R0,R4
+   \   00000036   0x.... 0x....      BL       EvrRtxSemaphoreAcquired
+   \   0000003A   0xE00F             B        ??svcRtxSemaphoreRelease_5
+    282            } else {
+    283              // Try to release token
+    284              if (SemaphoreTokenIncrement(semaphore) == 0U) {
+   \                     ??svcRtxSemaphoreRelease_4: (+1)
+   \   0000003C   0x0020             MOVS     R0,R4
+   \   0000003E   0x.... 0x....      BL       SemaphoreTokenIncrement
+   \   00000042   0x2800             CMP      R0,#+0
+   \   00000044   0xD107             BNE      ??svcRtxSemaphoreRelease_6
+    285                EvrRtxSemaphoreError(semaphore, osRtxErrorSemaphoreCountLimit);
+   \   00000046   0x2110             MOVS     R1,#+16
+   \   00000048   0x43C9             MVNS     R1,R1            ;; #-17
+   \   0000004A   0x0020             MOVS     R0,R4
+   \   0000004C   0x.... 0x....      BL       EvrRtxSemaphoreError
+    286                return osErrorResource;
+   \   00000050   0x2002             MOVS     R0,#+2
+   \   00000052   0x43C0             MVNS     R0,R0            ;; #-3
+   \   00000054   0xBD32             POP      {R1,R4,R5,PC}
+    287              }
+    288              EvrRtxSemaphoreReleased(semaphore);
+   \                     ??svcRtxSemaphoreRelease_6: (+1)
+   \   00000056   0x0020             MOVS     R0,R4
+   \   00000058   0x.... 0x....      BL       EvrRtxSemaphoreReleased
+    289            }
+    290          
+    291            return osOK;
+   \                     ??svcRtxSemaphoreRelease_5: (+1)
+   \   0000005C   0x2000             MOVS     R0,#+0
+   \   0000005E   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    292          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine1: (+1)
+   \   00000000   0x43ED             MVNS     R5,R5            ;; #-3
+   \   00000002   0x0029             MOVS     R1,R5
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0x.... 0x....      BL       EvrRtxSemaphoreError
+   \   0000000A   0x0028             MOVS     R0,R5
+   \   0000000C   0xBD32             POP      {R1,R4,R5,PC}
+    293          
+    294          /// Get current Semaphore token count.
+    295          /// \note API identical to osSemaphoreGetCount
+
+   \                                 In section .text, align 2, keep-with-next
+    296          uint32_t svcRtxSemaphoreGetCount (osSemaphoreId_t semaphore_id) {
+   \                     svcRtxSemaphoreGetCount: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    297            os_semaphore_t *semaphore = (os_semaphore_t *)semaphore_id;
+    298          
+    299            // Check parameters
+    300            if ((semaphore == NULL) || (semaphore->id != osRtxIdSemaphore)) {
+   \   00000004   0xD005             BEQ      ??svcRtxSemaphoreGetCount_0
+   \   00000006   0x7820             LDRB     R0,[R4, #+0]
+   \   00000008   0x2805             CMP      R0,#+5
+   \   0000000A   0xD102             BNE      ??svcRtxSemaphoreGetCount_0
+    301              EvrRtxSemaphoreGetCount(semaphore, 0U);
+    302              return 0U;
+    303            }
+    304          
+    305            // Check object state
+    306            if (semaphore->state == osRtxObjectInactive) {
+   \   0000000C   0x7860             LDRB     R0,[R4, #+1]
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD105             BNE      ??svcRtxSemaphoreGetCount_1
+    307              EvrRtxSemaphoreGetCount(semaphore, 0U);
+   \                     ??svcRtxSemaphoreGetCount_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x.... 0x....      BL       EvrRtxSemaphoreGetCount
+    308              return 0U;
+   \   0000001A   0x2000             MOVS     R0,#+0
+   \   0000001C   0xBD10             POP      {R4,PC}
+    309            }
+    310          
+    311            EvrRtxSemaphoreGetCount(semaphore, semaphore->tokens);
+   \                     ??svcRtxSemaphoreGetCount_1: (+1)
+   \   0000001E   0x89A1             LDRH     R1,[R4, #+12]
+   \   00000020   0x0020             MOVS     R0,R4
+   \   00000022   0x.... 0x....      BL       EvrRtxSemaphoreGetCount
+    312          
+    313            return semaphore->tokens;
+   \   00000026   0x89A0             LDRH     R0,[R4, #+12]
+   \   00000028   0xBD10             POP      {R4,PC}          ;; return
+    314          }
+    315          
+    316          /// Delete a Semaphore object.
+    317          /// \note API identical to osSemaphoreDelete
+
+   \                                 In section .text, align 2, keep-with-next
+    318          osStatus_t svcRtxSemaphoreDelete (osSemaphoreId_t semaphore_id) {
+   \                     svcRtxSemaphoreDelete: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    319            os_semaphore_t *semaphore = (os_semaphore_t *)semaphore_id;
+    320            os_thread_t    *thread;
+    321          
+    322            // Check parameters
+    323            if ((semaphore == NULL) || (semaphore->id != osRtxIdSemaphore)) {
+   \   00000004   0xD002             BEQ      ??svcRtxSemaphoreDelete_0
+   \   00000006   0x7820             LDRB     R0,[R4, #+0]
+   \   00000008   0x2805             CMP      R0,#+5
+   \   0000000A   0xD001             BEQ      ??svcRtxSemaphoreDelete_1
+    324              EvrRtxSemaphoreError(semaphore, osErrorParameter);
+   \                     ??svcRtxSemaphoreDelete_0: (+1)
+   \   0000000C   0x2503             MOVS     R5,#+3
+   \   0000000E   0xE003             B.N      ??svcRtxSemaphoreDelete_2
+    325              return osErrorParameter;
+    326            }
+    327          
+    328            // Check object state
+    329            if (semaphore->state == osRtxObjectInactive) {
+   \                     ??svcRtxSemaphoreDelete_1: (+1)
+   \   00000010   0x7860             LDRB     R0,[R4, #+1]
+   \   00000012   0x2800             CMP      R0,#+0
+   \   00000014   0xD101             BNE      ??svcRtxSemaphoreDelete_3
+    330              EvrRtxSemaphoreError(semaphore, osErrorResource);
+   \   00000016   0x2502             MOVS     R5,#+2
+    331              return osErrorResource;
+    332            }
+   \                     ??svcRtxSemaphoreDelete_2: (+1)
+   \   00000018   0x....             B.N      ?Subroutine1
+    333          
+    334            // Mark object as inactive
+    335            semaphore->state = osRtxObjectInactive;
+   \                     ??svcRtxSemaphoreDelete_3: (+1)
+   \   0000001A   0x2000             MOVS     R0,#+0
+   \   0000001C   0x7060             STRB     R0,[R4, #+1]
+    336          
+    337            // Unblock waiting threads
+    338            if (semaphore->thread_list != NULL) {
+   \   0000001E   0x68A0             LDR      R0,[R4, #+8]
+   \   00000020   0x2800             CMP      R0,#+0
+   \   00000022   0xD00C             BEQ      ??svcRtxSemaphoreDelete_4
+    339              do {
+    340                thread = osRtxThreadListGet((os_object_t*)semaphore);
+   \                     ??svcRtxSemaphoreDelete_5: (+1)
+   \   00000024   0x0020             MOVS     R0,R4
+   \   00000026   0x.... 0x....      BL       osRtxThreadListGet
+    341                osRtxThreadWaitExit(thread, (uint32_t)osErrorResource, false);
+   \   0000002A   0x2200             MOVS     R2,#+0
+   \   0000002C   0x2102             MOVS     R1,#+2
+   \   0000002E   0x43C9             MVNS     R1,R1            ;; #-3
+   \   00000030   0x.... 0x....      BL       osRtxThreadWaitExit
+    342              } while (semaphore->thread_list != NULL);
+   \   00000034   0x68A0             LDR      R0,[R4, #+8]
+   \   00000036   0x2800             CMP      R0,#+0
+   \   00000038   0xD1F4             BNE      ??svcRtxSemaphoreDelete_5
+    343              osRtxThreadDispatch(NULL);
+   \   0000003A   0x.... 0x....      BL       osRtxThreadDispatch
+    344            }
+    345          
+    346            // Free object memory
+    347            if (semaphore->flags & osRtxFlagSystemObject) {
+   \                     ??svcRtxSemaphoreDelete_4: (+1)
+   \   0000003E   0x78A0             LDRB     R0,[R4, #+2]
+   \   00000040   0x07C0             LSLS     R0,R0,#+31
+   \   00000042   0xD50B             BPL      ??svcRtxSemaphoreDelete_6
+    348              if (osRtxInfo.mpi.semaphore != NULL) {
+   \   00000044   0x....             LDR      R2,??DataTable8
+   \   00000046   0x6990             LDR      R0,[R2, #+24]
+   \   00000048   0x2800             CMP      R0,#+0
+   \   0000004A   0xD003             BEQ      ??svcRtxSemaphoreDelete_7
+    349                osRtxMemoryPoolFree(osRtxInfo.mpi.semaphore, semaphore);
+   \   0000004C   0x0021             MOVS     R1,R4
+   \   0000004E   0x.... 0x....      BL       osRtxMemoryPoolFree
+   \   00000052   0xE003             B        ??svcRtxSemaphoreDelete_6
+    350              } else {
+    351                osRtxMemoryFree(osRtxInfo.mem.common, semaphore);
+   \                     ??svcRtxSemaphoreDelete_7: (+1)
+   \   00000054   0x0021             MOVS     R1,R4
+   \   00000056   0x6810             LDR      R0,[R2, #+0]
+   \   00000058   0x.... 0x....      BL       osRtxMemoryFree
+    352              }
+    353            }
+    354          
+    355            EvrRtxSemaphoreDestroyed(semaphore);
+   \                     ??svcRtxSemaphoreDelete_6: (+1)
+   \   0000005C   0x0020             MOVS     R0,R4
+   \   0000005E   0x.... 0x....      BL       EvrRtxSemaphoreDestroyed
+    356          
+    357            return osOK;
+   \   00000062   0x2000             MOVS     R0,#+0
+   \   00000064   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    358          }
+    359          
+    360          
+    361          //  ==== ISR Calls ====
+    362          
+    363          /// Acquire a Semaphore token or timeout if no tokens are available.
+    364          /// \note API identical to osSemaphoreAcquire
+    365          __STATIC_INLINE
+    366          osStatus_t isrRtxSemaphoreAcquire (osSemaphoreId_t semaphore_id, uint32_t timeout) {
+    367            os_semaphore_t *semaphore = (os_semaphore_t *)semaphore_id;
+    368          
+    369            // Check parameters
+    370            if ((semaphore == NULL) || (semaphore->id != osRtxIdSemaphore) || (timeout != 0U)) {
+    371              EvrRtxSemaphoreError(semaphore, osErrorParameter);
+    372              return osErrorParameter;
+    373            }
+    374          
+    375            // Check object state
+    376            if (semaphore->state == osRtxObjectInactive) {
+    377              EvrRtxSemaphoreError(semaphore, osErrorResource);
+    378              return osErrorResource;
+    379            }
+    380          
+    381            // Try to acquire token
+    382            if (SemaphoreTokenDecrement(semaphore) == 0U) {
+    383              // No token available
+    384              EvrRtxSemaphoreNotAcquired(semaphore);
+    385              return osErrorResource;
+    386            }
+    387          
+    388            EvrRtxSemaphoreAcquired(semaphore);
+    389          
+    390            return osOK;
+    391          }
+    392          
+    393          /// Release a Semaphore token that was acquired by osSemaphoreAcquire.
+    394          /// \note API identical to osSemaphoreRelease
+    395          __STATIC_INLINE
+    396          osStatus_t isrRtxSemaphoreRelease (osSemaphoreId_t semaphore_id) {
+    397            os_semaphore_t *semaphore = (os_semaphore_t *)semaphore_id;
+    398          
+    399            // Check parameters
+    400            if ((semaphore == NULL) || (semaphore->id != osRtxIdSemaphore)) {
+    401              EvrRtxSemaphoreError(semaphore, osErrorParameter);
+    402              return osErrorParameter;
+    403            }
+    404          
+    405            // Check object state
+    406            if (semaphore->state == osRtxObjectInactive) {
+    407              EvrRtxSemaphoreError(semaphore, osErrorResource);
+    408              return osErrorResource;
+    409            }
+    410          
+    411            // Try to release token
+    412            if (SemaphoreTokenIncrement(semaphore) != 0U) {
+    413              // Register post ISR processing
+    414              osRtxPostProcess((os_object_t *)semaphore);
+    415            } else {
+    416              EvrRtxSemaphoreError(semaphore, osRtxErrorSemaphoreCountLimit);
+    417              return osErrorResource;
+    418            }
+    419          
+    420            EvrRtxSemaphoreReleased(semaphore);
+    421          
+    422            return osOK;
+    423          }
+    424          
+    425          
+    426          //  ==== Public API ====
+    427          
+    428          /// Create and Initialize a Semaphore object.
+
+   \                                 In section .text, align 4, keep-with-next
+    429          osSemaphoreId_t osSemaphoreNew (uint32_t max_count, uint32_t initial_count, const osSemaphoreAttr_t *attr) {
+   \                     osSemaphoreNew: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0x0015             MOVS     R5,R2
+    430            EvrRtxSemaphoreNew(max_count, initial_count, attr);
+   \   00000008   0x.... 0x....      BL       EvrRtxSemaphoreNew
+    431            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   0000000C   0xF3EF 0x8005      MRS      R0,IPSR
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD103             BNE      ??osSemaphoreNew_0
+   \   00000014   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD001             BEQ      ??osSemaphoreNew_1
+    432              EvrRtxSemaphoreError(NULL, osErrorISR);
+   \                     ??osSemaphoreNew_0: (+1)
+   \   0000001C   0x2105             MOVS     R1,#+5
+   \   0000001E   0x....             B.N      ?Subroutine0
+    433              return NULL;
+    434            }
+    435            return __svcSemaphoreNew(max_count, initial_count, attr);
+   \                     ??osSemaphoreNew_1: (+1)
+   \   00000020   0xF3EF 0x8014      MRS      R0,CONTROL
+   \   00000024   0x0780             LSLS     R0,R0,#+30
+   \   00000026   0xD406             BMI      ??osSemaphoreNew_2
+   \   00000028   0xF3EF 0x8008      MRS      R0,MSP
+   \   0000002C   0x3820             SUBS     R0,R0,#+32
+   \   0000002E   0x2107             MOVS     R1,#+7
+   \   00000030   0x4388             BICS     R0,R0,R1
+   \   00000032   0xF380 0x8809      MSR      PSP,R0
+   \                     ??osSemaphoreNew_2: (+1)
+   \   00000036   0x....             LDR      R0,??DataTable8_1
+   \   00000038   0x4607             mov r7,R0
+   \   0000003A   0x002A             MOVS     R2,R5
+   \   0000003C   0x0031             MOVS     R1,R6
+   \   0000003E   0x0020             MOVS     R0,R4
+   \   00000040   0xDF00             SVC      0x0
+   \   00000042   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    436          }
+    437          
+    438          /// Get name of a Semaphore object.
+
+   \                                 In section .text, align 4, keep-with-next
+    439          const char *osSemaphoreGetName (osSemaphoreId_t semaphore_id) {
+   \                     osSemaphoreGetName: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    440            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000002   0xF3EF 0x8105      MRS      R1,IPSR
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD103             BNE      ??osSemaphoreGetName_0
+   \   0000000A   0xF3EF 0x8110      MRS      R1,PRIMASK
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD004             BEQ      ??osSemaphoreGetName_1
+    441              EvrRtxSemaphoreGetName(semaphore_id, NULL);
+   \                     ??osSemaphoreGetName_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x.... 0x....      BL       EvrRtxSemaphoreGetName
+    442              return NULL;
+   \   00000018   0x2000             MOVS     R0,#+0
+   \   0000001A   0xBD80             POP      {R7,PC}
+    443            }
+    444            return __svcSemaphoreGetName(semaphore_id);
+   \                     ??osSemaphoreGetName_1: (+1)
+   \   0000001C   0x....             LDR      R1,??DataTable8_2
+   \   0000001E   0x460F             mov r7,R1
+   \   00000020   0xDF00             SVC      0x0
+   \   00000022   0xBD80             POP      {R7,PC}          ;; return
+    445          }
+    446          
+    447          /// Acquire a Semaphore token or timeout if no tokens are available.
+
+   \                                 In section .text, align 4, keep-with-next
+    448          osStatus_t osSemaphoreAcquire (osSemaphoreId_t semaphore_id, uint32_t timeout) {
+   \                     osSemaphoreAcquire: (+1)
+   \   00000000   0xB5B0             PUSH     {R4,R5,R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    449            EvrRtxSemaphoreAcquire(semaphore_id, timeout);
+   \   00000006   0x.... 0x....      BL       EvrRtxSemaphoreAcquire
+    450            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   0000000A   0xF3EF 0x8005      MRS      R0,IPSR
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD103             BNE      ??osSemaphoreAcquire_0
+   \   00000012   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD022             BEQ      ??osSemaphoreAcquire_1
+    451              return isrRtxSemaphoreAcquire(semaphore_id, timeout);
+   \                     ??osSemaphoreAcquire_0: (+1)
+   \   0000001A   0x2C00             CMP      R4,#+0
+   \   0000001C   0xD018             BEQ      ??osSemaphoreAcquire_2
+   \   0000001E   0x7820             LDRB     R0,[R4, #+0]
+   \   00000020   0x2805             CMP      R0,#+5
+   \   00000022   0xD115             BNE      ??osSemaphoreAcquire_2
+   \   00000024   0x2D00             CMP      R5,#+0
+   \   00000026   0xD113             BNE      ??osSemaphoreAcquire_2
+   \   00000028   0x7860             LDRB     R0,[R4, #+1]
+   \   0000002A   0x2800             CMP      R0,#+0
+   \   0000002C   0xD101             BNE      ??osSemaphoreAcquire_3
+   \   0000002E   0x2502             MOVS     R5,#+2
+   \   00000030   0xE00F             B        ??osSemaphoreAcquire_4
+   \                     ??osSemaphoreAcquire_3: (+1)
+   \   00000032   0x0020             MOVS     R0,R4
+   \   00000034   0x.... 0x....      BL       SemaphoreTokenDecrement
+   \   00000038   0x2800             CMP      R0,#+0
+   \   0000003A   0xD105             BNE      ??osSemaphoreAcquire_5
+   \   0000003C   0x0020             MOVS     R0,R4
+   \   0000003E   0x.... 0x....      BL       EvrRtxSemaphoreNotAcquired
+   \   00000042   0x2502             MOVS     R5,#+2
+   \   00000044   0x43ED             MVNS     R5,R5            ;; #-3
+   \   00000046   0xE009             B        ??osSemaphoreAcquire_6
+   \                     ??osSemaphoreAcquire_5: (+1)
+   \   00000048   0x0020             MOVS     R0,R4
+   \   0000004A   0x.... 0x....      BL       EvrRtxSemaphoreAcquired
+   \   0000004E   0xE005             B        ??osSemaphoreAcquire_6
+   \                     ??osSemaphoreAcquire_2: (+1)
+   \   00000050   0x2503             MOVS     R5,#+3
+   \                     ??osSemaphoreAcquire_4: (+1)
+   \   00000052   0x43ED             MVNS     R5,R5            ;; #-4
+   \   00000054   0x0029             MOVS     R1,R5
+   \   00000056   0x0020             MOVS     R0,R4
+   \   00000058   0x.... 0x....      BL       EvrRtxSemaphoreError
+    452            } else {
+   \                     ??osSemaphoreAcquire_6: (+1)
+   \   0000005C   0x0028             MOVS     R0,R5
+   \   0000005E   0xBDB0             POP      {R4,R5,R7,PC}
+    453              return  __svcSemaphoreAcquire(semaphore_id, timeout);
+   \                     ??osSemaphoreAcquire_1: (+1)
+   \   00000060   0x....             LDR      R0,??DataTable8_3
+   \   00000062   0x4607             mov r7,R0
+   \   00000064   0x0029             MOVS     R1,R5
+   \   00000066   0x0020             MOVS     R0,R4
+   \   00000068   0xDF00             SVC      0x0
+   \   0000006A   0xBDB0             POP      {R4,R5,R7,PC}    ;; return
+    454            }
+    455          }
+    456          
+    457          /// Release a Semaphore token that was acquired by osSemaphoreAcquire.
+
+   \                                 In section .text, align 4, keep-with-next
+    458          osStatus_t osSemaphoreRelease (osSemaphoreId_t semaphore_id) {
+   \                     osSemaphoreRelease: (+1)
+   \   00000000   0xB5B0             PUSH     {R4,R5,R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    459            EvrRtxSemaphoreRelease(semaphore_id);
+   \   00000004   0x.... 0x....      BL       EvrRtxSemaphoreRelease
+    460            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000008   0xF3EF 0x8005      MRS      R0,IPSR
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD103             BNE      ??osSemaphoreRelease_0
+   \   00000010   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD026             BEQ      ??osSemaphoreRelease_1
+    461              return isrRtxSemaphoreRelease(semaphore_id);
+   \                     ??osSemaphoreRelease_0: (+1)
+   \   00000018   0x2C00             CMP      R4,#+0
+   \   0000001A   0xD01C             BEQ      ??osSemaphoreRelease_2
+   \   0000001C   0x7820             LDRB     R0,[R4, #+0]
+   \   0000001E   0x2805             CMP      R0,#+5
+   \   00000020   0xD119             BNE      ??osSemaphoreRelease_2
+   \   00000022   0x7860             LDRB     R0,[R4, #+1]
+   \   00000024   0x2800             CMP      R0,#+0
+   \   00000026   0xD101             BNE      ??osSemaphoreRelease_3
+   \   00000028   0x2502             MOVS     R5,#+2
+   \   0000002A   0xE015             B        ??osSemaphoreRelease_4
+   \                     ??osSemaphoreRelease_3: (+1)
+   \   0000002C   0x0020             MOVS     R0,R4
+   \   0000002E   0x.... 0x....      BL       SemaphoreTokenIncrement
+   \   00000032   0x2800             CMP      R0,#+0
+   \   00000034   0xD007             BEQ      ??osSemaphoreRelease_5
+   \   00000036   0x0020             MOVS     R0,R4
+   \   00000038   0x.... 0x....      BL       osRtxPostProcess
+   \   0000003C   0x0020             MOVS     R0,R4
+   \   0000003E   0x.... 0x....      BL       EvrRtxSemaphoreReleased
+   \   00000042   0x2500             MOVS     R5,#+0
+   \   00000044   0xE00D             B        ??osSemaphoreRelease_6
+   \                     ??osSemaphoreRelease_5: (+1)
+   \   00000046   0x2110             MOVS     R1,#+16
+   \   00000048   0x43C9             MVNS     R1,R1            ;; #-17
+   \   0000004A   0x0020             MOVS     R0,R4
+   \   0000004C   0x.... 0x....      BL       EvrRtxSemaphoreError
+   \   00000050   0x2502             MOVS     R5,#+2
+   \   00000052   0x43ED             MVNS     R5,R5            ;; #-3
+   \   00000054   0xE005             B        ??osSemaphoreRelease_6
+   \                     ??osSemaphoreRelease_2: (+1)
+   \   00000056   0x2503             MOVS     R5,#+3
+   \                     ??osSemaphoreRelease_4: (+1)
+   \   00000058   0x43ED             MVNS     R5,R5            ;; #-4
+   \   0000005A   0x0029             MOVS     R1,R5
+   \   0000005C   0x0020             MOVS     R0,R4
+   \   0000005E   0x.... 0x....      BL       EvrRtxSemaphoreError
+    462            } else {
+   \                     ??osSemaphoreRelease_6: (+1)
+   \   00000062   0x0028             MOVS     R0,R5
+   \   00000064   0xBDB0             POP      {R4,R5,R7,PC}
+    463              return  __svcSemaphoreRelease(semaphore_id);
+   \                     ??osSemaphoreRelease_1: (+1)
+   \   00000066   0x....             LDR      R0,??DataTable8_4
+   \   00000068   0x4607             mov r7,R0
+   \   0000006A   0x0020             MOVS     R0,R4
+   \   0000006C   0xDF00             SVC      0x0
+   \   0000006E   0xBDB0             POP      {R4,R5,R7,PC}    ;; return
+    464            }
+    465          }
+    466          
+    467          /// Get current Semaphore token count.
+
+   \                                 In section .text, align 4, keep-with-next
+    468          uint32_t osSemaphoreGetCount (osSemaphoreId_t semaphore_id) {
+   \                     osSemaphoreGetCount: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    469            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000002   0xF3EF 0x8105      MRS      R1,IPSR
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD103             BNE      ??osSemaphoreGetCount_0
+   \   0000000A   0xF3EF 0x8110      MRS      R1,PRIMASK
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD002             BEQ      ??osSemaphoreGetCount_1
+    470              return svcRtxSemaphoreGetCount(semaphore_id);
+   \                     ??osSemaphoreGetCount_0: (+1)
+   \   00000012   0x.... 0x....      BL       svcRtxSemaphoreGetCount
+   \   00000016   0xBD80             POP      {R7,PC}
+    471            } else {
+    472              return  __svcSemaphoreGetCount(semaphore_id);
+   \                     ??osSemaphoreGetCount_1: (+1)
+   \   00000018   0x....             LDR      R1,??DataTable8_5
+   \   0000001A   0x460F             mov r7,R1
+   \   0000001C   0xDF00             SVC      0x0
+   \   0000001E   0xBD80             POP      {R7,PC}          ;; return
+    473            }
+    474          }
+    475          
+    476          /// Delete a Semaphore object.
+
+   \                                 In section .text, align 4, keep-with-next
+    477          osStatus_t osSemaphoreDelete (osSemaphoreId_t semaphore_id) {
+   \                     osSemaphoreDelete: (+1)
+   \   00000000   0xB5B0             PUSH     {R4,R5,R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    478            EvrRtxSemaphoreDelete(semaphore_id);
+   \   00000004   0x.... 0x....      BL       EvrRtxSemaphoreDelete
+    479            if (IS_IRQ_MODE() || IS_IRQ_MASKED()) {
+   \   00000008   0xF3EF 0x8005      MRS      R0,IPSR
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD103             BNE      ??osSemaphoreDelete_0
+   \   00000010   0xF3EF 0x8010      MRS      R0,PRIMASK
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD007             BEQ      ??osSemaphoreDelete_1
+    480              EvrRtxSemaphoreError(semaphore_id, osErrorISR);
+   \                     ??osSemaphoreDelete_0: (+1)
+   \   00000018   0x2505             MOVS     R5,#+5
+   \   0000001A   0x43ED             MVNS     R5,R5            ;; #-6
+   \   0000001C   0x0029             MOVS     R1,R5
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0x.... 0x....      BL       EvrRtxSemaphoreError
+    481              return osErrorISR;
+   \   00000024   0x0028             MOVS     R0,R5
+   \   00000026   0xBDB0             POP      {R4,R5,R7,PC}
+    482            }
+    483            return __svcSemaphoreDelete(semaphore_id);
+   \                     ??osSemaphoreDelete_1: (+1)
+   \   00000028   0x....             LDR      R0,??DataTable8_6
+   \   0000002A   0x4607             mov r7,R0
+   \   0000002C   0x0020             MOVS     R0,R4
+   \   0000002E   0xDF00             SVC      0x0
+   \   00000030   0xBDB0             POP      {R4,R5,R7,PC}    ;; return
+    484          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5:
+   \   00000000   0x........         DC32     osRtxSemaphorePostProcess
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_1:
+   \   00000000   0x........         DC32     osRtxInfo
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_2:
+   \   00000000   0x........         DC32     osRtxInfo+0x68
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8:
+   \   00000000   0x........         DC32     osRtxInfo+0x80
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_1:
+   \   00000000   0x........         DC32     svcRtxSemaphoreNew
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_2:
+   \   00000000   0x........         DC32     svcRtxSemaphoreGetName
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_3:
+   \   00000000   0x........         DC32     svcRtxSemaphoreAcquire
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_4:
+   \   00000000   0x........         DC32     svcRtxSemaphoreRelease
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_5:
+   \   00000000   0x........         DC32     svcRtxSemaphoreGetCount
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_6:
+   \   00000000   0x........         DC32     svcRtxSemaphoreDelete
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   SemaphoreTokenDecrement
+       4   SemaphoreTokenIncrement
+       8   osRtxSemaphorePostProcess
+         8   -> EvrRtxSemaphoreAcquired
+         8   -> SemaphoreTokenDecrement
+         8   -> osRtxThreadListGet
+         8   -> osRtxThreadWaitExit
+      16   osSemaphoreAcquire
+        16   -> EvrRtxSemaphoreAcquire
+        16   -> EvrRtxSemaphoreAcquired
+        16   -> EvrRtxSemaphoreError
+        16   -> EvrRtxSemaphoreNotAcquired
+        16   -> SemaphoreTokenDecrement
+      16   osSemaphoreDelete
+        16   -> EvrRtxSemaphoreDelete
+        16   -> EvrRtxSemaphoreError
+       8   osSemaphoreGetCount
+         8   -> svcRtxSemaphoreGetCount
+       8   osSemaphoreGetName
+         8   -> EvrRtxSemaphoreGetName
+      24   osSemaphoreNew
+        24   -> EvrRtxSemaphoreError
+        24   -> EvrRtxSemaphoreNew
+      16   osSemaphoreRelease
+        16   -> EvrRtxSemaphoreError
+        16   -> EvrRtxSemaphoreRelease
+        16   -> EvrRtxSemaphoreReleased
+        16   -> SemaphoreTokenIncrement
+        16   -> osRtxPostProcess
+      16   svcRtxSemaphoreAcquire
+        16   -> EvrRtxSemaphoreAcquirePending
+        16   -> EvrRtxSemaphoreAcquired
+        16   -> EvrRtxSemaphoreError
+        16   -> EvrRtxSemaphoreNotAcquired
+        16   -> SemaphoreTokenDecrement
+        16   -> osRtxThreadListPut
+        16   -> osRtxThreadWaitEnter
+      16   svcRtxSemaphoreDelete
+        16   -> EvrRtxSemaphoreDestroyed
+        16   -> EvrRtxSemaphoreError
+        16   -> osRtxMemoryFree
+        16   -> osRtxMemoryPoolFree
+        16   -> osRtxThreadDispatch
+        16   -> osRtxThreadListGet
+        16   -> osRtxThreadWaitExit
+       8   svcRtxSemaphoreGetCount
+         8   -> EvrRtxSemaphoreGetCount
+       8   svcRtxSemaphoreGetName
+         8   -> EvrRtxSemaphoreGetName
+      24   svcRtxSemaphoreNew
+        24   -> EvrRtxSemaphoreCreated
+        24   -> EvrRtxSemaphoreError
+        24   -> osRtxMemoryAlloc
+        24   -> osRtxMemoryPoolAlloc
+      16   svcRtxSemaphoreRelease
+        16   -> EvrRtxSemaphoreAcquired
+        16   -> EvrRtxSemaphoreError
+        16   -> EvrRtxSemaphoreReleased
+        16   -> SemaphoreTokenIncrement
+        16   -> osRtxThreadListGet
+        16   -> osRtxThreadWaitExit
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable8
+       4  ??DataTable8_1
+       4  ??DataTable8_2
+       4  ??DataTable8_3
+       4  ??DataTable8_4
+       4  ??DataTable8_5
+       4  ??DataTable8_6
+      12  ?Subroutine0
+      14  ?Subroutine1
+      30  SemaphoreTokenDecrement
+      36  SemaphoreTokenIncrement
+      48  osRtxSemaphorePostProcess
+     108  osSemaphoreAcquire
+      50  osSemaphoreDelete
+      32  osSemaphoreGetCount
+      36  osSemaphoreGetName
+      68  osSemaphoreNew
+     112  osSemaphoreRelease
+     108  svcRtxSemaphoreAcquire
+     102  svcRtxSemaphoreDelete
+      42  svcRtxSemaphoreGetCount
+      42  svcRtxSemaphoreGetName
+     134  svcRtxSemaphoreNew
+      96  svcRtxSemaphoreRelease
+
+ 
+ 1 110 bytes in section .text
+ 
+ 1 110 bytes of CODE memory
+
+Errors: none
+Warnings: 1

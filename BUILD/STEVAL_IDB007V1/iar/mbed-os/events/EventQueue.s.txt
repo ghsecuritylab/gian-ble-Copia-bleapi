@@ -1,0 +1,518 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:03
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\events\EventQueue.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\EventQueue.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\EventQueue.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\EventQueue.o
+#        .\mbed-os\events\EventQueue.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\EventQueue.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\events\EventQueue.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\events\EventQueue.cpp
+      1          /* events
+      2           * Copyright (c) 2016 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "events/EventQueue.h"
+
+   \                                 In section .text, align 4
+   \   __code __interwork __softfp mbed::Callback<void ()>::Callback<>(void (*)(void *), void *)
+   \                     _ZN4mbed8CallbackIFvvEEC1IvvEEPFvPT_EPT0_: (+1)
+   \   00000000   0xB470             PUSH     {R4-R6}
+   \   00000002   0x2300             MOVS     R3,#+0
+   \   00000004   0x2400             MOVS     R4,#+0
+   \   00000006   0x2500             MOVS     R5,#+0
+   \   00000008   0x2600             MOVS     R6,#+0
+   \   0000000A   0xC078             STM      R0!,{R3-R6}
+   \   0000000C   0x3810             SUBS     R0,R0,#+16
+   \   0000000E   0xD001             BEQ      ??Callback_0
+   \   00000010   0x6001             STR      R1,[R0, #+0]
+   \   00000012   0x6042             STR      R2,[R0, #+4]
+   \                     ??Callback_0: (+1)
+   \   00000014   0x4901             LDR      R1,??Callback_1
+   \   00000016   0x60C1             STR      R1,[R0, #+12]
+   \   00000018   0xBC70             POP      {R4-R6}
+   \   0000001A   0x4770             BX       LR               ;; return
+   \                     ??Callback_1:
+   \   0000001C   0x........         DC32     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops
+
+   \                                 In section .rodata, align 4
+   \   __absolute mbed::Callback<void ()>::ops const mbed::Callback<void ()>::generate<>(mbed::Callback<void ()>::function_context<void (*)(void *), void> const &)::ops
+   \                     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops:
+   \   00000000   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv
+   \   00000004   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv
+   \   00000008   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x0001             MOVS     R1,R0
+   \   00000004   0x6848             LDR      R0,[R1, #+4]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD001             BEQ      ??function_move_0
+   \   00000004   0xC90C             LDM      R1!,{R2,R3}
+   \   00000006   0xC00C             STM      R0!,{R2,R3}
+   \                     ??function_move_0: (+1)
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4
+   \   __code __interwork __softfp mbed::Callback<void (int)>::Callback(void (*)(int))
+   \                     _ZN4mbed8CallbackIFviEEC1EPS1_: (+1)
+   \   00000000   0xB430             PUSH     {R4,R5}
+   \   00000002   0x000A             MOVS     R2,R1
+   \   00000004   0xD106             BNE      ??Callback_2
+   \   00000006   0x2100             MOVS     R1,#+0
+   \   00000008   0x2200             MOVS     R2,#+0
+   \   0000000A   0x2300             MOVS     R3,#+0
+   \   0000000C   0x2400             MOVS     R4,#+0
+   \   0000000E   0xC01E             STM      R0!,{R1-R4}
+   \   00000010   0x3810             SUBS     R0,R0,#+16
+   \   00000012   0xE009             B        ??Callback_3
+   \                     ??Callback_2: (+1)
+   \   00000014   0x2200             MOVS     R2,#+0
+   \   00000016   0x2300             MOVS     R3,#+0
+   \   00000018   0x2400             MOVS     R4,#+0
+   \   0000001A   0x2500             MOVS     R5,#+0
+   \   0000001C   0xC03C             STM      R0!,{R2-R5}
+   \   0000001E   0x3810             SUBS     R0,R0,#+16
+   \   00000020   0xD000             BEQ      ??Callback_4
+   \   00000022   0x6001             STR      R1,[R0, #+0]
+   \                     ??Callback_4: (+1)
+   \   00000024   0x4901             LDR      R1,??Callback_5
+   \   00000026   0x60C1             STR      R1,[R0, #+12]
+   \                     ??Callback_3: (+1)
+   \   00000028   0xBC30             POP      {R4,R5}
+   \   0000002A   0x4770             BX       LR               ;; return
+   \                     ??Callback_5:
+   \   0000002C   0x........         DC32     _ZZN4mbed8CallbackIFviEE8generateIPS1_EEvRKT_E3ops
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void mbed::Callback<void (int)>::thunk(void *, int)
+   \                     _ZN4mbed8CallbackIFviEE5thunkEPvi: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x68E0             LDR      R0,[R4, #+12]
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD104             BNE      ??thunk_0
+   \   0000000C   0x4A05             LDR      R2,??thunk_1     ;; 0x44e
+   \   0000000E   0x4906             LDR      R1,??thunk_1+0x4
+   \   00000010   0x4806             LDR      R0,??thunk_1+0x8
+   \   00000012   0x.... 0x....      BL       mbed_assert_internal
+   \                     ??thunk_0: (+1)
+   \   00000016   0x0029             MOVS     R1,R5
+   \   00000018   0x0020             MOVS     R0,R4
+   \   0000001A   0x68E2             LDR      R2,[R4, #+12]
+   \   0000001C   0x6812             LDR      R2,[R2, #+0]
+   \   0000001E   0x4790             BLX      R2
+   \   00000020   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+   \   00000022   0xBF00             Nop      
+   \                     ??thunk_1:
+   \   00000024   0x0000044E         DC32     0x44e
+   \   00000028   0x........         DC32     _ZZNK4mbed8CallbackIFviEE4callEiEs_0
+   \   0000002C   0x........         DC32     _ZZNK4mbed8CallbackIFviEE4callEiEs
+
+   \                                 In section .rodata, align 4
+   \   __absolute mbed::Callback<void (int)>::ops const mbed::Callback<void (int)>::generate<>(void (*const &)(int))::ops
+   \                     _ZZN4mbed8CallbackIFviEE8generateIPS1_EEvRKT_E3ops:
+   \   00000000   0x........         DC32 _ZN4mbed8CallbackIFviEE13function_callIPS1_EEvPKvi
+   \   00000004   0x........         DC32 _ZN4mbed8CallbackIFviEE13function_moveIPS1_EEvPvPKv
+   \   00000008   0x........         DC32 _ZN4mbed8CallbackIFviEE13function_dtorIPS1_EEvPv
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void (int)>::function_call<void (*)(int)>(void const *, int)
+   \                     _ZN4mbed8CallbackIFviEE13function_callIPS1_EEvPKvi: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x0002             MOVS     R2,R0
+   \   00000004   0x0008             MOVS     R0,R1
+   \   00000006   0x6811             LDR      R1,[R2, #+0]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void (int)>::function_move<void (*)(int)>(void *, void const *)
+   \                     _ZN4mbed8CallbackIFviEE13function_moveIPS1_EEvPvPKv: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD001             BEQ      ??function_move_1
+   \   00000004   0x6809             LDR      R1,[R1, #+0]
+   \   00000006   0x6001             STR      R1,[R0, #+0]
+   \                     ??function_move_1: (+1)
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void (int)>::function_dtor<void (*)(int)>(void *)
+   \                     _ZN4mbed8CallbackIFviEE13function_dtorIPS1_EEvPv: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::callback<>(void (*)(void *), void *)
+   \                     _ZN4mbed8callbackIvvvEENS_8CallbackIFT1_vEEEPFS2_PT_EPT0_: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN4mbed8CallbackIFvvEEC1IvvEEPFvPT_EPT0_
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+     17          
+     18          #include "events/mbed_events.h"
+     19          #include "mbed.h"
+     20          
+     21          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp events::EventQueue::subobject EventQueue(unsigned int, unsigned char *)
+   \                     _ZN6events10EventQueueC2EjPh: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN6events10EventQueueC1EjPh
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     22          EventQueue::EventQueue(unsigned event_size, unsigned char *event_pointer) {
+   \                     _ZN6events10EventQueueC1EjPh: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+   \   00000008   0x2100             MOVS     R1,#+0
+   \   0000000A   0x3050             ADDS     R0,R0,#+80
+   \   0000000C   0x.... 0x....      BL       _ZN4mbed8CallbackIFviEEC1EPS1_
+     23              if (!event_pointer) {
+   \   00000010   0x2E00             CMP      R6,#+0
+   \   00000012   0xD104             BNE      ??EventQueue_0
+     24                  equeue_create(&_equeue, event_size);
+   \   00000014   0x0029             MOVS     R1,R5
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0x.... 0x....      BL       equeue_create
+   \   0000001C   0xE004             B        ??EventQueue_1
+     25              } else {
+     26                  equeue_create_inplace(&_equeue, event_size, event_pointer);
+   \                     ??EventQueue_0: (+1)
+   \   0000001E   0x0032             MOVS     R2,R6
+   \   00000020   0x0029             MOVS     R1,R5
+   \   00000022   0x0020             MOVS     R0,R4
+   \   00000024   0x.... 0x....      BL       equeue_create_inplace
+     27              }
+     28          }
+   \                     ??EventQueue_1: (+1)
+   \   00000028   0x0020             MOVS     R0,R4
+   \   0000002A   0xBD70             POP      {R4-R6,PC}       ;; return
+     29          
+
+   \                                 In section .text, align 2, keep-with-next
+     30          EventQueue::~EventQueue() {
+   \                     _ZN6events10EventQueueD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+     31              equeue_destroy(&_equeue);
+   \   00000002   0x.... 0x....      BL       equeue_destroy
+     32          }
+   \   00000006   0x6DE1             LDR      R1,[R4, #+92]
+   \   00000008   0x2900             CMP      R1,#+0
+   \   0000000A   0xD003             BEQ      ??Subroutine0_0
+   \   0000000C   0x0020             MOVS     R0,R4
+   \   0000000E   0x3050             ADDS     R0,R0,#+80
+   \   00000010   0x6889             LDR      R1,[R1, #+8]
+   \   00000012   0x4788             BLX      R1
+   \                     ??Subroutine0_0: (+1)
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0xBD10             POP      {R4,PC}          ;; return
+     33          
+
+   \                                 In section .text, align 2, keep-with-next
+     34          void EventQueue::dispatch(int ms) {
+   \                     _ZN6events10EventQueue8dispatchEi: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     35              return equeue_dispatch(&_equeue, ms);
+   \   00000002   0x.... 0x....      BL       equeue_dispatch
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+     36          }
+     37          
+
+   \                                 In section .text, align 2, keep-with-next
+     38          void EventQueue::break_dispatch() {
+   \                     _ZN6events10EventQueue14break_dispatchEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     39              return equeue_break(&_equeue);
+   \   00000002   0x.... 0x....      BL       equeue_break
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+     40          }
+     41          
+
+   \                                 In section .text, align 2, keep-with-next
+     42          unsigned EventQueue::tick() {
+   \                     _ZN6events10EventQueue4tickEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     43              return equeue_tick();
+   \   00000002   0x.... 0x....      BL       equeue_tick
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+     44          }
+     45          
+
+   \                                 In section .text, align 2, keep-with-next
+     46          void EventQueue::cancel(int id) {
+   \                     _ZN6events10EventQueue6cancelEi: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     47              return equeue_cancel(&_equeue, id);
+   \   00000002   0x.... 0x....      BL       equeue_cancel
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+     48          }
+     49          
+
+   \                                 In section .text, align 2, keep-with-next
+     50          void EventQueue::background(Callback<void(int)> update) {
+   \                     _ZN6events10EventQueue10backgroundEN4mbed8CallbackIFviEEE: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     51              _update = update;
+   \   00000006   0x3050             ADDS     R0,R0,#+80
+   \   00000008   0x42A8             CMP      R0,R5
+   \   0000000A   0xD013             BEQ      ??background_0
+   \   0000000C   0x6DE1             LDR      R1,[R4, #+92]
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD003             BEQ      ??background_1
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0x3050             ADDS     R0,R0,#+80
+   \   00000016   0x6889             LDR      R1,[R1, #+8]
+   \   00000018   0x4788             BLX      R1
+   \                     ??background_1: (+1)
+   \   0000001A   0x0020             MOVS     R0,R4
+   \   0000001C   0x3050             ADDS     R0,R0,#+80
+   \   0000001E   0xD009             BEQ      ??background_0
+   \   00000020   0x68EA             LDR      R2,[R5, #+12]
+   \   00000022   0x2A00             CMP      R2,#+0
+   \   00000024   0xD004             BEQ      ??background_2
+   \   00000026   0x0029             MOVS     R1,R5
+   \   00000028   0x0020             MOVS     R0,R4
+   \   0000002A   0x3050             ADDS     R0,R0,#+80
+   \   0000002C   0x6852             LDR      R2,[R2, #+4]
+   \   0000002E   0x4790             BLX      R2
+   \                     ??background_2: (+1)
+   \   00000030   0x68E8             LDR      R0,[R5, #+12]
+   \   00000032   0x65E0             STR      R0,[R4, #+92]
+     52          
+     53              if (_update) {
+   \                     ??background_0: (+1)
+   \   00000034   0x6DE0             LDR      R0,[R4, #+92]
+   \   00000036   0x2800             CMP      R0,#+0
+   \   00000038   0xD003             BEQ      ??background_3
+     54                  equeue_background(&_equeue, &Callback<void(int)>::thunk, &_update);
+   \   0000003A   0x0022             MOVS     R2,R4
+   \   0000003C   0x3250             ADDS     R2,R2,#+80
+   \   0000003E   0x....             LDR      R1,??DataTable0
+   \   00000040   0xE001             B        ??background_4
+     55              } else {
+     56                  equeue_background(&_equeue, 0, 0);
+   \                     ??background_3: (+1)
+   \   00000042   0x2200             MOVS     R2,#+0
+   \   00000044   0x2100             MOVS     R1,#+0
+   \                     ??background_4: (+1)
+   \   00000046   0x0020             MOVS     R0,R4
+   \   00000048   0x.... 0x....      BL       equeue_background
+     57              }
+     58          }
+   \   0000004C   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     59          
+
+   \                                 In section .text, align 2, keep-with-next
+     60          void EventQueue::chain(EventQueue *target) {
+   \                     _ZN6events10EventQueue5chainEPS0_: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     61              if (target) {
+     62                  equeue_chain(&_equeue, &target->_equeue);
+     63              } else {
+     64                  equeue_chain(&_equeue, 0);
+   \   00000002   0x.... 0x....      BL       equeue_chain
+     65              }
+     66          }
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp events::EventQueue::subobject ~EventQueue()
+   \                     _ZN6events10EventQueueD2Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \   00000000   0x........         DC32     _ZN4mbed8CallbackIFviEE5thunkEPvi
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   events::EventQueue::EventQueue(unsigned int, unsigned char *)
+        16   -> equeue_create
+        16   -> equeue_create_inplace
+        16   -> mbed::Callback<void (int)>::Callback(void (*)(int))
+      16   events::EventQueue::background(mbed::Callback<void (int)>)
+        16   -- Indirect call
+        16   -> equeue_background
+       8   events::EventQueue::break_dispatch()
+         8   -> equeue_break
+       8   events::EventQueue::cancel(int)
+         8   -> equeue_cancel
+       8   events::EventQueue::chain(events::EventQueue *)
+         8   -> equeue_chain
+       8   events::EventQueue::dispatch(int)
+         8   -> equeue_dispatch
+       8   events::EventQueue::subobject EventQueue(unsigned int, unsigned char *)
+         8   -> events::EventQueue::EventQueue(unsigned int, unsigned char *)
+       8   events::EventQueue::subobject ~EventQueue()
+         8   -- Indirect call
+         8   -> equeue_destroy
+       8   events::EventQueue::tick()
+         8   -> equeue_tick
+       0   events::EventQueue::~EventQueue()
+         8   -- Indirect call
+         8   -> equeue_destroy
+      12   mbed::Callback<void ()>::Callback<>(void (*)(void *), void *)
+       8   mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+         8   -- Indirect call
+       0   mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+       0   mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+       8   mbed::Callback<void (int)>::Callback(void (*)(int))
+       8   mbed::Callback<void (int)>::function_call<void (*)(int)>(void const *, int)
+         8   -- Indirect call
+       0   mbed::Callback<void (int)>::function_dtor<void (*)(int)>(void *)
+       0   mbed::Callback<void (int)>::function_move<void (*)(int)>(void *, void const *)
+      16   mbed::Callback<void (int)>::thunk(void *, int)
+        16   -- Indirect call
+        16   -> mbed_assert_internal
+       8   mbed::callback<>(void (*)(void *), void *)
+         8   -> mbed::Callback<void ()>::Callback<>(void (*)(void *), void *)
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+      24  ?Subroutine0
+      44  events::EventQueue::EventQueue(unsigned int, unsigned char *)
+      78  events::EventQueue::background(mbed::Callback<void (int)>)
+       8  events::EventQueue::break_dispatch()
+       8  events::EventQueue::cancel(int)
+       8  events::EventQueue::chain(events::EventQueue *)
+       8  events::EventQueue::dispatch(int)
+       8  events::EventQueue::subobject EventQueue(unsigned int, unsigned char *)
+       4  events::EventQueue::subobject ~EventQueue()
+       8  events::EventQueue::tick()
+       2  events::EventQueue::~EventQueue()
+      32  mbed::Callback<void ()>::Callback<>(void (*)(void *), void *)
+      12  mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+       2  mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+      10  mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+      48  mbed::Callback<void (int)>::Callback(void (*)(int))
+      12  mbed::Callback<void (int)>::function_call<void (*)(int)>(void const *, int)
+       2  mbed::Callback<void (int)>::function_dtor<void (*)(int)>(void *)
+      10  mbed::Callback<void (int)>::function_move<void (*)(int)>(void *, void const *)
+      48  mbed::Callback<void (int)>::thunk(void *, int)
+       8  mbed::callback<>(void (*)(void *), void *)
+      12  ops
+      12  ops
+     332  -- Other
+
+ 
+ 356 bytes in section .rodata
+ 388 bytes in section .text
+ 
+ 204 bytes of CODE  memory (+ 184 bytes shared)
+   0 bytes of CONST memory (+ 356 bytes shared)
+
+Errors: none
+Warnings: none

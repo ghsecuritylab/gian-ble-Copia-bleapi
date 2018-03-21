@@ -1,0 +1,1965 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:34
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\mbedtls\src\ssl_ciphersuites.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ssl_ciphersuites.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ssl_ciphersuites.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ssl_ciphersuites.o
+#        .\mbed-os\features\mbedtls\src\ssl_ciphersuites.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ssl_ciphersuites.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ssl_ciphersuites.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\mbedtls\src\ssl_ciphersuites.c
+      1          /**
+      2           * \file ssl_ciphersuites.c
+      3           *
+      4           * \brief SSL ciphersuites for mbed TLS
+      5           *
+      6           *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+      7           *  SPDX-License-Identifier: Apache-2.0
+      8           *
+      9           *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+     10           *  not use this file except in compliance with the License.
+     11           *  You may obtain a copy of the License at
+     12           *
+     13           *  http://www.apache.org/licenses/LICENSE-2.0
+     14           *
+     15           *  Unless required by applicable law or agreed to in writing, software
+     16           *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     17           *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     18           *  See the License for the specific language governing permissions and
+     19           *  limitations under the License.
+     20           *
+     21           *  This file is part of mbed TLS (https://tls.mbed.org)
+     22           */
+     23          
+     24          #if !defined(MBEDTLS_CONFIG_FILE)
+     25          #include "mbedtls/config.h"
+     26          #else
+     27          #include MBEDTLS_CONFIG_FILE
+     28          #endif
+     29          
+     30          #if defined(MBEDTLS_SSL_TLS_C)
+     31          
+     32          #if defined(MBEDTLS_PLATFORM_C)
+     33          #include "mbedtls/platform.h"
+     34          #else
+     35          #include <stdlib.h>
+     36          #endif
+     37          
+     38          #include "mbedtls/ssl_ciphersuites.h"
+     39          #include "mbedtls/ssl.h"
+     40          
+     41          #include <string.h>
+     42          
+     43          /*
+     44           * Ordered from most preferred to least preferred in terms of security.
+     45           *
+     46           * Current rule (except rc4, weak and null which come last):
+     47           * 1. By key exchange:
+     48           *    Forward-secure non-PSK > forward-secure PSK > ECJPAKE > other non-PSK > other PSK
+     49           * 2. By key length and cipher:
+     50           *    AES-256 > Camellia-256 > AES-128 > Camellia-128 > 3DES
+     51           * 3. By cipher mode when relevant GCM > CCM > CBC > CCM_8
+     52           * 4. By hash function used when relevant
+     53           * 5. By key exchange/auth again: EC > non-EC
+     54           */
+     55          static const int ciphersuite_preference[] =
+     56          {
+     57          #if defined(MBEDTLS_SSL_CIPHERSUITES)
+     58              MBEDTLS_SSL_CIPHERSUITES,
+     59          #else
+     60              /* All AES-256 ephemeral suites */
+     61              MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+     62              MBEDTLS_TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+     63              MBEDTLS_TLS_DHE_RSA_WITH_AES_256_GCM_SHA384,
+     64              MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_256_CCM,
+     65              MBEDTLS_TLS_DHE_RSA_WITH_AES_256_CCM,
+     66              MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384,
+     67              MBEDTLS_TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384,
+     68              MBEDTLS_TLS_DHE_RSA_WITH_AES_256_CBC_SHA256,
+     69              MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,
+     70              MBEDTLS_TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,
+     71              MBEDTLS_TLS_DHE_RSA_WITH_AES_256_CBC_SHA,
+     72              MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_256_CCM_8,
+     73              MBEDTLS_TLS_DHE_RSA_WITH_AES_256_CCM_8,
+     74          
+     75              /* All CAMELLIA-256 ephemeral suites */
+     76              MBEDTLS_TLS_ECDHE_ECDSA_WITH_CAMELLIA_256_GCM_SHA384,
+     77              MBEDTLS_TLS_ECDHE_RSA_WITH_CAMELLIA_256_GCM_SHA384,
+     78              MBEDTLS_TLS_DHE_RSA_WITH_CAMELLIA_256_GCM_SHA384,
+     79              MBEDTLS_TLS_ECDHE_ECDSA_WITH_CAMELLIA_256_CBC_SHA384,
+     80              MBEDTLS_TLS_ECDHE_RSA_WITH_CAMELLIA_256_CBC_SHA384,
+     81              MBEDTLS_TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA256,
+     82              MBEDTLS_TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA,
+     83          
+     84              /* All AES-128 ephemeral suites */
+     85              MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+     86              MBEDTLS_TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+     87              MBEDTLS_TLS_DHE_RSA_WITH_AES_128_GCM_SHA256,
+     88              MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_128_CCM,
+     89              MBEDTLS_TLS_DHE_RSA_WITH_AES_128_CCM,
+     90              MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256,
+     91              MBEDTLS_TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,
+     92              MBEDTLS_TLS_DHE_RSA_WITH_AES_128_CBC_SHA256,
+     93              MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA,
+     94              MBEDTLS_TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,
+     95              MBEDTLS_TLS_DHE_RSA_WITH_AES_128_CBC_SHA,
+     96              MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8,
+     97              MBEDTLS_TLS_DHE_RSA_WITH_AES_128_CCM_8,
+     98          
+     99              /* All CAMELLIA-128 ephemeral suites */
+    100              MBEDTLS_TLS_ECDHE_ECDSA_WITH_CAMELLIA_128_GCM_SHA256,
+    101              MBEDTLS_TLS_ECDHE_RSA_WITH_CAMELLIA_128_GCM_SHA256,
+    102              MBEDTLS_TLS_DHE_RSA_WITH_CAMELLIA_128_GCM_SHA256,
+    103              MBEDTLS_TLS_ECDHE_ECDSA_WITH_CAMELLIA_128_CBC_SHA256,
+    104              MBEDTLS_TLS_ECDHE_RSA_WITH_CAMELLIA_128_CBC_SHA256,
+    105              MBEDTLS_TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA256,
+    106              MBEDTLS_TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA,
+    107          
+    108              /* All remaining >= 128-bit ephemeral suites */
+    109              MBEDTLS_TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA,
+    110              MBEDTLS_TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA,
+    111              MBEDTLS_TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA,
+    112          
+    113              /* The PSK ephemeral suites */
+    114              MBEDTLS_TLS_DHE_PSK_WITH_AES_256_GCM_SHA384,
+    115              MBEDTLS_TLS_DHE_PSK_WITH_AES_256_CCM,
+    116              MBEDTLS_TLS_ECDHE_PSK_WITH_AES_256_CBC_SHA384,
+    117              MBEDTLS_TLS_DHE_PSK_WITH_AES_256_CBC_SHA384,
+    118              MBEDTLS_TLS_ECDHE_PSK_WITH_AES_256_CBC_SHA,
+    119              MBEDTLS_TLS_DHE_PSK_WITH_AES_256_CBC_SHA,
+    120              MBEDTLS_TLS_DHE_PSK_WITH_CAMELLIA_256_GCM_SHA384,
+    121              MBEDTLS_TLS_ECDHE_PSK_WITH_CAMELLIA_256_CBC_SHA384,
+    122              MBEDTLS_TLS_DHE_PSK_WITH_CAMELLIA_256_CBC_SHA384,
+    123              MBEDTLS_TLS_DHE_PSK_WITH_AES_256_CCM_8,
+    124          
+    125              MBEDTLS_TLS_DHE_PSK_WITH_AES_128_GCM_SHA256,
+    126              MBEDTLS_TLS_DHE_PSK_WITH_AES_128_CCM,
+    127              MBEDTLS_TLS_ECDHE_PSK_WITH_AES_128_CBC_SHA256,
+    128              MBEDTLS_TLS_DHE_PSK_WITH_AES_128_CBC_SHA256,
+    129              MBEDTLS_TLS_ECDHE_PSK_WITH_AES_128_CBC_SHA,
+    130              MBEDTLS_TLS_DHE_PSK_WITH_AES_128_CBC_SHA,
+    131              MBEDTLS_TLS_DHE_PSK_WITH_CAMELLIA_128_GCM_SHA256,
+    132              MBEDTLS_TLS_DHE_PSK_WITH_CAMELLIA_128_CBC_SHA256,
+    133              MBEDTLS_TLS_ECDHE_PSK_WITH_CAMELLIA_128_CBC_SHA256,
+    134              MBEDTLS_TLS_DHE_PSK_WITH_AES_128_CCM_8,
+    135          
+    136              MBEDTLS_TLS_ECDHE_PSK_WITH_3DES_EDE_CBC_SHA,
+    137              MBEDTLS_TLS_DHE_PSK_WITH_3DES_EDE_CBC_SHA,
+    138          
+    139              /* The ECJPAKE suite */
+    140              MBEDTLS_TLS_ECJPAKE_WITH_AES_128_CCM_8,
+    141          
+    142              /* All AES-256 suites */
+    143              MBEDTLS_TLS_RSA_WITH_AES_256_GCM_SHA384,
+    144              MBEDTLS_TLS_RSA_WITH_AES_256_CCM,
+    145              MBEDTLS_TLS_RSA_WITH_AES_256_CBC_SHA256,
+    146              MBEDTLS_TLS_RSA_WITH_AES_256_CBC_SHA,
+    147              MBEDTLS_TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384,
+    148              MBEDTLS_TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384,
+    149              MBEDTLS_TLS_ECDH_RSA_WITH_AES_256_CBC_SHA,
+    150              MBEDTLS_TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384,
+    151              MBEDTLS_TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384,
+    152              MBEDTLS_TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA,
+    153              MBEDTLS_TLS_RSA_WITH_AES_256_CCM_8,
+    154          
+    155              /* All CAMELLIA-256 suites */
+    156              MBEDTLS_TLS_RSA_WITH_CAMELLIA_256_GCM_SHA384,
+    157              MBEDTLS_TLS_RSA_WITH_CAMELLIA_256_CBC_SHA256,
+    158              MBEDTLS_TLS_RSA_WITH_CAMELLIA_256_CBC_SHA,
+    159              MBEDTLS_TLS_ECDH_RSA_WITH_CAMELLIA_256_GCM_SHA384,
+    160              MBEDTLS_TLS_ECDH_RSA_WITH_CAMELLIA_256_CBC_SHA384,
+    161              MBEDTLS_TLS_ECDH_ECDSA_WITH_CAMELLIA_256_GCM_SHA384,
+    162              MBEDTLS_TLS_ECDH_ECDSA_WITH_CAMELLIA_256_CBC_SHA384,
+    163          
+    164              /* All AES-128 suites */
+    165              MBEDTLS_TLS_RSA_WITH_AES_128_GCM_SHA256,
+    166              MBEDTLS_TLS_RSA_WITH_AES_128_CCM,
+    167              MBEDTLS_TLS_RSA_WITH_AES_128_CBC_SHA256,
+    168              MBEDTLS_TLS_RSA_WITH_AES_128_CBC_SHA,
+    169              MBEDTLS_TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256,
+    170              MBEDTLS_TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256,
+    171              MBEDTLS_TLS_ECDH_RSA_WITH_AES_128_CBC_SHA,
+    172              MBEDTLS_TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256,
+    173              MBEDTLS_TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256,
+    174              MBEDTLS_TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA,
+    175              MBEDTLS_TLS_RSA_WITH_AES_128_CCM_8,
+    176          
+    177              /* All CAMELLIA-128 suites */
+    178              MBEDTLS_TLS_RSA_WITH_CAMELLIA_128_GCM_SHA256,
+    179              MBEDTLS_TLS_RSA_WITH_CAMELLIA_128_CBC_SHA256,
+    180              MBEDTLS_TLS_RSA_WITH_CAMELLIA_128_CBC_SHA,
+    181              MBEDTLS_TLS_ECDH_RSA_WITH_CAMELLIA_128_GCM_SHA256,
+    182              MBEDTLS_TLS_ECDH_RSA_WITH_CAMELLIA_128_CBC_SHA256,
+    183              MBEDTLS_TLS_ECDH_ECDSA_WITH_CAMELLIA_128_GCM_SHA256,
+    184              MBEDTLS_TLS_ECDH_ECDSA_WITH_CAMELLIA_128_CBC_SHA256,
+    185          
+    186              /* All remaining >= 128-bit suites */
+    187              MBEDTLS_TLS_RSA_WITH_3DES_EDE_CBC_SHA,
+    188              MBEDTLS_TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA,
+    189              MBEDTLS_TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA,
+    190          
+    191              /* The RSA PSK suites */
+    192              MBEDTLS_TLS_RSA_PSK_WITH_AES_256_GCM_SHA384,
+    193              MBEDTLS_TLS_RSA_PSK_WITH_AES_256_CBC_SHA384,
+    194              MBEDTLS_TLS_RSA_PSK_WITH_AES_256_CBC_SHA,
+    195              MBEDTLS_TLS_RSA_PSK_WITH_CAMELLIA_256_GCM_SHA384,
+    196              MBEDTLS_TLS_RSA_PSK_WITH_CAMELLIA_256_CBC_SHA384,
+    197          
+    198              MBEDTLS_TLS_RSA_PSK_WITH_AES_128_GCM_SHA256,
+    199              MBEDTLS_TLS_RSA_PSK_WITH_AES_128_CBC_SHA256,
+    200              MBEDTLS_TLS_RSA_PSK_WITH_AES_128_CBC_SHA,
+    201              MBEDTLS_TLS_RSA_PSK_WITH_CAMELLIA_128_GCM_SHA256,
+    202              MBEDTLS_TLS_RSA_PSK_WITH_CAMELLIA_128_CBC_SHA256,
+    203          
+    204              MBEDTLS_TLS_RSA_PSK_WITH_3DES_EDE_CBC_SHA,
+    205          
+    206              /* The PSK suites */
+    207              MBEDTLS_TLS_PSK_WITH_AES_256_GCM_SHA384,
+    208              MBEDTLS_TLS_PSK_WITH_AES_256_CCM,
+    209              MBEDTLS_TLS_PSK_WITH_AES_256_CBC_SHA384,
+    210              MBEDTLS_TLS_PSK_WITH_AES_256_CBC_SHA,
+    211              MBEDTLS_TLS_PSK_WITH_CAMELLIA_256_GCM_SHA384,
+    212              MBEDTLS_TLS_PSK_WITH_CAMELLIA_256_CBC_SHA384,
+    213              MBEDTLS_TLS_PSK_WITH_AES_256_CCM_8,
+    214          
+    215              MBEDTLS_TLS_PSK_WITH_AES_128_GCM_SHA256,
+    216              MBEDTLS_TLS_PSK_WITH_AES_128_CCM,
+    217              MBEDTLS_TLS_PSK_WITH_AES_128_CBC_SHA256,
+    218              MBEDTLS_TLS_PSK_WITH_AES_128_CBC_SHA,
+    219              MBEDTLS_TLS_PSK_WITH_CAMELLIA_128_GCM_SHA256,
+    220              MBEDTLS_TLS_PSK_WITH_CAMELLIA_128_CBC_SHA256,
+    221              MBEDTLS_TLS_PSK_WITH_AES_128_CCM_8,
+    222          
+    223              MBEDTLS_TLS_PSK_WITH_3DES_EDE_CBC_SHA,
+    224          
+    225              /* RC4 suites */
+    226              MBEDTLS_TLS_ECDHE_ECDSA_WITH_RC4_128_SHA,
+    227              MBEDTLS_TLS_ECDHE_RSA_WITH_RC4_128_SHA,
+    228              MBEDTLS_TLS_ECDHE_PSK_WITH_RC4_128_SHA,
+    229              MBEDTLS_TLS_DHE_PSK_WITH_RC4_128_SHA,
+    230              MBEDTLS_TLS_RSA_WITH_RC4_128_SHA,
+    231              MBEDTLS_TLS_RSA_WITH_RC4_128_MD5,
+    232              MBEDTLS_TLS_ECDH_RSA_WITH_RC4_128_SHA,
+    233              MBEDTLS_TLS_ECDH_ECDSA_WITH_RC4_128_SHA,
+    234              MBEDTLS_TLS_RSA_PSK_WITH_RC4_128_SHA,
+    235              MBEDTLS_TLS_PSK_WITH_RC4_128_SHA,
+    236          
+    237              /* Weak suites */
+    238              MBEDTLS_TLS_DHE_RSA_WITH_DES_CBC_SHA,
+    239              MBEDTLS_TLS_RSA_WITH_DES_CBC_SHA,
+    240          
+    241              /* NULL suites */
+    242              MBEDTLS_TLS_ECDHE_ECDSA_WITH_NULL_SHA,
+    243              MBEDTLS_TLS_ECDHE_RSA_WITH_NULL_SHA,
+    244              MBEDTLS_TLS_ECDHE_PSK_WITH_NULL_SHA384,
+    245              MBEDTLS_TLS_ECDHE_PSK_WITH_NULL_SHA256,
+    246              MBEDTLS_TLS_ECDHE_PSK_WITH_NULL_SHA,
+    247              MBEDTLS_TLS_DHE_PSK_WITH_NULL_SHA384,
+    248              MBEDTLS_TLS_DHE_PSK_WITH_NULL_SHA256,
+    249              MBEDTLS_TLS_DHE_PSK_WITH_NULL_SHA,
+    250          
+    251              MBEDTLS_TLS_RSA_WITH_NULL_SHA256,
+    252              MBEDTLS_TLS_RSA_WITH_NULL_SHA,
+    253              MBEDTLS_TLS_RSA_WITH_NULL_MD5,
+    254              MBEDTLS_TLS_ECDH_RSA_WITH_NULL_SHA,
+    255              MBEDTLS_TLS_ECDH_ECDSA_WITH_NULL_SHA,
+    256              MBEDTLS_TLS_RSA_PSK_WITH_NULL_SHA384,
+    257              MBEDTLS_TLS_RSA_PSK_WITH_NULL_SHA256,
+    258              MBEDTLS_TLS_RSA_PSK_WITH_NULL_SHA,
+    259              MBEDTLS_TLS_PSK_WITH_NULL_SHA384,
+    260              MBEDTLS_TLS_PSK_WITH_NULL_SHA256,
+    261              MBEDTLS_TLS_PSK_WITH_NULL_SHA,
+    262          
+    263          #endif /* MBEDTLS_SSL_CIPHERSUITES */
+    264              0
+    265          };
+    266          
+    267          static const mbedtls_ssl_ciphersuite_t ciphersuite_definitions[] =
+    268          {
+    269          #if defined(MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA_ENABLED)
+    270          #if defined(MBEDTLS_AES_C)
+    271          #if defined(MBEDTLS_SHA1_C)
+    272          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    273              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, "TLS-ECDHE-ECDSA-WITH-AES-128-CBC-SHA",
+    274                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    275                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    276                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    277                0 },
+    278              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, "TLS-ECDHE-ECDSA-WITH-AES-256-CBC-SHA",
+    279                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    280                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    281                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    282                0 },
+    283          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    284          #endif /* MBEDTLS_SHA1_C */
+    285          #if defined(MBEDTLS_SHA256_C)
+    286          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    287              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, "TLS-ECDHE-ECDSA-WITH-AES-128-CBC-SHA256",
+    288                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    289                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    290                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    291                0 },
+    292          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    293          #if defined(MBEDTLS_GCM_C)
+    294              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, "TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256",
+    295                MBEDTLS_CIPHER_AES_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    296                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    297                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    298                0 },
+    299          #endif /* MBEDTLS_GCM_C */
+    300          #endif /* MBEDTLS_SHA256_C */
+    301          #if defined(MBEDTLS_SHA512_C)
+    302          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    303              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, "TLS-ECDHE-ECDSA-WITH-AES-256-CBC-SHA384",
+    304                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    305                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    306                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    307                0 },
+    308          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    309          #if defined(MBEDTLS_GCM_C)
+    310              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, "TLS-ECDHE-ECDSA-WITH-AES-256-GCM-SHA384",
+    311                MBEDTLS_CIPHER_AES_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    312                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    313                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    314                0 },
+    315          #endif /* MBEDTLS_GCM_C */
+    316          #endif /* MBEDTLS_SHA512_C */
+    317          #if defined(MBEDTLS_CCM_C)
+    318              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_256_CCM, "TLS-ECDHE-ECDSA-WITH-AES-256-CCM",
+    319                MBEDTLS_CIPHER_AES_256_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    320                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    321                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    322                0 },
+    323              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_256_CCM_8, "TLS-ECDHE-ECDSA-WITH-AES-256-CCM-8",
+    324                MBEDTLS_CIPHER_AES_256_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    325                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    326                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    327                MBEDTLS_CIPHERSUITE_SHORT_TAG },
+    328              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_128_CCM, "TLS-ECDHE-ECDSA-WITH-AES-128-CCM",
+    329                MBEDTLS_CIPHER_AES_128_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    330                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    331                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    332                0 },
+    333              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8, "TLS-ECDHE-ECDSA-WITH-AES-128-CCM-8",
+    334                MBEDTLS_CIPHER_AES_128_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    335                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    336                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    337                MBEDTLS_CIPHERSUITE_SHORT_TAG },
+    338          #endif /* MBEDTLS_CCM_C */
+    339          #endif /* MBEDTLS_AES_C */
+    340          
+    341          #if defined(MBEDTLS_CAMELLIA_C)
+    342          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    343          #if defined(MBEDTLS_SHA256_C)
+    344              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_CAMELLIA_128_CBC_SHA256, "TLS-ECDHE-ECDSA-WITH-CAMELLIA-128-CBC-SHA256",
+    345                MBEDTLS_CIPHER_CAMELLIA_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    346                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    347                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    348                0 },
+    349          #endif /* MBEDTLS_SHA256_C */
+    350          #if defined(MBEDTLS_SHA512_C)
+    351              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_CAMELLIA_256_CBC_SHA384, "TLS-ECDHE-ECDSA-WITH-CAMELLIA-256-CBC-SHA384",
+    352                MBEDTLS_CIPHER_CAMELLIA_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    353                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    354                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    355                0 },
+    356          #endif /* MBEDTLS_SHA512_C */
+    357          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    358          
+    359          #if defined(MBEDTLS_GCM_C)
+    360          #if defined(MBEDTLS_SHA256_C)
+    361              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_CAMELLIA_128_GCM_SHA256, "TLS-ECDHE-ECDSA-WITH-CAMELLIA-128-GCM-SHA256",
+    362                MBEDTLS_CIPHER_CAMELLIA_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    363                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    364                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    365                0 },
+    366          #endif /* MBEDTLS_SHA256_C */
+    367          #if defined(MBEDTLS_SHA512_C)
+    368              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_CAMELLIA_256_GCM_SHA384, "TLS-ECDHE-ECDSA-WITH-CAMELLIA-256-GCM-SHA384",
+    369                MBEDTLS_CIPHER_CAMELLIA_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    370                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    371                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    372                0 },
+    373          #endif /* MBEDTLS_SHA512_C */
+    374          #endif /* MBEDTLS_GCM_C */
+    375          #endif /* MBEDTLS_CAMELLIA_C */
+    376          
+    377          #if defined(MBEDTLS_DES_C)
+    378          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    379          #if defined(MBEDTLS_SHA1_C)
+    380              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, "TLS-ECDHE-ECDSA-WITH-3DES-EDE-CBC-SHA",
+    381                MBEDTLS_CIPHER_DES_EDE3_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    382                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    383                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    384                0 },
+    385          #endif /* MBEDTLS_SHA1_C */
+    386          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    387          #endif /* MBEDTLS_DES_C */
+    388          
+    389          #if defined(MBEDTLS_ARC4_C)
+    390          #if defined(MBEDTLS_SHA1_C)
+    391              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_RC4_128_SHA, "TLS-ECDHE-ECDSA-WITH-RC4-128-SHA",
+    392                MBEDTLS_CIPHER_ARC4_128, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    393                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    394                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    395                MBEDTLS_CIPHERSUITE_NODTLS },
+    396          #endif /* MBEDTLS_SHA1_C */
+    397          #endif /* MBEDTLS_ARC4_C */
+    398          
+    399          #if defined(MBEDTLS_CIPHER_NULL_CIPHER)
+    400          #if defined(MBEDTLS_SHA1_C)
+    401              { MBEDTLS_TLS_ECDHE_ECDSA_WITH_NULL_SHA, "TLS-ECDHE-ECDSA-WITH-NULL-SHA",
+    402                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA,
+    403                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    404                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    405                MBEDTLS_CIPHERSUITE_WEAK },
+    406          #endif /* MBEDTLS_SHA1_C */
+    407          #endif /* MBEDTLS_CIPHER_NULL_CIPHER */
+    408          #endif /* MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA_ENABLED */
+    409          
+    410          #if defined(MBEDTLS_KEY_EXCHANGE_ECDHE_RSA_ENABLED)
+    411          #if defined(MBEDTLS_AES_C)
+    412          #if defined(MBEDTLS_SHA1_C)
+    413          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    414              { MBEDTLS_TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, "TLS-ECDHE-RSA-WITH-AES-128-CBC-SHA",
+    415                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    416                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    417                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    418                0 },
+    419              { MBEDTLS_TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, "TLS-ECDHE-RSA-WITH-AES-256-CBC-SHA",
+    420                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    421                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    422                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    423                0 },
+    424          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    425          #endif /* MBEDTLS_SHA1_C */
+    426          #if defined(MBEDTLS_SHA256_C)
+    427          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    428              { MBEDTLS_TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, "TLS-ECDHE-RSA-WITH-AES-128-CBC-SHA256",
+    429                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    430                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    431                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    432                0 },
+    433          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    434          #if defined(MBEDTLS_GCM_C)
+    435              { MBEDTLS_TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, "TLS-ECDHE-RSA-WITH-AES-128-GCM-SHA256",
+    436                MBEDTLS_CIPHER_AES_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    437                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    438                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    439                0 },
+    440          #endif /* MBEDTLS_GCM_C */
+    441          #endif /* MBEDTLS_SHA256_C */
+    442          #if defined(MBEDTLS_SHA512_C)
+    443          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    444              { MBEDTLS_TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, "TLS-ECDHE-RSA-WITH-AES-256-CBC-SHA384",
+    445                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    446                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    447                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    448                0 },
+    449          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    450          #if defined(MBEDTLS_GCM_C)
+    451              { MBEDTLS_TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, "TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384",
+    452                MBEDTLS_CIPHER_AES_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    453                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    454                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    455                0 },
+    456          #endif /* MBEDTLS_GCM_C */
+    457          #endif /* MBEDTLS_SHA512_C */
+    458          #endif /* MBEDTLS_AES_C */
+    459          
+    460          #if defined(MBEDTLS_CAMELLIA_C)
+    461          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    462          #if defined(MBEDTLS_SHA256_C)
+    463              { MBEDTLS_TLS_ECDHE_RSA_WITH_CAMELLIA_128_CBC_SHA256, "TLS-ECDHE-RSA-WITH-CAMELLIA-128-CBC-SHA256",
+    464                MBEDTLS_CIPHER_CAMELLIA_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    465                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    466                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    467                0 },
+    468          #endif /* MBEDTLS_SHA256_C */
+    469          #if defined(MBEDTLS_SHA512_C)
+    470              { MBEDTLS_TLS_ECDHE_RSA_WITH_CAMELLIA_256_CBC_SHA384, "TLS-ECDHE-RSA-WITH-CAMELLIA-256-CBC-SHA384",
+    471                MBEDTLS_CIPHER_CAMELLIA_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    472                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    473                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    474                0 },
+    475          #endif /* MBEDTLS_SHA512_C */
+    476          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    477          
+    478          #if defined(MBEDTLS_GCM_C)
+    479          #if defined(MBEDTLS_SHA256_C)
+    480              { MBEDTLS_TLS_ECDHE_RSA_WITH_CAMELLIA_128_GCM_SHA256, "TLS-ECDHE-RSA-WITH-CAMELLIA-128-GCM-SHA256",
+    481                MBEDTLS_CIPHER_CAMELLIA_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    482                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    483                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    484                0 },
+    485          #endif /* MBEDTLS_SHA256_C */
+    486          #if defined(MBEDTLS_SHA512_C)
+    487              { MBEDTLS_TLS_ECDHE_RSA_WITH_CAMELLIA_256_GCM_SHA384, "TLS-ECDHE-RSA-WITH-CAMELLIA-256-GCM-SHA384",
+    488                MBEDTLS_CIPHER_CAMELLIA_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    489                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    490                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    491                0 },
+    492          #endif /* MBEDTLS_SHA512_C */
+    493          #endif /* MBEDTLS_GCM_C */
+    494          #endif /* MBEDTLS_CAMELLIA_C */
+    495          
+    496          #if defined(MBEDTLS_DES_C)
+    497          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    498          #if defined(MBEDTLS_SHA1_C)
+    499              { MBEDTLS_TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, "TLS-ECDHE-RSA-WITH-3DES-EDE-CBC-SHA",
+    500                MBEDTLS_CIPHER_DES_EDE3_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    501                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    502                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    503                0 },
+    504          #endif /* MBEDTLS_SHA1_C */
+    505          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    506          #endif /* MBEDTLS_DES_C */
+    507          
+    508          #if defined(MBEDTLS_ARC4_C)
+    509          #if defined(MBEDTLS_SHA1_C)
+    510              { MBEDTLS_TLS_ECDHE_RSA_WITH_RC4_128_SHA, "TLS-ECDHE-RSA-WITH-RC4-128-SHA",
+    511                MBEDTLS_CIPHER_ARC4_128, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    512                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    513                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    514                MBEDTLS_CIPHERSUITE_NODTLS },
+    515          #endif /* MBEDTLS_SHA1_C */
+    516          #endif /* MBEDTLS_ARC4_C */
+    517          
+    518          #if defined(MBEDTLS_CIPHER_NULL_CIPHER)
+    519          #if defined(MBEDTLS_SHA1_C)
+    520              { MBEDTLS_TLS_ECDHE_RSA_WITH_NULL_SHA, "TLS-ECDHE-RSA-WITH-NULL-SHA",
+    521                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_RSA,
+    522                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    523                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    524                MBEDTLS_CIPHERSUITE_WEAK },
+    525          #endif /* MBEDTLS_SHA1_C */
+    526          #endif /* MBEDTLS_CIPHER_NULL_CIPHER */
+    527          #endif /* MBEDTLS_KEY_EXCHANGE_ECDHE_RSA_ENABLED */
+    528          
+    529          #if defined(MBEDTLS_KEY_EXCHANGE_DHE_RSA_ENABLED)
+    530          #if defined(MBEDTLS_AES_C)
+    531          #if defined(MBEDTLS_SHA512_C) && defined(MBEDTLS_GCM_C)
+    532              { MBEDTLS_TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, "TLS-DHE-RSA-WITH-AES-256-GCM-SHA384",
+    533                MBEDTLS_CIPHER_AES_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    534                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    535                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    536                0 },
+    537          #endif /* MBEDTLS_SHA512_C && MBEDTLS_GCM_C */
+    538          
+    539          #if defined(MBEDTLS_SHA256_C)
+    540          #if defined(MBEDTLS_GCM_C)
+    541              { MBEDTLS_TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, "TLS-DHE-RSA-WITH-AES-128-GCM-SHA256",
+    542                MBEDTLS_CIPHER_AES_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    543                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    544                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    545                0 },
+    546          #endif /* MBEDTLS_GCM_C */
+    547          
+    548          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    549              { MBEDTLS_TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, "TLS-DHE-RSA-WITH-AES-128-CBC-SHA256",
+    550                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    551                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    552                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    553                0 },
+    554          
+    555              { MBEDTLS_TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, "TLS-DHE-RSA-WITH-AES-256-CBC-SHA256",
+    556                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    557                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    558                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    559                0 },
+    560          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    561          #endif /* MBEDTLS_SHA256_C */
+    562          
+    563          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    564          #if defined(MBEDTLS_SHA1_C)
+    565              { MBEDTLS_TLS_DHE_RSA_WITH_AES_128_CBC_SHA, "TLS-DHE-RSA-WITH-AES-128-CBC-SHA",
+    566                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    567                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+    568                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    569                0 },
+    570          
+    571              { MBEDTLS_TLS_DHE_RSA_WITH_AES_256_CBC_SHA, "TLS-DHE-RSA-WITH-AES-256-CBC-SHA",
+    572                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    573                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+    574                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    575                0 },
+    576          #endif /* MBEDTLS_SHA1_C */
+    577          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    578          #if defined(MBEDTLS_CCM_C)
+    579              { MBEDTLS_TLS_DHE_RSA_WITH_AES_256_CCM, "TLS-DHE-RSA-WITH-AES-256-CCM",
+    580                MBEDTLS_CIPHER_AES_256_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    581                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    582                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    583                0 },
+    584              { MBEDTLS_TLS_DHE_RSA_WITH_AES_256_CCM_8, "TLS-DHE-RSA-WITH-AES-256-CCM-8",
+    585                MBEDTLS_CIPHER_AES_256_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    586                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    587                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    588                MBEDTLS_CIPHERSUITE_SHORT_TAG },
+    589              { MBEDTLS_TLS_DHE_RSA_WITH_AES_128_CCM, "TLS-DHE-RSA-WITH-AES-128-CCM",
+    590                MBEDTLS_CIPHER_AES_128_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    591                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    592                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    593                0 },
+    594              { MBEDTLS_TLS_DHE_RSA_WITH_AES_128_CCM_8, "TLS-DHE-RSA-WITH-AES-128-CCM-8",
+    595                MBEDTLS_CIPHER_AES_128_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    596                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    597                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    598                MBEDTLS_CIPHERSUITE_SHORT_TAG },
+    599          #endif /* MBEDTLS_CCM_C */
+    600          #endif /* MBEDTLS_AES_C */
+    601          
+    602          #if defined(MBEDTLS_CAMELLIA_C)
+    603          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    604          #if defined(MBEDTLS_SHA256_C)
+    605              { MBEDTLS_TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA256, "TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA256",
+    606                MBEDTLS_CIPHER_CAMELLIA_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    607                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    608                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    609                0 },
+    610          
+    611              { MBEDTLS_TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA256, "TLS-DHE-RSA-WITH-CAMELLIA-256-CBC-SHA256",
+    612                MBEDTLS_CIPHER_CAMELLIA_256_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    613                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    614                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    615                0 },
+    616          #endif /* MBEDTLS_SHA256_C */
+    617          
+    618          #if defined(MBEDTLS_SHA1_C)
+    619              { MBEDTLS_TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA, "TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA",
+    620                MBEDTLS_CIPHER_CAMELLIA_128_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    621                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+    622                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    623                0 },
+    624          
+    625              { MBEDTLS_TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA, "TLS-DHE-RSA-WITH-CAMELLIA-256-CBC-SHA",
+    626                MBEDTLS_CIPHER_CAMELLIA_256_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    627                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+    628                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    629                0 },
+    630          #endif /* MBEDTLS_SHA1_C */
+    631          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    632          #if defined(MBEDTLS_GCM_C)
+    633          #if defined(MBEDTLS_SHA256_C)
+    634              { MBEDTLS_TLS_DHE_RSA_WITH_CAMELLIA_128_GCM_SHA256, "TLS-DHE-RSA-WITH-CAMELLIA-128-GCM-SHA256",
+    635                MBEDTLS_CIPHER_CAMELLIA_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    636                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    637                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    638                0 },
+    639          #endif /* MBEDTLS_SHA256_C */
+    640          
+    641          #if defined(MBEDTLS_SHA512_C)
+    642              { MBEDTLS_TLS_DHE_RSA_WITH_CAMELLIA_256_GCM_SHA384, "TLS-DHE-RSA-WITH-CAMELLIA-256-GCM-SHA384",
+    643                MBEDTLS_CIPHER_CAMELLIA_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    644                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    645                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    646                0 },
+    647          #endif /* MBEDTLS_SHA512_C */
+    648          #endif /* MBEDTLS_GCM_C */
+    649          #endif /* MBEDTLS_CAMELLIA_C */
+    650          
+    651          #if defined(MBEDTLS_DES_C)
+    652          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    653          #if defined(MBEDTLS_SHA1_C)
+    654              { MBEDTLS_TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA, "TLS-DHE-RSA-WITH-3DES-EDE-CBC-SHA",
+    655                MBEDTLS_CIPHER_DES_EDE3_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+    656                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+    657                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    658                0 },
+    659          #endif /* MBEDTLS_SHA1_C */
+    660          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    661          #endif /* MBEDTLS_DES_C */
+    662          #endif /* MBEDTLS_KEY_EXCHANGE_DHE_RSA_ENABLED */
+    663          
+    664          #if defined(MBEDTLS_KEY_EXCHANGE_RSA_ENABLED)
+    665          #if defined(MBEDTLS_AES_C)
+    666          #if defined(MBEDTLS_SHA512_C) && defined(MBEDTLS_GCM_C)
+    667              { MBEDTLS_TLS_RSA_WITH_AES_256_GCM_SHA384, "TLS-RSA-WITH-AES-256-GCM-SHA384",
+    668                MBEDTLS_CIPHER_AES_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_RSA,
+    669                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    670                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    671                0 },
+    672          #endif /* MBEDTLS_SHA512_C && MBEDTLS_GCM_C */
+    673          
+    674          #if defined(MBEDTLS_SHA256_C)
+    675          #if defined(MBEDTLS_GCM_C)
+    676              { MBEDTLS_TLS_RSA_WITH_AES_128_GCM_SHA256, "TLS-RSA-WITH-AES-128-GCM-SHA256",
+    677                MBEDTLS_CIPHER_AES_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA,
+    678                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    679                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    680                0 },
+    681          #endif /* MBEDTLS_GCM_C */
+    682          
+    683          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    684              { MBEDTLS_TLS_RSA_WITH_AES_128_CBC_SHA256, "TLS-RSA-WITH-AES-128-CBC-SHA256",
+    685                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA,
+    686                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    687                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    688                0 },
+    689          
+    690              { MBEDTLS_TLS_RSA_WITH_AES_256_CBC_SHA256, "TLS-RSA-WITH-AES-256-CBC-SHA256",
+    691                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA,
+    692                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    693                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    694                0 },
+    695          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    696          #endif /* MBEDTLS_SHA256_C */
+    697          
+    698          #if defined(MBEDTLS_SHA1_C)
+    699          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    700              { MBEDTLS_TLS_RSA_WITH_AES_128_CBC_SHA, "TLS-RSA-WITH-AES-128-CBC-SHA",
+    701                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA,
+    702                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+    703                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    704                0 },
+    705          
+    706              { MBEDTLS_TLS_RSA_WITH_AES_256_CBC_SHA, "TLS-RSA-WITH-AES-256-CBC-SHA",
+    707                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA,
+    708                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+    709                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    710                0 },
+    711          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    712          #endif /* MBEDTLS_SHA1_C */
+    713          #if defined(MBEDTLS_CCM_C)
+    714              { MBEDTLS_TLS_RSA_WITH_AES_256_CCM, "TLS-RSA-WITH-AES-256-CCM",
+    715                MBEDTLS_CIPHER_AES_256_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA,
+    716                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    717                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    718                0 },
+    719              { MBEDTLS_TLS_RSA_WITH_AES_256_CCM_8, "TLS-RSA-WITH-AES-256-CCM-8",
+    720                MBEDTLS_CIPHER_AES_256_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA,
+    721                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    722                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    723                MBEDTLS_CIPHERSUITE_SHORT_TAG },
+    724              { MBEDTLS_TLS_RSA_WITH_AES_128_CCM, "TLS-RSA-WITH-AES-128-CCM",
+    725                MBEDTLS_CIPHER_AES_128_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA,
+    726                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    727                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    728                0 },
+    729              { MBEDTLS_TLS_RSA_WITH_AES_128_CCM_8, "TLS-RSA-WITH-AES-128-CCM-8",
+    730                MBEDTLS_CIPHER_AES_128_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA,
+    731                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    732                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    733                MBEDTLS_CIPHERSUITE_SHORT_TAG },
+    734          #endif /* MBEDTLS_CCM_C */
+    735          #endif /* MBEDTLS_AES_C */
+    736          
+    737          #if defined(MBEDTLS_CAMELLIA_C)
+    738          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    739          #if defined(MBEDTLS_SHA256_C)
+    740              { MBEDTLS_TLS_RSA_WITH_CAMELLIA_128_CBC_SHA256, "TLS-RSA-WITH-CAMELLIA-128-CBC-SHA256",
+    741                MBEDTLS_CIPHER_CAMELLIA_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA,
+    742                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    743                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    744                0 },
+    745          
+    746              { MBEDTLS_TLS_RSA_WITH_CAMELLIA_256_CBC_SHA256, "TLS-RSA-WITH-CAMELLIA-256-CBC-SHA256",
+    747                MBEDTLS_CIPHER_CAMELLIA_256_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA,
+    748                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    749                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    750                0 },
+    751          #endif /* MBEDTLS_SHA256_C */
+    752          
+    753          #if defined(MBEDTLS_SHA1_C)
+    754              { MBEDTLS_TLS_RSA_WITH_CAMELLIA_128_CBC_SHA, "TLS-RSA-WITH-CAMELLIA-128-CBC-SHA",
+    755                MBEDTLS_CIPHER_CAMELLIA_128_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA,
+    756                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+    757                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    758                0 },
+    759          
+    760              { MBEDTLS_TLS_RSA_WITH_CAMELLIA_256_CBC_SHA, "TLS-RSA-WITH-CAMELLIA-256-CBC-SHA",
+    761                MBEDTLS_CIPHER_CAMELLIA_256_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA,
+    762                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+    763                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    764                0 },
+    765          #endif /* MBEDTLS_SHA1_C */
+    766          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    767          
+    768          #if defined(MBEDTLS_GCM_C)
+    769          #if defined(MBEDTLS_SHA256_C)
+    770              { MBEDTLS_TLS_RSA_WITH_CAMELLIA_128_GCM_SHA256, "TLS-RSA-WITH-CAMELLIA-128-GCM-SHA256",
+    771                MBEDTLS_CIPHER_CAMELLIA_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA,
+    772                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    773                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    774                0 },
+    775          #endif /* MBEDTLS_SHA256_C */
+    776          
+    777          #if defined(MBEDTLS_SHA1_C)
+    778              { MBEDTLS_TLS_RSA_WITH_CAMELLIA_256_GCM_SHA384, "TLS-RSA-WITH-CAMELLIA-256-GCM-SHA384",
+    779                MBEDTLS_CIPHER_CAMELLIA_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_RSA,
+    780                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    781                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    782                0 },
+    783          #endif /* MBEDTLS_SHA1_C */
+    784          #endif /* MBEDTLS_GCM_C */
+    785          #endif /* MBEDTLS_CAMELLIA_C */
+    786          
+    787          #if defined(MBEDTLS_DES_C)
+    788          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    789          #if defined(MBEDTLS_SHA1_C)
+    790              { MBEDTLS_TLS_RSA_WITH_3DES_EDE_CBC_SHA, "TLS-RSA-WITH-3DES-EDE-CBC-SHA",
+    791                MBEDTLS_CIPHER_DES_EDE3_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA,
+    792                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+    793                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    794                0 },
+    795          #endif /* MBEDTLS_SHA1_C */
+    796          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    797          #endif /* MBEDTLS_DES_C */
+    798          
+    799          #if defined(MBEDTLS_ARC4_C)
+    800          #if defined(MBEDTLS_MD5_C)
+    801              { MBEDTLS_TLS_RSA_WITH_RC4_128_MD5, "TLS-RSA-WITH-RC4-128-MD5",
+    802                MBEDTLS_CIPHER_ARC4_128, MBEDTLS_MD_MD5, MBEDTLS_KEY_EXCHANGE_RSA,
+    803                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+    804                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    805                MBEDTLS_CIPHERSUITE_NODTLS },
+    806          #endif
+    807          
+    808          #if defined(MBEDTLS_SHA1_C)
+    809              { MBEDTLS_TLS_RSA_WITH_RC4_128_SHA, "TLS-RSA-WITH-RC4-128-SHA",
+    810                MBEDTLS_CIPHER_ARC4_128, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA,
+    811                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+    812                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    813                MBEDTLS_CIPHERSUITE_NODTLS },
+    814          #endif
+    815          #endif /* MBEDTLS_ARC4_C */
+    816          #endif /* MBEDTLS_KEY_EXCHANGE_RSA_ENABLED */
+    817          
+    818          #if defined(MBEDTLS_KEY_EXCHANGE_ECDH_RSA_ENABLED)
+    819          #if defined(MBEDTLS_AES_C)
+    820          #if defined(MBEDTLS_SHA1_C)
+    821          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    822              { MBEDTLS_TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, "TLS-ECDH-RSA-WITH-AES-128-CBC-SHA",
+    823                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    824                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    825                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    826                0 },
+    827              { MBEDTLS_TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, "TLS-ECDH-RSA-WITH-AES-256-CBC-SHA",
+    828                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    829                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    830                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    831                0 },
+    832          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    833          #endif /* MBEDTLS_SHA1_C */
+    834          #if defined(MBEDTLS_SHA256_C)
+    835          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    836              { MBEDTLS_TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, "TLS-ECDH-RSA-WITH-AES-128-CBC-SHA256",
+    837                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    838                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    839                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    840                0 },
+    841          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    842          #if defined(MBEDTLS_GCM_C)
+    843              { MBEDTLS_TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, "TLS-ECDH-RSA-WITH-AES-128-GCM-SHA256",
+    844                MBEDTLS_CIPHER_AES_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    845                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    846                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    847                0 },
+    848          #endif /* MBEDTLS_GCM_C */
+    849          #endif /* MBEDTLS_SHA256_C */
+    850          #if defined(MBEDTLS_SHA512_C)
+    851          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    852              { MBEDTLS_TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384, "TLS-ECDH-RSA-WITH-AES-256-CBC-SHA384",
+    853                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    854                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    855                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    856                0 },
+    857          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    858          #if defined(MBEDTLS_GCM_C)
+    859              { MBEDTLS_TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384, "TLS-ECDH-RSA-WITH-AES-256-GCM-SHA384",
+    860                MBEDTLS_CIPHER_AES_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    861                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    862                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    863                0 },
+    864          #endif /* MBEDTLS_GCM_C */
+    865          #endif /* MBEDTLS_SHA512_C */
+    866          #endif /* MBEDTLS_AES_C */
+    867          
+    868          #if defined(MBEDTLS_CAMELLIA_C)
+    869          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    870          #if defined(MBEDTLS_SHA256_C)
+    871              { MBEDTLS_TLS_ECDH_RSA_WITH_CAMELLIA_128_CBC_SHA256, "TLS-ECDH-RSA-WITH-CAMELLIA-128-CBC-SHA256",
+    872                MBEDTLS_CIPHER_CAMELLIA_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    873                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    874                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    875                0 },
+    876          #endif /* MBEDTLS_SHA256_C */
+    877          #if defined(MBEDTLS_SHA512_C)
+    878              { MBEDTLS_TLS_ECDH_RSA_WITH_CAMELLIA_256_CBC_SHA384, "TLS-ECDH-RSA-WITH-CAMELLIA-256-CBC-SHA384",
+    879                MBEDTLS_CIPHER_CAMELLIA_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    880                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    881                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    882                0 },
+    883          #endif /* MBEDTLS_SHA512_C */
+    884          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    885          
+    886          #if defined(MBEDTLS_GCM_C)
+    887          #if defined(MBEDTLS_SHA256_C)
+    888              { MBEDTLS_TLS_ECDH_RSA_WITH_CAMELLIA_128_GCM_SHA256, "TLS-ECDH-RSA-WITH-CAMELLIA-128-GCM-SHA256",
+    889                MBEDTLS_CIPHER_CAMELLIA_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    890                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    891                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    892                0 },
+    893          #endif /* MBEDTLS_SHA256_C */
+    894          #if defined(MBEDTLS_SHA512_C)
+    895              { MBEDTLS_TLS_ECDH_RSA_WITH_CAMELLIA_256_GCM_SHA384, "TLS-ECDH-RSA-WITH-CAMELLIA-256-GCM-SHA384",
+    896                MBEDTLS_CIPHER_CAMELLIA_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    897                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    898                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    899                0 },
+    900          #endif /* MBEDTLS_SHA512_C */
+    901          #endif /* MBEDTLS_GCM_C */
+    902          #endif /* MBEDTLS_CAMELLIA_C */
+    903          
+    904          #if defined(MBEDTLS_DES_C)
+    905          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    906          #if defined(MBEDTLS_SHA1_C)
+    907              { MBEDTLS_TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, "TLS-ECDH-RSA-WITH-3DES-EDE-CBC-SHA",
+    908                MBEDTLS_CIPHER_DES_EDE3_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    909                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    910                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    911                0 },
+    912          #endif /* MBEDTLS_SHA1_C */
+    913          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    914          #endif /* MBEDTLS_DES_C */
+    915          
+    916          #if defined(MBEDTLS_ARC4_C)
+    917          #if defined(MBEDTLS_SHA1_C)
+    918              { MBEDTLS_TLS_ECDH_RSA_WITH_RC4_128_SHA, "TLS-ECDH-RSA-WITH-RC4-128-SHA",
+    919                MBEDTLS_CIPHER_ARC4_128, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    920                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    921                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    922                MBEDTLS_CIPHERSUITE_NODTLS },
+    923          #endif /* MBEDTLS_SHA1_C */
+    924          #endif /* MBEDTLS_ARC4_C */
+    925          
+    926          #if defined(MBEDTLS_CIPHER_NULL_CIPHER)
+    927          #if defined(MBEDTLS_SHA1_C)
+    928              { MBEDTLS_TLS_ECDH_RSA_WITH_NULL_SHA, "TLS-ECDH-RSA-WITH-NULL-SHA",
+    929                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDH_RSA,
+    930                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    931                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    932                MBEDTLS_CIPHERSUITE_WEAK },
+    933          #endif /* MBEDTLS_SHA1_C */
+    934          #endif /* MBEDTLS_CIPHER_NULL_CIPHER */
+    935          #endif /* MBEDTLS_KEY_EXCHANGE_ECDH_RSA_ENABLED */
+    936          
+    937          #if defined(MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA_ENABLED)
+    938          #if defined(MBEDTLS_AES_C)
+    939          #if defined(MBEDTLS_SHA1_C)
+    940          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    941              { MBEDTLS_TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, "TLS-ECDH-ECDSA-WITH-AES-128-CBC-SHA",
+    942                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+    943                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    944                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    945                0 },
+    946              { MBEDTLS_TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, "TLS-ECDH-ECDSA-WITH-AES-256-CBC-SHA",
+    947                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+    948                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    949                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    950                0 },
+    951          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    952          #endif /* MBEDTLS_SHA1_C */
+    953          #if defined(MBEDTLS_SHA256_C)
+    954          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    955              { MBEDTLS_TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, "TLS-ECDH-ECDSA-WITH-AES-128-CBC-SHA256",
+    956                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+    957                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    958                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    959                0 },
+    960          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    961          #if defined(MBEDTLS_GCM_C)
+    962              { MBEDTLS_TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, "TLS-ECDH-ECDSA-WITH-AES-128-GCM-SHA256",
+    963                MBEDTLS_CIPHER_AES_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+    964                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    965                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    966                0 },
+    967          #endif /* MBEDTLS_GCM_C */
+    968          #endif /* MBEDTLS_SHA256_C */
+    969          #if defined(MBEDTLS_SHA512_C)
+    970          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    971              { MBEDTLS_TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384, "TLS-ECDH-ECDSA-WITH-AES-256-CBC-SHA384",
+    972                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+    973                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    974                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    975                0 },
+    976          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    977          #if defined(MBEDTLS_GCM_C)
+    978              { MBEDTLS_TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384, "TLS-ECDH-ECDSA-WITH-AES-256-GCM-SHA384",
+    979                MBEDTLS_CIPHER_AES_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+    980                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    981                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    982                0 },
+    983          #endif /* MBEDTLS_GCM_C */
+    984          #endif /* MBEDTLS_SHA512_C */
+    985          #endif /* MBEDTLS_AES_C */
+    986          
+    987          #if defined(MBEDTLS_CAMELLIA_C)
+    988          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    989          #if defined(MBEDTLS_SHA256_C)
+    990              { MBEDTLS_TLS_ECDH_ECDSA_WITH_CAMELLIA_128_CBC_SHA256, "TLS-ECDH-ECDSA-WITH-CAMELLIA-128-CBC-SHA256",
+    991                MBEDTLS_CIPHER_CAMELLIA_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+    992                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+    993                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+    994                0 },
+    995          #endif /* MBEDTLS_SHA256_C */
+    996          #if defined(MBEDTLS_SHA512_C)
+    997              { MBEDTLS_TLS_ECDH_ECDSA_WITH_CAMELLIA_256_CBC_SHA384, "TLS-ECDH-ECDSA-WITH-CAMELLIA-256-CBC-SHA384",
+    998                MBEDTLS_CIPHER_CAMELLIA_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+    999                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1000                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1001                0 },
+   1002          #endif /* MBEDTLS_SHA512_C */
+   1003          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1004          
+   1005          #if defined(MBEDTLS_GCM_C)
+   1006          #if defined(MBEDTLS_SHA256_C)
+   1007              { MBEDTLS_TLS_ECDH_ECDSA_WITH_CAMELLIA_128_GCM_SHA256, "TLS-ECDH-ECDSA-WITH-CAMELLIA-128-GCM-SHA256",
+   1008                MBEDTLS_CIPHER_CAMELLIA_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+   1009                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1010                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1011                0 },
+   1012          #endif /* MBEDTLS_SHA256_C */
+   1013          #if defined(MBEDTLS_SHA512_C)
+   1014              { MBEDTLS_TLS_ECDH_ECDSA_WITH_CAMELLIA_256_GCM_SHA384, "TLS-ECDH-ECDSA-WITH-CAMELLIA-256-GCM-SHA384",
+   1015                MBEDTLS_CIPHER_CAMELLIA_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+   1016                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1017                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1018                0 },
+   1019          #endif /* MBEDTLS_SHA512_C */
+   1020          #endif /* MBEDTLS_GCM_C */
+   1021          #endif /* MBEDTLS_CAMELLIA_C */
+   1022          
+   1023          #if defined(MBEDTLS_DES_C)
+   1024          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1025          #if defined(MBEDTLS_SHA1_C)
+   1026              { MBEDTLS_TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, "TLS-ECDH-ECDSA-WITH-3DES-EDE-CBC-SHA",
+   1027                MBEDTLS_CIPHER_DES_EDE3_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+   1028                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1029                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1030                0 },
+   1031          #endif /* MBEDTLS_SHA1_C */
+   1032          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1033          #endif /* MBEDTLS_DES_C */
+   1034          
+   1035          #if defined(MBEDTLS_ARC4_C)
+   1036          #if defined(MBEDTLS_SHA1_C)
+   1037              { MBEDTLS_TLS_ECDH_ECDSA_WITH_RC4_128_SHA, "TLS-ECDH-ECDSA-WITH-RC4-128-SHA",
+   1038                MBEDTLS_CIPHER_ARC4_128, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+   1039                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1040                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1041                MBEDTLS_CIPHERSUITE_NODTLS },
+   1042          #endif /* MBEDTLS_SHA1_C */
+   1043          #endif /* MBEDTLS_ARC4_C */
+   1044          
+   1045          #if defined(MBEDTLS_CIPHER_NULL_CIPHER)
+   1046          #if defined(MBEDTLS_SHA1_C)
+   1047              { MBEDTLS_TLS_ECDH_ECDSA_WITH_NULL_SHA, "TLS-ECDH-ECDSA-WITH-NULL-SHA",
+   1048                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA,
+   1049                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1050                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1051                MBEDTLS_CIPHERSUITE_WEAK },
+   1052          #endif /* MBEDTLS_SHA1_C */
+   1053          #endif /* MBEDTLS_CIPHER_NULL_CIPHER */
+   1054          #endif /* MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA_ENABLED */
+   1055          
+   1056          #if defined(MBEDTLS_KEY_EXCHANGE_PSK_ENABLED)
+   1057          #if defined(MBEDTLS_AES_C)
+   1058          #if defined(MBEDTLS_GCM_C)
+   1059          #if defined(MBEDTLS_SHA256_C)
+   1060              { MBEDTLS_TLS_PSK_WITH_AES_128_GCM_SHA256, "TLS-PSK-WITH-AES-128-GCM-SHA256",
+   1061                MBEDTLS_CIPHER_AES_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_PSK,
+   1062                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1063                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1064                0 },
+   1065          #endif /* MBEDTLS_SHA256_C */
+   1066          
+   1067          #if defined(MBEDTLS_SHA512_C)
+   1068              { MBEDTLS_TLS_PSK_WITH_AES_256_GCM_SHA384, "TLS-PSK-WITH-AES-256-GCM-SHA384",
+   1069                MBEDTLS_CIPHER_AES_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_PSK,
+   1070                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1071                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1072                0 },
+   1073          #endif /* MBEDTLS_SHA512_C */
+   1074          #endif /* MBEDTLS_GCM_C */
+   1075          
+   1076          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1077          #if defined(MBEDTLS_SHA256_C)
+   1078              { MBEDTLS_TLS_PSK_WITH_AES_128_CBC_SHA256, "TLS-PSK-WITH-AES-128-CBC-SHA256",
+   1079                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_PSK,
+   1080                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1081                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1082                0 },
+   1083          #endif /* MBEDTLS_SHA256_C */
+   1084          
+   1085          #if defined(MBEDTLS_SHA512_C)
+   1086              { MBEDTLS_TLS_PSK_WITH_AES_256_CBC_SHA384, "TLS-PSK-WITH-AES-256-CBC-SHA384",
+   1087                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_PSK,
+   1088                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1089                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1090                0 },
+   1091          #endif /* MBEDTLS_SHA512_C */
+   1092          
+   1093          #if defined(MBEDTLS_SHA1_C)
+   1094              { MBEDTLS_TLS_PSK_WITH_AES_128_CBC_SHA, "TLS-PSK-WITH-AES-128-CBC-SHA",
+   1095                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_PSK,
+   1096                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1097                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1098                0 },
+   1099          
+   1100              { MBEDTLS_TLS_PSK_WITH_AES_256_CBC_SHA, "TLS-PSK-WITH-AES-256-CBC-SHA",
+   1101                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_PSK,
+   1102                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1103                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1104                0 },
+   1105          #endif /* MBEDTLS_SHA1_C */
+   1106          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1107          #if defined(MBEDTLS_CCM_C)
+   1108              { MBEDTLS_TLS_PSK_WITH_AES_256_CCM, "TLS-PSK-WITH-AES-256-CCM",
+   1109                MBEDTLS_CIPHER_AES_256_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_PSK,
+   1110                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1111                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1112                0 },
+   1113              { MBEDTLS_TLS_PSK_WITH_AES_256_CCM_8, "TLS-PSK-WITH-AES-256-CCM-8",
+   1114                MBEDTLS_CIPHER_AES_256_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_PSK,
+   1115                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1116                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1117                MBEDTLS_CIPHERSUITE_SHORT_TAG },
+   1118              { MBEDTLS_TLS_PSK_WITH_AES_128_CCM, "TLS-PSK-WITH-AES-128-CCM",
+   1119                MBEDTLS_CIPHER_AES_128_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_PSK,
+   1120                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1121                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1122                0 },
+   1123              { MBEDTLS_TLS_PSK_WITH_AES_128_CCM_8, "TLS-PSK-WITH-AES-128-CCM-8",
+   1124                MBEDTLS_CIPHER_AES_128_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_PSK,
+   1125                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1126                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1127                MBEDTLS_CIPHERSUITE_SHORT_TAG },
+   1128          #endif /* MBEDTLS_CCM_C */
+   1129          #endif /* MBEDTLS_AES_C */
+   1130          
+   1131          #if defined(MBEDTLS_CAMELLIA_C)
+   1132          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1133          #if defined(MBEDTLS_SHA256_C)
+   1134              { MBEDTLS_TLS_PSK_WITH_CAMELLIA_128_CBC_SHA256, "TLS-PSK-WITH-CAMELLIA-128-CBC-SHA256",
+   1135                MBEDTLS_CIPHER_CAMELLIA_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_PSK,
+   1136                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1137                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1138                0 },
+   1139          #endif /* MBEDTLS_SHA256_C */
+   1140          
+   1141          #if defined(MBEDTLS_SHA512_C)
+   1142              { MBEDTLS_TLS_PSK_WITH_CAMELLIA_256_CBC_SHA384, "TLS-PSK-WITH-CAMELLIA-256-CBC-SHA384",
+   1143                MBEDTLS_CIPHER_CAMELLIA_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_PSK,
+   1144                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1145                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1146                0 },
+   1147          #endif /* MBEDTLS_SHA512_C */
+   1148          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1149          
+   1150          #if defined(MBEDTLS_GCM_C)
+   1151          #if defined(MBEDTLS_SHA256_C)
+   1152              { MBEDTLS_TLS_PSK_WITH_CAMELLIA_128_GCM_SHA256, "TLS-PSK-WITH-CAMELLIA-128-GCM-SHA256",
+   1153                MBEDTLS_CIPHER_CAMELLIA_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_PSK,
+   1154                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1155                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1156                0 },
+   1157          #endif /* MBEDTLS_SHA256_C */
+   1158          
+   1159          #if defined(MBEDTLS_SHA512_C)
+   1160              { MBEDTLS_TLS_PSK_WITH_CAMELLIA_256_GCM_SHA384, "TLS-PSK-WITH-CAMELLIA-256-GCM-SHA384",
+   1161                MBEDTLS_CIPHER_CAMELLIA_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_PSK,
+   1162                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1163                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1164                0 },
+   1165          #endif /* MBEDTLS_SHA512_C */
+   1166          #endif /* MBEDTLS_GCM_C */
+   1167          #endif /* MBEDTLS_CAMELLIA_C */
+   1168          
+   1169          #if defined(MBEDTLS_DES_C)
+   1170          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1171          #if defined(MBEDTLS_SHA1_C)
+   1172              { MBEDTLS_TLS_PSK_WITH_3DES_EDE_CBC_SHA, "TLS-PSK-WITH-3DES-EDE-CBC-SHA",
+   1173                MBEDTLS_CIPHER_DES_EDE3_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_PSK,
+   1174                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1175                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1176                0 },
+   1177          #endif /* MBEDTLS_SHA1_C */
+   1178          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1179          #endif /* MBEDTLS_DES_C */
+   1180          
+   1181          #if defined(MBEDTLS_ARC4_C)
+   1182          #if defined(MBEDTLS_SHA1_C)
+   1183              { MBEDTLS_TLS_PSK_WITH_RC4_128_SHA, "TLS-PSK-WITH-RC4-128-SHA",
+   1184                MBEDTLS_CIPHER_ARC4_128, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_PSK,
+   1185                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1186                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1187                MBEDTLS_CIPHERSUITE_NODTLS },
+   1188          #endif /* MBEDTLS_SHA1_C */
+   1189          #endif /* MBEDTLS_ARC4_C */
+   1190          #endif /* MBEDTLS_KEY_EXCHANGE_PSK_ENABLED */
+   1191          
+   1192          #if defined(MBEDTLS_KEY_EXCHANGE_DHE_PSK_ENABLED)
+   1193          #if defined(MBEDTLS_AES_C)
+   1194          #if defined(MBEDTLS_GCM_C)
+   1195          #if defined(MBEDTLS_SHA256_C)
+   1196              { MBEDTLS_TLS_DHE_PSK_WITH_AES_128_GCM_SHA256, "TLS-DHE-PSK-WITH-AES-128-GCM-SHA256",
+   1197                MBEDTLS_CIPHER_AES_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1198                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1199                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1200                0 },
+   1201          #endif /* MBEDTLS_SHA256_C */
+   1202          
+   1203          #if defined(MBEDTLS_SHA512_C)
+   1204              { MBEDTLS_TLS_DHE_PSK_WITH_AES_256_GCM_SHA384, "TLS-DHE-PSK-WITH-AES-256-GCM-SHA384",
+   1205                MBEDTLS_CIPHER_AES_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1206                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1207                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1208                0 },
+   1209          #endif /* MBEDTLS_SHA512_C */
+   1210          #endif /* MBEDTLS_GCM_C */
+   1211          
+   1212          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1213          #if defined(MBEDTLS_SHA256_C)
+   1214              { MBEDTLS_TLS_DHE_PSK_WITH_AES_128_CBC_SHA256, "TLS-DHE-PSK-WITH-AES-128-CBC-SHA256",
+   1215                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1216                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1217                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1218                0 },
+   1219          #endif /* MBEDTLS_SHA256_C */
+   1220          
+   1221          #if defined(MBEDTLS_SHA512_C)
+   1222              { MBEDTLS_TLS_DHE_PSK_WITH_AES_256_CBC_SHA384, "TLS-DHE-PSK-WITH-AES-256-CBC-SHA384",
+   1223                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1224                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1225                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1226                0 },
+   1227          #endif /* MBEDTLS_SHA512_C */
+   1228          
+   1229          #if defined(MBEDTLS_SHA1_C)
+   1230              { MBEDTLS_TLS_DHE_PSK_WITH_AES_128_CBC_SHA, "TLS-DHE-PSK-WITH-AES-128-CBC-SHA",
+   1231                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1232                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1233                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1234                0 },
+   1235          
+   1236              { MBEDTLS_TLS_DHE_PSK_WITH_AES_256_CBC_SHA, "TLS-DHE-PSK-WITH-AES-256-CBC-SHA",
+   1237                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1238                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1239                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1240                0 },
+   1241          #endif /* MBEDTLS_SHA1_C */
+   1242          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1243          #if defined(MBEDTLS_CCM_C)
+   1244              { MBEDTLS_TLS_DHE_PSK_WITH_AES_256_CCM, "TLS-DHE-PSK-WITH-AES-256-CCM",
+   1245                MBEDTLS_CIPHER_AES_256_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1246                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1247                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1248                0 },
+   1249              { MBEDTLS_TLS_DHE_PSK_WITH_AES_256_CCM_8, "TLS-DHE-PSK-WITH-AES-256-CCM-8",
+   1250                MBEDTLS_CIPHER_AES_256_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1251                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1252                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1253                MBEDTLS_CIPHERSUITE_SHORT_TAG },
+   1254              { MBEDTLS_TLS_DHE_PSK_WITH_AES_128_CCM, "TLS-DHE-PSK-WITH-AES-128-CCM",
+   1255                MBEDTLS_CIPHER_AES_128_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1256                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1257                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1258                0 },
+   1259              { MBEDTLS_TLS_DHE_PSK_WITH_AES_128_CCM_8, "TLS-DHE-PSK-WITH-AES-128-CCM-8",
+   1260                MBEDTLS_CIPHER_AES_128_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1261                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1262                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1263                MBEDTLS_CIPHERSUITE_SHORT_TAG },
+   1264          #endif /* MBEDTLS_CCM_C */
+   1265          #endif /* MBEDTLS_AES_C */
+   1266          
+   1267          #if defined(MBEDTLS_CAMELLIA_C)
+   1268          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1269          #if defined(MBEDTLS_SHA256_C)
+   1270              { MBEDTLS_TLS_DHE_PSK_WITH_CAMELLIA_128_CBC_SHA256, "TLS-DHE-PSK-WITH-CAMELLIA-128-CBC-SHA256",
+   1271                MBEDTLS_CIPHER_CAMELLIA_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1272                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1273                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1274                0 },
+   1275          #endif /* MBEDTLS_SHA256_C */
+   1276          
+   1277          #if defined(MBEDTLS_SHA512_C)
+   1278              { MBEDTLS_TLS_DHE_PSK_WITH_CAMELLIA_256_CBC_SHA384, "TLS-DHE-PSK-WITH-CAMELLIA-256-CBC-SHA384",
+   1279                MBEDTLS_CIPHER_CAMELLIA_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1280                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1281                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1282                0 },
+   1283          #endif /* MBEDTLS_SHA512_C */
+   1284          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1285          
+   1286          #if defined(MBEDTLS_GCM_C)
+   1287          #if defined(MBEDTLS_SHA256_C)
+   1288              { MBEDTLS_TLS_DHE_PSK_WITH_CAMELLIA_128_GCM_SHA256, "TLS-DHE-PSK-WITH-CAMELLIA-128-GCM-SHA256",
+   1289                MBEDTLS_CIPHER_CAMELLIA_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1290                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1291                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1292                0 },
+   1293          #endif /* MBEDTLS_SHA256_C */
+   1294          
+   1295          #if defined(MBEDTLS_SHA512_C)
+   1296              { MBEDTLS_TLS_DHE_PSK_WITH_CAMELLIA_256_GCM_SHA384, "TLS-DHE-PSK-WITH-CAMELLIA-256-GCM-SHA384",
+   1297                MBEDTLS_CIPHER_CAMELLIA_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1298                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1299                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1300                0 },
+   1301          #endif /* MBEDTLS_SHA512_C */
+   1302          #endif /* MBEDTLS_GCM_C */
+   1303          #endif /* MBEDTLS_CAMELLIA_C */
+   1304          
+   1305          #if defined(MBEDTLS_DES_C)
+   1306          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1307          #if defined(MBEDTLS_SHA1_C)
+   1308              { MBEDTLS_TLS_DHE_PSK_WITH_3DES_EDE_CBC_SHA, "TLS-DHE-PSK-WITH-3DES-EDE-CBC-SHA",
+   1309                MBEDTLS_CIPHER_DES_EDE3_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1310                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1311                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1312                0 },
+   1313          #endif /* MBEDTLS_SHA1_C */
+   1314          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1315          #endif /* MBEDTLS_DES_C */
+   1316          
+   1317          #if defined(MBEDTLS_ARC4_C)
+   1318          #if defined(MBEDTLS_SHA1_C)
+   1319              { MBEDTLS_TLS_DHE_PSK_WITH_RC4_128_SHA, "TLS-DHE-PSK-WITH-RC4-128-SHA",
+   1320                MBEDTLS_CIPHER_ARC4_128, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1321                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1322                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1323                MBEDTLS_CIPHERSUITE_NODTLS },
+   1324          #endif /* MBEDTLS_SHA1_C */
+   1325          #endif /* MBEDTLS_ARC4_C */
+   1326          #endif /* MBEDTLS_KEY_EXCHANGE_DHE_PSK_ENABLED */
+   1327          
+   1328          #if defined(MBEDTLS_KEY_EXCHANGE_ECDHE_PSK_ENABLED)
+   1329          #if defined(MBEDTLS_AES_C)
+   1330          
+   1331          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1332          #if defined(MBEDTLS_SHA256_C)
+   1333              { MBEDTLS_TLS_ECDHE_PSK_WITH_AES_128_CBC_SHA256, "TLS-ECDHE-PSK-WITH-AES-128-CBC-SHA256",
+   1334                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_PSK,
+   1335                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1336                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1337                0 },
+   1338          #endif /* MBEDTLS_SHA256_C */
+   1339          
+   1340          #if defined(MBEDTLS_SHA512_C)
+   1341              { MBEDTLS_TLS_ECDHE_PSK_WITH_AES_256_CBC_SHA384, "TLS-ECDHE-PSK-WITH-AES-256-CBC-SHA384",
+   1342                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDHE_PSK,
+   1343                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1344                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1345                0 },
+   1346          #endif /* MBEDTLS_SHA512_C */
+   1347          
+   1348          #if defined(MBEDTLS_SHA1_C)
+   1349              { MBEDTLS_TLS_ECDHE_PSK_WITH_AES_128_CBC_SHA, "TLS-ECDHE-PSK-WITH-AES-128-CBC-SHA",
+   1350                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_PSK,
+   1351                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1352                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1353                0 },
+   1354          
+   1355              { MBEDTLS_TLS_ECDHE_PSK_WITH_AES_256_CBC_SHA, "TLS-ECDHE-PSK-WITH-AES-256-CBC-SHA",
+   1356                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_PSK,
+   1357                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1358                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1359                0 },
+   1360          #endif /* MBEDTLS_SHA1_C */
+   1361          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1362          #endif /* MBEDTLS_AES_C */
+   1363          
+   1364          #if defined(MBEDTLS_CAMELLIA_C)
+   1365          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1366          #if defined(MBEDTLS_SHA256_C)
+   1367              { MBEDTLS_TLS_ECDHE_PSK_WITH_CAMELLIA_128_CBC_SHA256, "TLS-ECDHE-PSK-WITH-CAMELLIA-128-CBC-SHA256",
+   1368                MBEDTLS_CIPHER_CAMELLIA_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_PSK,
+   1369                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1370                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1371                0 },
+   1372          #endif /* MBEDTLS_SHA256_C */
+   1373          
+   1374          #if defined(MBEDTLS_SHA512_C)
+   1375              { MBEDTLS_TLS_ECDHE_PSK_WITH_CAMELLIA_256_CBC_SHA384, "TLS-ECDHE-PSK-WITH-CAMELLIA-256-CBC-SHA384",
+   1376                MBEDTLS_CIPHER_CAMELLIA_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDHE_PSK,
+   1377                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1378                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1379                0 },
+   1380          #endif /* MBEDTLS_SHA512_C */
+   1381          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1382          #endif /* MBEDTLS_CAMELLIA_C */
+   1383          
+   1384          #if defined(MBEDTLS_DES_C)
+   1385          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1386          #if defined(MBEDTLS_SHA1_C)
+   1387              { MBEDTLS_TLS_ECDHE_PSK_WITH_3DES_EDE_CBC_SHA, "TLS-ECDHE-PSK-WITH-3DES-EDE-CBC-SHA",
+   1388                MBEDTLS_CIPHER_DES_EDE3_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_PSK,
+   1389                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1390                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1391                0 },
+   1392          #endif /* MBEDTLS_SHA1_C */
+   1393          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1394          #endif /* MBEDTLS_DES_C */
+   1395          
+   1396          #if defined(MBEDTLS_ARC4_C)
+   1397          #if defined(MBEDTLS_SHA1_C)
+   1398              { MBEDTLS_TLS_ECDHE_PSK_WITH_RC4_128_SHA, "TLS-ECDHE-PSK-WITH-RC4-128-SHA",
+   1399                MBEDTLS_CIPHER_ARC4_128, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_PSK,
+   1400                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1401                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1402                MBEDTLS_CIPHERSUITE_NODTLS },
+   1403          #endif /* MBEDTLS_SHA1_C */
+   1404          #endif /* MBEDTLS_ARC4_C */
+   1405          #endif /* MBEDTLS_KEY_EXCHANGE_ECDHE_PSK_ENABLED */
+   1406          
+   1407          #if defined(MBEDTLS_KEY_EXCHANGE_RSA_PSK_ENABLED)
+   1408          #if defined(MBEDTLS_AES_C)
+   1409          #if defined(MBEDTLS_GCM_C)
+   1410          #if defined(MBEDTLS_SHA256_C)
+   1411              { MBEDTLS_TLS_RSA_PSK_WITH_AES_128_GCM_SHA256, "TLS-RSA-PSK-WITH-AES-128-GCM-SHA256",
+   1412                MBEDTLS_CIPHER_AES_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1413                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1414                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1415                0 },
+   1416          #endif /* MBEDTLS_SHA256_C */
+   1417          
+   1418          #if defined(MBEDTLS_SHA512_C)
+   1419              { MBEDTLS_TLS_RSA_PSK_WITH_AES_256_GCM_SHA384, "TLS-RSA-PSK-WITH-AES-256-GCM-SHA384",
+   1420                MBEDTLS_CIPHER_AES_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1421                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1422                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1423                0 },
+   1424          #endif /* MBEDTLS_SHA512_C */
+   1425          #endif /* MBEDTLS_GCM_C */
+   1426          
+   1427          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1428          #if defined(MBEDTLS_SHA256_C)
+   1429              { MBEDTLS_TLS_RSA_PSK_WITH_AES_128_CBC_SHA256, "TLS-RSA-PSK-WITH-AES-128-CBC-SHA256",
+   1430                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1431                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1432                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1433                0 },
+   1434          #endif /* MBEDTLS_SHA256_C */
+   1435          
+   1436          #if defined(MBEDTLS_SHA512_C)
+   1437              { MBEDTLS_TLS_RSA_PSK_WITH_AES_256_CBC_SHA384, "TLS-RSA-PSK-WITH-AES-256-CBC-SHA384",
+   1438                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1439                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1440                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1441                0 },
+   1442          #endif /* MBEDTLS_SHA512_C */
+   1443          
+   1444          #if defined(MBEDTLS_SHA1_C)
+   1445              { MBEDTLS_TLS_RSA_PSK_WITH_AES_128_CBC_SHA, "TLS-RSA-PSK-WITH-AES-128-CBC-SHA",
+   1446                MBEDTLS_CIPHER_AES_128_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1447                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1448                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1449                0 },
+   1450          
+   1451              { MBEDTLS_TLS_RSA_PSK_WITH_AES_256_CBC_SHA, "TLS-RSA-PSK-WITH-AES-256-CBC-SHA",
+   1452                MBEDTLS_CIPHER_AES_256_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1453                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1454                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1455                0 },
+   1456          #endif /* MBEDTLS_SHA1_C */
+   1457          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1458          #endif /* MBEDTLS_AES_C */
+   1459          
+   1460          #if defined(MBEDTLS_CAMELLIA_C)
+   1461          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1462          #if defined(MBEDTLS_SHA256_C)
+   1463              { MBEDTLS_TLS_RSA_PSK_WITH_CAMELLIA_128_CBC_SHA256, "TLS-RSA-PSK-WITH-CAMELLIA-128-CBC-SHA256",
+   1464                MBEDTLS_CIPHER_CAMELLIA_128_CBC, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1465                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1466                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1467                0 },
+   1468          #endif /* MBEDTLS_SHA256_C */
+   1469          
+   1470          #if defined(MBEDTLS_SHA512_C)
+   1471              { MBEDTLS_TLS_RSA_PSK_WITH_CAMELLIA_256_CBC_SHA384, "TLS-RSA-PSK-WITH-CAMELLIA-256-CBC-SHA384",
+   1472                MBEDTLS_CIPHER_CAMELLIA_256_CBC, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1473                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1474                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1475                0 },
+   1476          #endif /* MBEDTLS_SHA512_C */
+   1477          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1478          
+   1479          #if defined(MBEDTLS_GCM_C)
+   1480          #if defined(MBEDTLS_SHA256_C)
+   1481              { MBEDTLS_TLS_RSA_PSK_WITH_CAMELLIA_128_GCM_SHA256, "TLS-RSA-PSK-WITH-CAMELLIA-128-GCM-SHA256",
+   1482                MBEDTLS_CIPHER_CAMELLIA_128_GCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1483                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1484                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1485                0 },
+   1486          #endif /* MBEDTLS_SHA256_C */
+   1487          
+   1488          #if defined(MBEDTLS_SHA512_C)
+   1489              { MBEDTLS_TLS_RSA_PSK_WITH_CAMELLIA_256_GCM_SHA384, "TLS-RSA-PSK-WITH-CAMELLIA-256-GCM-SHA384",
+   1490                MBEDTLS_CIPHER_CAMELLIA_256_GCM, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1491                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1492                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1493                0 },
+   1494          #endif /* MBEDTLS_SHA512_C */
+   1495          #endif /* MBEDTLS_GCM_C */
+   1496          #endif /* MBEDTLS_CAMELLIA_C */
+   1497          
+   1498          #if defined(MBEDTLS_DES_C)
+   1499          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1500          #if defined(MBEDTLS_SHA1_C)
+   1501              { MBEDTLS_TLS_RSA_PSK_WITH_3DES_EDE_CBC_SHA, "TLS-RSA-PSK-WITH-3DES-EDE-CBC-SHA",
+   1502                MBEDTLS_CIPHER_DES_EDE3_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1503                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1504                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1505                0 },
+   1506          #endif /* MBEDTLS_SHA1_C */
+   1507          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1508          #endif /* MBEDTLS_DES_C */
+   1509          
+   1510          #if defined(MBEDTLS_ARC4_C)
+   1511          #if defined(MBEDTLS_SHA1_C)
+   1512              { MBEDTLS_TLS_RSA_PSK_WITH_RC4_128_SHA, "TLS-RSA-PSK-WITH-RC4-128-SHA",
+   1513                MBEDTLS_CIPHER_ARC4_128, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1514                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1515                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1516                MBEDTLS_CIPHERSUITE_NODTLS },
+   1517          #endif /* MBEDTLS_SHA1_C */
+   1518          #endif /* MBEDTLS_ARC4_C */
+   1519          #endif /* MBEDTLS_KEY_EXCHANGE_RSA_PSK_ENABLED */
+   1520          
+   1521          #if defined(MBEDTLS_KEY_EXCHANGE_ECJPAKE_ENABLED)
+   1522          #if defined(MBEDTLS_AES_C)
+   1523          #if defined(MBEDTLS_CCM_C)
+   1524              { MBEDTLS_TLS_ECJPAKE_WITH_AES_128_CCM_8, "TLS-ECJPAKE-WITH-AES-128-CCM-8",
+   1525                MBEDTLS_CIPHER_AES_128_CCM, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECJPAKE,
+   1526                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1527                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1528                MBEDTLS_CIPHERSUITE_SHORT_TAG },
+   1529          #endif /* MBEDTLS_CCM_C */
+   1530          #endif /* MBEDTLS_AES_C */
+   1531          #endif /* MBEDTLS_KEY_EXCHANGE_ECJPAKE_ENABLED */
+   1532          
+   1533          #if defined(MBEDTLS_ENABLE_WEAK_CIPHERSUITES)
+   1534          #if defined(MBEDTLS_CIPHER_NULL_CIPHER)
+   1535          #if defined(MBEDTLS_KEY_EXCHANGE_RSA_ENABLED)
+   1536          #if defined(MBEDTLS_MD5_C)
+   1537              { MBEDTLS_TLS_RSA_WITH_NULL_MD5, "TLS-RSA-WITH-NULL-MD5",
+   1538                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_MD5, MBEDTLS_KEY_EXCHANGE_RSA,
+   1539                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1540                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1541                MBEDTLS_CIPHERSUITE_WEAK },
+   1542          #endif
+   1543          
+   1544          #if defined(MBEDTLS_SHA1_C)
+   1545              { MBEDTLS_TLS_RSA_WITH_NULL_SHA, "TLS-RSA-WITH-NULL-SHA",
+   1546                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA,
+   1547                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1548                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1549                MBEDTLS_CIPHERSUITE_WEAK },
+   1550          #endif
+   1551          
+   1552          #if defined(MBEDTLS_SHA256_C)
+   1553              { MBEDTLS_TLS_RSA_WITH_NULL_SHA256, "TLS-RSA-WITH-NULL-SHA256",
+   1554                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA,
+   1555                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1556                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1557                MBEDTLS_CIPHERSUITE_WEAK },
+   1558          #endif
+   1559          #endif /* MBEDTLS_KEY_EXCHANGE_RSA_ENABLED */
+   1560          
+   1561          #if defined(MBEDTLS_KEY_EXCHANGE_PSK_ENABLED)
+   1562          #if defined(MBEDTLS_SHA1_C)
+   1563              { MBEDTLS_TLS_PSK_WITH_NULL_SHA, "TLS-PSK-WITH-NULL-SHA",
+   1564                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_PSK,
+   1565                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1566                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1567                MBEDTLS_CIPHERSUITE_WEAK },
+   1568          #endif /* MBEDTLS_SHA1_C */
+   1569          
+   1570          #if defined(MBEDTLS_SHA256_C)
+   1571              { MBEDTLS_TLS_PSK_WITH_NULL_SHA256, "TLS-PSK-WITH-NULL-SHA256",
+   1572                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_PSK,
+   1573                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1574                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1575                MBEDTLS_CIPHERSUITE_WEAK },
+   1576          #endif
+   1577          
+   1578          #if defined(MBEDTLS_SHA512_C)
+   1579              { MBEDTLS_TLS_PSK_WITH_NULL_SHA384, "TLS-PSK-WITH-NULL-SHA384",
+   1580                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_PSK,
+   1581                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1582                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1583                MBEDTLS_CIPHERSUITE_WEAK },
+   1584          #endif
+   1585          #endif /* MBEDTLS_KEY_EXCHANGE_PSK_ENABLED */
+   1586          
+   1587          #if defined(MBEDTLS_KEY_EXCHANGE_DHE_PSK_ENABLED)
+   1588          #if defined(MBEDTLS_SHA1_C)
+   1589              { MBEDTLS_TLS_DHE_PSK_WITH_NULL_SHA, "TLS-DHE-PSK-WITH-NULL-SHA",
+   1590                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1591                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1592                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1593                MBEDTLS_CIPHERSUITE_WEAK },
+   1594          #endif /* MBEDTLS_SHA1_C */
+   1595          
+   1596          #if defined(MBEDTLS_SHA256_C)
+   1597              { MBEDTLS_TLS_DHE_PSK_WITH_NULL_SHA256, "TLS-DHE-PSK-WITH-NULL-SHA256",
+   1598                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1599                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1600                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1601                MBEDTLS_CIPHERSUITE_WEAK },
+   1602          #endif
+   1603          
+   1604          #if defined(MBEDTLS_SHA512_C)
+   1605              { MBEDTLS_TLS_DHE_PSK_WITH_NULL_SHA384, "TLS-DHE-PSK-WITH-NULL-SHA384",
+   1606                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_DHE_PSK,
+   1607                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1608                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1609                MBEDTLS_CIPHERSUITE_WEAK },
+   1610          #endif
+   1611          #endif /* MBEDTLS_KEY_EXCHANGE_DHE_PSK_ENABLED */
+   1612          
+   1613          #if defined(MBEDTLS_KEY_EXCHANGE_ECDHE_PSK_ENABLED)
+   1614          #if defined(MBEDTLS_SHA1_C)
+   1615              { MBEDTLS_TLS_ECDHE_PSK_WITH_NULL_SHA, "TLS-ECDHE-PSK-WITH-NULL-SHA",
+   1616                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_ECDHE_PSK,
+   1617                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1618                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1619                MBEDTLS_CIPHERSUITE_WEAK },
+   1620          #endif /* MBEDTLS_SHA1_C */
+   1621          
+   1622          #if defined(MBEDTLS_SHA256_C)
+   1623              { MBEDTLS_TLS_ECDHE_PSK_WITH_NULL_SHA256, "TLS-ECDHE-PSK-WITH-NULL-SHA256",
+   1624                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_ECDHE_PSK,
+   1625                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1626                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1627                MBEDTLS_CIPHERSUITE_WEAK },
+   1628          #endif
+   1629          
+   1630          #if defined(MBEDTLS_SHA512_C)
+   1631              { MBEDTLS_TLS_ECDHE_PSK_WITH_NULL_SHA384, "TLS-ECDHE-PSK-WITH-NULL-SHA384",
+   1632                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_ECDHE_PSK,
+   1633                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1634                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1635                MBEDTLS_CIPHERSUITE_WEAK },
+   1636          #endif
+   1637          #endif /* MBEDTLS_KEY_EXCHANGE_ECDHE_PSK_ENABLED */
+   1638          
+   1639          #if defined(MBEDTLS_KEY_EXCHANGE_RSA_PSK_ENABLED)
+   1640          #if defined(MBEDTLS_SHA1_C)
+   1641              { MBEDTLS_TLS_RSA_PSK_WITH_NULL_SHA, "TLS-RSA-PSK-WITH-NULL-SHA",
+   1642                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1643                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1644                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1645                MBEDTLS_CIPHERSUITE_WEAK },
+   1646          #endif /* MBEDTLS_SHA1_C */
+   1647          
+   1648          #if defined(MBEDTLS_SHA256_C)
+   1649              { MBEDTLS_TLS_RSA_PSK_WITH_NULL_SHA256, "TLS-RSA-PSK-WITH-NULL-SHA256",
+   1650                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA256, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1651                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1652                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1653                MBEDTLS_CIPHERSUITE_WEAK },
+   1654          #endif
+   1655          
+   1656          #if defined(MBEDTLS_SHA512_C)
+   1657              { MBEDTLS_TLS_RSA_PSK_WITH_NULL_SHA384, "TLS-RSA-PSK-WITH-NULL-SHA384",
+   1658                MBEDTLS_CIPHER_NULL, MBEDTLS_MD_SHA384, MBEDTLS_KEY_EXCHANGE_RSA_PSK,
+   1659                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_1,
+   1660                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1661                MBEDTLS_CIPHERSUITE_WEAK },
+   1662          #endif
+   1663          #endif /* MBEDTLS_KEY_EXCHANGE_RSA_PSK_ENABLED */
+   1664          #endif /* MBEDTLS_CIPHER_NULL_CIPHER */
+   1665          
+   1666          #if defined(MBEDTLS_DES_C)
+   1667          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+   1668          #if defined(MBEDTLS_KEY_EXCHANGE_DHE_RSA_ENABLED)
+   1669          #if defined(MBEDTLS_SHA1_C)
+   1670              { MBEDTLS_TLS_DHE_RSA_WITH_DES_CBC_SHA, "TLS-DHE-RSA-WITH-DES-CBC-SHA",
+   1671                MBEDTLS_CIPHER_DES_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_DHE_RSA,
+   1672                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1673                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1674                MBEDTLS_CIPHERSUITE_WEAK },
+   1675          #endif /* MBEDTLS_SHA1_C */
+   1676          #endif /* MBEDTLS_KEY_EXCHANGE_DHE_RSA_ENABLED */
+   1677          
+   1678          #if defined(MBEDTLS_KEY_EXCHANGE_RSA_ENABLED)
+   1679          #if defined(MBEDTLS_SHA1_C)
+   1680              { MBEDTLS_TLS_RSA_WITH_DES_CBC_SHA, "TLS-RSA-WITH-DES-CBC-SHA",
+   1681                MBEDTLS_CIPHER_DES_CBC, MBEDTLS_MD_SHA1, MBEDTLS_KEY_EXCHANGE_RSA,
+   1682                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_0,
+   1683                MBEDTLS_SSL_MAJOR_VERSION_3, MBEDTLS_SSL_MINOR_VERSION_3,
+   1684                MBEDTLS_CIPHERSUITE_WEAK },
+   1685          #endif /* MBEDTLS_SHA1_C */
+   1686          #endif /* MBEDTLS_KEY_EXCHANGE_RSA_ENABLED */
+   1687          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1688          #endif /* MBEDTLS_DES_C */
+   1689          #endif /* MBEDTLS_ENABLE_WEAK_CIPHERSUITES */
+   1690          
+   1691              { 0, "",
+   1692                MBEDTLS_CIPHER_NONE, MBEDTLS_MD_NONE, MBEDTLS_KEY_EXCHANGE_NONE,
+   1693                0, 0, 0, 0, 0 }
+   1694          };
+   1695          
+   1696          #if defined(MBEDTLS_SSL_CIPHERSUITES)
+   1697          const int *mbedtls_ssl_list_ciphersuites( void )
+   1698          {
+   1699              return( ciphersuite_preference );
+   1700          }
+   1701          #else
+   1702          #define MAX_CIPHERSUITES    sizeof( ciphersuite_definitions     ) /         \
+   1703                                      sizeof( ciphersuite_definitions[0]  )
+   1704          static int supported_ciphersuites[MAX_CIPHERSUITES];
+   1705          static int supported_init = 0;
+   1706          
+   1707          const int *mbedtls_ssl_list_ciphersuites( void )
+   1708          {
+   1709              /*
+   1710               * On initial call filter out all ciphersuites not supported by current
+   1711               * build based on presence in the ciphersuite_definitions.
+   1712               */
+   1713              if( supported_init == 0 )
+   1714              {
+   1715                  const int *p;
+   1716                  int *q;
+   1717          
+   1718                  for( p = ciphersuite_preference, q = supported_ciphersuites;
+   1719                       *p != 0 && q < supported_ciphersuites + MAX_CIPHERSUITES - 1;
+   1720                       p++ )
+   1721                  {
+   1722          #if defined(MBEDTLS_REMOVE_ARC4_CIPHERSUITES)
+   1723                      const mbedtls_ssl_ciphersuite_t *cs_info;
+   1724                      if( ( cs_info = mbedtls_ssl_ciphersuite_from_id( *p ) ) != NULL &&
+   1725                          cs_info->cipher != MBEDTLS_CIPHER_ARC4_128 )
+   1726          #else
+   1727                      if( mbedtls_ssl_ciphersuite_from_id( *p ) != NULL )
+   1728          #endif
+   1729                          *(q++) = *p;
+   1730                  }
+   1731                  *q = 0;
+   1732          
+   1733                  supported_init = 1;
+   1734              }
+   1735          
+   1736              return( supported_ciphersuites );
+   1737          }
+   1738          #endif /* MBEDTLS_SSL_CIPHERSUITES */
+   1739          
+   1740          const mbedtls_ssl_ciphersuite_t *mbedtls_ssl_ciphersuite_from_string(
+   1741                                                          const char *ciphersuite_name )
+   1742          {
+   1743              const mbedtls_ssl_ciphersuite_t *cur = ciphersuite_definitions;
+   1744          
+   1745              if( NULL == ciphersuite_name )
+   1746                  return( NULL );
+   1747          
+   1748              while( cur->id != 0 )
+   1749              {
+   1750                  if( 0 == strcmp( cur->name, ciphersuite_name ) )
+   1751                      return( cur );
+   1752          
+   1753                  cur++;
+   1754              }
+   1755          
+   1756              return( NULL );
+   1757          }
+   1758          
+   1759          const mbedtls_ssl_ciphersuite_t *mbedtls_ssl_ciphersuite_from_id( int ciphersuite )
+   1760          {
+   1761              const mbedtls_ssl_ciphersuite_t *cur = ciphersuite_definitions;
+   1762          
+   1763              while( cur->id != 0 )
+   1764              {
+   1765                  if( cur->id == ciphersuite )
+   1766                      return( cur );
+   1767          
+   1768                  cur++;
+   1769              }
+   1770          
+   1771              return( NULL );
+   1772          }
+   1773          
+   1774          const char *mbedtls_ssl_get_ciphersuite_name( const int ciphersuite_id )
+   1775          {
+   1776              const mbedtls_ssl_ciphersuite_t *cur;
+   1777          
+   1778              cur = mbedtls_ssl_ciphersuite_from_id( ciphersuite_id );
+   1779          
+   1780              if( cur == NULL )
+   1781                  return( "unknown" );
+   1782          
+   1783              return( cur->name );
+   1784          }
+   1785          
+   1786          int mbedtls_ssl_get_ciphersuite_id( const char *ciphersuite_name )
+   1787          {
+   1788              const mbedtls_ssl_ciphersuite_t *cur;
+   1789          
+   1790              cur = mbedtls_ssl_ciphersuite_from_string( ciphersuite_name );
+   1791          
+   1792              if( cur == NULL )
+   1793                  return( 0 );
+   1794          
+   1795              return( cur->id );
+   1796          }
+   1797          
+   1798          #if defined(MBEDTLS_PK_C)
+   1799          mbedtls_pk_type_t mbedtls_ssl_get_ciphersuite_sig_pk_alg( const mbedtls_ssl_ciphersuite_t *info )
+   1800          {
+   1801              switch( info->key_exchange )
+   1802              {
+   1803                  case MBEDTLS_KEY_EXCHANGE_RSA:
+   1804                  case MBEDTLS_KEY_EXCHANGE_DHE_RSA:
+   1805                  case MBEDTLS_KEY_EXCHANGE_ECDHE_RSA:
+   1806                  case MBEDTLS_KEY_EXCHANGE_RSA_PSK:
+   1807                      return( MBEDTLS_PK_RSA );
+   1808          
+   1809                  case MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA:
+   1810                      return( MBEDTLS_PK_ECDSA );
+   1811          
+   1812                  case MBEDTLS_KEY_EXCHANGE_ECDH_RSA:
+   1813                  case MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA:
+   1814                      return( MBEDTLS_PK_ECKEY );
+   1815          
+   1816                  default:
+   1817                      return( MBEDTLS_PK_NONE );
+   1818              }
+   1819          }
+   1820          
+   1821          mbedtls_pk_type_t mbedtls_ssl_get_ciphersuite_sig_alg( const mbedtls_ssl_ciphersuite_t *info )
+   1822          {
+   1823              switch( info->key_exchange )
+   1824              {
+   1825                  case MBEDTLS_KEY_EXCHANGE_RSA:
+   1826                  case MBEDTLS_KEY_EXCHANGE_DHE_RSA:
+   1827                  case MBEDTLS_KEY_EXCHANGE_ECDHE_RSA:
+   1828                      return( MBEDTLS_PK_RSA );
+   1829          
+   1830                  case MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA:
+   1831                      return( MBEDTLS_PK_ECDSA );
+   1832          
+   1833                  default:
+   1834                      return( MBEDTLS_PK_NONE );
+   1835              }
+   1836          }
+   1837          
+   1838          #endif /* MBEDTLS_PK_C */
+   1839          
+   1840          #if defined(MBEDTLS_ECDH_C) || defined(MBEDTLS_ECDSA_C)
+   1841          int mbedtls_ssl_ciphersuite_uses_ec( const mbedtls_ssl_ciphersuite_t *info )
+   1842          {
+   1843              switch( info->key_exchange )
+   1844              {
+   1845                  case MBEDTLS_KEY_EXCHANGE_ECDHE_RSA:
+   1846                  case MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA:
+   1847                  case MBEDTLS_KEY_EXCHANGE_ECDHE_PSK:
+   1848                  case MBEDTLS_KEY_EXCHANGE_ECDH_RSA:
+   1849                  case MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA:
+   1850                      return( 1 );
+   1851          
+   1852                  default:
+   1853                      return( 0 );
+   1854              }
+   1855          }
+   1856          #endif /* MBEDTLS_ECDH_C || MBEDTLS_ECDSA_C */
+   1857          
+   1858          #if defined(MBEDTLS_KEY_EXCHANGE__SOME__PSK_ENABLED)
+   1859          int mbedtls_ssl_ciphersuite_uses_psk( const mbedtls_ssl_ciphersuite_t *info )
+   1860          {
+   1861              switch( info->key_exchange )
+   1862              {
+   1863                  case MBEDTLS_KEY_EXCHANGE_PSK:
+   1864                  case MBEDTLS_KEY_EXCHANGE_RSA_PSK:
+   1865                  case MBEDTLS_KEY_EXCHANGE_DHE_PSK:
+   1866                  case MBEDTLS_KEY_EXCHANGE_ECDHE_PSK:
+   1867                      return( 1 );
+   1868          
+   1869                  default:
+   1870                      return( 0 );
+   1871              }
+   1872          }
+   1873          #endif /* MBEDTLS_KEY_EXCHANGE__SOME__PSK_ENABLED */
+   1874          
+   1875          #endif /* MBEDTLS_SSL_TLS_C */
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

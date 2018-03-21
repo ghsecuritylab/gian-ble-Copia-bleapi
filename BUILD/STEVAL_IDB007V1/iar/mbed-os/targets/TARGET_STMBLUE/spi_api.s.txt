@@ -1,0 +1,1073 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:34:00
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\targets\TARGET_STMBLUE\spi_api.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\spi_api.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\spi_api.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\spi_api.o
+#        .\mbed-os\targets\TARGET_STMBLUE\spi_api.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\spi_api.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\spi_api.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\spi_api.c
+      1          /*
+      2           * spi_api.c
+      3           *
+      4           *  Created on: 02 feb 2018
+      5           *      Author: Gianluca
+      6           */
+      7          
+      8          
+      9          #include "mbed_assert.h"
+     10          #include "mbed_error.h"
+     11          #include "spi_api.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     12          
+     13          #if DEVICE_SPI
+     14          #include "cmsis.h"
+     15          #include "pinmap.h"
+     16          //#include "PeripheralPins.h"
+     17          //#include "spi_device.h"
+     18          #include "objects.h"
+     19          #include "pin_device.h"
+     20          #include "serial_mylib.h"
+
+   \                                 In section .bss, align 4
+   \   __absolute uint32_t retval
+   \                     retval:
+   \   00000000                      DS8 4
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __interwork __softfp void myputs(char const *)
+   \                     myputs: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0xE008             B        ??myputs_0
+   \                     ??myputs_1: (+1)
+   \   00000006   0x2020             MOVS     R0,#+32
+   \   00000008   0x.... 0x....      BL       UART_GetFlagStatus
+   \   0000000C   0x2801             CMP      R0,#+1
+   \   0000000E   0xD0FA             BEQ      ??myputs_1
+   \   00000010   0x7820             LDRB     R0,[R4, #+0]
+   \   00000012   0x.... 0x....      BL       UART_SendData
+   \   00000016   0x1C64             ADDS     R4,R4,#+1
+   \                     ??myputs_0: (+1)
+   \   00000018   0x7820             LDRB     R0,[R4, #+0]
+   \   0000001A   0x2800             CMP      R0,#+0
+   \   0000001C   0xD1F3             BNE      ??myputs_1
+   \   0000001E   0x200A             MOVS     R0,#+10
+   \   00000020   0x.... 0x....      BL       UART_SendData
+   \   00000024   0x200D             MOVS     R0,#+13
+   \   00000026   0x.... 0x....      BL       UART_SendData
+   \   0000002A   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __interwork __softfp void myputc(char const)
+   \                     myputc: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \                     ??myputc_0: (+1)
+   \   00000004   0x2020             MOVS     R0,#+32
+   \   00000006   0x.... 0x....      BL       UART_GetFlagStatus
+   \   0000000A   0x2801             CMP      R0,#+1
+   \   0000000C   0xD0FA             BEQ      ??myputc_0
+   \   0000000E   0x0020             MOVS     R0,R4
+   \   00000010   0x.... 0x....      BL       UART_SendData
+   \   00000014   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __interwork __softfp void reverse(char *, int)
+   \                     reverse: (+1)
+   \   00000000   0x1841             ADDS     R1,R0,R1
+   \   00000002   0xE004             B        ??reverse_0
+   \                     ??reverse_1: (+1)
+   \   00000004   0x7802             LDRB     R2,[R0, #+0]
+   \   00000006   0x780B             LDRB     R3,[R1, #+0]
+   \   00000008   0x7003             STRB     R3,[R0, #+0]
+   \   0000000A   0x1C40             ADDS     R0,R0,#+1
+   \   0000000C   0x700A             STRB     R2,[R1, #+0]
+   \                     ??reverse_0: (+1)
+   \   0000000E   0x1E49             SUBS     R1,R1,#+1
+   \   00000010   0x4288             CMP      R0,R1
+   \   00000012   0xD3F7             BCC      ??reverse_1
+   \   00000014   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __interwork __softfp void itoa(int, char *)
+   \                     itoa: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x9400             STR      R4,[SP, #+0]
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD501             BPL      ??itoa_0
+   \   0000000C   0x4260             RSBS     R0,R4,#+0
+   \   0000000E   0x0004             MOVS     R4,R0
+   \                     ??itoa_0: (+1)
+   \   00000010   0x2600             MOVS     R6,#+0
+   \   00000012   0x002F             MOVS     R7,R5
+   \                     ??itoa_1: (+1)
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x210A             MOVS     R1,#+10
+   \   00000018   0x.... 0x....      BL       __aeabi_idivmod
+   \   0000001C   0x3130             ADDS     R1,R1,#+48
+   \   0000001E   0x7039             STRB     R1,[R7, #+0]
+   \   00000020   0x1C76             ADDS     R6,R6,#+1
+   \   00000022   0x0020             MOVS     R0,R4
+   \   00000024   0x210A             MOVS     R1,#+10
+   \   00000026   0x.... 0x....      BL       __aeabi_idiv
+   \   0000002A   0x0004             MOVS     R4,R0
+   \   0000002C   0x1C7F             ADDS     R7,R7,#+1
+   \   0000002E   0x2C01             CMP      R4,#+1
+   \   00000030   0xDAF0             BGE      ??itoa_1
+   \   00000032   0x9800             LDR      R0,[SP, #+0]
+   \   00000034   0x2800             CMP      R0,#+0
+   \   00000036   0xD502             BPL      ??itoa_2
+   \   00000038   0x202D             MOVS     R0,#+45
+   \   0000003A   0x55A8             STRB     R0,[R5, R6]
+   \   0000003C   0x1C76             ADDS     R6,R6,#+1
+   \                     ??itoa_2: (+1)
+   \   0000003E   0x2000             MOVS     R0,#+0
+   \   00000040   0x55A8             STRB     R0,[R5, R6]
+   \   00000042   0x19A8             ADDS     R0,R5,R6
+   \   00000044   0xE004             B        ??itoa_3
+   \                     ??itoa_4: (+1)
+   \   00000046   0x7829             LDRB     R1,[R5, #+0]
+   \   00000048   0x7802             LDRB     R2,[R0, #+0]
+   \   0000004A   0x702A             STRB     R2,[R5, #+0]
+   \   0000004C   0x1C6D             ADDS     R5,R5,#+1
+   \   0000004E   0x7001             STRB     R1,[R0, #+0]
+   \                     ??itoa_3: (+1)
+   \   00000050   0x1E40             SUBS     R0,R0,#+1
+   \   00000052   0x4285             CMP      R5,R0
+   \   00000054   0xD3F7             BCC      ??itoa_4
+   \   00000056   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __interwork __softfp void printnumb(int)
+   \                     printnumb: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0xB085             SUB      SP,SP,#+20
+   \   00000004   0x4669             MOV      R1,SP
+   \   00000006   0x.... 0x....      BL       itoa
+   \   0000000A   0x4668             MOV      R0,SP
+   \   0000000C   0x.... 0x....      BL       myputs
+   \   00000010   0xB005             ADD      SP,SP,#+20
+   \   00000012   0xBD00             POP      {PC}             ;; return
+     21          
+     22          
+     23          /* Consider 10ms as the default timeout for sending/receving 1 byte */
+     24          #define TIMEOUT_1_BYTE 10
+     25          
+     26          
+     27          //void init_spi(spi_t *obj){
+     28          //}
+     29          
+     30          #define SPI_DEFAULT_BAUD         1000000
+     31          #define SPI_DEFAULT_DUMMY_CHAR   0xFF
+     32          
+     33          #ifndef SPI_BAUDRATE
+     34          #define SPI_BAUDRATE SPI_DEFAULT_BAUD
+     35          #endif
+     36          
+     37          #ifndef SPI_DUMMY_CHAR
+     38          #define SPI_DUMMY_CHAR SPI_DEFAULT_DUMMY_CHAR
+     39          #endif
+     40          
+     41          
+
+   \                                 In section .text, align 2, keep-with-next
+     42          void spi_init(spi_t *obj, PinName mosi, PinName miso, PinName sclk, PinName ssel){
+   \                     spi_init: (+1)
+   \   00000000   0xB5FE             PUSH     {R1-R7,LR}
+   \   00000002   0xB082             SUB      SP,SP,#+8
+   \   00000004   0x0004             MOVS     R4,R0
+     43          	GPIO_InitType GPIO_InitStructure;
+     44          
+     45          	/* Enable SPI and GPIO clocks */
+     46          	SysCtrl_PeripheralClockCmd(CLOCK_PERIPH_GPIO | CLOCK_PERIPH_SPI, ENABLE);
+   \   00000006   0x2101             MOVS     R1,#+1
+   \   00000008   0x2011             MOVS     R0,#+17
+   \   0000000A   0x.... 0x....      BL       SysCtrl_PeripheralClockCmd
+     47          
+     48          	/* Configure SPI pins */
+     49          	GPIO_StructInit(&GPIO_InitStructure);
+   \   0000000E   0x4668             MOV      R0,SP
+   \   00000010   0x.... 0x....      BL       GPIO_StructInit
+     50          	GPIO_InitStructure.GPIO_Pin = getGpioPin(mosi); //SDK_EVAL_SPI_PERIPH_OUT_PIN = GPIO_Pin_2 = mosi;
+   \   00000014   0x4669             MOV      R1,SP
+   \   00000016   0x2008             MOVS     R0,#+8
+   \   00000018   0x5608             LDRSB    R0,[R1, R0]
+   \   0000001A   0x.... 0x....      BL       getGpioPin
+   \   0000001E   0x9000             STR      R0,[SP, #+0]
+     51          	GPIO_InitStructure.GPIO_Mode = Serial0_Mode;//SDK_EVAL_SPI_PERIPH_OUT_MODE;
+   \   00000020   0x2504             MOVS     R5,#+4
+   \   00000022   0x466E             MOV      R6,SP
+   \   00000024   0x7135             STRB     R5,[R6, #+4]
+     52          	GPIO_InitStructure.GPIO_Pull = ENABLE;
+   \   00000026   0x2701             MOVS     R7,#+1
+   \   00000028   0x71B7             STRB     R7,[R6, #+6]
+   \   0000002A   0x2000             MOVS     R0,#+0
+   \   0000002C   0x7170             STRB     R0,[R6, #+5]
+     53          	GPIO_InitStructure.GPIO_HighPwr = DISABLE;
+     54          	GPIO_Init(&GPIO_InitStructure);
+   \   0000002E   0x4668             MOV      R0,SP
+   \   00000030   0x.... 0x....      BL       GPIO_Init
+     55          
+     56          	GPIO_InitStructure.GPIO_Pin = getGpioPin(miso); //SDK_EVAL_SPI_PERIPH_IN_PIN  = GPIO_Pin_3 = miso;
+   \   00000034   0x4669             MOV      R1,SP
+   \   00000036   0x200C             MOVS     R0,#+12
+   \   00000038   0x5608             LDRSB    R0,[R1, R0]
+   \   0000003A   0x.... 0x....      BL       getGpioPin
+   \   0000003E   0x9000             STR      R0,[SP, #+0]
+     57          	GPIO_InitStructure.GPIO_Mode = Serial0_Mode;//SDK_EVAL_SPI_PERIPH_IN_MODE;
+   \   00000040   0x7135             STRB     R5,[R6, #+4]
+     58          	GPIO_Init(&GPIO_InitStructure);
+   \   00000042   0x4668             MOV      R0,SP
+   \   00000044   0x.... 0x....      BL       GPIO_Init
+     59          
+     60          	GPIO_InitStructure.GPIO_Pin = getGpioPin(sclk); //SDK_EVAL_SPI_PERIPH_SCLK_PIN = GPIO_Pin_0 = ck;
+   \   00000048   0x4669             MOV      R1,SP
+   \   0000004A   0x2010             MOVS     R0,#+16
+   \   0000004C   0x5608             LDRSB    R0,[R1, R0]
+   \   0000004E   0x.... 0x....      BL       getGpioPin
+   \   00000052   0x9000             STR      R0,[SP, #+0]
+     61          	GPIO_InitStructure.GPIO_Mode = Serial0_Mode;//SDK_EVAL_SPI_PERIPH_SCLK_MODE;
+   \   00000054   0x7135             STRB     R5,[R6, #+4]
+     62          	GPIO_Init(&GPIO_InitStructure);
+   \   00000056   0x4668             MOV      R0,SP
+   \   00000058   0x.... 0x....      BL       GPIO_Init
+   \   0000005C   0x4669             MOV      R1,SP
+   \   0000005E   0x2028             MOVS     R0,#+40
+   \   00000060   0x560D             LDRSB    R5,[R1, R0]
+     63          
+     64          	GPIO_InitStructure.GPIO_Pin = getGpioPin(ssel); //SPI_CS_MS_DEMO_PIN;
+   \   00000062   0x0028             MOVS     R0,R5
+   \   00000064   0x.... 0x....      BL       getGpioPin
+   \   00000068   0x9000             STR      R0,[SP, #+0]
+     65          	GPIO_InitStructure.GPIO_Mode = GPIO_Output;
+   \   0000006A   0x2006             MOVS     R0,#+6
+   \   0000006C   0x7130             STRB     R0,[R6, #+4]
+     66          	GPIO_InitStructure.GPIO_HighPwr = ENABLE;
+   \   0000006E   0x7177             STRB     R7,[R6, #+5]
+     67          	GPIO_Init(&GPIO_InitStructure);
+   \   00000070   0x4668             MOV      R0,SP
+   \   00000072   0x.... 0x....      BL       GPIO_Init
+     68          	//GPIO_SetBits(getGpioPin(ssel)); //SPI_CS_MS_DEMO_PIN);
+     69          	GPIO_WriteBit(getGpioPin(obj->pin_ssel), 1);
+                 	                                         ^
+Warning[Pe188]: enumerated type mixed with another type
+   \   00000076   0x200B             MOVS     R0,#+11
+   \   00000078   0x5620             LDRSB    R0,[R4, R0]
+   \   0000007A   0x.... 0x....      BL       getGpioPin
+   \   0000007E   0x2101             MOVS     R1,#+1
+   \   00000080   0x.... 0x....      BL       GPIO_WriteBit
+     70          
+     71          	obj->pin_miso = miso;
+   \   00000084   0x4668             MOV      R0,SP
+   \   00000086   0x7B00             LDRB     R0,[R0, #+12]
+   \   00000088   0x7220             STRB     R0,[R4, #+8]
+     72          	obj->pin_mosi = mosi;
+   \   0000008A   0x4668             MOV      R0,SP
+   \   0000008C   0x7A00             LDRB     R0,[R0, #+8]
+   \   0000008E   0x7260             STRB     R0,[R4, #+9]
+     73          	obj->pin_sclk = sclk;
+   \   00000090   0x4668             MOV      R0,SP
+   \   00000092   0x7C00             LDRB     R0,[R0, #+16]
+   \   00000094   0x72A0             STRB     R0,[R4, #+10]
+     74          	obj->pin_ssel = ssel;
+   \   00000096   0x72E5             STRB     R5,[R4, #+11]
+     75          
+     76          	/*
+     77          	// Configure SPI in master mode //
+     78          	//SPI_StructInit(&SPI_InitStructure);
+     79          	SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
+     80          	SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b ;
+     81          	SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low;
+     82          	SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge;
+     83          	SPI_InitStructure.SPI_BaudRate = 100000;
+     84          	//SPI_Init(&SPI_InitStructure);
+     85          	obj->init = &SPI_InitStructure;
+     86          	SPI_Init(obj->init);
+     87          	*/
+     88          
+     89          	/*
+     90          	obj->init->SPI_Mode = SPI_Mode_Master;
+     91          	obj->init->SPI_DataSize = SPI_DataSize_8b;
+     92          	obj->init->SPI_CPOL = SPI_CPOL_Low;
+     93          	obj->init->SPI_CPHA = SPI_CPHA_1Edge;
+     94          	obj->init->SPI_BaudRate = 100000;
+     95          	SPI_Init(obj->init);
+     96          	*/
+     97          	obj->init.SPI_Mode = SPI_Mode_Master;
+   \   00000098   0x2000             MOVS     R0,#+0
+   \   0000009A   0x7020             STRB     R0,[R4, #+0]
+     98          	obj->init.SPI_DataSize = SPI_DataSize_8b ;
+   \   0000009C   0x2007             MOVS     R0,#+7
+   \   0000009E   0x7060             STRB     R0,[R4, #+1]
+     99          	obj->init.SPI_CPOL = SPI_CPOL_Low;
+   \   000000A0   0x2000             MOVS     R0,#+0
+   \   000000A2   0x70A0             STRB     R0,[R4, #+2]
+    100          	obj->init.SPI_CPHA = SPI_CPHA_1Edge;
+   \   000000A4   0x70E0             STRB     R0,[R4, #+3]
+    101          	obj->init.SPI_BaudRate = SPI_BAUDRATE;
+   \   000000A6   0x....             LDR      R0,??DataTable0  ;; 0xf4240
+   \   000000A8   0x6060             STR      R0,[R4, #+4]
+    102          	SPI_Init(&(obj->init));
+   \   000000AA   0x0020             MOVS     R0,R4
+   \   000000AC   0x.... 0x....      BL       SPI_Init
+    103          
+    104          	// Clear RX and TX FIFO //
+    105          	SPI_ClearTXFIFO();
+   \   000000B0   0x.... 0x....      BL       SPI_ClearTXFIFO
+    106          	SPI_ClearRXFIFO();
+   \   000000B4   0x.... 0x....      BL       SPI_ClearRXFIFO
+    107          
+    108          	// Set null character //
+    109          	obj->dummy_char = SPI_DUMMY_CHAR;
+   \   000000B8   0x20FF             MOVS     R0,#+255
+   \   000000BA   0x7320             STRB     R0,[R4, #+12]
+    110          	SPI_SetDummyCharacter(obj->dummy_char);
+   \   000000BC   0x.... 0x....      BL       SPI_SetDummyCharacter
+    111          
+    112          	// Set communication mode //
+    113          	SPI_SetMasterCommunicationMode(SPI_FULL_DUPLEX_MODE);
+   \   000000C0   0x2000             MOVS     R0,#+0
+   \   000000C2   0x.... 0x....      BL       SPI_SetMasterCommunicationMode
+    114          
+    115          	// Enable SPI functionality //
+    116          	SPI_Cmd(ENABLE);
+   \   000000C6   0x2001             MOVS     R0,#+1
+   \   000000C8   0x.... 0x....      BL       SPI_Cmd
+    117          }
+   \   000000CC   0xB005             ADD      SP,SP,#+20
+   \   000000CE   0xBDF0             POP      {R4-R7,PC}       ;; return
+    118          
+
+   \                                 In section .text, align 2, keep-with-next
+    119          void spi_free(spi_t *obj){
+    120          	//obj->init=NULL;
+    121          }
+   \                     spi_free: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+    122          
+
+   \                                 In section .text, align 2, keep-with-next
+    123          void spi_format(spi_t *obj, int bits, int mode, int slave){
+   \                     spi_format: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    124          	/* Configure SPI in master mode */
+    125          	obj->init.SPI_Mode = (slave) ? SPI_Mode_Slave : SPI_Mode_Master;
+   \   00000004   0x1E58             SUBS     R0,R3,#+1
+   \   00000006   0x4180             SBCS     R0,R0,R0
+   \   00000008   0x43C0             MVNS     R0,R0
+   \   0000000A   0x0FC0             LSRS     R0,R0,#+31
+   \   0000000C   0x7020             STRB     R0,[R4, #+0]
+    126          	obj->init.SPI_DataSize = (uint8_t) bits-1;
+   \   0000000E   0x1E48             SUBS     R0,R1,#+1
+   \   00000010   0x7060             STRB     R0,[R4, #+1]
+    127          
+    128          	switch (mode) {
+   \   00000012   0x78A0             LDRB     R0,[R4, #+2]
+   \   00000014   0x2A00             CMP      R2,#+0
+   \   00000016   0xD005             BEQ      ??spi_format_0
+   \   00000018   0x2A02             CMP      R2,#+2
+   \   0000001A   0xD008             BEQ      ??spi_format_1
+   \   0000001C   0xD304             BCC      ??spi_format_2
+   \   0000001E   0x2A03             CMP      R2,#+3
+   \   00000020   0xD008             BEQ      ??spi_format_3
+   \   00000022   0xE00A             B        ??spi_format_4
+    129          	        case 0:
+    130          	        	obj->init.SPI_CPOL = SPI_CPOL_Low;
+   \                     ??spi_format_0: (+1)
+   \   00000024   0x2100             MOVS     R1,#+0
+   \   00000026   0xE006             B        ??spi_format_5
+    131          	        	obj->init.SPI_CPHA = SPI_CPHA_1Edge;
+    132          	            break;
+    133          	        case 1:
+    134          	        	obj->init.SPI_CPOL = SPI_CPOL_Low;
+   \                     ??spi_format_2: (+1)
+   \   00000028   0x2000             MOVS     R0,#+0
+    135          	        	obj->init.SPI_CPHA = SPI_CPHA_2Edge;
+   \   0000002A   0x2101             MOVS     R1,#+1
+   \   0000002C   0xE004             B        ??spi_format_6
+    136          	            break;
+    137          	        case 2:
+    138          	        	obj->init.SPI_CPOL = SPI_CPOL_High;
+   \                     ??spi_format_1: (+1)
+   \   0000002E   0x2001             MOVS     R0,#+1
+    139          	        	obj->init.SPI_CPHA = SPI_CPHA_1Edge;
+   \   00000030   0x2100             MOVS     R1,#+0
+   \   00000032   0xE001             B        ??spi_format_6
+    140          	            break;
+    141          	        case 3:
+    142          	        	obj->init.SPI_CPOL = SPI_CPOL_High;
+   \                     ??spi_format_3: (+1)
+   \   00000034   0x2101             MOVS     R1,#+1
+   \                     ??spi_format_5: (+1)
+   \   00000036   0x4608             MOV      R0,R1
+    143          	        	obj->init.SPI_CPHA = SPI_CPHA_2Edge;
+   \                     ??spi_format_6: (+1)
+   \   00000038   0x70E1             STRB     R1,[R4, #+3]
+    144          	            break;
+   \                     ??spi_format_4: (+1)
+   \   0000003A   0x70A0             STRB     R0,[R4, #+2]
+    145          	        default :
+    146          	        	break;
+    147          	    }
+    148          	obj->init.SPI_CPOL ? GPIO_SetBits(getGpioPin(obj->pin_sclk)) : GPIO_ResetBits(getGpioPin(obj->pin_sclk));
+   \   0000003C   0x200A             MOVS     R0,#+10
+   \   0000003E   0x5620             LDRSB    R0,[R4, R0]
+   \   00000040   0x78A1             LDRB     R1,[R4, #+2]
+   \   00000042   0x2900             CMP      R1,#+0
+   \   00000044   0xD004             BEQ      ??spi_format_7
+   \   00000046   0x.... 0x....      BL       getGpioPin
+   \   0000004A   0x.... 0x....      BL       GPIO_SetBits
+   \   0000004E   0xE003             B        ??spi_format_8
+   \                     ??spi_format_7: (+1)
+   \   00000050   0x.... 0x....      BL       getGpioPin
+   \   00000054   0x.... 0x....      BL       GPIO_ResetBits
+    149          	SPI_Init(&(obj->init));
+   \                     ??spi_format_8: (+1)
+   \   00000058   0x0020             MOVS     R0,R4
+   \   0000005A   0x.... 0x....      BL       SPI_Init
+    150          }
+   \   0000005E   0xBD10             POP      {R4,PC}          ;; return
+    151          
+    152          #ifdef cccc
+    153          /*
+    154           * Only the IP clock input is family dependant so it computed
+    155           * separately in spi_get_clock_freq
+    156           */
+    157          extern int spi_get_clock_freq(spi_t *obj);
+    158          
+    159          static const uint16_t baudrate_prescaler_table[] =	{SPI_BAUDRATEPRESCALER_2,
+    160                                                              SPI_BAUDRATEPRESCALER_4,
+    161                                                              SPI_BAUDRATEPRESCALER_8,
+    162                                                              SPI_BAUDRATEPRESCALER_16,
+    163                                                              SPI_BAUDRATEPRESCALER_32,
+    164                                                              SPI_BAUDRATEPRESCALER_64,
+    165                                                              SPI_BAUDRATEPRESCALER_128,
+    166                                                              SPI_BAUDRATEPRESCALER_256};
+    167          #endif //ccc
+    168          
+
+   \                                 In section .text, align 2, keep-with-next
+    169          void spi_frequency(spi_t *obj, int hz) {
+   \                     spi_frequency: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    170          	obj->init.SPI_BaudRate = hz;
+   \   00000002   0x6041             STR      R1,[R0, #+4]
+    171          	SPI_Init(&(obj->init));
+   \   00000004   0x.... 0x....      BL       SPI_Init
+    172          }
+   \   00000008   0xBD01             POP      {R0,PC}          ;; return
+    173          
+    174          
+    175          
+    176          #ifdef aaa
+    177          static inline int ssp_readable(spi_t *obj)
+    178          {
+    179              int status;
+    180              struct spi_s *spiobj = SPI_S(obj);
+    181              SPI_HandleTypeDef *handle = &(spiobj->handle);
+    182          
+    183              // Check if data is received
+    184              status = ((__HAL_SPI_GET_FLAG(handle, SPI_FLAG_RXNE) != RESET) ? 1 : 0);
+    185              return status;
+    186          }
+    187          
+    188          static inline int ssp_writeable(spi_t *obj)
+    189          {
+    190              int status;
+    191              struct spi_s *spiobj = SPI_S(obj);
+    192              SPI_HandleTypeDef *handle = &(spiobj->handle);
+    193          
+    194              // Check if data is transmitted
+    195              status = ((__HAL_SPI_GET_FLAG(handle, SPI_FLAG_TXE) != RESET) ? 1 : 0);
+    196              return status;
+    197          }
+    198          
+    199          static inline int ssp_busy(spi_t *obj)
+    200          {
+    201              int status;
+    202              struct spi_s *spiobj = SPI_S(obj);
+    203              SPI_HandleTypeDef *handle = &(spiobj->handle);
+    204              status = ((__HAL_SPI_GET_FLAG(handle, SPI_FLAG_BSY) != RESET) ? 1 : 0);
+    205              return status;
+    206          }
+    207          #endif //aaaa
+    208          
+
+   \                                 In section .text, align 2, keep-with-next
+    209          int spi_master_write(spi_t *obj, int value){
+   \                     spi_master_write: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+    210          	int received_data;
+    211          	// Set communication mode //
+    212          	SPI_SetMasterCommunicationMode(SPI_FULL_DUPLEX_MODE);
+   \   00000006   0x2000             MOVS     R0,#+0
+   \   00000008   0x.... 0x....      BL       SPI_SetMasterCommunicationMode
+    213          	// start write: CS=0
+    214          	GPIO_WriteBit(getGpioPin(obj->pin_ssel), 0);
+                 	                                         ^
+Warning[Pe188]: enumerated type mixed with another type
+   \   0000000C   0x200B             MOVS     R0,#+11
+   \   0000000E   0x5628             LDRSB    R0,[R5, R0]
+   \   00000010   0x.... 0x....      BL       getGpioPin
+   \   00000014   0x2100             MOVS     R1,#+0
+   \   00000016   0x.... 0x....      BL       GPIO_WriteBit
+    215          	// Write data to send to TX FIFO //
+    216          	while(RESET == SPI_GetFlagStatus(SPI_FLAG_TFE));
+   \                     ??spi_master_write_0: (+1)
+   \   0000001A   0x2001             MOVS     R0,#+1
+   \   0000001C   0x.... 0x....      BL       SPI_GetFlagStatus
+   \   00000020   0x2800             CMP      R0,#+0
+   \   00000022   0xD0FA             BEQ      ??spi_master_write_0
+    217          	SPI_SendData(value);
+   \   00000024   0x0020             MOVS     R0,R4
+   \   00000026   0x.... 0x....      BL       SPI_SendData
+    218          	// read RX FIFO data //
+    219          	while(RESET == SPI_GetFlagStatus(SPI_FLAG_RNE));
+   \                     ??spi_master_write_1: (+1)
+   \   0000002A   0x2004             MOVS     R0,#+4
+   \   0000002C   0x.... 0x....      BL       SPI_GetFlagStatus
+   \   00000030   0x2800             CMP      R0,#+0
+   \   00000032   0xD0FA             BEQ      ??spi_master_write_1
+    220          	received_data = SPI_ReceiveData();
+   \   00000034   0x.... 0x....      BL       SPI_ReceiveData
+   \   00000038   0x0004             MOVS     R4,R0
+    221          	// wait busy
+    222          	while (SET == SPI_GetFlagStatus(SPI_FLAG_BSY));
+   \                     ??spi_master_write_2: (+1)
+   \   0000003A   0x2010             MOVS     R0,#+16
+   \   0000003C   0x.... 0x....      BL       SPI_GetFlagStatus
+   \   00000040   0x2801             CMP      R0,#+1
+   \   00000042   0xD0FA             BEQ      ??spi_master_write_2
+    223          	// stop write: CS=1
+    224          	GPIO_WriteBit(getGpioPin(obj->pin_ssel), 1);
+                 	                                         ^
+Warning[Pe188]: enumerated type mixed with another type
+   \   00000044   0x200B             MOVS     R0,#+11
+   \   00000046   0x5628             LDRSB    R0,[R5, R0]
+   \   00000048   0x.... 0x....      BL       getGpioPin
+   \   0000004C   0x2101             MOVS     R1,#+1
+   \   0000004E   0x.... 0x....      BL       GPIO_WriteBit
+    225          	return received_data;
+   \   00000052   0x0020             MOVS     R0,R4
+   \   00000054   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    226          }
+    227          
+
+   \                                 In section .text, align 2, keep-with-next
+    228          int spi_master_block_write(spi_t *obj, const char *tx_buffer, int tx_length,
+    229                                     char *rx_buffer, int rx_length, char write_fill){
+   \                     spi_master_block_write: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+   \   00000008   0x001F             MOVS     R7,R3
+    230          
+    231          	obj->dummy_char = write_fill;
+   \   0000000A   0x4668             MOV      R0,SP
+   \   0000000C   0x7F00             LDRB     R0,[R0, #+28]
+   \   0000000E   0x7320             STRB     R0,[R4, #+12]
+   \   00000010   0x4668             MOV      R0,SP
+   \   00000012   0x7F00             LDRB     R0,[R0, #+28]
+    232          	SPI_SetDummyCharacter(write_fill);
+   \   00000014   0x.... 0x....      BL       SPI_SetDummyCharacter
+    233          	// Set communication mode //
+    234          	SPI_SetMasterCommunicationMode(SPI_FULL_DUPLEX_MODE);
+   \   00000018   0x2000             MOVS     R0,#+0
+   \   0000001A   0x.... 0x....      BL       SPI_SetMasterCommunicationMode
+    235          	// start write: CS=0
+    236          	GPIO_WriteBit(getGpioPin(obj->pin_ssel), 0);
+                 	                                         ^
+Warning[Pe188]: enumerated type mixed with another type
+   \   0000001E   0x200B             MOVS     R0,#+11
+   \   00000020   0x5620             LDRSB    R0,[R4, R0]
+   \   00000022   0x.... 0x....      BL       getGpioPin
+   \   00000026   0x2100             MOVS     R1,#+0
+   \   00000028   0x.... 0x....      BL       GPIO_WriteBit
+    237          	// TX BUFFER //
+    238          	for (int i=0; i<tx_length; i++) {
+   \   0000002C   0x2E01             CMP      R6,#+1
+   \   0000002E   0xDB11             BLT      ??spi_master_block_write_0
+    239          		// Write data to send to TX FIFO //
+    240          		while(RESET == SPI_GetFlagStatus(SPI_FLAG_TFE));
+   \                     ??spi_master_block_write_1: (+1)
+   \   00000030   0x2001             MOVS     R0,#+1
+   \   00000032   0x.... 0x....      BL       SPI_GetFlagStatus
+   \   00000036   0x2800             CMP      R0,#+0
+   \   00000038   0xD0FA             BEQ      ??spi_master_block_write_1
+    241          		SPI_SendData(tx_buffer[i]);
+   \   0000003A   0x7828             LDRB     R0,[R5, #+0]
+   \   0000003C   0x.... 0x....      BL       SPI_SendData
+    242          		// discard RX FIFO
+    243          		while(RESET == SPI_GetFlagStatus(SPI_FLAG_RNE));
+   \                     ??spi_master_block_write_2: (+1)
+   \   00000040   0x2004             MOVS     R0,#+4
+   \   00000042   0x.... 0x....      BL       SPI_GetFlagStatus
+   \   00000046   0x2800             CMP      R0,#+0
+   \   00000048   0xD0FA             BEQ      ??spi_master_block_write_2
+    244          		SPI_ReceiveData();
+   \   0000004A   0x.... 0x....      BL       SPI_ReceiveData
+    245          	}
+   \   0000004E   0x1C6D             ADDS     R5,R5,#+1
+   \   00000050   0x1E76             SUBS     R6,R6,#+1
+   \   00000052   0xD1ED             BNE      ??spi_master_block_write_1
+    246          	// wait busy
+    247          	while (SET == SPI_GetFlagStatus(SPI_FLAG_BSY));
+   \                     ??spi_master_block_write_0: (+1)
+   \   00000054   0x2010             MOVS     R0,#+16
+   \   00000056   0x.... 0x....      BL       SPI_GetFlagStatus
+   \   0000005A   0x2801             CMP      R0,#+1
+   \   0000005C   0xD0FA             BEQ      ??spi_master_block_write_0
+   \   0000005E   0x9D06             LDR      R5,[SP, #+24]
+    248          	// RX BUFFER //
+    249          	if (!rx_length)
+   \   00000060   0x2D00             CMP      R5,#+0
+   \   00000062   0xD102             BNE      ??spi_master_block_write_3
+    250          		rx_buffer[0] = 0;
+   \   00000064   0x2000             MOVS     R0,#+0
+   \   00000066   0x7038             STRB     R0,[R7, #+0]
+   \   00000068   0xE015             B        ??spi_master_block_write_4
+    251          	else{
+    252          		for (int i=0; i<rx_length; i++) {
+   \                     ??spi_master_block_write_3: (+1)
+   \   0000006A   0x2D01             CMP      R5,#+1
+   \   0000006C   0xDB13             BLT      ??spi_master_block_write_4
+    253          			// Write dummy_byte to send to TX FIFO //
+    254          			while(RESET == SPI_GetFlagStatus(SPI_FLAG_TFE));
+   \                     ??spi_master_block_write_5: (+1)
+   \   0000006E   0x2001             MOVS     R0,#+1
+   \   00000070   0x.... 0x....      BL       SPI_GetFlagStatus
+   \   00000074   0x2800             CMP      R0,#+0
+   \   00000076   0xD0FA             BEQ      ??spi_master_block_write_5
+    255          			SPI_SendData(write_fill);
+   \   00000078   0x4668             MOV      R0,SP
+   \   0000007A   0x7F00             LDRB     R0,[R0, #+28]
+   \   0000007C   0x.... 0x....      BL       SPI_SendData
+    256          			// read RX FIFO data //
+    257          			while(RESET == SPI_GetFlagStatus(SPI_FLAG_RNE));
+   \                     ??spi_master_block_write_6: (+1)
+   \   00000080   0x2004             MOVS     R0,#+4
+   \   00000082   0x.... 0x....      BL       SPI_GetFlagStatus
+   \   00000086   0x2800             CMP      R0,#+0
+   \   00000088   0xD0FA             BEQ      ??spi_master_block_write_6
+    258          			rx_buffer[i] = SPI_ReceiveData();
+   \   0000008A   0x.... 0x....      BL       SPI_ReceiveData
+   \   0000008E   0x7038             STRB     R0,[R7, #+0]
+    259          		}
+   \   00000090   0x1C7F             ADDS     R7,R7,#+1
+   \   00000092   0x1E6D             SUBS     R5,R5,#+1
+   \   00000094   0xD1EB             BNE      ??spi_master_block_write_5
+    260          	}
+    261          	// wait busy
+    262          	while (SET == SPI_GetFlagStatus(SPI_FLAG_BSY));
+   \                     ??spi_master_block_write_4: (+1)
+   \   00000096   0x2010             MOVS     R0,#+16
+   \   00000098   0x.... 0x....      BL       SPI_GetFlagStatus
+   \   0000009C   0x2801             CMP      R0,#+1
+   \   0000009E   0xD0FA             BEQ      ??spi_master_block_write_4
+    263          	// stop write: CS=1
+    264          	GPIO_WriteBit(getGpioPin(obj->pin_ssel), 1);
+                 	                                         ^
+Warning[Pe188]: enumerated type mixed with another type
+   \   000000A0   0x200B             MOVS     R0,#+11
+   \   000000A2   0x5620             LDRSB    R0,[R4, R0]
+   \   000000A4   0x.... 0x....      BL       getGpioPin
+   \   000000A8   0x2101             MOVS     R1,#+1
+   \   000000AA   0x.... 0x....      BL       GPIO_WriteBit
+    265          	return SUCCESS;
+   \   000000AE   0x2000             MOVS     R0,#+0
+   \   000000B0   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    266          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \   00000000   0x000F4240         DC32     0xf4240
+    267          
+    268          
+    269          #ifdef bbbb
+    270          int spi_slave_receive(spi_t *obj)
+    271          {
+    272              return ((ssp_readable(obj) && !ssp_busy(obj)) ? 1 : 0);
+    273          };
+    274          
+    275          int spi_slave_read(spi_t *obj)
+    276          {
+    277              struct spi_s *spiobj = SPI_S(obj);
+    278              SPI_HandleTypeDef *handle = &(spiobj->handle);
+    279              while (!ssp_readable(obj));
+    280              if (handle->Init.DataSize == SPI_DATASIZE_16BIT) {
+    281                  return LL_SPI_ReceiveData16(SPI_INST(obj));
+    282              } else {
+    283                  return LL_SPI_ReceiveData8(SPI_INST(obj));
+    284              }
+    285          }
+    286          
+    287          void spi_slave_write(spi_t *obj, int value)
+    288          {
+    289              SPI_TypeDef *spi = SPI_INST(obj);
+    290              struct spi_s *spiobj = SPI_S(obj);
+    291              SPI_HandleTypeDef *handle = &(spiobj->handle);
+    292              while (!ssp_writeable(obj));
+    293              if (handle->Init.DataSize == SPI_DATASIZE_8BIT) {
+    294                  // Force 8-bit access to the data register
+    295                  uint8_t *p_spi_dr = 0;
+    296                  p_spi_dr = (uint8_t *) & (spi->DR);
+    297                  *p_spi_dr = (uint8_t)value;
+    298              } else { // SPI_DATASIZE_16BIT
+    299                  spi->DR = (uint16_t)value;
+    300              }
+    301          }
+    302          
+    303          int spi_busy(spi_t *obj)
+    304          {
+    305              return ssp_busy(obj);
+    306          }
+    307          
+    308          #ifdef DEVICE_SPI_ASYNCH
+    309          typedef enum {
+    310              SPI_TRANSFER_TYPE_NONE = 0,
+    311              SPI_TRANSFER_TYPE_TX = 1,
+    312              SPI_TRANSFER_TYPE_RX = 2,
+    313              SPI_TRANSFER_TYPE_TXRX = 3,
+    314          } transfer_type_t;
+    315          
+    316          
+    317          /// @returns the number of bytes transferred, or `0` if nothing transferred
+    318          static int spi_master_start_asynch_transfer(spi_t *obj, transfer_type_t transfer_type, const void *tx, void *rx, size_t length)
+    319          {
+    320              struct spi_s *spiobj = SPI_S(obj);
+    321              SPI_HandleTypeDef *handle = &(spiobj->handle);
+    322              bool is16bit = (handle->Init.DataSize == SPI_DATASIZE_16BIT);
+    323              // the HAL expects number of transfers instead of number of bytes
+    324              // so for 16 bit transfer width the count needs to be halved
+    325              size_t words;
+    326          
+    327              DEBUG_PRINTF("SPI inst=0x%8X Start: %u, %u\r\n", (int)handle->Instance, transfer_type, length);
+    328          
+    329              obj->spi.transfer_type = transfer_type;
+    330          
+    331              if (is16bit) {
+    332                  words = length / 2;
+    333              } else {
+    334                  words = length;
+    335              }
+    336          
+    337              // enable the interrupt
+    338              IRQn_Type irq_n = spiobj->spiIRQ;
+    339              NVIC_DisableIRQ(irq_n);
+    340              NVIC_ClearPendingIRQ(irq_n);
+    341              NVIC_SetPriority(irq_n, 1);
+    342              NVIC_EnableIRQ(irq_n);
+    343          
+    344              // enable the right hal transfer
+    345              int rc = 0;
+    346              switch(transfer_type) {
+    347                  case SPI_TRANSFER_TYPE_TXRX:
+    348                      rc = HAL_SPI_TransmitReceive_IT(handle, (uint8_t*)tx, (uint8_t*)rx, words);
+    349                      break;
+    350                  case SPI_TRANSFER_TYPE_TX:
+    351                      rc = HAL_SPI_Transmit_IT(handle, (uint8_t*)tx, words);
+    352                      break;
+    353                  case SPI_TRANSFER_TYPE_RX:
+    354                      // the receive function also "transmits" the receive buffer so in order
+    355                      // to guarantee that 0xff is on the line, we explicitly memset it here
+    356                      memset(rx, SPI_FILL_WORD, length);
+    357                      rc = HAL_SPI_Receive_IT(handle, (uint8_t*)rx, words);
+    358                      break;
+    359                  default:
+    360                      length = 0;
+    361              }
+    362          
+    363              if (rc) {
+    364                  DEBUG_PRINTF("SPI: RC=%u\n", rc);
+    365                  length = 0;
+    366              }
+    367          
+    368              return length;
+    369          }
+    370          
+    371          // asynchronous API
+    372          void spi_master_transfer(spi_t *obj, const void *tx, size_t tx_length, void *rx, size_t rx_length, uint8_t bit_width, uint32_t handler, uint32_t event, DMAUsage hint)
+    373          {
+    374              struct spi_s *spiobj = SPI_S(obj);
+    375              SPI_HandleTypeDef *handle = &(spiobj->handle);
+    376          
+    377              // TODO: DMA usage is currently ignored
+    378              (void) hint;
+    379          
+    380              // check which use-case we have
+    381              bool use_tx = (tx != NULL && tx_length > 0);
+    382              bool use_rx = (rx != NULL && rx_length > 0);
+    383              bool is16bit = (handle->Init.DataSize == SPI_DATASIZE_16BIT);
+    384          
+    385              // don't do anything, if the buffers aren't valid
+    386              if (!use_tx && !use_rx)
+    387                  return;
+    388          
+    389              // copy the buffers to the SPI object
+    390              obj->tx_buff.buffer = (void *) tx;
+    391              obj->tx_buff.length = tx_length;
+    392              obj->tx_buff.pos = 0;
+    393              obj->tx_buff.width = is16bit ? 16 : 8;
+    394          
+    395              obj->rx_buff.buffer = rx;
+    396              obj->rx_buff.length = rx_length;
+    397              obj->rx_buff.pos = 0;
+    398              obj->rx_buff.width = obj->tx_buff.width;
+    399          
+    400              obj->spi.event = event;
+    401          
+    402              DEBUG_PRINTF("SPI: Transfer: %u, %u\n", tx_length, rx_length);
+    403          
+    404              // register the thunking handler
+    405              IRQn_Type irq_n = spiobj->spiIRQ;
+    406              NVIC_SetVector(irq_n, (uint32_t)handler);
+    407          
+    408              // enable the right hal transfer
+    409              if (use_tx && use_rx) {
+    410                  // we cannot manage different rx / tx sizes, let's use smaller one
+    411                  size_t size = (tx_length < rx_length)? tx_length : rx_length;
+    412                  if(tx_length != rx_length) {
+    413                      DEBUG_PRINTF("SPI: Full duplex transfer only 1 size: %d\n", size);
+    414                      obj->tx_buff.length = size;
+    415                      obj->rx_buff.length = size;
+    416                  }
+    417                  spi_master_start_asynch_transfer(obj, SPI_TRANSFER_TYPE_TXRX, tx, rx, size);
+    418              } else if (use_tx) {
+    419                  spi_master_start_asynch_transfer(obj, SPI_TRANSFER_TYPE_TX, tx, NULL, tx_length);
+    420              } else if (use_rx) {
+    421                  spi_master_start_asynch_transfer(obj, SPI_TRANSFER_TYPE_RX, NULL, rx, rx_length);
+    422              }
+    423          }
+    424          
+    425          inline uint32_t spi_irq_handler_asynch(spi_t *obj)
+    426          {
+    427              int event = 0;
+    428          
+    429              // call the CubeF4 handler, this will update the handle
+    430              HAL_SPI_IRQHandler(&obj->spi.handle);
+    431          
+    432              if (obj->spi.handle.State == HAL_SPI_STATE_READY) {
+    433                  // When HAL SPI is back to READY state, check if there was an error
+    434                  int error = obj->spi.handle.ErrorCode;
+    435                  if(error != HAL_SPI_ERROR_NONE) {
+    436                      // something went wrong and the transfer has definitely completed
+    437                      event = SPI_EVENT_ERROR | SPI_EVENT_INTERNAL_TRANSFER_COMPLETE;
+    438          
+    439                      if (error & HAL_SPI_ERROR_OVR) {
+    440                          // buffer overrun
+    441                          event |= SPI_EVENT_RX_OVERFLOW;
+    442                      }
+    443                  } else {
+    444                      // else we're done
+    445                      event = SPI_EVENT_COMPLETE | SPI_EVENT_INTERNAL_TRANSFER_COMPLETE;
+    446                 }
+    447                 // enable the interrupt
+    448                 NVIC_DisableIRQ(obj->spi.spiIRQ);
+    449                 NVIC_ClearPendingIRQ(obj->spi.spiIRQ);
+    450              }
+    451          
+    452          
+    453              return (event & (obj->spi.event | SPI_EVENT_INTERNAL_TRANSFER_COMPLETE));
+    454          }
+    455          
+    456          uint8_t spi_active(spi_t *obj)
+    457          {
+    458              struct spi_s *spiobj = SPI_S(obj);
+    459              SPI_HandleTypeDef *handle = &(spiobj->handle);
+    460              HAL_SPI_StateTypeDef state = HAL_SPI_GetState(handle);
+    461          
+    462              switch(state) {
+    463                  case HAL_SPI_STATE_RESET:
+    464                  case HAL_SPI_STATE_READY:
+    465                  case HAL_SPI_STATE_ERROR:
+    466                      return 0;
+    467                  default:
+    468                      return 1;
+    469              }
+    470          }
+    471          
+    472          void spi_abort_asynch(spi_t *obj)
+    473          {
+    474              struct spi_s *spiobj = SPI_S(obj);
+    475              SPI_HandleTypeDef *handle = &(spiobj->handle);
+    476          
+    477              // disable interrupt
+    478              IRQn_Type irq_n = spiobj->spiIRQ;
+    479              NVIC_ClearPendingIRQ(irq_n);
+    480              NVIC_DisableIRQ(irq_n);
+    481          
+    482              // clean-up
+    483              __HAL_SPI_DISABLE(handle);
+    484              HAL_SPI_DeInit(handle);
+    485              HAL_SPI_Init(handle);
+    486              __HAL_SPI_ENABLE(handle);
+    487          }
+    488          #endif //bbbb
+    489          
+    490          #endif //DEVICE_SPI_ASYNCH
+    491          
+    492          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   itoa
+        24 __aeabi_idiv
+        24 __aeabi_idivmod
+       8   myputc
+         8   -> UART_GetFlagStatus
+         8   -> UART_SendData
+       8   myputs
+         8   -> UART_GetFlagStatus
+         8   -> UART_SendData
+      24   printnumb
+        24   -> itoa
+        24   -> myputs
+       0   reverse
+       8   spi_format
+         8   -> GPIO_ResetBits
+         8   -> GPIO_SetBits
+         8   -> SPI_Init
+         8   -> getGpioPin
+       0   spi_free
+       8   spi_frequency
+         8   -> SPI_Init
+      40   spi_init
+        40   -> GPIO_Init
+        40   -> GPIO_StructInit
+        40   -> GPIO_WriteBit
+        40   -> SPI_ClearRXFIFO
+        40   -> SPI_ClearTXFIFO
+        40   -> SPI_Cmd
+        40   -> SPI_Init
+        40   -> SPI_SetDummyCharacter
+        40   -> SPI_SetMasterCommunicationMode
+        40   -> SysCtrl_PeripheralClockCmd
+        40   -> getGpioPin
+      24   spi_master_block_write
+        24   -> GPIO_WriteBit
+        24   -> SPI_GetFlagStatus
+        24   -> SPI_ReceiveData
+        24   -> SPI_SendData
+        24   -> SPI_SetDummyCharacter
+        24   -> SPI_SetMasterCommunicationMode
+        24   -> getGpioPin
+      16   spi_master_write
+        16   -> GPIO_WriteBit
+        16   -> SPI_GetFlagStatus
+        16   -> SPI_ReceiveData
+        16   -> SPI_SendData
+        16   -> SPI_SetMasterCommunicationMode
+        16   -> getGpioPin
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+      88  itoa
+      22  myputc
+      44  myputs
+      20  printnumb
+       4  retval
+      22  reverse
+      96  spi_format
+       2  spi_free
+      10  spi_frequency
+     208  spi_init
+     178  spi_master_block_write
+      86  spi_master_write
+
+ 
+   4 bytes in section .bss
+ 780 bytes in section .text
+ 
+ 780 bytes of CODE memory
+   4 bytes of DATA memory
+
+Errors: none
+Warnings: 6

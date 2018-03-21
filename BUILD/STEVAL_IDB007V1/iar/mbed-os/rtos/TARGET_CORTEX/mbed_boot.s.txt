@@ -1,0 +1,1310 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:50
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\rtos\TARGET_CORTEX\mbed_boot.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_boot.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_boot.s.txt
+#        -o .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_boot.o
+#        .\mbed-os\rtos\TARGET_CORTEX\mbed_boot.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_boot.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\rtos\TARGET_CORTEX\mbed_boot.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\rtos\TARGET_CORTEX\mbed_boot.c
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2016 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          
+     17          /* mbed OS boot sequence
+     18           *
+     19           * Most of mbed supported targets use default ARM Cortex M boot approach, where the core starts executing reset vector
+     20           * after power up. Reset ISR is defined for each target by the vendor (basing on CMSIS template). Reset vector is
+     21           * responsible for low level platform init and then calling in libc (__main). Depending on compiler and version of C
+     22           * library, predefined function will be called which is implemented by mbed OS.
+     23           *
+     24           * There's number of functions, vendor and users can provide to setup the platform and/or inject a code to be executed
+     25           *  before main():
+     26           *      * Reset vector and SystemInit: Reset vector should do low level core and board initialization.
+     27           *      * mbed_sdk_init: Higher level board init and making sure the board is ready for the mbed OS.
+     28           *      * mbed_main: User's code to be executed before main().
+     29           *      * main: Standard application code.
+     30           *
+     31           * Detailed boot procedures:
+     32           *
+     33           * For ARMCC:
+     34           * ==========
+     35           *
+     36           * Reset (TARGET)
+     37           *     -> SystemInit (TARGET)
+     38           *     -> __main (LIBC)
+     39           *         -> __rt_entry (MBED: rtos/mbed_boot.c)
+     40           *             -> __user_setup_stackheap (LIBC)
+     41           *             -> mbed_set_stack_heap (MBED: rtos/mbed_boot.c)
+     42           *             -> mbed_cpy_nvic (MBED: rtos/mbed_boot.c)
+     43           *             -> mbed_sdk_init (TARGET)
+     44           *             -> _platform_post_stackheap_init (RTX)
+     45           *                 -> osKernelInitialize (RTX)
+     46           *             -> mbed_start_main (MBED: rtos/mbed_boot.c)
+     47           *                 -> osThreadNew (RTX)
+     48           *                     -> pre_main(MBED: rtos/mbed_boot.c)
+     49           *                         -> __rt_lib_init (LIBC)
+     50           *                         -> $Sub$$main (MBED: rtos/mbed_boot.c)
+     51           *                             -> mbed_main (MBED: rtos/mbed_boot.c)
+     52           *                             -> main (APP)
+     53           *                 -> osKernelStart (RTX)
+     54           *
+     55           * In addition to the above, libc will use functions defined by RTX: __user_perthread_libspace, _mutex_initialize,
+     56           * _mutex_acquire, _mutex_release, _mutex_free for details consult: ARM C and C++ Libraries and Floating-Point
+     57           * Support User Guide.
+     58           *
+     59           * For MICROLIB:
+     60           * ==========
+     61           *
+     62           * Reset (TARGET)
+     63           *     -> SystemInit (TARGET)
+     64           *     -> __main (LIBC)
+     65           *         -> _main_init (MBED: rtos/mbed_boot.c)
+     66           *             -> mbed_set_stack_heap (MBED: rtos/mbed_boot.c)
+     67           *             -> mbed_cpy_nvic (MBED: rtos/mbed_boot.c)
+     68           *             -> mbed_sdk_init (TARGET)
+     69           *             -> osKernelInitialize (RTX)
+     70           *             -> mbed_start_main (MBED: rtos/mbed_boot.c)
+     71           *                 -> osThreadNew (RTX)
+     72           *                     -> pre_main(MBED: rtos/mbed_boot.c)
+     73           *                         -> __cpp_initialize__aeabi_ (LIBC)
+     74           *                         -> $Sub$$main (MBED: rtos/mbed_boot.c)
+     75           *                             -> mbed_main (MBED: rtos/mbed_boot.c)
+     76           *                             -> main (APP)
+     77           *                 -> osKernelStart (RTX)
+     78           *
+     79           * For GCC:
+     80           * ========
+     81           *
+     82           * Reset (TARGET)
+     83           *     -> SystemInit (TARGET)
+     84           *     -> __main (LIBC)
+     85           *         -> software_init_hook (MBED: rtos/mbed_boot.c)
+     86           *             -> mbed_set_stack_heap (MBED: rtos/mbed_boot.c)
+     87           *             -> mbed_cpy_nvic (MBED: rtos/mbed_boot.c)
+     88           *             -> mbed_sdk_init (TARGET)
+     89           *             -> osKernelInitialize (RTX)
+     90           *             -> mbed_start_main (MBED: rtos/mbed_boot.c)
+     91           *                 -> osThreadNew (RTX)
+     92           *                     -> pre_main(MBED: rtos/mbed_boot.c)
+     93           *                     -> __libc_init_array (LIBC)
+     94           *                         -> __wrap_main (MBED: rtos/mbed_boot.c)
+     95           *                             -> mbed_main (MBED: rtos/mbed_boot.c)
+     96           *                             -> __real_main (APP)
+     97           *                 -> osKernelStart (RTX)
+     98           *
+     99           * For IAR:
+    100           * ========
+    101           *
+    102           * Reset (TARGET)
+    103           *     -> SystemInit (TARGET)
+    104           *     -> __iar_program_start
+    105           *         -> __iar_init_core
+    106           *         -> __iar_init_core
+    107           *         -> __iar_init_vfp
+    108           *         -> __low_level_init
+    109           *         -> __iar_data_init3
+    110           *         -> mbed_cpy_nvic (MBED: rtos/mbed_boot.c)
+    111           *         -> mbed_sdk_init (TARGET)
+    112           *         -> mbed_set_stack_heap (MBED: rtos/mbed_boot.c)
+    113           *         -> osKernelInitialize (RTX)
+    114           *         -> mbed_start_main (MBED: rtos/mbed_boot.c)
+    115           *             -> osThreadNew (RTX)
+    116           *             -> pre_main(MBED: rtos/mbed_boot.c)
+    117           *                 -> __iar_dynamic_initialization
+    118          *                  -> main
+    119           *             -> osKernelStart (RTX)
+    120           *
+    121           * Other notes:
+    122           *
+    123           *    * In addition to the above, libc will use functions defined in mbed_boot.c: __rtos_malloc_lock/unlock,
+    124           *      __rtos_env_lock/unlock.
+    125           *
+    126           *    * First step after the execution is passed to mbed, software_init_hook for GCC and __rt_entry for ARMC is to
+    127           *      initialize heap.
+    128           *
+    129           * Memory layout notes:
+    130           * ====================
+    131           *
+    132           * IAR Default Memory layout notes:
+    133           * -Heap defined by "HEAP" region in .icf file
+    134           * -Interrupt stack defined by "CSTACK" region in .icf file
+    135           * -Value INITIAL_SP is ignored
+    136           *
+    137           * IAR Custom Memory layout notes:
+    138           * -There is no custom layout available for IAR - everything must be defined in
+    139           *      the .icf file and use the default layout
+    140           *
+    141           *
+    142           * GCC Default Memory layout notes:
+    143           * -Block of memory from symbol __end__ to define INITIAL_SP used to setup interrupt
+    144           *      stack and heap in the function set_stack_heap()
+    145           * -ISR_STACK_SIZE can be overridden to be larger or smaller
+    146           *
+    147           * GCC Custom Memory layout notes:
+    148           * -Heap can be explicitly placed by defining both HEAP_START and HEAP_SIZE
+    149           * -Interrupt stack can be explicitly placed by defining both ISR_STACK_START and ISR_STACK_SIZE
+    150           *
+    151           *
+    152           * ARM Memory layout
+    153           * -Block of memory from end of region "RW_IRAM1" to define INITIAL_SP used to setup interrupt
+    154           *      stack and heap in the function set_stack_heap()
+    155           * -ISR_STACK_SIZE can be overridden to be larger or smaller
+    156           *
+    157           * ARM Custom Memory layout notes:
+    158           * -Heap can be explicitly placed by defining both HEAP_START and HEAP_SIZE
+    159           * -Interrupt stack can be explicitly placed by defining both ISR_STACK_START and ISR_STACK_SIZE
+    160           *
+    161           */
+    162          
+    163          #include <stdlib.h>
+    164          
+    165          #include "cmsis.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+    166          #include "mbed_rtx.h"
+    167          #include "mbed_rtos_storage.h"
+    168          #include "cmsis_os2.h"
+    169          #include "mbed_toolchain.h"
+    170          #include "mbed_error.h"
+    171          #if defined(__IAR_SYSTEMS_ICC__ ) && (__VER__ >= 8000000)
+    172          #include <DLib_Threads.h>
+    173          #endif
+    174          /* Heap limits - only used if set */
+    175          extern unsigned char *mbed_heap_start;
+    176          extern uint32_t mbed_heap_size;
+    177          
+    178          unsigned char *mbed_stack_isr_start = 0;
+    179          uint32_t mbed_stack_isr_size = 0;
+    180          
+    181          WEAK void mbed_main(void);
+    182          void pre_main (void);
+    183          
+    184          osThreadAttr_t _main_thread_attr;
+    185          
+    186          /** The main thread's stack size can be configured by the application, if not explicitly specified it'll default to 4K */
+    187          #ifndef MBED_CONF_APP_MAIN_STACK_SIZE
+    188          #define MBED_CONF_APP_MAIN_STACK_SIZE 4096
+    189          #endif
+    190          MBED_ALIGN(8) char _main_stack[MBED_CONF_APP_MAIN_STACK_SIZE];
+    191          mbed_rtos_storage_thread_t _main_obj;
+    192          
+    193          osMutexId_t               singleton_mutex_id;
+    194          mbed_rtos_storage_mutex_t singleton_mutex_obj;
+    195          osMutexAttr_t             singleton_mutex_attr;
+    196          
+    197          /*
+    198           * Sanity check values
+    199           */
+    200          #if defined(__ICCARM__) &&                                  \
+    201              (defined(HEAP_START) || defined(HEAP_SIZE) ||           \
+    202               defined(ISR_STACK_START) && defined(ISR_STACK_SIZE))
+    203              #error "No custom layout allowed for IAR. Use .icf file instead"
+    204          #endif
+    205          #if defined(HEAP_START) && !defined(HEAP_SIZE)
+    206              #error "HEAP_SIZE must be defined if HEAP_START is defined"
+    207          #endif
+    208          #if defined(ISR_STACK_START) && !defined(ISR_STACK_SIZE)
+    209              #error "ISR_STACK_SIZE must be defined if ISR_STACK_START is defined"
+    210          #endif
+    211          #if defined(HEAP_SIZE) && !defined(HEAP_START)
+    212              #error "HEAP_START must be defined if HEAP_SIZE is defined"
+    213          #endif
+    214          
+    215          /* IAR - INITIAL_SP and HEAP_START ignored as described in Memory layout notes above
+    216           */
+    217          #if !defined(__ICCARM__) && !defined(INITIAL_SP) && !defined(HEAP_START)
+    218              #error "no target defined"
+    219          #endif
+    220          
+    221          /* Interrupt stack and heap always defined for IAR
+    222           * Main thread defined here
+    223           */
+    224          #if defined(__ICCARM__)
+    225              #pragma section="CSTACK"
+    226              #pragma section="HEAP"
+    227              #define HEAP_START          ((unsigned char*)__section_begin("HEAP"))
+    228              #define HEAP_SIZE           ((uint32_t)__section_size("HEAP"))
+    229              #define ISR_STACK_START     ((unsigned char*)__section_begin("CSTACK"))
+    230              #define ISR_STACK_SIZE      ((uint32_t)__section_size("CSTACK"))
+    231          #endif
+    232          
+    233          /* Define heap region if it has not been defined already */
+    234          #if !defined(HEAP_START)
+    235              #if defined(__ICCARM__)
+    236                  #error "Heap should already be defined for IAR"
+    237              #elif defined(__CC_ARM) || (defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050))
+    238                  extern uint32_t          Image$$RW_IRAM1$$ZI$$Limit[];
+    239                  #define HEAP_START      ((unsigned char*)Image$$RW_IRAM1$$ZI$$Limit)
+    240                  #define HEAP_SIZE       ((uint32_t)((uint32_t)INITIAL_SP - (uint32_t)HEAP_START))
+    241              #elif defined(__GNUC__)
+    242                  extern uint32_t         __end__[];
+    243                  #define HEAP_START      ((unsigned char*)__end__)
+    244                  #define HEAP_SIZE       ((uint32_t)((uint32_t)INITIAL_SP - (uint32_t)HEAP_START))
+    245              #endif
+    246          #endif
+    247          
+    248          /* Define stack sizes if they haven't been set already */
+    249          #if !defined(ISR_STACK_SIZE)
+    250              #define ISR_STACK_SIZE ((uint32_t)1024)
+    251          #endif
+    252          
+    253          /*
+    254           * mbed_set_stack_heap purpose is to set the following variables:
+    255           * -mbed_heap_start
+    256           * -mbed_heap_size
+    257           * -mbed_stack_isr_start
+    258           * -mbed_stack_isr_size
+    259           */
+
+   \                                 In section .text, align 2, keep-with-next
+    260          void mbed_set_stack_heap(void) {
+    261          
+    262              unsigned char *free_start = HEAP_START;
+    263              uint32_t free_size = HEAP_SIZE;
+    264          
+    265          #ifdef ISR_STACK_START
+    266              /* Interrupt stack explicitly specified */
+    267              mbed_stack_isr_size = ISR_STACK_SIZE;
+   \                     mbed_set_stack_heap: (+1)
+   \   00000000   0x....             LDR      R0,??DataTable11
+   \   00000002   0x....             LDR      R1,??DataTable11_1
+   \   00000004   0x6181             STR      R1,[R0, #+24]
+    268              mbed_stack_isr_start = ISR_STACK_START;
+   \   00000006   0x....             LDR      R1,??DataTable11_2
+   \   00000008   0x6141             STR      R1,[R0, #+20]
+    269          #else
+    270              /* Interrupt stack -  reserve space at the end of the free block */
+    271              mbed_stack_isr_size = ISR_STACK_SIZE < free_size ? ISR_STACK_SIZE : free_size;
+    272              mbed_stack_isr_start = free_start + free_size - mbed_stack_isr_size;
+    273              free_size -= mbed_stack_isr_size;
+    274          #endif
+    275          
+    276              /* Heap - everything else */
+    277              mbed_heap_size = free_size;
+   \   0000000A   0x....             LDR      R0,??DataTable11_3
+   \   0000000C   0x....             LDR      R1,??DataTable11_4
+   \   0000000E   0x6008             STR      R0,[R1, #+0]
+    278              mbed_heap_start = free_start;
+   \   00000010   0x....             LDR      R0,??DataTable11_5
+   \   00000012   0x....             LDR      R1,??DataTable11_6
+   \   00000014   0x6008             STR      R0,[R1, #+0]
+    279          }
+   \   00000016   0x4770             BX       LR               ;; return
+    280          
+    281          static void mbed_cpy_nvic(void)
+    282          {
+    283              /* If vector address in RAM is defined, copy and switch to dynamic vectors. Exceptions for M0 which doesn't have
+    284              VTOR register and for A9 for which CMSIS doesn't define NVIC_SetVector; in both cases target code is
+    285              responsible for correctly handling the vectors.
+    286              */
+    287          #if !defined(__CORTEX_M0) && !defined(__CORTEX_A9)
+    288          #ifdef NVIC_RAM_VECTOR_ADDRESS
+    289              uint32_t *old_vectors = (uint32_t *)SCB->VTOR;
+    290              uint32_t *vectors = (uint32_t*)NVIC_RAM_VECTOR_ADDRESS;
+    291              for (int i = 0; i < NVIC_NUM_VECTORS; i++) {
+    292                  vectors[i] = old_vectors[i];
+    293              }
+    294              SCB->VTOR = (uint32_t)NVIC_RAM_VECTOR_ADDRESS;
+    295          #endif /* NVIC_RAM_VECTOR_ADDRESS */
+    296          #endif /* !defined(__CORTEX_M0) && !defined(__CORTEX_A9) */
+    297          }
+    298          
+    299          /* mbed_main is a function that is called before main()
+    300           * mbed_sdk_init() is also a function that is called before main(), but unlike
+    301           * mbed_main(), it is not meant for user code, but for the SDK itself to perform
+    302           * initializations before main() is called.
+    303           */
+
+   \                                 In section .text, align 2
+    304          WEAK void mbed_main(void) {
+    305          
+    306          }
+   \                     mbed_main: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+    307          
+    308          /* This function can be implemented by the target to perform higher level target initialization, before the mbed OS or
+    309           * RTX is started.
+    310           */
+    311          void mbed_sdk_init(void);
+
+   \                                 In section .text, align 2
+    312          WEAK void mbed_sdk_init(void) {
+    313          }
+   \                     mbed_sdk_init: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+    314          
+
+   \                                 In section .text, align 4, keep-with-next
+    315          void mbed_start_main(void)
+    316          {
+   \                     mbed_start_main: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    317              _main_thread_attr.stack_mem = _main_stack;
+   \   00000002   0x....             LDR      R2,??DataTable11_7
+   \   00000004   0x0010             MOVS     R0,R2
+   \   00000006   0x3070             ADDS     R0,R0,#+112
+   \   00000008   0x6110             STR      R0,[R2, #+16]
+    318              _main_thread_attr.stack_size = sizeof(_main_stack);
+   \   0000000A   0x2080             MOVS     R0,#+128
+   \   0000000C   0x0140             LSLS     R0,R0,#+5        ;; #+4096
+   \   0000000E   0x6150             STR      R0,[R2, #+20]
+    319              _main_thread_attr.cb_size = sizeof(_main_obj);
+   \   00000010   0x2048             MOVS     R0,#+72
+   \   00000012   0x60D0             STR      R0,[R2, #+12]
+    320              _main_thread_attr.cb_mem = &_main_obj;
+   \   00000014   0x0010             MOVS     R0,R2
+   \   00000016   0x3024             ADDS     R0,R0,#+36
+   \   00000018   0x6090             STR      R0,[R2, #+8]
+    321              _main_thread_attr.priority = osPriorityNormal;
+   \   0000001A   0x2018             MOVS     R0,#+24
+   \   0000001C   0x6190             STR      R0,[R2, #+24]
+    322              _main_thread_attr.name = "main_thread";
+   \   0000001E   0xBF00             Nop      
+   \   00000020   0x....             ADR.N    R0,?_0
+   \   00000022   0x6010             STR      R0,[R2, #+0]
+    323              osThreadId_t result = osThreadNew((osThreadFunc_t)pre_main, NULL, &_main_thread_attr);
+    324              if ((void *)result == NULL) {
+   \   00000024   0x2100             MOVS     R1,#+0
+   \   00000026   0x....             LDR      R0,??DataTable11_8
+   \   00000028   0x.... 0x....      BL       osThreadNew
+   \   0000002C   0x2800             CMP      R0,#+0
+   \   0000002E   0xD102             BNE      ??mbed_start_main_0
+    325                  error("Pre main thread not created");
+   \   00000030   0x....             ADR.N    R0,?_1
+   \   00000032   0x.... 0x....      BL       error
+    326              }
+    327          
+    328              osKernelStart();
+   \                     ??mbed_start_main_0: (+1)
+   \   00000036   0x.... 0x....      BL       osKernelStart
+    329          }
+   \   0000003A   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .bss, align 4
+    330          
+    331          /******************** Toolchain specific code ********************/
+    332          
+    333          #if defined (__CC_ARM) || (defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050))
+    334          
+    335          /* Common for both ARMC and MICROLIB */
+    336          int $Super$$main(void);
+    337          int $Sub$$main(void) {
+    338              mbed_main();
+    339              return $Super$$main();
+    340          }
+    341          
+    342          #if defined (__MICROLIB)  /******************** MICROLIB ********************/
+    343          
+    344          int main(void);
+    345          void _main_init (void) __attribute__((section(".ARM.Collect$$$$000000FF")));
+    346          void $Super$$__cpp_initialize__aeabi_(void);
+    347          
+    348          void _main_init (void) {
+    349              mbed_set_stack_heap();
+    350              /* Copy the vector table to RAM only if uVisor is not in use. */
+    351          #if !(defined(FEATURE_UVISOR) && defined(TARGET_UVISOR_SUPPORTED))
+    352              mbed_cpy_nvic();
+    353          #endif
+    354              mbed_sdk_init();
+    355              osKernelInitialize();
+    356              mbed_start_main();
+    357              for (;;);
+    358          }
+    359          
+    360          void $Sub$$__cpp_initialize__aeabi_(void)
+    361          {
+    362              /* This should invoke C++ initializers prior _main_init, we keep this empty and
+    363               * invoke them after _main_init, when the RTX is already initilized.
+    364               */
+    365          }
+    366          
+    367          void pre_main()
+    368          {
+    369              singleton_mutex_attr.name = "singleton_mutex";
+    370              singleton_mutex_attr.attr_bits = osMutexRecursive | osMutexPrioInherit | osMutexRobust;
+    371              singleton_mutex_attr.cb_size = sizeof(singleton_mutex_obj);
+    372              singleton_mutex_attr.cb_mem = &singleton_mutex_obj;
+    373              singleton_mutex_id = osMutexNew(&singleton_mutex_attr);
+    374          
+    375              $Super$$__cpp_initialize__aeabi_();
+    376              main();
+    377          }
+    378          
+    379          #else /******************** ARMC ********************/
+    380          
+    381          #include <rt_misc.h>
+    382          extern __value_in_regs struct __argc_argv __rt_lib_init(unsigned heapbase, unsigned heaptop);
+    383          extern __value_in_regs struct __initial_stackheap __user_setup_stackheap(void);
+    384          extern void _platform_post_stackheap_init (void);
+    385          extern int main(int argc, char* argv[]);
+    386          
+    387          void pre_main (void)
+    388          {
+    389              singleton_mutex_attr.name = "singleton_mutex";
+    390              singleton_mutex_attr.attr_bits = osMutexRecursive | osMutexPrioInherit | osMutexRobust;
+    391              singleton_mutex_attr.cb_size = sizeof(singleton_mutex_obj);
+    392              singleton_mutex_attr.cb_mem = &singleton_mutex_obj;
+    393              singleton_mutex_id = osMutexNew(&singleton_mutex_attr);
+    394          
+    395              __rt_lib_init((unsigned)mbed_heap_start, (unsigned)(mbed_heap_start + mbed_heap_size));
+    396          
+    397              main(0, NULL);
+    398          }
+    399          
+    400          /* The single memory model is checking for stack collision at run time, verifing
+    401             that the heap pointer is underneath the stack pointer.
+    402             With the RTOS there is not only one stack above the heap, there are multiple
+    403             stacks and some of them are underneath the heap pointer.
+    404          */
+    405          #if defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+    406          __asm(".global __use_two_region_memory\n\t");
+    407          __asm(".global __use_no_semihosting\n\t");
+    408          #else
+    409          #pragma import(__use_two_region_memory)
+    410          #endif
+    411          
+    412          /* Called by the C library */
+    413          void __rt_entry (void) {
+    414              __user_setup_stackheap();
+    415              mbed_set_stack_heap();
+    416              /* Copy the vector table to RAM only if uVisor is not in use. */
+    417          #if !(defined(FEATURE_UVISOR) && defined(TARGET_UVISOR_SUPPORTED))
+    418              mbed_cpy_nvic();
+    419          #endif
+    420              mbed_sdk_init();
+    421              _platform_post_stackheap_init();
+    422              mbed_start_main();
+    423          }
+    424          
+    425          typedef void *mutex;
+    426          
+    427          /* ARM toolchain requires dynamically created mutexes to enforce thread safety. There's
+    428             up to 8 static mutexes, protecting atexit, signalinit, stdin, stdout, stderr, stream_list,
+    429             fp_trap_init and the heap. Additionally for each call to fopen one extra mutex will be
+    430             created.
+    431             mbed OS provides a RTX pool for 8 mutexes, to satisfy the static requirements. All
+    432             additional mutexes will be allocated on the heap. We can't use the heap allocation for
+    433             all the required mutexes, as the heap operations also require a mutex. We don't need to
+    434             worry about freeing the allocated memory as library mutexes are only freed when the
+    435             application finishes executing.
+    436           */
+    437          int _mutex_initialize(mutex *m)
+    438          {
+    439              osMutexAttr_t attr;
+    440              memset(&attr, 0, sizeof(attr));
+    441              attr.name = "ARM toolchain mutex";
+    442              attr.attr_bits = osMutexRecursive | osMutexPrioInherit | osMutexRobust;
+    443          
+    444              *m = osMutexNew(&attr);
+    445              if (*m != NULL) {
+    446                  return 1;
+    447              }
+    448          
+    449              /* Mutex pool exhausted, try using HEAP */
+    450              attr.cb_size = sizeof(mbed_rtos_storage_mutex_t);
+    451              attr.cb_mem = (void*)malloc(attr.cb_size);
+    452              if (attr.cb_mem == NULL) {
+    453                  osRtxErrorNotify(osRtxErrorClibSpace, m);
+    454                  return 0;
+    455              }
+    456          
+    457              *m = osMutexNew(&attr);
+    458              if (*m == NULL) {
+    459                  osRtxErrorNotify(osRtxErrorClibMutex, m);
+    460                  return 0;
+    461              }
+    462          
+    463              return 1;
+    464          }
+    465          
+    466          #endif /* ARMC */
+    467          #elif defined (__GNUC__) /******************** GCC ********************/
+    468          
+    469          extern int main(int argc, char* argv[]);
+    470          extern void __libc_init_array (void);
+    471          extern int __real_main(void);
+    472          
+    473          osMutexId_t               malloc_mutex_id;
+    474          mbed_rtos_storage_mutex_t malloc_mutex_obj;
+    475          osMutexAttr_t             malloc_mutex_attr;
+    476          
+    477          osMutexId_t               env_mutex_id;
+    478          mbed_rtos_storage_mutex_t env_mutex_obj;
+    479          osMutexAttr_t             env_mutex_attr;
+    480          
+    481          #ifdef  FEATURE_UVISOR
+    482          #include "uvisor-lib/uvisor-lib.h"
+    483          #endif/* FEATURE_UVISOR */
+    484          
+    485          int __wrap_main(void) {
+    486              mbed_main();
+    487              return __real_main();
+    488          }
+    489          
+    490          void pre_main(void)
+    491          {
+    492              singleton_mutex_attr.name = "singleton_mutex";
+    493              singleton_mutex_attr.attr_bits = osMutexRecursive | osMutexPrioInherit | osMutexRobust;
+    494              singleton_mutex_attr.cb_size = sizeof(singleton_mutex_obj);
+    495              singleton_mutex_attr.cb_mem = &singleton_mutex_obj;
+    496              singleton_mutex_id = osMutexNew(&singleton_mutex_attr);
+    497          
+    498              malloc_mutex_attr.name = "malloc_mutex";
+    499              malloc_mutex_attr.attr_bits = osMutexRecursive | osMutexPrioInherit | osMutexRobust;
+    500              malloc_mutex_attr.cb_size = sizeof(malloc_mutex_obj);
+    501              malloc_mutex_attr.cb_mem = &malloc_mutex_obj;
+    502              malloc_mutex_id = osMutexNew(&malloc_mutex_attr);
+    503          
+    504              env_mutex_attr.name = "env_mutex";
+    505              env_mutex_attr.attr_bits = osMutexRecursive | osMutexPrioInherit | osMutexRobust;
+    506              env_mutex_attr.cb_size = sizeof(env_mutex_obj);
+    507              env_mutex_attr.cb_mem = &env_mutex_obj;
+    508              env_mutex_id = osMutexNew(&env_mutex_attr);
+    509          
+    510              __libc_init_array();
+    511          
+    512              main(0, NULL);
+    513          }
+    514          
+    515          void software_init_hook(void)
+    516          {
+    517              mbed_set_stack_heap();
+    518              /* Copy the vector table to RAM only if uVisor is not in use. */
+    519          #if !(defined(FEATURE_UVISOR) && defined(TARGET_UVISOR_SUPPORTED))
+    520              mbed_cpy_nvic();
+    521          #endif
+    522              mbed_sdk_init();
+    523              osKernelInitialize();
+    524              /* uvisor_lib_init calls RTOS functions, so must be called after the RTOS has
+    525               * been initialized. */
+    526          #ifdef   FEATURE_UVISOR
+    527              int return_code;
+    528          
+    529              return_code = uvisor_lib_init();
+    530              if (return_code) {
+    531                  mbed_die();
+    532              }
+    533          #endif/* FEATURE_UVISOR */
+    534              mbed_start_main();
+    535          }
+    536          
+    537          /* Opaque declaration of _reent structure */
+    538          struct _reent;
+    539          
+    540          void __rtos_malloc_lock( struct _reent *_r )
+    541          {
+    542              osMutexAcquire(malloc_mutex_id, osWaitForever);
+    543          }
+    544          
+    545          void __rtos_malloc_unlock( struct _reent *_r )
+    546          {
+    547              osMutexRelease(malloc_mutex_id);
+    548          }
+    549          
+    550          void __rtos_env_lock( struct _reent *_r )
+    551          {
+    552              osMutexAcquire(env_mutex_id, osWaitForever);
+    553          }
+    554          
+    555          void __rtos_env_unlock( struct _reent *_r )
+    556          {
+    557              osMutexRelease(env_mutex_id);
+    558          }
+    559          
+    560          #endif
+    561          
+    562          #if defined(__ICCARM__) /******************** IAR ********************/
+    563          
+    564          extern void* __vector_table;
+    565          extern int  __low_level_init(void);
+    566          extern void __iar_data_init3(void);
+    567          extern __weak void __iar_init_core( void );
+    568          extern __weak void __iar_init_vfp( void );
+    569          extern void __iar_dynamic_initialization(void);
+    570          extern void mbed_sdk_init(void);
+    571          extern int main(void);
+    572          extern void exit(int arg);
+    573          
+    574          static uint8_t low_level_init_needed;
+   \                     low_level_init_needed:
+   \   00000000                      DS8 1
+   \   00000001                      DS8 3
+   \                     singleton_mutex_attr:
+   \   00000004                      DS8 16
+   \                     mbed_stack_isr_start:
+   \   00000014                      DS8 4
+   \                     mbed_stack_isr_size:
+   \   00000018                      DS8 4
+   \                     singleton_mutex_id:
+   \   0000001C                      DS8 4
+   \                     singleton_mutex_obj:
+   \   00000020                      DS8 28
+
+   \                                 In section .bss, align 8
+   \                     _main_thread_attr:
+   \   00000000                      DS8 36
+   \                     _main_obj:
+   \   00000024                      DS8 72
+   \   0000006C                      DS8 4
+   \                     _main_stack:
+   \   00000070                      DS8 4096
+    575          
+
+   \                                 In section .text, align 4, keep-with-next
+    576          void pre_main(void)
+    577          {
+   \                     pre_main: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    578              singleton_mutex_attr.name = "singleton_mutex";
+   \   00000002   0x....             LDR      R4,??DataTable11
+   \   00000004   0x....             ADR.N    R0,?_2
+   \   00000006   0x6060             STR      R0,[R4, #+4]
+    579              singleton_mutex_attr.attr_bits = osMutexRecursive | osMutexPrioInherit | osMutexRobust;
+   \   00000008   0x200B             MOVS     R0,#+11
+   \   0000000A   0x60A0             STR      R0,[R4, #+8]
+    580              singleton_mutex_attr.cb_size = sizeof(singleton_mutex_obj);
+   \   0000000C   0x201C             MOVS     R0,#+28
+   \   0000000E   0x6120             STR      R0,[R4, #+16]
+    581              singleton_mutex_attr.cb_mem = &singleton_mutex_obj;
+   \   00000010   0x0020             MOVS     R0,R4
+   \   00000012   0x3020             ADDS     R0,R0,#+32
+   \   00000014   0x60E0             STR      R0,[R4, #+12]
+    582              singleton_mutex_id = osMutexNew(&singleton_mutex_attr);
+   \   00000016   0x1D20             ADDS     R0,R4,#+4
+   \   00000018   0x.... 0x....      BL       osMutexNew
+   \   0000001C   0x61E0             STR      R0,[R4, #+28]
+    583          
+    584          #if defined(__IAR_SYSTEMS_ICC__ ) && (__VER__ >= 8000000)
+    585              __iar_Initlocks();
+    586          #endif
+    587          
+    588              if (low_level_init_needed) {
+   \   0000001E   0x7820             LDRB     R0,[R4, #+0]
+   \   00000020   0x2800             CMP      R0,#+0
+   \   00000022   0xD001             BEQ      ??pre_main_0
+    589                  __iar_dynamic_initialization();
+   \   00000024   0x.... 0x....      BL       __iar_dynamic_initialization
+    590              }
+    591          
+    592              mbed_main();
+   \                     ??pre_main_0: (+1)
+   \   00000028   0x.... 0x....      BL       mbed_main
+    593              main();
+   \   0000002C   0x.... 0x....      BL       main
+    594          }
+   \   00000030   0xBD10             POP      {R4,PC}          ;; return
+    595          
+    596          #pragma required=__vector_table
+
+   \                                 In section .text, align 2, keep-with-next
+    597          void __iar_program_start( void )
+    598          {
+   \                     __iar_program_start: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    599              __iar_init_core();
+   \   00000002   0x.... 0x....      BL       __iar_init_core
+    600              __iar_init_vfp();
+   \   00000006   0x.... 0x....      BL       __iar_init_vfp
+    601          
+    602              uint8_t low_level_init_needed_local;
+    603          
+    604              low_level_init_needed_local = __low_level_init();
+   \   0000000A   0x.... 0x....      BL       __low_level_init
+   \   0000000E   0x0004             MOVS     R4,R0
+    605              if (low_level_init_needed_local) {
+   \   00000010   0x0600             LSLS     R0,R0,#+24
+   \   00000012   0xD003             BEQ      ??__iar_program_start_0
+    606                  __iar_data_init3();
+   \   00000014   0x.... 0x....      BL       __iar_data_init3
+    607          
+    608              /* Copy the vector table to RAM only if uVisor is not in use. */
+    609          #if !(defined(FEATURE_UVISOR) && defined(TARGET_UVISOR_SUPPORTED))
+    610              mbed_cpy_nvic();
+    611          #endif
+    612              mbed_sdk_init();
+   \   00000018   0x.... 0x....      BL       mbed_sdk_init
+    613            }
+    614          
+    615            mbed_set_stack_heap();
+   \                     ??__iar_program_start_0: (+1)
+   \   0000001C   0x....             LDR      R0,??DataTable11
+   \   0000001E   0x....             LDR      R1,??DataTable11_1
+   \   00000020   0x6181             STR      R1,[R0, #+24]
+   \   00000022   0x....             LDR      R1,??DataTable11_2
+   \   00000024   0x6141             STR      R1,[R0, #+20]
+   \   00000026   0x....             LDR      R1,??DataTable11_3
+   \   00000028   0x....             LDR      R2,??DataTable11_4
+   \   0000002A   0x6011             STR      R1,[R2, #+0]
+   \   0000002C   0x....             LDR      R1,??DataTable11_5
+   \   0000002E   0x....             LDR      R2,??DataTable11_6
+   \   00000030   0x6011             STR      R1,[R2, #+0]
+    616          
+    617            /* Store in a global variable after RAM has been initialized */
+    618            low_level_init_needed = low_level_init_needed_local;
+   \   00000032   0x7004             STRB     R4,[R0, #+0]
+    619          
+    620            osKernelInitialize();
+   \   00000034   0x.... 0x....      BL       osKernelInitialize
+    621          
+    622            mbed_start_main();
+   \   00000038   0x.... 0x....      BL       mbed_start_main
+    623          }
+   \   0000003C   0xBD10             POP      {R4,PC}          ;; return
+   \   0000003E                      REQUIRE __vector_table
+    624          
+    625          /* Thread safety */
+
+   \                                 In section .bss, align 4
+    626          static osMutexId_t               std_mutex_id_sys[_MAX_LOCK] = {0};
+   \                     std_mutex_id_sys:
+   \   00000000                      DS8 20
+   \   00000014                      DS8 140
+    627          static mbed_rtos_storage_mutex_t std_mutex_sys[_MAX_LOCK] = {0};
+    628          #define _FOPEN_MAX 10
+
+   \                                 In section .bss, align 4
+    629          static osMutexId_t               std_mutex_id_file[_FOPEN_MAX] = {0};
+   \                     std_mutex_id_file:
+   \   00000000                      DS8 40
+   \   00000028                      DS8 280
+    630          static mbed_rtos_storage_mutex_t std_mutex_file[_FOPEN_MAX] = {0};
+    631          
+
+   \                                 In section .text, align 4, keep-with-next
+    632          void __iar_system_Mtxinit(__iar_Rmtx *mutex) /* Initialize a system lock */
+    633          {
+   \                     __iar_system_Mtxinit: (+1)
+   \   00000000   0xB530             PUSH     {R4,R5,LR}
+   \   00000002   0xB085             SUB      SP,SP,#+20
+   \   00000004   0x0004             MOVS     R4,R0
+    634              osMutexAttr_t attr;
+    635              uint32_t index;
+    636              for (index = 0; index < _MAX_LOCK; index++) {
+   \   00000006   0x2000             MOVS     R0,#+0
+   \   00000008   0x....             LDR      R1,??DataTable11_9
+    637                  if (0 == std_mutex_id_sys[index]) {
+   \   0000000A   0x680A             LDR      R2,[R1, #+0]
+   \   0000000C   0x2A00             CMP      R2,#+0
+   \   0000000E   0xD113             BNE      ??__iar_system_Mtxinit_0
+    638                      attr.name = "system_mutex";
+   \                     ??__iar_system_Mtxinit_1: (+1)
+   \   00000010   0x....             ADR.N    R2,?_3
+   \   00000012   0x9200             STR      R2,[SP, #+0]
+    639                      attr.cb_mem = &std_mutex_sys[index];
+   \   00000014   0x00C2             LSLS     R2,R0,#+3
+   \   00000016   0x1A12             SUBS     R2,R2,R0
+   \   00000018   0x0092             LSLS     R2,R2,#+2
+   \   0000001A   0x188A             ADDS     R2,R1,R2
+   \   0000001C   0x3214             ADDS     R2,R2,#+20
+   \   0000001E   0x9202             STR      R2,[SP, #+8]
+    640                      attr.cb_size = sizeof(std_mutex_sys[index]);
+   \   00000020   0x221C             MOVS     R2,#+28
+   \   00000022   0x9203             STR      R2,[SP, #+12]
+    641                      attr.attr_bits = osMutexRecursive | osMutexPrioInherit | osMutexRobust;
+   \   00000024   0x220B             MOVS     R2,#+11
+   \   00000026   0x9201             STR      R2,[SP, #+4]
+    642                      std_mutex_id_sys[index] = osMutexNew(&attr);
+   \   00000028   0x0080             LSLS     R0,R0,#+2
+   \   0000002A   0x180D             ADDS     R5,R1,R0
+   \   0000002C   0x4668             MOV      R0,SP
+   \   0000002E   0x.... 0x....      BL       osMutexNew
+   \   00000032   0x6028             STR      R0,[R5, #+0]
+    643                      *mutex = (__iar_Rmtx*)&std_mutex_id_sys[index];
+   \   00000034   0x6025             STR      R5,[R4, #+0]
+    644                      return;
+   \   00000036   0xE012             B        ??__iar_system_Mtxinit_2
+    645                  }
+   \                     ??__iar_system_Mtxinit_0: (+1)
+   \   00000038   0x2001             MOVS     R0,#+1
+   \   0000003A   0x684A             LDR      R2,[R1, #+4]
+   \   0000003C   0x2A00             CMP      R2,#+0
+   \   0000003E   0xD0E7             BEQ      ??__iar_system_Mtxinit_1
+   \   00000040   0x2002             MOVS     R0,#+2
+   \   00000042   0x688A             LDR      R2,[R1, #+8]
+   \   00000044   0x2A00             CMP      R2,#+0
+   \   00000046   0xD0E3             BEQ      ??__iar_system_Mtxinit_1
+   \   00000048   0x2003             MOVS     R0,#+3
+   \   0000004A   0x68CA             LDR      R2,[R1, #+12]
+   \   0000004C   0x2A00             CMP      R2,#+0
+   \   0000004E   0xD0DF             BEQ      ??__iar_system_Mtxinit_1
+   \   00000050   0x2004             MOVS     R0,#+4
+   \   00000052   0x690A             LDR      R2,[R1, #+16]
+   \   00000054   0x2A00             CMP      R2,#+0
+   \   00000056   0xD0DB             BEQ      ??__iar_system_Mtxinit_1
+    646              }
+    647          
+    648              /* This should never happen */
+    649              error("Not enough mutexes\n");
+   \   00000058   0x....             ADR.N    R0,?_4
+   \   0000005A   0x.... 0x....      BL       error
+    650          }
+   \                     ??__iar_system_Mtxinit_2: (+1)
+   \   0000005E   0xB005             ADD      SP,SP,#+20
+   \   00000060   0xBD30             POP      {R4,R5,PC}       ;; return
+    651          
+
+   \                                 In section .text, align 2, keep-with-next
+    652          void __iar_system_Mtxdst(__iar_Rmtx *mutex) /* Destroy a system lock */
+   \                     __iar_system_Mtxdst: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine2
+
+   \                                 In section .text, align 2, keep-with-next
+    653          {
+   \                     ?Subroutine2: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+    654              osMutexDelete(*(osMutexId_t*)*mutex);
+   \   00000002   0x6820             LDR      R0,[R4, #+0]
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x.... 0x....      BL       osMutexDelete
+    655              *mutex = 0;
+   \   0000000A   0x2000             MOVS     R0,#+0
+   \   0000000C   0x6020             STR      R0,[R4, #+0]
+    656          }
+   \   0000000E   0xBD10             POP      {R4,PC}          ;; return
+    657          
+
+   \                                 In section .text, align 2, keep-with-next
+    658          void __iar_system_Mtxlock(__iar_Rmtx *mutex) /* Lock a system lock */
+    659          {
+   \                     __iar_system_Mtxlock: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    660              osMutexAcquire(*(osMutexId_t*)*mutex, osWaitForever);
+   \   00000002   0x....             B.N      ?Subroutine0
+    661          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x2100             MOVS     R1,#+0
+   \   00000002   0x43C9             MVNS     R1,R1            ;; #-1
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x6800             LDR      R0,[R0, #+0]
+   \   00000008   0x.... 0x....      BL       osMutexAcquire
+   \   0000000C   0xBD01             POP      {R0,PC}          ;; return
+    662          
+
+   \                                 In section .text, align 2, keep-with-next
+    663          void __iar_system_Mtxunlock(__iar_Rmtx *mutex) /* Unlock a system lock */
+    664          {
+   \                     __iar_system_Mtxunlock: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    665              osMutexRelease(*(osMutexId_t*)*mutex);
+   \   00000002   0x....             B.N      ?Subroutine1
+    666          }
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine1: (+1)
+   \   00000000   0x6800             LDR      R0,[R0, #+0]
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x.... 0x....      BL       osMutexRelease
+   \   00000008   0xBD01             POP      {R0,PC}          ;; return
+    667          
+
+   \                                 In section .text, align 4, keep-with-next
+    668          void __iar_file_Mtxinit(__iar_Rmtx *mutex) /* Initialize a file lock */
+    669          {
+   \                     __iar_file_Mtxinit: (+1)
+   \   00000000   0xB530             PUSH     {R4,R5,LR}
+   \   00000002   0xB085             SUB      SP,SP,#+20
+   \   00000004   0x0004             MOVS     R4,R0
+    670              osMutexAttr_t attr;
+    671              uint32_t index;
+    672              for (index = 0; index < _FOPEN_MAX; index++) {
+   \   00000006   0x2000             MOVS     R0,#+0
+   \   00000008   0x....             LDR      R1,??DataTable11_10
+   \   0000000A   0x000A             MOVS     R2,R1
+    673                  if (0 == std_mutex_id_file[index]) {
+   \                     ??__iar_file_Mtxinit_0: (+1)
+   \   0000000C   0x6813             LDR      R3,[R2, #+0]
+   \   0000000E   0x2B00             CMP      R3,#+0
+   \   00000010   0xD114             BNE      ??__iar_file_Mtxinit_1
+    674                      attr.name = "file_mutex";
+   \                     ??__iar_file_Mtxinit_2: (+1)
+   \   00000012   0xBF00             Nop      
+   \   00000014   0x....             ADR.N    R2,?_5
+   \   00000016   0x9200             STR      R2,[SP, #+0]
+    675                      attr.cb_mem = &std_mutex_file[index];
+   \   00000018   0x00C2             LSLS     R2,R0,#+3
+   \   0000001A   0x1A12             SUBS     R2,R2,R0
+   \   0000001C   0x0092             LSLS     R2,R2,#+2
+   \   0000001E   0x188A             ADDS     R2,R1,R2
+   \   00000020   0x3228             ADDS     R2,R2,#+40
+   \   00000022   0x9202             STR      R2,[SP, #+8]
+    676                      attr.cb_size = sizeof(std_mutex_file[index]);
+   \   00000024   0x221C             MOVS     R2,#+28
+   \   00000026   0x9203             STR      R2,[SP, #+12]
+    677                      attr.attr_bits = osMutexRecursive | osMutexPrioInherit | osMutexRobust;
+   \   00000028   0x220B             MOVS     R2,#+11
+   \   0000002A   0x9201             STR      R2,[SP, #+4]
+    678                      std_mutex_id_file[index] = osMutexNew(&attr);
+   \   0000002C   0x0080             LSLS     R0,R0,#+2
+   \   0000002E   0x180D             ADDS     R5,R1,R0
+   \   00000030   0x4668             MOV      R0,SP
+   \   00000032   0x.... 0x....      BL       osMutexNew
+   \   00000036   0x6028             STR      R0,[R5, #+0]
+    679                      *mutex = (__iar_Rmtx*)&std_mutex_id_file[index];
+   \   00000038   0x6025             STR      R5,[R4, #+0]
+    680                      return;
+   \   0000003A   0xE00A             B        ??__iar_file_Mtxinit_3
+    681                  }
+   \                     ??__iar_file_Mtxinit_1: (+1)
+   \   0000003C   0x1C40             ADDS     R0,R0,#+1
+   \   0000003E   0x6853             LDR      R3,[R2, #+4]
+   \   00000040   0x2B00             CMP      R3,#+0
+   \   00000042   0xD0E6             BEQ      ??__iar_file_Mtxinit_2
+    682              }
+   \   00000044   0x1C40             ADDS     R0,R0,#+1
+   \   00000046   0x3208             ADDS     R2,R2,#+8
+   \   00000048   0x280A             CMP      R0,#+10
+   \   0000004A   0xD3DF             BCC      ??__iar_file_Mtxinit_0
+    683              /* The variable _FOPEN_MAX needs to be increased */
+    684              error("Not enough mutexes\n");
+   \   0000004C   0x....             ADR.N    R0,?_4
+   \   0000004E   0x.... 0x....      BL       error
+    685          }
+   \                     ??__iar_file_Mtxinit_3: (+1)
+   \   00000052   0xB005             ADD      SP,SP,#+20
+   \   00000054   0xBD30             POP      {R4,R5,PC}       ;; return
+    686          
+
+   \                                 In section .text, align 2, keep-with-next
+    687          void __iar_file_Mtxdst(__iar_Rmtx *mutex) /* Destroy a file lock */
+   \                     __iar_file_Mtxdst: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine2
+   \   00000002                      ;; // Fall through to label ?Subroutine2
+    688          {
+    689              osMutexDelete(*(osMutexId_t*)*mutex);
+    690              *mutex = 0;
+    691          }
+    692          
+
+   \                                 In section .text, align 2, keep-with-next
+    693          void __iar_file_Mtxlock(__iar_Rmtx *mutex) /* Lock a file lock */
+    694          {
+   \                     __iar_file_Mtxlock: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    695              osMutexAcquire(*(osMutexId_t*)*mutex, osWaitForever);
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+    696          }
+    697          
+
+   \                                 In section .text, align 2, keep-with-next
+    698          void __iar_file_Mtxunlock(__iar_Rmtx *mutex) /* Unlock a file lock */
+    699          {
+   \                     __iar_file_Mtxunlock: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    700              osMutexRelease(*(osMutexId_t*)*mutex);
+   \   00000002                      REQUIRE ?Subroutine1
+   \   00000002                      ;; // Fall through to label ?Subroutine1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11:
+   \   00000000   0x........         DC32     low_level_init_needed
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_1:
+   \   00000000   0x........         DC32     SIZEOF(CSTACK)
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_2:
+   \   00000000   0x........         DC32     SFB(CSTACK)
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_3:
+   \   00000000   0x........         DC32     SIZEOF(HEAP)
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_4:
+   \   00000000   0x........         DC32     mbed_heap_size
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_5:
+   \   00000000   0x........         DC32     SFB(HEAP)
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_6:
+   \   00000000   0x........         DC32     mbed_heap_start
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_7:
+   \   00000000   0x........         DC32     _main_thread_attr
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_8:
+   \   00000000   0x........         DC32     pre_main
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_9:
+   \   00000000   0x........         DC32     std_mutex_id_sys
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11_10:
+   \   00000000   0x........         DC32     std_mutex_id_file
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x6D 0x61          DC8 "main_thread"
+   \              0x69 0x6E    
+   \              0x5F 0x74    
+   \              0x68 0x72    
+   \              0x65 0x61    
+   \              0x64 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x50 0x72          DC8 "Pre main thread not created"
+   \              0x65 0x20    
+   \              0x6D 0x61    
+   \              0x69 0x6E    
+   \              0x20 0x74    
+   \              0x68 0x72    
+   \              0x65 0x61    
+   \              0x64 0x20    
+   \              0x6E 0x6F    
+   \              0x74 0x20    
+   \              0x63 0x72    
+   \              0x65 0x61    
+   \              0x74 0x65    
+   \              0x64 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_2:
+   \   00000000   0x73 0x69          DC8 "singleton_mutex"
+   \              0x6E 0x67    
+   \              0x6C 0x65    
+   \              0x74 0x6F    
+   \              0x6E 0x5F    
+   \              0x6D 0x75    
+   \              0x74 0x65    
+   \              0x78 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_3:
+   \   00000000   0x73 0x79          DC8 "system_mutex"
+   \              0x73 0x74    
+   \              0x65 0x6D    
+   \              0x5F 0x6D    
+   \              0x75 0x74    
+   \              0x65 0x78    
+   \              0x00         
+   \   0000000D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_4:
+   \   00000000   0x4E 0x6F          DC8 "Not enough mutexes\012"
+   \              0x74 0x20    
+   \              0x65 0x6E    
+   \              0x6F 0x75    
+   \              0x67 0x68    
+   \              0x20 0x6D    
+   \              0x75 0x74    
+   \              0x65 0x78    
+   \              0x65 0x73    
+   \              0x0A 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_5:
+   \   00000000   0x66 0x69          DC8 "file_mutex"
+   \              0x6C 0x65    
+   \              0x5F 0x6D    
+   \              0x75 0x74    
+   \              0x65 0x78    
+   \              0x00         
+   \   0000000B   0x00               DC8 0
+    701          }
+    702          
+    703          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   __iar_file_Mtxdst
+         8   -> osMutexDelete
+      32   __iar_file_Mtxinit
+        32   -> error
+        32   -> osMutexNew
+       0   __iar_file_Mtxlock
+         8   -> osMutexAcquire
+       0   __iar_file_Mtxunlock
+         8   -> osMutexRelease
+       8   __iar_program_start
+         8   -> __iar_data_init3
+         8   -> __iar_init_core
+         8   -> __iar_init_vfp
+         8   -> __low_level_init
+         8   -> mbed_sdk_init
+         8   -> mbed_start_main
+         8   -> osKernelInitialize
+       8   __iar_system_Mtxdst
+         8   -> osMutexDelete
+      32   __iar_system_Mtxinit
+        32   -> error
+        32   -> osMutexNew
+       8   __iar_system_Mtxlock
+         8   -> osMutexAcquire
+       8   __iar_system_Mtxunlock
+         8   -> osMutexRelease
+       0   mbed_main
+       0   mbed_sdk_init
+       0   mbed_set_stack_heap
+       8   mbed_start_main
+         8   -> error
+         8   -> osKernelStart
+         8   -> osThreadNew
+       8   pre_main
+         8   -> __iar_dynamic_initialization
+         8   -> main
+         8   -> mbed_main
+         8   -> osMutexNew
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable11
+       4  ??DataTable11_1
+       4  ??DataTable11_10
+       4  ??DataTable11_2
+       4  ??DataTable11_3
+       4  ??DataTable11_4
+       4  ??DataTable11_5
+       4  ??DataTable11_6
+       4  ??DataTable11_7
+       4  ??DataTable11_8
+       4  ??DataTable11_9
+      14  ?Subroutine0
+      10  ?Subroutine1
+      16  ?Subroutine2
+      12  ?_0
+      28  ?_1
+      16  ?_2
+      16  ?_3
+      20  ?_4
+      12  ?_5
+       2  __iar_file_Mtxdst
+      86  __iar_file_Mtxinit
+       2  __iar_file_Mtxlock
+       2  __iar_file_Mtxunlock
+      62  __iar_program_start
+       4  __iar_system_Mtxdst
+      98  __iar_system_Mtxinit
+       4  __iar_system_Mtxlock
+       4  __iar_system_Mtxunlock
+    4208  _main_thread_attr
+          _main_obj
+          _main_stack
+      60  low_level_init_needed
+          singleton_mutex_attr
+          mbed_stack_isr_start
+          mbed_stack_isr_size
+          singleton_mutex_id
+          singleton_mutex_obj
+       2  mbed_main
+       2  mbed_sdk_init
+      24  mbed_set_stack_heap
+      60  mbed_start_main
+      50  pre_main
+     320  std_mutex_id_file
+          std_mutex_file
+     160  std_mutex_id_sys
+          std_mutex_sys
+
+ 
+ 4 748 bytes in section .bss
+   590 bytes in section .text
+ 
+   586 bytes of CODE memory (+ 4 bytes shared)
+ 4 748 bytes of DATA memory
+
+Errors: none
+Warnings: 1

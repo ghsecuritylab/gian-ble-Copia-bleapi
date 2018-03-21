@@ -1,0 +1,196 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:32:58
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\drivers\InterruptIn.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\InterruptIn.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\InterruptIn.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\InterruptIn.o
+#        .\mbed-os\drivers\InterruptIn.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\InterruptIn.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\InterruptIn.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\drivers\InterruptIn.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "drivers/InterruptIn.h"
+     17          
+     18          #if DEVICE_INTERRUPTIN
+     19          
+     20          namespace mbed {
+     21          
+     22          InterruptIn::InterruptIn(PinName pin) : gpio(),
+     23                                                  gpio_irq(),
+     24                                                  _rise(NULL),
+     25                                                  _fall(NULL) {
+     26              // No lock needed in the constructor
+     27          
+     28              gpio_irq_init(&gpio_irq, pin, (&InterruptIn::_irq_handler), (uint32_t)this);
+     29              gpio_init_in(&gpio, pin);
+     30          }
+     31          
+     32          InterruptIn::~InterruptIn() {
+     33              // No lock needed in the destructor
+     34              gpio_irq_free(&gpio_irq);
+     35          }
+     36          
+     37          int InterruptIn::read() {
+     38              // Read only
+     39              return gpio_read(&gpio);
+     40          }
+     41          
+     42          void InterruptIn::mode(PinMode pull) {
+     43              core_util_critical_section_enter();
+     44              gpio_mode(&gpio, pull);
+     45              core_util_critical_section_exit();
+     46          }
+     47          
+     48          void InterruptIn::rise(Callback<void()> func) {
+     49              core_util_critical_section_enter();
+     50              if (func) {
+     51                  _rise = func;
+     52                  gpio_irq_set(&gpio_irq, IRQ_RISE, 1);
+     53              } else {
+     54                  _rise = NULL;
+     55                  gpio_irq_set(&gpio_irq, IRQ_RISE, 0);
+     56              }
+     57              core_util_critical_section_exit();
+     58          }
+     59          
+     60          void InterruptIn::fall(Callback<void()> func) {
+     61              core_util_critical_section_enter();
+     62              if (func) {
+     63                  _fall = func;
+     64                  gpio_irq_set(&gpio_irq, IRQ_FALL, 1);
+     65              } else {
+     66                  _fall = NULL;
+     67                  gpio_irq_set(&gpio_irq, IRQ_FALL, 0);
+     68              }
+     69              core_util_critical_section_exit();
+     70          }
+     71          
+     72          void InterruptIn::_irq_handler(uint32_t id, gpio_irq_event event) {
+     73              InterruptIn *handler = (InterruptIn*)id;
+     74              switch (event) {
+     75                  case IRQ_RISE: 
+     76                      if (handler->_rise) {
+     77                          handler->_rise();
+     78                      }
+     79                      break;
+     80                  case IRQ_FALL: 
+     81                      if (handler->_fall) {
+     82                          handler->_fall(); 
+     83                      }
+     84                      break;
+     85                  case IRQ_NONE: break;
+     86              }
+     87          }
+     88          
+     89          void InterruptIn::enable_irq() {
+     90              core_util_critical_section_enter();
+     91              gpio_irq_enable(&gpio_irq);
+     92              core_util_critical_section_exit();
+     93          }
+     94          
+     95          void InterruptIn::disable_irq() {
+     96              core_util_critical_section_enter();
+     97              gpio_irq_disable(&gpio_irq);
+     98              core_util_critical_section_exit();
+     99          }
+    100          
+    101          InterruptIn::operator int() {
+    102              // Underlying call is atomic
+    103              return read();
+    104          }
+    105          
+    106          } // namespace mbed
+    107          
+    108          #endif
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

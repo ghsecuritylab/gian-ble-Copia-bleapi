@@ -1,0 +1,735 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:11
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\filesystem\File.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\File.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\File.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\File.o
+#        .\mbed-os\features\filesystem\File.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\File.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\filesystem\File.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\filesystem\File.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2015 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          
+     17          #include "File.h"
+
+   \                                 In section .rodata, align 4
+   \   __absolute mbed::Callback<void ()>::ops const mbed::Callback<void ()>::generate<>(mbed::Callback<void ()>::function_context<void (*)(void *), void> const &)::ops
+   \                     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops:
+   \   00000000   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv
+   \   00000004   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv
+   \   00000008   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x0001             MOVS     R1,R0
+   \   00000004   0x6848             LDR      R0,[R1, #+4]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD001             BEQ      ??function_move_0
+   \   00000004   0xC90C             LDM      R1!,{R2,R3}
+   \   00000006   0xC00C             STM      R0!,{R2,R3}
+   \                     ??function_move_0: (+1)
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void mbed::callback<>(void (*)(void *), void *)
+   \                     _ZN4mbed8callbackIvvvEENS_8CallbackIFT1_vEEEPFS2_PT_EPT0_: (+1)
+   \   00000000   0xB470             PUSH     {R4-R6}
+   \   00000002   0x2300             MOVS     R3,#+0
+   \   00000004   0x2400             MOVS     R4,#+0
+   \   00000006   0x2500             MOVS     R5,#+0
+   \   00000008   0x2600             MOVS     R6,#+0
+   \   0000000A   0xC078             STM      R0!,{R3-R6}
+   \   0000000C   0x3810             SUBS     R0,R0,#+16
+   \   0000000E   0xD001             BEQ      ??callback_0
+   \   00000010   0x6001             STR      R1,[R0, #+0]
+   \   00000012   0x6042             STR      R2,[R0, #+4]
+   \                     ??callback_0: (+1)
+   \   00000014   0x4901             LDR      R1,??callback_1
+   \   00000016   0x60C1             STR      R1,[R0, #+12]
+   \   00000018   0xBC70             POP      {R4-R6}
+   \   0000001A   0x4770             BX       LR               ;; return
+   \                     ??callback_1:
+   \   0000001C   0x........         DC32     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp off_t mbed::FileHandle::lseek(off_t, int)
+   \                     _ZN4mbed10FileHandle5lseekEli: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6803             LDR      R3,[R0, #+0]
+   \   00000004   0x691B             LDR      R3,[R3, #+16]
+   \   00000006   0x4798             BLX      R3
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::FileHandle::fsync()
+   \                     _ZN4mbed10FileHandle5fsyncEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x6989             LDR      R1,[R1, #+24]
+   \   00000006   0x4788             BLX      R1
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp off_t mbed::FileHandle::flen()
+   \                     _ZN4mbed10FileHandle4flenEv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x6801             LDR      R1,[R0, #+0]
+   \   00000004   0x6A89             LDR      R1,[R1, #+40]
+   \   00000006   0x4788             BLX      R1
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp int mbed::FileHandle::set_blocking(bool)
+   \                     _ZN4mbed10FileHandle12set_blockingEb: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x43C0             MVNS     R0,R0            ;; #-1
+   \   00000004   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp short mbed::FileHandle::poll(short) const
+   \                     _ZNK4mbed10FileHandle4pollEs: (+1)
+   \   00000000   0x2011             MOVS     R0,#+17
+   \   00000002   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::FileHandle::sigio(mbed::Callback<void ()>)
+   \                     _ZN4mbed10FileHandle5sigioENS_8CallbackIFvvEEE: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+     18          #include "mbed.h"
+     19          #include <errno.h>
+     20          
+     21          
+
+   \                                 In section .text, align 2, keep-with-next
+     22          File::File()
+   \                     _ZN4mbed4FileC1Ev: (+1)
+   \   00000000   0xBF00             Nop      
+   \   00000002                      REQUIRE ?Subroutine0
+   \   00000002                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0x....             LDR      R1,??DataTable13
+   \   00000002   0x6001             STR      R1,[R0, #+0]
+     23              : _fs(0), _file(0)
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x6041             STR      R1,[R0, #+4]
+   \   00000008   0x6081             STR      R1,[R0, #+8]
+     24          {
+     25          }
+   \   0000000A   0x4770             BX       LR               ;; return
+     26          
+
+   \                                 In section .text, align 2, keep-with-next
+     27          File::File(FileSystem *fs, const char *path, int flags)
+   \                     _ZN4mbed4FileC1EPNS_10FileSystemEPKci: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine1
+   \   00000002                      ;; // Fall through to label ?Subroutine1
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine1: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x....             LDR      R0,??DataTable13
+   \   00000004   0x6020             STR      R0,[R4, #+0]
+     28              : _fs(0), _file(0)
+   \   00000006   0x2000             MOVS     R0,#+0
+   \   00000008   0x6060             STR      R0,[R4, #+4]
+   \   0000000A   0x60A0             STR      R0,[R4, #+8]
+     29          {
+     30              open(fs, path, flags);
+   \   0000000C   0x0020             MOVS     R0,R4
+   \   0000000E   0x.... 0x....      BL       _ZN4mbed4File4openEPNS_10FileSystemEPKci
+     31          }
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0xBD10             POP      {R4,PC}          ;; return
+     32          
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::File::deleter ~File()
+   \                     _ZN4mbed4FileD0Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x....             LDR      R0,??DataTable13
+   \   00000006   0x6020             STR      R0,[R4, #+0]
+   \   00000008   0x6860             LDR      R0,[R4, #+4]
+   \   0000000A   0x2800             CMP      R0,#+0
+   \   0000000C   0xD002             BEQ      `??deleter ~File_0`
+   \   0000000E   0x0020             MOVS     R0,R4
+   \   00000010   0x.... 0x....      BL       _ZN4mbed4File5closeEv
+   \                     `??deleter ~File_0`: (+1)
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0x.... 0x....      BL       _ZdlPv
+   \   0000001A   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     33          File::~File()
+   \                     _ZN4mbed4FileD1Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002                      REQUIRE ?Subroutine2
+   \   00000002                      ;; // Fall through to label ?Subroutine2
+
+   \                                 In section .text, align 2, keep-with-next
+     34          {
+   \                     ?Subroutine2: (+1)
+   \   00000000   0x0004             MOVS     R4,R0
+   \   00000002   0x....             LDR      R0,??DataTable13
+   \   00000004   0x6020             STR      R0,[R4, #+0]
+     35              if (_fs) {
+   \   00000006   0x6860             LDR      R0,[R4, #+4]
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD002             BEQ      ??Subroutine2_0
+     36                  close();
+   \   0000000C   0x0020             MOVS     R0,R4
+   \   0000000E   0x.... 0x....      BL       _ZN4mbed4File5closeEv
+     37              }
+     38          }
+   \                     ??Subroutine2_0: (+1)
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0xBD10             POP      {R4,PC}          ;; return
+     39          
+
+   \                                 In section .text, align 2, keep-with-next
+     40          int File::open(FileSystem *fs, const char *path, int flags)
+     41          {
+   \                     _ZN4mbed4File4openEPNS_10FileSystemEPKci: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000C             MOVS     R4,R1
+     42              if (_fs) {
+   \   00000006   0x6868             LDR      R0,[R5, #+4]
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD002             BEQ      ??open_0
+     43                  return -EINVAL;
+   \   0000000C   0x2015             MOVS     R0,#+21
+   \   0000000E   0x43C0             MVNS     R0,R0            ;; #-22
+   \   00000010   0xBD70             POP      {R4-R6,PC}
+     44              }
+     45          
+     46              int err = fs->file_open(&_file, path, flags);
+   \                     ??open_0: (+1)
+   \   00000012   0x0029             MOVS     R1,R5
+   \   00000014   0x3108             ADDS     R1,R1,#+8
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0x6826             LDR      R6,[R4, #+0]
+   \   0000001A   0x6AF6             LDR      R6,[R6, #+44]
+   \   0000001C   0x47B0             BLX      R6
+     47              if (!err) {
+   \   0000001E   0x2800             CMP      R0,#+0
+   \   00000020   0xD100             BNE      ??open_1
+     48                  _fs = fs;
+   \   00000022   0x606C             STR      R4,[R5, #+4]
+     49              }
+     50          
+     51              return err;
+   \                     ??open_1: (+1)
+   \   00000024   0xBD70             POP      {R4-R6,PC}       ;; return
+     52          }
+     53          
+
+   \                                 In section .text, align 2, keep-with-next
+     54          int File::close()
+     55          {
+   \                     _ZN4mbed4File5closeEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     56              if (!_fs) {
+   \   00000004   0x6860             LDR      R0,[R4, #+4]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD102             BNE      ??close_0
+     57                  return -EINVAL;
+   \   0000000A   0x2015             MOVS     R0,#+21
+   \   0000000C   0x43C0             MVNS     R0,R0            ;; #-22
+   \   0000000E   0xBD10             POP      {R4,PC}
+     58              }
+     59          
+     60              int err = _fs->file_close(_file);
+   \                     ??close_0: (+1)
+   \   00000010   0x68A1             LDR      R1,[R4, #+8]
+   \   00000012   0x6802             LDR      R2,[R0, #+0]
+   \   00000014   0x6B12             LDR      R2,[R2, #+48]
+   \   00000016   0x4790             BLX      R2
+     61              _fs = 0;
+   \   00000018   0x2100             MOVS     R1,#+0
+   \   0000001A   0x6061             STR      R1,[R4, #+4]
+     62              return err;
+   \   0000001C   0xBD10             POP      {R4,PC}          ;; return
+     63          }
+     64          
+
+   \                                 In section .text, align 4, keep-with-next
+     65          ssize_t File::read(void *buffer, size_t len)
+     66          {
+   \                     _ZN4mbed4File4readEPvj: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0x0015             MOVS     R5,R2
+     67              MBED_ASSERT(_fs);
+   \   00000008   0x6860             LDR      R0,[R4, #+4]
+   \   0000000A   0x2800             CMP      R0,#+0
+   \   0000000C   0xD104             BNE      ??read_0
+   \   0000000E   0x2243             MOVS     R2,#+67
+   \   00000010   0x....             ADR.N    R1,?_1
+   \   00000012   0x....             ADR      R0,??DataTable13_1  ;; "_fs"
+   \   00000014   0x.... 0x....      BL       mbed_assert_internal
+     68              return _fs->file_read(_file, buffer, len);
+   \                     ??read_0: (+1)
+   \   00000018   0x6860             LDR      R0,[R4, #+4]
+   \   0000001A   0x002B             MOVS     R3,R5
+   \   0000001C   0x0032             MOVS     R2,R6
+   \   0000001E   0x68A1             LDR      R1,[R4, #+8]
+   \   00000020   0x6804             LDR      R4,[R0, #+0]
+   \   00000022   0x6B64             LDR      R4,[R4, #+52]
+   \   00000024   0x47A0             BLX      R4
+   \   00000026   0xBD70             POP      {R4-R6,PC}       ;; return
+     69          }
+     70          
+
+   \                                 In section .text, align 4, keep-with-next
+     71          ssize_t File::write(const void *buffer, size_t len)
+     72          {
+   \                     _ZN4mbed4File5writeEPKvj: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0x0015             MOVS     R5,R2
+     73              MBED_ASSERT(_fs);
+   \   00000008   0x6860             LDR      R0,[R4, #+4]
+   \   0000000A   0x2800             CMP      R0,#+0
+   \   0000000C   0xD104             BNE      ??write_0
+   \   0000000E   0x2249             MOVS     R2,#+73
+   \   00000010   0x....             ADR.N    R1,?_1
+   \   00000012   0x....             ADR      R0,??DataTable13_1  ;; "_fs"
+   \   00000014   0x.... 0x....      BL       mbed_assert_internal
+     74              return _fs->file_write(_file, buffer, len);
+   \                     ??write_0: (+1)
+   \   00000018   0x6860             LDR      R0,[R4, #+4]
+   \   0000001A   0x002B             MOVS     R3,R5
+   \   0000001C   0x0032             MOVS     R2,R6
+   \   0000001E   0x68A1             LDR      R1,[R4, #+8]
+   \   00000020   0x6804             LDR      R4,[R0, #+0]
+   \   00000022   0x6BA4             LDR      R4,[R4, #+56]
+   \   00000024   0x47A0             BLX      R4
+   \   00000026   0xBD70             POP      {R4-R6,PC}       ;; return
+     75          }
+     76          
+
+   \                                 In section .text, align 4, keep-with-next
+     77          int File::sync()
+     78          {
+   \                     _ZN4mbed4File4syncEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     79              MBED_ASSERT(_fs);
+   \   00000004   0x6860             LDR      R0,[R4, #+4]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD104             BNE      ??sync_0
+   \   0000000A   0x224F             MOVS     R2,#+79
+   \   0000000C   0x....             ADR.N    R1,?_1
+   \   0000000E   0x....             ADR      R0,??DataTable13_1  ;; "_fs"
+   \   00000010   0x.... 0x....      BL       mbed_assert_internal
+     80              return _fs->file_sync(_file);
+   \                     ??sync_0: (+1)
+   \   00000014   0x6860             LDR      R0,[R4, #+4]
+   \   00000016   0x68A1             LDR      R1,[R4, #+8]
+   \   00000018   0x6802             LDR      R2,[R0, #+0]
+   \   0000001A   0x6BD2             LDR      R2,[R2, #+60]
+   \   0000001C   0x4790             BLX      R2
+   \   0000001E   0xBD10             POP      {R4,PC}          ;; return
+     81          }
+     82          
+
+   \                                 In section .text, align 4, keep-with-next
+     83          int File::isatty()
+     84          {
+   \                     _ZN4mbed4File6isattyEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     85              MBED_ASSERT(_fs);
+   \   00000004   0x6860             LDR      R0,[R4, #+4]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD104             BNE      ??isatty_0
+   \   0000000A   0x2255             MOVS     R2,#+85
+   \   0000000C   0x....             ADR.N    R1,?_1
+   \   0000000E   0x....             ADR      R0,??DataTable13_1  ;; "_fs"
+   \   00000010   0x.... 0x....      BL       mbed_assert_internal
+     86              return _fs->file_isatty(_file);
+   \                     ??isatty_0: (+1)
+   \   00000014   0x6860             LDR      R0,[R4, #+4]
+   \   00000016   0x68A1             LDR      R1,[R4, #+8]
+   \   00000018   0x6802             LDR      R2,[R0, #+0]
+   \   0000001A   0x6C12             LDR      R2,[R2, #+64]
+   \   0000001C   0x4790             BLX      R2
+   \   0000001E   0xBD10             POP      {R4,PC}          ;; return
+     87          }
+     88          
+
+   \                                 In section .text, align 4, keep-with-next
+     89          off_t File::seek(off_t offset, int whence)
+     90          {
+   \                     _ZN4mbed4File4seekEli: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0x0015             MOVS     R5,R2
+     91              MBED_ASSERT(_fs);
+   \   00000008   0x6860             LDR      R0,[R4, #+4]
+   \   0000000A   0x2800             CMP      R0,#+0
+   \   0000000C   0xD104             BNE      ??seek_0
+   \   0000000E   0x225B             MOVS     R2,#+91
+   \   00000010   0x....             ADR.N    R1,?_1
+   \   00000012   0x....             ADR      R0,??DataTable13_1  ;; "_fs"
+   \   00000014   0x.... 0x....      BL       mbed_assert_internal
+     92              return _fs->file_seek(_file, offset, whence);
+   \                     ??seek_0: (+1)
+   \   00000018   0x6860             LDR      R0,[R4, #+4]
+   \   0000001A   0x002B             MOVS     R3,R5
+   \   0000001C   0x0032             MOVS     R2,R6
+   \   0000001E   0x68A1             LDR      R1,[R4, #+8]
+   \   00000020   0x6804             LDR      R4,[R0, #+0]
+   \   00000022   0x6C64             LDR      R4,[R4, #+68]
+   \   00000024   0x47A0             BLX      R4
+   \   00000026   0xBD70             POP      {R4-R6,PC}       ;; return
+     93          }
+     94          
+
+   \                                 In section .text, align 4, keep-with-next
+     95          off_t File::tell()
+     96          {
+   \                     _ZN4mbed4File4tellEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     97              MBED_ASSERT(_fs);
+   \   00000004   0x6860             LDR      R0,[R4, #+4]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD104             BNE      ??tell_0
+   \   0000000A   0x2261             MOVS     R2,#+97
+   \   0000000C   0x....             ADR.N    R1,?_1
+   \   0000000E   0x....             ADR      R0,??DataTable13_1  ;; "_fs"
+   \   00000010   0x.... 0x....      BL       mbed_assert_internal
+     98              return _fs->file_tell(_file);
+   \                     ??tell_0: (+1)
+   \   00000014   0x6860             LDR      R0,[R4, #+4]
+   \   00000016   0x68A1             LDR      R1,[R4, #+8]
+   \   00000018   0x6802             LDR      R2,[R0, #+0]
+   \   0000001A   0x6C92             LDR      R2,[R2, #+72]
+   \   0000001C   0x4790             BLX      R2
+   \   0000001E   0xBD10             POP      {R4,PC}          ;; return
+     99          }
+    100          
+
+   \                                 In section .text, align 4, keep-with-next
+    101          void File::rewind()
+    102          {
+   \                     _ZN4mbed4File6rewindEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    103              MBED_ASSERT(_fs);
+   \   00000004   0x6860             LDR      R0,[R4, #+4]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD104             BNE      ??rewind_0
+   \   0000000A   0x2267             MOVS     R2,#+103
+   \   0000000C   0x....             ADR.N    R1,?_1
+   \   0000000E   0x....             ADR      R0,??DataTable13_1  ;; "_fs"
+   \   00000010   0x.... 0x....      BL       mbed_assert_internal
+    104              return _fs->file_rewind(_file);
+   \                     ??rewind_0: (+1)
+   \   00000014   0x6860             LDR      R0,[R4, #+4]
+   \   00000016   0x68A1             LDR      R1,[R4, #+8]
+   \   00000018   0x6802             LDR      R2,[R0, #+0]
+   \   0000001A   0x6CD2             LDR      R2,[R2, #+76]
+   \   0000001C   0x4790             BLX      R2
+   \   0000001E   0xBD10             POP      {R4,PC}          ;; return
+    105          }
+    106          
+
+   \                                 In section .text, align 4, keep-with-next
+    107          off_t File::size()
+    108          {
+   \                     _ZN4mbed4File4sizeEv: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    109              MBED_ASSERT(_fs);
+   \   00000004   0x6860             LDR      R0,[R4, #+4]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD104             BNE      ??size_0
+   \   0000000A   0x226D             MOVS     R2,#+109
+   \   0000000C   0x....             ADR.N    R1,?_1
+   \   0000000E   0x....             ADR      R0,??DataTable13_1  ;; "_fs"
+   \   00000010   0x.... 0x....      BL       mbed_assert_internal
+    110              return _fs->file_size(_file);
+   \                     ??size_0: (+1)
+   \   00000014   0x6860             LDR      R0,[R4, #+4]
+   \   00000016   0x68A1             LDR      R1,[R4, #+8]
+   \   00000018   0x6802             LDR      R2,[R0, #+0]
+   \   0000001A   0x6D12             LDR      R2,[R2, #+80]
+   \   0000001C   0x4790             BLX      R2
+   \   0000001E   0xBD10             POP      {R4,PC}          ;; return
+    111          }
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x5F 0x66          DC8 "_fs"
+   \              0x73 0x00    
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::File::subobject File()
+   \                     _ZN4mbed4FileC2Ev: (+1)
+   \   00000000   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::File::subobject File(mbed::FileSystem *, char const *, int)
+   \                     _ZN4mbed4FileC2EPNS_10FileSystemEPKci: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine1
+
+   \                                 In section .text, align 2, keep-with-next
+   \   __code __interwork __softfp mbed::File::subobject ~File()
+   \                     _ZN4mbed4FileD2Ev: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x....             B.N      ?Subroutine2
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable13:
+   \   00000000   0x........         DC32     _ZTVN4mbed4FileE+0x8
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable13_1:
+   \   00000000   0x5F 0x66          DC8      "_fs"
+   \              0x73 0x00    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x2E 0x5C          DC8 ".\\mbed-os\\features\\filesystem\\File.cpp"
+   \              0x6D 0x62    
+   \              0x65 0x64    
+   \              0x2D 0x6F    
+   \              0x73 0x5C    
+   \              0x66 0x65    
+   \              0x61 0x74    
+   \              0x75 0x72    
+   \              0x65 0x73    
+   \              0x5C 0x66    
+   \              0x69 0x6C    
+   \              0x65 0x73    
+   \              0x79 0x73    
+   \              0x74 0x65    
+   \              0x6D 0x5C    
+   \              0x46 0x69    
+   \              0x6C 0x65    
+   \              0x2E 0x63    
+   \              0x70 0x70    
+   \              0x00         
+   \   00000027   0x00               DC8 0
+    112          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+         8   -- Indirect call
+       0   mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+       0   mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+       0   mbed::File::File()
+       0   mbed::File::File(mbed::FileSystem *, char const *, int)
+         8   -> mbed::File::open(mbed::FileSystem *, char const *, int)
+       8   mbed::File::close()
+         8   -- Indirect call
+       8   mbed::File::deleter ~File()
+         8   -> mbed::File::close()
+         8   -> operator delete(void *)
+       8   mbed::File::isatty()
+         8   -- Indirect call
+         8   -> mbed_assert_internal
+      16   mbed::File::open(mbed::FileSystem *, char const *, int)
+        16   -- Indirect call
+      16   mbed::File::read(void *, std::size_t)
+        16   -- Indirect call
+        16   -> mbed_assert_internal
+       8   mbed::File::rewind()
+         8   -- Indirect call
+         8   -> mbed_assert_internal
+      16   mbed::File::seek(off_t, int)
+        16   -- Indirect call
+        16   -> mbed_assert_internal
+       8   mbed::File::size()
+         8   -- Indirect call
+         8   -> mbed_assert_internal
+       0   mbed::File::subobject File()
+       8   mbed::File::subobject File(mbed::FileSystem *, char const *, int)
+         8   -> mbed::File::open(mbed::FileSystem *, char const *, int)
+       8   mbed::File::subobject ~File()
+         8   -> mbed::File::close()
+       8   mbed::File::sync()
+         8   -- Indirect call
+         8   -> mbed_assert_internal
+       8   mbed::File::tell()
+         8   -- Indirect call
+         8   -> mbed_assert_internal
+      16   mbed::File::write(void const *, std::size_t)
+        16   -- Indirect call
+        16   -> mbed_assert_internal
+       0   mbed::File::~File()
+         8   -> mbed::File::close()
+       8   mbed::FileHandle::flen()
+         8   -- Indirect call
+       8   mbed::FileHandle::fsync()
+         8   -- Indirect call
+       8   mbed::FileHandle::lseek(off_t, int)
+         8   -- Indirect call
+       0   mbed::FileHandle::poll(short) const
+       0   mbed::FileHandle::set_blocking(bool)
+       0   mbed::FileHandle::sigio(mbed::Callback<void ()>)
+      12   mbed::callback<>(void (*)(void *), void *)
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable13
+       4  ??DataTable13_1
+      12  ?Subroutine0
+      22  ?Subroutine1
+      22  ?Subroutine2
+       4  ?_0
+      40  ?_1
+      12  mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+       2  mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+      10  mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+       2  mbed::File::File()
+       2  mbed::File::File(mbed::FileSystem *, char const *, int)
+      30  mbed::File::close()
+      28  mbed::File::deleter ~File()
+      32  mbed::File::isatty()
+      38  mbed::File::open(mbed::FileSystem *, char const *, int)
+      40  mbed::File::read(void *, std::size_t)
+      32  mbed::File::rewind()
+      40  mbed::File::seek(off_t, int)
+      32  mbed::File::size()
+       2  mbed::File::subobject File()
+       4  mbed::File::subobject File(mbed::FileSystem *, char const *, int)
+       4  mbed::File::subobject ~File()
+      32  mbed::File::sync()
+      32  mbed::File::tell()
+      40  mbed::File::write(void const *, std::size_t)
+       2  mbed::File::~File()
+      10  mbed::FileHandle::flen()
+      10  mbed::FileHandle::fsync()
+      10  mbed::FileHandle::lseek(off_t, int)
+       4  mbed::FileHandle::poll(short) const
+       6  mbed::FileHandle::set_blocking(bool)
+       2  mbed::FileHandle::sigio(mbed::Callback<void ()>)
+      32  mbed::callback<>(void (*)(void *), void *)
+      12  ops
+     400  -- Other
+
+ 
+ 416 bytes in section .rodata
+ 594 bytes in section .text
+ 
+ 496 bytes of CODE  memory (+  98 bytes shared)
+   4 bytes of CONST memory (+ 412 bytes shared)
+
+Errors: none
+Warnings: none

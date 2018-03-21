@@ -1,0 +1,350 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:35
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\mbedtls\src\ssl_cookie.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ssl_cookie.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ssl_cookie.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ssl_cookie.o
+#        .\mbed-os\features\mbedtls\src\ssl_cookie.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ssl_cookie.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\ssl_cookie.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\mbedtls\src\ssl_cookie.c
+      1          /*
+      2           *  DTLS cookie callbacks implementation
+      3           *
+      4           *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+      5           *  SPDX-License-Identifier: Apache-2.0
+      6           *
+      7           *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+      8           *  not use this file except in compliance with the License.
+      9           *  You may obtain a copy of the License at
+     10           *
+     11           *  http://www.apache.org/licenses/LICENSE-2.0
+     12           *
+     13           *  Unless required by applicable law or agreed to in writing, software
+     14           *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     15           *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     16           *  See the License for the specific language governing permissions and
+     17           *  limitations under the License.
+     18           *
+     19           *  This file is part of mbed TLS (https://tls.mbed.org)
+     20           */
+     21          /*
+     22           * These session callbacks use a simple chained list
+     23           * to store and retrieve the session information.
+     24           */
+     25          
+     26          #if !defined(MBEDTLS_CONFIG_FILE)
+     27          #include "mbedtls/config.h"
+     28          #else
+     29          #include MBEDTLS_CONFIG_FILE
+     30          #endif
+     31          
+     32          #if defined(MBEDTLS_SSL_COOKIE_C)
+     33          
+     34          #if defined(MBEDTLS_PLATFORM_C)
+     35          #include "mbedtls/platform.h"
+     36          #else
+     37          #define mbedtls_calloc    calloc
+     38          #define mbedtls_free      free
+     39          #endif
+     40          
+     41          #include "mbedtls/ssl_cookie.h"
+     42          #include "mbedtls/ssl_internal.h"
+     43          
+     44          #include <string.h>
+     45          
+     46          /* Implementation that should never be optimized out by the compiler */
+     47          static void mbedtls_zeroize( void *v, size_t n ) {
+     48              volatile unsigned char *p = v; while( n-- ) *p++ = 0;
+     49          }
+     50          
+     51          /*
+     52           * If DTLS is in use, then at least one of SHA-1, SHA-256, SHA-512 is
+     53           * available. Try SHA-256 first, 512 wastes resources since we need to stay
+     54           * with max 32 bytes of cookie for DTLS 1.0
+     55           */
+     56          #if defined(MBEDTLS_SHA256_C)
+     57          #define COOKIE_MD           MBEDTLS_MD_SHA224
+     58          #define COOKIE_MD_OUTLEN    32
+     59          #define COOKIE_HMAC_LEN     28
+     60          #elif defined(MBEDTLS_SHA512_C)
+     61          #define COOKIE_MD           MBEDTLS_MD_SHA384
+     62          #define COOKIE_MD_OUTLEN    48
+     63          #define COOKIE_HMAC_LEN     28
+     64          #elif defined(MBEDTLS_SHA1_C)
+     65          #define COOKIE_MD           MBEDTLS_MD_SHA1
+     66          #define COOKIE_MD_OUTLEN    20
+     67          #define COOKIE_HMAC_LEN     20
+     68          #else
+     69          #error "DTLS hello verify needs SHA-1 or SHA-2"
+     70          #endif
+     71          
+     72          /*
+     73           * Cookies are formed of a 4-bytes timestamp (or serial number) and
+     74           * an HMAC of timestemp and client ID.
+     75           */
+     76          #define COOKIE_LEN      ( 4 + COOKIE_HMAC_LEN )
+     77          
+     78          void mbedtls_ssl_cookie_init( mbedtls_ssl_cookie_ctx *ctx )
+     79          {
+     80              mbedtls_md_init( &ctx->hmac_ctx );
+     81          #if !defined(MBEDTLS_HAVE_TIME)
+     82              ctx->serial = 0;
+     83          #endif
+     84              ctx->timeout = MBEDTLS_SSL_COOKIE_TIMEOUT;
+     85          
+     86          #if defined(MBEDTLS_THREADING_C)
+     87              mbedtls_mutex_init( &ctx->mutex );
+     88          #endif
+     89          }
+     90          
+     91          void mbedtls_ssl_cookie_set_timeout( mbedtls_ssl_cookie_ctx *ctx, unsigned long delay )
+     92          {
+     93              ctx->timeout = delay;
+     94          }
+     95          
+     96          void mbedtls_ssl_cookie_free( mbedtls_ssl_cookie_ctx *ctx )
+     97          {
+     98              mbedtls_md_free( &ctx->hmac_ctx );
+     99          
+    100          #if defined(MBEDTLS_THREADING_C)
+    101              mbedtls_mutex_free( &ctx->mutex );
+    102          #endif
+    103          
+    104              mbedtls_zeroize( ctx, sizeof( mbedtls_ssl_cookie_ctx ) );
+    105          }
+    106          
+    107          int mbedtls_ssl_cookie_setup( mbedtls_ssl_cookie_ctx *ctx,
+    108                                int (*f_rng)(void *, unsigned char *, size_t),
+    109                                void *p_rng )
+    110          {
+    111              int ret;
+    112              unsigned char key[COOKIE_MD_OUTLEN];
+    113          
+    114              if( ( ret = f_rng( p_rng, key, sizeof( key ) ) ) != 0 )
+    115                  return( ret );
+    116          
+    117              ret = mbedtls_md_setup( &ctx->hmac_ctx, mbedtls_md_info_from_type( COOKIE_MD ), 1 );
+    118              if( ret != 0 )
+    119                  return( ret );
+    120          
+    121              ret = mbedtls_md_hmac_starts( &ctx->hmac_ctx, key, sizeof( key ) );
+    122              if( ret != 0 )
+    123                  return( ret );
+    124          
+    125              mbedtls_zeroize( key, sizeof( key ) );
+    126          
+    127              return( 0 );
+    128          }
+    129          
+    130          /*
+    131           * Generate the HMAC part of a cookie
+    132           */
+    133          static int ssl_cookie_hmac( mbedtls_md_context_t *hmac_ctx,
+    134                                      const unsigned char time[4],
+    135                                      unsigned char **p, unsigned char *end,
+    136                                      const unsigned char *cli_id, size_t cli_id_len )
+    137          {
+    138              unsigned char hmac_out[COOKIE_MD_OUTLEN];
+    139          
+    140              if( (size_t)( end - *p ) < COOKIE_HMAC_LEN )
+    141                  return( MBEDTLS_ERR_SSL_BUFFER_TOO_SMALL );
+    142          
+    143              if( mbedtls_md_hmac_reset(  hmac_ctx ) != 0 ||
+    144                  mbedtls_md_hmac_update( hmac_ctx, time, 4 ) != 0 ||
+    145                  mbedtls_md_hmac_update( hmac_ctx, cli_id, cli_id_len ) != 0 ||
+    146                  mbedtls_md_hmac_finish( hmac_ctx, hmac_out ) != 0 )
+    147              {
+    148                  return( MBEDTLS_ERR_SSL_INTERNAL_ERROR );
+    149              }
+    150          
+    151              memcpy( *p, hmac_out, COOKIE_HMAC_LEN );
+    152              *p += COOKIE_HMAC_LEN;
+    153          
+    154              return( 0 );
+    155          }
+    156          
+    157          /*
+    158           * Generate cookie for DTLS ClientHello verification
+    159           */
+    160          int mbedtls_ssl_cookie_write( void *p_ctx,
+    161                                unsigned char **p, unsigned char *end,
+    162                                const unsigned char *cli_id, size_t cli_id_len )
+    163          {
+    164              int ret;
+    165              mbedtls_ssl_cookie_ctx *ctx = (mbedtls_ssl_cookie_ctx *) p_ctx;
+    166              unsigned long t;
+    167          
+    168              if( ctx == NULL || cli_id == NULL )
+    169                  return( MBEDTLS_ERR_SSL_BAD_INPUT_DATA );
+    170          
+    171              if( (size_t)( end - *p ) < COOKIE_LEN )
+    172                  return( MBEDTLS_ERR_SSL_BUFFER_TOO_SMALL );
+    173          
+    174          #if defined(MBEDTLS_HAVE_TIME)
+    175              t = (unsigned long) mbedtls_time( NULL );
+    176          #else
+    177              t = ctx->serial++;
+    178          #endif
+    179          
+    180              (*p)[0] = (unsigned char)( t >> 24 );
+    181              (*p)[1] = (unsigned char)( t >> 16 );
+    182              (*p)[2] = (unsigned char)( t >>  8 );
+    183              (*p)[3] = (unsigned char)( t       );
+    184              *p += 4;
+    185          
+    186          #if defined(MBEDTLS_THREADING_C)
+    187              if( ( ret = mbedtls_mutex_lock( &ctx->mutex ) ) != 0 )
+    188                  return( MBEDTLS_ERR_SSL_INTERNAL_ERROR + ret );
+    189          #endif
+    190          
+    191              ret = ssl_cookie_hmac( &ctx->hmac_ctx, *p - 4,
+    192                                     p, end, cli_id, cli_id_len );
+    193          
+    194          #if defined(MBEDTLS_THREADING_C)
+    195              if( mbedtls_mutex_unlock( &ctx->mutex ) != 0 )
+    196                  return( MBEDTLS_ERR_SSL_INTERNAL_ERROR +
+    197                          MBEDTLS_ERR_THREADING_MUTEX_ERROR );
+    198          #endif
+    199          
+    200              return( ret );
+    201          }
+    202          
+    203          /*
+    204           * Check a cookie
+    205           */
+    206          int mbedtls_ssl_cookie_check( void *p_ctx,
+    207                                const unsigned char *cookie, size_t cookie_len,
+    208                                const unsigned char *cli_id, size_t cli_id_len )
+    209          {
+    210              unsigned char ref_hmac[COOKIE_HMAC_LEN];
+    211              int ret = 0;
+    212              unsigned char *p = ref_hmac;
+    213              mbedtls_ssl_cookie_ctx *ctx = (mbedtls_ssl_cookie_ctx *) p_ctx;
+    214              unsigned long cur_time, cookie_time;
+    215          
+    216              if( ctx == NULL || cli_id == NULL )
+    217                  return( MBEDTLS_ERR_SSL_BAD_INPUT_DATA );
+    218          
+    219              if( cookie_len != COOKIE_LEN )
+    220                  return( -1 );
+    221          
+    222          #if defined(MBEDTLS_THREADING_C)
+    223              if( ( ret = mbedtls_mutex_lock( &ctx->mutex ) ) != 0 )
+    224                  return( MBEDTLS_ERR_SSL_INTERNAL_ERROR + ret );
+    225          #endif
+    226          
+    227              if( ssl_cookie_hmac( &ctx->hmac_ctx, cookie,
+    228                                   &p, p + sizeof( ref_hmac ),
+    229                                   cli_id, cli_id_len ) != 0 )
+    230                  ret = -1;
+    231          
+    232          #if defined(MBEDTLS_THREADING_C)
+    233              if( mbedtls_mutex_unlock( &ctx->mutex ) != 0 )
+    234                  return( MBEDTLS_ERR_SSL_INTERNAL_ERROR +
+    235                          MBEDTLS_ERR_THREADING_MUTEX_ERROR );
+    236          #endif
+    237          
+    238              if( ret != 0 )
+    239                  return( ret );
+    240          
+    241              if( mbedtls_ssl_safer_memcmp( cookie + 4, ref_hmac, sizeof( ref_hmac ) ) != 0 )
+    242                  return( -1 );
+    243          
+    244          #if defined(MBEDTLS_HAVE_TIME)
+    245              cur_time = (unsigned long) mbedtls_time( NULL );
+    246          #else
+    247              cur_time = ctx->serial;
+    248          #endif
+    249          
+    250              cookie_time = ( (unsigned long) cookie[0] << 24 ) |
+    251                            ( (unsigned long) cookie[1] << 16 ) |
+    252                            ( (unsigned long) cookie[2] <<  8 ) |
+    253                            ( (unsigned long) cookie[3]       );
+    254          
+    255              if( ctx->timeout != 0 && cur_time - cookie_time > ctx->timeout )
+    256                  return( -1 );
+    257          
+    258              return( 0 );
+    259          }
+    260          #endif /* MBEDTLS_SSL_COOKIE_C */
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

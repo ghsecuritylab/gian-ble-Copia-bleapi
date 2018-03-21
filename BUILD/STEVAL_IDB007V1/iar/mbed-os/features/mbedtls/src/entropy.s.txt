@@ -1,0 +1,743 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:27
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\mbedtls\src\entropy.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\entropy.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\entropy.s.txt
+#        -o .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\entropy.o
+#        .\mbed-os\features\mbedtls\src\entropy.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\entropy.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\entropy.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\mbedtls\src\entropy.c
+      1          /*
+      2           *  Entropy accumulator implementation
+      3           *
+      4           *  Copyright (C) 2006-2016, ARM Limited, All Rights Reserved
+      5           *  SPDX-License-Identifier: Apache-2.0
+      6           *
+      7           *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+      8           *  not use this file except in compliance with the License.
+      9           *  You may obtain a copy of the License at
+     10           *
+     11           *  http://www.apache.org/licenses/LICENSE-2.0
+     12           *
+     13           *  Unless required by applicable law or agreed to in writing, software
+     14           *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     15           *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     16           *  See the License for the specific language governing permissions and
+     17           *  limitations under the License.
+     18           *
+     19           *  This file is part of mbed TLS (https://tls.mbed.org)
+     20           */
+     21          
+     22          #if !defined(MBEDTLS_CONFIG_FILE)
+     23          #include "mbedtls/config.h"
+     24          #else
+     25          #include MBEDTLS_CONFIG_FILE
+     26          #endif
+     27          
+     28          #if defined(MBEDTLS_ENTROPY_C)
+     29          
+     30          #if defined(MBEDTLS_TEST_NULL_ENTROPY)
+     31          #warning "**** WARNING!  MBEDTLS_TEST_NULL_ENTROPY defined! "
+     32          #warning "**** THIS BUILD HAS NO DEFINED ENTROPY SOURCES "
+     33          #warning "**** THIS BUILD IS *NOT* SUITABLE FOR PRODUCTION USE "
+     34          #endif
+     35          
+     36          #include "mbedtls/entropy.h"
+     37          #include "mbedtls/entropy_poll.h"
+     38          
+     39          #include <string.h>
+     40          
+     41          #if defined(MBEDTLS_FS_IO)
+     42          #include <stdio.h>
+     43          #endif
+     44          
+     45          #if defined(MBEDTLS_ENTROPY_NV_SEED)
+     46          #include "mbedtls/platform.h"
+     47          #endif
+     48          
+     49          #if defined(MBEDTLS_SELF_TEST)
+     50          #if defined(MBEDTLS_PLATFORM_C)
+     51          #include "mbedtls/platform.h"
+     52          #else
+     53          #include <stdio.h>
+     54          #define mbedtls_printf     printf
+     55          #endif /* MBEDTLS_PLATFORM_C */
+     56          #endif /* MBEDTLS_SELF_TEST */
+     57          
+     58          #if defined(MBEDTLS_HAVEGE_C)
+     59          #include "mbedtls/havege.h"
+     60          #endif
+     61          
+     62          /* Implementation that should never be optimized out by the compiler */
+     63          static void mbedtls_zeroize( void *v, size_t n ) {
+     64              volatile unsigned char *p = v; while( n-- ) *p++ = 0;
+     65          }
+     66          
+     67          #define ENTROPY_MAX_LOOP    256     /**< Maximum amount to loop before error */
+     68          
+     69          void mbedtls_entropy_init( mbedtls_entropy_context *ctx )
+     70          {
+     71              memset( ctx, 0, sizeof(mbedtls_entropy_context) );
+     72          
+     73          #if defined(MBEDTLS_THREADING_C)
+     74              mbedtls_mutex_init( &ctx->mutex );
+     75          #endif
+     76          
+     77          #if defined(MBEDTLS_ENTROPY_SHA512_ACCUMULATOR)
+     78              mbedtls_sha512_starts( &ctx->accumulator, 0 );
+     79          #else
+     80              mbedtls_sha256_starts( &ctx->accumulator, 0 );
+     81          #endif
+     82          #if defined(MBEDTLS_HAVEGE_C)
+     83              mbedtls_havege_init( &ctx->havege_data );
+     84          #endif
+     85          
+     86          #if defined(MBEDTLS_TEST_NULL_ENTROPY)
+     87              mbedtls_entropy_add_source( ctx, mbedtls_null_entropy_poll, NULL,
+     88                                          1, MBEDTLS_ENTROPY_SOURCE_STRONG );
+     89          #endif
+     90          
+     91          #if !defined(MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES)
+     92          #if !defined(MBEDTLS_NO_PLATFORM_ENTROPY)
+     93              mbedtls_entropy_add_source( ctx, mbedtls_platform_entropy_poll, NULL,
+     94                                          MBEDTLS_ENTROPY_MIN_PLATFORM,
+     95                                          MBEDTLS_ENTROPY_SOURCE_STRONG );
+     96          #endif
+     97          #if defined(MBEDTLS_TIMING_C)
+     98              mbedtls_entropy_add_source( ctx, mbedtls_hardclock_poll, NULL,
+     99                                          MBEDTLS_ENTROPY_MIN_HARDCLOCK,
+    100                                          MBEDTLS_ENTROPY_SOURCE_WEAK );
+    101          #endif
+    102          #if defined(MBEDTLS_HAVEGE_C)
+    103              mbedtls_entropy_add_source( ctx, mbedtls_havege_poll, &ctx->havege_data,
+    104                                          MBEDTLS_ENTROPY_MIN_HAVEGE,
+    105                                          MBEDTLS_ENTROPY_SOURCE_STRONG );
+    106          #endif
+    107          #if defined(MBEDTLS_ENTROPY_HARDWARE_ALT)
+    108              mbedtls_entropy_add_source( ctx, mbedtls_hardware_poll, NULL,
+    109                                          MBEDTLS_ENTROPY_MIN_HARDWARE,
+    110                                          MBEDTLS_ENTROPY_SOURCE_STRONG );
+    111          #endif
+    112          #if defined(MBEDTLS_ENTROPY_NV_SEED)
+    113              mbedtls_entropy_add_source( ctx, mbedtls_nv_seed_poll, NULL,
+    114                                          MBEDTLS_ENTROPY_BLOCK_SIZE,
+    115                                          MBEDTLS_ENTROPY_SOURCE_STRONG );
+    116          #endif
+    117          #endif /* MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES */
+    118          }
+    119          
+    120          void mbedtls_entropy_free( mbedtls_entropy_context *ctx )
+    121          {
+    122          #if defined(MBEDTLS_HAVEGE_C)
+    123              mbedtls_havege_free( &ctx->havege_data );
+    124          #endif
+    125          #if defined(MBEDTLS_THREADING_C)
+    126              mbedtls_mutex_free( &ctx->mutex );
+    127          #endif
+    128              mbedtls_zeroize( ctx, sizeof( mbedtls_entropy_context ) );
+    129          }
+    130          
+    131          int mbedtls_entropy_add_source( mbedtls_entropy_context *ctx,
+    132                                  mbedtls_entropy_f_source_ptr f_source, void *p_source,
+    133                                  size_t threshold, int strong )
+    134          {
+    135              int idx, ret = 0;
+    136          
+    137          #if defined(MBEDTLS_THREADING_C)
+    138              if( ( ret = mbedtls_mutex_lock( &ctx->mutex ) ) != 0 )
+    139                  return( ret );
+    140          #endif
+    141          
+    142              idx = ctx->source_count;
+    143              if( idx >= MBEDTLS_ENTROPY_MAX_SOURCES )
+    144              {
+    145                  ret = MBEDTLS_ERR_ENTROPY_MAX_SOURCES;
+    146                  goto exit;
+    147              }
+    148          
+    149              ctx->source[idx].f_source  = f_source;
+    150              ctx->source[idx].p_source  = p_source;
+    151              ctx->source[idx].threshold = threshold;
+    152              ctx->source[idx].strong    = strong;
+    153          
+    154              ctx->source_count++;
+    155          
+    156          exit:
+    157          #if defined(MBEDTLS_THREADING_C)
+    158              if( mbedtls_mutex_unlock( &ctx->mutex ) != 0 )
+    159                  return( MBEDTLS_ERR_THREADING_MUTEX_ERROR );
+    160          #endif
+    161          
+    162              return( ret );
+    163          }
+    164          
+    165          /*
+    166           * Entropy accumulator update
+    167           */
+    168          static int entropy_update( mbedtls_entropy_context *ctx, unsigned char source_id,
+    169                                     const unsigned char *data, size_t len )
+    170          {
+    171              unsigned char header[2];
+    172              unsigned char tmp[MBEDTLS_ENTROPY_BLOCK_SIZE];
+    173              size_t use_len = len;
+    174              const unsigned char *p = data;
+    175          
+    176              if( use_len > MBEDTLS_ENTROPY_BLOCK_SIZE )
+    177              {
+    178          #if defined(MBEDTLS_ENTROPY_SHA512_ACCUMULATOR)
+    179                  mbedtls_sha512( data, len, tmp, 0 );
+    180          #else
+    181                  mbedtls_sha256( data, len, tmp, 0 );
+    182          #endif
+    183                  p = tmp;
+    184                  use_len = MBEDTLS_ENTROPY_BLOCK_SIZE;
+    185              }
+    186          
+    187              header[0] = source_id;
+    188              header[1] = use_len & 0xFF;
+    189          
+    190          #if defined(MBEDTLS_ENTROPY_SHA512_ACCUMULATOR)
+    191              mbedtls_sha512_update( &ctx->accumulator, header, 2 );
+    192              mbedtls_sha512_update( &ctx->accumulator, p, use_len );
+    193          #else
+    194              mbedtls_sha256_update( &ctx->accumulator, header, 2 );
+    195              mbedtls_sha256_update( &ctx->accumulator, p, use_len );
+    196          #endif
+    197          
+    198              return( 0 );
+    199          }
+    200          
+    201          int mbedtls_entropy_update_manual( mbedtls_entropy_context *ctx,
+    202                                     const unsigned char *data, size_t len )
+    203          {
+    204              int ret;
+    205          
+    206          #if defined(MBEDTLS_THREADING_C)
+    207              if( ( ret = mbedtls_mutex_lock( &ctx->mutex ) ) != 0 )
+    208                  return( ret );
+    209          #endif
+    210          
+    211              ret = entropy_update( ctx, MBEDTLS_ENTROPY_SOURCE_MANUAL, data, len );
+    212          
+    213          #if defined(MBEDTLS_THREADING_C)
+    214              if( mbedtls_mutex_unlock( &ctx->mutex ) != 0 )
+    215                  return( MBEDTLS_ERR_THREADING_MUTEX_ERROR );
+    216          #endif
+    217          
+    218              return( ret );
+    219          }
+    220          
+    221          /*
+    222           * Run through the different sources to add entropy to our accumulator
+    223           */
+    224          static int entropy_gather_internal( mbedtls_entropy_context *ctx )
+    225          {
+    226              int ret, i, have_one_strong = 0;
+    227              unsigned char buf[MBEDTLS_ENTROPY_MAX_GATHER];
+    228              size_t olen;
+    229          
+    230              if( ctx->source_count == 0 )
+    231                  return( MBEDTLS_ERR_ENTROPY_NO_SOURCES_DEFINED );
+    232          
+    233              /*
+    234               * Run through our entropy sources
+    235               */
+    236              for( i = 0; i < ctx->source_count; i++ )
+    237              {
+    238                  if( ctx->source[i].strong == MBEDTLS_ENTROPY_SOURCE_STRONG )
+    239                      have_one_strong = 1;
+    240          
+    241                  olen = 0;
+    242                  if( ( ret = ctx->source[i].f_source( ctx->source[i].p_source,
+    243                                  buf, MBEDTLS_ENTROPY_MAX_GATHER, &olen ) ) != 0 )
+    244                  {
+    245                      return( ret );
+    246                  }
+    247          
+    248                  /*
+    249                   * Add if we actually gathered something
+    250                   */
+    251                  if( olen > 0 )
+    252                  {
+    253                      entropy_update( ctx, (unsigned char) i, buf, olen );
+    254                      ctx->source[i].size += olen;
+    255                  }
+    256              }
+    257          
+    258              if( have_one_strong == 0 )
+    259                  return( MBEDTLS_ERR_ENTROPY_NO_STRONG_SOURCE );
+    260          
+    261              return( 0 );
+    262          }
+    263          
+    264          /*
+    265           * Thread-safe wrapper for entropy_gather_internal()
+    266           */
+    267          int mbedtls_entropy_gather( mbedtls_entropy_context *ctx )
+    268          {
+    269              int ret;
+    270          
+    271          #if defined(MBEDTLS_THREADING_C)
+    272              if( ( ret = mbedtls_mutex_lock( &ctx->mutex ) ) != 0 )
+    273                  return( ret );
+    274          #endif
+    275          
+    276              ret = entropy_gather_internal( ctx );
+    277          
+    278          #if defined(MBEDTLS_THREADING_C)
+    279              if( mbedtls_mutex_unlock( &ctx->mutex ) != 0 )
+    280                  return( MBEDTLS_ERR_THREADING_MUTEX_ERROR );
+    281          #endif
+    282          
+    283              return( ret );
+    284          }
+    285          
+    286          int mbedtls_entropy_func( void *data, unsigned char *output, size_t len )
+    287          {
+    288              int ret, count = 0, i, done;
+    289              mbedtls_entropy_context *ctx = (mbedtls_entropy_context *) data;
+    290              unsigned char buf[MBEDTLS_ENTROPY_BLOCK_SIZE];
+    291          
+    292              if( len > MBEDTLS_ENTROPY_BLOCK_SIZE )
+    293                  return( MBEDTLS_ERR_ENTROPY_SOURCE_FAILED );
+    294          
+    295          #if defined(MBEDTLS_ENTROPY_NV_SEED)
+    296              /* Update the NV entropy seed before generating any entropy for outside
+    297               * use.
+    298               */
+    299              if( ctx->initial_entropy_run == 0 )
+    300              {
+    301                  ctx->initial_entropy_run = 1;
+    302                  if( ( ret = mbedtls_entropy_update_nv_seed( ctx ) ) != 0 )
+    303                      return( ret );
+    304              }
+    305          #endif
+    306          
+    307          #if defined(MBEDTLS_THREADING_C)
+    308              if( ( ret = mbedtls_mutex_lock( &ctx->mutex ) ) != 0 )
+    309                  return( ret );
+    310          #endif
+    311          
+    312              /*
+    313               * Always gather extra entropy before a call
+    314               */
+    315              do
+    316              {
+    317                  if( count++ > ENTROPY_MAX_LOOP )
+    318                  {
+    319                      ret = MBEDTLS_ERR_ENTROPY_SOURCE_FAILED;
+    320                      goto exit;
+    321                  }
+    322          
+    323                  if( ( ret = entropy_gather_internal( ctx ) ) != 0 )
+    324                      goto exit;
+    325          
+    326                  done = 1;
+    327                  for( i = 0; i < ctx->source_count; i++ )
+    328                      if( ctx->source[i].size < ctx->source[i].threshold )
+    329                          done = 0;
+    330              }
+    331              while( ! done );
+    332          
+    333              memset( buf, 0, MBEDTLS_ENTROPY_BLOCK_SIZE );
+    334          
+    335          #if defined(MBEDTLS_ENTROPY_SHA512_ACCUMULATOR)
+    336              mbedtls_sha512_finish( &ctx->accumulator, buf );
+    337          
+    338              /*
+    339               * Reset accumulator and counters and recycle existing entropy
+    340               */
+    341              memset( &ctx->accumulator, 0, sizeof( mbedtls_sha512_context ) );
+    342              mbedtls_sha512_starts( &ctx->accumulator, 0 );
+    343              mbedtls_sha512_update( &ctx->accumulator, buf, MBEDTLS_ENTROPY_BLOCK_SIZE );
+    344          
+    345              /*
+    346               * Perform second SHA-512 on entropy
+    347               */
+    348              mbedtls_sha512( buf, MBEDTLS_ENTROPY_BLOCK_SIZE, buf, 0 );
+    349          #else /* MBEDTLS_ENTROPY_SHA512_ACCUMULATOR */
+    350              mbedtls_sha256_finish( &ctx->accumulator, buf );
+    351          
+    352              /*
+    353               * Reset accumulator and counters and recycle existing entropy
+    354               */
+    355              memset( &ctx->accumulator, 0, sizeof( mbedtls_sha256_context ) );
+    356              mbedtls_sha256_starts( &ctx->accumulator, 0 );
+    357              mbedtls_sha256_update( &ctx->accumulator, buf, MBEDTLS_ENTROPY_BLOCK_SIZE );
+    358          
+    359              /*
+    360               * Perform second SHA-256 on entropy
+    361               */
+    362              mbedtls_sha256( buf, MBEDTLS_ENTROPY_BLOCK_SIZE, buf, 0 );
+    363          #endif /* MBEDTLS_ENTROPY_SHA512_ACCUMULATOR */
+    364          
+    365              for( i = 0; i < ctx->source_count; i++ )
+    366                  ctx->source[i].size = 0;
+    367          
+    368              memcpy( output, buf, len );
+    369          
+    370              ret = 0;
+    371          
+    372          exit:
+    373          #if defined(MBEDTLS_THREADING_C)
+    374              if( mbedtls_mutex_unlock( &ctx->mutex ) != 0 )
+    375                  return( MBEDTLS_ERR_THREADING_MUTEX_ERROR );
+    376          #endif
+    377          
+    378              return( ret );
+    379          }
+    380          
+    381          #if defined(MBEDTLS_ENTROPY_NV_SEED)
+    382          int mbedtls_entropy_update_nv_seed( mbedtls_entropy_context *ctx )
+    383          {
+    384              int ret = MBEDTLS_ERR_ENTROPY_FILE_IO_ERROR;
+    385              unsigned char buf[ MBEDTLS_ENTROPY_MAX_SEED_SIZE ];
+    386          
+    387              /* Read new seed  and write it to NV */
+    388              if( ( ret = mbedtls_entropy_func( ctx, buf, MBEDTLS_ENTROPY_BLOCK_SIZE ) ) != 0 )
+    389                  return( ret );
+    390          
+    391              if( mbedtls_nv_seed_write( buf, MBEDTLS_ENTROPY_BLOCK_SIZE ) < 0 )
+    392                  return( MBEDTLS_ERR_ENTROPY_FILE_IO_ERROR );
+    393          
+    394              /* Manually update the remaining stream with a separator value to diverge */
+    395              memset( buf, 0, MBEDTLS_ENTROPY_BLOCK_SIZE );
+    396              mbedtls_entropy_update_manual( ctx, buf, MBEDTLS_ENTROPY_BLOCK_SIZE );
+    397          
+    398              return( 0 );
+    399          }
+    400          #endif /* MBEDTLS_ENTROPY_NV_SEED */
+    401          
+    402          #if defined(MBEDTLS_FS_IO)
+    403          int mbedtls_entropy_write_seed_file( mbedtls_entropy_context *ctx, const char *path )
+    404          {
+    405              int ret = MBEDTLS_ERR_ENTROPY_FILE_IO_ERROR;
+    406              FILE *f;
+    407              unsigned char buf[MBEDTLS_ENTROPY_BLOCK_SIZE];
+    408          
+    409              if( ( f = fopen( path, "wb" ) ) == NULL )
+    410                  return( MBEDTLS_ERR_ENTROPY_FILE_IO_ERROR );
+    411          
+    412              if( ( ret = mbedtls_entropy_func( ctx, buf, MBEDTLS_ENTROPY_BLOCK_SIZE ) ) != 0 )
+    413                  goto exit;
+    414          
+    415              if( fwrite( buf, 1, MBEDTLS_ENTROPY_BLOCK_SIZE, f ) != MBEDTLS_ENTROPY_BLOCK_SIZE )
+    416              {
+    417                  ret = MBEDTLS_ERR_ENTROPY_FILE_IO_ERROR;
+    418                  goto exit;
+    419              }
+    420          
+    421              ret = 0;
+    422          
+    423          exit:
+    424              fclose( f );
+    425              return( ret );
+    426          }
+    427          
+    428          int mbedtls_entropy_update_seed_file( mbedtls_entropy_context *ctx, const char *path )
+    429          {
+    430              FILE *f;
+    431              size_t n;
+    432              unsigned char buf[ MBEDTLS_ENTROPY_MAX_SEED_SIZE ];
+    433          
+    434              if( ( f = fopen( path, "rb" ) ) == NULL )
+    435                  return( MBEDTLS_ERR_ENTROPY_FILE_IO_ERROR );
+    436          
+    437              fseek( f, 0, SEEK_END );
+    438              n = (size_t) ftell( f );
+    439              fseek( f, 0, SEEK_SET );
+    440          
+    441              if( n > MBEDTLS_ENTROPY_MAX_SEED_SIZE )
+    442                  n = MBEDTLS_ENTROPY_MAX_SEED_SIZE;
+    443          
+    444              if( fread( buf, 1, n, f ) != n )
+    445              {
+    446                  fclose( f );
+    447                  return( MBEDTLS_ERR_ENTROPY_FILE_IO_ERROR );
+    448              }
+    449          
+    450              fclose( f );
+    451          
+    452              mbedtls_entropy_update_manual( ctx, buf, n );
+    453          
+    454              return( mbedtls_entropy_write_seed_file( ctx, path ) );
+    455          }
+    456          #endif /* MBEDTLS_FS_IO */
+    457          
+    458          #if defined(MBEDTLS_SELF_TEST)
+    459          #if !defined(MBEDTLS_TEST_NULL_ENTROPY)
+    460          /*
+    461           * Dummy source function
+    462           */
+    463          static int entropy_dummy_source( void *data, unsigned char *output,
+    464                                           size_t len, size_t *olen )
+    465          {
+    466              ((void) data);
+    467          
+    468              memset( output, 0x2a, len );
+    469              *olen = len;
+    470          
+    471              return( 0 );
+    472          }
+    473          #endif /* !MBEDTLS_TEST_NULL_ENTROPY */
+    474          
+    475          #if defined(MBEDTLS_ENTROPY_HARDWARE_ALT)
+    476          
+    477          static int mbedtls_entropy_source_self_test_gather( unsigned char *buf, size_t buf_len )
+    478          {
+    479              int ret = 0;
+    480              size_t entropy_len = 0;
+    481              size_t olen = 0;
+    482              size_t attempts = buf_len;
+    483          
+    484              while( attempts > 0 && entropy_len < buf_len )
+    485              {
+    486                  if( ( ret = mbedtls_hardware_poll( NULL, buf + entropy_len,
+    487                      buf_len - entropy_len, &olen ) ) != 0 )
+    488                      return( ret );
+    489          
+    490                  entropy_len += olen;
+    491                  attempts--;
+    492              }
+    493          
+    494              if( entropy_len < buf_len )
+    495              {
+    496                  ret = 1;
+    497              }
+    498          
+    499              return( ret );
+    500          }
+    501          
+    502          
+    503          static int mbedtls_entropy_source_self_test_check_bits( const unsigned char *buf,
+    504                                                                  size_t buf_len )
+    505          {
+    506              unsigned char set= 0xFF;
+    507              unsigned char unset = 0x00;
+    508              size_t i;
+    509          
+    510              for( i = 0; i < buf_len; i++ )
+    511              {
+    512                  set &= buf[i];
+    513                  unset |= buf[i];
+    514              }
+    515          
+    516              return( set == 0xFF || unset == 0x00 );
+    517          }
+    518          
+    519          /*
+    520           * A test to ensure hat the entropy sources are functioning correctly
+    521           * and there is no obvious failure. The test performs the following checks:
+    522           *  - The entropy source is not providing only 0s (all bits unset) or 1s (all
+    523           *    bits set).
+    524           *  - The entropy source is not providing values in a pattern. Because the
+    525           *    hardware could be providing data in an arbitrary length, this check polls
+    526           *    the hardware entropy source twice and compares the result to ensure they
+    527           *    are not equal.
+    528           *  - The error code returned by the entropy source is not an error.
+    529           */
+    530          int mbedtls_entropy_source_self_test( int verbose )
+    531          {
+    532              int ret = 0;
+    533              unsigned char buf0[2 * sizeof( unsigned long long int )];
+    534              unsigned char buf1[2 * sizeof( unsigned long long int )];
+    535          
+    536              if( verbose != 0 )
+    537                  mbedtls_printf( "  ENTROPY_BIAS test: " );
+    538          
+    539              memset( buf0, 0x00, sizeof( buf0 ) );
+    540              memset( buf1, 0x00, sizeof( buf1 ) );
+    541          
+    542              if( ( ret = mbedtls_entropy_source_self_test_gather( buf0, sizeof( buf0 ) ) ) != 0 )
+    543                  goto cleanup;
+    544              if( ( ret = mbedtls_entropy_source_self_test_gather( buf1, sizeof( buf1 ) ) ) != 0 )
+    545                  goto cleanup;
+    546          
+    547              /* Make sure that the returned values are not all 0 or 1 */
+    548              if( ( ret = mbedtls_entropy_source_self_test_check_bits( buf0, sizeof( buf0 ) ) ) != 0 )
+    549                  goto cleanup;
+    550              if( ( ret = mbedtls_entropy_source_self_test_check_bits( buf1, sizeof( buf1 ) ) ) != 0 )
+    551                  goto cleanup;
+    552          
+    553              /* Make sure that the entropy source is not returning values in a
+    554               * pattern */
+    555              ret = memcmp( buf0, buf1, sizeof( buf0 ) ) == 0;
+    556          
+    557          cleanup:
+    558              if( verbose != 0 )
+    559              {
+    560                  if( ret != 0 )
+    561                      mbedtls_printf( "failed\n" );
+    562                  else
+    563                      mbedtls_printf( "passed\n" );
+    564          
+    565                  mbedtls_printf( "\n" );
+    566              }
+    567          
+    568              return( ret != 0 );
+    569          }
+    570          
+    571          #endif /* MBEDTLS_ENTROPY_HARDWARE_ALT */
+    572          
+    573          /*
+    574           * The actual entropy quality is hard to test, but we can at least
+    575           * test that the functions don't cause errors and write the correct
+    576           * amount of data to buffers.
+    577           */
+    578          int mbedtls_entropy_self_test( int verbose )
+    579          {
+    580              int ret = 1;
+    581          #if !defined(MBEDTLS_TEST_NULL_ENTROPY)
+    582              mbedtls_entropy_context ctx;
+    583              unsigned char buf[MBEDTLS_ENTROPY_BLOCK_SIZE] = { 0 };
+    584              unsigned char acc[MBEDTLS_ENTROPY_BLOCK_SIZE] = { 0 };
+    585              size_t i, j;
+    586          #endif /* !MBEDTLS_TEST_NULL_ENTROPY */
+    587          
+    588              if( verbose != 0 )
+    589                  mbedtls_printf( "  ENTROPY test: " );
+    590          
+    591          #if !defined(MBEDTLS_TEST_NULL_ENTROPY)
+    592              mbedtls_entropy_init( &ctx );
+    593          
+    594              /* First do a gather to make sure we have default sources */
+    595              if( ( ret = mbedtls_entropy_gather( &ctx ) ) != 0 )
+    596                  goto cleanup;
+    597          
+    598              ret = mbedtls_entropy_add_source( &ctx, entropy_dummy_source, NULL, 16,
+    599                                                MBEDTLS_ENTROPY_SOURCE_WEAK );
+    600              if( ret != 0 )
+    601                  goto cleanup;
+    602          
+    603              if( ( ret = mbedtls_entropy_update_manual( &ctx, buf, sizeof buf ) ) != 0 )
+    604                  goto cleanup;
+    605          
+    606              /*
+    607               * To test that mbedtls_entropy_func writes correct number of bytes:
+    608               * - use the whole buffer and rely on ASan to detect overruns
+    609               * - collect entropy 8 times and OR the result in an accumulator:
+    610               *   any byte should then be 0 with probably 2^(-64), so requiring
+    611               *   each of the 32 or 64 bytes to be non-zero has a false failure rate
+    612               *   of at most 2^(-58) which is acceptable.
+    613               */
+    614              for( i = 0; i < 8; i++ )
+    615              {
+    616                  if( ( ret = mbedtls_entropy_func( &ctx, buf, sizeof( buf ) ) ) != 0 )
+    617                      goto cleanup;
+    618          
+    619                  for( j = 0; j < sizeof( buf ); j++ )
+    620                      acc[j] |= buf[j];
+    621              }
+    622          
+    623              for( j = 0; j < sizeof( buf ); j++ )
+    624              {
+    625                  if( acc[j] == 0 )
+    626                  {
+    627                      ret = 1;
+    628                      goto cleanup;
+    629                  }
+    630              }
+    631          
+    632          #if defined(MBEDTLS_ENTROPY_HARDWARE_ALT)
+    633              if( ( ret = mbedtls_entropy_source_self_test( 0 ) ) != 0 )
+    634                  goto cleanup;
+    635          #endif
+    636          
+    637          cleanup:
+    638              mbedtls_entropy_free( &ctx );
+    639          #endif /* !MBEDTLS_TEST_NULL_ENTROPY */
+    640          
+    641              if( verbose != 0 )
+    642              {
+    643                  if( ret != 0 )
+    644                      mbedtls_printf( "failed\n" );
+    645                  else
+    646                      mbedtls_printf( "passed\n" );
+    647          
+    648                  mbedtls_printf( "\n" );
+    649              }
+    650          
+    651              return( ret != 0 );
+    652          }
+    653          #endif /* MBEDTLS_SELF_TEST */
+    654          
+    655          #endif /* MBEDTLS_ENTROPY_C */
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

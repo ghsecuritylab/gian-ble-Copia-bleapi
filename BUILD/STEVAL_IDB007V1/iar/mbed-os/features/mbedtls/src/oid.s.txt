@@ -1,0 +1,3564 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:30
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\mbedtls\src\oid.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\oid.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\oid.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\oid.o
+#        .\mbed-os\features\mbedtls\src\oid.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\oid.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\oid.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\mbedtls\src\oid.c
+      1          /**
+      2           * \file oid.c
+      3           *
+      4           * \brief Object Identifier (OID) database
+      5           *
+      6           *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+      7           *  SPDX-License-Identifier: Apache-2.0
+      8           *
+      9           *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+     10           *  not use this file except in compliance with the License.
+     11           *  You may obtain a copy of the License at
+     12           *
+     13           *  http://www.apache.org/licenses/LICENSE-2.0
+     14           *
+     15           *  Unless required by applicable law or agreed to in writing, software
+     16           *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     17           *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     18           *  See the License for the specific language governing permissions and
+     19           *  limitations under the License.
+     20           *
+     21           *  This file is part of mbed TLS (https://tls.mbed.org)
+     22           */
+     23          
+     24          #if !defined(MBEDTLS_CONFIG_FILE)
+     25          #include "mbedtls/config.h"
+     26          #else
+     27          #include MBEDTLS_CONFIG_FILE
+     28          #endif
+     29          
+     30          #if defined(MBEDTLS_OID_C)
+     31          
+     32          #include "mbedtls/oid.h"
+     33          #include "mbedtls/rsa.h"
+     34          
+     35          #include <stdio.h>
+     36          #include <string.h>
+     37          
+     38          #if defined(MBEDTLS_PLATFORM_C)
+     39          #include "mbedtls/platform.h"
+     40          #else
+     41          #define mbedtls_snprintf snprintf
+     42          #endif
+     43          
+     44          #if defined(MBEDTLS_X509_USE_C) || defined(MBEDTLS_X509_CREATE_C)
+     45          #include "mbedtls/x509.h"
+     46          #endif
+     47          
+     48          /*
+     49           * Macro to automatically add the size of #define'd OIDs
+     50           */
+     51          #define ADD_LEN(s)      s, MBEDTLS_OID_SIZE(s)
+     52          
+     53          /*
+     54           * Macro to generate an internal function for oid_XXX_from_asn1() (used by
+     55           * the other functions)
+     56           */
+     57          #define FN_OID_TYPED_FROM_ASN1( TYPE_T, NAME, LIST )                        \
+     58          static const TYPE_T * oid_ ## NAME ## _from_asn1( const mbedtls_asn1_buf *oid )     \
+     59          {                                                                           \
+     60              const TYPE_T *p = LIST;                                                 \
+     61              const mbedtls_oid_descriptor_t *cur = (const mbedtls_oid_descriptor_t *) p;             \
+     62              if( p == NULL || oid == NULL ) return( NULL );                          \
+     63              while( cur->asn1 != NULL ) {                                            \
+     64                  if( cur->asn1_len == oid->len &&                                    \
+     65                      memcmp( cur->asn1, oid->p, oid->len ) == 0 ) {                  \
+     66                      return( p );                                                    \
+     67                  }                                                                   \
+     68                  p++;                                                                \
+     69                  cur = (const mbedtls_oid_descriptor_t *) p;                                 \
+     70              }                                                                       \
+     71              return( NULL );                                                         \
+     72          }
+     73          
+     74          /*
+     75           * Macro to generate a function for retrieving a single attribute from the
+     76           * descriptor of an mbedtls_oid_descriptor_t wrapper.
+     77           */
+     78          #define FN_OID_GET_DESCRIPTOR_ATTR1(FN_NAME, TYPE_T, TYPE_NAME, ATTR1_TYPE, ATTR1) \
+     79          int FN_NAME( const mbedtls_asn1_buf *oid, ATTR1_TYPE * ATTR1 )                  \
+     80          {                                                                       \
+     81              const TYPE_T *data = oid_ ## TYPE_NAME ## _from_asn1( oid );        \
+     82              if( data == NULL ) return( MBEDTLS_ERR_OID_NOT_FOUND );            \
+     83              *ATTR1 = data->descriptor.ATTR1;                                    \
+     84              return( 0 );                                                        \
+     85          }
+     86          
+     87          /*
+     88           * Macro to generate a function for retrieving a single attribute from an
+     89           * mbedtls_oid_descriptor_t wrapper.
+     90           */
+     91          #define FN_OID_GET_ATTR1(FN_NAME, TYPE_T, TYPE_NAME, ATTR1_TYPE, ATTR1) \
+     92          int FN_NAME( const mbedtls_asn1_buf *oid, ATTR1_TYPE * ATTR1 )                  \
+     93          {                                                                       \
+     94              const TYPE_T *data = oid_ ## TYPE_NAME ## _from_asn1( oid );        \
+     95              if( data == NULL ) return( MBEDTLS_ERR_OID_NOT_FOUND );            \
+     96              *ATTR1 = data->ATTR1;                                               \
+     97              return( 0 );                                                        \
+     98          }
+     99          
+    100          /*
+    101           * Macro to generate a function for retrieving two attributes from an
+    102           * mbedtls_oid_descriptor_t wrapper.
+    103           */
+    104          #define FN_OID_GET_ATTR2(FN_NAME, TYPE_T, TYPE_NAME, ATTR1_TYPE, ATTR1,     \
+    105                                   ATTR2_TYPE, ATTR2)                                 \
+    106          int FN_NAME( const mbedtls_asn1_buf *oid, ATTR1_TYPE * ATTR1, ATTR2_TYPE * ATTR2 )  \
+    107          {                                                                           \
+    108              const TYPE_T *data = oid_ ## TYPE_NAME ## _from_asn1( oid );            \
+    109              if( data == NULL ) return( MBEDTLS_ERR_OID_NOT_FOUND );                \
+    110              *ATTR1 = data->ATTR1;                                                   \
+    111              *ATTR2 = data->ATTR2;                                                   \
+    112              return( 0 );                                                            \
+    113          }
+    114          
+    115          /*
+    116           * Macro to generate a function for retrieving the OID based on a single
+    117           * attribute from a mbedtls_oid_descriptor_t wrapper.
+    118           */
+    119          #define FN_OID_GET_OID_BY_ATTR1(FN_NAME, TYPE_T, LIST, ATTR1_TYPE, ATTR1)   \
+    120          int FN_NAME( ATTR1_TYPE ATTR1, const char **oid, size_t *olen )             \
+    121          {                                                                           \
+    122              const TYPE_T *cur = LIST;                                               \
+    123              while( cur->descriptor.asn1 != NULL ) {                                 \
+    124                  if( cur->ATTR1 == ATTR1 ) {                                         \
+    125                      *oid = cur->descriptor.asn1;                                    \
+    126                      *olen = cur->descriptor.asn1_len;                               \
+    127                      return( 0 );                                                    \
+    128                  }                                                                   \
+    129                  cur++;                                                              \
+    130              }                                                                       \
+    131              return( MBEDTLS_ERR_OID_NOT_FOUND );                                   \
+    132          }
+    133          
+    134          /*
+    135           * Macro to generate a function for retrieving the OID based on two
+    136           * attributes from a mbedtls_oid_descriptor_t wrapper.
+    137           */
+    138          #define FN_OID_GET_OID_BY_ATTR2(FN_NAME, TYPE_T, LIST, ATTR1_TYPE, ATTR1,   \
+    139                                          ATTR2_TYPE, ATTR2)                          \
+    140          int FN_NAME( ATTR1_TYPE ATTR1, ATTR2_TYPE ATTR2, const char **oid ,         \
+    141                       size_t *olen )                                                 \
+    142          {                                                                           \
+    143              const TYPE_T *cur = LIST;                                               \
+    144              while( cur->descriptor.asn1 != NULL ) {                                 \
+    145                  if( cur->ATTR1 == ATTR1 && cur->ATTR2 == ATTR2 ) {                  \
+    146                      *oid = cur->descriptor.asn1;                                    \
+    147                      *olen = cur->descriptor.asn1_len;                               \
+    148                      return( 0 );                                                    \
+    149                  }                                                                   \
+    150                  cur++;                                                              \
+    151              }                                                                       \
+    152              return( MBEDTLS_ERR_OID_NOT_FOUND );                                   \
+    153          }
+    154          
+    155          #if defined(MBEDTLS_X509_USE_C) || defined(MBEDTLS_X509_CREATE_C)
+    156          /*
+    157           * For X520 attribute types
+    158           */
+    159          typedef struct {
+    160              mbedtls_oid_descriptor_t    descriptor;
+    161              const char          *short_name;
+    162          } oid_x520_attr_t;
+    163          
+
+   \                                 In section .text, align 4, keep-with-next
+    164          static const oid_x520_attr_t oid_x520_attr_type[] =
+   \                     oid_x520_attr_type:
+   \   00000000   0x........         DC32 ?_0, 3, ?_1, ?_2, ?_3, ?_4, 3, ?_5, ?_6, ?_7, ?_8, 3, ?_9, ?_10
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \   00000038   0x........         DC32 ?_11, ?_12, 3, ?_13, ?_14, ?_15, ?_16, 3, ?_17, ?_18, ?_19, ?_20
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \   00000068   0x00000003         DC32 3, ?_21, ?_22, ?_23, ?_24, 9, ?_25, ?_26, ?_25, ?_27, 3, ?_28
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000009   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \   00000098   0x........         DC32 ?_29, ?_30, ?_31, 3, ?_32, ?_33, ?_34, ?_35, 3, ?_36, ?_37, ?_38
+   \              0x........   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \   000000C8   0x........         DC32 ?_39, 3, ?_40, ?_41, ?_42, ?_43, 3, ?_44, ?_45, ?_46, ?_47, 3
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000003   
+   \   000000F8   0x........         DC32 ?_48, ?_49, ?_50, ?_51, 3, ?_52, ?_53, ?_54, ?_55, 3, ?_56, ?_57
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \   00000128   0x........         DC32 ?_58, ?_59, 3, ?_60, ?_61, ?_62, ?_63, 3, ?_64, ?_65, ?_66, ?_67
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \   00000158   0x0000000A         DC32 10, ?_68, ?_69, ?_70, ?_71, 3, ?_72, ?_73, ?_74, 0H, 0, 0H, 0H, 0H
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+    165          {
+    166              {
+    167                  { ADD_LEN( MBEDTLS_OID_AT_CN ),          "id-at-commonName",               "Common Name" },
+    168                  "CN",
+    169              },
+    170              {
+    171                  { ADD_LEN( MBEDTLS_OID_AT_COUNTRY ),     "id-at-countryName",              "Country" },
+    172                  "C",
+    173              },
+    174              {
+    175                  { ADD_LEN( MBEDTLS_OID_AT_LOCALITY ),    "id-at-locality",                 "Locality" },
+    176                  "L",
+    177              },
+    178              {
+    179                  { ADD_LEN( MBEDTLS_OID_AT_STATE ),       "id-at-state",                    "State" },
+    180                  "ST",
+    181              },
+    182              {
+    183                  { ADD_LEN( MBEDTLS_OID_AT_ORGANIZATION ),"id-at-organizationName",         "Organization" },
+    184                  "O",
+    185              },
+    186              {
+    187                  { ADD_LEN( MBEDTLS_OID_AT_ORG_UNIT ),    "id-at-organizationalUnitName",   "Org Unit" },
+    188                  "OU",
+    189              },
+    190              {
+    191                  { ADD_LEN( MBEDTLS_OID_PKCS9_EMAIL ),    "emailAddress",                   "E-mail address" },
+    192                  "emailAddress",
+    193              },
+    194              {
+    195                  { ADD_LEN( MBEDTLS_OID_AT_SERIAL_NUMBER ),"id-at-serialNumber",            "Serial number" },
+    196                  "serialNumber",
+    197              },
+    198              {
+    199                  { ADD_LEN( MBEDTLS_OID_AT_POSTAL_ADDRESS ),"id-at-postalAddress",          "Postal address" },
+    200                  "postalAddress",
+    201              },
+    202              {
+    203                  { ADD_LEN( MBEDTLS_OID_AT_POSTAL_CODE ), "id-at-postalCode",               "Postal code" },
+    204                  "postalCode",
+    205              },
+    206              {
+    207                  { ADD_LEN( MBEDTLS_OID_AT_SUR_NAME ),    "id-at-surName",                  "Surname" },
+    208                  "SN",
+    209              },
+    210              {
+    211                  { ADD_LEN( MBEDTLS_OID_AT_GIVEN_NAME ),  "id-at-givenName",                "Given name" },
+    212                  "GN",
+    213              },
+    214              {
+    215                  { ADD_LEN( MBEDTLS_OID_AT_INITIALS ),    "id-at-initials",                 "Initials" },
+    216                  "initials",
+    217              },
+    218              {
+    219                  { ADD_LEN( MBEDTLS_OID_AT_GENERATION_QUALIFIER ), "id-at-generationQualifier", "Generation qualifier" },
+    220                  "generationQualifier",
+    221              },
+    222              {
+    223                  { ADD_LEN( MBEDTLS_OID_AT_TITLE ),       "id-at-title",                    "Title" },
+    224                  "title",
+    225              },
+    226              {
+    227                  { ADD_LEN( MBEDTLS_OID_AT_DN_QUALIFIER ),"id-at-dnQualifier",              "Distinguished Name qualifier" },
+    228                  "dnQualifier",
+    229              },
+    230              {
+    231                  { ADD_LEN( MBEDTLS_OID_AT_PSEUDONYM ),   "id-at-pseudonym",                "Pseudonym" },
+    232                  "pseudonym",
+    233              },
+    234              {
+    235                  { ADD_LEN( MBEDTLS_OID_DOMAIN_COMPONENT ), "id-domainComponent",           "Domain component" },
+    236                  "DC",
+    237              },
+    238              {
+    239                  { ADD_LEN( MBEDTLS_OID_AT_UNIQUE_IDENTIFIER ), "id-at-uniqueIdentifier",    "Unique Identifier" },
+    240                  "uniqueIdentifier",
+    241              },
+    242              {
+    243                  { NULL, 0, NULL, NULL },
+    244                  NULL,
+    245              }
+    246          };
+    247          
+    248          FN_OID_TYPED_FROM_ASN1(oid_x520_attr_t, x520_attr, oid_x520_attr_type)
+
+   \                                 In section .text, align 4, keep-with-next
+    249          FN_OID_GET_ATTR1(mbedtls_oid_get_attr_short_name, oid_x520_attr_t, x520_attr, const char *, short_name)
+   \                     mbedtls_oid_get_attr_short_name: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0xBF00             Nop      
+   \   00000008   0x....             ADR.N    R1,oid_x520_attr_type
+   \   0000000A   0x000C             MOVS     R4,R1
+   \   0000000C   0x2D00             CMP      R5,#+0
+   \   0000000E   0xD102             BNE      ??mbedtls_oid_get_attr_short_name_0
+   \   00000010   0xE00F             B        ??mbedtls_oid_get_attr_short_name_1
+   \                     ??mbedtls_oid_get_attr_short_name_2: (+1)
+   \   00000012   0x3414             ADDS     R4,R4,#+20
+   \   00000014   0x0021             MOVS     R1,R4
+   \                     ??mbedtls_oid_get_attr_short_name_0: (+1)
+   \   00000016   0x6808             LDR      R0,[R1, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD00A             BEQ      ??mbedtls_oid_get_attr_short_name_1
+   \   0000001C   0x686A             LDR      R2,[R5, #+4]
+   \   0000001E   0x6849             LDR      R1,[R1, #+4]
+   \   00000020   0x4291             CMP      R1,R2
+   \   00000022   0xD1F6             BNE      ??mbedtls_oid_get_attr_short_name_2
+   \   00000024   0x68A9             LDR      R1,[R5, #+8]
+   \   00000026   0x.... 0x....      BL       memcmp
+   \   0000002A   0x2800             CMP      R0,#+0
+   \   0000002C   0xD1F1             BNE      ??mbedtls_oid_get_attr_short_name_2
+   \   0000002E   0x2C00             CMP      R4,#+0
+   \   00000030   0xD102             BNE      ??mbedtls_oid_get_attr_short_name_3
+   \                     ??mbedtls_oid_get_attr_short_name_1: (+1)
+   \   00000032   0x202D             MOVS     R0,#+45
+   \   00000034   0x43C0             MVNS     R0,R0            ;; #-46
+   \   00000036   0xBD70             POP      {R4-R6,PC}
+   \                     ??mbedtls_oid_get_attr_short_name_3: (+1)
+   \   00000038   0x6920             LDR      R0,[R4, #+16]
+   \   0000003A   0x6030             STR      R0,[R6, #+0]
+   \   0000003C   0x2000             MOVS     R0,#+0
+   \   0000003E   0xBD70             POP      {R4-R6,PC}       ;; return
+    250          
+    251          /*
+    252           * For X509 extensions
+    253           */
+    254          typedef struct {
+    255              mbedtls_oid_descriptor_t    descriptor;
+    256              int                 ext_type;
+    257          } oid_x509_ext_t;
+    258          
+
+   \                                 In section .text, align 4, keep-with-next
+    259          static const oid_x509_ext_t oid_x509_ext[] =
+   \                     oid_x509_ext:
+   \   00000000   0x........         DC32 ?_75, 3, ?_76, ?_77, 256, ?_78, 3, ?_79, ?_80, 4, ?_81, 3, ?_82
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x00000100   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x00000004   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \   00000034   0x........         DC32 ?_83, 2048, ?_84, 3, ?_85, ?_86, 32, ?_87, 9, ?_88, ?_89, 65536
+   \              0x00000800   
+   \              0x........   
+   \              0x00000003   
+   \              0x........   
+   \              0x........   
+   \              0x00000020   
+   \              0x........   
+   \              0x00000009   
+   \              0x........   
+   \              0x........   
+   \              0x00010000   
+   \   00000064   0x00000000         DC32 0H, 0, 0H, 0H, 0
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+    260          {
+    261              {
+    262                  { ADD_LEN( MBEDTLS_OID_BASIC_CONSTRAINTS ),    "id-ce-basicConstraints",   "Basic Constraints" },
+    263                  MBEDTLS_X509_EXT_BASIC_CONSTRAINTS,
+    264              },
+    265              {
+    266                  { ADD_LEN( MBEDTLS_OID_KEY_USAGE ),            "id-ce-keyUsage",           "Key Usage" },
+    267                  MBEDTLS_X509_EXT_KEY_USAGE,
+    268              },
+    269              {
+    270                  { ADD_LEN( MBEDTLS_OID_EXTENDED_KEY_USAGE ),   "id-ce-extKeyUsage",        "Extended Key Usage" },
+    271                  MBEDTLS_X509_EXT_EXTENDED_KEY_USAGE,
+    272              },
+    273              {
+    274                  { ADD_LEN( MBEDTLS_OID_SUBJECT_ALT_NAME ),     "id-ce-subjectAltName",     "Subject Alt Name" },
+    275                  MBEDTLS_X509_EXT_SUBJECT_ALT_NAME,
+    276              },
+    277              {
+    278                  { ADD_LEN( MBEDTLS_OID_NS_CERT_TYPE ),         "id-netscape-certtype",     "Netscape Certificate Type" },
+    279                  MBEDTLS_X509_EXT_NS_CERT_TYPE,
+    280              },
+    281              {
+    282                  { NULL, 0, NULL, NULL },
+    283                  0,
+    284              },
+    285          };
+    286          
+    287          FN_OID_TYPED_FROM_ASN1(oid_x509_ext_t, x509_ext, oid_x509_ext)
+
+   \                                 In section .text, align 4, keep-with-next
+    288          FN_OID_GET_ATTR1(mbedtls_oid_get_x509_ext_type, oid_x509_ext_t, x509_ext, int, ext_type)
+   \                     mbedtls_oid_get_x509_ext_type: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0xBF00             Nop      
+   \   00000008   0x....             ADR.N    R1,oid_x509_ext
+   \   0000000A   0x000C             MOVS     R4,R1
+   \   0000000C   0x2D00             CMP      R5,#+0
+   \   0000000E   0xD102             BNE      ??mbedtls_oid_get_x509_ext_type_0
+   \   00000010   0xE00F             B        ??mbedtls_oid_get_x509_ext_type_1
+   \                     ??mbedtls_oid_get_x509_ext_type_2: (+1)
+   \   00000012   0x3414             ADDS     R4,R4,#+20
+   \   00000014   0x0021             MOVS     R1,R4
+   \                     ??mbedtls_oid_get_x509_ext_type_0: (+1)
+   \   00000016   0x6808             LDR      R0,[R1, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD00A             BEQ      ??mbedtls_oid_get_x509_ext_type_1
+   \   0000001C   0x686A             LDR      R2,[R5, #+4]
+   \   0000001E   0x6849             LDR      R1,[R1, #+4]
+   \   00000020   0x4291             CMP      R1,R2
+   \   00000022   0xD1F6             BNE      ??mbedtls_oid_get_x509_ext_type_2
+   \   00000024   0x68A9             LDR      R1,[R5, #+8]
+   \   00000026   0x.... 0x....      BL       memcmp
+   \   0000002A   0x2800             CMP      R0,#+0
+   \   0000002C   0xD1F1             BNE      ??mbedtls_oid_get_x509_ext_type_2
+   \   0000002E   0x2C00             CMP      R4,#+0
+   \   00000030   0xD102             BNE      ??mbedtls_oid_get_x509_ext_type_3
+   \                     ??mbedtls_oid_get_x509_ext_type_1: (+1)
+   \   00000032   0x202D             MOVS     R0,#+45
+   \   00000034   0x43C0             MVNS     R0,R0            ;; #-46
+   \   00000036   0xBD70             POP      {R4-R6,PC}
+   \                     ??mbedtls_oid_get_x509_ext_type_3: (+1)
+   \   00000038   0x6920             LDR      R0,[R4, #+16]
+   \   0000003A   0x6030             STR      R0,[R6, #+0]
+   \   0000003C   0x2000             MOVS     R0,#+0
+   \   0000003E   0xBD70             POP      {R4-R6,PC}       ;; return
+    289          
+
+   \                                 In section .text, align 4, keep-with-next
+    290          static const mbedtls_oid_descriptor_t oid_ext_key_usage[] =
+   \                     oid_ext_key_usage:
+   \   00000000   0x........         DC32 ?_90, 8, ?_91, ?_92, ?_93, 8, ?_94, ?_95, ?_96, 8, ?_97, ?_98
+   \              0x00000008   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000008   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000008   
+   \              0x........   
+   \              0x........   
+   \   00000030   0x........         DC32 ?_99, 8, ?_100, ?_101, ?_102, 8, ?_103, ?_104, ?_105, 8, ?_106
+   \              0x00000008   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000008   
+   \              0x........   
+   \              0x........   
+   \              0x........   
+   \              0x00000008   
+   \              0x........   
+   \   0000005C   0x........         DC32 ?_107, 0H, 0, 0H, 0H
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+    291          {
+    292              { ADD_LEN( MBEDTLS_OID_SERVER_AUTH ),      "id-kp-serverAuth",      "TLS Web Server Authentication" },
+    293              { ADD_LEN( MBEDTLS_OID_CLIENT_AUTH ),      "id-kp-clientAuth",      "TLS Web Client Authentication" },
+    294              { ADD_LEN( MBEDTLS_OID_CODE_SIGNING ),     "id-kp-codeSigning",     "Code Signing" },
+    295              { ADD_LEN( MBEDTLS_OID_EMAIL_PROTECTION ), "id-kp-emailProtection", "E-mail Protection" },
+    296              { ADD_LEN( MBEDTLS_OID_TIME_STAMPING ),    "id-kp-timeStamping",    "Time Stamping" },
+    297              { ADD_LEN( MBEDTLS_OID_OCSP_SIGNING ),     "id-kp-OCSPSigning",     "OCSP Signing" },
+    298              { NULL, 0, NULL, NULL },
+    299          };
+    300          
+    301          FN_OID_TYPED_FROM_ASN1(mbedtls_oid_descriptor_t, ext_key_usage, oid_ext_key_usage)
+
+   \                                 In section .text, align 4, keep-with-next
+    302          FN_OID_GET_ATTR1(mbedtls_oid_get_extended_key_usage, mbedtls_oid_descriptor_t, ext_key_usage, const char *, description)
+   \                     mbedtls_oid_get_extended_key_usage: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0xBF00             Nop      
+   \   00000008   0x....             ADR.N    R1,oid_ext_key_usage
+   \   0000000A   0x000C             MOVS     R4,R1
+   \   0000000C   0x2D00             CMP      R5,#+0
+   \   0000000E   0xD102             BNE      ??mbedtls_oid_get_extended_key_usage_0
+   \   00000010   0xE00F             B        ??mbedtls_oid_get_extended_key_usage_1
+   \                     ??mbedtls_oid_get_extended_key_usage_2: (+1)
+   \   00000012   0x3410             ADDS     R4,R4,#+16
+   \   00000014   0x0021             MOVS     R1,R4
+   \                     ??mbedtls_oid_get_extended_key_usage_0: (+1)
+   \   00000016   0x6808             LDR      R0,[R1, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD00A             BEQ      ??mbedtls_oid_get_extended_key_usage_1
+   \   0000001C   0x686A             LDR      R2,[R5, #+4]
+   \   0000001E   0x6849             LDR      R1,[R1, #+4]
+   \   00000020   0x4291             CMP      R1,R2
+   \   00000022   0xD1F6             BNE      ??mbedtls_oid_get_extended_key_usage_2
+   \   00000024   0x68A9             LDR      R1,[R5, #+8]
+   \   00000026   0x.... 0x....      BL       memcmp
+   \   0000002A   0x2800             CMP      R0,#+0
+   \   0000002C   0xD1F1             BNE      ??mbedtls_oid_get_extended_key_usage_2
+   \   0000002E   0x2C00             CMP      R4,#+0
+   \   00000030   0xD102             BNE      ??mbedtls_oid_get_extended_key_usage_3
+   \                     ??mbedtls_oid_get_extended_key_usage_1: (+1)
+   \   00000032   0x202D             MOVS     R0,#+45
+   \   00000034   0x43C0             MVNS     R0,R0            ;; #-46
+   \   00000036   0xBD70             POP      {R4-R6,PC}
+   \                     ??mbedtls_oid_get_extended_key_usage_3: (+1)
+   \   00000038   0x68E0             LDR      R0,[R4, #+12]
+   \   0000003A   0x6030             STR      R0,[R6, #+0]
+   \   0000003C   0x2000             MOVS     R0,#+0
+   \   0000003E   0xBD70             POP      {R4-R6,PC}       ;; return
+    303          #endif /* MBEDTLS_X509_USE_C || MBEDTLS_X509_CREATE_C */
+    304          
+    305          #if defined(MBEDTLS_MD_C)
+    306          /*
+    307           * For SignatureAlgorithmIdentifier
+    308           */
+    309          typedef struct {
+    310              mbedtls_oid_descriptor_t    descriptor;
+    311              mbedtls_md_type_t           md_alg;
+    312              mbedtls_pk_type_t           pk_alg;
+    313          } oid_sig_alg_t;
+    314          
+
+   \                                 In section .text, align 4, keep-with-next
+    315          static const oid_sig_alg_t oid_sig_alg[] =
+   \                     oid_sig_alg:
+   \   00000000   0x........         DC32 ?_108, 9, ?_109, ?_110
+   \              0x00000009   
+   \              0x........   
+   \              0x........   
+   \   00000010   0x05 0x01          DC8 5, 1, 0, 0
+   \              0x00 0x00    
+   \   00000014   0x........         DC32 ?_111, 9, ?_112, ?_113
+   \              0x00000009   
+   \              0x........   
+   \              0x........   
+   \   00000024   0x06 0x01          DC8 6, 1, 0, 0
+   \              0x00 0x00    
+   \   00000028   0x........         DC32 ?_114, 9, ?_115, ?_116
+   \              0x00000009   
+   \              0x........   
+   \              0x........   
+   \   00000038   0x07 0x01          DC8 7, 1, 0, 0
+   \              0x00 0x00    
+   \   0000003C   0x........         DC32 ?_117, 9, ?_118, ?_119
+   \              0x00000009   
+   \              0x........   
+   \              0x........   
+   \   0000004C   0x08 0x01          DC8 8, 1, 0, 0
+   \              0x00 0x00    
+   \   00000050   0x........         DC32 ?_120, 8, ?_121, ?_122
+   \              0x00000008   
+   \              0x........   
+   \              0x........   
+   \   00000060   0x05 0x04          DC8 5, 4, 0, 0
+   \              0x00 0x00    
+   \   00000064   0x........         DC32 ?_123, 8, ?_124, ?_125
+   \              0x00000008   
+   \              0x........   
+   \              0x........   
+   \   00000074   0x06 0x04          DC8 6, 4, 0, 0
+   \              0x00 0x00    
+   \   00000078   0x........         DC32 ?_126, 8, ?_127, ?_128
+   \              0x00000008   
+   \              0x........   
+   \              0x........   
+   \   00000088   0x07 0x04          DC8 7, 4, 0, 0
+   \              0x00 0x00    
+   \   0000008C   0x........         DC32 ?_129, 8, ?_130, ?_131
+   \              0x00000008   
+   \              0x........   
+   \              0x........   
+   \   0000009C   0x08 0x04          DC8 8, 4, 0, 0
+   \              0x00 0x00    
+   \   000000A0   0x........         DC32 ?_132, 9, ?_133, ?_133
+   \              0x00000009   
+   \              0x........   
+   \              0x........   
+   \   000000B0   0x00 0x06          DC8 0, 6, 0, 0
+   \              0x00 0x00    
+   \   000000B4   0x00000000         DC32 0H, 0, 0H, 0H
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \   000000C4   0x00 0x00          DC8 0, 0, 0, 0
+   \              0x00 0x00    
+    316          {
+    317          #if defined(MBEDTLS_RSA_C)
+    318          #if defined(MBEDTLS_MD2_C)
+    319              {
+    320                  { ADD_LEN( MBEDTLS_OID_PKCS1_MD2 ),        "md2WithRSAEncryption",     "RSA with MD2" },
+    321                  MBEDTLS_MD_MD2,      MBEDTLS_PK_RSA,
+    322              },
+    323          #endif /* MBEDTLS_MD2_C */
+    324          #if defined(MBEDTLS_MD4_C)
+    325              {
+    326                  { ADD_LEN( MBEDTLS_OID_PKCS1_MD4 ),        "md4WithRSAEncryption",     "RSA with MD4" },
+    327                  MBEDTLS_MD_MD4,      MBEDTLS_PK_RSA,
+    328              },
+    329          #endif /* MBEDTLS_MD4_C */
+    330          #if defined(MBEDTLS_MD5_C)
+    331              {
+    332                  { ADD_LEN( MBEDTLS_OID_PKCS1_MD5 ),        "md5WithRSAEncryption",     "RSA with MD5" },
+    333                  MBEDTLS_MD_MD5,      MBEDTLS_PK_RSA,
+    334              },
+    335          #endif /* MBEDTLS_MD5_C */
+    336          #if defined(MBEDTLS_SHA1_C)
+    337              {
+    338                  { ADD_LEN( MBEDTLS_OID_PKCS1_SHA1 ),       "sha-1WithRSAEncryption",   "RSA with SHA1" },
+    339                  MBEDTLS_MD_SHA1,     MBEDTLS_PK_RSA,
+    340              },
+    341          #endif /* MBEDTLS_SHA1_C */
+    342          #if defined(MBEDTLS_SHA256_C)
+    343              {
+    344                  { ADD_LEN( MBEDTLS_OID_PKCS1_SHA224 ),     "sha224WithRSAEncryption",  "RSA with SHA-224" },
+    345                  MBEDTLS_MD_SHA224,   MBEDTLS_PK_RSA,
+    346              },
+    347              {
+    348                  { ADD_LEN( MBEDTLS_OID_PKCS1_SHA256 ),     "sha256WithRSAEncryption",  "RSA with SHA-256" },
+    349                  MBEDTLS_MD_SHA256,   MBEDTLS_PK_RSA,
+    350              },
+    351          #endif /* MBEDTLS_SHA256_C */
+    352          #if defined(MBEDTLS_SHA512_C)
+    353              {
+    354                  { ADD_LEN( MBEDTLS_OID_PKCS1_SHA384 ),     "sha384WithRSAEncryption",  "RSA with SHA-384" },
+    355                  MBEDTLS_MD_SHA384,   MBEDTLS_PK_RSA,
+    356              },
+    357              {
+    358                  { ADD_LEN( MBEDTLS_OID_PKCS1_SHA512 ),     "sha512WithRSAEncryption",  "RSA with SHA-512" },
+    359                  MBEDTLS_MD_SHA512,   MBEDTLS_PK_RSA,
+    360              },
+    361          #endif /* MBEDTLS_SHA512_C */
+    362          #if defined(MBEDTLS_SHA1_C)
+    363              {
+    364                  { ADD_LEN( MBEDTLS_OID_RSA_SHA_OBS ),      "sha-1WithRSAEncryption",   "RSA with SHA1" },
+    365                  MBEDTLS_MD_SHA1,     MBEDTLS_PK_RSA,
+    366              },
+    367          #endif /* MBEDTLS_SHA1_C */
+    368          #endif /* MBEDTLS_RSA_C */
+    369          #if defined(MBEDTLS_ECDSA_C)
+    370          #if defined(MBEDTLS_SHA1_C)
+    371              {
+    372                  { ADD_LEN( MBEDTLS_OID_ECDSA_SHA1 ),       "ecdsa-with-SHA1",      "ECDSA with SHA1" },
+    373                  MBEDTLS_MD_SHA1,     MBEDTLS_PK_ECDSA,
+    374              },
+    375          #endif /* MBEDTLS_SHA1_C */
+    376          #if defined(MBEDTLS_SHA256_C)
+    377              {
+    378                  { ADD_LEN( MBEDTLS_OID_ECDSA_SHA224 ),     "ecdsa-with-SHA224",    "ECDSA with SHA224" },
+    379                  MBEDTLS_MD_SHA224,   MBEDTLS_PK_ECDSA,
+    380              },
+    381              {
+    382                  { ADD_LEN( MBEDTLS_OID_ECDSA_SHA256 ),     "ecdsa-with-SHA256",    "ECDSA with SHA256" },
+    383                  MBEDTLS_MD_SHA256,   MBEDTLS_PK_ECDSA,
+    384              },
+    385          #endif /* MBEDTLS_SHA256_C */
+    386          #if defined(MBEDTLS_SHA512_C)
+    387              {
+    388                  { ADD_LEN( MBEDTLS_OID_ECDSA_SHA384 ),     "ecdsa-with-SHA384",    "ECDSA with SHA384" },
+    389                  MBEDTLS_MD_SHA384,   MBEDTLS_PK_ECDSA,
+    390              },
+    391              {
+    392                  { ADD_LEN( MBEDTLS_OID_ECDSA_SHA512 ),     "ecdsa-with-SHA512",    "ECDSA with SHA512" },
+    393                  MBEDTLS_MD_SHA512,   MBEDTLS_PK_ECDSA,
+    394              },
+    395          #endif /* MBEDTLS_SHA512_C */
+    396          #endif /* MBEDTLS_ECDSA_C */
+    397          #if defined(MBEDTLS_RSA_C)
+    398              {
+    399                  { ADD_LEN( MBEDTLS_OID_RSASSA_PSS ),        "RSASSA-PSS",           "RSASSA-PSS" },
+    400                  MBEDTLS_MD_NONE,     MBEDTLS_PK_RSASSA_PSS,
+    401              },
+    402          #endif /* MBEDTLS_RSA_C */
+    403              {
+    404                  { NULL, 0, NULL, NULL },
+    405                  MBEDTLS_MD_NONE, MBEDTLS_PK_NONE,
+    406              },
+    407          };
+    408          
+    409          FN_OID_TYPED_FROM_ASN1(oid_sig_alg_t, sig_alg, oid_sig_alg)
+
+   \                                 In section .text, align 4, keep-with-next
+    410          FN_OID_GET_DESCRIPTOR_ATTR1(mbedtls_oid_get_sig_alg_desc, oid_sig_alg_t, sig_alg, const char *, description)
+   \                     mbedtls_oid_get_sig_alg_desc: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0xBF00             Nop      
+   \   00000008   0x....             ADR.N    R1,oid_sig_alg
+   \   0000000A   0x000C             MOVS     R4,R1
+   \   0000000C   0x2D00             CMP      R5,#+0
+   \   0000000E   0xD102             BNE      ??mbedtls_oid_get_sig_alg_desc_0
+   \   00000010   0xE00F             B        ??mbedtls_oid_get_sig_alg_desc_1
+   \                     ??mbedtls_oid_get_sig_alg_desc_2: (+1)
+   \   00000012   0x3414             ADDS     R4,R4,#+20
+   \   00000014   0x0021             MOVS     R1,R4
+   \                     ??mbedtls_oid_get_sig_alg_desc_0: (+1)
+   \   00000016   0x6808             LDR      R0,[R1, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD00A             BEQ      ??mbedtls_oid_get_sig_alg_desc_1
+   \   0000001C   0x686A             LDR      R2,[R5, #+4]
+   \   0000001E   0x6849             LDR      R1,[R1, #+4]
+   \   00000020   0x4291             CMP      R1,R2
+   \   00000022   0xD1F6             BNE      ??mbedtls_oid_get_sig_alg_desc_2
+   \   00000024   0x68A9             LDR      R1,[R5, #+8]
+   \   00000026   0x.... 0x....      BL       memcmp
+   \   0000002A   0x2800             CMP      R0,#+0
+   \   0000002C   0xD1F1             BNE      ??mbedtls_oid_get_sig_alg_desc_2
+   \   0000002E   0x2C00             CMP      R4,#+0
+   \   00000030   0xD102             BNE      ??mbedtls_oid_get_sig_alg_desc_3
+   \                     ??mbedtls_oid_get_sig_alg_desc_1: (+1)
+   \   00000032   0x202D             MOVS     R0,#+45
+   \   00000034   0x43C0             MVNS     R0,R0            ;; #-46
+   \   00000036   0xBD70             POP      {R4-R6,PC}
+   \                     ??mbedtls_oid_get_sig_alg_desc_3: (+1)
+   \   00000038   0x68E0             LDR      R0,[R4, #+12]
+   \   0000003A   0x6030             STR      R0,[R6, #+0]
+   \   0000003C   0x2000             MOVS     R0,#+0
+   \   0000003E   0xBD70             POP      {R4-R6,PC}       ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+    411          FN_OID_GET_ATTR2(mbedtls_oid_get_sig_alg, oid_sig_alg_t, sig_alg, mbedtls_md_type_t, md_alg, mbedtls_pk_type_t, pk_alg)
+   \                     mbedtls_oid_get_sig_alg: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000F             MOVS     R7,R1
+   \   00000006   0x0016             MOVS     R6,R2
+   \   00000008   0x....             ADR.N    R1,oid_sig_alg
+   \   0000000A   0x000C             MOVS     R4,R1
+   \   0000000C   0x2D00             CMP      R5,#+0
+   \   0000000E   0xD102             BNE      ??mbedtls_oid_get_sig_alg_0
+   \   00000010   0xE00F             B        ??mbedtls_oid_get_sig_alg_1
+   \                     ??mbedtls_oid_get_sig_alg_2: (+1)
+   \   00000012   0x3414             ADDS     R4,R4,#+20
+   \   00000014   0x0021             MOVS     R1,R4
+   \                     ??mbedtls_oid_get_sig_alg_0: (+1)
+   \   00000016   0x6808             LDR      R0,[R1, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD00A             BEQ      ??mbedtls_oid_get_sig_alg_1
+   \   0000001C   0x686A             LDR      R2,[R5, #+4]
+   \   0000001E   0x6849             LDR      R1,[R1, #+4]
+   \   00000020   0x4291             CMP      R1,R2
+   \   00000022   0xD1F6             BNE      ??mbedtls_oid_get_sig_alg_2
+   \   00000024   0x68A9             LDR      R1,[R5, #+8]
+   \   00000026   0x.... 0x....      BL       memcmp
+   \   0000002A   0x2800             CMP      R0,#+0
+   \   0000002C   0xD1F1             BNE      ??mbedtls_oid_get_sig_alg_2
+   \   0000002E   0x2C00             CMP      R4,#+0
+   \   00000030   0xD102             BNE      ??mbedtls_oid_get_sig_alg_3
+   \                     ??mbedtls_oid_get_sig_alg_1: (+1)
+   \   00000032   0x202D             MOVS     R0,#+45
+   \   00000034   0x43C0             MVNS     R0,R0            ;; #-46
+   \   00000036   0xBDF2             POP      {R1,R4-R7,PC}
+   \                     ??mbedtls_oid_get_sig_alg_3: (+1)
+   \   00000038   0x7C20             LDRB     R0,[R4, #+16]
+   \   0000003A   0x7038             STRB     R0,[R7, #+0]
+   \   0000003C   0x7C60             LDRB     R0,[R4, #+17]
+   \   0000003E   0x7030             STRB     R0,[R6, #+0]
+   \   00000040   0x2000             MOVS     R0,#+0
+   \   00000042   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+    412          FN_OID_GET_OID_BY_ATTR2(mbedtls_oid_get_oid_by_sig_alg, oid_sig_alg_t, oid_sig_alg, mbedtls_pk_type_t, pk_alg, mbedtls_md_type_t, md_alg)
+   \                     mbedtls_oid_get_oid_by_sig_alg: (+1)
+   \   00000000   0xB470             PUSH     {R4-R6}
+   \   00000002   0xBF00             Nop      
+   \   00000004   0x....             ADR.N    R4,oid_sig_alg
+   \   00000006   0xE000             B        ??mbedtls_oid_get_oid_by_sig_alg_0
+   \                     ??mbedtls_oid_get_oid_by_sig_alg_1: (+1)
+   \   00000008   0x3414             ADDS     R4,R4,#+20
+   \                     ??mbedtls_oid_get_oid_by_sig_alg_0: (+1)
+   \   0000000A   0x6825             LDR      R5,[R4, #+0]
+   \   0000000C   0x2D00             CMP      R5,#+0
+   \   0000000E   0xD00A             BEQ      ??mbedtls_oid_get_oid_by_sig_alg_2
+   \   00000010   0x7C66             LDRB     R6,[R4, #+17]
+   \   00000012   0x4286             CMP      R6,R0
+   \   00000014   0xD1F8             BNE      ??mbedtls_oid_get_oid_by_sig_alg_1
+   \   00000016   0x7C26             LDRB     R6,[R4, #+16]
+   \   00000018   0x428E             CMP      R6,R1
+   \   0000001A   0xD1F5             BNE      ??mbedtls_oid_get_oid_by_sig_alg_1
+   \   0000001C   0x6015             STR      R5,[R2, #+0]
+   \   0000001E   0x6860             LDR      R0,[R4, #+4]
+   \   00000020   0x6018             STR      R0,[R3, #+0]
+   \   00000022   0x2000             MOVS     R0,#+0
+   \   00000024   0xE001             B        ??mbedtls_oid_get_oid_by_sig_alg_3
+   \                     ??mbedtls_oid_get_oid_by_sig_alg_2: (+1)
+   \   00000026   0x202D             MOVS     R0,#+45
+   \   00000028   0x43C0             MVNS     R0,R0            ;; #-46
+   \                     ??mbedtls_oid_get_oid_by_sig_alg_3: (+1)
+   \   0000002A   0xBC70             POP      {R4-R6}
+   \   0000002C   0x4770             BX       LR               ;; return
+    413          #endif /* MBEDTLS_MD_C */
+    414          
+    415          /*
+    416           * For PublicKeyInfo (PKCS1, RFC 5480)
+    417           */
+    418          typedef struct {
+    419              mbedtls_oid_descriptor_t    descriptor;
+    420              mbedtls_pk_type_t           pk_alg;
+    421          } oid_pk_alg_t;
+    422          
+
+   \                                 In section .text, align 4, keep-with-next
+    423          static const oid_pk_alg_t oid_pk_alg[] =
+   \                     oid_pk_alg:
+   \   00000000   0x........         DC32 ?_134, 9, ?_135, ?_136
+   \              0x00000009   
+   \              0x........   
+   \              0x........   
+   \   00000010   0x01 0x00          DC8 1, 0, 0, 0
+   \              0x00 0x00    
+   \   00000014   0x........         DC32 ?_137, 7, ?_138, ?_139
+   \              0x00000007   
+   \              0x........   
+   \              0x........   
+   \   00000024   0x02 0x00          DC8 2, 0, 0, 0
+   \              0x00 0x00    
+   \   00000028   0x........         DC32 ?_140, 5, ?_141, ?_142
+   \              0x00000005   
+   \              0x........   
+   \              0x........   
+   \   00000038   0x03 0x00          DC8 3, 0, 0, 0
+   \              0x00 0x00    
+   \   0000003C   0x00000000         DC32 0H, 0, 0H, 0H
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \   0000004C   0x00 0x00          DC8 0, 0, 0, 0
+   \              0x00 0x00    
+    424          {
+    425              {
+    426                  { ADD_LEN( MBEDTLS_OID_PKCS1_RSA ),      "rsaEncryption",   "RSA" },
+    427                  MBEDTLS_PK_RSA,
+    428              },
+    429              {
+    430                  { ADD_LEN( MBEDTLS_OID_EC_ALG_UNRESTRICTED ),  "id-ecPublicKey",   "Generic EC key" },
+    431                  MBEDTLS_PK_ECKEY,
+    432              },
+    433              {
+    434                  { ADD_LEN( MBEDTLS_OID_EC_ALG_ECDH ),          "id-ecDH",          "EC key for ECDH" },
+    435                  MBEDTLS_PK_ECKEY_DH,
+    436              },
+    437              {
+    438                  { NULL, 0, NULL, NULL },
+    439                  MBEDTLS_PK_NONE,
+    440              },
+    441          };
+    442          
+    443          FN_OID_TYPED_FROM_ASN1(oid_pk_alg_t, pk_alg, oid_pk_alg)
+
+   \                                 In section .text, align 4, keep-with-next
+    444          FN_OID_GET_ATTR1(mbedtls_oid_get_pk_alg, oid_pk_alg_t, pk_alg, mbedtls_pk_type_t, pk_alg)
+   \                     mbedtls_oid_get_pk_alg: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0xBF00             Nop      
+   \   00000008   0x....             ADR.N    R1,oid_pk_alg
+   \   0000000A   0x000C             MOVS     R4,R1
+   \   0000000C   0x2D00             CMP      R5,#+0
+   \   0000000E   0xD102             BNE      ??mbedtls_oid_get_pk_alg_0
+   \   00000010   0xE00F             B        ??mbedtls_oid_get_pk_alg_1
+   \                     ??mbedtls_oid_get_pk_alg_2: (+1)
+   \   00000012   0x3414             ADDS     R4,R4,#+20
+   \   00000014   0x0021             MOVS     R1,R4
+   \                     ??mbedtls_oid_get_pk_alg_0: (+1)
+   \   00000016   0x6808             LDR      R0,[R1, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD00A             BEQ      ??mbedtls_oid_get_pk_alg_1
+   \   0000001C   0x686A             LDR      R2,[R5, #+4]
+   \   0000001E   0x6849             LDR      R1,[R1, #+4]
+   \   00000020   0x4291             CMP      R1,R2
+   \   00000022   0xD1F6             BNE      ??mbedtls_oid_get_pk_alg_2
+   \   00000024   0x68A9             LDR      R1,[R5, #+8]
+   \   00000026   0x.... 0x....      BL       memcmp
+   \   0000002A   0x2800             CMP      R0,#+0
+   \   0000002C   0xD1F1             BNE      ??mbedtls_oid_get_pk_alg_2
+   \   0000002E   0x2C00             CMP      R4,#+0
+   \   00000030   0xD102             BNE      ??mbedtls_oid_get_pk_alg_3
+   \                     ??mbedtls_oid_get_pk_alg_1: (+1)
+   \   00000032   0x202D             MOVS     R0,#+45
+   \   00000034   0x43C0             MVNS     R0,R0            ;; #-46
+   \   00000036   0xBD70             POP      {R4-R6,PC}
+   \                     ??mbedtls_oid_get_pk_alg_3: (+1)
+   \   00000038   0x7C20             LDRB     R0,[R4, #+16]
+   \   0000003A   0x7030             STRB     R0,[R6, #+0]
+   \   0000003C   0x2000             MOVS     R0,#+0
+   \   0000003E   0xBD70             POP      {R4-R6,PC}       ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+    445          FN_OID_GET_OID_BY_ATTR1(mbedtls_oid_get_oid_by_pk_alg, oid_pk_alg_t, oid_pk_alg, mbedtls_pk_type_t, pk_alg)
+   \                     mbedtls_oid_get_oid_by_pk_alg: (+1)
+   \   00000000   0xB430             PUSH     {R4,R5}
+   \   00000002   0xBF00             Nop      
+   \   00000004   0x....             ADR.N    R3,oid_pk_alg
+   \   00000006   0x....             B.N      ?Subroutine0
+
+   \                                 In section .text, align 2, keep-with-next
+   \                     ?Subroutine0: (+1)
+   \   00000000   0xE000             B        ??Subroutine0_0
+   \                     ??Subroutine0_1: (+1)
+   \   00000002   0x3314             ADDS     R3,R3,#+20
+   \                     ??Subroutine0_0: (+1)
+   \   00000004   0x681C             LDR      R4,[R3, #+0]
+   \   00000006   0x2C00             CMP      R4,#+0
+   \   00000008   0xD007             BEQ      ??Subroutine0_2
+   \   0000000A   0x7C1D             LDRB     R5,[R3, #+16]
+   \   0000000C   0x4285             CMP      R5,R0
+   \   0000000E   0xD1F8             BNE      ??Subroutine0_1
+   \   00000010   0x600C             STR      R4,[R1, #+0]
+   \   00000012   0x6858             LDR      R0,[R3, #+4]
+   \   00000014   0x6010             STR      R0,[R2, #+0]
+   \   00000016   0x2000             MOVS     R0,#+0
+   \   00000018   0xE001             B        ??Subroutine0_3
+   \                     ??Subroutine0_2: (+1)
+   \   0000001A   0x202D             MOVS     R0,#+45
+   \   0000001C   0x43C0             MVNS     R0,R0            ;; #-46
+   \                     ??Subroutine0_3: (+1)
+   \   0000001E   0xBC30             POP      {R4,R5}
+   \   00000020   0x4770             BX       LR               ;; return
+    446          
+    447          #if defined(MBEDTLS_ECP_C)
+    448          /*
+    449           * For namedCurve (RFC 5480)
+    450           */
+    451          typedef struct {
+    452              mbedtls_oid_descriptor_t    descriptor;
+    453              mbedtls_ecp_group_id        grp_id;
+    454          } oid_ecp_grp_t;
+    455          
+
+   \                                 In section .text, align 4, keep-with-next
+    456          static const oid_ecp_grp_t oid_ecp_grp[] =
+   \                     oid_ecp_grp:
+   \   00000000   0x........         DC32 ?_143, 8, ?_144, ?_144
+   \              0x00000008   
+   \              0x........   
+   \              0x........   
+   \   00000010   0x03 0x00          DC8 3, 0, 0, 0
+   \              0x00 0x00    
+   \   00000014   0x........         DC32 ?_145, 5, ?_146, ?_146
+   \              0x00000005   
+   \              0x........   
+   \              0x........   
+   \   00000024   0x04 0x00          DC8 4, 0, 0, 0
+   \              0x00 0x00    
+   \   00000028   0x00000000         DC32 0H, 0, 0H, 0H
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \   00000038   0x00 0x00          DC8 0, 0, 0, 0
+   \              0x00 0x00    
+    457          {
+    458          #if defined(MBEDTLS_ECP_DP_SECP192R1_ENABLED)
+    459              {
+    460                  { ADD_LEN( MBEDTLS_OID_EC_GRP_SECP192R1 ), "secp192r1",    "secp192r1" },
+    461                  MBEDTLS_ECP_DP_SECP192R1,
+    462              },
+    463          #endif /* MBEDTLS_ECP_DP_SECP192R1_ENABLED */
+    464          #if defined(MBEDTLS_ECP_DP_SECP224R1_ENABLED)
+    465              {
+    466                  { ADD_LEN( MBEDTLS_OID_EC_GRP_SECP224R1 ), "secp224r1",    "secp224r1" },
+    467                  MBEDTLS_ECP_DP_SECP224R1,
+    468              },
+    469          #endif /* MBEDTLS_ECP_DP_SECP224R1_ENABLED */
+    470          #if defined(MBEDTLS_ECP_DP_SECP256R1_ENABLED)
+    471              {
+    472                  { ADD_LEN( MBEDTLS_OID_EC_GRP_SECP256R1 ), "secp256r1",    "secp256r1" },
+    473                  MBEDTLS_ECP_DP_SECP256R1,
+    474              },
+    475          #endif /* MBEDTLS_ECP_DP_SECP256R1_ENABLED */
+    476          #if defined(MBEDTLS_ECP_DP_SECP384R1_ENABLED)
+    477              {
+    478                  { ADD_LEN( MBEDTLS_OID_EC_GRP_SECP384R1 ), "secp384r1",    "secp384r1" },
+    479                  MBEDTLS_ECP_DP_SECP384R1,
+    480              },
+    481          #endif /* MBEDTLS_ECP_DP_SECP384R1_ENABLED */
+    482          #if defined(MBEDTLS_ECP_DP_SECP521R1_ENABLED)
+    483              {
+    484                  { ADD_LEN( MBEDTLS_OID_EC_GRP_SECP521R1 ), "secp521r1",    "secp521r1" },
+    485                  MBEDTLS_ECP_DP_SECP521R1,
+    486              },
+    487          #endif /* MBEDTLS_ECP_DP_SECP521R1_ENABLED */
+    488          #if defined(MBEDTLS_ECP_DP_SECP192K1_ENABLED)
+    489              {
+    490                  { ADD_LEN( MBEDTLS_OID_EC_GRP_SECP192K1 ), "secp192k1",    "secp192k1" },
+    491                  MBEDTLS_ECP_DP_SECP192K1,
+    492              },
+    493          #endif /* MBEDTLS_ECP_DP_SECP192K1_ENABLED */
+    494          #if defined(MBEDTLS_ECP_DP_SECP224K1_ENABLED)
+    495              {
+    496                  { ADD_LEN( MBEDTLS_OID_EC_GRP_SECP224K1 ), "secp224k1",    "secp224k1" },
+    497                  MBEDTLS_ECP_DP_SECP224K1,
+    498              },
+    499          #endif /* MBEDTLS_ECP_DP_SECP224K1_ENABLED */
+    500          #if defined(MBEDTLS_ECP_DP_SECP256K1_ENABLED)
+    501              {
+    502                  { ADD_LEN( MBEDTLS_OID_EC_GRP_SECP256K1 ), "secp256k1",    "secp256k1" },
+    503                  MBEDTLS_ECP_DP_SECP256K1,
+    504              },
+    505          #endif /* MBEDTLS_ECP_DP_SECP256K1_ENABLED */
+    506          #if defined(MBEDTLS_ECP_DP_BP256R1_ENABLED)
+    507              {
+    508                  { ADD_LEN( MBEDTLS_OID_EC_GRP_BP256R1 ),   "brainpoolP256r1","brainpool256r1" },
+    509                  MBEDTLS_ECP_DP_BP256R1,
+    510              },
+    511          #endif /* MBEDTLS_ECP_DP_BP256R1_ENABLED */
+    512          #if defined(MBEDTLS_ECP_DP_BP384R1_ENABLED)
+    513              {
+    514                  { ADD_LEN( MBEDTLS_OID_EC_GRP_BP384R1 ),   "brainpoolP384r1","brainpool384r1" },
+    515                  MBEDTLS_ECP_DP_BP384R1,
+    516              },
+    517          #endif /* MBEDTLS_ECP_DP_BP384R1_ENABLED */
+    518          #if defined(MBEDTLS_ECP_DP_BP512R1_ENABLED)
+    519              {
+    520                  { ADD_LEN( MBEDTLS_OID_EC_GRP_BP512R1 ),   "brainpoolP512r1","brainpool512r1" },
+    521                  MBEDTLS_ECP_DP_BP512R1,
+    522              },
+    523          #endif /* MBEDTLS_ECP_DP_BP512R1_ENABLED */
+    524              {
+    525                  { NULL, 0, NULL, NULL },
+    526                  MBEDTLS_ECP_DP_NONE,
+    527              },
+    528          };
+    529          
+    530          FN_OID_TYPED_FROM_ASN1(oid_ecp_grp_t, grp_id, oid_ecp_grp)
+
+   \                                 In section .text, align 4, keep-with-next
+    531          FN_OID_GET_ATTR1(mbedtls_oid_get_ec_grp, oid_ecp_grp_t, grp_id, mbedtls_ecp_group_id, grp_id)
+   \                     mbedtls_oid_get_ec_grp: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0xBF00             Nop      
+   \   00000008   0x....             ADR.N    R1,oid_ecp_grp
+   \   0000000A   0x000C             MOVS     R4,R1
+   \   0000000C   0x2D00             CMP      R5,#+0
+   \   0000000E   0xD102             BNE      ??mbedtls_oid_get_ec_grp_0
+   \   00000010   0xE00F             B        ??mbedtls_oid_get_ec_grp_1
+   \                     ??mbedtls_oid_get_ec_grp_2: (+1)
+   \   00000012   0x3414             ADDS     R4,R4,#+20
+   \   00000014   0x0021             MOVS     R1,R4
+   \                     ??mbedtls_oid_get_ec_grp_0: (+1)
+   \   00000016   0x6808             LDR      R0,[R1, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD00A             BEQ      ??mbedtls_oid_get_ec_grp_1
+   \   0000001C   0x686A             LDR      R2,[R5, #+4]
+   \   0000001E   0x6849             LDR      R1,[R1, #+4]
+   \   00000020   0x4291             CMP      R1,R2
+   \   00000022   0xD1F6             BNE      ??mbedtls_oid_get_ec_grp_2
+   \   00000024   0x68A9             LDR      R1,[R5, #+8]
+   \   00000026   0x.... 0x....      BL       memcmp
+   \   0000002A   0x2800             CMP      R0,#+0
+   \   0000002C   0xD1F1             BNE      ??mbedtls_oid_get_ec_grp_2
+   \   0000002E   0x2C00             CMP      R4,#+0
+   \   00000030   0xD102             BNE      ??mbedtls_oid_get_ec_grp_3
+   \                     ??mbedtls_oid_get_ec_grp_1: (+1)
+   \   00000032   0x202D             MOVS     R0,#+45
+   \   00000034   0x43C0             MVNS     R0,R0            ;; #-46
+   \   00000036   0xBD70             POP      {R4-R6,PC}
+   \                     ??mbedtls_oid_get_ec_grp_3: (+1)
+   \   00000038   0x7C20             LDRB     R0,[R4, #+16]
+   \   0000003A   0x7030             STRB     R0,[R6, #+0]
+   \   0000003C   0x2000             MOVS     R0,#+0
+   \   0000003E   0xBD70             POP      {R4-R6,PC}       ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+    532          FN_OID_GET_OID_BY_ATTR1(mbedtls_oid_get_oid_by_ec_grp, oid_ecp_grp_t, oid_ecp_grp, mbedtls_ecp_group_id, grp_id)
+   \                     mbedtls_oid_get_oid_by_ec_grp: (+1)
+   \   00000000   0xB430             PUSH     {R4,R5}
+   \   00000002   0xBF00             Nop      
+   \   00000004   0x....             ADR.N    R3,oid_ecp_grp
+   \   00000006                      REQUIRE ?Subroutine0
+   \   00000006                      ;; // Fall through to label ?Subroutine0
+    533          #endif /* MBEDTLS_ECP_C */
+    534          
+    535          #if defined(MBEDTLS_CIPHER_C)
+    536          /*
+    537           * For PKCS#5 PBES2 encryption algorithm
+    538           */
+    539          typedef struct {
+    540              mbedtls_oid_descriptor_t    descriptor;
+    541              mbedtls_cipher_type_t       cipher_alg;
+    542          } oid_cipher_alg_t;
+    543          
+
+   \                                 In section .text, align 4, keep-with-next
+    544          static const oid_cipher_alg_t oid_cipher_alg[] =
+   \                     oid_cipher_alg:
+   \   00000000   0x........         DC32 ?_147, 5, ?_148, ?_149
+   \              0x00000005   
+   \              0x........   
+   \              0x........   
+   \   00000010   0x21 0x00          DC8 33, 0, 0, 0
+   \              0x00 0x00    
+   \   00000014   0x........         DC32 ?_150, 8, ?_151, ?_152
+   \              0x00000008   
+   \              0x........   
+   \              0x........   
+   \   00000024   0x25 0x00          DC8 37, 0, 0, 0
+   \              0x00 0x00    
+   \   00000028   0x00000000         DC32 0H, 0, 0H, 0H
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \   00000038   0x00 0x00          DC8 0, 0, 0, 0
+   \              0x00 0x00    
+    545          {
+    546              {
+    547                  { ADD_LEN( MBEDTLS_OID_DES_CBC ),              "desCBC",       "DES-CBC" },
+    548                  MBEDTLS_CIPHER_DES_CBC,
+    549              },
+    550              {
+    551                  { ADD_LEN( MBEDTLS_OID_DES_EDE3_CBC ),         "des-ede3-cbc", "DES-EDE3-CBC" },
+    552                  MBEDTLS_CIPHER_DES_EDE3_CBC,
+    553              },
+    554              {
+    555                  { NULL, 0, NULL, NULL },
+    556                  MBEDTLS_CIPHER_NONE,
+    557              },
+    558          };
+    559          
+    560          FN_OID_TYPED_FROM_ASN1(oid_cipher_alg_t, cipher_alg, oid_cipher_alg)
+
+   \                                 In section .text, align 4, keep-with-next
+    561          FN_OID_GET_ATTR1(mbedtls_oid_get_cipher_alg, oid_cipher_alg_t, cipher_alg, mbedtls_cipher_type_t, cipher_alg)
+   \                     mbedtls_oid_get_cipher_alg: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0xBF00             Nop      
+   \   00000008   0x....             ADR.N    R1,oid_cipher_alg
+   \   0000000A   0x000C             MOVS     R4,R1
+   \   0000000C   0x2D00             CMP      R5,#+0
+   \   0000000E   0xD102             BNE      ??mbedtls_oid_get_cipher_alg_0
+   \   00000010   0xE00F             B        ??mbedtls_oid_get_cipher_alg_1
+   \                     ??mbedtls_oid_get_cipher_alg_2: (+1)
+   \   00000012   0x3414             ADDS     R4,R4,#+20
+   \   00000014   0x0021             MOVS     R1,R4
+   \                     ??mbedtls_oid_get_cipher_alg_0: (+1)
+   \   00000016   0x6808             LDR      R0,[R1, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD00A             BEQ      ??mbedtls_oid_get_cipher_alg_1
+   \   0000001C   0x686A             LDR      R2,[R5, #+4]
+   \   0000001E   0x6849             LDR      R1,[R1, #+4]
+   \   00000020   0x4291             CMP      R1,R2
+   \   00000022   0xD1F6             BNE      ??mbedtls_oid_get_cipher_alg_2
+   \   00000024   0x68A9             LDR      R1,[R5, #+8]
+   \   00000026   0x.... 0x....      BL       memcmp
+   \   0000002A   0x2800             CMP      R0,#+0
+   \   0000002C   0xD1F1             BNE      ??mbedtls_oid_get_cipher_alg_2
+   \   0000002E   0x2C00             CMP      R4,#+0
+   \   00000030   0xD102             BNE      ??mbedtls_oid_get_cipher_alg_3
+   \                     ??mbedtls_oid_get_cipher_alg_1: (+1)
+   \   00000032   0x202D             MOVS     R0,#+45
+   \   00000034   0x43C0             MVNS     R0,R0            ;; #-46
+   \   00000036   0xBD70             POP      {R4-R6,PC}
+   \                     ??mbedtls_oid_get_cipher_alg_3: (+1)
+   \   00000038   0x7C20             LDRB     R0,[R4, #+16]
+   \   0000003A   0x7030             STRB     R0,[R6, #+0]
+   \   0000003C   0x2000             MOVS     R0,#+0
+   \   0000003E   0xBD70             POP      {R4-R6,PC}       ;; return
+    562          #endif /* MBEDTLS_CIPHER_C */
+    563          
+    564          #if defined(MBEDTLS_MD_C)
+    565          /*
+    566           * For digestAlgorithm
+    567           */
+    568          typedef struct {
+    569              mbedtls_oid_descriptor_t    descriptor;
+    570              mbedtls_md_type_t           md_alg;
+    571          } oid_md_alg_t;
+    572          
+
+   \                                 In section .text, align 4, keep-with-next
+    573          static const oid_md_alg_t oid_md_alg[] =
+   \                     oid_md_alg:
+   \   00000000   0x........         DC32 ?_153, 9, ?_154, ?_155
+   \              0x00000009   
+   \              0x........   
+   \              0x........   
+   \   00000010   0x05 0x00          DC8 5, 0, 0, 0
+   \              0x00 0x00    
+   \   00000014   0x........         DC32 ?_156, 9, ?_157, ?_158
+   \              0x00000009   
+   \              0x........   
+   \              0x........   
+   \   00000024   0x06 0x00          DC8 6, 0, 0, 0
+   \              0x00 0x00    
+   \   00000028   0x........         DC32 ?_159, 9, ?_160, ?_161
+   \              0x00000009   
+   \              0x........   
+   \              0x........   
+   \   00000038   0x07 0x00          DC8 7, 0, 0, 0
+   \              0x00 0x00    
+   \   0000003C   0x........         DC32 ?_162, 9, ?_163, ?_164
+   \              0x00000009   
+   \              0x........   
+   \              0x........   
+   \   0000004C   0x08 0x00          DC8 8, 0, 0, 0
+   \              0x00 0x00    
+   \   00000050   0x00000000         DC32 0H, 0, 0H, 0H
+   \              0x00000000   
+   \              0x00000000   
+   \              0x00000000   
+   \   00000060   0x00 0x00          DC8 0, 0, 0, 0
+   \              0x00 0x00    
+    574          {
+    575          #if defined(MBEDTLS_MD2_C)
+    576              {
+    577                  { ADD_LEN( MBEDTLS_OID_DIGEST_ALG_MD2 ),       "id-md2",       "MD2" },
+    578                  MBEDTLS_MD_MD2,
+    579              },
+    580          #endif /* MBEDTLS_MD2_C */
+    581          #if defined(MBEDTLS_MD4_C)
+    582              {
+    583                  { ADD_LEN( MBEDTLS_OID_DIGEST_ALG_MD4 ),       "id-md4",       "MD4" },
+    584                  MBEDTLS_MD_MD4,
+    585              },
+    586          #endif /* MBEDTLS_MD4_C */
+    587          #if defined(MBEDTLS_MD5_C)
+    588              {
+    589                  { ADD_LEN( MBEDTLS_OID_DIGEST_ALG_MD5 ),       "id-md5",       "MD5" },
+    590                  MBEDTLS_MD_MD5,
+    591              },
+    592          #endif /* MBEDTLS_MD5_C */
+    593          #if defined(MBEDTLS_SHA1_C)
+    594              {
+    595                  { ADD_LEN( MBEDTLS_OID_DIGEST_ALG_SHA1 ),      "id-sha1",      "SHA-1" },
+    596                  MBEDTLS_MD_SHA1,
+    597              },
+    598          #endif /* MBEDTLS_SHA1_C */
+    599          #if defined(MBEDTLS_SHA256_C)
+    600              {
+    601                  { ADD_LEN( MBEDTLS_OID_DIGEST_ALG_SHA224 ),    "id-sha224",    "SHA-224" },
+    602                  MBEDTLS_MD_SHA224,
+    603              },
+    604              {
+    605                  { ADD_LEN( MBEDTLS_OID_DIGEST_ALG_SHA256 ),    "id-sha256",    "SHA-256" },
+    606                  MBEDTLS_MD_SHA256,
+    607              },
+    608          #endif /* MBEDTLS_SHA256_C */
+    609          #if defined(MBEDTLS_SHA512_C)
+    610              {
+    611                  { ADD_LEN( MBEDTLS_OID_DIGEST_ALG_SHA384 ),    "id-sha384",    "SHA-384" },
+    612                  MBEDTLS_MD_SHA384,
+    613              },
+    614              {
+    615                  { ADD_LEN( MBEDTLS_OID_DIGEST_ALG_SHA512 ),    "id-sha512",    "SHA-512" },
+    616                  MBEDTLS_MD_SHA512,
+    617              },
+    618          #endif /* MBEDTLS_SHA512_C */
+    619              {
+    620                  { NULL, 0, NULL, NULL },
+    621                  MBEDTLS_MD_NONE,
+    622              },
+    623          };
+    624          
+    625          FN_OID_TYPED_FROM_ASN1(oid_md_alg_t, md_alg, oid_md_alg)
+
+   \                                 In section .text, align 4, keep-with-next
+    626          FN_OID_GET_ATTR1(mbedtls_oid_get_md_alg, oid_md_alg_t, md_alg, mbedtls_md_type_t, md_alg)
+   \                     mbedtls_oid_get_md_alg: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0005             MOVS     R5,R0
+   \   00000004   0x000E             MOVS     R6,R1
+   \   00000006   0xBF00             Nop      
+   \   00000008   0x....             ADR.N    R1,oid_md_alg
+   \   0000000A   0x000C             MOVS     R4,R1
+   \   0000000C   0x2D00             CMP      R5,#+0
+   \   0000000E   0xD102             BNE      ??mbedtls_oid_get_md_alg_0
+   \   00000010   0xE00F             B        ??mbedtls_oid_get_md_alg_1
+   \                     ??mbedtls_oid_get_md_alg_2: (+1)
+   \   00000012   0x3414             ADDS     R4,R4,#+20
+   \   00000014   0x0021             MOVS     R1,R4
+   \                     ??mbedtls_oid_get_md_alg_0: (+1)
+   \   00000016   0x6808             LDR      R0,[R1, #+0]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD00A             BEQ      ??mbedtls_oid_get_md_alg_1
+   \   0000001C   0x686A             LDR      R2,[R5, #+4]
+   \   0000001E   0x6849             LDR      R1,[R1, #+4]
+   \   00000020   0x4291             CMP      R1,R2
+   \   00000022   0xD1F6             BNE      ??mbedtls_oid_get_md_alg_2
+   \   00000024   0x68A9             LDR      R1,[R5, #+8]
+   \   00000026   0x.... 0x....      BL       memcmp
+   \   0000002A   0x2800             CMP      R0,#+0
+   \   0000002C   0xD1F1             BNE      ??mbedtls_oid_get_md_alg_2
+   \   0000002E   0x2C00             CMP      R4,#+0
+   \   00000030   0xD102             BNE      ??mbedtls_oid_get_md_alg_3
+   \                     ??mbedtls_oid_get_md_alg_1: (+1)
+   \   00000032   0x202D             MOVS     R0,#+45
+   \   00000034   0x43C0             MVNS     R0,R0            ;; #-46
+   \   00000036   0xBD70             POP      {R4-R6,PC}
+   \                     ??mbedtls_oid_get_md_alg_3: (+1)
+   \   00000038   0x7C20             LDRB     R0,[R4, #+16]
+   \   0000003A   0x7030             STRB     R0,[R6, #+0]
+   \   0000003C   0x2000             MOVS     R0,#+0
+   \   0000003E   0xBD70             POP      {R4-R6,PC}       ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+    627          FN_OID_GET_OID_BY_ATTR1(mbedtls_oid_get_oid_by_md, oid_md_alg_t, oid_md_alg, mbedtls_md_type_t, md_alg)
+   \                     mbedtls_oid_get_oid_by_md: (+1)
+   \   00000000   0xB430             PUSH     {R4,R5}
+   \   00000002   0xBF00             Nop      
+   \   00000004   0x....             ADR.N    R3,oid_md_alg
+   \   00000006   0x....             B.N      ?Subroutine0
+    628          #endif /* MBEDTLS_MD_C */
+    629          
+    630          #if defined(MBEDTLS_PKCS12_C)
+    631          /*
+    632           * For PKCS#12 PBEs
+    633           */
+    634          typedef struct {
+    635              mbedtls_oid_descriptor_t    descriptor;
+    636              mbedtls_md_type_t           md_alg;
+    637              mbedtls_cipher_type_t       cipher_alg;
+    638          } oid_pkcs12_pbe_alg_t;
+    639          
+    640          static const oid_pkcs12_pbe_alg_t oid_pkcs12_pbe_alg[] =
+    641          {
+    642              {
+    643                  { ADD_LEN( MBEDTLS_OID_PKCS12_PBE_SHA1_DES3_EDE_CBC ), "pbeWithSHAAnd3-KeyTripleDES-CBC", "PBE with SHA1 and 3-Key 3DES" },
+    644                  MBEDTLS_MD_SHA1,      MBEDTLS_CIPHER_DES_EDE3_CBC,
+    645              },
+    646              {
+    647                  { ADD_LEN( MBEDTLS_OID_PKCS12_PBE_SHA1_DES2_EDE_CBC ), "pbeWithSHAAnd2-KeyTripleDES-CBC", "PBE with SHA1 and 2-Key 3DES" },
+    648                  MBEDTLS_MD_SHA1,      MBEDTLS_CIPHER_DES_EDE_CBC,
+    649              },
+    650              {
+    651                  { NULL, 0, NULL, NULL },
+    652                  MBEDTLS_MD_NONE, MBEDTLS_CIPHER_NONE,
+    653              },
+    654          };
+    655          
+    656          FN_OID_TYPED_FROM_ASN1(oid_pkcs12_pbe_alg_t, pkcs12_pbe_alg, oid_pkcs12_pbe_alg)
+    657          FN_OID_GET_ATTR2(mbedtls_oid_get_pkcs12_pbe_alg, oid_pkcs12_pbe_alg_t, pkcs12_pbe_alg, mbedtls_md_type_t, md_alg, mbedtls_cipher_type_t, cipher_alg)
+    658          #endif /* MBEDTLS_PKCS12_C */
+    659          
+    660          #define OID_SAFE_SNPRINTF                               \
+    661              do {                                                \
+    662                  if( ret < 0 || (size_t) ret >= n )              \
+    663                      return( MBEDTLS_ERR_OID_BUF_TOO_SMALL );    \
+    664                                                                  \
+    665                  n -= (size_t) ret;                              \
+    666                  p += (size_t) ret;                              \
+    667              } while( 0 )
+    668          
+    669          /* Return the x.y.z.... style numeric string for the given OID */
+
+   \                                 In section .text, align 2, keep-with-next
+    670          int mbedtls_oid_get_numeric_string( char *buf, size_t size,
+    671                                      const mbedtls_asn1_buf *oid )
+    672          {
+   \                     mbedtls_oid_get_numeric_string: (+1)
+   \   00000000   0xB5F7             PUSH     {R0-R2,R4-R7,LR}
+   \   00000002   0x000F             MOVS     R7,R1
+    673              int ret;
+    674              size_t i, n;
+    675              unsigned int value;
+    676              char *p;
+    677          
+    678              p = buf;
+   \   00000004   0x0005             MOVS     R5,R0
+    679              n = size;
+   \   00000006   0x003C             MOVS     R4,R7
+    680          
+    681              /* First byte contains first two dots */
+    682              if( oid->len > 0 )
+   \   00000008   0x6850             LDR      R0,[R2, #+4]
+   \   0000000A   0x2800             CMP      R0,#+0
+   \   0000000C   0xD016             BEQ      ??mbedtls_oid_get_numeric_string_0
+    683              {
+    684                  ret = mbedtls_snprintf( p, n, "%d.%d", oid->p[0] / 40, oid->p[0] % 40 );
+   \   0000000E   0x6890             LDR      R0,[R2, #+8]
+   \   00000010   0x7800             LDRB     R0,[R0, #+0]
+   \   00000012   0x9001             STR      R0,[SP, #+4]
+   \   00000014   0x2128             MOVS     R1,#+40
+   \   00000016   0x.... 0x....      BL       __aeabi_idivmod
+   \   0000001A   0x9100             STR      R1,[SP, #+0]
+   \   0000001C   0x9801             LDR      R0,[SP, #+4]
+   \   0000001E   0x2128             MOVS     R1,#+40
+   \   00000020   0x.... 0x....      BL       __aeabi_idiv
+   \   00000024   0x0003             MOVS     R3,R0
+   \   00000026   0x....             LDR      R2,??DataTable175
+   \   00000028   0x0021             MOVS     R1,R4
+   \   0000002A   0x0028             MOVS     R0,R5
+   \   0000002C   0x.... 0x....      BL       snprintf
+    685                  OID_SAFE_SNPRINTF;
+   \   00000030   0x2800             CMP      R0,#+0
+   \   00000032   0xD424             BMI      ??mbedtls_oid_get_numeric_string_1
+   \   00000034   0x42A0             CMP      R0,R4
+   \   00000036   0xD222             BCS      ??mbedtls_oid_get_numeric_string_1
+   \   00000038   0x1A24             SUBS     R4,R4,R0
+   \   0000003A   0x182D             ADDS     R5,R5,R0
+   \                     ??mbedtls_oid_get_numeric_string_0: (+1)
+   \   0000003C   0x2300             MOVS     R3,#+0
+    686              }
+    687          
+    688              value = 0;
+    689              for( i = 1; i < oid->len; i++ )
+   \   0000003E   0x2601             MOVS     R6,#+1
+   \   00000040   0xE003             B        ??mbedtls_oid_get_numeric_string_2
+    690              {
+    691                  /* Prevent overflow in value. */
+    692                  if( ( ( value << 7 ) >> 7 ) != value )
+    693                      return( MBEDTLS_ERR_OID_BUF_TOO_SMALL );
+    694          
+    695                  value <<= 7;
+    696                  value += oid->p[i] & 0x7F;
+    697          
+    698                  if( !( oid->p[i] & 0x80 ) )
+    699                  {
+    700                      /* Last byte */
+    701                      ret = mbedtls_snprintf( p, n, ".%d", value );
+    702                      OID_SAFE_SNPRINTF;
+   \                     ??mbedtls_oid_get_numeric_string_3: (+1)
+   \   00000042   0x1A24             SUBS     R4,R4,R0
+   \   00000044   0x182D             ADDS     R5,R5,R0
+    703                      value = 0;
+   \   00000046   0x2300             MOVS     R3,#+0
+   \                     ??mbedtls_oid_get_numeric_string_4: (+1)
+   \   00000048   0x1C76             ADDS     R6,R6,#+1
+   \                     ??mbedtls_oid_get_numeric_string_2: (+1)
+   \   0000004A   0x9802             LDR      R0,[SP, #+8]
+   \   0000004C   0x6840             LDR      R0,[R0, #+4]
+   \   0000004E   0x4286             CMP      R6,R0
+   \   00000050   0xD218             BCS      ??mbedtls_oid_get_numeric_string_5
+   \   00000052   0x01D8             LSLS     R0,R3,#+7
+   \   00000054   0x09C0             LSRS     R0,R0,#+7
+   \   00000056   0x4298             CMP      R0,R3
+   \   00000058   0xD111             BNE      ??mbedtls_oid_get_numeric_string_1
+   \   0000005A   0x9802             LDR      R0,[SP, #+8]
+   \   0000005C   0x6880             LDR      R0,[R0, #+8]
+   \   0000005E   0x5D80             LDRB     R0,[R0, R6]
+   \   00000060   0x01D9             LSLS     R1,R3,#+7
+   \   00000062   0x0642             LSLS     R2,R0,#+25
+   \   00000064   0x0E52             LSRS     R2,R2,#+25
+   \   00000066   0x188B             ADDS     R3,R1,R2
+   \   00000068   0x0600             LSLS     R0,R0,#+24
+   \   0000006A   0xD4ED             BMI      ??mbedtls_oid_get_numeric_string_4
+   \   0000006C   0x....             ADR      R2,??DataTable175_1  ;; ".%d"
+   \   0000006E   0x0021             MOVS     R1,R4
+   \   00000070   0x0028             MOVS     R0,R5
+   \   00000072   0x.... 0x....      BL       snprintf
+   \   00000076   0x2800             CMP      R0,#+0
+   \   00000078   0xD401             BMI      ??mbedtls_oid_get_numeric_string_1
+   \   0000007A   0x42A0             CMP      R0,R4
+   \   0000007C   0xD3E1             BCC      ??mbedtls_oid_get_numeric_string_3
+   \                     ??mbedtls_oid_get_numeric_string_1: (+1)
+   \   0000007E   0x200A             MOVS     R0,#+10
+   \   00000080   0x43C0             MVNS     R0,R0            ;; #-11
+   \   00000082   0xE000             B        ??mbedtls_oid_get_numeric_string_6
+    704                  }
+    705              }
+    706          
+    707              return( (int) ( size - n ) );
+   \                     ??mbedtls_oid_get_numeric_string_5: (+1)
+   \   00000084   0x1B38             SUBS     R0,R7,R4
+   \                     ??mbedtls_oid_get_numeric_string_6: (+1)
+   \   00000086   0xB003             ADD      SP,SP,#+12
+   \   00000088   0xBDF0             POP      {R4-R7,PC}       ;; return
+    708          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable175:
+   \   00000000   0x........         DC32     ?_165
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable175_1:
+   \   00000000   0x2E 0x25          DC8      ".%d"
+   \              0x64 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_0:
+   \   00000000   0x55 0x04          DC8 "U\004\003"
+   \              0x03 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_1:
+   \   00000000   0x69 0x64          DC8 "id-at-commonName"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x63 0x6F    
+   \              0x6D 0x6D    
+   \              0x6F 0x6E    
+   \              0x4E 0x61    
+   \              0x6D 0x65    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_2:
+   \   00000000   0x43 0x6F          DC8 "Common Name"
+   \              0x6D 0x6D    
+   \              0x6F 0x6E    
+   \              0x20 0x4E    
+   \              0x61 0x6D    
+   \              0x65 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_3:
+   \   00000000   0x43 0x4E          DC8 "CN"
+   \              0x00         
+   \   00000003   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_4:
+   \   00000000   0x55 0x04          DC8 "U\004\006"
+   \              0x06 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_5:
+   \   00000000   0x69 0x64          DC8 "id-at-countryName"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x63 0x6F    
+   \              0x75 0x6E    
+   \              0x74 0x72    
+   \              0x79 0x4E    
+   \              0x61 0x6D    
+   \              0x65 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_6:
+   \   00000000   0x43 0x6F          DC8 "Country"
+   \              0x75 0x6E    
+   \              0x74 0x72    
+   \              0x79 0x00    
+
+   \                                 In section .rodata, align 2, keep-with-next
+   \                     ?_7:
+   \   00000000   0x43 0x00          DC8 "C"
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_8:
+   \   00000000   0x55 0x04          DC8 "U\004\007"
+   \              0x07 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_9:
+   \   00000000   0x69 0x64          DC8 "id-at-locality"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x6C 0x6F    
+   \              0x63 0x61    
+   \              0x6C 0x69    
+   \              0x74 0x79    
+   \              0x00         
+   \   0000000F   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_10:
+   \   00000000   0x4C 0x6F          DC8 "Locality"
+   \              0x63 0x61    
+   \              0x6C 0x69    
+   \              0x74 0x79    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 2, keep-with-next
+   \                     ?_11:
+   \   00000000   0x4C 0x00          DC8 "L"
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_12:
+   \   00000000   0x55 0x04          DC8 "U\004\010"
+   \              0x08 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_13:
+   \   00000000   0x69 0x64          DC8 "id-at-state"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x73 0x74    
+   \              0x61 0x74    
+   \              0x65 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_14:
+   \   00000000   0x53 0x74          DC8 "State"
+   \              0x61 0x74    
+   \              0x65 0x00    
+   \   00000006   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_15:
+   \   00000000   0x53 0x54          DC8 "ST"
+   \              0x00         
+   \   00000003   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_16:
+   \   00000000   0x55 0x04          DC8 "U\004\012"
+   \              0x0A 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_17:
+   \   00000000   0x69 0x64          DC8 "id-at-organizationName"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x6F 0x72    
+   \              0x67 0x61    
+   \              0x6E 0x69    
+   \              0x7A 0x61    
+   \              0x74 0x69    
+   \              0x6F 0x6E    
+   \              0x4E 0x61    
+   \              0x6D 0x65    
+   \              0x00         
+   \   00000017   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_18:
+   \   00000000   0x4F 0x72          DC8 "Organization"
+   \              0x67 0x61    
+   \              0x6E 0x69    
+   \              0x7A 0x61    
+   \              0x74 0x69    
+   \              0x6F 0x6E    
+   \              0x00         
+   \   0000000D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 2, keep-with-next
+   \                     ?_19:
+   \   00000000   0x4F 0x00          DC8 "O"
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_20:
+   \   00000000   0x55 0x04          DC8 "U\004\013"
+   \              0x0B 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_21:
+   \   00000000   0x69 0x64          DC8 "id-at-organizationalUnitName"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x6F 0x72    
+   \              0x67 0x61    
+   \              0x6E 0x69    
+   \              0x7A 0x61    
+   \              0x74 0x69    
+   \              0x6F 0x6E    
+   \              0x61 0x6C    
+   \              0x55 0x6E    
+   \              0x69 0x74    
+   \              0x4E 0x61    
+   \              0x6D 0x65    
+   \              0x00         
+   \   0000001D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_22:
+   \   00000000   0x4F 0x72          DC8 "Org Unit"
+   \              0x67 0x20    
+   \              0x55 0x6E    
+   \              0x69 0x74    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_23:
+   \   00000000   0x4F 0x55          DC8 "OU"
+   \              0x00         
+   \   00000003   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_24:
+   \   00000000   0x2A 0x86          DC8 "*\206H\206\367\015\001\t\001"
+   \              0x48 0x86    
+   \              0xF7 0x0D    
+   \              0x01 0x09    
+   \              0x01 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_25:
+   \   00000000   0x65 0x6D          DC8 "emailAddress"
+   \              0x61 0x69    
+   \              0x6C 0x41    
+   \              0x64 0x64    
+   \              0x72 0x65    
+   \              0x73 0x73    
+   \              0x00         
+   \   0000000D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_26:
+   \   00000000   0x45 0x2D          DC8 "E-mail address"
+   \              0x6D 0x61    
+   \              0x69 0x6C    
+   \              0x20 0x61    
+   \              0x64 0x64    
+   \              0x72 0x65    
+   \              0x73 0x73    
+   \              0x00         
+   \   0000000F   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_27:
+   \   00000000   0x55 0x04          DC8 "U\004\005"
+   \              0x05 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_28:
+   \   00000000   0x69 0x64          DC8 "id-at-serialNumber"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x73 0x65    
+   \              0x72 0x69    
+   \              0x61 0x6C    
+   \              0x4E 0x75    
+   \              0x6D 0x62    
+   \              0x65 0x72    
+   \              0x00         
+   \   00000013   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_29:
+   \   00000000   0x53 0x65          DC8 "Serial number"
+   \              0x72 0x69    
+   \              0x61 0x6C    
+   \              0x20 0x6E    
+   \              0x75 0x6D    
+   \              0x62 0x65    
+   \              0x72 0x00    
+   \   0000000E   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_30:
+   \   00000000   0x73 0x65          DC8 "serialNumber"
+   \              0x72 0x69    
+   \              0x61 0x6C    
+   \              0x4E 0x75    
+   \              0x6D 0x62    
+   \              0x65 0x72    
+   \              0x00         
+   \   0000000D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_31:
+   \   00000000   0x55 0x04          DC8 "U\004\020"
+   \              0x10 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_32:
+   \   00000000   0x69 0x64          DC8 "id-at-postalAddress"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x70 0x6F    
+   \              0x73 0x74    
+   \              0x61 0x6C    
+   \              0x41 0x64    
+   \              0x64 0x72    
+   \              0x65 0x73    
+   \              0x73 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_33:
+   \   00000000   0x50 0x6F          DC8 "Postal address"
+   \              0x73 0x74    
+   \              0x61 0x6C    
+   \              0x20 0x61    
+   \              0x64 0x64    
+   \              0x72 0x65    
+   \              0x73 0x73    
+   \              0x00         
+   \   0000000F   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_34:
+   \   00000000   0x70 0x6F          DC8 "postalAddress"
+   \              0x73 0x74    
+   \              0x61 0x6C    
+   \              0x41 0x64    
+   \              0x64 0x72    
+   \              0x65 0x73    
+   \              0x73 0x00    
+   \   0000000E   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_35:
+   \   00000000   0x55 0x04          DC8 "U\004\021"
+   \              0x11 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_36:
+   \   00000000   0x69 0x64          DC8 "id-at-postalCode"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x70 0x6F    
+   \              0x73 0x74    
+   \              0x61 0x6C    
+   \              0x43 0x6F    
+   \              0x64 0x65    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_37:
+   \   00000000   0x50 0x6F          DC8 "Postal code"
+   \              0x73 0x74    
+   \              0x61 0x6C    
+   \              0x20 0x63    
+   \              0x6F 0x64    
+   \              0x65 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_38:
+   \   00000000   0x70 0x6F          DC8 "postalCode"
+   \              0x73 0x74    
+   \              0x61 0x6C    
+   \              0x43 0x6F    
+   \              0x64 0x65    
+   \              0x00         
+   \   0000000B   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_39:
+   \   00000000   0x55 0x04          DC8 "U\004\004"
+   \              0x04 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_40:
+   \   00000000   0x69 0x64          DC8 "id-at-surName"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x73 0x75    
+   \              0x72 0x4E    
+   \              0x61 0x6D    
+   \              0x65 0x00    
+   \   0000000E   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_41:
+   \   00000000   0x53 0x75          DC8 "Surname"
+   \              0x72 0x6E    
+   \              0x61 0x6D    
+   \              0x65 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_42:
+   \   00000000   0x53 0x4E          DC8 "SN"
+   \              0x00         
+   \   00000003   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_43:
+   \   00000000   0x55 0x04          DC8 "U\004*"
+   \              0x2A 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_44:
+   \   00000000   0x69 0x64          DC8 "id-at-givenName"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x67 0x69    
+   \              0x76 0x65    
+   \              0x6E 0x4E    
+   \              0x61 0x6D    
+   \              0x65 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_45:
+   \   00000000   0x47 0x69          DC8 "Given name"
+   \              0x76 0x65    
+   \              0x6E 0x20    
+   \              0x6E 0x61    
+   \              0x6D 0x65    
+   \              0x00         
+   \   0000000B   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_46:
+   \   00000000   0x47 0x4E          DC8 "GN"
+   \              0x00         
+   \   00000003   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_47:
+   \   00000000   0x55 0x04          DC8 "U\004+"
+   \              0x2B 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_48:
+   \   00000000   0x69 0x64          DC8 "id-at-initials"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x69 0x6E    
+   \              0x69 0x74    
+   \              0x69 0x61    
+   \              0x6C 0x73    
+   \              0x00         
+   \   0000000F   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_49:
+   \   00000000   0x49 0x6E          DC8 "Initials"
+   \              0x69 0x74    
+   \              0x69 0x61    
+   \              0x6C 0x73    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_50:
+   \   00000000   0x69 0x6E          DC8 "initials"
+   \              0x69 0x74    
+   \              0x69 0x61    
+   \              0x6C 0x73    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_51:
+   \   00000000   0x55 0x04          DC8 "U\004,"
+   \              0x2C 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_52:
+   \   00000000   0x69 0x64          DC8 "id-at-generationQualifier"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x67 0x65    
+   \              0x6E 0x65    
+   \              0x72 0x61    
+   \              0x74 0x69    
+   \              0x6F 0x6E    
+   \              0x51 0x75    
+   \              0x61 0x6C    
+   \              0x69 0x66    
+   \              0x69 0x65    
+   \              0x72 0x00    
+   \   0000001A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_53:
+   \   00000000   0x47 0x65          DC8 "Generation qualifier"
+   \              0x6E 0x65    
+   \              0x72 0x61    
+   \              0x74 0x69    
+   \              0x6F 0x6E    
+   \              0x20 0x71    
+   \              0x75 0x61    
+   \              0x6C 0x69    
+   \              0x66 0x69    
+   \              0x65 0x72    
+   \              0x00         
+   \   00000015   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_54:
+   \   00000000   0x67 0x65          DC8 "generationQualifier"
+   \              0x6E 0x65    
+   \              0x72 0x61    
+   \              0x74 0x69    
+   \              0x6F 0x6E    
+   \              0x51 0x75    
+   \              0x61 0x6C    
+   \              0x69 0x66    
+   \              0x69 0x65    
+   \              0x72 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_55:
+   \   00000000   0x55 0x04          DC8 "U\004\014"
+   \              0x0C 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_56:
+   \   00000000   0x69 0x64          DC8 "id-at-title"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x74 0x69    
+   \              0x74 0x6C    
+   \              0x65 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_57:
+   \   00000000   0x54 0x69          DC8 "Title"
+   \              0x74 0x6C    
+   \              0x65 0x00    
+   \   00000006   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_58:
+   \   00000000   0x74 0x69          DC8 "title"
+   \              0x74 0x6C    
+   \              0x65 0x00    
+   \   00000006   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_59:
+   \   00000000   0x55 0x04          DC8 "U\004."
+   \              0x2E 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_60:
+   \   00000000   0x69 0x64          DC8 "id-at-dnQualifier"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x64 0x6E    
+   \              0x51 0x75    
+   \              0x61 0x6C    
+   \              0x69 0x66    
+   \              0x69 0x65    
+   \              0x72 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_61:
+   \   00000000   0x44 0x69          DC8 "Distinguished Name qualifier"
+   \              0x73 0x74    
+   \              0x69 0x6E    
+   \              0x67 0x75    
+   \              0x69 0x73    
+   \              0x68 0x65    
+   \              0x64 0x20    
+   \              0x4E 0x61    
+   \              0x6D 0x65    
+   \              0x20 0x71    
+   \              0x75 0x61    
+   \              0x6C 0x69    
+   \              0x66 0x69    
+   \              0x65 0x72    
+   \              0x00         
+   \   0000001D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_62:
+   \   00000000   0x64 0x6E          DC8 "dnQualifier"
+   \              0x51 0x75    
+   \              0x61 0x6C    
+   \              0x69 0x66    
+   \              0x69 0x65    
+   \              0x72 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_63:
+   \   00000000   0x55 0x04          DC8 "U\004A"
+   \              0x41 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_64:
+   \   00000000   0x69 0x64          DC8 "id-at-pseudonym"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x70 0x73    
+   \              0x65 0x75    
+   \              0x64 0x6F    
+   \              0x6E 0x79    
+   \              0x6D 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_65:
+   \   00000000   0x50 0x73          DC8 "Pseudonym"
+   \              0x65 0x75    
+   \              0x64 0x6F    
+   \              0x6E 0x79    
+   \              0x6D 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_66:
+   \   00000000   0x70 0x73          DC8 "pseudonym"
+   \              0x65 0x75    
+   \              0x64 0x6F    
+   \              0x6E 0x79    
+   \              0x6D 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_67:
+   \   00000000   0x09 0x92          DC8 "\t\222&\211\223\362,d\001\031"
+   \              0x26 0x89    
+   \              0x93 0xF2    
+   \              0x2C 0x64    
+   \              0x01 0x19    
+   \              0x00         
+   \   0000000B   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_68:
+   \   00000000   0x69 0x64          DC8 "id-domainComponent"
+   \              0x2D 0x64    
+   \              0x6F 0x6D    
+   \              0x61 0x69    
+   \              0x6E 0x43    
+   \              0x6F 0x6D    
+   \              0x70 0x6F    
+   \              0x6E 0x65    
+   \              0x6E 0x74    
+   \              0x00         
+   \   00000013   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_69:
+   \   00000000   0x44 0x6F          DC8 "Domain component"
+   \              0x6D 0x61    
+   \              0x69 0x6E    
+   \              0x20 0x63    
+   \              0x6F 0x6D    
+   \              0x70 0x6F    
+   \              0x6E 0x65    
+   \              0x6E 0x74    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_70:
+   \   00000000   0x44 0x43          DC8 "DC"
+   \              0x00         
+   \   00000003   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_71:
+   \   00000000   0x55 0x04          DC8 "U\004-"
+   \              0x2D 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_72:
+   \   00000000   0x69 0x64          DC8 "id-at-uniqueIdentifier"
+   \              0x2D 0x61    
+   \              0x74 0x2D    
+   \              0x75 0x6E    
+   \              0x69 0x71    
+   \              0x75 0x65    
+   \              0x49 0x64    
+   \              0x65 0x6E    
+   \              0x74 0x69    
+   \              0x66 0x69    
+   \              0x65 0x72    
+   \              0x00         
+   \   00000017   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_73:
+   \   00000000   0x55 0x6E          DC8 "Unique Identifier"
+   \              0x69 0x71    
+   \              0x75 0x65    
+   \              0x20 0x49    
+   \              0x64 0x65    
+   \              0x6E 0x74    
+   \              0x69 0x66    
+   \              0x69 0x65    
+   \              0x72 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_74:
+   \   00000000   0x75 0x6E          DC8 "uniqueIdentifier"
+   \              0x69 0x71    
+   \              0x75 0x65    
+   \              0x49 0x64    
+   \              0x65 0x6E    
+   \              0x74 0x69    
+   \              0x66 0x69    
+   \              0x65 0x72    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_75:
+   \   00000000   0x55 0x1D          DC8 "U\035\023"
+   \              0x13 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_76:
+   \   00000000   0x69 0x64          DC8 "id-ce-basicConstraints"
+   \              0x2D 0x63    
+   \              0x65 0x2D    
+   \              0x62 0x61    
+   \              0x73 0x69    
+   \              0x63 0x43    
+   \              0x6F 0x6E    
+   \              0x73 0x74    
+   \              0x72 0x61    
+   \              0x69 0x6E    
+   \              0x74 0x73    
+   \              0x00         
+   \   00000017   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_77:
+   \   00000000   0x42 0x61          DC8 "Basic Constraints"
+   \              0x73 0x69    
+   \              0x63 0x20    
+   \              0x43 0x6F    
+   \              0x6E 0x73    
+   \              0x74 0x72    
+   \              0x61 0x69    
+   \              0x6E 0x74    
+   \              0x73 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_78:
+   \   00000000   0x55 0x1D          DC8 "U\035\017"
+   \              0x0F 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_79:
+   \   00000000   0x69 0x64          DC8 "id-ce-keyUsage"
+   \              0x2D 0x63    
+   \              0x65 0x2D    
+   \              0x6B 0x65    
+   \              0x79 0x55    
+   \              0x73 0x61    
+   \              0x67 0x65    
+   \              0x00         
+   \   0000000F   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_80:
+   \   00000000   0x4B 0x65          DC8 "Key Usage"
+   \              0x79 0x20    
+   \              0x55 0x73    
+   \              0x61 0x67    
+   \              0x65 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_81:
+   \   00000000   0x55 0x1D          DC8 "U\035%"
+   \              0x25 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_82:
+   \   00000000   0x69 0x64          DC8 "id-ce-extKeyUsage"
+   \              0x2D 0x63    
+   \              0x65 0x2D    
+   \              0x65 0x78    
+   \              0x74 0x4B    
+   \              0x65 0x79    
+   \              0x55 0x73    
+   \              0x61 0x67    
+   \              0x65 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_83:
+   \   00000000   0x45 0x78          DC8 "Extended Key Usage"
+   \              0x74 0x65    
+   \              0x6E 0x64    
+   \              0x65 0x64    
+   \              0x20 0x4B    
+   \              0x65 0x79    
+   \              0x20 0x55    
+   \              0x73 0x61    
+   \              0x67 0x65    
+   \              0x00         
+   \   00000013   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_84:
+   \   00000000   0x55 0x1D          DC8 "U\035\021"
+   \              0x11 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_85:
+   \   00000000   0x69 0x64          DC8 "id-ce-subjectAltName"
+   \              0x2D 0x63    
+   \              0x65 0x2D    
+   \              0x73 0x75    
+   \              0x62 0x6A    
+   \              0x65 0x63    
+   \              0x74 0x41    
+   \              0x6C 0x74    
+   \              0x4E 0x61    
+   \              0x6D 0x65    
+   \              0x00         
+   \   00000015   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_86:
+   \   00000000   0x53 0x75          DC8 "Subject Alt Name"
+   \              0x62 0x6A    
+   \              0x65 0x63    
+   \              0x74 0x20    
+   \              0x41 0x6C    
+   \              0x74 0x20    
+   \              0x4E 0x61    
+   \              0x6D 0x65    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_87:
+   \   00000000   0x60 0x86          DC8 "`\206H\001\206\370B\001\001"
+   \              0x48 0x01    
+   \              0x86 0xF8    
+   \              0x42 0x01    
+   \              0x01 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_88:
+   \   00000000   0x69 0x64          DC8 "id-netscape-certtype"
+   \              0x2D 0x6E    
+   \              0x65 0x74    
+   \              0x73 0x63    
+   \              0x61 0x70    
+   \              0x65 0x2D    
+   \              0x63 0x65    
+   \              0x72 0x74    
+   \              0x74 0x79    
+   \              0x70 0x65    
+   \              0x00         
+   \   00000015   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_89:
+   \   00000000   0x4E 0x65          DC8 "Netscape Certificate Type"
+   \              0x74 0x73    
+   \              0x63 0x61    
+   \              0x70 0x65    
+   \              0x20 0x43    
+   \              0x65 0x72    
+   \              0x74 0x69    
+   \              0x66 0x69    
+   \              0x63 0x61    
+   \              0x74 0x65    
+   \              0x20 0x54    
+   \              0x79 0x70    
+   \              0x65 0x00    
+   \   0000001A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_90:
+   \   00000000   0x2B 0x06          DC8 "+\006\001\005\005\007\003\001"
+   \              0x01 0x05    
+   \              0x05 0x07    
+   \              0x03 0x01    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_91:
+   \   00000000   0x69 0x64          DC8 "id-kp-serverAuth"
+   \              0x2D 0x6B    
+   \              0x70 0x2D    
+   \              0x73 0x65    
+   \              0x72 0x76    
+   \              0x65 0x72    
+   \              0x41 0x75    
+   \              0x74 0x68    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_92:
+   \   00000000   0x54 0x4C          DC8 "TLS Web Server Authentication"
+   \              0x53 0x20    
+   \              0x57 0x65    
+   \              0x62 0x20    
+   \              0x53 0x65    
+   \              0x72 0x76    
+   \              0x65 0x72    
+   \              0x20 0x41    
+   \              0x75 0x74    
+   \              0x68 0x65    
+   \              0x6E 0x74    
+   \              0x69 0x63    
+   \              0x61 0x74    
+   \              0x69 0x6F    
+   \              0x6E 0x00    
+   \   0000001E   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_93:
+   \   00000000   0x2B 0x06          DC8 "+\006\001\005\005\007\003\002"
+   \              0x01 0x05    
+   \              0x05 0x07    
+   \              0x03 0x02    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_94:
+   \   00000000   0x69 0x64          DC8 "id-kp-clientAuth"
+   \              0x2D 0x6B    
+   \              0x70 0x2D    
+   \              0x63 0x6C    
+   \              0x69 0x65    
+   \              0x6E 0x74    
+   \              0x41 0x75    
+   \              0x74 0x68    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_95:
+   \   00000000   0x54 0x4C          DC8 "TLS Web Client Authentication"
+   \              0x53 0x20    
+   \              0x57 0x65    
+   \              0x62 0x20    
+   \              0x43 0x6C    
+   \              0x69 0x65    
+   \              0x6E 0x74    
+   \              0x20 0x41    
+   \              0x75 0x74    
+   \              0x68 0x65    
+   \              0x6E 0x74    
+   \              0x69 0x63    
+   \              0x61 0x74    
+   \              0x69 0x6F    
+   \              0x6E 0x00    
+   \   0000001E   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_96:
+   \   00000000   0x2B 0x06          DC8 "+\006\001\005\005\007\003\003"
+   \              0x01 0x05    
+   \              0x05 0x07    
+   \              0x03 0x03    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_97:
+   \   00000000   0x69 0x64          DC8 "id-kp-codeSigning"
+   \              0x2D 0x6B    
+   \              0x70 0x2D    
+   \              0x63 0x6F    
+   \              0x64 0x65    
+   \              0x53 0x69    
+   \              0x67 0x6E    
+   \              0x69 0x6E    
+   \              0x67 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_98:
+   \   00000000   0x43 0x6F          DC8 "Code Signing"
+   \              0x64 0x65    
+   \              0x20 0x53    
+   \              0x69 0x67    
+   \              0x6E 0x69    
+   \              0x6E 0x67    
+   \              0x00         
+   \   0000000D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_99:
+   \   00000000   0x2B 0x06          DC8 "+\006\001\005\005\007\003\004"
+   \              0x01 0x05    
+   \              0x05 0x07    
+   \              0x03 0x04    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_100:
+   \   00000000   0x69 0x64          DC8 "id-kp-emailProtection"
+   \              0x2D 0x6B    
+   \              0x70 0x2D    
+   \              0x65 0x6D    
+   \              0x61 0x69    
+   \              0x6C 0x50    
+   \              0x72 0x6F    
+   \              0x74 0x65    
+   \              0x63 0x74    
+   \              0x69 0x6F    
+   \              0x6E 0x00    
+   \   00000016   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_101:
+   \   00000000   0x45 0x2D          DC8 "E-mail Protection"
+   \              0x6D 0x61    
+   \              0x69 0x6C    
+   \              0x20 0x50    
+   \              0x72 0x6F    
+   \              0x74 0x65    
+   \              0x63 0x74    
+   \              0x69 0x6F    
+   \              0x6E 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_102:
+   \   00000000   0x2B 0x06          DC8 "+\006\001\005\005\007\003\010"
+   \              0x01 0x05    
+   \              0x05 0x07    
+   \              0x03 0x08    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_103:
+   \   00000000   0x69 0x64          DC8 "id-kp-timeStamping"
+   \              0x2D 0x6B    
+   \              0x70 0x2D    
+   \              0x74 0x69    
+   \              0x6D 0x65    
+   \              0x53 0x74    
+   \              0x61 0x6D    
+   \              0x70 0x69    
+   \              0x6E 0x67    
+   \              0x00         
+   \   00000013   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_104:
+   \   00000000   0x54 0x69          DC8 "Time Stamping"
+   \              0x6D 0x65    
+   \              0x20 0x53    
+   \              0x74 0x61    
+   \              0x6D 0x70    
+   \              0x69 0x6E    
+   \              0x67 0x00    
+   \   0000000E   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_105:
+   \   00000000   0x2B 0x06          DC8 "+\006\001\005\005\007\003\t"
+   \              0x01 0x05    
+   \              0x05 0x07    
+   \              0x03 0x09    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_106:
+   \   00000000   0x69 0x64          DC8 "id-kp-OCSPSigning"
+   \              0x2D 0x6B    
+   \              0x70 0x2D    
+   \              0x4F 0x43    
+   \              0x53 0x50    
+   \              0x53 0x69    
+   \              0x67 0x6E    
+   \              0x69 0x6E    
+   \              0x67 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_107:
+   \   00000000   0x4F 0x43          DC8 "OCSP Signing"
+   \              0x53 0x50    
+   \              0x20 0x53    
+   \              0x69 0x67    
+   \              0x6E 0x69    
+   \              0x6E 0x67    
+   \              0x00         
+   \   0000000D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_108:
+   \   00000000   0x2A 0x86          DC8 "*\206H\206\367\015\001\001\016"
+   \              0x48 0x86    
+   \              0xF7 0x0D    
+   \              0x01 0x01    
+   \              0x0E 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_109:
+   \   00000000   0x73 0x68          DC8 "sha224WithRSAEncryption"
+   \              0x61 0x32    
+   \              0x32 0x34    
+   \              0x57 0x69    
+   \              0x74 0x68    
+   \              0x52 0x53    
+   \              0x41 0x45    
+   \              0x6E 0x63    
+   \              0x72 0x79    
+   \              0x70 0x74    
+   \              0x69 0x6F    
+   \              0x6E 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_110:
+   \   00000000   0x52 0x53          DC8 "RSA with SHA-224"
+   \              0x41 0x20    
+   \              0x77 0x69    
+   \              0x74 0x68    
+   \              0x20 0x53    
+   \              0x48 0x41    
+   \              0x2D 0x32    
+   \              0x32 0x34    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_111:
+   \   00000000   0x2A 0x86          DC8 "*\206H\206\367\015\001\001\013"
+   \              0x48 0x86    
+   \              0xF7 0x0D    
+   \              0x01 0x01    
+   \              0x0B 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_112:
+   \   00000000   0x73 0x68          DC8 "sha256WithRSAEncryption"
+   \              0x61 0x32    
+   \              0x35 0x36    
+   \              0x57 0x69    
+   \              0x74 0x68    
+   \              0x52 0x53    
+   \              0x41 0x45    
+   \              0x6E 0x63    
+   \              0x72 0x79    
+   \              0x70 0x74    
+   \              0x69 0x6F    
+   \              0x6E 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_113:
+   \   00000000   0x52 0x53          DC8 "RSA with SHA-256"
+   \              0x41 0x20    
+   \              0x77 0x69    
+   \              0x74 0x68    
+   \              0x20 0x53    
+   \              0x48 0x41    
+   \              0x2D 0x32    
+   \              0x35 0x36    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_114:
+   \   00000000   0x2A 0x86          DC8 "*\206H\206\367\015\001\001\014"
+   \              0x48 0x86    
+   \              0xF7 0x0D    
+   \              0x01 0x01    
+   \              0x0C 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_115:
+   \   00000000   0x73 0x68          DC8 "sha384WithRSAEncryption"
+   \              0x61 0x33    
+   \              0x38 0x34    
+   \              0x57 0x69    
+   \              0x74 0x68    
+   \              0x52 0x53    
+   \              0x41 0x45    
+   \              0x6E 0x63    
+   \              0x72 0x79    
+   \              0x70 0x74    
+   \              0x69 0x6F    
+   \              0x6E 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_116:
+   \   00000000   0x52 0x53          DC8 "RSA with SHA-384"
+   \              0x41 0x20    
+   \              0x77 0x69    
+   \              0x74 0x68    
+   \              0x20 0x53    
+   \              0x48 0x41    
+   \              0x2D 0x33    
+   \              0x38 0x34    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_117:
+   \   00000000   0x2A 0x86          DC8 "*\206H\206\367\015\001\001\015"
+   \              0x48 0x86    
+   \              0xF7 0x0D    
+   \              0x01 0x01    
+   \              0x0D 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_118:
+   \   00000000   0x73 0x68          DC8 "sha512WithRSAEncryption"
+   \              0x61 0x35    
+   \              0x31 0x32    
+   \              0x57 0x69    
+   \              0x74 0x68    
+   \              0x52 0x53    
+   \              0x41 0x45    
+   \              0x6E 0x63    
+   \              0x72 0x79    
+   \              0x70 0x74    
+   \              0x69 0x6F    
+   \              0x6E 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_119:
+   \   00000000   0x52 0x53          DC8 "RSA with SHA-512"
+   \              0x41 0x20    
+   \              0x77 0x69    
+   \              0x74 0x68    
+   \              0x20 0x53    
+   \              0x48 0x41    
+   \              0x2D 0x35    
+   \              0x31 0x32    
+   \              0x00         
+   \   00000011   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_120:
+   \   00000000   0x2A 0x86          DC8 "*\206H\316=\004\003\001"
+   \              0x48 0xCE    
+   \              0x3D 0x04    
+   \              0x03 0x01    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_121:
+   \   00000000   0x65 0x63          DC8 "ecdsa-with-SHA224"
+   \              0x64 0x73    
+   \              0x61 0x2D    
+   \              0x77 0x69    
+   \              0x74 0x68    
+   \              0x2D 0x53    
+   \              0x48 0x41    
+   \              0x32 0x32    
+   \              0x34 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_122:
+   \   00000000   0x45 0x43          DC8 "ECDSA with SHA224"
+   \              0x44 0x53    
+   \              0x41 0x20    
+   \              0x77 0x69    
+   \              0x74 0x68    
+   \              0x20 0x53    
+   \              0x48 0x41    
+   \              0x32 0x32    
+   \              0x34 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_123:
+   \   00000000   0x2A 0x86          DC8 "*\206H\316=\004\003\002"
+   \              0x48 0xCE    
+   \              0x3D 0x04    
+   \              0x03 0x02    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_124:
+   \   00000000   0x65 0x63          DC8 "ecdsa-with-SHA256"
+   \              0x64 0x73    
+   \              0x61 0x2D    
+   \              0x77 0x69    
+   \              0x74 0x68    
+   \              0x2D 0x53    
+   \              0x48 0x41    
+   \              0x32 0x35    
+   \              0x36 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_125:
+   \   00000000   0x45 0x43          DC8 "ECDSA with SHA256"
+   \              0x44 0x53    
+   \              0x41 0x20    
+   \              0x77 0x69    
+   \              0x74 0x68    
+   \              0x20 0x53    
+   \              0x48 0x41    
+   \              0x32 0x35    
+   \              0x36 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_126:
+   \   00000000   0x2A 0x86          DC8 "*\206H\316=\004\003\003"
+   \              0x48 0xCE    
+   \              0x3D 0x04    
+   \              0x03 0x03    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_127:
+   \   00000000   0x65 0x63          DC8 "ecdsa-with-SHA384"
+   \              0x64 0x73    
+   \              0x61 0x2D    
+   \              0x77 0x69    
+   \              0x74 0x68    
+   \              0x2D 0x53    
+   \              0x48 0x41    
+   \              0x33 0x38    
+   \              0x34 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_128:
+   \   00000000   0x45 0x43          DC8 "ECDSA with SHA384"
+   \              0x44 0x53    
+   \              0x41 0x20    
+   \              0x77 0x69    
+   \              0x74 0x68    
+   \              0x20 0x53    
+   \              0x48 0x41    
+   \              0x33 0x38    
+   \              0x34 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_129:
+   \   00000000   0x2A 0x86          DC8 "*\206H\316=\004\003\004"
+   \              0x48 0xCE    
+   \              0x3D 0x04    
+   \              0x03 0x04    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_130:
+   \   00000000   0x65 0x63          DC8 "ecdsa-with-SHA512"
+   \              0x64 0x73    
+   \              0x61 0x2D    
+   \              0x77 0x69    
+   \              0x74 0x68    
+   \              0x2D 0x53    
+   \              0x48 0x41    
+   \              0x35 0x31    
+   \              0x32 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_131:
+   \   00000000   0x45 0x43          DC8 "ECDSA with SHA512"
+   \              0x44 0x53    
+   \              0x41 0x20    
+   \              0x77 0x69    
+   \              0x74 0x68    
+   \              0x20 0x53    
+   \              0x48 0x41    
+   \              0x35 0x31    
+   \              0x32 0x00    
+   \   00000012   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_132:
+   \   00000000   0x2A 0x86          DC8 "*\206H\206\367\015\001\001\012"
+   \              0x48 0x86    
+   \              0xF7 0x0D    
+   \              0x01 0x01    
+   \              0x0A 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_133:
+   \   00000000   0x52 0x53          DC8 "RSASSA-PSS"
+   \              0x41 0x53    
+   \              0x53 0x41    
+   \              0x2D 0x50    
+   \              0x53 0x53    
+   \              0x00         
+   \   0000000B   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_134:
+   \   00000000   0x2A 0x86          DC8 "*\206H\206\367\015\001\001\001"
+   \              0x48 0x86    
+   \              0xF7 0x0D    
+   \              0x01 0x01    
+   \              0x01 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_135:
+   \   00000000   0x72 0x73          DC8 "rsaEncryption"
+   \              0x61 0x45    
+   \              0x6E 0x63    
+   \              0x72 0x79    
+   \              0x70 0x74    
+   \              0x69 0x6F    
+   \              0x6E 0x00    
+   \   0000000E   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_136:
+   \   00000000   0x52 0x53          DC8 "RSA"
+   \              0x41 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_137:
+   \   00000000   0x2A 0x86          DC8 "*\206H\316=\002\001"
+   \              0x48 0xCE    
+   \              0x3D 0x02    
+   \              0x01 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_138:
+   \   00000000   0x69 0x64          DC8 "id-ecPublicKey"
+   \              0x2D 0x65    
+   \              0x63 0x50    
+   \              0x75 0x62    
+   \              0x6C 0x69    
+   \              0x63 0x4B    
+   \              0x65 0x79    
+   \              0x00         
+   \   0000000F   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_139:
+   \   00000000   0x47 0x65          DC8 "Generic EC key"
+   \              0x6E 0x65    
+   \              0x72 0x69    
+   \              0x63 0x20    
+   \              0x45 0x43    
+   \              0x20 0x6B    
+   \              0x65 0x79    
+   \              0x00         
+   \   0000000F   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_140:
+   \   00000000   0x2B 0x81          DC8 "+\201\004\001\014"
+   \              0x04 0x01    
+   \              0x0C 0x00    
+   \   00000006   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_141:
+   \   00000000   0x69 0x64          DC8 "id-ecDH"
+   \              0x2D 0x65    
+   \              0x63 0x44    
+   \              0x48 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_142:
+   \   00000000   0x45 0x43          DC8 "EC key for ECDH"
+   \              0x20 0x6B    
+   \              0x65 0x79    
+   \              0x20 0x66    
+   \              0x6F 0x72    
+   \              0x20 0x45    
+   \              0x43 0x44    
+   \              0x48 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_143:
+   \   00000000   0x2A 0x86          DC8 "*\206H\316=\003\001\007"
+   \              0x48 0xCE    
+   \              0x3D 0x03    
+   \              0x01 0x07    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_144:
+   \   00000000   0x73 0x65          DC8 "secp256r1"
+   \              0x63 0x70    
+   \              0x32 0x35    
+   \              0x36 0x72    
+   \              0x31 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_145:
+   \   00000000   0x2B 0x81          DC8 2BH, 81H, 4, 0, 22H, 0
+   \              0x04 0x00    
+   \              0x22 0x00    
+   \   00000006   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_146:
+   \   00000000   0x73 0x65          DC8 "secp384r1"
+   \              0x63 0x70    
+   \              0x33 0x38    
+   \              0x34 0x72    
+   \              0x31 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_147:
+   \   00000000   0x2B 0x0E          DC8 "+\016\003\002\007"
+   \              0x03 0x02    
+   \              0x07 0x00    
+   \   00000006   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_148:
+   \   00000000   0x64 0x65          DC8 "desCBC"
+   \              0x73 0x43    
+   \              0x42 0x43    
+   \              0x00         
+   \   00000007   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_149:
+   \   00000000   0x44 0x45          DC8 "DES-CBC"
+   \              0x53 0x2D    
+   \              0x43 0x42    
+   \              0x43 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_150:
+   \   00000000   0x2A 0x86          DC8 "*\206H\206\367\015\003\007"
+   \              0x48 0x86    
+   \              0xF7 0x0D    
+   \              0x03 0x07    
+   \              0x00         
+   \   00000009   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_151:
+   \   00000000   0x64 0x65          DC8 "des-ede3-cbc"
+   \              0x73 0x2D    
+   \              0x65 0x64    
+   \              0x65 0x33    
+   \              0x2D 0x63    
+   \              0x62 0x63    
+   \              0x00         
+   \   0000000D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_152:
+   \   00000000   0x44 0x45          DC8 "DES-EDE3-CBC"
+   \              0x53 0x2D    
+   \              0x45 0x44    
+   \              0x45 0x33    
+   \              0x2D 0x43    
+   \              0x42 0x43    
+   \              0x00         
+   \   0000000D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_153:
+   \   00000000   0x60 0x86          DC8 "`\206H\001e\003\004\002\004"
+   \              0x48 0x01    
+   \              0x65 0x03    
+   \              0x04 0x02    
+   \              0x04 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_154:
+   \   00000000   0x69 0x64          DC8 "id-sha224"
+   \              0x2D 0x73    
+   \              0x68 0x61    
+   \              0x32 0x32    
+   \              0x34 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_155:
+   \   00000000   0x53 0x48          DC8 "SHA-224"
+   \              0x41 0x2D    
+   \              0x32 0x32    
+   \              0x34 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_156:
+   \   00000000   0x60 0x86          DC8 "`\206H\001e\003\004\002\001"
+   \              0x48 0x01    
+   \              0x65 0x03    
+   \              0x04 0x02    
+   \              0x01 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_157:
+   \   00000000   0x69 0x64          DC8 "id-sha256"
+   \              0x2D 0x73    
+   \              0x68 0x61    
+   \              0x32 0x35    
+   \              0x36 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_158:
+   \   00000000   0x53 0x48          DC8 "SHA-256"
+   \              0x41 0x2D    
+   \              0x32 0x35    
+   \              0x36 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_159:
+   \   00000000   0x60 0x86          DC8 "`\206H\001e\003\004\002\002"
+   \              0x48 0x01    
+   \              0x65 0x03    
+   \              0x04 0x02    
+   \              0x02 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_160:
+   \   00000000   0x69 0x64          DC8 "id-sha384"
+   \              0x2D 0x73    
+   \              0x68 0x61    
+   \              0x33 0x38    
+   \              0x34 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_161:
+   \   00000000   0x53 0x48          DC8 "SHA-384"
+   \              0x41 0x2D    
+   \              0x33 0x38    
+   \              0x34 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_162:
+   \   00000000   0x60 0x86          DC8 "`\206H\001e\003\004\002\003"
+   \              0x48 0x01    
+   \              0x65 0x03    
+   \              0x04 0x02    
+   \              0x03 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_163:
+   \   00000000   0x69 0x64          DC8 "id-sha512"
+   \              0x2D 0x73    
+   \              0x68 0x61    
+   \              0x35 0x31    
+   \              0x32 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_164:
+   \   00000000   0x53 0x48          DC8 "SHA-512"
+   \              0x41 0x2D    
+   \              0x35 0x31    
+   \              0x32 0x00    
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_165:
+   \   00000000   0x25 0x64          DC8 "%d.%d"
+   \              0x2E 0x25    
+   \              0x64 0x00    
+   \   00000006   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_166:
+   \   00000000   0x2E 0x25          DC8 ".%d"
+   \              0x64 0x00    
+    709          
+    710          #endif /* MBEDTLS_OID_C */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   mbedtls_oid_get_attr_short_name
+        16   -> memcmp
+      16   mbedtls_oid_get_cipher_alg
+        16   -> memcmp
+      16   mbedtls_oid_get_ec_grp
+        16   -> memcmp
+      16   mbedtls_oid_get_extended_key_usage
+        16   -> memcmp
+      16   mbedtls_oid_get_md_alg
+        16   -> memcmp
+      32   mbedtls_oid_get_numeric_string
+        32   -> snprintf
+        32 __aeabi_idiv
+        32 __aeabi_idivmod
+       8   mbedtls_oid_get_oid_by_ec_grp
+       8   mbedtls_oid_get_oid_by_md
+       8   mbedtls_oid_get_oid_by_pk_alg
+      12   mbedtls_oid_get_oid_by_sig_alg
+      16   mbedtls_oid_get_pk_alg
+        16   -> memcmp
+      24   mbedtls_oid_get_sig_alg
+        24   -> memcmp
+      16   mbedtls_oid_get_sig_alg_desc
+        16   -> memcmp
+      16   mbedtls_oid_get_x509_ext_type
+        16   -> memcmp
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable175
+       4  ??DataTable175_1
+      34  ?Subroutine0
+       4  ?_0
+      20  ?_1
+      12  ?_10
+      24  ?_100
+      20  ?_101
+      12  ?_102
+      20  ?_103
+      16  ?_104
+      12  ?_105
+      20  ?_106
+      16  ?_107
+      12  ?_108
+      24  ?_109
+       2  ?_11
+      20  ?_110
+      12  ?_111
+      24  ?_112
+      20  ?_113
+      12  ?_114
+      24  ?_115
+      20  ?_116
+      12  ?_117
+      24  ?_118
+      20  ?_119
+       4  ?_12
+      12  ?_120
+      20  ?_121
+      20  ?_122
+      12  ?_123
+      20  ?_124
+      20  ?_125
+      12  ?_126
+      20  ?_127
+      20  ?_128
+      12  ?_129
+      12  ?_13
+      20  ?_130
+      20  ?_131
+      12  ?_132
+      12  ?_133
+      12  ?_134
+      16  ?_135
+       4  ?_136
+       8  ?_137
+      16  ?_138
+      16  ?_139
+       8  ?_14
+       8  ?_140
+       8  ?_141
+      16  ?_142
+      12  ?_143
+      12  ?_144
+       8  ?_145
+      12  ?_146
+       8  ?_147
+       8  ?_148
+       8  ?_149
+       4  ?_15
+      12  ?_150
+      16  ?_151
+      16  ?_152
+      12  ?_153
+      12  ?_154
+       8  ?_155
+      12  ?_156
+      12  ?_157
+       8  ?_158
+      12  ?_159
+       4  ?_16
+      12  ?_160
+       8  ?_161
+      12  ?_162
+      12  ?_163
+       8  ?_164
+       8  ?_165
+       4  ?_166
+      24  ?_17
+      16  ?_18
+       2  ?_19
+      12  ?_2
+       4  ?_20
+      32  ?_21
+      12  ?_22
+       4  ?_23
+      12  ?_24
+      16  ?_25
+      16  ?_26
+       4  ?_27
+      20  ?_28
+      16  ?_29
+       4  ?_3
+      16  ?_30
+       4  ?_31
+      20  ?_32
+      16  ?_33
+      16  ?_34
+       4  ?_35
+      20  ?_36
+      12  ?_37
+      12  ?_38
+       4  ?_39
+       4  ?_4
+      16  ?_40
+       8  ?_41
+       4  ?_42
+       4  ?_43
+      16  ?_44
+      12  ?_45
+       4  ?_46
+       4  ?_47
+      16  ?_48
+      12  ?_49
+      20  ?_5
+      12  ?_50
+       4  ?_51
+      28  ?_52
+      24  ?_53
+      20  ?_54
+       4  ?_55
+      12  ?_56
+       8  ?_57
+       8  ?_58
+       4  ?_59
+       8  ?_6
+      20  ?_60
+      32  ?_61
+      12  ?_62
+       4  ?_63
+      16  ?_64
+      12  ?_65
+      12  ?_66
+      12  ?_67
+      20  ?_68
+      20  ?_69
+       2  ?_7
+       4  ?_70
+       4  ?_71
+      24  ?_72
+      20  ?_73
+      20  ?_74
+       4  ?_75
+      24  ?_76
+      20  ?_77
+       4  ?_78
+      16  ?_79
+       4  ?_8
+      12  ?_80
+       4  ?_81
+      20  ?_82
+      20  ?_83
+       4  ?_84
+      24  ?_85
+      20  ?_86
+      12  ?_87
+      24  ?_88
+      28  ?_89
+      16  ?_9
+      12  ?_90
+      20  ?_91
+      32  ?_92
+      12  ?_93
+      20  ?_94
+      32  ?_95
+      12  ?_96
+      20  ?_97
+      16  ?_98
+      12  ?_99
+      64  mbedtls_oid_get_attr_short_name
+      64  mbedtls_oid_get_cipher_alg
+      64  mbedtls_oid_get_ec_grp
+      64  mbedtls_oid_get_extended_key_usage
+      64  mbedtls_oid_get_md_alg
+     138  mbedtls_oid_get_numeric_string
+       6  mbedtls_oid_get_oid_by_ec_grp
+       8  mbedtls_oid_get_oid_by_md
+       8  mbedtls_oid_get_oid_by_pk_alg
+      46  mbedtls_oid_get_oid_by_sig_alg
+      64  mbedtls_oid_get_pk_alg
+      68  mbedtls_oid_get_sig_alg
+      64  mbedtls_oid_get_sig_alg_desc
+      64  mbedtls_oid_get_x509_ext_type
+      60  oid_cipher_alg
+      60  oid_ecp_grp
+     112  oid_ext_key_usage
+     100  oid_md_alg
+      80  oid_pk_alg
+     200  oid_sig_alg
+     120  oid_x509_ext
+     400  oid_x520_attr_type
+
+ 
+ 2 270 bytes in section .rodata
+ 1 960 bytes in section .text
+ 
+ 1 960 bytes of CODE  memory
+ 2 270 bytes of CONST memory
+
+Errors: none
+Warnings: none

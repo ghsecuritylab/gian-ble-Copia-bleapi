@@ -1,0 +1,319 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:45
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\platform\mbed_poll.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_poll.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_poll.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_poll.o
+#        .\mbed-os\platform\mbed_poll.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_poll.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\platform\mbed_poll.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\platform\mbed_poll.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2017 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "mbed_poll.h"
+     17          #include "FileHandle.h"
+
+   \                                 In section .rodata, align 4
+   \   __absolute mbed::Callback<void ()>::ops const mbed::Callback<void ()>::generate<>(mbed::Callback<void ()>::function_context<void (*)(void *), void> const &)::ops
+   \                     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops:
+   \   00000000   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv
+   \   00000004   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv
+   \   00000008   0x........         DC32 _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_callINS2_16function_contextIPFvPvEvEEEEvPKv: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x0001             MOVS     R1,R0
+   \   00000004   0x6848             LDR      R0,[R1, #+4]
+   \   00000006   0x6809             LDR      R1,[R1, #+0]
+   \   00000008   0x4788             BLX      R1
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_moveINS2_16function_contextIPFvPvEvEEEEvS5_PKv: (+1)
+   \   00000000   0x2800             CMP      R0,#+0
+   \   00000002   0xD001             BEQ      ??function_move_0
+   \   00000004   0xC90C             LDM      R1!,{R2,R3}
+   \   00000006   0xC00C             STM      R0!,{R2,R3}
+   \                     ??function_move_0: (+1)
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+   \                     _ZN4mbed8CallbackIFvvEE13function_dtorINS2_16function_contextIPFvPvEvEEEEvS5_: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void mbed::callback<>(void (*)(void *), void *)
+   \                     _ZN4mbed8callbackIvvvEENS_8CallbackIFT1_vEEEPFS2_PT_EPT0_: (+1)
+   \   00000000   0xB470             PUSH     {R4-R6}
+   \   00000002   0x2300             MOVS     R3,#+0
+   \   00000004   0x2400             MOVS     R4,#+0
+   \   00000006   0x2500             MOVS     R5,#+0
+   \   00000008   0x2600             MOVS     R6,#+0
+   \   0000000A   0xC078             STM      R0!,{R3-R6}
+   \   0000000C   0x3810             SUBS     R0,R0,#+16
+   \   0000000E   0xD001             BEQ      ??callback_0
+   \   00000010   0x6001             STR      R1,[R0, #+0]
+   \   00000012   0x6042             STR      R2,[R0, #+4]
+   \                     ??callback_0: (+1)
+   \   00000014   0x4901             LDR      R1,??callback_1
+   \   00000016   0x60C1             STR      R1,[R0, #+12]
+   \   00000018   0xBC70             POP      {R4-R6}
+   \   0000001A   0x4770             BX       LR               ;; return
+   \                     ??callback_1:
+   \   0000001C   0x........         DC32     _ZZN4mbed8CallbackIFvvEE8generateINS2_16function_contextIPFvPvEvEEEEvRKT_E3ops
+     18          #include "Timer.h"
+     19          #ifdef MBED_CONF_RTOS_PRESENT
+     20          #include "rtos/Thread.h"
+     21          #endif
+     22          
+     23          namespace mbed {
+     24          
+     25          // timeout -1 forever, or milliseconds
+
+   \                                 In section .text, align 2, keep-with-next
+     26          int poll(pollfh fhs[], unsigned nfhs, int timeout)
+     27          {
+   \                     _ZN4mbed4pollEPNS_6pollfhEji: (+1)
+   \   00000000   0xB5F7             PUSH     {R0-R2,R4-R7,LR}
+   \   00000002   0xB088             SUB      SP,SP,#+32
+     28              /**
+     29               * TODO Proper wake-up mechanism.
+     30               * In order to correctly detect availability of read/write a FileHandle, we needed
+     31               * a select or poll mechanisms. We opted for poll as POSIX defines in
+     32               * http://pubs.opengroup.org/onlinepubs/009695399/functions/poll.html Currently,
+     33               * mbed::poll() just spins and scans filehandles looking for any events we are
+     34               * interested in. In future, his spinning behaviour will be replaced with
+     35               * condition variables.
+     36               */
+     37              Timer timer;
+   \   00000004   0x4668             MOV      R0,SP
+   \   00000006   0x.... 0x....      BL       _ZN4mbed5TimerC1Ev
+     38              if (timeout > 0) {
+   \   0000000A   0x990A             LDR      R1,[SP, #+40]
+   \   0000000C   0x2901             CMP      R1,#+1
+   \   0000000E   0xDB01             BLT      ??poll_0
+     39                  timer.start();
+   \   00000010   0x.... 0x....      BL       _ZN4mbed5Timer5startEv
+     40              }
+     41          
+     42              int count = 0;
+   \                     ??poll_0: (+1)
+   \   00000014   0x2700             MOVS     R7,#+0
+   \   00000016   0xE002             B        ??poll_1
+     43              for (;;) {
+     44                  /* Scan the file handles */
+     45                  for (unsigned n = 0; n < nfhs; n++) {
+     46                      FileHandle *fh = fhs[n].fh;
+     47                      short mask = fhs[n].events | POLLERR | POLLHUP | POLLNVAL;
+     48                      if (fh) {
+     49                          fhs[n].revents = fh->poll(mask) & mask;
+     50                      } else {
+     51                          fhs[n].revents = POLLNVAL;
+     52                      }
+     53                      if (fhs[n].revents) {
+     54                          count++;
+     55                      }
+     56                  }
+     57          
+     58                  if (count) {
+     59                      break;
+     60                  }
+     61          
+     62                  /* Nothing selected - this is where timeout handling would be needed */
+     63                  if (timeout == 0 || (timeout > 0 && timer.read_ms() > timeout)) {
+     64                      break;
+     65                  }
+     66          #ifdef MBED_CONF_RTOS_PRESENT
+     67                  // TODO - proper blocking
+     68                  // wait for condition variable, wait queue whatever here
+     69                  rtos::Thread::wait(1);
+   \                     ??poll_2: (+1)
+   \   00000018   0x2001             MOVS     R0,#+1
+   \   0000001A   0x.... 0x....      BL       _ZN4rtos6Thread4waitEj
+   \                     ??poll_1: (+1)
+   \   0000001E   0x9809             LDR      R0,[SP, #+36]
+   \   00000020   0x2800             CMP      R0,#+0
+   \   00000022   0xD01E             BEQ      ??poll_3
+   \   00000024   0x9808             LDR      R0,[SP, #+32]
+   \   00000026   0x1D04             ADDS     R4,R0,#+4
+   \   00000028   0x9D09             LDR      R5,[SP, #+36]
+   \                     ??poll_4: (+1)
+   \   0000002A   0x1F20             SUBS     R0,R4,#+4
+   \   0000002C   0x6800             LDR      R0,[R0, #+0]
+   \   0000002E   0x8821             LDRH     R1,[R4, #+0]
+   \   00000030   0x26E0             MOVS     R6,#+224
+   \   00000032   0x01F6             LSLS     R6,R6,#+7        ;; #+28672
+   \   00000034   0x430E             ORRS     R6,R6,R1
+   \   00000036   0x2800             CMP      R0,#+0
+   \   00000038   0xD006             BEQ      ??poll_5
+   \   0000003A   0xB231             SXTH     R1,R6
+   \   0000003C   0x6802             LDR      R2,[R0, #+0]
+   \   0000003E   0x6BD2             LDR      R2,[R2, #+60]
+   \   00000040   0x4790             BLX      R2
+   \   00000042   0x4006             ANDS     R6,R6,R0
+   \   00000044   0x8066             STRH     R6,[R4, #+2]
+   \   00000046   0xE002             B        ??poll_6
+   \                     ??poll_5: (+1)
+   \   00000048   0x2080             MOVS     R0,#+128
+   \   0000004A   0x01C0             LSLS     R0,R0,#+7        ;; #+16384
+   \   0000004C   0x8060             STRH     R0,[R4, #+2]
+   \                     ??poll_6: (+1)
+   \   0000004E   0x2002             MOVS     R0,#+2
+   \   00000050   0x5E20             LDRSH    R0,[R4, R0]
+   \   00000052   0x2800             CMP      R0,#+0
+   \   00000054   0xD000             BEQ      ??poll_7
+   \   00000056   0x1C7F             ADDS     R7,R7,#+1
+   \                     ??poll_7: (+1)
+   \   00000058   0x3408             ADDS     R4,R4,#+8
+   \   0000005A   0x1E6D             SUBS     R5,R5,#+1
+   \   0000005C   0xD1E5             BNE      ??poll_4
+   \   0000005E   0x2F00             CMP      R7,#+0
+   \   00000060   0xD10A             BNE      ??poll_8
+   \                     ??poll_3: (+1)
+   \   00000062   0x980A             LDR      R0,[SP, #+40]
+   \   00000064   0x2800             CMP      R0,#+0
+   \   00000066   0xD007             BEQ      ??poll_8
+   \   00000068   0x2801             CMP      R0,#+1
+   \   0000006A   0xDBD5             BLT      ??poll_2
+   \   0000006C   0x4668             MOV      R0,SP
+   \   0000006E   0x.... 0x....      BL       _ZN4mbed5Timer7read_msEv
+   \   00000072   0x990A             LDR      R1,[SP, #+40]
+   \   00000074   0x4281             CMP      R1,R0
+   \   00000076   0xDACF             BGE      ??poll_2
+     70          #endif
+     71              }
+     72              return count;
+   \                     ??poll_8: (+1)
+   \   00000078   0x4668             MOV      R0,SP
+   \   0000007A   0x.... 0x....      BL       _ZN4mbed5TimerD1Ev
+   \   0000007E   0x0038             MOVS     R0,R7
+   \   00000080   0xB00B             ADD      SP,SP,#+44
+   \   00000082   0xBDF0             POP      {R4-R7,PC}       ;; return
+     73          }
+     74          
+     75          } // namespace mbed
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+         8   -- Indirect call
+       0   mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+       0   mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+      12   mbed::callback<>(void (*)(void *), void *)
+      64   mbed::poll(mbed::pollfh *, unsigned int, int)
+        64   -- Indirect call
+        64   -> mbed::Timer::Timer()
+        64   -> mbed::Timer::read_ms()
+        64   -> mbed::Timer::start()
+        64   -> mbed::Timer::~Timer()
+        64   -> rtos::Thread::wait(unsigned int)
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  mbed::Callback<void ()>::function_call<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void const *)
+       2  mbed::Callback<void ()>::function_dtor<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *)
+      10  mbed::Callback<void ()>::function_move<mbed::Callback<void ()>::function_context<void (*)(void *), void>>(void *, void const *)
+      32  mbed::callback<>(void (*)(void *), void *)
+     132  mbed::poll(mbed::pollfh *, unsigned int, int)
+      12  ops
+
+ 
+  12 bytes in section .rodata
+ 188 bytes in section .text
+ 
+ 132 bytes of CODE  memory (+ 56 bytes shared)
+   0 bytes of CONST memory (+ 12 bytes shared)
+
+Errors: none
+Warnings: none

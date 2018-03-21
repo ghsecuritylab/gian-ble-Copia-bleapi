@@ -1,0 +1,842 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:06
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        .\mbed-os\features\FEATURE_BLE\source\DiscoveredCharacteristic.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\FEATURE_BLE\source\DiscoveredCharacteristic.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\FEATURE_BLE\source\DiscoveredCharacteristic.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\FEATURE_BLE\source\DiscoveredCharacteristic.o
+#        .\mbed-os\features\FEATURE_BLE\source\DiscoveredCharacteristic.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\FEATURE_BLE\source\DiscoveredCharacteristic.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\FEATURE_BLE\source\DiscoveredCharacteristic.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\FEATURE_BLE\source\DiscoveredCharacteristic.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          
+     17          #include "ble/DiscoveredCharacteristic.h"
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp FunctionPointerWithContext<GattReadCallbackParams const *>::FunctionPointerWithContext<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+   \                     _ZN26FunctionPointerWithContextIPK22GattReadCallbackParamsEC1I19OneShotReadCallbackEEPT_MS6_FvS2_E: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x2000             MOVS     R0,#+0
+   \   00000006   0x2500             MOVS     R5,#+0
+   \   00000008   0x2600             MOVS     R6,#+0
+   \   0000000A   0xC461             STM      R4!,{R0,R5,R6}
+   \   0000000C   0x3C0C             SUBS     R4,R4,#+12
+   \   0000000E   0x60E0             STR      R0,[R4, #+12]
+   \   00000010   0x6120             STR      R0,[R4, #+16]
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0x.... 0x....      BL       _ZN26FunctionPointerWithContextIPK22GattReadCallbackParamsE6attachI19OneShotReadCallbackEEvPT_MS6_FvS2_E
+   \   00000018   0x0020             MOVS     R0,R4
+   \   0000001A   0xBD70             POP      {R4-R6,PC}       ;; return
+
+   \                                 In section .text, align 2
+   \   __code __interwork __softfp FunctionPointerWithContext<GattWriteCallbackParams const *>::FunctionPointerWithContext<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+   \                     _ZN26FunctionPointerWithContextIPK23GattWriteCallbackParamsEC1I20OneShotWriteCallbackEEPT_MS6_FvS2_E: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x2000             MOVS     R0,#+0
+   \   00000006   0x2500             MOVS     R5,#+0
+   \   00000008   0x2600             MOVS     R6,#+0
+   \   0000000A   0xC461             STM      R4!,{R0,R5,R6}
+   \   0000000C   0x3C0C             SUBS     R4,R4,#+12
+   \   0000000E   0x60E0             STR      R0,[R4, #+12]
+   \   00000010   0x6120             STR      R0,[R4, #+16]
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0x.... 0x....      BL       _ZN26FunctionPointerWithContextIPK23GattWriteCallbackParamsE6attachI20OneShotWriteCallbackEEvPT_MS6_FvS2_E
+   \   00000018   0x0020             MOVS     R0,R4
+   \   0000001A   0xBD70             POP      {R4-R6,PC}       ;; return
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void FunctionPointerWithContext<GattReadCallbackParams const *>::attach<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+   \                     _ZN26FunctionPointerWithContextIPK22GattReadCallbackParamsE6attachI19OneShotReadCallbackEEvPT_MS6_FvS2_E: (+1)
+   \   00000000   0xB51C             PUSH     {R2-R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x6021             STR      R1,[R4, #+0]
+   \   00000006   0x2208             MOVS     R2,#+8
+   \   00000008   0x4669             MOV      R1,SP
+   \   0000000A   0x1D20             ADDS     R0,R4,#+4
+   \   0000000C   0x.... 0x....      BL       __aeabi_memcpy
+   \   00000010   0x4801             LDR      R0,??attach_0
+   \   00000012   0x60E0             STR      R0,[R4, #+12]
+   \   00000014   0xBD13             POP      {R0,R1,R4,PC}    ;; return
+   \   00000016   0xBF00             Nop      
+   \                     ??attach_0:
+   \   00000018   0x........         DC32     _ZN26FunctionPointerWithContextIPK22GattReadCallbackParamsE12membercallerI19OneShotReadCallbackEEvPKS3_S2_
+
+   \                                 In section .text, align 4
+   \   __interwork __softfp void FunctionPointerWithContext<GattWriteCallbackParams const *>::attach<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+   \                     _ZN26FunctionPointerWithContextIPK23GattWriteCallbackParamsE6attachI20OneShotWriteCallbackEEvPT_MS6_FvS2_E: (+1)
+   \   00000000   0xB51C             PUSH     {R2-R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x6021             STR      R1,[R4, #+0]
+   \   00000006   0x2208             MOVS     R2,#+8
+   \   00000008   0x4669             MOV      R1,SP
+   \   0000000A   0x1D20             ADDS     R0,R4,#+4
+   \   0000000C   0x.... 0x....      BL       __aeabi_memcpy
+   \   00000010   0x4801             LDR      R0,??attach_1
+   \   00000012   0x60E0             STR      R0,[R4, #+12]
+   \   00000014   0xBD13             POP      {R0,R1,R4,PC}    ;; return
+   \   00000016   0xBF00             Nop      
+   \                     ??attach_1:
+   \   00000018   0x........         DC32     _ZN26FunctionPointerWithContextIPK23GattWriteCallbackParamsE12membercallerI20OneShotWriteCallbackEEvPKS3_S2_
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void FunctionPointerWithContext<GattReadCallbackParams const *>::membercaller<OneShotReadCallback>(FunctionPointerWithContext<GattReadCallbackParams const *> const *, GattReadCallbackParams const *)
+   \                     _ZN26FunctionPointerWithContextIPK22GattReadCallbackParamsE12membercallerI19OneShotReadCallbackEEvPKS3_S2_: (+1)
+   \   00000000   0x6802             LDR      R2,[R0, #+0]
+   \   00000002   0x2A00             CMP      R2,#+0
+   \   00000004   0xD100             BNE      ??membercaller_0
+   \   00000006   0x4770             BX       LR
+   \                     ??membercaller_0: (+1)
+   \   00000008   0xB530             PUSH     {R4,R5,LR}
+   \   0000000A   0xB083             SUB      SP,SP,#+12
+   \   0000000C   0x1D00             ADDS     R0,R0,#+4
+   \   0000000E   0x466B             MOV      R3,SP
+   \   00000010   0xC830             LDM      R0!,{R4,R5}
+   \   00000012   0xC330             STM      R3!,{R4,R5}
+   \   00000014   0x1068             ASRS     R0,R5,#+1
+   \   00000016   0x1810             ADDS     R0,R2,R0
+   \   00000018   0x07EA             LSLS     R2,R5,#+31
+   \   0000001A   0xD401             BMI      ??membercaller_1
+   \   0000001C   0x4622             MOV      R2,R4
+   \   0000001E   0xE001             B        ??membercaller_2
+   \                     ??membercaller_1: (+1)
+   \   00000020   0x6802             LDR      R2,[R0, #+0]
+   \   00000022   0x5912             LDR      R2,[R2, R4]
+   \                     ??membercaller_2: (+1)
+   \   00000024   0x4790             BLX      R2
+   \   00000026   0xB003             ADD      SP,SP,#+12
+   \   00000028   0xBD30             POP      {R4,R5,PC}       ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void FunctionPointerWithContext<GattWriteCallbackParams const *>::membercaller<OneShotWriteCallback>(FunctionPointerWithContext<GattWriteCallbackParams const *> const *, GattWriteCallbackParams const *)
+   \                     _ZN26FunctionPointerWithContextIPK23GattWriteCallbackParamsE12membercallerI20OneShotWriteCallbackEEvPKS3_S2_: (+1)
+   \   00000000   0x6802             LDR      R2,[R0, #+0]
+   \   00000002   0x2A00             CMP      R2,#+0
+   \   00000004   0xD100             BNE      ??membercaller_3
+   \   00000006   0x4770             BX       LR
+   \                     ??membercaller_3: (+1)
+   \   00000008   0xB530             PUSH     {R4,R5,LR}
+   \   0000000A   0xB083             SUB      SP,SP,#+12
+   \   0000000C   0x1D00             ADDS     R0,R0,#+4
+   \   0000000E   0x466B             MOV      R3,SP
+   \   00000010   0xC830             LDM      R0!,{R4,R5}
+   \   00000012   0xC330             STM      R3!,{R4,R5}
+   \   00000014   0x1068             ASRS     R0,R5,#+1
+   \   00000016   0x1810             ADDS     R0,R2,R0
+   \   00000018   0x07EA             LSLS     R2,R5,#+31
+   \   0000001A   0xD401             BMI      ??membercaller_4
+   \   0000001C   0x4622             MOV      R2,R4
+   \   0000001E   0xE001             B        ??membercaller_5
+   \                     ??membercaller_4: (+1)
+   \   00000020   0x6802             LDR      R2,[R0, #+0]
+   \   00000022   0x5912             LDR      R2,[R2, R4]
+   \                     ??membercaller_5: (+1)
+   \   00000024   0x4790             BLX      R2
+   \   00000026   0xB003             ADD      SP,SP,#+12
+   \   00000028   0xBD30             POP      {R4,R5,PC}       ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void makeFunctionPointer<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+   \                     _Z19makeFunctionPointerI19OneShotReadCallbackPK22GattReadCallbackParamsE26FunctionPointerWithContextIT0_EPT_MS7_FvS5_E: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN26FunctionPointerWithContextIPK22GattReadCallbackParamsEC1I19OneShotReadCallbackEEPT_MS6_FvS2_E
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2
+   \   __interwork __softfp void makeFunctionPointer<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+   \                     _Z19makeFunctionPointerI20OneShotWriteCallbackPK23GattWriteCallbackParamsE26FunctionPointerWithContextIT0_EPT_MS7_FvS5_E: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+   \   00000002   0x.... 0x....      BL       _ZN26FunctionPointerWithContextIPK23GattWriteCallbackParamsEC1I20OneShotWriteCallbackEEPT_MS6_FvS2_E
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+     18          #include "ble/GattClient.h"
+     19          
+
+   \                                 In section .text, align 2, keep-with-next
+     20          ble_error_t
+     21          DiscoveredCharacteristic::read(uint16_t offset) const
+     22          {
+   \                     _ZNK24DiscoveredCharacteristic4readEt: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     23              if (!props.read()) {
+   \   00000004   0x7E20             LDRB     R0,[R4, #+24]
+   \   00000006   0x0780             LSLS     R0,R0,#+30
+   \   00000008   0xD401             BMI      ??read_0
+     24                  return BLE_ERROR_OPERATION_NOT_PERMITTED;
+   \   0000000A   0x2008             MOVS     R0,#+8
+   \   0000000C   0xBD10             POP      {R4,PC}
+     25              }
+     26          
+     27              if (!gattc) {
+   \                     ??read_0: (+1)
+   \   0000000E   0x6820             LDR      R0,[R4, #+0]
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD101             BNE      ??read_1
+     28                  return BLE_ERROR_INVALID_STATE;
+   \   00000014   0x2006             MOVS     R0,#+6
+   \   00000016   0xBD10             POP      {R4,PC}
+     29              }
+     30          
+     31              return gattc->read(connHandle, valueHandle, offset);
+   \                     ??read_1: (+1)
+   \   00000018   0x000B             MOVS     R3,R1
+   \   0000001A   0x8BA2             LDRH     R2,[R4, #+28]
+   \   0000001C   0x6A21             LDR      R1,[R4, #+32]
+   \   0000001E   0x6804             LDR      R4,[R0, #+0]
+   \   00000020   0x69E4             LDR      R4,[R4, #+28]
+   \   00000022   0x47A0             BLX      R4
+   \   00000024   0xBD10             POP      {R4,PC}          ;; return
+     32          }
+     33          
+     34          struct OneShotReadCallback {
+     35              static void launch(GattClient* client, Gap::Handle_t connHandle,
+     36                                 GattAttribute::Handle_t handle, const GattClient::ReadCallback_t& cb) {
+     37                  OneShotReadCallback* oneShot = new OneShotReadCallback(client, connHandle, handle, cb);
+     38                  oneShot->attach();
+     39                  // delete will be made when this callback is called
+     40              }
+     41          
+     42          private:
+     43              OneShotReadCallback(GattClient* client, Gap::Handle_t connHandle,
+     44                                  GattAttribute::Handle_t handle, const GattClient::ReadCallback_t& cb) :
+     45                  _client(client),
+     46                  _connHandle(connHandle),
+     47                  _handle(handle),
+     48                  _callback(cb) { }
+     49          
+     50              void attach() {
+     51                  _client->onDataRead(makeFunctionPointer(this, &OneShotReadCallback::call));
+     52              }
+     53          
+
+   \                                 In section .text, align 4
+     54              void call(const GattReadCallbackParams* params) {
+   \                     _ZN19OneShotReadCallback4callEPK22GattReadCallbackParams: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB087             SUB      SP,SP,#+28
+   \   00000004   0x0007             MOVS     R7,R0
+     55                  // verifiy that it is the right characteristic on the right connection
+     56                  if (params->connHandle == _connHandle && params->handle == _handle) {
+   \   00000006   0x6808             LDR      R0,[R1, #+0]
+   \   00000008   0x687A             LDR      R2,[R7, #+4]
+   \   0000000A   0x4290             CMP      R0,R2
+   \   0000000C   0xD138             BNE      ??call_0
+   \   0000000E   0x8888             LDRH     R0,[R1, #+4]
+   \   00000010   0x893A             LDRH     R2,[R7, #+8]
+   \   00000012   0x4290             CMP      R0,R2
+   \   00000014   0xD134             BNE      ??call_0
+     57                      _callback(params);
+   \   00000016   0x0038             MOVS     R0,R7
+   \   00000018   0x300C             ADDS     R0,R0,#+12
+   \   0000001A   0x69BA             LDR      R2,[R7, #+24]
+   \   0000001C   0x4790             BLX      R2
+     58                      _client->onDataRead().detach(makeFunctionPointer(this, &OneShotReadCallback::call));
+   \   0000001E   0x4819             LDR      R0,??call_1
+   \   00000020   0xC80C             LDM      R0!,{R2,R3}
+   \   00000022   0x0039             MOVS     R1,R7
+   \   00000024   0xA801             ADD      R0,SP,#+4
+   \   00000026   0x.... 0x....      BL       _Z19makeFunctionPointerI19OneShotReadCallbackPK22GattReadCallbackParamsE26FunctionPointerWithContextIT0_EPT_MS7_FvS5_E
+   \   0000002A   0x6838             LDR      R0,[R7, #+0]
+   \   0000002C   0x1D04             ADDS     R4,R0,#+4
+   \   0000002E   0x6865             LDR      R5,[R4, #+4]
+   \   00000030   0x2600             MOVS     R6,#+0
+   \   00000032   0x9600             STR      R6,[SP, #+0]
+   \   00000034   0xE001             B        ??call_2
+   \                     ??call_3: (+1)
+   \   00000036   0x9500             STR      R5,[SP, #+0]
+   \   00000038   0x692D             LDR      R5,[R5, #+16]
+   \                     ??call_2: (+1)
+   \   0000003A   0x2D00             CMP      R5,#+0
+   \   0000003C   0xD01D             BEQ      ??call_4
+   \   0000003E   0x9804             LDR      R0,[SP, #+16]
+   \   00000040   0x68E9             LDR      R1,[R5, #+12]
+   \   00000042   0x4288             CMP      R0,R1
+   \   00000044   0xD1F7             BNE      ??call_3
+   \   00000046   0x220C             MOVS     R2,#+12
+   \   00000048   0x0029             MOVS     R1,R5
+   \   0000004A   0xA801             ADD      R0,SP,#+4
+   \   0000004C   0x.... 0x....      BL       memcmp
+   \   00000050   0x2800             CMP      R0,#+0
+   \   00000052   0xD1F0             BNE      ??call_3
+   \   00000054   0x68A0             LDR      R0,[R4, #+8]
+   \   00000056   0x9900             LDR      R1,[SP, #+0]
+   \   00000058   0x2900             CMP      R1,#+0
+   \   0000005A   0xD105             BNE      ??call_5
+   \   0000005C   0x42A8             CMP      R0,R5
+   \   0000005E   0xD100             BNE      ??call_6
+   \   00000060   0x60A6             STR      R6,[R4, #+8]
+   \                     ??call_6: (+1)
+   \   00000062   0x6928             LDR      R0,[R5, #+16]
+   \   00000064   0x6060             STR      R0,[R4, #+4]
+   \   00000066   0xE005             B        ??call_7
+   \                     ??call_5: (+1)
+   \   00000068   0x42A8             CMP      R0,R5
+   \   0000006A   0xD100             BNE      ??call_8
+   \   0000006C   0x60A1             STR      R1,[R4, #+8]
+   \                     ??call_8: (+1)
+   \   0000006E   0x6928             LDR      R0,[R5, #+16]
+   \   00000070   0x9900             LDR      R1,[SP, #+0]
+   \   00000072   0x6108             STR      R0,[R1, #+16]
+   \                     ??call_7: (+1)
+   \   00000074   0x0028             MOVS     R0,R5
+   \   00000076   0x.... 0x....      BL       _ZdlPv
+     59                      delete this;
+   \                     ??call_4: (+1)
+   \   0000007A   0x0038             MOVS     R0,R7
+   \   0000007C   0x.... 0x....      BL       _ZdlPv
+     60                  }
+     61              }
+   \                     ??call_0: (+1)
+   \   00000080   0xB007             ADD      SP,SP,#+28
+   \   00000082   0xBDF0             POP      {R4-R7,PC}       ;; return
+   \                     ??call_1:
+   \   00000084   0x........         DC32     ?_0
+     62          
+     63              GattClient* _client;
+     64              Gap::Handle_t _connHandle;
+     65              GattAttribute::Handle_t _handle;
+     66              GattClient::ReadCallback_t _callback;
+     67          };
+     68          
+
+   \                                 In section .text, align 4, keep-with-next
+     69          ble_error_t DiscoveredCharacteristic::read(uint16_t offset, const GattClient::ReadCallback_t& onRead) const {
+   \                     _ZNK24DiscoveredCharacteristic4readEtRK26FunctionPointerWithContextIPK22GattReadCallbackParamsE: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB087             SUB      SP,SP,#+28
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x0015             MOVS     R5,R2
+     70              ble_error_t error = read(offset);
+   \   00000008   0x.... 0x....      BL       _ZNK24DiscoveredCharacteristic4readEt
+     71              if (error) {
+   \   0000000C   0x0001             MOVS     R1,R0
+   \   0000000E   0xD134             BNE      ??read_2
+     72                  return error;
+     73              }
+     74          
+     75              OneShotReadCallback::launch(gattc, connHandle, valueHandle, onRead);
+   \   00000010   0x4668             MOV      R0,SP
+   \   00000012   0x8BA1             LDRH     R1,[R4, #+28]
+   \   00000014   0x8001             STRH     R1,[R0, #+0]
+   \   00000016   0x6A27             LDR      R7,[R4, #+32]
+   \   00000018   0x6826             LDR      R6,[R4, #+0]
+   \   0000001A   0x2020             MOVS     R0,#+32
+   \   0000001C   0x.... 0x....      BL       _Znwj
+   \   00000020   0x2400             MOVS     R4,#+0
+   \   00000022   0x2800             CMP      R0,#+0
+   \   00000024   0xD00E             BEQ      ??read_3
+   \   00000026   0x6006             STR      R6,[R0, #+0]
+   \   00000028   0x6047             STR      R7,[R0, #+4]
+   \   0000002A   0x4669             MOV      R1,SP
+   \   0000002C   0x8809             LDRH     R1,[R1, #+0]
+   \   0000002E   0x8101             STRH     R1,[R0, #+8]
+   \   00000030   0x0001             MOVS     R1,R0
+   \   00000032   0x310C             ADDS     R1,R1,#+12
+   \   00000034   0xCD4C             LDM      R5!,{R2,R3,R6}
+   \   00000036   0xC14C             STM      R1!,{R2,R3,R6}
+   \   00000038   0x3D0C             SUBS     R5,R5,#+12
+   \   0000003A   0x68E9             LDR      R1,[R5, #+12]
+   \   0000003C   0x6181             STR      R1,[R0, #+24]
+   \   0000003E   0x61C4             STR      R4,[R0, #+28]
+   \   00000040   0x0005             MOVS     R5,R0
+   \   00000042   0xE000             B        ??read_4
+   \                     ??read_3: (+1)
+   \   00000044   0x2500             MOVS     R5,#+0
+   \                     ??read_4: (+1)
+   \   00000046   0xBF00             Nop      
+   \   00000048   0x....             ADR.N    R0,?_0
+   \   0000004A   0xC80C             LDM      R0!,{R2,R3}
+   \   0000004C   0x0029             MOVS     R1,R5
+   \   0000004E   0xA801             ADD      R0,SP,#+4
+   \   00000050   0x.... 0x....      BL       _Z19makeFunctionPointerI19OneShotReadCallbackPK22GattReadCallbackParamsE26FunctionPointerWithContextIT0_EPT_MS7_FvS5_E
+   \   00000054   0x682D             LDR      R5,[R5, #+0]
+   \   00000056   0x2014             MOVS     R0,#+20
+   \   00000058   0x.... 0x....      BL       _Znwj
+   \   0000005C   0x2800             CMP      R0,#+0
+   \   0000005E   0xD006             BEQ      ??read_5
+   \   00000060   0xA901             ADD      R1,SP,#+4
+   \   00000062   0xC94C             LDM      R1!,{R2,R3,R6}
+   \   00000064   0xC04C             STM      R0!,{R2,R3,R6}
+   \   00000066   0x380C             SUBS     R0,R0,#+12
+   \   00000068   0x9904             LDR      R1,[SP, #+16]
+   \   0000006A   0x60C1             STR      R1,[R0, #+12]
+   \   0000006C   0x6104             STR      R4,[R0, #+16]
+   \                     ??read_5: (+1)
+   \   0000006E   0x68A9             LDR      R1,[R5, #+8]
+   \   00000070   0x2900             CMP      R1,#+0
+   \   00000072   0xD000             BEQ      ??read_6
+   \   00000074   0x6101             STR      R1,[R0, #+16]
+   \                     ??read_6: (+1)
+   \   00000076   0x60A8             STR      R0,[R5, #+8]
+     76          
+     77              return error;
+   \   00000078   0x2000             MOVS     R0,#+0
+   \                     ??read_2: (+1)
+   \   0000007A   0xB007             ADD      SP,SP,#+28
+   \   0000007C   0xBDF0             POP      {R4-R7,PC}       ;; return
+     78          }
+     79          
+
+   \                                 In section .text, align 2, keep-with-next
+     80          ble_error_t
+     81          DiscoveredCharacteristic::write(uint16_t length, const uint8_t *value) const
+     82          {
+   \                     _ZNK24DiscoveredCharacteristic5writeEtPKh: (+1)
+   \   00000000   0xB51C             PUSH     {R2-R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     83              if (!props.write()) {
+   \   00000004   0x7E20             LDRB     R0,[R4, #+24]
+   \   00000006   0x0700             LSLS     R0,R0,#+28
+   \   00000008   0xD401             BMI      ??write_0
+     84                  return BLE_ERROR_OPERATION_NOT_PERMITTED;
+   \   0000000A   0x2008             MOVS     R0,#+8
+   \   0000000C   0xBD16             POP      {R1,R2,R4,PC}
+     85              }
+     86          
+     87              if (!gattc) {
+   \                     ??write_0: (+1)
+   \   0000000E   0x6820             LDR      R0,[R4, #+0]
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD101             BNE      ??write_1
+     88                  return BLE_ERROR_INVALID_STATE;
+   \   00000014   0x2006             MOVS     R0,#+6
+   \   00000016   0xBD16             POP      {R1,R2,R4,PC}
+     89              }
+     90          
+     91              return gattc->write(GattClient::GATT_OP_WRITE_REQ, connHandle, valueHandle, length, value);
+   \                     ??write_1: (+1)
+   \   00000018   0x9201             STR      R2,[SP, #+4]
+   \   0000001A   0x9100             STR      R1,[SP, #+0]
+   \   0000001C   0x8BA3             LDRH     R3,[R4, #+28]
+   \   0000001E   0x6A22             LDR      R2,[R4, #+32]
+   \   00000020   0x2101             MOVS     R1,#+1
+   \   00000022   0x6804             LDR      R4,[R0, #+0]
+   \   00000024   0x6A24             LDR      R4,[R4, #+32]
+   \   00000026   0x47A0             BLX      R4
+   \   00000028   0xBD16             POP      {R1,R2,R4,PC}    ;; return
+     92          }
+     93          
+
+   \                                 In section .text, align 2, keep-with-next
+     94          ble_error_t
+     95          DiscoveredCharacteristic::writeWoResponse(uint16_t length, const uint8_t *value) const
+     96          {
+   \                     _ZNK24DiscoveredCharacteristic15writeWoResponseEtPKh: (+1)
+   \   00000000   0xB51C             PUSH     {R2-R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     97              if (!props.writeWoResp()) {
+   \   00000004   0x7E20             LDRB     R0,[R4, #+24]
+   \   00000006   0x0740             LSLS     R0,R0,#+29
+   \   00000008   0xD401             BMI      ??writeWoResponse_0
+     98                  return BLE_ERROR_OPERATION_NOT_PERMITTED;
+   \   0000000A   0x2008             MOVS     R0,#+8
+   \   0000000C   0xBD16             POP      {R1,R2,R4,PC}
+     99              }
+    100          
+    101              if (!gattc) {
+   \                     ??writeWoResponse_0: (+1)
+   \   0000000E   0x6820             LDR      R0,[R4, #+0]
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD101             BNE      ??writeWoResponse_1
+    102                  return BLE_ERROR_INVALID_STATE;
+   \   00000014   0x2006             MOVS     R0,#+6
+   \   00000016   0xBD16             POP      {R1,R2,R4,PC}
+    103              }
+    104          
+    105              return gattc->write(GattClient::GATT_OP_WRITE_CMD, connHandle, valueHandle, length, value);
+   \                     ??writeWoResponse_1: (+1)
+   \   00000018   0x9201             STR      R2,[SP, #+4]
+   \   0000001A   0x9100             STR      R1,[SP, #+0]
+   \   0000001C   0x8BA3             LDRH     R3,[R4, #+28]
+   \   0000001E   0x6A22             LDR      R2,[R4, #+32]
+   \   00000020   0x2102             MOVS     R1,#+2
+   \   00000022   0x6804             LDR      R4,[R0, #+0]
+   \   00000024   0x6A24             LDR      R4,[R4, #+32]
+   \   00000026   0x47A0             BLX      R4
+   \   00000028   0xBD16             POP      {R1,R2,R4,PC}    ;; return
+    106          }
+    107          
+    108          struct OneShotWriteCallback {
+    109              static void launch(GattClient* client, Gap::Handle_t connHandle,
+    110                                 GattAttribute::Handle_t handle, const GattClient::WriteCallback_t& cb) {
+    111                  OneShotWriteCallback* oneShot = new OneShotWriteCallback(client, connHandle, handle, cb);
+    112                  oneShot->attach();
+    113                  // delete will be made when this callback is called
+    114              }
+    115          
+    116          private:
+    117              OneShotWriteCallback(GattClient* client, Gap::Handle_t connHandle,
+    118                                  GattAttribute::Handle_t handle, const GattClient::WriteCallback_t& cb) :
+    119                  _client(client),
+    120                  _connHandle(connHandle),
+    121                  _handle(handle),
+    122                  _callback(cb) { }
+    123          
+    124              void attach() {
+    125                  _client->onDataWritten(makeFunctionPointer(this, &OneShotWriteCallback::call));
+    126              }
+    127          
+
+   \                                 In section .text, align 4
+    128              void call(const GattWriteCallbackParams* params) {
+   \                     _ZN20OneShotWriteCallback4callEPK23GattWriteCallbackParams: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB087             SUB      SP,SP,#+28
+   \   00000004   0x0007             MOVS     R7,R0
+    129                  // verifiy that it is the right characteristic on the right connection
+    130                  if (params->connHandle == _connHandle && params->handle == _handle) {
+   \   00000006   0x6808             LDR      R0,[R1, #+0]
+   \   00000008   0x687A             LDR      R2,[R7, #+4]
+   \   0000000A   0x4290             CMP      R0,R2
+   \   0000000C   0xD138             BNE      ??call_9
+   \   0000000E   0x8888             LDRH     R0,[R1, #+4]
+   \   00000010   0x893A             LDRH     R2,[R7, #+8]
+   \   00000012   0x4290             CMP      R0,R2
+   \   00000014   0xD134             BNE      ??call_9
+    131                      _callback(params);
+   \   00000016   0x0038             MOVS     R0,R7
+   \   00000018   0x300C             ADDS     R0,R0,#+12
+   \   0000001A   0x69BA             LDR      R2,[R7, #+24]
+   \   0000001C   0x4790             BLX      R2
+    132                      _client->onDataWritten().detach(makeFunctionPointer(this, &OneShotWriteCallback::call));
+   \   0000001E   0x4819             LDR      R0,??call_10
+   \   00000020   0xC80C             LDM      R0!,{R2,R3}
+   \   00000022   0x0039             MOVS     R1,R7
+   \   00000024   0xA801             ADD      R0,SP,#+4
+   \   00000026   0x.... 0x....      BL       _Z19makeFunctionPointerI20OneShotWriteCallbackPK23GattWriteCallbackParamsE26FunctionPointerWithContextIT0_EPT_MS7_FvS5_E
+   \   0000002A   0x683C             LDR      R4,[R7, #+0]
+   \   0000002C   0x3410             ADDS     R4,R4,#+16
+   \   0000002E   0x6865             LDR      R5,[R4, #+4]
+   \   00000030   0x2600             MOVS     R6,#+0
+   \   00000032   0x9600             STR      R6,[SP, #+0]
+   \   00000034   0xE001             B        ??call_11
+   \                     ??call_12: (+1)
+   \   00000036   0x9500             STR      R5,[SP, #+0]
+   \   00000038   0x692D             LDR      R5,[R5, #+16]
+   \                     ??call_11: (+1)
+   \   0000003A   0x2D00             CMP      R5,#+0
+   \   0000003C   0xD01D             BEQ      ??call_13
+   \   0000003E   0x9804             LDR      R0,[SP, #+16]
+   \   00000040   0x68E9             LDR      R1,[R5, #+12]
+   \   00000042   0x4288             CMP      R0,R1
+   \   00000044   0xD1F7             BNE      ??call_12
+   \   00000046   0x220C             MOVS     R2,#+12
+   \   00000048   0x0029             MOVS     R1,R5
+   \   0000004A   0xA801             ADD      R0,SP,#+4
+   \   0000004C   0x.... 0x....      BL       memcmp
+   \   00000050   0x2800             CMP      R0,#+0
+   \   00000052   0xD1F0             BNE      ??call_12
+   \   00000054   0x68A0             LDR      R0,[R4, #+8]
+   \   00000056   0x9900             LDR      R1,[SP, #+0]
+   \   00000058   0x2900             CMP      R1,#+0
+   \   0000005A   0xD105             BNE      ??call_14
+   \   0000005C   0x42A8             CMP      R0,R5
+   \   0000005E   0xD100             BNE      ??call_15
+   \   00000060   0x60A6             STR      R6,[R4, #+8]
+   \                     ??call_15: (+1)
+   \   00000062   0x6928             LDR      R0,[R5, #+16]
+   \   00000064   0x6060             STR      R0,[R4, #+4]
+   \   00000066   0xE005             B        ??call_16
+   \                     ??call_14: (+1)
+   \   00000068   0x42A8             CMP      R0,R5
+   \   0000006A   0xD100             BNE      ??call_17
+   \   0000006C   0x60A1             STR      R1,[R4, #+8]
+   \                     ??call_17: (+1)
+   \   0000006E   0x6928             LDR      R0,[R5, #+16]
+   \   00000070   0x9900             LDR      R1,[SP, #+0]
+   \   00000072   0x6108             STR      R0,[R1, #+16]
+   \                     ??call_16: (+1)
+   \   00000074   0x0028             MOVS     R0,R5
+   \   00000076   0x.... 0x....      BL       _ZdlPv
+    133                      delete this;
+   \                     ??call_13: (+1)
+   \   0000007A   0x0038             MOVS     R0,R7
+   \   0000007C   0x.... 0x....      BL       _ZdlPv
+    134                  }
+    135              }
+   \                     ??call_9: (+1)
+   \   00000080   0xB007             ADD      SP,SP,#+28
+   \   00000082   0xBDF0             POP      {R4-R7,PC}       ;; return
+   \                     ??call_10:
+   \   00000084   0x........         DC32     ?_1
+    136          
+    137              GattClient* _client;
+    138              Gap::Handle_t _connHandle;
+    139              GattAttribute::Handle_t _handle;
+    140              GattClient::WriteCallback_t _callback;
+    141          };
+    142          
+
+   \                                 In section .text, align 4, keep-with-next
+    143          ble_error_t DiscoveredCharacteristic::write(uint16_t length, const uint8_t *value, const GattClient::WriteCallback_t& onRead) const {
+   \                     _ZNK24DiscoveredCharacteristic5writeEtPKhRK26FunctionPointerWithContextIPK23GattWriteCallbackParamsE: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0xB086             SUB      SP,SP,#+24
+   \   00000004   0x0004             MOVS     R4,R0
+    144              ble_error_t error = write(length, value);
+   \   00000006   0x.... 0x....      BL       _ZNK24DiscoveredCharacteristic5writeEtPKh
+    145              if (error) {
+   \   0000000A   0x0001             MOVS     R1,R0
+   \   0000000C   0xD131             BNE      ??write_2
+    146                  return error;
+    147              }
+    148          
+    149              OneShotWriteCallback::launch(gattc, connHandle, valueHandle, onRead);
+   \   0000000E   0x8BA7             LDRH     R7,[R4, #+28]
+   \   00000010   0x6A25             LDR      R5,[R4, #+32]
+   \   00000012   0x6826             LDR      R6,[R4, #+0]
+   \   00000014   0x2020             MOVS     R0,#+32
+   \   00000016   0x.... 0x....      BL       _Znwj
+   \   0000001A   0x2400             MOVS     R4,#+0
+   \   0000001C   0x2800             CMP      R0,#+0
+   \   0000001E   0xD00D             BEQ      ??write_3
+   \   00000020   0x6006             STR      R6,[R0, #+0]
+   \   00000022   0x6045             STR      R5,[R0, #+4]
+   \   00000024   0x8107             STRH     R7,[R0, #+8]
+   \   00000026   0x0001             MOVS     R1,R0
+   \   00000028   0x310C             ADDS     R1,R1,#+12
+   \   0000002A   0x9A06             LDR      R2,[SP, #+24]
+   \   0000002C   0xCA68             LDM      R2!,{R3,R5,R6}
+   \   0000002E   0xC168             STM      R1!,{R3,R5,R6}
+   \   00000030   0x9906             LDR      R1,[SP, #+24]
+   \   00000032   0x68C9             LDR      R1,[R1, #+12]
+   \   00000034   0x6181             STR      R1,[R0, #+24]
+   \   00000036   0x61C4             STR      R4,[R0, #+28]
+   \   00000038   0x0005             MOVS     R5,R0
+   \   0000003A   0xE000             B        ??write_4
+   \                     ??write_3: (+1)
+   \   0000003C   0x2500             MOVS     R5,#+0
+   \                     ??write_4: (+1)
+   \   0000003E   0xBF00             Nop      
+   \   00000040   0x....             ADR.N    R0,?_1
+   \   00000042   0xC80C             LDM      R0!,{R2,R3}
+   \   00000044   0x0029             MOVS     R1,R5
+   \   00000046   0x4668             MOV      R0,SP
+   \   00000048   0x.... 0x....      BL       _Z19makeFunctionPointerI20OneShotWriteCallbackPK23GattWriteCallbackParamsE26FunctionPointerWithContextIT0_EPT_MS7_FvS5_E
+   \   0000004C   0x682D             LDR      R5,[R5, #+0]
+   \   0000004E   0x2014             MOVS     R0,#+20
+   \   00000050   0x.... 0x....      BL       _Znwj
+   \   00000054   0x2800             CMP      R0,#+0
+   \   00000056   0xD006             BEQ      ??write_5
+   \   00000058   0x4669             MOV      R1,SP
+   \   0000005A   0xC94C             LDM      R1!,{R2,R3,R6}
+   \   0000005C   0xC04C             STM      R0!,{R2,R3,R6}
+   \   0000005E   0x380C             SUBS     R0,R0,#+12
+   \   00000060   0x9903             LDR      R1,[SP, #+12]
+   \   00000062   0x60C1             STR      R1,[R0, #+12]
+   \   00000064   0x6104             STR      R4,[R0, #+16]
+   \                     ??write_5: (+1)
+   \   00000066   0x6969             LDR      R1,[R5, #+20]
+   \   00000068   0x2900             CMP      R1,#+0
+   \   0000006A   0xD000             BEQ      ??write_6
+   \   0000006C   0x6101             STR      R1,[R0, #+16]
+   \                     ??write_6: (+1)
+   \   0000006E   0x6168             STR      R0,[R5, #+20]
+    150          
+    151              return error;
+   \   00000070   0x2000             MOVS     R0,#+0
+   \                     ??write_2: (+1)
+   \   00000072   0xB007             ADD      SP,SP,#+28
+   \   00000074   0xBDF0             POP      {R4-R7,PC}       ;; return
+    152          }
+    153          
+
+   \                                 In section .text, align 2, keep-with-next
+    154          ble_error_t DiscoveredCharacteristic::discoverDescriptors(
+    155              const CharacteristicDescriptorDiscovery::DiscoveryCallback_t& onCharacteristicDiscovered, 
+    156              const CharacteristicDescriptorDiscovery::TerminationCallback_t& onTermination) const {
+   \                     _ZNK24DiscoveredCharacteristic19discoverDescriptorsERK26FunctionPointerWithContextIPKN33CharacteristicDescriptorDiscovery25DiscoveryCallbackParams_tEERKS0_IPKNS1_27TerminationCallbackParams_tEE: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    157          
+    158              if(!gattc) {
+   \   00000004   0x6820             LDR      R0,[R4, #+0]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD101             BNE      ??discoverDescriptors_0
+    159                  return BLE_ERROR_INVALID_STATE;
+   \   0000000A   0x2006             MOVS     R0,#+6
+   \   0000000C   0xBD10             POP      {R4,PC}
+    160              }
+    161          
+    162              ble_error_t err = gattc->discoverCharacteristicDescriptors(
+    163                  *this, onCharacteristicDiscovered, onTermination
+    164              );
+    165          
+    166              return err;
+   \                     ??discoverDescriptors_0: (+1)
+   \   0000000E   0x0013             MOVS     R3,R2
+   \   00000010   0x000A             MOVS     R2,R1
+   \   00000012   0x0021             MOVS     R1,R4
+   \   00000014   0x6804             LDR      R4,[R0, #+0]
+   \   00000016   0x6AA4             LDR      R4,[R4, #+40]
+   \   00000018   0x47A0             BLX      R4
+   \   0000001A   0xBD10             POP      {R4,PC}          ;; return
+    167          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   DiscoveredCharacteristic::discoverDescriptors(CharacteristicDescriptorDiscovery::DiscoveryCallback_t const &, CharacteristicDescriptorDiscovery::TerminationCallback_t const &) const
+         8   -- Indirect call
+       8   DiscoveredCharacteristic::read(std::uint16_t) const
+         8   -- Indirect call
+      48   DiscoveredCharacteristic::read(std::uint16_t, GattClient::ReadCallback_t const &) const
+        48   -> DiscoveredCharacteristic::read(std::uint16_t) const
+        48   -> makeFunctionPointer<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+        48   -> operator new(std::size_t)
+      16   DiscoveredCharacteristic::write(std::uint16_t, std::uint8_t const *) const
+        16   -- Indirect call
+      48   DiscoveredCharacteristic::write(std::uint16_t, std::uint8_t const *, GattClient::WriteCallback_t const &) const
+        48   -> DiscoveredCharacteristic::write(std::uint16_t, std::uint8_t const *) const
+        48   -> makeFunctionPointer<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+        48   -> operator new(std::size_t)
+      16   DiscoveredCharacteristic::writeWoResponse(std::uint16_t, std::uint8_t const *) const
+        16   -- Indirect call
+      16   FunctionPointerWithContext<GattReadCallbackParams const *>::FunctionPointerWithContext<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+        16   -> FunctionPointerWithContext<GattReadCallbackParams const *>::attach<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+      16   FunctionPointerWithContext<GattReadCallbackParams const *>::attach<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+        16   -> __aeabi_memcpy
+      24   FunctionPointerWithContext<GattReadCallbackParams const *>::membercaller<OneShotReadCallback>(FunctionPointerWithContext<GattReadCallbackParams const *> const *, GattReadCallbackParams const *)
+        24   -- Indirect call
+      16   FunctionPointerWithContext<GattWriteCallbackParams const *>::FunctionPointerWithContext<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+        16   -> FunctionPointerWithContext<GattWriteCallbackParams const *>::attach<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+      16   FunctionPointerWithContext<GattWriteCallbackParams const *>::attach<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+        16   -> __aeabi_memcpy
+      24   FunctionPointerWithContext<GattWriteCallbackParams const *>::membercaller<OneShotWriteCallback>(FunctionPointerWithContext<GattWriteCallbackParams const *> const *, GattWriteCallbackParams const *)
+        24   -- Indirect call
+      48   OneShotReadCallback::call(GattReadCallbackParams const *)
+        48   -- Indirect call
+        48   -> makeFunctionPointer<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+        48   -> operator delete(void *)
+        48   -> std::memcmp
+      48   OneShotWriteCallback::call(GattWriteCallbackParams const *)
+        48   -- Indirect call
+        48   -> makeFunctionPointer<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+        48   -> operator delete(void *)
+        48   -> std::memcmp
+       8   makeFunctionPointer<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+         8   -> FunctionPointerWithContext<GattReadCallbackParams const *>::FunctionPointerWithContext<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+       8   makeFunctionPointer<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+         8   -> FunctionPointerWithContext<GattWriteCallbackParams const *>::FunctionPointerWithContext<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      28  DiscoveredCharacteristic::discoverDescriptors(CharacteristicDescriptorDiscovery::DiscoveryCallback_t const &, CharacteristicDescriptorDiscovery::TerminationCallback_t const &) const
+      38  DiscoveredCharacteristic::read(std::uint16_t) const
+     126  DiscoveredCharacteristic::read(std::uint16_t, GattClient::ReadCallback_t const &) const
+      42  DiscoveredCharacteristic::write(std::uint16_t, std::uint8_t const *) const
+     118  DiscoveredCharacteristic::write(std::uint16_t, std::uint8_t const *, GattClient::WriteCallback_t const &) const
+      42  DiscoveredCharacteristic::writeWoResponse(std::uint16_t, std::uint8_t const *) const
+      28  FunctionPointerWithContext<GattReadCallbackParams const *>::FunctionPointerWithContext<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+      28  FunctionPointerWithContext<GattReadCallbackParams const *>::attach<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+      42  FunctionPointerWithContext<GattReadCallbackParams const *>::membercaller<OneShotReadCallback>(FunctionPointerWithContext<GattReadCallbackParams const *> const *, GattReadCallbackParams const *)
+      28  FunctionPointerWithContext<GattWriteCallbackParams const *>::FunctionPointerWithContext<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+      28  FunctionPointerWithContext<GattWriteCallbackParams const *>::attach<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+      42  FunctionPointerWithContext<GattWriteCallbackParams const *>::membercaller<OneShotWriteCallback>(FunctionPointerWithContext<GattWriteCallbackParams const *> const *, GattWriteCallbackParams const *)
+     136  OneShotReadCallback::call(GattReadCallbackParams const *)
+     136  OneShotWriteCallback::call(GattWriteCallbackParams const *)
+       8  makeFunctionPointer<>(OneShotReadCallback *, void (OneShotReadCallback::*)(GattReadCallbackParams const *))
+       8  makeFunctionPointer<>(OneShotWriteCallback *, void (OneShotWriteCallback::*)(GattWriteCallbackParams const *))
+     804  -- Other
+
+ 
+ 788 bytes in section .rodata
+ 894 bytes in section .text
+ 
+ 410 bytes of CODE  memory (+ 484 bytes shared)
+   0 bytes of CONST memory (+ 788 bytes shared)
+
+Errors: none
+Warnings: none

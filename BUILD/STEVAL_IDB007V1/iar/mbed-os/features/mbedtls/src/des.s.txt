@@ -1,0 +1,1149 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:24
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\features\mbedtls\src\des.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\des.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\des.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\des.o
+#        .\mbed-os\features\mbedtls\src\des.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\des.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\features\mbedtls\src\des.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\features\mbedtls\src\des.c
+      1          /*
+      2           *  FIPS-46-3 compliant Triple-DES implementation
+      3           *
+      4           *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
+      5           *  SPDX-License-Identifier: Apache-2.0
+      6           *
+      7           *  Licensed under the Apache License, Version 2.0 (the "License"); you may
+      8           *  not use this file except in compliance with the License.
+      9           *  You may obtain a copy of the License at
+     10           *
+     11           *  http://www.apache.org/licenses/LICENSE-2.0
+     12           *
+     13           *  Unless required by applicable law or agreed to in writing, software
+     14           *  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+     15           *  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     16           *  See the License for the specific language governing permissions and
+     17           *  limitations under the License.
+     18           *
+     19           *  This file is part of mbed TLS (https://tls.mbed.org)
+     20           */
+     21          /*
+     22           *  DES, on which TDES is based, was originally designed by Horst Feistel
+     23           *  at IBM in 1974, and was adopted as a standard by NIST (formerly NBS).
+     24           *
+     25           *  http://csrc.nist.gov/publications/fips/fips46-3/fips46-3.pdf
+     26           */
+     27          
+     28          #if !defined(MBEDTLS_CONFIG_FILE)
+     29          #include "mbedtls/config.h"
+     30          #else
+     31          #include MBEDTLS_CONFIG_FILE
+     32          #endif
+     33          
+     34          #if defined(MBEDTLS_DES_C)
+     35          
+     36          #include "mbedtls/des.h"
+     37          
+     38          #include <string.h>
+     39          
+     40          #if defined(MBEDTLS_SELF_TEST)
+     41          #if defined(MBEDTLS_PLATFORM_C)
+     42          #include "mbedtls/platform.h"
+     43          #else
+     44          #include <stdio.h>
+     45          #define mbedtls_printf printf
+     46          #endif /* MBEDTLS_PLATFORM_C */
+     47          #endif /* MBEDTLS_SELF_TEST */
+     48          
+     49          #if !defined(MBEDTLS_DES_ALT)
+     50          
+     51          /* Implementation that should never be optimized out by the compiler */
+     52          static void mbedtls_zeroize( void *v, size_t n ) {
+     53              volatile unsigned char *p = (unsigned char*)v; while( n-- ) *p++ = 0;
+     54          }
+     55          
+     56          /*
+     57           * 32-bit integer manipulation macros (big endian)
+     58           */
+     59          #ifndef GET_UINT32_BE
+     60          #define GET_UINT32_BE(n,b,i)                            \
+     61          {                                                       \
+     62              (n) = ( (uint32_t) (b)[(i)    ] << 24 )             \
+     63                  | ( (uint32_t) (b)[(i) + 1] << 16 )             \
+     64                  | ( (uint32_t) (b)[(i) + 2] <<  8 )             \
+     65                  | ( (uint32_t) (b)[(i) + 3]       );            \
+     66          }
+     67          #endif
+     68          
+     69          #ifndef PUT_UINT32_BE
+     70          #define PUT_UINT32_BE(n,b,i)                            \
+     71          {                                                       \
+     72              (b)[(i)    ] = (unsigned char) ( (n) >> 24 );       \
+     73              (b)[(i) + 1] = (unsigned char) ( (n) >> 16 );       \
+     74              (b)[(i) + 2] = (unsigned char) ( (n) >>  8 );       \
+     75              (b)[(i) + 3] = (unsigned char) ( (n)       );       \
+     76          }
+     77          #endif
+     78          
+     79          /*
+     80           * Expanded DES S-boxes
+     81           */
+     82          static const uint32_t SB1[64] =
+     83          {
+     84              0x01010400, 0x00000000, 0x00010000, 0x01010404,
+     85              0x01010004, 0x00010404, 0x00000004, 0x00010000,
+     86              0x00000400, 0x01010400, 0x01010404, 0x00000400,
+     87              0x01000404, 0x01010004, 0x01000000, 0x00000004,
+     88              0x00000404, 0x01000400, 0x01000400, 0x00010400,
+     89              0x00010400, 0x01010000, 0x01010000, 0x01000404,
+     90              0x00010004, 0x01000004, 0x01000004, 0x00010004,
+     91              0x00000000, 0x00000404, 0x00010404, 0x01000000,
+     92              0x00010000, 0x01010404, 0x00000004, 0x01010000,
+     93              0x01010400, 0x01000000, 0x01000000, 0x00000400,
+     94              0x01010004, 0x00010000, 0x00010400, 0x01000004,
+     95              0x00000400, 0x00000004, 0x01000404, 0x00010404,
+     96              0x01010404, 0x00010004, 0x01010000, 0x01000404,
+     97              0x01000004, 0x00000404, 0x00010404, 0x01010400,
+     98              0x00000404, 0x01000400, 0x01000400, 0x00000000,
+     99              0x00010004, 0x00010400, 0x00000000, 0x01010004
+    100          };
+    101          
+    102          static const uint32_t SB2[64] =
+    103          {
+    104              0x80108020, 0x80008000, 0x00008000, 0x00108020,
+    105              0x00100000, 0x00000020, 0x80100020, 0x80008020,
+    106              0x80000020, 0x80108020, 0x80108000, 0x80000000,
+    107              0x80008000, 0x00100000, 0x00000020, 0x80100020,
+    108              0x00108000, 0x00100020, 0x80008020, 0x00000000,
+    109              0x80000000, 0x00008000, 0x00108020, 0x80100000,
+    110              0x00100020, 0x80000020, 0x00000000, 0x00108000,
+    111              0x00008020, 0x80108000, 0x80100000, 0x00008020,
+    112              0x00000000, 0x00108020, 0x80100020, 0x00100000,
+    113              0x80008020, 0x80100000, 0x80108000, 0x00008000,
+    114              0x80100000, 0x80008000, 0x00000020, 0x80108020,
+    115              0x00108020, 0x00000020, 0x00008000, 0x80000000,
+    116              0x00008020, 0x80108000, 0x00100000, 0x80000020,
+    117              0x00100020, 0x80008020, 0x80000020, 0x00100020,
+    118              0x00108000, 0x00000000, 0x80008000, 0x00008020,
+    119              0x80000000, 0x80100020, 0x80108020, 0x00108000
+    120          };
+    121          
+    122          static const uint32_t SB3[64] =
+    123          {
+    124              0x00000208, 0x08020200, 0x00000000, 0x08020008,
+    125              0x08000200, 0x00000000, 0x00020208, 0x08000200,
+    126              0x00020008, 0x08000008, 0x08000008, 0x00020000,
+    127              0x08020208, 0x00020008, 0x08020000, 0x00000208,
+    128              0x08000000, 0x00000008, 0x08020200, 0x00000200,
+    129              0x00020200, 0x08020000, 0x08020008, 0x00020208,
+    130              0x08000208, 0x00020200, 0x00020000, 0x08000208,
+    131              0x00000008, 0x08020208, 0x00000200, 0x08000000,
+    132              0x08020200, 0x08000000, 0x00020008, 0x00000208,
+    133              0x00020000, 0x08020200, 0x08000200, 0x00000000,
+    134              0x00000200, 0x00020008, 0x08020208, 0x08000200,
+    135              0x08000008, 0x00000200, 0x00000000, 0x08020008,
+    136              0x08000208, 0x00020000, 0x08000000, 0x08020208,
+    137              0x00000008, 0x00020208, 0x00020200, 0x08000008,
+    138              0x08020000, 0x08000208, 0x00000208, 0x08020000,
+    139              0x00020208, 0x00000008, 0x08020008, 0x00020200
+    140          };
+    141          
+    142          static const uint32_t SB4[64] =
+    143          {
+    144              0x00802001, 0x00002081, 0x00002081, 0x00000080,
+    145              0x00802080, 0x00800081, 0x00800001, 0x00002001,
+    146              0x00000000, 0x00802000, 0x00802000, 0x00802081,
+    147              0x00000081, 0x00000000, 0x00800080, 0x00800001,
+    148              0x00000001, 0x00002000, 0x00800000, 0x00802001,
+    149              0x00000080, 0x00800000, 0x00002001, 0x00002080,
+    150              0x00800081, 0x00000001, 0x00002080, 0x00800080,
+    151              0x00002000, 0x00802080, 0x00802081, 0x00000081,
+    152              0x00800080, 0x00800001, 0x00802000, 0x00802081,
+    153              0x00000081, 0x00000000, 0x00000000, 0x00802000,
+    154              0x00002080, 0x00800080, 0x00800081, 0x00000001,
+    155              0x00802001, 0x00002081, 0x00002081, 0x00000080,
+    156              0x00802081, 0x00000081, 0x00000001, 0x00002000,
+    157              0x00800001, 0x00002001, 0x00802080, 0x00800081,
+    158              0x00002001, 0x00002080, 0x00800000, 0x00802001,
+    159              0x00000080, 0x00800000, 0x00002000, 0x00802080
+    160          };
+    161          
+    162          static const uint32_t SB5[64] =
+    163          {
+    164              0x00000100, 0x02080100, 0x02080000, 0x42000100,
+    165              0x00080000, 0x00000100, 0x40000000, 0x02080000,
+    166              0x40080100, 0x00080000, 0x02000100, 0x40080100,
+    167              0x42000100, 0x42080000, 0x00080100, 0x40000000,
+    168              0x02000000, 0x40080000, 0x40080000, 0x00000000,
+    169              0x40000100, 0x42080100, 0x42080100, 0x02000100,
+    170              0x42080000, 0x40000100, 0x00000000, 0x42000000,
+    171              0x02080100, 0x02000000, 0x42000000, 0x00080100,
+    172              0x00080000, 0x42000100, 0x00000100, 0x02000000,
+    173              0x40000000, 0x02080000, 0x42000100, 0x40080100,
+    174              0x02000100, 0x40000000, 0x42080000, 0x02080100,
+    175              0x40080100, 0x00000100, 0x02000000, 0x42080000,
+    176              0x42080100, 0x00080100, 0x42000000, 0x42080100,
+    177              0x02080000, 0x00000000, 0x40080000, 0x42000000,
+    178              0x00080100, 0x02000100, 0x40000100, 0x00080000,
+    179              0x00000000, 0x40080000, 0x02080100, 0x40000100
+    180          };
+    181          
+    182          static const uint32_t SB6[64] =
+    183          {
+    184              0x20000010, 0x20400000, 0x00004000, 0x20404010,
+    185              0x20400000, 0x00000010, 0x20404010, 0x00400000,
+    186              0x20004000, 0x00404010, 0x00400000, 0x20000010,
+    187              0x00400010, 0x20004000, 0x20000000, 0x00004010,
+    188              0x00000000, 0x00400010, 0x20004010, 0x00004000,
+    189              0x00404000, 0x20004010, 0x00000010, 0x20400010,
+    190              0x20400010, 0x00000000, 0x00404010, 0x20404000,
+    191              0x00004010, 0x00404000, 0x20404000, 0x20000000,
+    192              0x20004000, 0x00000010, 0x20400010, 0x00404000,
+    193              0x20404010, 0x00400000, 0x00004010, 0x20000010,
+    194              0x00400000, 0x20004000, 0x20000000, 0x00004010,
+    195              0x20000010, 0x20404010, 0x00404000, 0x20400000,
+    196              0x00404010, 0x20404000, 0x00000000, 0x20400010,
+    197              0x00000010, 0x00004000, 0x20400000, 0x00404010,
+    198              0x00004000, 0x00400010, 0x20004010, 0x00000000,
+    199              0x20404000, 0x20000000, 0x00400010, 0x20004010
+    200          };
+    201          
+    202          static const uint32_t SB7[64] =
+    203          {
+    204              0x00200000, 0x04200002, 0x04000802, 0x00000000,
+    205              0x00000800, 0x04000802, 0x00200802, 0x04200800,
+    206              0x04200802, 0x00200000, 0x00000000, 0x04000002,
+    207              0x00000002, 0x04000000, 0x04200002, 0x00000802,
+    208              0x04000800, 0x00200802, 0x00200002, 0x04000800,
+    209              0x04000002, 0x04200000, 0x04200800, 0x00200002,
+    210              0x04200000, 0x00000800, 0x00000802, 0x04200802,
+    211              0x00200800, 0x00000002, 0x04000000, 0x00200800,
+    212              0x04000000, 0x00200800, 0x00200000, 0x04000802,
+    213              0x04000802, 0x04200002, 0x04200002, 0x00000002,
+    214              0x00200002, 0x04000000, 0x04000800, 0x00200000,
+    215              0x04200800, 0x00000802, 0x00200802, 0x04200800,
+    216              0x00000802, 0x04000002, 0x04200802, 0x04200000,
+    217              0x00200800, 0x00000000, 0x00000002, 0x04200802,
+    218              0x00000000, 0x00200802, 0x04200000, 0x00000800,
+    219              0x04000002, 0x04000800, 0x00000800, 0x00200002
+    220          };
+    221          
+    222          static const uint32_t SB8[64] =
+    223          {
+    224              0x10001040, 0x00001000, 0x00040000, 0x10041040,
+    225              0x10000000, 0x10001040, 0x00000040, 0x10000000,
+    226              0x00040040, 0x10040000, 0x10041040, 0x00041000,
+    227              0x10041000, 0x00041040, 0x00001000, 0x00000040,
+    228              0x10040000, 0x10000040, 0x10001000, 0x00001040,
+    229              0x00041000, 0x00040040, 0x10040040, 0x10041000,
+    230              0x00001040, 0x00000000, 0x00000000, 0x10040040,
+    231              0x10000040, 0x10001000, 0x00041040, 0x00040000,
+    232              0x00041040, 0x00040000, 0x10041000, 0x00001000,
+    233              0x00000040, 0x10040040, 0x00001000, 0x00041040,
+    234              0x10001000, 0x00000040, 0x10000040, 0x10040000,
+    235              0x10040040, 0x10000000, 0x00040000, 0x10001040,
+    236              0x00000000, 0x10041040, 0x00040040, 0x10000040,
+    237              0x10040000, 0x10001000, 0x10001040, 0x00000000,
+    238              0x10041040, 0x00041000, 0x00041000, 0x00001040,
+    239              0x00001040, 0x00040040, 0x10000000, 0x10041000
+    240          };
+    241          
+    242          /*
+    243           * PC1: left and right halves bit-swap
+    244           */
+    245          static const uint32_t LHs[16] =
+    246          {
+    247              0x00000000, 0x00000001, 0x00000100, 0x00000101,
+    248              0x00010000, 0x00010001, 0x00010100, 0x00010101,
+    249              0x01000000, 0x01000001, 0x01000100, 0x01000101,
+    250              0x01010000, 0x01010001, 0x01010100, 0x01010101
+    251          };
+    252          
+    253          static const uint32_t RHs[16] =
+    254          {
+    255              0x00000000, 0x01000000, 0x00010000, 0x01010000,
+    256              0x00000100, 0x01000100, 0x00010100, 0x01010100,
+    257              0x00000001, 0x01000001, 0x00010001, 0x01010001,
+    258              0x00000101, 0x01000101, 0x00010101, 0x01010101,
+    259          };
+    260          
+    261          /*
+    262           * Initial Permutation macro
+    263           */
+    264          #define DES_IP(X,Y)                                             \
+    265          {                                                               \
+    266              T = ((X >>  4) ^ Y) & 0x0F0F0F0F; Y ^= T; X ^= (T <<  4);   \
+    267              T = ((X >> 16) ^ Y) & 0x0000FFFF; Y ^= T; X ^= (T << 16);   \
+    268              T = ((Y >>  2) ^ X) & 0x33333333; X ^= T; Y ^= (T <<  2);   \
+    269              T = ((Y >>  8) ^ X) & 0x00FF00FF; X ^= T; Y ^= (T <<  8);   \
+    270              Y = ((Y << 1) | (Y >> 31)) & 0xFFFFFFFF;                    \
+    271              T = (X ^ Y) & 0xAAAAAAAA; Y ^= T; X ^= T;                   \
+    272              X = ((X << 1) | (X >> 31)) & 0xFFFFFFFF;                    \
+    273          }
+    274          
+    275          /*
+    276           * Final Permutation macro
+    277           */
+    278          #define DES_FP(X,Y)                                             \
+    279          {                                                               \
+    280              X = ((X << 31) | (X >> 1)) & 0xFFFFFFFF;                    \
+    281              T = (X ^ Y) & 0xAAAAAAAA; X ^= T; Y ^= T;                   \
+    282              Y = ((Y << 31) | (Y >> 1)) & 0xFFFFFFFF;                    \
+    283              T = ((Y >>  8) ^ X) & 0x00FF00FF; X ^= T; Y ^= (T <<  8);   \
+    284              T = ((Y >>  2) ^ X) & 0x33333333; X ^= T; Y ^= (T <<  2);   \
+    285              T = ((X >> 16) ^ Y) & 0x0000FFFF; Y ^= T; X ^= (T << 16);   \
+    286              T = ((X >>  4) ^ Y) & 0x0F0F0F0F; Y ^= T; X ^= (T <<  4);   \
+    287          }
+    288          
+    289          /*
+    290           * DES round macro
+    291           */
+    292          #define DES_ROUND(X,Y)                          \
+    293          {                                               \
+    294              T = *SK++ ^ X;                              \
+    295              Y ^= SB8[ (T      ) & 0x3F ] ^              \
+    296                   SB6[ (T >>  8) & 0x3F ] ^              \
+    297                   SB4[ (T >> 16) & 0x3F ] ^              \
+    298                   SB2[ (T >> 24) & 0x3F ];               \
+    299                                                          \
+    300              T = *SK++ ^ ((X << 28) | (X >> 4));         \
+    301              Y ^= SB7[ (T      ) & 0x3F ] ^              \
+    302                   SB5[ (T >>  8) & 0x3F ] ^              \
+    303                   SB3[ (T >> 16) & 0x3F ] ^              \
+    304                   SB1[ (T >> 24) & 0x3F ];               \
+    305          }
+    306          
+    307          #define SWAP(a,b) { uint32_t t = a; a = b; b = t; t = 0; }
+    308          
+    309          void mbedtls_des_init( mbedtls_des_context *ctx )
+    310          {
+    311              memset( ctx, 0, sizeof( mbedtls_des_context ) );
+    312          }
+    313          
+    314          void mbedtls_des_free( mbedtls_des_context *ctx )
+    315          {
+    316              if( ctx == NULL )
+    317                  return;
+    318          
+    319              mbedtls_zeroize( ctx, sizeof( mbedtls_des_context ) );
+    320          }
+    321          
+    322          void mbedtls_des3_init( mbedtls_des3_context *ctx )
+    323          {
+    324              memset( ctx, 0, sizeof( mbedtls_des3_context ) );
+    325          }
+    326          
+    327          void mbedtls_des3_free( mbedtls_des3_context *ctx )
+    328          {
+    329              if( ctx == NULL )
+    330                  return;
+    331          
+    332              mbedtls_zeroize( ctx, sizeof( mbedtls_des3_context ) );
+    333          }
+    334          
+    335          static const unsigned char odd_parity_table[128] = { 1,  2,  4,  7,  8,
+    336                  11, 13, 14, 16, 19, 21, 22, 25, 26, 28, 31, 32, 35, 37, 38, 41, 42, 44,
+    337                  47, 49, 50, 52, 55, 56, 59, 61, 62, 64, 67, 69, 70, 73, 74, 76, 79, 81,
+    338                  82, 84, 87, 88, 91, 93, 94, 97, 98, 100, 103, 104, 107, 109, 110, 112,
+    339                  115, 117, 118, 121, 122, 124, 127, 128, 131, 133, 134, 137, 138, 140,
+    340                  143, 145, 146, 148, 151, 152, 155, 157, 158, 161, 162, 164, 167, 168,
+    341                  171, 173, 174, 176, 179, 181, 182, 185, 186, 188, 191, 193, 194, 196,
+    342                  199, 200, 203, 205, 206, 208, 211, 213, 214, 217, 218, 220, 223, 224,
+    343                  227, 229, 230, 233, 234, 236, 239, 241, 242, 244, 247, 248, 251, 253,
+    344                  254 };
+    345          
+    346          void mbedtls_des_key_set_parity( unsigned char key[MBEDTLS_DES_KEY_SIZE] )
+    347          {
+    348              int i;
+    349          
+    350              for( i = 0; i < MBEDTLS_DES_KEY_SIZE; i++ )
+    351                  key[i] = odd_parity_table[key[i] / 2];
+    352          }
+    353          
+    354          /*
+    355           * Check the given key's parity, returns 1 on failure, 0 on SUCCESS
+    356           */
+    357          int mbedtls_des_key_check_key_parity( const unsigned char key[MBEDTLS_DES_KEY_SIZE] )
+    358          {
+    359              int i;
+    360          
+    361              for( i = 0; i < MBEDTLS_DES_KEY_SIZE; i++ )
+    362                  if( key[i] != odd_parity_table[key[i] / 2] )
+    363                      return( 1 );
+    364          
+    365              return( 0 );
+    366          }
+    367          
+    368          /*
+    369           * Table of weak and semi-weak keys
+    370           *
+    371           * Source: http://en.wikipedia.org/wiki/Weak_key
+    372           *
+    373           * Weak:
+    374           * Alternating ones + zeros (0x0101010101010101)
+    375           * Alternating 'F' + 'E' (0xFEFEFEFEFEFEFEFE)
+    376           * '0xE0E0E0E0F1F1F1F1'
+    377           * '0x1F1F1F1F0E0E0E0E'
+    378           *
+    379           * Semi-weak:
+    380           * 0x011F011F010E010E and 0x1F011F010E010E01
+    381           * 0x01E001E001F101F1 and 0xE001E001F101F101
+    382           * 0x01FE01FE01FE01FE and 0xFE01FE01FE01FE01
+    383           * 0x1FE01FE00EF10EF1 and 0xE01FE01FF10EF10E
+    384           * 0x1FFE1FFE0EFE0EFE and 0xFE1FFE1FFE0EFE0E
+    385           * 0xE0FEE0FEF1FEF1FE and 0xFEE0FEE0FEF1FEF1
+    386           *
+    387           */
+    388          
+    389          #define WEAK_KEY_COUNT 16
+    390          
+    391          static const unsigned char weak_key_table[WEAK_KEY_COUNT][MBEDTLS_DES_KEY_SIZE] =
+    392          {
+    393              { 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 },
+    394              { 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE },
+    395              { 0x1F, 0x1F, 0x1F, 0x1F, 0x0E, 0x0E, 0x0E, 0x0E },
+    396              { 0xE0, 0xE0, 0xE0, 0xE0, 0xF1, 0xF1, 0xF1, 0xF1 },
+    397          
+    398              { 0x01, 0x1F, 0x01, 0x1F, 0x01, 0x0E, 0x01, 0x0E },
+    399              { 0x1F, 0x01, 0x1F, 0x01, 0x0E, 0x01, 0x0E, 0x01 },
+    400              { 0x01, 0xE0, 0x01, 0xE0, 0x01, 0xF1, 0x01, 0xF1 },
+    401              { 0xE0, 0x01, 0xE0, 0x01, 0xF1, 0x01, 0xF1, 0x01 },
+    402              { 0x01, 0xFE, 0x01, 0xFE, 0x01, 0xFE, 0x01, 0xFE },
+    403              { 0xFE, 0x01, 0xFE, 0x01, 0xFE, 0x01, 0xFE, 0x01 },
+    404              { 0x1F, 0xE0, 0x1F, 0xE0, 0x0E, 0xF1, 0x0E, 0xF1 },
+    405              { 0xE0, 0x1F, 0xE0, 0x1F, 0xF1, 0x0E, 0xF1, 0x0E },
+    406              { 0x1F, 0xFE, 0x1F, 0xFE, 0x0E, 0xFE, 0x0E, 0xFE },
+    407              { 0xFE, 0x1F, 0xFE, 0x1F, 0xFE, 0x0E, 0xFE, 0x0E },
+    408              { 0xE0, 0xFE, 0xE0, 0xFE, 0xF1, 0xFE, 0xF1, 0xFE },
+    409              { 0xFE, 0xE0, 0xFE, 0xE0, 0xFE, 0xF1, 0xFE, 0xF1 }
+    410          };
+    411          
+    412          int mbedtls_des_key_check_weak( const unsigned char key[MBEDTLS_DES_KEY_SIZE] )
+    413          {
+    414              int i;
+    415          
+    416              for( i = 0; i < WEAK_KEY_COUNT; i++ )
+    417                  if( memcmp( weak_key_table[i], key, MBEDTLS_DES_KEY_SIZE) == 0 )
+    418                      return( 1 );
+    419          
+    420              return( 0 );
+    421          }
+    422          
+    423          #if !defined(MBEDTLS_DES_SETKEY_ALT)
+    424          void mbedtls_des_setkey( uint32_t SK[32], const unsigned char key[MBEDTLS_DES_KEY_SIZE] )
+    425          {
+    426              int i;
+    427              uint32_t X, Y, T;
+    428          
+    429              GET_UINT32_BE( X, key, 0 );
+    430              GET_UINT32_BE( Y, key, 4 );
+    431          
+    432              /*
+    433               * Permuted Choice 1
+    434               */
+    435              T =  ((Y >>  4) ^ X) & 0x0F0F0F0F;  X ^= T; Y ^= (T <<  4);
+    436              T =  ((Y      ) ^ X) & 0x10101010;  X ^= T; Y ^= (T      );
+    437          
+    438              X =   (LHs[ (X      ) & 0xF] << 3) | (LHs[ (X >>  8) & 0xF ] << 2)
+    439                  | (LHs[ (X >> 16) & 0xF] << 1) | (LHs[ (X >> 24) & 0xF ]     )
+    440                  | (LHs[ (X >>  5) & 0xF] << 7) | (LHs[ (X >> 13) & 0xF ] << 6)
+    441                  | (LHs[ (X >> 21) & 0xF] << 5) | (LHs[ (X >> 29) & 0xF ] << 4);
+    442          
+    443              Y =   (RHs[ (Y >>  1) & 0xF] << 3) | (RHs[ (Y >>  9) & 0xF ] << 2)
+    444                  | (RHs[ (Y >> 17) & 0xF] << 1) | (RHs[ (Y >> 25) & 0xF ]     )
+    445                  | (RHs[ (Y >>  4) & 0xF] << 7) | (RHs[ (Y >> 12) & 0xF ] << 6)
+    446                  | (RHs[ (Y >> 20) & 0xF] << 5) | (RHs[ (Y >> 28) & 0xF ] << 4);
+    447          
+    448              X &= 0x0FFFFFFF;
+    449              Y &= 0x0FFFFFFF;
+    450          
+    451              /*
+    452               * calculate subkeys
+    453               */
+    454              for( i = 0; i < 16; i++ )
+    455              {
+    456                  if( i < 2 || i == 8 || i == 15 )
+    457                  {
+    458                      X = ((X <<  1) | (X >> 27)) & 0x0FFFFFFF;
+    459                      Y = ((Y <<  1) | (Y >> 27)) & 0x0FFFFFFF;
+    460                  }
+    461                  else
+    462                  {
+    463                      X = ((X <<  2) | (X >> 26)) & 0x0FFFFFFF;
+    464                      Y = ((Y <<  2) | (Y >> 26)) & 0x0FFFFFFF;
+    465                  }
+    466          
+    467                  *SK++ =   ((X <<  4) & 0x24000000) | ((X << 28) & 0x10000000)
+    468                          | ((X << 14) & 0x08000000) | ((X << 18) & 0x02080000)
+    469                          | ((X <<  6) & 0x01000000) | ((X <<  9) & 0x00200000)
+    470                          | ((X >>  1) & 0x00100000) | ((X << 10) & 0x00040000)
+    471                          | ((X <<  2) & 0x00020000) | ((X >> 10) & 0x00010000)
+    472                          | ((Y >> 13) & 0x00002000) | ((Y >>  4) & 0x00001000)
+    473                          | ((Y <<  6) & 0x00000800) | ((Y >>  1) & 0x00000400)
+    474                          | ((Y >> 14) & 0x00000200) | ((Y      ) & 0x00000100)
+    475                          | ((Y >>  5) & 0x00000020) | ((Y >> 10) & 0x00000010)
+    476                          | ((Y >>  3) & 0x00000008) | ((Y >> 18) & 0x00000004)
+    477                          | ((Y >> 26) & 0x00000002) | ((Y >> 24) & 0x00000001);
+    478          
+    479                  *SK++ =   ((X << 15) & 0x20000000) | ((X << 17) & 0x10000000)
+    480                          | ((X << 10) & 0x08000000) | ((X << 22) & 0x04000000)
+    481                          | ((X >>  2) & 0x02000000) | ((X <<  1) & 0x01000000)
+    482                          | ((X << 16) & 0x00200000) | ((X << 11) & 0x00100000)
+    483                          | ((X <<  3) & 0x00080000) | ((X >>  6) & 0x00040000)
+    484                          | ((X << 15) & 0x00020000) | ((X >>  4) & 0x00010000)
+    485                          | ((Y >>  2) & 0x00002000) | ((Y <<  8) & 0x00001000)
+    486                          | ((Y >> 14) & 0x00000808) | ((Y >>  9) & 0x00000400)
+    487                          | ((Y      ) & 0x00000200) | ((Y <<  7) & 0x00000100)
+    488                          | ((Y >>  7) & 0x00000020) | ((Y >>  3) & 0x00000011)
+    489                          | ((Y <<  2) & 0x00000004) | ((Y >> 21) & 0x00000002);
+    490              }
+    491          }
+    492          #endif /* !MBEDTLS_DES_SETKEY_ALT */
+    493          
+    494          /*
+    495           * DES key schedule (56-bit, encryption)
+    496           */
+    497          int mbedtls_des_setkey_enc( mbedtls_des_context *ctx, const unsigned char key[MBEDTLS_DES_KEY_SIZE] )
+    498          {
+    499              mbedtls_des_setkey( ctx->sk, key );
+    500          
+    501              return( 0 );
+    502          }
+    503          
+    504          /*
+    505           * DES key schedule (56-bit, decryption)
+    506           */
+    507          int mbedtls_des_setkey_dec( mbedtls_des_context *ctx, const unsigned char key[MBEDTLS_DES_KEY_SIZE] )
+    508          {
+    509              int i;
+    510          
+    511              mbedtls_des_setkey( ctx->sk, key );
+    512          
+    513              for( i = 0; i < 16; i += 2 )
+    514              {
+    515                  SWAP( ctx->sk[i    ], ctx->sk[30 - i] );
+    516                  SWAP( ctx->sk[i + 1], ctx->sk[31 - i] );
+    517              }
+    518          
+    519              return( 0 );
+    520          }
+    521          
+    522          static void des3_set2key( uint32_t esk[96],
+    523                                    uint32_t dsk[96],
+    524                                    const unsigned char key[MBEDTLS_DES_KEY_SIZE*2] )
+    525          {
+    526              int i;
+    527          
+    528              mbedtls_des_setkey( esk, key );
+    529              mbedtls_des_setkey( dsk + 32, key + 8 );
+    530          
+    531              for( i = 0; i < 32; i += 2 )
+    532              {
+    533                  dsk[i     ] = esk[30 - i];
+    534                  dsk[i +  1] = esk[31 - i];
+    535          
+    536                  esk[i + 32] = dsk[62 - i];
+    537                  esk[i + 33] = dsk[63 - i];
+    538          
+    539                  esk[i + 64] = esk[i    ];
+    540                  esk[i + 65] = esk[i + 1];
+    541          
+    542                  dsk[i + 64] = dsk[i    ];
+    543                  dsk[i + 65] = dsk[i + 1];
+    544              }
+    545          }
+    546          
+    547          /*
+    548           * Triple-DES key schedule (112-bit, encryption)
+    549           */
+    550          int mbedtls_des3_set2key_enc( mbedtls_des3_context *ctx,
+    551                                const unsigned char key[MBEDTLS_DES_KEY_SIZE * 2] )
+    552          {
+    553              uint32_t sk[96];
+    554          
+    555              des3_set2key( ctx->sk, sk, key );
+    556              mbedtls_zeroize( sk,  sizeof( sk ) );
+    557          
+    558              return( 0 );
+    559          }
+    560          
+    561          /*
+    562           * Triple-DES key schedule (112-bit, decryption)
+    563           */
+    564          int mbedtls_des3_set2key_dec( mbedtls_des3_context *ctx,
+    565                                const unsigned char key[MBEDTLS_DES_KEY_SIZE * 2] )
+    566          {
+    567              uint32_t sk[96];
+    568          
+    569              des3_set2key( sk, ctx->sk, key );
+    570              mbedtls_zeroize( sk,  sizeof( sk ) );
+    571          
+    572              return( 0 );
+    573          }
+    574          
+    575          static void des3_set3key( uint32_t esk[96],
+    576                                    uint32_t dsk[96],
+    577                                    const unsigned char key[24] )
+    578          {
+    579              int i;
+    580          
+    581              mbedtls_des_setkey( esk, key );
+    582              mbedtls_des_setkey( dsk + 32, key +  8 );
+    583              mbedtls_des_setkey( esk + 64, key + 16 );
+    584          
+    585              for( i = 0; i < 32; i += 2 )
+    586              {
+    587                  dsk[i     ] = esk[94 - i];
+    588                  dsk[i +  1] = esk[95 - i];
+    589          
+    590                  esk[i + 32] = dsk[62 - i];
+    591                  esk[i + 33] = dsk[63 - i];
+    592          
+    593                  dsk[i + 64] = esk[30 - i];
+    594                  dsk[i + 65] = esk[31 - i];
+    595              }
+    596          }
+    597          
+    598          /*
+    599           * Triple-DES key schedule (168-bit, encryption)
+    600           */
+    601          int mbedtls_des3_set3key_enc( mbedtls_des3_context *ctx,
+    602                                const unsigned char key[MBEDTLS_DES_KEY_SIZE * 3] )
+    603          {
+    604              uint32_t sk[96];
+    605          
+    606              des3_set3key( ctx->sk, sk, key );
+    607              mbedtls_zeroize( sk,  sizeof( sk ) );
+    608          
+    609              return( 0 );
+    610          }
+    611          
+    612          /*
+    613           * Triple-DES key schedule (168-bit, decryption)
+    614           */
+    615          int mbedtls_des3_set3key_dec( mbedtls_des3_context *ctx,
+    616                                const unsigned char key[MBEDTLS_DES_KEY_SIZE * 3] )
+    617          {
+    618              uint32_t sk[96];
+    619          
+    620              des3_set3key( sk, ctx->sk, key );
+    621              mbedtls_zeroize( sk,  sizeof( sk ) );
+    622          
+    623              return( 0 );
+    624          }
+    625          
+    626          /*
+    627           * DES-ECB block encryption/decryption
+    628           */
+    629          #if !defined(MBEDTLS_DES_CRYPT_ECB_ALT)
+    630          int mbedtls_des_crypt_ecb( mbedtls_des_context *ctx,
+    631                              const unsigned char input[8],
+    632                              unsigned char output[8] )
+    633          {
+    634              int i;
+    635              uint32_t X, Y, T, *SK;
+    636          
+    637              SK = ctx->sk;
+    638          
+    639              GET_UINT32_BE( X, input, 0 );
+    640              GET_UINT32_BE( Y, input, 4 );
+    641          
+    642              DES_IP( X, Y );
+    643          
+    644              for( i = 0; i < 8; i++ )
+    645              {
+    646                  DES_ROUND( Y, X );
+    647                  DES_ROUND( X, Y );
+    648              }
+    649          
+    650              DES_FP( Y, X );
+    651          
+    652              PUT_UINT32_BE( Y, output, 0 );
+    653              PUT_UINT32_BE( X, output, 4 );
+    654          
+    655              return( 0 );
+    656          }
+    657          #endif /* !MBEDTLS_DES_CRYPT_ECB_ALT */
+    658          
+    659          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    660          /*
+    661           * DES-CBC buffer encryption/decryption
+    662           */
+    663          int mbedtls_des_crypt_cbc( mbedtls_des_context *ctx,
+    664                              int mode,
+    665                              size_t length,
+    666                              unsigned char iv[8],
+    667                              const unsigned char *input,
+    668                              unsigned char *output )
+    669          {
+    670              int i;
+    671              unsigned char temp[8];
+    672          
+    673              if( length % 8 )
+    674                  return( MBEDTLS_ERR_DES_INVALID_INPUT_LENGTH );
+    675          
+    676              if( mode == MBEDTLS_DES_ENCRYPT )
+    677              {
+    678                  while( length > 0 )
+    679                  {
+    680                      for( i = 0; i < 8; i++ )
+    681                          output[i] = (unsigned char)( input[i] ^ iv[i] );
+    682          
+    683                      mbedtls_des_crypt_ecb( ctx, output, output );
+    684                      memcpy( iv, output, 8 );
+    685          
+    686                      input  += 8;
+    687                      output += 8;
+    688                      length -= 8;
+    689                  }
+    690              }
+    691              else /* MBEDTLS_DES_DECRYPT */
+    692              {
+    693                  while( length > 0 )
+    694                  {
+    695                      memcpy( temp, input, 8 );
+    696                      mbedtls_des_crypt_ecb( ctx, input, output );
+    697          
+    698                      for( i = 0; i < 8; i++ )
+    699                          output[i] = (unsigned char)( output[i] ^ iv[i] );
+    700          
+    701                      memcpy( iv, temp, 8 );
+    702          
+    703                      input  += 8;
+    704                      output += 8;
+    705                      length -= 8;
+    706                  }
+    707              }
+    708          
+    709              return( 0 );
+    710          }
+    711          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    712          
+    713          /*
+    714           * 3DES-ECB block encryption/decryption
+    715           */
+    716          #if !defined(MBEDTLS_DES3_CRYPT_ECB_ALT)
+    717          int mbedtls_des3_crypt_ecb( mbedtls_des3_context *ctx,
+    718                               const unsigned char input[8],
+    719                               unsigned char output[8] )
+    720          {
+    721              int i;
+    722              uint32_t X, Y, T, *SK;
+    723          
+    724              SK = ctx->sk;
+    725          
+    726              GET_UINT32_BE( X, input, 0 );
+    727              GET_UINT32_BE( Y, input, 4 );
+    728          
+    729              DES_IP( X, Y );
+    730          
+    731              for( i = 0; i < 8; i++ )
+    732              {
+    733                  DES_ROUND( Y, X );
+    734                  DES_ROUND( X, Y );
+    735              }
+    736          
+    737              for( i = 0; i < 8; i++ )
+    738              {
+    739                  DES_ROUND( X, Y );
+    740                  DES_ROUND( Y, X );
+    741              }
+    742          
+    743              for( i = 0; i < 8; i++ )
+    744              {
+    745                  DES_ROUND( Y, X );
+    746                  DES_ROUND( X, Y );
+    747              }
+    748          
+    749              DES_FP( Y, X );
+    750          
+    751              PUT_UINT32_BE( Y, output, 0 );
+    752              PUT_UINT32_BE( X, output, 4 );
+    753          
+    754              return( 0 );
+    755          }
+    756          #endif /* !MBEDTLS_DES3_CRYPT_ECB_ALT */
+    757          
+    758          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    759          /*
+    760           * 3DES-CBC buffer encryption/decryption
+    761           */
+    762          int mbedtls_des3_crypt_cbc( mbedtls_des3_context *ctx,
+    763                               int mode,
+    764                               size_t length,
+    765                               unsigned char iv[8],
+    766                               const unsigned char *input,
+    767                               unsigned char *output )
+    768          {
+    769              int i;
+    770              unsigned char temp[8];
+    771          
+    772              if( length % 8 )
+    773                  return( MBEDTLS_ERR_DES_INVALID_INPUT_LENGTH );
+    774          
+    775              if( mode == MBEDTLS_DES_ENCRYPT )
+    776              {
+    777                  while( length > 0 )
+    778                  {
+    779                      for( i = 0; i < 8; i++ )
+    780                          output[i] = (unsigned char)( input[i] ^ iv[i] );
+    781          
+    782                      mbedtls_des3_crypt_ecb( ctx, output, output );
+    783                      memcpy( iv, output, 8 );
+    784          
+    785                      input  += 8;
+    786                      output += 8;
+    787                      length -= 8;
+    788                  }
+    789              }
+    790              else /* MBEDTLS_DES_DECRYPT */
+    791              {
+    792                  while( length > 0 )
+    793                  {
+    794                      memcpy( temp, input, 8 );
+    795                      mbedtls_des3_crypt_ecb( ctx, input, output );
+    796          
+    797                      for( i = 0; i < 8; i++ )
+    798                          output[i] = (unsigned char)( output[i] ^ iv[i] );
+    799          
+    800                      memcpy( iv, temp, 8 );
+    801          
+    802                      input  += 8;
+    803                      output += 8;
+    804                      length -= 8;
+    805                  }
+    806              }
+    807          
+    808              return( 0 );
+    809          }
+    810          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    811          
+    812          #endif /* !MBEDTLS_DES_ALT */
+    813          
+    814          #if defined(MBEDTLS_SELF_TEST)
+    815          /*
+    816           * DES and 3DES test vectors from:
+    817           *
+    818           * http://csrc.nist.gov/groups/STM/cavp/documents/des/tripledes-vectors.zip
+    819           */
+    820          static const unsigned char des3_test_keys[24] =
+    821          {
+    822              0x01, 0x23, 0x45, 0x67, 0x89, 0xAB, 0xCD, 0xEF,
+    823              0x23, 0x45, 0x67, 0x89, 0xAB, 0xCD, 0xEF, 0x01,
+    824              0x45, 0x67, 0x89, 0xAB, 0xCD, 0xEF, 0x01, 0x23
+    825          };
+    826          
+    827          static const unsigned char des3_test_buf[8] =
+    828          {
+    829              0x4E, 0x6F, 0x77, 0x20, 0x69, 0x73, 0x20, 0x74
+    830          };
+    831          
+    832          static const unsigned char des3_test_ecb_dec[3][8] =
+    833          {
+    834              { 0xCD, 0xD6, 0x4F, 0x2F, 0x94, 0x27, 0xC1, 0x5D },
+    835              { 0x69, 0x96, 0xC8, 0xFA, 0x47, 0xA2, 0xAB, 0xEB },
+    836              { 0x83, 0x25, 0x39, 0x76, 0x44, 0x09, 0x1A, 0x0A }
+    837          };
+    838          
+    839          static const unsigned char des3_test_ecb_enc[3][8] =
+    840          {
+    841              { 0x6A, 0x2A, 0x19, 0xF4, 0x1E, 0xCA, 0x85, 0x4B },
+    842              { 0x03, 0xE6, 0x9F, 0x5B, 0xFA, 0x58, 0xEB, 0x42 },
+    843              { 0xDD, 0x17, 0xE8, 0xB8, 0xB4, 0x37, 0xD2, 0x32 }
+    844          };
+    845          
+    846          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    847          static const unsigned char des3_test_iv[8] =
+    848          {
+    849              0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF,
+    850          };
+    851          
+    852          static const unsigned char des3_test_cbc_dec[3][8] =
+    853          {
+    854              { 0x12, 0x9F, 0x40, 0xB9, 0xD2, 0x00, 0x56, 0xB3 },
+    855              { 0x47, 0x0E, 0xFC, 0x9A, 0x6B, 0x8E, 0xE3, 0x93 },
+    856              { 0xC5, 0xCE, 0xCF, 0x63, 0xEC, 0xEC, 0x51, 0x4C }
+    857          };
+    858          
+    859          static const unsigned char des3_test_cbc_enc[3][8] =
+    860          {
+    861              { 0x54, 0xF1, 0x5A, 0xF6, 0xEB, 0xE3, 0xA4, 0xB4 },
+    862              { 0x35, 0x76, 0x11, 0x56, 0x5F, 0xA1, 0x8E, 0x4D },
+    863              { 0xCB, 0x19, 0x1F, 0x85, 0xD1, 0xED, 0x84, 0x39 }
+    864          };
+    865          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+    866          
+    867          /*
+    868           * Checkup routine
+    869           */
+    870          int mbedtls_des_self_test( int verbose )
+    871          {
+    872              int i, j, u, v, ret = 0;
+    873              mbedtls_des_context ctx;
+    874              mbedtls_des3_context ctx3;
+    875              unsigned char buf[8];
+    876          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    877              unsigned char prv[8];
+    878              unsigned char iv[8];
+    879          #endif
+    880          
+    881              mbedtls_des_init( &ctx );
+    882              mbedtls_des3_init( &ctx3 );
+    883              /*
+    884               * ECB mode
+    885               */
+    886              for( i = 0; i < 6; i++ )
+    887              {
+    888                  u = i >> 1;
+    889                  v = i  & 1;
+    890          
+    891                  if( verbose != 0 )
+    892                      mbedtls_printf( "  DES%c-ECB-%3d (%s): ",
+    893                                       ( u == 0 ) ? ' ' : '3', 56 + u * 56,
+    894                                       ( v == MBEDTLS_DES_DECRYPT ) ? "dec" : "enc" );
+    895          
+    896                  memcpy( buf, des3_test_buf, 8 );
+    897          
+    898                  switch( i )
+    899                  {
+    900                  case 0:
+    901                      mbedtls_des_setkey_dec( &ctx, des3_test_keys );
+    902                      break;
+    903          
+    904                  case 1:
+    905                      mbedtls_des_setkey_enc( &ctx, des3_test_keys );
+    906                      break;
+    907          
+    908                  case 2:
+    909                      mbedtls_des3_set2key_dec( &ctx3, des3_test_keys );
+    910                      break;
+    911          
+    912                  case 3:
+    913                      mbedtls_des3_set2key_enc( &ctx3, des3_test_keys );
+    914                      break;
+    915          
+    916                  case 4:
+    917                      mbedtls_des3_set3key_dec( &ctx3, des3_test_keys );
+    918                      break;
+    919          
+    920                  case 5:
+    921                      mbedtls_des3_set3key_enc( &ctx3, des3_test_keys );
+    922                      break;
+    923          
+    924                  default:
+    925                      return( 1 );
+    926                  }
+    927          
+    928                  for( j = 0; j < 10000; j++ )
+    929                  {
+    930                      if( u == 0 )
+    931                          mbedtls_des_crypt_ecb( &ctx, buf, buf );
+    932                      else
+    933                          mbedtls_des3_crypt_ecb( &ctx3, buf, buf );
+    934                  }
+    935          
+    936                  if( ( v == MBEDTLS_DES_DECRYPT &&
+    937                          memcmp( buf, des3_test_ecb_dec[u], 8 ) != 0 ) ||
+    938                      ( v != MBEDTLS_DES_DECRYPT &&
+    939                          memcmp( buf, des3_test_ecb_enc[u], 8 ) != 0 ) )
+    940                  {
+    941                      if( verbose != 0 )
+    942                          mbedtls_printf( "failed\n" );
+    943          
+    944                      ret = 1;
+    945                      goto exit;
+    946                  }
+    947          
+    948                  if( verbose != 0 )
+    949                      mbedtls_printf( "passed\n" );
+    950              }
+    951          
+    952              if( verbose != 0 )
+    953                  mbedtls_printf( "\n" );
+    954          
+    955          #if defined(MBEDTLS_CIPHER_MODE_CBC)
+    956              /*
+    957               * CBC mode
+    958               */
+    959              for( i = 0; i < 6; i++ )
+    960              {
+    961                  u = i >> 1;
+    962                  v = i  & 1;
+    963          
+    964                  if( verbose != 0 )
+    965                      mbedtls_printf( "  DES%c-CBC-%3d (%s): ",
+    966                                       ( u == 0 ) ? ' ' : '3', 56 + u * 56,
+    967                                       ( v == MBEDTLS_DES_DECRYPT ) ? "dec" : "enc" );
+    968          
+    969                  memcpy( iv,  des3_test_iv,  8 );
+    970                  memcpy( prv, des3_test_iv,  8 );
+    971                  memcpy( buf, des3_test_buf, 8 );
+    972          
+    973                  switch( i )
+    974                  {
+    975                  case 0:
+    976                      mbedtls_des_setkey_dec( &ctx, des3_test_keys );
+    977                      break;
+    978          
+    979                  case 1:
+    980                      mbedtls_des_setkey_enc( &ctx, des3_test_keys );
+    981                      break;
+    982          
+    983                  case 2:
+    984                      mbedtls_des3_set2key_dec( &ctx3, des3_test_keys );
+    985                      break;
+    986          
+    987                  case 3:
+    988                      mbedtls_des3_set2key_enc( &ctx3, des3_test_keys );
+    989                      break;
+    990          
+    991                  case 4:
+    992                      mbedtls_des3_set3key_dec( &ctx3, des3_test_keys );
+    993                      break;
+    994          
+    995                  case 5:
+    996                      mbedtls_des3_set3key_enc( &ctx3, des3_test_keys );
+    997                      break;
+    998          
+    999                  default:
+   1000                      return( 1 );
+   1001                  }
+   1002          
+   1003                  if( v == MBEDTLS_DES_DECRYPT )
+   1004                  {
+   1005                      for( j = 0; j < 10000; j++ )
+   1006                      {
+   1007                          if( u == 0 )
+   1008                              mbedtls_des_crypt_cbc( &ctx, v, 8, iv, buf, buf );
+   1009                          else
+   1010                              mbedtls_des3_crypt_cbc( &ctx3, v, 8, iv, buf, buf );
+   1011                      }
+   1012                  }
+   1013                  else
+   1014                  {
+   1015                      for( j = 0; j < 10000; j++ )
+   1016                      {
+   1017                          unsigned char tmp[8];
+   1018          
+   1019                          if( u == 0 )
+   1020                              mbedtls_des_crypt_cbc( &ctx, v, 8, iv, buf, buf );
+   1021                          else
+   1022                              mbedtls_des3_crypt_cbc( &ctx3, v, 8, iv, buf, buf );
+   1023          
+   1024                          memcpy( tmp, prv, 8 );
+   1025                          memcpy( prv, buf, 8 );
+   1026                          memcpy( buf, tmp, 8 );
+   1027                      }
+   1028          
+   1029                      memcpy( buf, prv, 8 );
+   1030                  }
+   1031          
+   1032                  if( ( v == MBEDTLS_DES_DECRYPT &&
+   1033                          memcmp( buf, des3_test_cbc_dec[u], 8 ) != 0 ) ||
+   1034                      ( v != MBEDTLS_DES_DECRYPT &&
+   1035                          memcmp( buf, des3_test_cbc_enc[u], 8 ) != 0 ) )
+   1036                  {
+   1037                      if( verbose != 0 )
+   1038                          mbedtls_printf( "failed\n" );
+   1039          
+   1040                      ret = 1;
+   1041                      goto exit;
+   1042                  }
+   1043          
+   1044                  if( verbose != 0 )
+   1045                      mbedtls_printf( "passed\n" );
+   1046              }
+   1047          #endif /* MBEDTLS_CIPHER_MODE_CBC */
+   1048          
+   1049              if( verbose != 0 )
+   1050                  mbedtls_printf( "\n" );
+   1051          
+   1052          exit:
+   1053              mbedtls_des_free( &ctx );
+   1054              mbedtls_des3_free( &ctx3 );
+   1055          
+   1056              return( ret );
+   1057          }
+   1058          
+   1059          #endif /* MBEDTLS_SELF_TEST */
+   1060          
+   1061          #endif /* MBEDTLS_DES_C */
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

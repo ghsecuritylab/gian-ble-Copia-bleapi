@@ -1,0 +1,229 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:58
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        .\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_it.c
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --vla -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_it.d
+#        -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_it.s.txt
+#        -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_it.o
+#        .\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_it.c
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_it.s.txt
+#    Object file  =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_it.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\device\BlueNRG1_it.c
+      1          /**
+      2          ******************************************************************************
+      3          * @file    GPIO/IOToggle/BlueNRG1_it.c 
+      4          * @author  RF Application Team
+      5          * @version V1.0.0
+      6          * @date    September-2015
+      7          * @brief   Main Interrupt Service Routines.
+      8          *          This file provides template for all exceptions handler and
+      9          *          peripherals interrupt service routine.
+     10          ******************************************************************************
+     11          * @attention
+     12          *
+     13          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     14          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     15          * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     16          * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     17          * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     18          * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     19          *
+     20          * <h2><center>&copy; COPYRIGHT 2015 STMicroelectronics</center></h2>
+     21          ******************************************************************************
+     22          */
+     23          
+     24          /* Includes ------------------------------------------------------------------*/
+     25          #include "BlueNRG1_it.h"
+     26          //#include "BlueNRG1_conf.h"
+     27          //#include "SDK_EVAL_Config.h"
+     28          #include "cmsis.h"
+
+  typedef uint8_t BOOL;  //already defined in "hal_type.h"
+                  ^
+"C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG1\TARGET_STEVAL_IDB007V1\device\system_BlueNRG1.h",240  Warning[Pe301]: typedef name has already been declared (with same type)
+     29          #include "clock.h"
+     30          
+     31          /** @addtogroup BlueNRG1_StdPeriph_Examples
+     32          * @{
+     33          */
+     34          
+     35          /** @addtogroup GPIO_Examples
+     36          * @{
+     37          */ 
+     38          
+     39          /** @addtogroup GPIO_InputInterrupt
+     40          * @{
+     41          */ 
+     42          
+     43          /* Private typedef -----------------------------------------------------------*/
+     44          /* Private define ------------------------------------------------------------*/
+     45          /* Private macro -------------------------------------------------------------*/
+     46          /* Private variables ---------------------------------------------------------*/
+     47          
+     48          //extern uint32_t lSystickCounter;
+     49          
+     50          /* Private function prototypes -----------------------------------------------*/
+     51          /* Private functions ---------------------------------------------------------*/
+     52          
+     53          /******************************************************************************/
+     54          /*            Cortex-M0 Processor Exceptions Handlers                         */
+     55          /******************************************************************************/
+     56          
+     57          /**
+     58          * @brief  This function handles NMI exception.
+     59          */
+
+   \                                 In section .text, align 2, keep-with-next
+     60          void NMI_Handler(void)
+     61          {
+     62            while(1);
+   \                     NMI_Handler: (+1)
+   \                     ??NMI_Handler_0: (+1)
+   \   00000000   0xE7FE             B        ??NMI_Handler_0
+     63          }
+     64          
+     65          /**
+     66          * @brief  This function handles Hard Fault exception.
+     67          */
+
+   \                                 In section .text, align 2, keep-with-next
+     68          void HardFault_Handler(void)
+     69          {
+     70            /* Go to infinite loop when Hard Fault exception occurs */
+     71            while (1);
+   \                     HardFault_Handler: (+1)
+   \                     ??HardFault_Handler_0: (+1)
+   \   00000000   0xE7FE             B        ??HardFault_Handler_0
+     72          }
+     73          
+     74          
+     75          /**
+     76          * @brief  This function handles SVCall exception.
+     77          */
+     78          //void SVC_Handler(void)
+     79          //{
+     80          //}
+     81          
+     82          
+     83          /**
+     84          * @brief  This function handles SysTick Handler.
+     85          */
+     86          //void SysTick_Handler(void){
+     87          //	SysCount_Handler();
+     88          //}
+     89          
+     90          /******************************************************************************/
+     91          /*                 BlueNRG-1 Peripherals Interrupt Handlers                   */
+     92          /*  Add here the Interrupt Handler for the used peripheral(s) (PPP), for the  */
+     93          /*  available peripheral interrupt handler's name please refer to the startup */
+     94          /*  file (system_bluenrg1.c).                                               */
+     95          /******************************************************************************/
+     96          
+     97          
+     98          /**
+     99          * @}
+    100          */ 
+    101          
+    102          /**
+    103          * @}
+    104          */ 
+    105          
+    106          /**
+    107          * @}
+    108          */ 
+    109          
+    110          /******************* (C) COPYRIGHT 2015 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   HardFault_Handler
+       0   NMI_Handler
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       2  HardFault_Handler
+       2  NMI_Handler
+
+ 
+ 4 bytes in section .text
+ 
+ 4 bytes of CODE memory
+
+Errors: none
+Warnings: 1

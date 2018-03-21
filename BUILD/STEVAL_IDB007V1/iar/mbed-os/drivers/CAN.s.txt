@@ -1,0 +1,243 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:32:57
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\drivers\CAN.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\CAN.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\CAN.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\CAN.o
+#        .\mbed-os\drivers\CAN.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\CAN.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\CAN.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\drivers\CAN.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2013 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          #include "drivers/CAN.h"
+     17          
+     18          #if DEVICE_CAN
+     19          
+     20          #include "cmsis.h"
+     21          #include "platform/mbed_sleep.h"
+     22          
+     23          namespace mbed {
+     24          
+     25          CAN::CAN(PinName rd, PinName td) : _can(), _irq() {
+     26              // No lock needed in constructor
+     27          
+     28              for (size_t i = 0; i < sizeof _irq / sizeof _irq[0]; i++) {
+     29                  _irq[i] = NULL;
+     30              }
+     31          
+     32              can_init(&_can, rd, td);
+     33              can_irq_init(&_can, (&CAN::_irq_handler), (uint32_t)this);
+     34          }
+     35          
+     36          CAN::CAN(PinName rd, PinName td, int hz) : _can(), _irq() {
+     37              // No lock needed in constructor
+     38          
+     39              for (size_t i = 0; i < sizeof _irq / sizeof _irq[0]; i++) {
+     40                  _irq[i] = NULL;
+     41              }
+     42          
+     43              can_init_freq(&_can, rd, td, hz);
+     44              can_irq_init(&_can, (&CAN::_irq_handler), (uint32_t)this);
+     45          }
+     46          
+     47          CAN::~CAN() {
+     48              // No lock needed in destructor
+     49          
+     50              // Detaching interrupts releases the sleep lock if it was locked
+     51              for (int irq = 0; irq < IrqCnt; irq++) {
+     52                  attach(NULL, (IrqType)irq);
+     53              }
+     54              can_irq_free(&_can);
+     55              can_free(&_can);
+     56          }
+     57          
+     58          int CAN::frequency(int f) {
+     59              lock();
+     60              int ret = can_frequency(&_can, f);
+     61              unlock();
+     62              return ret;
+     63          }
+     64          
+     65          int CAN::write(CANMessage msg) {
+     66              lock();
+     67              int ret = can_write(&_can, msg, 0);
+     68              unlock();
+     69              return ret;
+     70          }
+     71          
+     72          int CAN::read(CANMessage &msg, int handle) {
+     73              lock();
+     74              int ret = can_read(&_can, &msg, handle);
+     75              unlock();
+     76              return ret;
+     77          }
+     78          
+     79          void CAN::reset() {
+     80              lock();
+     81              can_reset(&_can);
+     82              unlock();
+     83          }
+     84          
+     85          unsigned char CAN::rderror() {
+     86              lock();
+     87              int ret = can_rderror(&_can);
+     88              unlock();
+     89              return ret;
+     90          }
+     91          
+     92          unsigned char CAN::tderror() {
+     93              lock();
+     94              int ret = can_tderror(&_can);
+     95              unlock();
+     96              return ret;
+     97          }
+     98          
+     99          void CAN::monitor(bool silent) {
+    100              lock();
+    101              can_monitor(&_can, (silent) ? 1 : 0);
+    102              unlock();
+    103          }
+    104          
+    105          int CAN::mode(Mode mode) {
+    106              lock();
+    107              int ret = can_mode(&_can, (CanMode)mode);
+    108              unlock();
+    109              return ret;
+    110          }
+    111          
+    112          int CAN::filter(unsigned int id, unsigned int mask, CANFormat format, int handle) {
+    113              lock();
+    114              int ret = can_filter(&_can, id, mask, format, handle);
+    115              unlock();
+    116              return ret;
+    117          }
+    118          
+    119          void CAN::attach(Callback<void()> func, IrqType type) {
+    120              lock();
+    121              if (func) {
+    122                  // lock deep sleep only the first time
+    123                  if (!_irq[(CanIrqType)type]) {
+    124                      sleep_manager_lock_deep_sleep();
+    125                  }
+    126                  _irq[(CanIrqType)type] = func;
+    127                  can_irq_set(&_can, (CanIrqType)type, 1);
+    128              } else {
+    129                  // unlock deep sleep only the first time
+    130                  if (_irq[(CanIrqType)type]) {
+    131                      sleep_manager_unlock_deep_sleep();
+    132                  }
+    133                  _irq[(CanIrqType)type] = NULL;
+    134                  can_irq_set(&_can, (CanIrqType)type, 0);
+    135              }
+    136              unlock();
+    137          }
+    138          
+    139          void CAN::_irq_handler(uint32_t id, CanIrqType type) {
+    140              CAN *handler = (CAN*)id;
+    141              if (handler->_irq[type]) {
+    142                  handler->_irq[type].call();
+    143              }
+    144          }
+    145          
+    146          void CAN::lock() {
+    147              _mutex.lock();
+    148          }
+    149          
+    150          void CAN::unlock() {
+    151              _mutex.unlock();
+    152          }
+    153          
+    154          } // namespace mbed
+    155          
+    156          #endif
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

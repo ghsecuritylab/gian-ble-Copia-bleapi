@@ -1,0 +1,414 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       19/Mar/2018  13:33:02
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  .\mbed-os\drivers\UARTSerial.cpp
+#    Command line =  
+#        --no_wrap_diagnostics -e --diag_suppress=Pa050,Pa084,Pa093,Pa082 -Oh
+#        --enable_restrict --cpu Cortex-M0 --thumb --dlib_config
+#        DLib_Config_Full.h --c++ --no_rtti --no_exceptions --guard_calls
+#        --no_static_destruction -DTARGET_CORTEX -DTARGET_UVISOR_UNSUPPORTED
+#        -DTARGET_STMBLUE -D__MBED_CMSIS_RTOS_CM -DTARGET_STEVAL_IDB007V1
+#        -DMBED_BUILD_TIMESTAMP=1521462769.94 -DTARGET_CORTEX_M -DDEVICE_SPI=1
+#        -DTARGET_LIKE_MBED -DARM_MATH_CM0 -DTARGET_RELEASE -D__CORTEX_M0
+#        -DTARGET_BLUENRG1 -D__MBED__=1 -DTARGET_M0 -DTOOLCHAIN_object
+#        -DDEVICE_SERIAL=1 -D__CMSIS_RTOS -DTOOLCHAIN_IAR
+#        -DTARGET_LIKE_CORTEX_M0 -DFEATURE_BLE=1 -f
+#        .\BUILD\STEVAL_IDB007V1\IAR\.includes_dcedd7aa577106f9c79229685e6ddb41.txt
+#        (-I. -I./BLUE1 -I./BLUE1/Bluetooth_LE -I./BLUE1/Bluetooth_LE/inc
+#        -I./BLUE1/Bluetooth_LE/library -I./BLUE1/LSM6DS3 -I./BLUE1/SensorDemo
+#        -I./BLUE1/sdk_hal -I./BLUE1/sdk_hal/inc -I./BLUE1/sdk_hal/src
+#        -I./Beacon_inc -I./mbed-os -I./mbed-os/cmsis
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M
+#        -I./mbed-os/cmsis/TARGET_CORTEX_M/TOOLCHAIN_IAR -I./mbed-os/drivers
+#        -I./mbed-os/events -I./mbed-os/events/equeue -I./mbed-os/features
+#        -I./mbed-os/features/FEATURE_BLE -I./mbed-os/features/FEATURE_BLE/ble
+#        -I./mbed-os/features/FEATURE_BLE/ble/generic
+#        -I./mbed-os/features/FEATURE_BLE/ble/pal
+#        -I./mbed-os/features/FEATURE_BLE/ble/services
+#        -I./mbed-os/features/FEATURE_BLE/source
+#        -I./mbed-os/features/FEATURE_BLE/source/generic
+#        -I./mbed-os/features/FEATURE_BLE/source/services
+#        -I./mbed-os/features/FEATURE_BLE/targets
+#        -I./mbed-os/features/filesystem -I./mbed-os/features/filesystem/bd
+#        -I./mbed-os/features/filesystem/fat
+#        -I./mbed-os/features/filesystem/fat/ChaN -I./mbed-os/features/mbedtls
+#        -I./mbed-os/features/mbedtls/importer -I./mbed-os/features/mbedtls/inc
+#        -I./mbed-os/features/mbedtls/inc/mbedtls
+#        -I./mbed-os/features/mbedtls/platform
+#        -I./mbed-os/features/mbedtls/platform/inc
+#        -I./mbed-os/features/mbedtls/platform/src
+#        -I./mbed-os/features/mbedtls/src -I./mbed-os/features/mbedtls/targets
+#        -I./mbed-os/features/nanostack -I./mbed-os/hal
+#        -I./mbed-os/hal/storage_abstraction -I./mbed-os/platform
+#        -I./mbed-os/rtos -I./mbed-os/rtos/TARGET_CORTEX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx4
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Config
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Include
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_IAR/TARGET_M0
+#        -I./mbed-os/rtos/TARGET_CORTEX/rtx5/Source -I./mbed-os/targets
+#        -I./mbed-os/targets/TARGET_STMBLUE
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/TARGET_STEVAL_IDB007V1/device/TOOLCHAIN_IAR
+#        -I./mbed-os/targets/TARGET_STMBLUE/TARGET_BLUENRG1/device -I./settings
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/BUILD
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed
+#        -IC:/Users/Gianluca/mbedCLIdev/gian-ble-Copia-bleapi/mbed-os/features/unsupported/tests/mbed/env)
+#        --preinclude=.\BUILD\STEVAL_IDB007V1\IAR\mbed_config.h --dependencies
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\UARTSerial.d -l
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\UARTSerial.s.txt -o
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\UARTSerial.o
+#        .\mbed-os\drivers\UARTSerial.cpp
+#    Locale       =  Italian_Italy.1252
+#    List file    =  
+#        .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\UARTSerial.s.txt
+#    Object file  =  .\BUILD\STEVAL_IDB007V1\IAR\mbed-os\drivers\UARTSerial.o
+#
+###############################################################################
+
+C:\Users\Gianluca\mbedCLIdev\gian-ble-Copia-bleapi\mbed-os\drivers\UARTSerial.cpp
+      1          /* mbed Microcontroller Library
+      2           * Copyright (c) 2006-2017 ARM Limited
+      3           *
+      4           * Licensed under the Apache License, Version 2.0 (the "License");
+      5           * you may not use this file except in compliance with the License.
+      6           * You may obtain a copy of the License at
+      7           *
+      8           *     http://www.apache.org/licenses/LICENSE-2.0
+      9           *
+     10           * Unless required by applicable law or agreed to in writing, software
+     11           * distributed under the License is distributed on an "AS IS" BASIS,
+     12           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13           * See the License for the specific language governing permissions and
+     14           * limitations under the License.
+     15           */
+     16          
+     17          #if (DEVICE_SERIAL && DEVICE_INTERRUPTIN)
+     18          
+     19          #include <errno.h>
+     20          #include "UARTSerial.h"
+     21          #include "platform/mbed_poll.h"
+     22          
+     23          #if MBED_CONF_RTOS_PRESENT
+     24          #include "rtos/Thread.h"
+     25          #else
+     26          #include "platform/mbed_wait_api.h"
+     27          #endif
+     28          
+     29          namespace mbed {
+     30          
+     31          UARTSerial::UARTSerial(PinName tx, PinName rx, int baud) :
+     32                  SerialBase(tx, rx, baud),
+     33                  _blocking(true),
+     34                  _tx_irq_enabled(false),
+     35                  _rx_irq_enabled(true),
+     36                  _dcd_irq(NULL)
+     37          {
+     38              /* Attatch IRQ routines to the serial device. */
+     39              SerialBase::attach(callback(this, &UARTSerial::rx_irq), RxIrq);
+     40          }
+     41          
+     42          UARTSerial::~UARTSerial()
+     43          {
+     44              delete _dcd_irq;
+     45          }
+     46          
+     47          void UARTSerial::dcd_irq()
+     48          {
+     49              wake();
+     50          }
+     51          
+     52          void UARTSerial::set_baud(int baud)
+     53          {
+     54              SerialBase::baud(baud);
+     55          }
+     56          
+     57          void UARTSerial::set_data_carrier_detect(PinName dcd_pin, bool active_high)
+     58          {
+     59               delete _dcd_irq;
+     60              _dcd_irq = NULL;
+     61          
+     62              if (dcd_pin != NC) {
+     63                  _dcd_irq = new InterruptIn(dcd_pin);
+     64                  if (active_high) {
+     65                      _dcd_irq->fall(callback(this, &UARTSerial::dcd_irq));
+     66                  } else {
+     67                      _dcd_irq->rise(callback(this, &UARTSerial::dcd_irq));
+     68                  }
+     69              }
+     70          }
+     71          
+     72          void UARTSerial::set_format(int bits, Parity parity, int stop_bits)
+     73          {
+     74              api_lock();
+     75              SerialBase::format(bits, parity, stop_bits);
+     76              api_unlock();
+     77          }
+     78          
+     79          #if DEVICE_SERIAL_FC
+     80          void UARTSerial::set_flow_control(Flow type, PinName flow1, PinName flow2)
+     81          {
+     82              api_lock();
+     83              SerialBase::set_flow_control(type, flow1, flow2);
+     84              api_unlock();
+     85          }
+     86          #endif
+     87          
+     88          int UARTSerial::close()
+     89          {
+     90              /* Does not let us pass a file descriptor. So how to close ?
+     91               * Also, does it make sense to close a device type file descriptor*/
+     92              return 0;
+     93          }
+     94          
+     95          int UARTSerial::isatty()
+     96          {
+     97              return 1;
+     98          
+     99          }
+    100          
+    101          off_t UARTSerial::seek(off_t offset, int whence)
+    102          {
+    103              /*XXX lseek can be done theoratically, but is it sane to mark positions on a dynamically growing/shrinking
+    104               * buffer system (from an interrupt context) */
+    105              return -ESPIPE;
+    106          }
+    107          
+    108          int UARTSerial::sync()
+    109          {
+    110              api_lock();
+    111          
+    112              while (!_txbuf.empty()) {
+    113                  api_unlock();
+    114                  // Doing better than wait would require TxIRQ to also do wake() when becoming empty. Worth it?
+    115                  wait_ms(1);
+    116                  api_lock();
+    117              }
+    118          
+    119              api_unlock();
+    120          
+    121              return 0;
+    122          }
+    123          
+    124          void UARTSerial::sigio(Callback<void()> func) {
+    125              core_util_critical_section_enter();
+    126              _sigio_cb = func;
+    127              if (_sigio_cb) {
+    128                  short current_events = poll(0x7FFF);
+    129                  if (current_events) {
+    130                      _sigio_cb();
+    131                  }
+    132              }
+    133              core_util_critical_section_exit();
+    134          }
+    135          
+    136          ssize_t UARTSerial::write(const void* buffer, size_t length)
+    137          {
+    138              size_t data_written = 0;
+    139              const char *buf_ptr = static_cast<const char *>(buffer);
+    140          
+    141              api_lock();
+    142          
+    143              while (_txbuf.full()) {
+    144                  if (!_blocking) {
+    145                      api_unlock();
+    146                      return -EAGAIN;
+    147                  }
+    148                  api_unlock();
+    149                  wait_ms(1); // XXX todo - proper wait, WFE for non-rtos ?
+    150                  api_lock();
+    151              }
+    152          
+    153              while (data_written < length && !_txbuf.full()) {
+    154                  _txbuf.push(*buf_ptr++);
+    155                  data_written++;
+    156              }
+    157          
+    158              core_util_critical_section_enter();
+    159              if (!_tx_irq_enabled) {
+    160                  UARTSerial::tx_irq();                // only write to hardware in one place
+    161                  if (!_txbuf.empty()) {
+    162                      SerialBase::attach(callback(this, &UARTSerial::tx_irq), TxIrq);
+    163                      _tx_irq_enabled = true;
+    164                  }
+    165              }
+    166              core_util_critical_section_exit();
+    167          
+    168              api_unlock();
+    169          
+    170              return data_written;
+    171          }
+    172          
+    173          ssize_t UARTSerial::read(void* buffer, size_t length)
+    174          {
+    175              size_t data_read = 0;
+    176          
+    177              char *ptr = static_cast<char *>(buffer);
+    178          
+    179              api_lock();
+    180          
+    181              while (_rxbuf.empty()) {
+    182                  if (!_blocking) {
+    183                      api_unlock();
+    184                      return -EAGAIN;
+    185                  }
+    186                  api_unlock();
+    187                  wait_ms(1);  // XXX todo - proper wait, WFE for non-rtos ?
+    188                  api_lock();
+    189              }
+    190          
+    191              while (data_read < length && !_rxbuf.empty()) {
+    192                  _rxbuf.pop(*ptr++);
+    193                  data_read++;
+    194              }
+    195          
+    196              core_util_critical_section_enter();
+    197              if (!_rx_irq_enabled) {
+    198                  UARTSerial::rx_irq();               // only read from hardware in one place
+    199                  if (!_rxbuf.full()) {
+    200                      SerialBase::attach(callback(this, &UARTSerial::rx_irq), RxIrq);
+    201                      _rx_irq_enabled = true;
+    202                  }
+    203              }
+    204              core_util_critical_section_exit();
+    205          
+    206              api_unlock();
+    207          
+    208              return data_read;
+    209          }
+    210          
+    211          bool UARTSerial::hup() const
+    212          {
+    213              return _dcd_irq && _dcd_irq->read() != 0;
+    214          }
+    215          
+    216          void UARTSerial::wake()
+    217          {
+    218              if (_sigio_cb) {
+    219                  _sigio_cb();
+    220              }
+    221          }
+    222          
+    223          short UARTSerial::poll(short events) const {
+    224          
+    225              short revents = 0;
+    226              /* Check the Circular Buffer if space available for writing out */
+    227          
+    228          
+    229              if (!_rxbuf.empty()) {
+    230                  revents |= POLLIN;
+    231              }
+    232          
+    233              /* POLLHUP and POLLOUT are mutually exclusive */
+    234              if (hup()) {
+    235                  revents |= POLLHUP;
+    236              } else if (!_txbuf.full()) {
+    237                  revents |= POLLOUT;
+    238              }
+    239          
+    240              /*TODO Handle other event types */
+    241          
+    242              return revents;
+    243          }
+    244          
+    245          void UARTSerial::lock()
+    246          {
+    247              // This is the override for SerialBase.
+    248              // No lock required as we only use SerialBase from interrupt or from
+    249              // inside our own critical section.
+    250          }
+    251          
+    252          void UARTSerial::unlock()
+    253          {
+    254              // This is the override for SerialBase.
+    255          }
+    256          
+    257          void UARTSerial::api_lock(void)
+    258          {
+    259              _mutex.lock();
+    260          }
+    261          
+    262          void UARTSerial::api_unlock(void)
+    263          {
+    264              _mutex.unlock();
+    265          }
+    266          
+    267          void UARTSerial::rx_irq(void)
+    268          {
+    269              bool was_empty = _rxbuf.empty();
+    270          
+    271              /* Fill in the receive buffer if the peripheral is readable
+    272               * and receive buffer is not full. */
+    273              while (!_rxbuf.full() && SerialBase::readable()) {
+    274                  char data = SerialBase::_base_getc();
+    275                  _rxbuf.push(data);
+    276              }
+    277          
+    278              if (_rx_irq_enabled && _rxbuf.full()) {
+    279                  SerialBase::attach(NULL, RxIrq);
+    280                  _rx_irq_enabled = false;
+    281              }
+    282          
+    283              /* Report the File handler that data is ready to be read from the buffer. */
+    284              if (was_empty && !_rxbuf.empty()) {
+    285                  wake();
+    286              }
+    287          }
+    288          
+    289          // Also called from write to start transfer
+    290          void UARTSerial::tx_irq(void)
+    291          {
+    292              bool was_full = _txbuf.full();
+    293          
+    294              /* Write to the peripheral if there is something to write
+    295               * and if the peripheral is available to write. */
+    296              while (!_txbuf.empty() && SerialBase::writeable()) {
+    297                  char data;
+    298                  _txbuf.pop(data);
+    299                  SerialBase::_base_putc(data);
+    300              }
+    301          
+    302              if (_tx_irq_enabled && _txbuf.empty()) {
+    303                  SerialBase::attach(NULL, TxIrq);
+    304                  _tx_irq_enabled = false;
+    305              }
+    306          
+    307              /* Report the File handler that data can be written to peripheral. */
+    308              if (was_full && !_txbuf.full() && !hup()) {
+    309                  wake();
+    310              }
+    311          }
+    312          
+    313          void UARTSerial::wait_ms(uint32_t millisec)
+    314          {
+    315              /* wait_ms implementation for RTOS spins until exact microseconds - we
+    316               * want to just sleep until next tick.
+    317               */
+    318          #if MBED_CONF_RTOS_PRESENT
+    319              rtos::Thread::wait(millisec);
+    320          #else
+    321              ::wait_ms(millisec);
+    322          #endif
+    323          }
+    324          } //namespace mbed
+    325          
+    326          #endif //(DEVICE_SERIAL && DEVICE_INTERRUPTIN)
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none
