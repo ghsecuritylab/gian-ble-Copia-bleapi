@@ -286,11 +286,16 @@ keep {section .wakeupFromSleepFlag};
 place at address mem: 0x2000000C { block wakeupFromSleepFlag_block, };
 
 /* app_base Block - Software activation */
+
 /*define block app_base_block with alignment = 4, size = 4 { section .app_base};
 keep {section .app_base};
 place at address mem: 0x20000010 { block app_base_block, };*/
-define block app_base_block with alignment = 4, size = 4 { section .intvec};
+/*define block app_base_block with alignment = 4, size = 4 { section .intvec};
 keep {section .intvec};
+place at address mem: 0x20000010 { block app_base_block, };*/
+
+define block app_base_block with alignment = 4, size = 4 { section .app_base};
+keep {section .app_base};
 place at address mem: 0x20000010 { block app_base_block, };
 
 /* BLUE flag Ram Block - Software activation */

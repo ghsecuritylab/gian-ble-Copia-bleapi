@@ -410,7 +410,7 @@ void Blue1::appTick(void){
             Blue1::readAccIMU(buf);
             acc_data.AXIS_X = buf[0]*0.061;
             acc_data.AXIS_Y = buf[1]*0.061;
-            acc_data.AXIS_Z = buf[2]*0.061;
+            acc_data.AXIS_Z = (buf[2]*0.061)-1.0;
 #endif
             // Get Acceleration data
             if (GetAccAxesRaw(&acc_data) == IMU_6AXES_OK) {

@@ -31,6 +31,9 @@
         EXTERN  SystemInit
         PUBLIC  __vector_table
 
+        ;EXTERN  OTA_VALID_APP_TAG
+        ;EXTERN  BLUE_FLAG_TAG
+
         DATA
 __vector_table
         DCD     sfe(CSTACK)
@@ -38,8 +41,8 @@ __vector_table
 
         DCD     NMI_Handler                    ; NMI Handler
         DCD     HardFault_Handler              ; Hard Fault Handler
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
+        DCD     0                              ; OTA Application (TBC)
+        DCD     0x424C5545                     ; Reserved for blue flag DTM updater (TBC)
         DCD     0                              ; Reserved
         DCD     0                              ; Reserved
         DCD     0                              ; Reserved
@@ -52,38 +55,38 @@ __vector_table
         DCD     SysTick_Handler                ; SysTick Handler
 
         ; External Interrupts
-        DCD     GPIO_Handler                ; Reserved
-        DCD     NVM_Handler               ; Reserved
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
-        DCD     UART_Handler                ; Reserved
-        DCD     SPI_Handler                 ; Reserved
-        DCD     Blue_Handler                   ; Reserved
-        DCD     WDG_Handler                 ; Reserved
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
-        DCD     ADC_Handler                 ; Reserved
-        DCD     I2C1_Handler                ; Reserved
-        DCD     I2C2_Handler                ; Reserved
-        DCD     0                              ; Reserved
-        DCD     MFT1A_Handler               ; Reserved
-        DCD     MFT1B_Handler               ; Reserved
-        DCD     MFT2A_Handler               ; Reserved
-        DCD     MFT2B_Handler               ; Reserved
-        DCD     RTC_Handler                 ; Reserved
-        DCD     PKA_Handler                    ; Reserved
-        DCD     DMA_Handler                    ; Reserved
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
-        DCD     0                              ; Reserved
+        DCD     GPIO_Handler                   ; IRQ 0: GPIO
+        DCD     NVM_Handler                    ; IRQ 1: NVM
+        DCD     0                              ; IRQ 2:
+        DCD     0                              ; IRQ 3:
+        DCD     UART_Handler                   ; IRQ 4: UART
+        DCD     SPI_Handler                    ; IRQ 5: SPI
+        DCD     Blue_Handler                   ; IRQ 6: Blue
+        DCD     WDG_Handler                    ; IRQ 7: Watchdog
+        DCD     0                              ; IRQ 8:
+        DCD     0                              ; IRQ 9:
+        DCD     0                              ; IRQ10:
+        DCD     0                              ; IRQ11:
+        DCD     0                              ; IRQ12:
+        DCD     ADC_Handler                    ; IRQ13: ADC
+        DCD     I2C1_Handler                   ; IRQ14: I2C2
+        DCD     I2C2_Handler                   ; IRQ15: I2C1
+        DCD     0                              ; IRQ16:
+        DCD     MFT1A_Handler                  ; IRQ17: MFT1 irq1
+        DCD     MFT1B_Handler                  ; IRQ18: MFT1 irq2
+        DCD     MFT2A_Handler                  ; IRQ19: MFT2 irq1
+        DCD     MFT2B_Handler                  ; IRQ20: MFT2 irq2
+        DCD     RTC_Handler                    ; IRQ21: RTC
+        DCD     PKA_Handler                    ; IRQ22: PKA
+        DCD     DMA_Handler                    ; IRQ23: DMA
+        DCD     0                              ; IRQ24:
+        DCD     0                              ; IRQ25:
+        DCD     0                              ; IRQ26:
+        DCD     0                              ; IRQ27:
+        DCD     0                              ; IRQ28:
+        DCD     0                              ; IRQ29:
+        DCD     0                              ; IRQ30:
+        DCD     0                              ; IRQ31:
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

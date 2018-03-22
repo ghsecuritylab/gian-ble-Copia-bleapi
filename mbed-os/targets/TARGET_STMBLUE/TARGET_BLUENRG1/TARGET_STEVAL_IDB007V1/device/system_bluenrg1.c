@@ -28,7 +28,7 @@
 #if ST_OTA_SERVICE_MANAGER_APPLICATION
 #define OTA_VALID_APP_TAG (0xAABBCCDD) /* OTA Service Manager has a special valid tag */
 #else
-#define OTA_VALID_APP_TAG (0xAA5555AA) 
+#define OTA_VALID_APP_TAG (0xAA5555AA)
 #endif
 
 #define BLUE_FLAG_TAG   (0x424C5545)
@@ -84,7 +84,7 @@ REQUIRED(uint32_t savedMSP);
 //------------------------------------------------------------------------------
 //   uint8_t wakeupFromSleepFlag
 //
-// A simple flag used to indicate if the wakeup occurred from Sleep or Standby 
+// A simple flag used to indicate if the wakeup occurred from Sleep or Standby
 // condition.
 // If this flag is zero, an interrupt has affected the WFI instruction and the
 // BlueNRG-1 doesn't enter in deep sleep state. So, no context restore is
@@ -112,37 +112,37 @@ REQUIRED(uint32_t __blueflag_RAM);
 //------------------------------------------------------------------------------
 //   uint32_t savedICSR
 //
-// Private storage to save the Interrupt Control State register, to check the 
+// Private storage to save the Interrupt Control State register, to check the
 // SysTick and PendSV interrupt status
-// This variable is only used during the samrt power management 
-// procedure 
+// This variable is only used during the samrt power management
+// procedure
 //------------------------------------------------------------------------------
 uint32_t savedICSR;
 
 //------------------------------------------------------------------------------
 //   uint32_t savedSHCSR
 //
-// Private storage to save the System Handler Control and State register, 
+// Private storage to save the System Handler Control and State register,
 // to check the SVCall interrupt status
-// This variable is only used during the samrt power management 
-// procedure 
+// This variable is only used during the samrt power management
+// procedure
 //------------------------------------------------------------------------------
 uint32_t savedSHCSR;
 
 //------------------------------------------------------------------------------
 //   uint32_t savedNVIC_ISPR
 //
-// Private storage to save the Interrupt Set Pending register, 
+// Private storage to save the Interrupt Set Pending register,
 // to check the NVIC interrupt status
-// This variable is only used during the smart power management 
-// procedure 
+// This variable is only used during the smart power management
+// procedure
 //------------------------------------------------------------------------------
 uint32_t savedNVIC_ISPR;
 
 
 
 #ifdef ccc
-int __low_level_init(void) 
+int __low_level_init(void)
 {
 	// If the reset reason is a wakeup from sleep restore the context
 	if ((CKGEN_SOC->REASON_RST == 0) && (CKGEN_BLE->REASON_RST > RESET_WAKE_DEEPSLEEP_REASONS)) {
@@ -155,7 +155,7 @@ int __low_level_init(void)
 		while(1) { ; }
 #else
 		return 0;
-#endif   
+#endif
 	}
 	return 1;
 }
@@ -281,7 +281,7 @@ REQUIRED(const intvec_elem __vector_table[]) = {
 };
 
 
-
+#endif //ccc
 //------------------------------------------------------------------------------
 //   uint32_t *app_base
 //
@@ -289,9 +289,19 @@ REQUIRED(const intvec_elem __vector_table[]) = {
 // effective application base address and jump to the proper IRQ handler.
 //
 //------------------------------------------------------------------------------
+/*
 SECTION(".app_base")
 REQUIRED(uint32_t *app_base) = (uint32_t *) __vector_table;
-#endif //ccc
+*/
+/* //la seguente cosa compila
+extern uint32_t __vector_table [];
+SECTION(".app_base")
+REQUIRED(uint32_t *app_base) = (uint32_t *)__vector_table;
+*/
+extern uint32_t __vector_table[];
+SECTION(".app_base")
+REQUIRED(uint32_t *app_base) = __vector_table;
+
 
 
 
@@ -313,7 +323,7 @@ REQUIRED(static uint8_t __blue_RAM[8*64+12]) = {0,};
  */
 #define ATB1_ANA_ENG_REG    0x3E
 /**
- *@brief Rate Multiplier 1 register settings 
+ *@brief Rate Multiplier 1 register settings
  */
 #define RM1_DIG_ENG_REG     0x3C
 /**
@@ -388,42 +398,42 @@ REQUIRED(static uint8_t __blue_RAM[8*64+12]) = {0,};
  */
 #define PMU_ANA_USER_RESET_VALUE    0x0B
 /**
- * @brief Analog test bus 0 settings for 
+ * @brief Analog test bus 0 settings for
  * normal application mode
  */
 #define USER_MODE_ATB0              0x00
 /**
- * @brief Analog test bus 1 settings for 
+ * @brief Analog test bus 1 settings for
  * normal application mode
  */
 #define USER_MODE_ATB1              0x30
 /**
- * @brief Analog test bus 0 settings for 
+ * @brief Analog test bus 0 settings for
  * low speed crystal measurement
  */
 #define LS_XTAL_MEAS_ATB0           0x37
 /**
- * @brief Analog test bus 1 settings for 
+ * @brief Analog test bus 1 settings for
  * low speed crystal measurement
  */
 #define LS_XTAL_MEAS_ATB1           0x34
 /**
- * @brief Analog test bus 0 settings for 
+ * @brief Analog test bus 0 settings for
  * high speed crystal startup time measurement
  */
 #define HS_STARTUP_TIME_MEAS_ATB0   0x04
 /**
- * @brief Analog test bus 1 settings for 
+ * @brief Analog test bus 1 settings for
  * high speed crystal startup time measurement
  */
 #define HS_STARTUP_TIME_MEAS_ATB1   0x34
 /**
- * @brief Analog test bus 0 settings for 
+ * @brief Analog test bus 0 settings for
  * Tx/Rx start stop signal measurement
  */
 #define TX_RX_START_STOP_MEAS_ATB0  0x38
 /**
- * @brief Analog test bus 1 settings for 
+ * @brief Analog test bus 1 settings for
  * Tx/Rx start stop signal measurement
  */
 #define TX_RX_START_STOP_MEAS_ATB1  0x34

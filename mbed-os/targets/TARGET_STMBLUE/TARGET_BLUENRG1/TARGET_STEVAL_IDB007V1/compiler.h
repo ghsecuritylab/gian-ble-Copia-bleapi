@@ -116,10 +116,12 @@
 #define NO_INIT_ZERO(var, sect)                   __no_init var
 
 #define VARIABLE_SIZE 0
-#pragma segment = "CSTACK"
-#define _INITIAL_SP                    { .__ptr = __sfe( "CSTACK" ) }  /* Stack address */
-extern void __iar_program_start(void);
-#define RESET_HANDLER                  __iar_program_start
+
+
+//#pragma segment = "CSTACK"
+//#define _INITIAL_SP                    { .__ptr = __sfe( "CSTACK" ) }  /* Stack address */
+//extern void __iar_program_start(void);
+//#define RESET_HANDLER                  __iar_program_start
 
 
 //#endif //ddd
